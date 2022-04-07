@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "Playfair";
+    src: url("PlayfairDisplay-Regular.ttf") format("woff2"),
+    url("PlayfairDisplay-Regular.ttf") format("woff");
+}
+
+@font-face {
+  font-family: "Acumin_Pro";
+    src: url("Acumin_Pro_Book.woff2") format("woff2"),
+    url("Acumin_Pro_Book.woff") format("woff");
+}
+
+p, h3, h4, h5, span, a, li {
+    font-family: 'Acumin_Pro' !important;
+}
+
+h1, h2{
+    font-family: 'Playfair' !important;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 52px;
+}
+
+.btn {
+    font-size: 18px;
+    border-radius: 30px;
+    min-width: 200px;
+}

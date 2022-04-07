@@ -17,11 +17,12 @@
   endif
   assign overlay_opacity = section.settings.overlay_opacity | times: 0.01 | round: 2
   assign aspect_ratio = image.aspect_ratio | default: 1.66
+  assign block_number = section.blocks.size
 -%}
 
 {%- style -%}
   #FeaturedOfferings--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
-    {% if section.settings.show_border %}
+    {% if section.settings.show_border and block_number == 2 or block_number == 4 %}
       .featured-offerings-block:nth-child(odd){
         border-right: {{ section.settings.border_width }}px solid {{ section.settings.border_color }}; 
       }
@@ -34,23 +35,44 @@
         margin-top: 100px;
       }
 
+      .featured-offerings-block-text{
+        text-align: left;
+        margin: 0px 20px 0px 20px;
+      }
+
     @media only screen and (max-width: 992px) {
-      .featured-offerings{
-        width: 100%;
-        height: 300px;
-        display: flex;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scroll-snap-type: x mandatory;
-      }
-      .featured-offerings > div{
-        scroll-snap-align: start;
-      }
-      .featured-offerings-block{
-        width: 100%;
-        flex-shrink: 0;
-        height: 100%;
-      }
+      {% if section.settings.mobile_slider %}
+        .featured-offerings{
+          width: 100%;
+          height: 300px;
+          display: flex;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x mandatory;
+        }
+        .featured-offerings > div{
+          scroll-snap-align: start;
+        }
+        .featured-offerings-block{
+          width: 100%;
+          flex-shrink: 0;
+          height: 100%;
+        }
+        {% else %}
+        .featured-offerings{
+          display: block;
+          margin-top: 0px;
+        }
+        .featured-offerings-block{
+          margin-bottom: 20px;
+        }
+        .one-hundred-height-hero{
+          height: 130vh;
+        }
+        .featured-offerings-block-text{
+          margin: 0px 0px 0px 20px;
+        }
+      {% endif %}
       .featured-offerings-block:nth-child(odd){
         border-right: none;
       }
@@ -122,7 +144,7 @@
 
             </div>
             {%- endif -%}
-            <div class="featured-offerings-block-text" style="text-align: {{ block.settings.text_alignment }}; margin: 0px 20px 0px 20px;">
+            <div class="featured-offerings-block-text" style="text-align: {{ block.settings.text_alignment }};">
               <h2>{{ block.settings.title }}</h2>
               <p>{{ block.settings.description }}</p>
             </div>
@@ -283,6 +305,16 @@
         { "label": "Primary", "value": "primary" },
         { "label": "Secondary", "value": "secondary" }
       ]
+    },
+    {
+      "type": "header",
+      "content": "Mobile Display"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_slider",
+      "label": "Show slider on mobile?",
+      "default": false
     },
     {
       "type": "header",
