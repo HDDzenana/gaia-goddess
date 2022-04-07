@@ -1,0 +1,525 @@
+{
+  "sections": {
+    "1649146796fe3d4805": {
+      "type": "section-video",
+      "settings": {
+        "video_height": "sixty-fifty-height-hero",
+        "text_position": "center-center",
+        "hero_video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_enable_sound": false,
+        "overlay_opacity": 20,
+        "text_color": "text-light",
+        "title": "Let's get the balance of living!",
+        "main_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "button_text": "Join Us",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "1649147513ace08e02": {
+      "type": "section-product-feature",
+      "settings": {
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "right",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/gaia_001_landing-page_video-still_1.jpg",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "heading": "About Gaia Goddess",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
+        "button_text": "Learn More",
+        "button_link": "",
+        "button_style": "primary",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "1649147839816544f2": {
+      "type": "section-image-with-text",
+      "settings": {
+        "section_height": "sixty-fifty-height-hero",
+        "text_position": "left",
+        "image": "shopify:\/\/shop_images\/gaia_001_landing-page_video-still_1.jpg",
+        "image_background": false,
+        "bg_position": "center-center",
+        "subheading": "Subheading",
+        "heading": "Our Story",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_text": "Learn More",
+        "button_url": "",
+        "button_style": "primary",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "1649148712c020f142": {
+      "type": "section-featured-image",
+      "settings": {
+        "image_height": "one-hundred-height-hero",
+        "text_position": "center-center",
+        "enable_parallax": false,
+        "image": "shopify:\/\/shop_images\/yoga-retreat-edited_image.png",
+        "image_position": "center-center",
+        "overlay_opacity": 20,
+        "text_color": "text-light",
+        "title": "Our Offerings",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "164914858208709152": {
+      "type": "section-product-feature",
+      "settings": {
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "left",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/erik-brolin-ZARfCYDaVg0-unsplash_image.png",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "heading": "Become a Member of Gaia.",
+        "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
+        "button_text": "Join Us",
+        "button_link": "",
+        "button_style": "primary",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "16491674533834b0ba": {
+      "type": "section-featured-image",
+      "settings": {
+        "image_height": "one-hundred-height-hero",
+        "text_position": "center-center",
+        "enable_parallax": false,
+        "image_position": "center-center",
+        "overlay_opacity": 20,
+        "text_color": "text-light",
+        "title": "Welcome to Palo Alto",
+        "subheading": "Describe in a few words your special products, collection, or brand.",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "collection-list": {
+      "type": "section-list-collection",
+      "blocks": {
+        "collection-list-0": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection-list-1": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection-list-2": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection-list-3": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "collection-list-4": {
+          "type": "collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-list-0",
+        "collection-list-1",
+        "collection-list-2",
+        "collection-list-3",
+        "collection-list-4"
+      ],
+      "settings": {
+        "layout": "carousel",
+        "columns": 3,
+        "title": "Collection list",
+        "button_text": "Shop all",
+        "button_style": "secondary",
+        "overlay_opacity": 20,
+        "bg_color": "",
+        "text_color": "light",
+        "enable_slider": true
+      }
+    },
+    "featured-collection": {
+      "type": "section-collection",
+      "settings": {
+        "collection": "",
+        "products_rows": 2,
+        "products_layout": "grid",
+        "show_title": true,
+        "show_collection_button": true,
+        "button_style": "primary",
+        "bg_color": "",
+        "enable_slider": true
+      }
+    },
+    "tabbed-collections": {
+      "type": "section-tabbed-collections",
+      "blocks": {
+        "collection-0": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "product": ""
+          }
+        },
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "product": ""
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "product": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection-0",
+        "collection-1",
+        "collection-2"
+      ],
+      "settings": {
+        "title": "Featured collections",
+        "button_style": "primary",
+        "bg_color": ""
+      }
+    },
+    "icons-row": {
+      "type": "section-icons-row",
+      "blocks": {
+        "icons-row-0": {
+          "type": "text",
+          "settings": {
+            "icon_name": "shop",
+            "title": "Feature",
+            "content": "Palo Alto is a powerful Shopify theme that will set you apart from the rest with a variety of sections and features."
+          }
+        },
+        "icons-row-1": {
+          "type": "text",
+          "settings": {
+            "icon_name": "shop",
+            "title": "Feature",
+            "content": "Palo Alto is a powerful Shopify theme that will set you apart from the rest with a variety of sections and features."
+          }
+        },
+        "icons-row-2": {
+          "type": "text",
+          "settings": {
+            "icon_name": "shop",
+            "title": "Feature",
+            "content": "Palo Alto is a powerful Shopify theme that will set you apart from the rest with a variety of sections and features."
+          }
+        }
+      },
+      "block_order": [
+        "icons-row-0",
+        "icons-row-1",
+        "icons-row-2"
+      ],
+      "settings": {
+        "alignment": "left",
+        "icons_width": 45,
+        "bg_color": "#fafafa",
+        "text_color": "#333333"
+      }
+    },
+    "press": {
+      "type": "section-press",
+      "blocks": {
+        "press-0": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Provide some information about what the company below thinks about your brand.<\/p>",
+            "link": "",
+            "logo_width": 120
+          }
+        },
+        "press-1": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Provide some information about what the company below thinks about your brand.<\/p>",
+            "link": "",
+            "logo_width": 120
+          }
+        },
+        "press-2": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Provide some information about what the company below thinks about your brand.<\/p>",
+            "link": "",
+            "logo_width": 120
+          }
+        },
+        "press-3": {
+          "type": "press",
+          "settings": {
+            "text": "<p>Provide some information about what the company below thinks about your brand.<\/p>",
+            "link": "",
+            "logo_width": 120
+          }
+        }
+      },
+      "block_order": [
+        "press-0",
+        "press-1",
+        "press-2",
+        "press-3"
+      ],
+      "settings": {
+        "title": "Press",
+        "bg_color": ""
+      }
+    },
+    "locations": {
+      "type": "section-locations",
+      "blocks": {
+        "locations-0": {
+          "type": "locations",
+          "settings": {
+            "title": "566 Emerson Street Palo Alto, California",
+            "working_time": "<p>Mon - Fri: 8am - 5pm<\/p><p>Sat: Closed<\/p><p>Sun: Closed<\/p>"
+          }
+        },
+        "locations-1": {
+          "type": "locations",
+          "settings": {
+            "title": "566 Emerson Street Palo Alto, California",
+            "working_time": "<p>Mon - Fri: 8am - 5pm<\/p><p>Sat: Closed<\/p><p>Sun: Closed<\/p>"
+          }
+        },
+        "locations-2": {
+          "type": "locations",
+          "settings": {
+            "title": "566 Emerson Street Palo Alto, California",
+            "working_time": "<p>Mon - Fri: 8am - 5pm<\/p><p>Sat: Closed<\/p><p>Sun: Closed<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "locations-0",
+        "locations-1",
+        "locations-2"
+      ],
+      "settings": {
+        "subheading": "Our stores",
+        "title": "Locations & hours",
+        "bg_color": ""
+      }
+    },
+    "logo-list": {
+      "type": "section-logo-list",
+      "blocks": {
+        "logo-list-0": {
+          "type": "item_logo",
+          "settings": {
+            "logos_width": 120,
+            "url": ""
+          }
+        },
+        "logo-list-1": {
+          "type": "item_logo",
+          "settings": {
+            "logos_width": 120,
+            "url": ""
+          }
+        },
+        "logo-list-2": {
+          "type": "item_logo",
+          "settings": {
+            "logos_width": 120,
+            "url": ""
+          }
+        },
+        "logo-list-3": {
+          "type": "item_logo",
+          "settings": {
+            "logos_width": 120,
+            "url": ""
+          }
+        },
+        "logo-list-4": {
+          "type": "item_logo",
+          "settings": {
+            "logos_width": 120,
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo-list-0",
+        "logo-list-1",
+        "logo-list-2",
+        "logo-list-3",
+        "logo-list-4"
+      ],
+      "settings": {
+        "bg_color": ""
+      }
+    },
+    "featured-blog": {
+      "type": "section-blog",
+      "blocks": {
+        "featured-blog-0": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "featured-blog-1": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "featured-blog-2": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "featured-blog-3": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "featured-blog-4": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured-blog-0",
+        "featured-blog-1",
+        "featured-blog-2",
+        "featured-blog-3",
+        "featured-blog-4"
+      ],
+      "settings": {
+        "title": "",
+        "bg_color": ""
+      }
+    },
+    "16491485896c481e8c": {
+      "type": "section-image-with-text",
+      "settings": {
+        "section_height": "sixty-fifty-height-hero",
+        "text_position": "left",
+        "image_background": true,
+        "bg_position": "center-center",
+        "subheading": "Subheading",
+        "heading": "Our Story",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_text": "Learn More",
+        "button_url": "",
+        "button_style": "primary",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "16491502355b7d9732": {
+      "type": "section-testimonials",
+      "blocks": {
+        "164915023501d1c40f-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image": "shopify:\/\/shop_images\/monica.png",
+            "image_width": 100,
+            "customer_name": "Sherlock Holmes"
+          }
+        },
+        "164915023501d1c40f-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "John Watson"
+          }
+        },
+        "164915023501d1c40f-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "Mycroft Holmes"
+          }
+        }
+      },
+      "block_order": [
+        "164915023501d1c40f-0",
+        "164915023501d1c40f-1",
+        "164915023501d1c40f-2"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "show_quotes": true,
+        "bg_color": ""
+      }
+    }
+  },
+  "order": [
+    "1649146796fe3d4805",
+    "1649147513ace08e02",
+    "1649147839816544f2",
+    "1649148712c020f142",
+    "164914858208709152",
+    "16491674533834b0ba",
+    "collection-list",
+    "featured-collection",
+    "tabbed-collections",
+    "icons-row",
+    "press",
+    "locations",
+    "logo-list",
+    "featured-blog",
+    "16491485896c481e8c",
+    "16491502355b7d9732"
+  ]
+}
