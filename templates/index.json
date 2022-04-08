@@ -10,6 +10,7 @@
         "overlay_opacity": 20,
         "text_color": "text-light",
         "title": "Let's get the balance of living!",
+        "subtitle": "to Palo Alto",
         "main_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "button_text": "Join Us",
         "button_link": "",
@@ -130,6 +131,17 @@
         "subtitle": "<p>Subscribe for updates<\/p>",
         "bg_color": ""
       }
+    },
+    "164943162342f7aac5": {
+      "type": "section-newsletter-mailerlite",
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "center",
+        "heading": "Subscribe to our newsletters today for a FREE meditation class",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading_color": "#6C1D45",
+        "bg_color": ""
+      }
     }
   },
   "order": [
@@ -137,6 +149,7 @@
     "1649147513ace08e02",
     "1649346336161dd843",
     "164914858208709152",
-    "16493472626b44219a"
+    "16493472626b44219a",
+    "164943162342f7aac5"
   ]
 }
