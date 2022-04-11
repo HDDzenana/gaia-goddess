@@ -39,6 +39,22 @@
         text-align: left;
         margin: 0px 20px 0px 20px;
       }
+      .featured-offerings-block-icon{
+          display: flex;
+          justify-content: center;
+          align-items: center; 
+        }
+        .text-subheading{
+          margin: 20px 20% 10px 20%;
+          font-size: 16px;
+        }
+        .offerings-title{
+          font-size: 30px;
+        }
+        .featured-offerings-icon-image{
+          width: 140px;
+          height: 140px;
+        }
 
     @media only screen and (max-width: 992px) {
       {% if section.settings.mobile_slider %}
@@ -67,7 +83,7 @@
           margin-bottom: 20px;
         }
         .one-hundred-height-hero{
-          height: 130vh;
+          height: 105vh;
         }
         .featured-offerings-block-text{
           margin: 0px 0px 0px 20px;
@@ -76,6 +92,26 @@
       .featured-offerings-block:nth-child(odd){
         border-right: none;
       }
+      .text-subheading {
+          margin: 20px 0% 50px 0%;
+          font-size: 12px;
+      }
+      .text-title{
+        font-size: 35px;
+      }
+      .bg-pos-center-center {
+          background-position: 70%!important;
+      }
+      .offerings-title{
+        font-size: 18px;
+      }
+      .offerings-description{
+        font-size: 12px;
+      }
+      .featured-offerings-icon-image{
+          width: 91px;
+          height: 91px;
+        }
     }
 {%- endstyle -%}
 
@@ -101,10 +137,10 @@
   <div class="featured-offerings__content" style="align-items: center;">
     <div class="wrapper">
       {%- if title != blank -%}
-        <h1 class="slide__heading main-heading">{{ title | escape }}</h1>
+        <h2 class="slide__heading main-heading text-title" style="color: {{ section.settings.text_color }}">{{ title | escape }}</h2>
       {%- endif -%}
       {%- if subheading != blank -%}
-        <h2 class="slide__caption main-subheading">{{ subheading | escape }}</h2>
+        <p class="slide__caption main-subheading text-subheading" style="color: {{ section.settings.text_color }}">{{ subheading | escape }}</p>
       {%- endif -%}
       {%- if button_text != blank -%}
         <a class="btn btn--{{ button_style }} call-to-action" style="margin-bottom: 40px;" href="{{ button_link }}">{{ button_text | escape }}</a>
@@ -117,7 +153,7 @@
 
           <div class="featured-offerings-block" style="display: flex">
             {%- if icon_image != blank -%}
-            {%- assign icon_image_width = block.settings.icon_image_width -%}
+            {%- assign icon_image_width = 140 -%}
             {%- assign icon_image_height = icon_image_width | divided_by: icon_image.aspect_ratio -%}
             <div class="featured-offerings-block-icon" style="width: 100%">
               {%- assign image_url_pattern = icon_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
@@ -130,13 +166,12 @@
               {%- endif -%}
 
               <img
-                class="lazyload"
+                class="lazyload featured-offerings-icon-image"
                 src="{{ icon_image | img_url: '400x' }}"
                 data-src="{{ image_url_pattern }}"
                 data-widths= "{{ image_widths }}"
                 data-aspectratio="{{icon_image.aspect_ratio }}"
                 data-sizes="auto"
-                style="width: {{ icon_image_width | append: 'px' }}; height: {{ icon_image_height | append: 'px' }};"
                 alt="{{ icon_image.alt | escape }}">
               <noscript>
                 <img src="{{ icon_image | img_url: '400x' }}" alt="{{ icon_image.alt | escape }}" style="width: {{ icon_image_width | append: 'px' }}; height: {{ icon_image_height | append: 'px' }};">
@@ -145,8 +180,8 @@
             </div>
             {%- endif -%}
             <div class="featured-offerings-block-text" style="text-align: {{ block.settings.text_alignment }};">
-              <h2>{{ block.settings.title }}</h2>
-              <p>{{ block.settings.description }}</p>
+              <h3 class="offerings-title" style="color: {{ block.settings.offering_text_color }};">{{ block.settings.title }}</h3>
+              <p class="offerings-description" style="color: {{ block.settings.offering_text_color }}">{{ block.settings.description }}</p>
             </div>
           </div>
         {% endfor %}
@@ -155,7 +190,7 @@
   </div>
 {%- endcapture -%}
 
-<section class="featured-offerings-section featured-offerings-section--{{ section.id }} {{ image_height }}{% if image == blank %} featured-offerings-section--placeholder{% endif %} {{ section.settings.text_color }}"
+<section class="featured-offerings-section featured-offerings-section--{{ section.id }} {{ image_height }}{% if image == blank %} featured-offerings-section--placeholder{% endif %}"
   id="FeaturedOfferings--{{ section.id }}"
   data-section-id="{{ section.id }}"
   data-section-type="featured-offerings"
@@ -255,20 +290,10 @@
       "content": "Text"
     },
     {
-      "type": "select",
+      "type": "color",
       "id": "text_color",
       "label": "Color",
-      "default": "text-light",
-      "options": [
-        {
-          "value": "text-light",
-          "label": "Light"
-        },
-        {
-          "value": "text-dark",
-          "label": "Dark"
-        }
-      ]
+      "default": "#000000"
     },
     {
       "type": "text",
@@ -354,16 +379,6 @@
           "info": "If image set it will override the icon"
         },
         {
-          "type": "range",
-          "id": "icon_image_width",
-          "label": "Icon width (in pixels)",
-          "min": 50,
-          "max": 200,
-          "default": 100,
-          "step": 5,
-          "unit": "px"
-        },
-        {
           "type": "select",
           "id": "text_alignment",
           "label": "Text alignment",
@@ -394,6 +409,12 @@
           "id": "description",
           "label": "Description",
           "default": "Palo Alto is a powerful Shopify theme that will set you apart from the rest with a variety of sections and features."
+        },
+        {
+          "type": "color",
+          "id": "offering_text_color",
+          "label": "Color",
+          "default": "#000000"
         }
       ]
     }

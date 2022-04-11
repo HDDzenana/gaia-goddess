@@ -32,7 +32,8 @@
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
         "button_text": "Learn More",
         "button_link": "",
-        "button_style": "primary",
+        "button_color": "#d3d3d3",
+        "button_hover_color": "#1990c6",
         "video_url": "",
         "bg_color": ""
       }
@@ -119,16 +120,9 @@
         "description": "<p>Becoming a member of Gaia Goddess will introduce you to a new world for a community of holistic healing. Key benefits of our memberships include:<\/p>",
         "button_text": "Join Us",
         "button_link": "",
-        "button_style": "primary",
+        "button_color": "#800000",
+        "button_hover_color": "#ffffff",
         "video_url": "",
-        "bg_color": ""
-      }
-    },
-    "16493472626b44219a": {
-      "type": "section-newsletter",
-      "settings": {
-        "title": "Newsletter",
-        "subtitle": "<p>Subscribe for updates<\/p>",
         "bg_color": ""
       }
     },
@@ -136,11 +130,11 @@
       "type": "section-newsletter-mailerlite",
       "settings": {
         "text_position": "left",
-        "text_alignment": "center",
+        "text_alignment": "left",
         "heading": "Subscribe to our newsletters today for a FREE meditation class",
         "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
-        "heading_color": "#6C1D45",
-        "bg_color": ""
+        "heading_color": "#6c1d45",
+        "bg_color": "#fefafb"
       }
     }
   },
@@ -149,7 +143,6 @@
     "1649147513ace08e02",
     "1649346336161dd843",
     "164914858208709152",
-    "16493472626b44219a",
     "164943162342f7aac5"
   ]
 }

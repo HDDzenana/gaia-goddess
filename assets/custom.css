@@ -14,9 +14,15 @@ p, h3, h4, h5, span, a, li {
     font-family: 'Acumin_Pro' !important;
 }
 
-h1, h2{
+h1 {
     font-family: 'Playfair' !important;
     font-size: 50px;
+    font-weight: 700;
+    line-height: 52px;
+}
+h2, h2 span{
+    font-family: 'Playfair' !important;
+    font-size: 45px;
     font-weight: 700;
     line-height: 52px;
 }

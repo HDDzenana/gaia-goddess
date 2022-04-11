@@ -27,20 +27,40 @@
     #ProductFeature--{{ section.id }} {
       background-color: {{ bg_color }};
     }
+    @media only screen and (max-width: 767px){
+      .offerings-feature__mailerlite{
+        margin: 0;
+      }
+      .offerings-feature__text{
+        text-align: center;
+        padding-top: 0;
+        margin-bottom: 24px;
+      }
+      .offerings-feature__text h2{
+        font-size: 35px;
+      }
+      .offerings-feature__text p{
+        font-size: 12px;
+      }
+      .offerings-feature__block {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
   {%- endstyle -%}
 {%- endif -%}
 
 <section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature">
   <div class="wrapper">
     
-    <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
-      <div class="product-feature__images">
+    <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %} offerings-feature__block">
+      <div class="product-feature__images offerings-feature__mailerlite">
         {%- render 'mailerlite-newsletter' %}
       </div>
     
-      <div class="product-feature__text product-feature__text--{{ text_alignment }} rte">
+      <div class="product-feature__text product-feature__text--{{ text_alignment }} rte offerings-feature__text">
         {%- if heading != blank -%}
-          <h2 style="color: {{ heading_color }}">{{ heading | escape }}</h2>
+          <h2 style="color: {{ heading_color }}">{{ heading }}</h2>
         {%- endif -%}
     
         {%- if settings.show_spacer_lines -%}
@@ -88,10 +108,10 @@
       "content": "Text"
     },
     {
-      "type": "textarea",
+      "type": "html", 
       "id": "heading",
       "label": "Heading",
-      "default": "Subscribe to our newsletters today for a FREE meditation class"
+      "placeholder": "Subscribe to our newsletters today for a FREE meditation class"
     },
     {
       "type": "richtext",
