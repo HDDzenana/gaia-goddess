@@ -7935,7 +7935,7 @@ PaloAlto.Slider = (function() {
       }
     },
 
-		// Scroll down function
+    //Scroll down function
     bindScrollButton: function() {
       var $slider = this.$container;
 
@@ -8462,3 +8462,33 @@ window.addEventListener('load', () => {
   setVarsOnResize();
   preventOverflow(document);
 });
+
+
+/*document.addEventListener('DOMContentLoaded', function() {
+  
+  'use strict';
+  
+   var c, currentScrollTop = 0,
+       navbar = $('header');
+
+   window.scroll(function () {
+      var a = window.scrollTop();
+      var b = navbar.height();
+      console.log(a)
+      console.log(b)
+       console.log("Hereee")
+     
+      currentScrollTop = a;
+     
+      if (c < currentScrollTop && a > b + b) {
+        console.log("Hereee")
+        navbar.addClass("scrollUp");
+      } else if (c > currentScrollTop && !(a <= b)) {
+        navbar.removeClass("scrollUp");
+      }
+      c = currentScrollTop;
+     
+     console.log(a);
+  });
+  
+});*/

@@ -56,9 +56,9 @@
           "header_transparent": false,
           "header_text_color": "black",
           "logo_not_home": "shopify:\/\/shop_images\/Path_1_1.png",
-          "logo_max_width": 100,
+          "logo_max_width": 140,
           "show_shop_name": false,
-          "main-menu": "main-menu",
+          "main-menu": "main-menu-public-portion",
           "menu_position": "right",
           "show_search": false,
           "menu_searches_list": "",
@@ -71,36 +71,30 @@
           "footer-block-0": {
             "type": "link",
             "settings": {
-              "menu": "footer",
+              "menu": "footer-menu-public-portion",
               "show_title": true
             }
           },
           "footer-block-1": {
             "type": "text",
             "settings": {
-              "title": "About us",
-              "footer_text": "<p>Leave your customers with a final message about your brand in this rich text block.<\/p>"
-            }
-          },
-          "footer-block-2": {
-            "type": "newsletter",
-            "settings": {
-              "title": "<p>Newsletter<\/p>"
+              "title": "CONTACT US",
+              "footer_text": "<p>info@gaiagoddesslifestyle.com<\/p><p>000-000-0000<\/p>"
             }
           }
         },
         "block_order": [
           "footer-block-0",
-          "footer-block-1",
-          "footer-block-2"
+          "footer-block-1"
         ],
         "settings": {
-          "logo_width": 100,
-          "show_shop_name": true,
+          "image": "shopify:\/\/shop_images\/Group_26.png",
+          "logo_width": 250,
+          "show_shop_name": false,
           "show_social_links": true,
-          "show_payment_icons": true,
+          "show_payment_icons": false,
           "color_text": "#000000",
-          "color_bg": "#ffffff",
+          "color_bg": "#fef1f5",
           "show_locale_selector": false,
           "show_currency_selector": false,
           "currency_type": "currency"
