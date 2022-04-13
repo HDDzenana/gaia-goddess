@@ -115,8 +115,9 @@
 
 {%- if logo_not_home != blank or logo_home != blank or section.settings.show_shop_name -%}
 	<h1 class="logo">
-		{{- logo_not_home -}}
-		{{- logo_home -}}
+    {%- render 'logo-header' -%}
+		{% comment %}{{- logo_not_home -}}
+		{{- logo_home -}}{% endcomment %}
 
 		{%- if section.settings.show_shop_name -%}
 			<a class="logo__text-link{% if logo_home != blank or logo_not_home != blank %} logo__text-link--has-image{% endif %}" href="{{ routes.root_url }}">{{ shop.name }}</a>
@@ -410,15 +411,21 @@
 </nav>
 
 <div class="mobile-menu">
-  <button type="button" class="mobile-menu__toggle icon-fallback-text js-drawer-open-nav" aria-controls="NavDrawer" data-drawer="left">
-    <span class="visually-hidden">{{ 'general.accessibility.mobile_menu_toggle' | t }}</span>
-    {%- render 'icon-hamburger' -%}
-  </button>
+  <a href="{{ routes.account_url }}" class="nav__link" style="padding: 6px 0px; margin-top: 3px;">
+    <span class="visually-hidden">{{ 'general.accessibility.my_account' | t }}</span>
+    {%- render 'icon-user' -%}
+  </a>
 
   <a href="{{ routes.cart_url }}" class="cart__toggle {% unless template == 'cart' or settings.cart_type == 'page' %}js-drawer-open-cart{% endunless %} cart__count{% if cart.item_count > 0 %} cart__count--has-items{% endif %}{% if cart_animation %} cart__count--animation{% endif %}" aria-controls="CartDrawer" aria-expanded="false" data-drawer="right">
     <span class="visually-hidden">{{ 'general.accessibility.open_cart' | t }}</span>
     {%- render 'icon-shopping-bag' -%}
   </a>
+
+  <button type="button" class="mobile-menu__toggle icon-fallback-text js-drawer-open-nav" aria-controls="NavDrawer" data-drawer="left">
+    <span class="visually-hidden">{{ 'general.accessibility.mobile_menu_toggle' | t }}</span>
+    {%- render 'icon-hamburger-gaia' -%}
+  </button>
+
 </div>
   </div>
   <div class="space-maker"></div>

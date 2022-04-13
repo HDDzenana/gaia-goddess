@@ -113,7 +113,7 @@
     
       <div class="product-feature__text product-feature__text--{{ text_alignment }} rte">
         {%- if heading != blank -%}
-          <h2>{{ heading | escape }}</h2>
+          <h2 style="color: {{section.settings.text_color}}">{{ heading | escape }}</h2>
         {%- endif -%}
     
         {%- if settings.show_spacer_lines -%}
@@ -214,6 +214,11 @@
     {
       "type": "header",
       "content": "Text"
+    },  {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#800000"
     },
     {
       "type": "textarea",

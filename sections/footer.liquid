@@ -47,12 +47,60 @@
 	.contact_us_list li svg {
 		margin-right: 8px
 	}
+	.contact_us_list li:first-child svg {
+		margin-right: 4px
+	}
 	.social-sharing-wrapper{
 		color: #6C1D45;
 		justify-content: normal;
 	}
 	.social-sharing-wrapper a:hover{
 		color: red;
+	}
+	.footer-content__logo{
+		margin-bottom: 0px;
+		margin-right: 250px;
+	}
+	.copyright-mobile{
+		display: none;
+	}
+	.footer_contact{
+		display: inline-block;
+		width: 75%;
+	}
+	.footer-content__logo{
+		justify-content: center;
+	}
+	@media only screen and (max-width: 767px){
+		.footer-content__logo{
+			margin-right: 0;
+			margin-bottom: 40px;
+		}
+		.footer-text{
+			text-align: center;
+		}
+		.social-sharing-wrapper{
+			justify-content: center;
+		}
+		.footer-bottom__div{
+			display: block;
+			text-align: center;
+			margin-top: 26px;
+		}
+		.footer_bottom__copyright, .footer_bottom__credits{
+			display: none;
+		}
+		.copyright-mobile{
+			display: block;
+		}
+		.footer-title__button{
+			width: 44%;
+			margin: 0 auto;
+			padding: 5px 20px 5px 0;
+		}
+		.footer-links__wrapper{
+			text-align: center;
+		}
 	}
 {%- endstyle -%}
 
@@ -73,8 +121,10 @@
 							{%- capture container_attributes -%}
 								style="width: {{ section.settings.logo_width }}px"
 							{%- endcapture -%}
+
+							{%- render 'logo-footer' -%}
 	
-							{%- render 'responsive-image', image: section.settings.image, image_class: 'logo--footer', image_alt: shop.name, image_attributes: image_attributes, container_attributes: container_attributes -%}
+							{% comment %}{%- render 'responsive-image', image: section.settings.image, image_class: 'logo--footer', image_alt: shop.name, image_attributes: image_attributes, container_attributes: container_attributes -%}{% endcomment %}
 						</a>
 					{%- endif -%}
 	
@@ -97,8 +147,7 @@
 							<p class="footer-title footer-title--links h5">
 								<button class="footer-title__button" aria-controls="FooterMenu--{{ title | handle }}-{{ forloop.index0 }}" data-collapsible-trigger-mobile>
 									{{- title -}}
-									{%- render 'icon-plus' -%}
-									{%- render 'icon-minus' -%}
+									{%- render 'icon-arrow' -%}
 								</button>
 							</p>
 						{%- endif -%}
@@ -190,7 +239,12 @@
 	
 							<div class="rte">
 								<ul class="contact_us_list">
-									{% if block.settings.footer_email %}<li>{%- render 'footer-email' -%}{{ block.settings.footer_email_text }}</li>{% endif %}
+									{% if block.settings.footer_email %}<li>{%- render 'footer-email' -%}<a style="text-decoration: none;" href="mailto:info@gaiagoddesslifestyle.com">
+										<div class="footer_contact">
+									   
+										 <img src="https://cdn.shopify.com/s/files/1/0535/9357/1505/files/gaia_001_footer_email-image.png?v=1649865252">
+										</div>
+									   </a></li>{% endif %}
 									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%}{{ block.settings.footer_phone_text }}</li>{% endif %}
 								</ul>
 
@@ -201,19 +255,19 @@
 								<div class="social-sharing-wrapper">
 									{%- if block.settings.footer_social_facebook != blank -%}
 										<a class="facebook" rel="noopener" href = "{{settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
-											{%- render 'icon-facebook' -%}
+											{%- render 'icon-footer-facebook' -%}
 										</a>
 									{%- endif -%}
 								
 									{%- if block.settings.footer_social_instagram != blank -%}
 										<a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
-											{%- render 'icon-instagram' -%}
+											{%- render 'icon-footer-instagram' -%}
 										</a>
 									{%- endif -%}
 							
 									{%- if block.settings.footer_social_twitter != blank -%}
 										<a class="twitter" rel="noopener" href = "{{ settings.social_twitter_link }}" title="{{ 'footer.socials.title' | t: social: 'Twitter', shop_name: shop.name }}">
-											{%- render 'icon-twitter' -%}
+											{%- render 'icon-footer-twitter' -%}
 										</a>
 									{%- endif -%}
 							
@@ -234,6 +288,9 @@
 		<div class="footer-bottom__div">
 			<div class="footer-bottom__links">
 				<p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+			</div>
+			<div class="copyright-mobile">
+				<p>©2022 GAIA GODDESS, ALL RIGHT RESERVED. <a href="#">CREDITS</a> </p>
 			</div>
 			<div class="footer_bottom__copyright">
 				<p>©2022 GAIA GODDESS, ALL RIGHT RESERVED.</p>
