@@ -24,6 +24,16 @@
 
 {%- style -%}
   #FeaturedVideo--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
+  .video__iframe{
+    min-height: 0;
+    opacity: 1;
+  }
+  .video__iframe__video{
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+  }
 {%- endstyle -%}
 
 <div class="featured-video-section {{ section.settings.video_height }}"
@@ -54,7 +64,13 @@
       </noscript>
 
       {%- if video_id != blank -%}
-        <div class="video__iframe" id="video-{{ section.id }}" data-video-id="{{ video_id }}"></div>
+        <div class="video__iframe" id="video-{{ section.id }}" data-video-id="{{ video_id }}"></div> 
+      {%- elsif section.settings.hero_video_link_internal != blank -%}
+        <div class="video__iframe">
+            <video autoplay muted loop playsinline class="video__iframe__video">
+            <source src="{{ section.settings.hero_video_link_internal }}" type="video/mp4">
+          </video>
+        </div>
       {%- endif -%}
 
       <div class="overlay video__overlay"></div>
@@ -174,6 +190,11 @@
         "youtube"
       ],
       "info": "YouTube links only"
+    },
+    {
+      "type": "url",
+      "id": "hero_video_link_internal",
+      "label": "Video link (uploaded to Shopify)"
     },
     {
       "type": "checkbox",
