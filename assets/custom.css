@@ -14,6 +14,15 @@ p, h3, h4, h5, span, a, li {
     font-family: 'Acumin_Pro' !important;
 }
 
+p {
+    font-size: 16px;
+    color: #575757;
+}
+
+h3 {
+    font-size: 25px;
+}
+
 h1 {
     font-family: 'Playfair' !important;
     font-size: 50px;
@@ -22,7 +31,7 @@ h1 {
 }
 h2, h2 span{
     font-family: 'Playfair' !important;
-    font-size: 45px;
+    font-size: 50px;
     font-weight: 700;
     line-height: 52px;
 }
@@ -31,4 +40,22 @@ h2, h2 span{
     font-size: 18px;
     border-radius: 30px;
     min-width: 200px;
+}
+
+.value__each{
+    margin: 15px auto 26px;
+}
+
+.values-section {
+    padding-top: var(--gutter);
+    padding-bottom: var(--gutter);
+}
+
+@media only screen and (max-width:767px){
+    h2{
+        font-size: 35px;
+    }
+    p{
+        font-size: 12px;
+    }
 }

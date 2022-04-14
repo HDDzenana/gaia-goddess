@@ -1,0 +1,57 @@
+{
+  "sections": {
+    "product-feature": {
+      "type": "section-product-feature",
+      "settings": {
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "right",
+        "text_alignment": "left",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "text_color": "#6c1d45",
+        "heading": "Become a Gaia Goddess Member",
+        "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
+        "button_text": "Learn More",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "video_url": "",
+        "bg_color": "#fefafb"
+      }
+    },
+    "16499239590217fada": {
+      "type": "section-custom-html",
+      "settings": {
+        "title": "Tiers Table",
+        "html": "<p>Once you write some HTML, it will render right here.<\/p>",
+        "bg_color": ""
+      }
+    },
+    "1649923445dbb0994e": {
+      "type": "section-newsletter-mailerlite",
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "left",
+        "heading": "Subscribe to our newsletters today for a <span style=\"color: #EB6FBD;\">FREE<\/span> meditation class",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading_color": "#6c1d45",
+        "bg_color": "#fefafb"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true
+      }
+    }
+  },
+  "order": [
+    "product-feature",
+    "16499239590217fada",
+    "1649923445dbb0994e",
+    "main"
+  ]
+}
