@@ -10,7 +10,7 @@
     url("Acumin_Pro_Book.woff") format("woff");
 }
 
-p, h3, h4, h5, span, a, li {
+p, h3, h4, h5, span, a, li, input, textarea {
     font-family: 'Acumin_Pro' !important;
 }
 

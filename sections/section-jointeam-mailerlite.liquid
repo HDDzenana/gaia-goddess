@@ -1,0 +1,202 @@
+{%- comment -%} Product Feature {%- endcomment -%}
+
+{%- liquid
+  comment
+    Layout
+  endcomment
+  assign section_id = section.id
+  assign text_position = section.settings.text_position
+  assign image_layout = section.settings.image_layout
+  assign text_alignment = section.settings.text_alignment
+
+  comment
+    Images
+  endcomment
+  assign image_1 = section.settings.image_1
+
+  comment
+    Text
+  endcomment
+  assign heading = section.settings.heading
+  assign heading_color = section.settings.heading_color
+  assign description = section.settings.description
+  assign line_color = section.settings.line_color
+
+  comment
+    Colors
+  endcomment
+  assign bg_color = section.settings.bg_color
+-%}
+
+{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+  {%- style -%}
+    #ProductFeature--{{ section.id }} {
+      background-color: {{ bg_color }};
+    }
+    .product-feature__text{
+      padding-left: 0;
+    }
+    .product-feature__image{
+      width: 100%;
+    }
+    .product-feature__text p{
+      margin: 0;
+    }
+    @media only screen and (max-width: 767px){
+      .offerings-feature__mailerlite{
+        margin: 0;
+      }
+      .offerings-feature__text{
+        text-align: center;
+        padding-top: 0;
+        margin-bottom: 24px;
+      }
+      .offerings-feature__text h2{
+        font-size: 35px;
+      }
+      .offerings-feature__text p{
+        font-size: 12px;
+      }
+      .offerings-feature__block {
+        display: flex;
+        flex-direction: column;
+      }
+      h3 {
+          font-size: 20px;
+      }
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+<section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature">
+  <div class="wrapper">
+    
+    <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %} offerings-feature__block">
+      <div class="product-feature__images offerings-feature__mailerlite">
+        
+        <div class="product-feature__image product-feature__image--primary">
+          {%- if image_1 != blank -%}
+            {%- assign image = image_1 -%}
+            <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} lazyload"
+              data-bgset="{% render 'bgset', image: image %}"
+              data-sizes="auto"
+              data-parent-fit="cover">
+            </div>
+            <noscript>
+              <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }}" style="background-image: url({{ image | img_url: '1024x' }});"></div>
+            </noscript>
+          {%- else -%}
+            <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} placeholder-svg--overlayed">
+              {{- 'image' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
+            </div>
+          {%- endif -%}
+        </div>
+      
+      </div>
+    
+      <div class="product-feature__text product-feature__text--{{ text_alignment }} rte offerings-feature__text">
+        {%- if heading != blank -%}
+          <h3 style="color: {{ heading_color }}">{{ heading }}</h3>
+        {%- endif -%}
+    
+        {%- if settings.show_spacer_lines -%}
+          <hr>
+        {%- endif -%}
+    
+        {%- if description != blank -%}
+          {{- description -}}
+        {%- endif -%}
+
+        {%- render 'mailerlite-jointeam' %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Join the team",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "default": "right",
+      "options": [
+        { "label": "Left", "value": "left" },
+        { "label": "Right", "value": "right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        { "label": "Center", "value": "center" },
+        { "label": "Left", "value": "left" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "image_layout",
+      "label": "Image layout",
+      "default": "square",
+      "options": [
+        { "label": "Square", "value": "square" },
+        { "label": "Portrait", "value": "portrait" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "text", 
+      "id": "heading",
+      "label": "Heading",
+      "default": "Want to be part of the team?"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.</p>"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#6C1D45"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Join the Team",
+      "category": "Text" 
+    }
+  ]
+}
+{% endschema %}
