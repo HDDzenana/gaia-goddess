@@ -32,8 +32,8 @@
             {%- assign testimonial_text = block.settings.testimonial_text -%}
 
             {%- unless image == blank and customer_name == blank and testimonial_text == blank -%}
-              <div class="testimonial__item{% if total_blocks == 2 %} testimonial__item--half{% endif%}" data-item {{ block.shopify_attributes }}>
-                <div class="testimonial__inner">
+              <div class="testimonial__item{% if total_blocks == 2 %} testimonial__item--half{% endif%} {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }}>
+                <div class="testimonial__inner {% if section.settings.testimonial_layout == 'imgfirst'%} crev-{{block.id}} {%endif%} {% if section.settings.boxsh %} tibox-{{block.id}} {%endif%}">
                   <div class="testimonial__text text-center">{{ testimonial_text }}</div>
 
                   {%- if image != blank or customer_name != blank -%}
@@ -52,7 +52,7 @@
                             {%- assign image_width = image_height | times: image.aspect_ratio | round -%}
                           {%- endif -%}
 
-                          <img class="lazyload" src="{{ 'blank.gif' | asset_img_url: '1x1' }}" data-src="{{ image_url_pattern }}" data-widths="{{ image_widths }}" data-aspectratio="{{image.aspect_ratio }}" data-sizes="auto" style="width: {{ image_width | append: 'px' }}; height: {{ image_height | append: 'px' }};" alt="{{ image.alt | escape }}">
+                          <img class="lazyload" src="{{ 'blank.gif' | asset_img_url: '1x1' }}" data-src="{{ image_url_pattern }}" data-widths="{{ image_widths }}" data-aspectratio="{{image.aspect_ratio }}" data-sizes="auto" style=" border-radius: {{block.settings.img_border_radius}}%; width: {{ image_width | append: 'px' }}; height: {{ image_height | append: 'px' }};" alt="{{ image.alt | escape }}">
                           <noscript>
                             <img src="{{ image | img_url: '400x' }}" alt="{{ image.alt | escape }}" style="width: {{ image_width | append: 'px' }}; height: {{ image_height | append: 'px' }};">
                           </noscript>
@@ -60,7 +60,7 @@
                       {%- endif -%}
 
                       {%- if customer_name != blank -%}
-                        <div class="testimonial__user__name">{{ customer_name | escape }}</div>
+                        <div class="testimonial__user__name" style="color: {{block.settings.customer_name_color}}; font-weight: 700; margin: 10% 0;">{{ customer_name | escape }}</div>
                       {%- endif -%}
                     </div>
                   {%- endif -%}
@@ -90,112 +90,158 @@
   </div>
 </section>
 {% schema %}
+
 {
-	"name": "Testimonials",
-	"settings": [
-		{
-			"type": "text",
-			"id": "title",
-			"label": "Heading",
-			"default": "Testimonials"
-		},
-		{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Testimonials"
+    }, {
       "type": "select",
       "options": [
         {
           "value": "imgfirst",
           "label": "Image First"
-        },
-        {
+        }, {
           "value": "textfirst",
           "label": "Text First"
         }
       ],
       "id": "testimonial_layout",
       "default": "imgfirst",
-			"label": "Testimonial Layout",
+      "label": "Testimonial Layout",
       "info": "Layout applies to both: desktop and mobile"
-    },
+    }, {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Card Border Radius",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }, {
+      "type": "checkbox",
+      "id": "show_quotes",
+      "label": "Show quotation marks",
+      "default": true
+    }, {
+      "type": "header",
+      "content": "Colors"
+    }, {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    }, {
+      "type": "checkbox",
+      "id": "boxsh",
+      "label": "Show Box Shadow",
+      "default": false
+    }, {
+      "type": "color",
+      "id": "boxshadow_color",
+      "label": "Box Shadow Color",
+      "default": "#fef1f5",
+      "info": "If box shadow is not enabled, this setting won't apply."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "testimonial_text",
+          "label": "Testimonial",
+          "default": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>"
+        }, {
+          "type": "image_picker",
+          "id": "image",
+          "label": " Photo"
+        }, {
+          "type": "range",
+          "id": "img_border_radius",
+          "label": "Image Border Radius",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        }, {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image width (in pixels)",
+          "min": 50,
+          "max": 200,
+          "default": 100,
+          "step": 5,
+          "unit": "px"
+        }, {
+          "type": "liquid",
+          "id": "customer_name",
+          "label": "Name",
+          "default": "John Doe"
+        }, {
+          "type": "color",
+          "id": "customer_name_color",
+          "label": "Name Color",
+          "default": "#6c1d45"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
+            "customer_name": "Sherlock Holmes"
+          }
+        }, {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
+            "customer_name": "John Watson"
+          }
+        }, {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
+            "customer_name": "Mycroft Holmes"
+          }
+        }
+      ]
+    }
+  ]
+}
 
-		{
-			"type": "checkbox",
-			"id": "show_quotes",
-			"label": "Show quotation marks",
-			"default": true
-		},
-		{
-			"type": "header",
-			"content": "Colors"
-		},
-		{
-			"type": "color",
-			"id": "bg_color",
-			"label": "Background"
-		}
-	],
-	"blocks": [
-		{
-			"type": "testimonial",
-			"name": "Testimonial",
-			"settings": [
-				{
-					"type": "richtext",
-					"id": "testimonial_text",
-					"label": "Testimonial",
-					"default": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>"
-      				},
-      				{
-      					"type": "image_picker",
-      					"id": "image",
-      					"label": "Customer photo"
-      				},
-      				{
-      					"type": "range",
-      					"id": "image_width",
-      					"label": "Image width (in pixels)",
-      					"min": 50,
-      					"max": 200,
-      					"default": 100,
-      					"step": 5,
-      					"unit": "px"
-      				},
-      				{
-      					"type": "text",
-      					"id": "customer_name",
-      					"label": "Customer name",
-      					"default": "John Doe"
-      				}
-      			]
-      		}
-      	],
-      	"presets": [
-      		{
-      			"name": "Testimonials",
-      			"category": "Text",
-      			"blocks": [
-      				{
-      					"type": "testimonial",
-      					"settings": {
-      						"testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
-      						"customer_name":"Sherlock Holmes"
-      					}
-      				},
-      				{
-      					"type": "testimonial",
-      					"settings": {
-      						"testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
-      						"customer_name":"John Watson"
-      					}
-      				},
-      				{
-      					"type": "testimonial",
-      					"settings": {
-      						"testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
-      						"customer_name":"Mycroft Holmes"
-      					}
-      				}
-      			]
-      		}
-      	]
-      }
 {% endschema %}
+
+
+<style>
+  {% for block in section.blocks %}
+    .testimonial__inner.crev-{{block.id}}{
+      display: flex;
+      flex-direction: column-reverse !important;
+      border-radius: {{section.settings.border_radius}}%;
+    }
+
+    .crevs-{{block.id}}{
+      width: 30% !important;
+      padding: 0 3%;
+    }
+
+    .tibox-{{block.id}}{
+      box-shadow: -14px 20px 20px 0px{{section.settings.boxshadow_color}};
+    }
+
+  {% endfor %}
+</style>
