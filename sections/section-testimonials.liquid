@@ -34,9 +34,26 @@
             {%- unless image == blank and customer_name == blank and testimonial_text == blank -%}
               <div class="testimonial__item{% if total_blocks == 2 %} testimonial__item--half{% endif%} {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }}>
                 <div class="testimonial__inner {% if section.settings.testimonial_layout == 'imgfirst'%} crev-{{block.id}} {%endif%} {% if section.settings.boxsh %} tibox-{{block.id}} {%endif%}">
-                  <div class="testimonial__text text-center">{{ testimonial_text }}</div>
+                  <div class="testimonial__text text-center">{{ testimonial_text }}
+                    <div class="social-sharing-wrapper" style="margin: auto; justify-content: center;">
+                      {%- if block.settings.social_mail != blank -%}
+                        <a class="mailsvg" rel="noopener" href="{{block.settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                          {%- render 'icon-mail' -%}
+                        </a>
+                      {%- endif -%}
+
+                      {%- if block.settings.social_linkedin != blank -%}
+                        <a class="linkedingsvg" rel="noopener" href="{{ block.settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                          {%- render 'icon-linkedin' -%}
+                        </a>
+                      {%- endif -%}
+
+
+                    </div>
+                  </div>
 
                   {%- if image != blank or customer_name != blank -%}
+
                     <div class="testimonial__user">
                       {%- if image != blank -%}
                         {%- assign image_width = block.settings.image_width -%}
@@ -61,8 +78,10 @@
 
                       {%- if customer_name != blank -%}
                         <div class="testimonial__user__name" style="color: {{block.settings.customer_name_color}}; font-weight: 700; margin: 10% 0;">{{ customer_name | escape }}</div>
+                        <subtitle class="center" style="margin-top: -4%;margin-bottom: 4%; color:#6C1D45;">{{block.settings.short_text}}</subtitle>
                       {%- endif -%}
                     </div>
+
                   {%- endif -%}
 
                 </div>
@@ -76,6 +95,7 @@
               <div class="testimonial__inner">
                 <div class="testimonial__text text-center">
                   <p>{{ 'homepage.onboarding.testimonials.testimonial' | t }}</p>
+
                 </div>
 
                 <div class="testimonial__user">
@@ -186,10 +206,26 @@
           "label": "Name",
           "default": "John Doe"
         }, {
+          "type": "text",
+          "id": "short_text",
+          "label": "Short Text",
+          "info": "This can be used for job roles or similar."
+        }, {
           "type": "color",
           "id": "customer_name_color",
           "label": "Name Color",
           "default": "#6c1d45"
+        }, {
+          "type": "header",
+          "content": "Social links"
+        }, {
+          "type": "text",
+          "id": "social_linkedin",
+          "label": "LinkedIn"
+        }, {
+          "type": "text",
+          "id": "social_mail",
+          "label": "Email"
         }
       ]
     }
