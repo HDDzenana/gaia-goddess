@@ -58,4 +58,12 @@ h2, h2 span{
     p{
         font-size: 12px;
     }
+    h3 {
+        font-size: 20px;
+    }
+    .btn{
+        font-size: 14px;
+        padding: 10px 22px;
+        min-width: 162px;
+    }
 }
