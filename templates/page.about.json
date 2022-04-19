@@ -1,0 +1,194 @@
+{
+  "sections": {
+    "featured-image": {
+      "type": "section-featured-image",
+      "settings": {
+        "image_height": "five-fifty-height-hero",
+        "text_position": "center-center",
+        "enable_parallax": false,
+        "image_position": "center-center",
+        "overlay_opacity": 20,
+        "text_color": "text-light",
+        "title": "Let's get the balance of living!",
+        "subheading": "Describe in a few words your special products, collection, or brand.",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
+    "product-feature": {
+      "type": "section-product-feature",
+      "settings": {
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "right",
+        "text_alignment": "center",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "text_color": "#800000",
+        "heading": "Our Mission",
+        "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#800000",
+        "button_hover_color": "#fafafa",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "1649923327baec26bf": {
+      "type": "section-testimonials",
+      "blocks": {
+        "16499233277907de75-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "Sherlock Holmes"
+          }
+        },
+        "16499233277907de75-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "John Watson"
+          }
+        },
+        "16499233277907de75-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "Mycroft Holmes"
+          }
+        }
+      },
+      "block_order": [
+        "16499233277907de75-0",
+        "16499233277907de75-1",
+        "16499233277907de75-2"
+      ],
+      "settings": {
+        "title": "Three Pillars of our Brands",
+        "show_quotes": true,
+        "bg_color": ""
+      }
+    },
+    "16499498117f4285ec": {
+      "type": "section-values",
+      "blocks": {
+        "16499498110d6caebe-0": {
+          "type": "value",
+          "settings": {
+            "value_title": "Inclusive & Empowering",
+            "value_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>",
+            "icon": "shopify:\/\/shop_images\/inclusive_image.png",
+            "value_title_color": "#eb6fbd",
+            "value_text_color": ""
+          }
+        },
+        "16499498110d6caebe-1": {
+          "type": "value",
+          "settings": {
+            "value_title": "Lasting Impact",
+            "value_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>",
+            "icon": "shopify:\/\/shop_images\/lasting_impact_image.png",
+            "value_title_color": "#eb6fbd",
+            "value_text_color": ""
+          }
+        },
+        "16499498110d6caebe-2": {
+          "type": "value",
+          "settings": {
+            "value_title": "Ongoing Improvement",
+            "value_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<\/p>",
+            "icon": "shopify:\/\/shop_images\/ongoing_improvement_image.png",
+            "value_title_color": "#eb6fbd",
+            "value_text_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "16499498110d6caebe-0",
+        "16499498110d6caebe-1",
+        "16499498110d6caebe-2"
+      ],
+      "settings": {
+        "title": "The Values That Guide Us",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eleifend elit nisi, blandit sagittis tortor ornare vitae.",
+        "text_alignment": "center",
+        "bg_color": "#fef1f5",
+        "heading_color": "#6c1d45",
+        "description_color": ""
+      }
+    },
+    "1649923387792dd1b0": {
+      "type": "section-testimonials",
+      "blocks": {
+        "1649923387b93629e7-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "Sherlock Holmes"
+          }
+        },
+        "1649923387b93629e7-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "John Watson"
+          }
+        },
+        "1649923387b93629e7-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image_width": 100,
+            "customer_name": "Mycroft Holmes"
+          }
+        }
+      },
+      "block_order": [
+        "1649923387b93629e7-0",
+        "1649923387b93629e7-1",
+        "1649923387b93629e7-2"
+      ],
+      "settings": {
+        "title": "Our Leaders",
+        "show_quotes": true,
+        "bg_color": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true
+      }
+    },
+    "1649923445dbb0994e": {
+      "type": "section-newsletter-mailerlite",
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "left",
+        "heading": "Subscribe to our newsletters today for a <span style=\"color: #EB6FBD;\">FREE<\/span> meditation class",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading_color": "#6c1d45",
+        "bg_color": "#fefafb"
+      }
+    }
+  },
+  "order": [
+    "featured-image",
+    "product-feature",
+    "1649923327baec26bf",
+    "16499498117f4285ec",
+    "1649923387792dd1b0",
+    "main",
+    "1649923445dbb0994e"
+  ]
+}

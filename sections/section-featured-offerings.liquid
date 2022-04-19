@@ -1,0 +1,430 @@
+{%- comment -%} /sections/featured-offerings.liquid {%- endcomment -%}
+
+{%- liquid
+  assign image = section.settings.image
+  assign image_position = section.settings.image_position
+  assign image_bg_pos = image_position | prepend: 'bg-pos-'
+  assign image_height = section.settings.image_height
+  assign title = section.settings.title
+  assign subheading = section.settings.subheading
+  assign button_text = section.settings.button_text
+  assign button_link = section.settings.button_link | default: '#'
+  assign button_style = section.settings.button_style
+  if button_link != blank
+    assign button_link =  button_link 
+  else
+    assign button_link = "#!"
+  endif
+  assign overlay_opacity = section.settings.overlay_opacity | times: 0.01 | round: 2
+  assign aspect_ratio = image.aspect_ratio | default: 1.66
+  assign block_number = section.blocks.size
+-%}
+
+{%- style -%}
+  #FeaturedOfferings--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
+    {% if section.settings.show_border and block_number == 2 or block_number == 4 %}
+      .featured-offerings-block:nth-child(odd){
+        border-right: {{ section.settings.border_width }}px solid {{ section.settings.border_color }}; 
+      }
+    {% endif %}
+
+    .featured-offerings{
+        display: grid;
+        gap: 50px;
+        grid-template-columns: auto auto;
+        margin-top: 100px;
+      }
+
+      .featured-offerings-block-text{
+        text-align: left;
+        margin: 0px 20px 0px 20px;
+      }
+
+        .text-subheading{
+          margin: 20px 20% 10px 20%;
+          font-size: 16px;
+        }
+        .offerings-title{
+          font-size: 30px;
+        }
+        .featured-offerings-icon-image{
+          width: 140px;
+          height: 140px;
+        }
+
+    @media only screen and (max-width: 992px) {
+      {% if section.settings.mobile_slider %}
+        .featured-offerings{
+          width: 100%;
+          height: 300px;
+          display: flex;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scroll-snap-type: x mandatory;
+        }
+        .featured-offerings > div{
+          scroll-snap-align: start;
+        }
+        .featured-offerings-block{
+          width: 100%;
+          flex-shrink: 0;
+          height: 100%;
+        }
+        {% else %}
+        .featured-offerings{
+          display: block;
+          margin-top: 0px;
+        }
+        .featured-offerings-block{
+          margin-bottom: 20px;
+        }
+        .one-hundred-height-hero{
+          height: 105vh;
+        }
+        .featured-offerings-block-text{
+          margin: 0px 0px 0px 20px;
+        }
+        .featured-offerings-block-icon{
+          display: flex;
+          justify-content: center;
+          align-items: center;  
+        }
+      {% endif %}
+      .featured-offerings-block:nth-child(odd){
+        border-right: none;
+      }
+      .text-subheading {
+          margin: 20px 0% 50px 0%;
+          font-size: 12px;
+      }
+      .text-title{
+        font-size: 35px;
+      }
+      .bg-pos-center-center {
+          background-position: 70%!important;
+      }
+      .offerings-title{
+        font-size: 18px;
+      }
+      .offerings-description{
+        font-size: 12px;
+      }
+      .featured-offerings-icon-image{
+          width: 91px;
+          height: 91px;
+        }
+    }
+{%- endstyle -%}
+
+{%- capture featured_image -%}
+  {%- unless image == blank -%}
+    <div
+      class="featured-image__bg {{ image_bg_pos }} lazyload"
+      data-bgset="{% render 'bgset', image: image %}"
+      data-sizes="auto"
+      data-parent-fit="cover"
+    ></div>
+    <noscript>
+      <div class="featured-image__bg {{ image_bg_pos }}" style="background-image: url('{{ image | img_url:'2048x' }}');"></div>
+    </noscript>
+  {%- else -%}
+    <div class="featured-image__bg featured-image__bg--placeholder {{ image_bg_pos }}">
+      {{- 'image' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
+    </div>
+  {%- endunless -%}
+{%- endcapture -%}
+
+{%- capture featured_content -%}
+  <div class="featured-offerings__content" style="align-items: center;">
+    <div class="wrapper">
+      {%- if title != blank -%}
+        <h2 class="slide__heading main-heading text-title" style="color: {{ section.settings.text_color }}">{{ title | escape }}</h2>
+      {%- endif -%}
+      {%- if subheading != blank -%}
+        <p class="slide__caption main-subheading text-subheading" style="color: {{ section.settings.text_color }}">{{ subheading | escape }}</p>
+      {%- endif -%}
+      {%- if button_text != blank -%}
+        <a class="btn btn--{{ button_style }} call-to-action" style="margin-bottom: 40px;" href="{{ button_link }}">{{ button_text | escape }}</a>
+      {%- endif -%}
+
+      <div class="featured-offerings">
+        {% for block in section.blocks %}
+
+          {%- assign icon_image = block.settings.icon_image -%}
+
+          <div class="featured-offerings-block" style="display: flex">
+            {%- if icon_image != blank -%}
+            {%- assign icon_image_width = 140 -%}
+            {%- assign icon_image_height = icon_image_width | divided_by: icon_image.aspect_ratio -%}
+            <div class="featured-offerings-block-icon" style="width: 100%">
+              {%- assign image_url_pattern = icon_image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+              {%- assign image_widths = "[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048, 2450, 2700, 3000, 3350, 3750, 4100]" -%}
+
+              {%- comment -%} Image height must be max 200px {%- endcomment -%}
+              {%- if icon_image_height > 200 -%}
+                {%- assign icon_image_height = 200 -%}
+                {%- assign icon_image_width = icon_image_height | times: icon_image.aspect_ratio | round -%}
+              {%- endif -%}
+
+              <img
+                class="lazyload featured-offerings-icon-image"
+                src="{{ icon_image | img_url: '400x' }}"
+                data-src="{{ image_url_pattern }}"
+                data-widths= "{{ image_widths }}"
+                data-aspectratio="{{icon_image.aspect_ratio }}"
+                data-sizes="auto"
+                alt="{{ icon_image.alt | escape }}">
+              <noscript>
+                <img src="{{ icon_image | img_url: '400x' }}" alt="{{ icon_image.alt | escape }}" style="width: {{ icon_image_width | append: 'px' }}; height: {{ icon_image_height | append: 'px' }};">
+              </noscript>
+
+            </div>
+            {%- endif -%}
+            <div class="featured-offerings-block-text" style="text-align: {{ block.settings.text_alignment }};">
+              <h3 class="offerings-title" style="color: {{ block.settings.offering_text_color }};">{{ block.settings.title }}</h3>
+              <p class="offerings-description" style="color: {{ block.settings.offering_text_color }}">{{ block.settings.description }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{%- endcapture -%}
+
+<section class="featured-offerings-section featured-offerings-section--{{ section.id }} {{ image_height }}{% if image == blank %} featured-offerings-section--placeholder{% endif %}"
+  id="FeaturedOfferings--{{ section.id }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-offerings"
+  {% if image_height == 'original-height' %}
+    style="padding-top: {{ 1 | divided_by: aspect_ratio | times: 100 | round: 2 }}%;"
+  {% endif %}
+  >
+  <div class="featured-offerings__pane">
+    <div class="featured-offerings__scale">
+    
+      {{- featured_image -}}
+
+      <div class="overlay"></div>
+    </div>
+  </div>
+  
+  {{- featured_content -}}
+
+</section>
+
+{% schema %}
+  {
+  "name": "Featured Offerings",
+  "class": "transparent-header",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_height",
+      "label": "Height",
+      "default": "one-hundred-height-hero",
+      "options": [
+      {
+          "value": "one-hundred-height-hero",
+          "label": "Full screen"
+        },
+        {
+          "value": "original-height",
+          "label": "Original"
+        },
+        {
+          "value": "seven-fifty-height-hero",
+          "label": "750px"
+        },
+        {
+          "value": "sixty-fifty-height-hero",
+          "label": "650px"
+        },
+        {
+          "value": "five-fifty-height-hero",
+          "label": "550px"
+        },
+        {
+          "value": "four-fifty-height-hero",
+          "label": "450px"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "select",
+      "label": "Position",
+      "id": "image_position",
+      "default": "center-center",
+      "options": [
+        { "label": "Top", "value": "center-top" },
+        { "label": "Right", "value": "right-center" },
+        { "label": "Center", "value": "center-center" },
+        { "label": "Left", "value": "left-center" },
+        { "label": "Bottom", "value": "center-bottom" }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "label": "Overlay opacity",
+      "min": 0,
+      "max": 95,
+      "step": 5,
+      "unit": "%",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Color",
+      "default": "#000000"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Our Offerings"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Describe in a few words your special offers/values."
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "Style",
+      "default": "primary",
+      "options": [
+        { "label": "Primary", "value": "primary" },
+        { "label": "Secondary", "value": "secondary" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Mobile Display"
+    },
+    {
+      "type": "checkbox",
+      "id": "mobile_slider",
+      "label": "Show slider on mobile?",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Divider"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Display divider? If you have more than one offering",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 1,
+      "max": 10,
+      "default": 1,
+      "step": 1,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border Color"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_image",
+          "label": "Icon image",
+          "info": "If image set it will override the icon"
+        },
+        {
+          "type": "select",
+          "id": "text_alignment",
+          "label": "Text alignment",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Feature"
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Palo Alto is a powerful Shopify theme that will set you apart from the rest with a variety of sections and features."
+        },
+        {
+          "type": "color",
+          "id": "offering_text_color",
+          "label": "Color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured offerings",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
