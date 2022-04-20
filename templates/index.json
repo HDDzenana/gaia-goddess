@@ -113,22 +113,36 @@
     "164914858208709152": {
       "type": "section-product-feature",
       "blocks": {
-        "1c0e4b2e-60ca-4ea0-82a2-38d4d2761ada": {
-          "type": "Point",
-          "settings": {
-            "point": ""
-          }
-        },
         "974f5137-8051-413b-8561-bef71aa5d95d": {
           "type": "Point",
           "settings": {
             "point": "Premier access to exclusive events"
           }
+        },
+        "1c0e4b2e-60ca-4ea0-82a2-38d4d2761ada": {
+          "type": "Point",
+          "settings": {
+            "point": "Unlock all of Gaia Content Gallery"
+          }
+        },
+        "eba56e47-1c75-45c2-b1a5-8c10d7b06dc3": {
+          "type": "Point",
+          "settings": {
+            "point": "Connect with the Gaia network of women"
+          }
+        },
+        "ebd6e8c2-aed7-4a4d-8d0a-05cb92685db3": {
+          "type": "Point",
+          "settings": {
+            "point": "Receive a free member gift"
+          }
         }
       },
       "block_order": [
+        "974f5137-8051-413b-8561-bef71aa5d95d",
         "1c0e4b2e-60ca-4ea0-82a2-38d4d2761ada",
-        "974f5137-8051-413b-8561-bef71aa5d95d"
+        "eba56e47-1c75-45c2-b1a5-8c10d7b06dc3",
+        "ebd6e8c2-aed7-4a4d-8d0a-05cb92685db3"
       ],
       "settings": {
         "bg": "#FEFAFB",
