@@ -1,4 +1,5 @@
 {%- comment -%} Product Feature {%- endcomment -%}
+<<<<<<< HEAD
 <style>
 @media only screen and (max-width:767px){ 
     .gbtn {
@@ -6,6 +7,9 @@
     }
   }
 </style>
+=======
+
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
 {%- liquid
   comment
     Layout
@@ -60,6 +64,7 @@
 
 {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
   {%- style -%}
+<<<<<<< HEAD
 
 #ProductFeature--{{section.id}}{
   background-color: {{bg_color}};
@@ -94,12 +99,47 @@
             </a>
           {%- endif -%}
 
+=======
+    #ProductFeature--{{ section.id }} {
+      background-color: {{ bg_color }};
+    }
+  {%- endstyle -%}
+{%- endif -%}
+
+<section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature">
+  <div class="wrapper">
+    
+    <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
+      <div class="product-feature__images product-feature__images--{{ image_position }}{% if image_2 == blank %} product-feature__images--single{% endif %}{% if hide_image_2 or image_2 == blank %} product-feature__images--single-mobile{% endif %}">
+        {{- video_link -}}
+    
+        <div class="product-feature__image product-feature__image--primary">
+          {%- if image_link_1 != blank -%}<a href="{{ image_link_1 }}">{%- endif -%}
+          {%- if image_1 != blank -%}
+            {%- assign image = image_1 -%}
+            <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} lazyload"
+              data-bgset="{% render 'bgset', image: image %}"
+              data-sizes="auto"
+              data-parent-fit="cover">
+            </div>
+            <noscript>
+              <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }}" style="background-image: url({{ image | img_url: '1024x' }});"></div>
+            </noscript>
+          {%- else -%}
+            <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} placeholder-svg--overlayed">
+              {{- 'image' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
+            </div>
+          {%- endif -%}
+          {%- if image_link_1 != blank -%}</a>{%- endif -%}
+    
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
           {%- unless video_url == blank -%}
             <a class="product-feature__video-link" href="{{ video_url }}" data-play-button>
               {%- render 'icon-play' -%}
             </a>
           {%- endunless -%}
         </div>
+<<<<<<< HEAD
 
         {%- if image_2 != blank -%}
           <div class="product-feature__image product-feature__image--secondary">
@@ -134,31 +174,78 @@
 
         {%- if button_text != blank -%}
           <a href="{{ button_link }}" class="gbtn btn btn--product-feature" style="background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
+=======
+    
+        {%- if image_2 != blank -%}
+          <div class="product-feature__image product-feature__image--secondary">
+            {%- if image_link_2 != blank -%}<a href="{{ image_link_2 }}">{%- endif -%}
+              {%- assign image = image_2 -%}
+              <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} lazyload"
+                data-bgset="{% render 'bgset', image: image %}"
+                data-sizes="auto"
+                data-parent-fit="cover">
+              </div>
+              <noscript>
+                <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }}" style="background-image: url({{ image | img_url: '1024x' }});"></div>
+              </noscript>
+            {%- if image_link_2 != blank -%}</a>{%- endif -%}
+          </div>
+        {%- endif -%}
+    
+      </div>
+    
+      <div class="product-feature__text product-feature__text--{{ text_alignment }} rte">
+        {%- if heading != blank -%}
+          <h2 style="color: {{section.settings.text_color}}">{{ heading | escape }}</h2>
+        {%- endif -%}
+    
+        {%- if settings.show_spacer_lines -%}
+          <hr>
+        {%- endif -%}
+    
+        {%- if description != blank -%}
+          {{- description -}}
+        {%- endif -%}
+    
+        {%- if button_text != blank -%}
+          <a href="{{ button_link }}" class="btn btn--product-feature" style="background-color: {{section.settings.button_color}} !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
         {%- endif -%}
       </div>
     </div>
   </div>
 </section>
+<<<<<<< HEAD
 
 {% schema %}
 
+=======
+ 
+{% schema %}
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
 {
   "name": "Product feature",
   "settings": [
     {
       "type": "header",
       "content": "Layout"
+<<<<<<< HEAD
     }, {
       "type": "color",
       "id": "bg",
       "label": "Section Background",
       "default": "#FEFAFB"
     }, {
+=======
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "select",
       "id": "image_layout",
       "label": "Image layout",
       "default": "square",
       "options": [
+<<<<<<< HEAD
         {
           "label": "Square",
           "value": "square"
@@ -168,12 +255,20 @@
         }
       ]
     }, {
+=======
+        { "label": "Square", "value": "square" },
+        { "label": "Portrait", "value": "portrait" }
+      ]
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "select",
       "id": "image_position",
       "label": "Image position",
       "info": "Affects the second image in this section.",
       "default": "inline",
       "options": [
+<<<<<<< HEAD
         {
           "label": "Inline",
           "value": "inline"
@@ -183,11 +278,19 @@
         }
       ]
     }, {
+=======
+        { "label": "Inline", "value": "inline" },
+        { "label": "Overlapping", "value": "overlapping" }
+      ]
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "select",
       "id": "text_position",
       "label": "Text position",
       "default": "right",
       "options": [
+<<<<<<< HEAD
         {
           "label": "Left",
           "value": "left"
@@ -197,11 +300,19 @@
         }
       ]
     }, {
+=======
+        { "label": "Left", "value": "left" },
+        { "label": "Right", "value": "right" }
+      ]
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "select",
       "id": "text_alignment",
       "label": "Text alignment",
       "default": "center",
       "options": [
+<<<<<<< HEAD
         {
           "label": "Center",
           "value": "center"
@@ -247,28 +358,78 @@
       "id": "image_link_2",
       "label": "Second image link"
     }, {
+=======
+        { "label": "Center", "value": "center" },
+        { "label": "Left", "value": "left" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    },
+    {
+      "type": "url",
+      "id": "image_link_1",
+      "label": "Image link"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Second image"
+    },
+    {
+      "type": "url",
+      "id": "image_link_2",
+      "label": "Second image link"
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "checkbox",
       "id": "hide_image_2",
       "label": "Hide second image on mobile",
       "default": false
+<<<<<<< HEAD
     }, {
       "type": "header",
       "content": "Text"
     }, {
+=======
+    },
+    {
+      "type": "header",
+      "content": "Text"
+    },  {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "color",
       "id": "text_color",
       "label": "Text Color",
       "default": "#800000"
+<<<<<<< HEAD
     }, {
+=======
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "textarea",
       "id": "heading",
       "label": "Heading",
       "default": "This is a heading for a Product feature block."
+<<<<<<< HEAD
     }, {
+=======
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "richtext",
       "id": "description",
       "label": "Description",
       "default": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.</p>"
+<<<<<<< HEAD
     }, {
       "type": "header",
       "content": "Button"
@@ -281,15 +442,38 @@
       "id": "button_link",
       "label": "Link"
     }, {
+=======
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "color",
       "id": "button_color",
       "label": "Button Color",
       "default": "#800000"
+<<<<<<< HEAD
     }, {
+=======
+    },  {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "color",
       "id": "button_hover_color",
       "label": "Button Hover Color",
       "default": "#FAFAFA"
+<<<<<<< HEAD
     }, {
       "type": "header",
       "content": "Video button"
@@ -305,6 +489,24 @@
       "type": "header",
       "content": "Colors"
     }, {
+=======
+    },
+    {
+      "type": "header",
+      "content": "Video button"
+    },
+    {
+      "type": "video_url",
+      "id": "video_url",
+      "label": "Link",
+      "accept": ["youtube", "vimeo"]
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
       "type": "color",
       "id": "bg_color",
       "label": "Background"
@@ -317,6 +519,7 @@
     }
   ]
 }
+<<<<<<< HEAD
 
 {% endschema %}
 
@@ -325,5 +528,14 @@
 
   a.btn--product-feature:before {
     background: {{section.settings.button_hover_color}}!important;
+=======
+{% endschema %}
+
+<style>
+ 
+  
+    a.btn--product-feature:before {
+    background: {{section.settings.button_hover_color}} !important;
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
   }
 </style>

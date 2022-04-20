@@ -92,7 +92,11 @@
         "eb6d628c-d850-424b-b0ed-95e83184f8e1"
       ],
       "settings": {
+<<<<<<< HEAD
         "image_height": "seven-fifty-height-hero",
+=======
+        "image_height": "one-hundred-height-hero",
+>>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
         "image": "shopify:\/\/shop_images\/our-offerings-background.png",
         "image_position": "center-center",
         "overlay_opacity": 20,
