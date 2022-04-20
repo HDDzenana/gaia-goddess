@@ -32,7 +32,7 @@
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
-        "text_color": "#800000",
+        "text_color": "#eb6fbd",
         "heading": "About Gaia Goddess",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
         "button_text": "Learn More",
@@ -107,7 +107,7 @@
         "mobile_slider": false,
         "show_border": true,
         "border_width": 1,
-        "border_color": "#eb6fbd"
+        "border_color": "rgba(0,0,0,0)"
       }
     },
     "164914858208709152": {
