@@ -133,11 +133,11 @@
         {%- endif -%}
         {%for block in section.blocks %}
           {% if block.settings.point  != blank %}
-<!--           <ul class="bulletpoints" style=" margin-left:5px; margin-bottom:  5px; text-align: left;"> -->
-          <li>
+          <ul class="bulletpoints" style=" margin-left:5px; margin-bottom:  5px; text-align: left;">
+            <li>
              <p class="feature__text">{{block.settings.point}} </p>
-          
-          </li>
+            </li>
+          </ul>
           {% endif %}
         {%endfor%}
 
