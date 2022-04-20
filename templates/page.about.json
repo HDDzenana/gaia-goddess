@@ -6,15 +6,15 @@
         "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201": {
           "type": "Image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image-register-now-yogi-template.png",
+            "image": "shopify:\/\/shop_images\/image_9.png",
             "dm": true
           }
         },
         "1b78109d-aa10-4c9c-b3c0-e52879c6bcba": {
           "type": "Image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image-hero-retreat-yogi-template.png",
-            "dm": true
+            "image": "shopify:\/\/shop_images\/image_10.png",
+            "dm": false
           }
         }
       },
@@ -23,48 +23,33 @@
         "1b78109d-aa10-4c9c-b3c0-e52879c6bcba"
       ],
       "settings": {
-        "padding_top": 40,
-        "padding_bottom": 52,
-        "bg": "#FEF1F5",
-        "heading": "",
+        "padding_top": 64,
+        "padding_bottom": 76,
+        "bg": "#fef1f5",
+        "heading": "Let's get the balance of living!",
         "heading_color": "#6c1d45",
-        "text_content": ""
-      }
-    },
-    "featured-image": {
-      "type": "section-featured-image",
-      "settings": {
-        "image_height": "five-fifty-height-hero",
-        "text_position": "center-center",
-        "enable_parallax": false,
-        "image_position": "center-center",
-        "overlay_opacity": 20,
-        "text_color": "text-light",
-        "title": "Let's get the balance of living!",
-        "subheading": "Describe in a few words your special products, collection, or brand.",
-        "button_text": "",
-        "button_link": "",
-        "button_style": "primary"
+        "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>  Mus vulputate scelerisque mollis luctus risus nulla. <br> Pharetra laoreet felis euismod et. Id bibendum."
       }
     },
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
-        "bg": "#FEFAFB",
+        "bg": "#fefafb",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "right",
-        "text_alignment": "center",
-        "mobile_button_position": "right",
+        "text_alignment": "left",
+        "mobile_button_position": "center",
+        "image_1": "shopify:\/\/shop_images\/image_11.png",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
         "text_color": "#800000",
         "heading": "Our Mission",
-        "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
-        "button_text": "",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque. Arcu, ac id platea euismod elit. Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>",
+        "button_text": "Join Us",
         "button_link": "",
-        "button_color": "#800000",
+        "button_color": "#6c1d45",
         "button_hover_color": "#fafafa",
         "video_url": "",
         "bg_color": ""
@@ -76,26 +61,27 @@
         "16499233277907de75-0": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
-            "image": "shopify:\/\/shop_images\/apply_healer.png",
-            "img_border_radius": 100,
-            "image_width": 100,
-            "customer_name": "Sherlock Holmes",
-            "short_text": "efee",
-            "customer_name_color": "#6c1d45",
-            "social_linkedin": "ef",
-            "social_mail": "ef"
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.\"<\/p>",
+            "image": "shopify:\/\/shop_images\/image_16.png",
+            "img_border_radius": 0,
+            "image_width": 200,
+            "customer_name": "Apparel",
+            "short_text": "",
+            "customer_name_color": "#eb6fbd",
+            "social_linkedin": "",
+            "social_mail": ""
           }
         },
         "16499233277907de75-1": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.\"<\/p>",
+            "image": "shopify:\/\/shop_images\/image_15.png",
             "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "John Watson",
+            "image_width": 200,
+            "customer_name": "Community",
             "short_text": "",
-            "customer_name_color": "#6c1d45",
+            "customer_name_color": "#eb6fbd",
             "social_linkedin": "",
             "social_mail": ""
           }
@@ -103,12 +89,13 @@
         "16499233277907de75-2": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
-            "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "Mycroft Holmes",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.\"<\/p>",
+            "image": "shopify:\/\/shop_images\/image_17.png",
+            "img_border_radius": 100,
+            "image_width": 200,
+            "customer_name": "Retreats",
             "short_text": "",
-            "customer_name_color": "#6c1d45",
+            "customer_name_color": "#eb6fbd",
             "social_linkedin": "",
             "social_mail": ""
           }
@@ -122,9 +109,9 @@
       "settings": {
         "title": "Three Pillars of our Brands",
         "testimonial_layout": "imgfirst",
-        "border_radius": 15,
-        "show_quotes": true,
-        "bg_color": "#1990c6",
+        "border_radius": 6,
+        "show_quotes": false,
+        "bg_color": "#ffffff",
         "boxsh": true,
         "boxshadow_color": "#fef1f5"
       }
@@ -183,40 +170,43 @@
         "1649923387b93629e7-0": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_12.png",
             "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "Sherlock Holmes",
-            "short_text": "",
-            "customer_name_color": "#6c1d45",
-            "social_linkedin": "",
-            "social_mail": ""
+            "image_width": 200,
+            "customer_name": "Maria Marshall",
+            "short_text": "CEO + Founder",
+            "customer_name_color": "#eb6fbd",
+            "social_linkedin": "account",
+            "social_mail": "account"
           }
         },
         "1649923387b93629e7-1": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_13.png",
             "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "John Watson",
-            "short_text": "",
-            "customer_name_color": "#6c1d45",
-            "social_linkedin": "",
-            "social_mail": ""
+            "image_width": 200,
+            "customer_name": "Parker Nayman",
+            "short_text": "CCO",
+            "customer_name_color": "#eb6fbd",
+            "social_linkedin": "account",
+            "social_mail": "account"
           }
         },
         "1649923387b93629e7-2": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_14.png",
             "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "Mycroft Holmes",
-            "short_text": "",
-            "customer_name_color": "#6c1d45",
-            "social_linkedin": "",
-            "social_mail": ""
+            "image_width": 200,
+            "customer_name": "Kevin Locke",
+            "short_text": "COO",
+            "customer_name_color": "#eb6fbd",
+            "social_linkedin": "account",
+            "social_mail": "account"
           }
         }
       },
@@ -256,7 +246,6 @@
   },
   "order": [
     "16504194475f30e158",
-    "featured-image",
     "product-feature",
     "1649923327baec26bf",
     "16499498117f4285ec",

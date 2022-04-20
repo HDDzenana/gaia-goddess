@@ -1,14 +1,16 @@
-<section class="supperco-banner-{{section.id}}" style="  background: {{section.settings.bg}};">
-  <h1 class="center wrapper" style="color: {{section.settings.heading_color}};">
-    {{section.settings.heading}}
-  </h1>
-  <p class="center rte wrapper">
-    {{section.settings.text_content}}
-  </p>
+<section class="supperco-banner-{{section.id}}" style=" background: {{section.settings.bg}};">
+  <div class="description_div">
+    <h1 class="center wrapper" style="color: {{section.settings.heading_color}};">
+      {{section.settings.heading}}
+    </h1>
+    <p style="margin-top: 20px; text-align: center;">
+      {{section.settings.text_content}}
+    </p>
+  </div>
   <div class="gaia wrapper">
     {% for block in section.blocks %}
 
-      <div " class=" gaiabimg {%if block.settings.dm == false %} visuallyhiddenm {% endif %} wrapper">
+      <div class="gaiabimg {%if block.settings.dm == false %} visuallyhiddenm {% endif %} wrapper">
         {% render 'gaia-image'
           image: block.settings.image,
           mobile_image: block.settings.mobile_image
@@ -25,36 +27,37 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 400px;
+    height: 350px;
     flex-wrap: wrap;
     overflow: hidden;
   }
   .gaiabimg {
-    width: 60%;
+    width: 64%;
     height: 100%;
+    padding: 0;
   }
 
   .gaiabimg:last-of-type {
-    width: 35%;
-    height: 400px;
+    width: 34%;
+    height: 350px;
+    padding: 0;
   }
   .gaia-image,
   .gaiabimg .gaia-image img {
     height: 100%;
     width: 100%;
+    margin-top: 10px;
   }
-
+ 
   @media only screen and (max-width: 790px ) {
   .visuallyhiddenm {
     display: none;
   }
-  p.center.rte.wrapper {
-    margin: 5% 0 0 0;
-  }
+ 
   .gaia,
   .gaiabimg {
     width: 100%;
-    margin-top: 20px;
+    margin-top: 10px;
     height: 280px;
   }
   .supperco-banner-{{section.id}}{

@@ -18,7 +18,11 @@
 <section id="Testimonials--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="testimonials" class="testimonials-section{% if section.settings.show_quotes %} has-quotes{% endif %}">
   <div class="wrapper">
     {%- if section.settings.title != blank -%}
-      <h2 class="testimonials__header">{{ section.settings.title | escape }}</h2>
+      <h2 class="testimonials__header" style="margin-bottom: 10px; color: {{section.settings.heading_color}};">{{ section.settings.title | escape }}</h2>
+      <div class="description_div">
+        <p style="text-align: center; margin-bottom: 20px; margin-top: 0px;">{{ section.settings. subtitle}}
+        </p>
+      </div>
     {%- endif -%}
 
     <div class="testimonials__wrapper">
@@ -35,7 +39,7 @@
               <div class="testimonial__item{% if total_blocks == 2 %} testimonial__item--half{% endif%} {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }}>
                 <div class="testimonial__inner {% if section.settings.testimonial_layout == 'imgfirst'%} crev-{{block.id}} {%endif%} {% if section.settings.boxsh %} tibox-{{block.id}} {%endif%}">
                   <div class="testimonial__text text-center">{{ testimonial_text }}
-                    <div class="social-sharing-wrapper" style="margin: auto; justify-content: center;">
+                    <div class="social-sharing-wrapper" style="margin: auto; justify-content: center; margin-bottom: 10px;">
                       {%- if block.settings.social_mail != blank -%}
                         <a class="mailsvg" rel="noopener" href="{{block.settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
                           {%- render 'icon-mail' -%}
@@ -112,13 +116,23 @@
 {% schema %}
 
 {
-  "name": "Testimonials",
+  "name": "Multi Column",
   "settings": [
     {
       "type": "text",
       "id": "title",
       "label": "Heading",
-      "default": "Testimonials"
+      "default": "Multi Column"
+    }, {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Lorem Ipsum..."
     }, {
       "type": "select",
       "options": [
@@ -232,7 +246,7 @@
   ],
   "presets": [
     {
-      "name": "Testimonials",
+      "name": "Multi Column",
       "category": "Text",
       "blocks": [
         {
