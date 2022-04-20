@@ -264,20 +264,22 @@
 
 <style>
   {% for block in section.blocks %}
+
     .testimonial__inner.crev-{{block.id}}{
       display: flex;
       flex-direction: column-reverse !important;
       border-radius: {{section.settings.border_radius}}%;
     }
 
-    .crevs-{{block.id}}{
-      width: 30% !important;
-      padding: 0 3%;
-    }
 
+    .crevs-{{block.id}}{
+      padding: 0 5.2%;
+    }
     .tibox-{{block.id}}{
       box-shadow: -14px 20px 20px 0px{{section.settings.boxshadow_color}};
+      margin-bottom: 25%;
     }
 
   {% endfor %}
+
 </style>

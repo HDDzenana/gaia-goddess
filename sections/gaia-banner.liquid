@@ -1,14 +1,14 @@
 <section class="supperco-banner-{{section.id}}" style="  background: {{section.settings.bg}};">
-  <h1 class="center" style="color: {{section.settings.heading_color}};">
+  <h1 class="center wrapper" style="color: {{section.settings.heading_color}};">
     {{section.settings.heading}}
   </h1>
-  <p class="center rte">
+  <p class="center rte wrapper">
     {{section.settings.text_content}}
   </p>
   <div class="gaia wrapper">
     {% for block in section.blocks %}
 
-      <div class="gaiabimg {%if block.settings.dm == false %} visuallyhiddenm {% endif %}">
+      <div " class=" gaiabimg {%if block.settings.dm == false %} visuallyhiddenm {% endif %} wrapper">
         {% render 'gaia-image'
           image: block.settings.image,
           mobile_image: block.settings.mobile_image
@@ -45,12 +45,22 @@
   }
 
   @media only screen and (max-width: 790px ) {
-    .visuallyhiddenm {
-      display: none;
-    }
+  .visuallyhiddenm {
+    display: none;
+  }
+  p.center.rte.wrapper {
+    margin: 5% 0 0 0;
+  }
+  .gaia,
   .gaiabimg {
     width: 100%;
+    margin-top: 20px;
+    height: 280px;
   }
+  .supperco-banner-{{section.id}}{
+    padding-bottom: calc({{section.settings.padding_bottom}}px - 15%) !important;
+  }
+
   }
 </style>
 

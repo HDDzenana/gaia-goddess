@@ -1,5 +1,11 @@
 {%- comment -%} Product Feature {%- endcomment -%}
-
+<style>
+@media only screen and (max-width:767px){ 
+    .gbtn {
+      text-align-last:  {{section.settings.mobile_button_position}} !important;
+    }
+  }
+</style>
 {%- liquid
   comment
     Layout
@@ -113,7 +119,7 @@
 
       </div>
 
-      <div class="product-feature__text product-feature__text--{{ text_alignment }} rte">
+      <div class="product-feature__text product-feature__text--{{ text_alignment }} rte gbtn">
         {%- if heading != blank -%}
           <h2 style="color: {{section.settings.text_color}}">{{ heading | escape }}</h2>
         {%- endif -%}
@@ -127,7 +133,7 @@
         {%- endif -%}
 
         {%- if button_text != blank -%}
-          <a href="{{ button_link }}" class="btn btn--product-feature" style="background-color: {{section.settings.button_color}} !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
+          <a href="{{ button_link }}" class="gbtn btn btn--product-feature" style="background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
         {%- endif -%}
       </div>
     </div>
@@ -202,6 +208,23 @@
         }, {
           "label": "Left",
           "value": "left"
+        }
+      ]
+    }, {
+      "type": "select",
+      "id": "mobile_button_position",
+      "label": "Mobile text alignment",
+      "default": "right",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        }, {
+          "label": "Right",
+          "value": "right"
+        }, {
+          "label": "Center",
+          "value": "center"
         }
       ]
     }, {
