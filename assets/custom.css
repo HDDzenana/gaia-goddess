@@ -1,69 +1,82 @@
 @font-face {
-    font-family: "Playfair";
-    src: url("PlayfairDisplay-Regular.ttf") format("woff2"),
-    url("PlayfairDisplay-Regular.ttf") format("woff");
+  font-family: 'Playfair';
+  src: url('PlayfairDisplay-Regular.ttf') format('woff2'),
+    url('PlayfairDisplay-Regular.ttf') format('woff');
 }
 
 @font-face {
-  font-family: "Acumin_Pro";
-    src: url("Acumin_Pro_Book.woff2") format("woff2"),
-    url("Acumin_Pro_Book.woff") format("woff");
+  font-family: 'Acumin_Pro';
+  src: url('Acumin_Pro_Book.woff2') format('woff2'),
+    url('Acumin_Pro_Book.woff') format('woff');
 }
 
-p, h3, h4, h5, span, a, li, input, textarea {
-    font-family: 'Acumin_Pro' !important;
+p,
+h3,
+h4,
+h5,
+span,
+a,
+li,
+input,
+textarea {
+  font-family: 'Acumin_Pro' !important;
 }
 
 p {
-    font-size: 16px;
-    color: #575757;
+  font-size: 16px;
+  color: #575757;
 }
 
 h3 {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 h1 {
-    font-family: 'Playfair' !important;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 52px;
+  font-family: 'Playfair' !important;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 52px;
 }
-h2, h2 span{
-    font-family: 'Playfair' !important;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 52px;
+h2,
+h2 span {
+  font-family: 'Playfair' !important;
+  font-size: 50px;
+  font-weight: 700;
+  line-height: 52px;
 }
 
 .btn {
-    font-size: 18px;
-    border-radius: 30px;
-    min-width: 200px;
+  font-size: 18px;
+  border-radius: 30px;
+  min-width: 200px;
 }
 
-.value__each{
-    margin: 15px auto 26px;
+.value__each {
+  margin: 15px auto 26px;
 }
 
 .values-section {
-    padding-top: var(--gutter);
-    padding-bottom: var(--gutter);
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
 }
 
-@media only screen and (max-width:767px){
-    h2{
-        font-size: 35px;
-    }
-    p{
-        font-size: 12px;
-    }
-    h3 {
-        font-size: 20px;
-    }
-    .btn{
-        font-size: 14px;
-        padding: 10px 22px;
-        min-width: 162px;
-    }
+@media only screen and (max-width: 767px) {
+  h2 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 12px;
+  }
+  h3 {
+    font-size: 20px;
+  }
+  .btn {
+    font-size: 14px;
+    padding: 10px 22px;
+    min-width: 162px;
+  }
+}
+
+.center {
+  text-align: center;
 }
