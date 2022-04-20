@@ -6,9 +6,9 @@
         "video_height": "sixty-fifty-height-hero",
         "text_position": "center-center",
         "hero_video_link": "",
-        "hero_video_link_internal": "https:\/\/cdn.shopify.com\/s\/files\/1\/0535\/9357\/1505\/files\/GAIA_GODDESS_LANDING_PAGE_VIDEO_FINAL_EXPORT_19.66MB_1_14b5693f-6421-4bd6-83dd-ba387cf02d47.mp4?v=1645608634",
+        "hero_video_link_internal": "https://cdn.shopify.com/s/files/1/0535/9357/1505/files/GAIA_GODDESS_LANDING_PAGE_VIDEO_FINAL_EXPORT_19.66MB_1_14b5693f-6421-4bd6-83dd-ba387cf02d47.mp4?v=1645608634",
         "video_enable_sound": false,
-        "image": "shopify:\/\/shop_images\/video-placeholder.png",
+        "image": "shopify://shop_images/video-placeholder.png",
         "overlay_opacity": 0,
         "text_color": "text-light",
         "title": "Let's get the",
@@ -26,13 +26,13 @@
         "image_position": "inline",
         "text_position": "right",
         "text_alignment": "left",
-        "image_1": "shopify:\/\/shop_images\/image-about.png",
+        "image_1": "shopify://shop_images/image-about.png",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
         "text_color": "#800000",
         "heading": "About Gaia Goddess",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>",
         "button_text": "Learn More",
         "button_link": "",
         "button_color": "#6c1d45",
@@ -47,7 +47,7 @@
         "a54f4f61-d4d1-4dea-ae44-982e2d2429f1": {
           "type": "text",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/our-offerings-healing.png",
+            "icon_image": "shopify://shop_images/our-offerings-healing.png",
             "text_alignment": "left",
             "title": "Healing",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -57,7 +57,7 @@
         "5fa7835c-8484-464a-859b-97a212757abe": {
           "type": "text",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/our-offerings-education.png",
+            "icon_image": "shopify://shop_images/our-offerings-education.png",
             "text_alignment": "left",
             "title": "Education",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -67,7 +67,7 @@
         "55e51fa2-1e42-463f-a316-671ec51e0ecc": {
           "type": "text",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/our-offerings-retreats.png",
+            "icon_image": "shopify://shop_images/our-offerings-retreats.png",
             "text_alignment": "left",
             "title": "Retreats",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -77,7 +77,7 @@
         "eb6d628c-d850-424b-b0ed-95e83184f8e1": {
           "type": "text",
           "settings": {
-            "icon_image": "shopify:\/\/shop_images\/our-offerings-education2.png",
+            "icon_image": "shopify://shop_images/our-offerings-education2.png",
             "text_alignment": "left",
             "title": "Education",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
@@ -92,17 +92,13 @@
         "eb6d628c-d850-424b-b0ed-95e83184f8e1"
       ],
       "settings": {
-<<<<<<< HEAD
         "image_height": "seven-fifty-height-hero",
-=======
-        "image_height": "one-hundred-height-hero",
->>>>>>> fdbf70d40402a6b92243e6b90d906bb45ddfeb46
-        "image": "shopify:\/\/shop_images\/our-offerings-background.png",
+        "image": "shopify://shop_images/our-offerings-background.png",
         "image_position": "center-center",
         "overlay_opacity": 20,
         "text_color": "#ffffff",
         "title": "Our Offerings",
-        "subheading": "Describe in a few words your special offers\/values.",
+        "subheading": "Describe in a few words your special offers/values.",
         "button_text": "",
         "button_link": "",
         "button_style": "primary",
@@ -119,13 +115,13 @@
         "image_position": "inline",
         "text_position": "left",
         "text_alignment": "left",
-        "image_1": "shopify:\/\/shop_images\/erik-brolin-ZARfCYDaVg0-unsplash_image.png",
+        "image_1": "shopify://shop_images/erik-brolin-ZARfCYDaVg0-unsplash_image.png",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
         "text_color": "#6c1d45",
         "heading": "Become a Member of Gaia.",
-        "description": "<p>Becoming a member of Gaia Goddess will introduce you to a new world for a community of holistic healing. Key benefits of our memberships include:<\/p>",
+        "description": "<p>Becoming a member of Gaia Goddess will introduce you to a new world for a community of holistic healing. Key benefits of our memberships include:</p>",
         "button_text": "Join Us",
         "button_link": "",
         "button_color": "#6c1d45",
@@ -139,8 +135,8 @@
       "settings": {
         "text_position": "left",
         "text_alignment": "left",
-        "heading": "Subscribe to our newsletters today for a <span style=\"color: #EB6FBD\">FREE<\/span> meditation class",
-        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading": "Subscribe to our newsletters today for a <span style=\"color: #EB6FBD\">FREE</span> meditation class",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.</p>",
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }
