@@ -6,7 +6,7 @@
         "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201": {
           "type": "Image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_9.png",
+            "image": "shopify:\/\/shop_images\/TREE4-01.png",
             "dm": true
           }
         },
@@ -108,7 +108,7 @@
       ],
       "settings": {
         "title": "Three Pillars of our Brands",
-        "heading_color": "#6C1D45",
+        "heading_color": "#6c1d45",
         "subtitle": "Lorem Ipsum...",
         "testimonial_layout": "imgfirst",
         "border_radius": 6,
@@ -219,7 +219,7 @@
       ],
       "settings": {
         "title": "Our Leaders",
-        "heading_color": "#6C1D45",
+        "heading_color": "#6c1d45",
         "subtitle": "Lorem Ipsum...",
         "testimonial_layout": "imgfirst",
         "border_radius": 0,
