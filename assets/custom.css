@@ -84,6 +84,6 @@ h2 span {
 
 @media only screen and (max-width: 768px) {
   .visuallyhiddenm {
-    display: none;
+    display: none !important;
   }
 }
