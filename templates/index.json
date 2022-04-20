@@ -112,6 +112,24 @@
     },
     "164914858208709152": {
       "type": "section-product-feature",
+      "blocks": {
+        "1c0e4b2e-60ca-4ea0-82a2-38d4d2761ada": {
+          "type": "Point",
+          "settings": {
+            "point": ""
+          }
+        },
+        "974f5137-8051-413b-8561-bef71aa5d95d": {
+          "type": "Point",
+          "settings": {
+            "point": "Premier access to exclusive events"
+          }
+        }
+      },
+      "block_order": [
+        "1c0e4b2e-60ca-4ea0-82a2-38d4d2761ada",
+        "974f5137-8051-413b-8561-bef71aa5d95d"
+      ],
       "settings": {
         "bg": "#FEFAFB",
         "image_layout": "square",
@@ -124,7 +142,7 @@
         "image_link_2": "",
         "hide_image_2": false,
         "text_color": "#6c1d45",
-        "heading": "Become a Member of Gaia.",
+        "heading": "Become a <br>Member of Gaia.",
         "description": "<p>Becoming a member of Gaia Goddess will introduce you to a new world for a community of holistic healing. Key benefits of our memberships include:<\/p>",
         "button_text": "Join Us",
         "button_link": "",
