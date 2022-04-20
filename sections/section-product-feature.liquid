@@ -121,7 +121,7 @@
 
       <div class="product-feature__text product-feature__text--{{ text_alignment }} rte gbtn">
         {%- if heading != blank -%}
-          <h2 style="color: {{section.settings.text_color}}">{{ heading | escape }}</h2>
+          <h2 style="color: {{section.settings.text_color}}">{{ heading  }}</h2>
         {%- endif -%}
 
         {%- if settings.show_spacer_lines -%}
@@ -131,6 +131,15 @@
         {%- if description != blank -%}
           {{- description -}}
         {%- endif -%}
+        {%for block in section.blocks %}
+          {% if block.settings.point  != blank %}
+          <ul class="bulletpoints product-feature__text" style=" margin-left:5px; margin-bottom:  5px; text-align: left;">
+            <li>
+             <p class="feature__text">{{block.settings.point}} </p>
+            </li>
+          </ul>
+          {% endif %}
+        {%endfor%}
 
         {%- if button_text != blank -%}
           <a href="{{ button_link }}" class="gbtn btn btn--product-feature" style="background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
@@ -260,7 +269,7 @@
       "label": "Text Color",
       "default": "#800000"
     }, {
-      "type": "textarea",
+      "type": "html",
       "id": "heading",
       "label": "Heading",
       "default": "This is a heading for a Product feature block."
@@ -308,6 +317,19 @@
       "type": "color",
       "id": "bg_color",
       "label": "Background"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Point",
+      "name": "Point",
+      "settings": [
+        {
+          "type": "text",
+          "id": "point",
+          "label": "Bullet Point"
+        }
+      ]
     }
   ],
   "presets": [
