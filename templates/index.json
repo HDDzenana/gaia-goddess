@@ -27,7 +27,7 @@
         "image_position": "inline",
         "text_position": "right",
         "text_alignment": "left",
-        "mobile_button_position": "center",
+        "mobile_button_position": "right",
         "image_1": "shopify:\/\/shop_images\/image-about.png",
         "image_link_1": "",
         "image_link_2": "",
@@ -116,25 +116,29 @@
         "974f5137-8051-413b-8561-bef71aa5d95d": {
           "type": "Point",
           "settings": {
-            "point": "Premier access to exclusive events"
+            "point": "Premier access to exclusive events",
+            "dm": true
           }
         },
         "1c0e4b2e-60ca-4ea0-82a2-38d4d2761ada": {
           "type": "Point",
           "settings": {
-            "point": "Unlock all of Gaia Content Gallery"
+            "point": "Unlock all of Gaia Content Gallery",
+            "dm": true
           }
         },
         "eba56e47-1c75-45c2-b1a5-8c10d7b06dc3": {
           "type": "Point",
           "settings": {
-            "point": "Connect with the Gaia network of women"
+            "point": "Connect with the Gaia network of women",
+            "dm": true
           }
         },
         "ebd6e8c2-aed7-4a4d-8d0a-05cb92685db3": {
           "type": "Point",
           "settings": {
-            "point": "Receive a free member gift"
+            "point": "Receive a free member gift",
+            "dm": true
           }
         }
       },
