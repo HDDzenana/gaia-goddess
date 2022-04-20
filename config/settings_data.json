@@ -12,6 +12,7 @@
     "color_button_primary": "#6c1d45",
     "color_button_secondary": "#ffffff",
     "type_heading_font": "harmonia_sans_n6",
+    "type_nav_font": "body",
     "product_grid_hover_image": false,
     "product_grid_slideshow": false,
     "product_grid_slideshow_arrows": "black",

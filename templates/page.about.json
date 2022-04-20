@@ -1,5 +1,36 @@
 {
   "sections": {
+    "16504194475f30e158": {
+      "type": "gaia-banner",
+      "blocks": {
+        "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image-register-now-yogi-template.png",
+            "dm": true
+          }
+        },
+        "1b78109d-aa10-4c9c-b3c0-e52879c6bcba": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/image-hero-retreat-yogi-template.png",
+            "dm": true
+          }
+        }
+      },
+      "block_order": [
+        "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201",
+        "1b78109d-aa10-4c9c-b3c0-e52879c6bcba"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "bg": "#FEF1F5",
+        "heading": "",
+        "heading_color": "#6c1d45",
+        "text_content": ""
+      }
+    },
     "featured-image": {
       "type": "section-featured-image",
       "settings": {
@@ -19,10 +50,12 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "bg": "#FEFAFB",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "right",
         "text_alignment": "center",
+        "mobile_button_position": "right",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
@@ -44,24 +77,40 @@
           "type": "testimonial",
           "settings": {
             "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image": "shopify:\/\/shop_images\/apply_healer.png",
+            "img_border_radius": 100,
             "image_width": 100,
-            "customer_name": "Sherlock Holmes"
+            "customer_name": "Sherlock Holmes",
+            "short_text": "efee",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "ef",
+            "social_mail": "ef"
           }
         },
         "16499233277907de75-1": {
           "type": "testimonial",
           "settings": {
             "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "img_border_radius": 0,
             "image_width": 100,
-            "customer_name": "John Watson"
+            "customer_name": "John Watson",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
           }
         },
         "16499233277907de75-2": {
           "type": "testimonial",
           "settings": {
             "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "img_border_radius": 0,
             "image_width": 100,
-            "customer_name": "Mycroft Holmes"
+            "customer_name": "Mycroft Holmes",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
           }
         }
       },
@@ -72,8 +121,12 @@
       ],
       "settings": {
         "title": "Three Pillars of our Brands",
+        "testimonial_layout": "imgfirst",
+        "border_radius": 15,
         "show_quotes": true,
-        "bg_color": ""
+        "bg_color": "#1990c6",
+        "boxsh": true,
+        "boxshadow_color": "#fef1f5"
       }
     },
     "16499498117f4285ec": {
@@ -131,24 +184,39 @@
           "type": "testimonial",
           "settings": {
             "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "img_border_radius": 0,
             "image_width": 100,
-            "customer_name": "Sherlock Holmes"
+            "customer_name": "Sherlock Holmes",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
           }
         },
         "1649923387b93629e7-1": {
           "type": "testimonial",
           "settings": {
             "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "img_border_radius": 0,
             "image_width": 100,
-            "customer_name": "John Watson"
+            "customer_name": "John Watson",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
           }
         },
         "1649923387b93629e7-2": {
           "type": "testimonial",
           "settings": {
             "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "img_border_radius": 0,
             "image_width": 100,
-            "customer_name": "Mycroft Holmes"
+            "customer_name": "Mycroft Holmes",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
           }
         }
       },
@@ -159,8 +227,12 @@
       ],
       "settings": {
         "title": "Our Leaders",
+        "testimonial_layout": "imgfirst",
+        "border_radius": 0,
         "show_quotes": true,
-        "bg_color": ""
+        "bg_color": "",
+        "boxsh": false,
+        "boxshadow_color": "#fef1f5"
       }
     },
     "main": {
@@ -183,6 +255,7 @@
     }
   },
   "order": [
+    "16504194475f30e158",
     "featured-image",
     "product-feature",
     "1649923327baec26bf",
