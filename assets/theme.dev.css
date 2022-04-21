@@ -5197,7 +5197,7 @@ button.mfp-close {
   }
   .footer-title__button .icon {
     top: 0;
-    right: 0;
+    right: -16px;
     width: 14px;
     height: 100%;
   }

@@ -71,6 +71,9 @@
 	.footer-content__logo{
 		justify-content: center;
 	}
+	.social-sharing-wrapper{
+		margin-top: 0;
+	}
 	@media only screen and (max-width: 767px){
 		.footer-content__logo{
 			margin-right: 0;
@@ -94,12 +97,28 @@
 			display: block;
 		}
 		.footer-title__button{
-			width: 44%;
+			width: 42%;
 			margin: 0 auto;
-			padding: 5px 20px 5px 0;
+			padding: 0;
 		}
 		.footer-links__wrapper{
 			text-align: center;
+		}
+		.footer_contact{
+			width: 34%;
+		}
+		.social-sharing-wrapper a {
+			margin: 0 8px;
+		}
+	}
+	@media only screen and (max-width: 600px){
+		.footer_contact{
+			width: 50%;
+		}
+	}
+	@media only screen and (max-width:1024px){
+		.footer-content__logo{
+			margin-right: 0;
 		}
 	}
 {%- endstyle -%}
