@@ -24,7 +24,7 @@
 
 {%- style -%}
   #FeaturedVideo--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
-  .video__iframe{
+  .video__iframe, .video__iframe_mobile{
     min-height: 0;
     opacity: 1;
   }
@@ -33,6 +33,20 @@
     bottom: 0;
     width: 100%;
     height: auto;
+  }
+  .video__iframe_mobile{
+    display: none;
+  }
+  @media only screen and (max-width: 767px){
+    .video__iframe_mobile{
+      display: block;
+    }
+    .video__iframe_desktop{
+      display: none;
+    }
+    .video__iframe_mobile {
+      width: 0px!important;
+    }
   }
 {%- endstyle -%}
 
@@ -66,11 +80,16 @@
       {%- if video_id != blank -%}
         <div class="video__iframe" id="video-{{ section.id }}" data-video-id="{{ video_id }}"></div> 
       {%- elsif section.settings.hero_video_link_internal != blank -%}
-        <div class="video__iframe">
+        <div class="video__iframe video__iframe_desktop">
             <video autoplay muted loop playsinline class="video__iframe__video">
             <source src="{{ section.settings.hero_video_link_internal }}" type="video/mp4">
           </video>
         </div>
+        <div class="video__iframe video__iframe_mobile" style="width: 0px;">
+          <video autoplay muted loop playsinline class="video__iframe__video">
+          <source src="{{ section.settings.hero_video_link_internal_mobile }}" type="video/mp4">
+        </video>
+      </div>
       {%- endif -%}
 
       <div class="overlay video__overlay"></div>
@@ -195,6 +214,11 @@
       "type": "url",
       "id": "hero_video_link_internal",
       "label": "Video link (uploaded to Shopify)"
+    },
+    {
+      "type": "url",
+      "id": "hero_video_link_internal_mobile",
+      "label": "Mobile video link (uploaded to Shopify)"
     },
     {
       "type": "checkbox",
