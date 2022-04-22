@@ -33,16 +33,21 @@
     #ProductFeature--{{ section.id }} {
       background-color: {{ bg_color }};
     }
-    .product-feature__text{
-      padding-left: 0;
-    }
     .product-feature__image{
       width: 100%;
     }
     .product-feature__text p{
       margin: 0;
     }
+    @media only screen and (min-width: 1024px)
+      .product-feature__text {
+        padding-left: 0;
+      }
+    }
     @media only screen and (max-width: 767px){
+      #ProductFeature--{{ section.id }} {
+        padding-bottom: 0px;
+      }
       .offerings-feature__mailerlite{
         margin: 0;
       }
