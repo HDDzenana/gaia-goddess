@@ -7,32 +7,26 @@
         "show_page_title": true
       }
     },
-    "1650526938d50ff343": {
-      "type": "gaia-banner",
-      "blocks": {
-        "e158e1de-3534-4a4a-8295-a4c887d750cf": {
-          "type": "Image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/image_11.png",
-            "dm": true
-          }
-        }
-      },
-      "block_order": [
-        "e158e1de-3534-4a4a-8295-a4c887d750cf"
-      ],
+    "1650633606e64bec24": {
+      "type": "section-featured-image",
       "settings": {
-        "padding_top": 40,
-        "padding_bottom": 52,
-        "bg": "#FEF1F5",
-        "heading": "",
-        "heading_color": "#6c1d45",
-        "text_content": ""
+        "image_height": "one-hundred-height-hero",
+        "text_position": "center-center",
+        "enable_parallax": false,
+        "image": "shopify:\/\/shop_images\/Group_806.png",
+        "image_position": "center-center",
+        "overlay_opacity": 20,
+        "text_color": "text-light",
+        "title": "Our Shop is Coming Soon!",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper tincidunt massa nec ultrices. Fusce lobortis pellentesque risus sed finibus.",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "primary"
       }
     }
   },
   "order": [
     "main",
-    "1650526938d50ff343"
+    "1650633606e64bec24"
   ]
 }

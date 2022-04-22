@@ -1,0 +1,632 @@
+{%- comment -%}
+  /sections/contact-form.liquid
+{%- endcomment -%}
+
+{%- capture form_fields -%}
+  {%- for block in section.blocks -%}
+    {%- assign required = '' -%}
+    {%- if block.settings.required -%}
+        {%- assign required = 'required' -%}
+    {%- endif -%}
+
+    {%- case block.type -%}
+
+      {%- when 'heading' -%}
+        <div class="form__item form__item--heading" {{ block.shopify_attributes }}>
+          <h2 class="form__heading" style="color: {{ block.settings.heading_color }}">{{ block.settings.title }}</h2>
+          <p class="form__subheading">{{ block.settings.subheading }}</p>
+        </div>
+
+      {%- when 'email' -%}
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="email" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[email]" placeholder="{{ block.settings.title }}" autocorrect="off" autocapitalize="off" {{ required }}/>
+        </div>
+
+      {%- when 'body' -%}
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <textarea rows="10" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[body]" placeholder="{{ block.settings.title }}" {{ required }}></textarea>
+        </div>
+
+      {%- when 'text' -%}
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="text" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title | handleize }}]" autocapitalize="words" value="" placeholder="{{ block.settings.title }}" {{ required }}/>
+        </div>
+
+      {%- when 'textarea' -%}
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <textarea rows="10" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title | handleize }}]" placeholder="{{ block.settings.title }}" {{ required }}></textarea>
+        </div>
+
+      {%- when 'telephone' -%}
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="tel" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[telephone]" value="" placeholder="{{ block.settings.title }}" {{ required }}/>
+        </div>
+
+      {%- when 'spacer' -%}
+        {%- assign hr_class = 'hr--clear' -%}
+        {%- if block.settings.line -%}
+          {%- assign hr_class = '' -%}
+        {%- endif -%}
+        <div class="form__item">
+          <hr class="{{ hr_class }}" {{ block.shopify_attributes }}>
+        </div>
+
+      {%- when 'checkbox' -%}
+        <div class="form__item form__item--checkbox" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
+            <input type="checkbox" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--checkbox" name="contact[{{ block.settings.title | handleize }}]" value="{{ block.settings.title }}" {{ required }}></input>
+            <span>{{ block.settings.title }}</span>
+          </label>
+        </div>
+
+      {%- when 'radio' -%}
+        <fieldset class="form__item form__item--radio" {{ block.shopify_attributes }}>
+          {%- if block.settings.title != blank -%}
+            <legend class="form__label">{{ block.settings.title }}</legend>
+          {%- endif -%}
+
+          {%- for i in (1..6) -%}
+            {%- capture index -%}label-{%- cycle 'one', 'two', 'three', 'four', 'five', 'six' -%}{%- endcapture -%}
+
+            {%- if block.settings[index] != blank -%}
+              <label for="Form-{{ section.id }}-{{ block.id }}-{{ i }}">
+                <input type="radio" id="Form-{{ section.id }}-{{ block.id }}-{{ i }}" class="input--radio" name="contact[{{ block.settings.title | handleize }}-{{ block.id }}]" value="{{ block.settings[index] }}" {{ required }}>
+                <span>{{ block.settings[index] }}</span>
+              </label>
+            {%- endif -%}
+          {%- endfor -%}
+        </fieldset>
+
+      {%- when 'select' -%}
+        <fieldset class="form__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.title != blank -%}
+            <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title }}</label>
+          {%- endif -%}
+          <div class="selector-wrapper">
+            <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect" name="contact[{{ block.settings.title | handleize }}]">
+              {%- for i in (1..6) -%}
+                {%- capture index -%}label-{%- cycle 'one', 'two', 'three', 'four', 'five', 'six' -%}{%- endcapture -%}
+
+                {%- if block.settings[index] != blank -%}
+                  <option value="{{ block.settings[index] }}">{{ block.settings[index] }}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+            {%- render 'icon-arrow' -%}
+          </div>
+        </fieldset>
+    {%- endcase -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<style>
+  .contact__block{
+    display: flex;
+  }
+  .email_contact{
+    display: inline-block;
+    width: 60%;
+  }
+  .wrapper {
+    padding: 0 0 0 var(--gutter);
+  }
+  .contact__form{
+    width: 40%;
+  }
+  .contact__info-background{
+    width: 60%;
+  }
+  .contact__form{
+    padding: 20px;
+  }
+  .contact-form{
+    display: grid;
+    grid-template-areas:
+        'header header'
+        'first-field-left first-field-right'
+        'second-field-left second-field-right'
+        'message message'
+        'submit submit';
+    column-gap: 40px;
+  }
+  .contact-form > .form__item:nth-child(3){
+    grid-area: header;
+  }
+  .contact-form > .form__item:nth-child(4) {
+    grid-area: first-field-left;
+  }
+  .contact-form > .form__item:nth-child(5) {
+    grid-area: first-field-right;
+  }
+  .contact-form > .form__item:nth-child(6){
+    grid-area: second-field-left;
+  }
+  .contact-form > .form__item:nth-child(7){
+    grid-area: second-field-right;
+  }
+  .contact-form > .form__item:nth-child(8){
+    grid-area: message;
+  }
+  .contact-form > .form__item:last-child{
+    grid-area: submit;
+  }
+  .form__item > input, .form__item > textarea {
+    -webkit-box-shadow: 0 2px 10px rgb(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgb(0, 0, 0, 0.2);
+    border-radius: 40px;
+    border: 1px solid white;
+  }
+  .form__item--submit{
+    margin: 10px 0 0;
+    text-align: center;
+  }
+  .contact__info{
+    background-color: {{ section.settings.card_background_color }};
+    width: 60%;
+    margin: 20% auto;
+    padding: 40px;
+  }
+  .contact__info > p, .contact__info > h3, .contact__info .rte > ul, .contact__info .rte > p {
+    color: {{ section.settings.text_color }}
+  }
+  .contact_us_list{
+    margin: 0 0 20px;
+  }
+  .contact__divider{
+    border-top: 1px solid white;
+    margin-bottom: 30px;
+  }
+  .form__heading, .form__subheading {
+    text-align: {{ section.settings.heading_alignment }}
+  }
+  @media only screen and (max-width: 767px){
+    .contact__block{
+      display: block;
+    }
+    .contact__form, .contact__info-background {
+      width: 100%;
+    }
+    .wrapper{
+      padding: 0;
+    }
+    .contact__form {
+      padding: 40px;
+    }
+    .btn-primary{
+      width: 50%;
+    }  
+    .form__heading, .form__subheading {
+      text-align: center;
+    }
+    .contact__info {
+      width: 100%;
+      margin: 0% auto;
+      padding: 40px;
+    }
+    .contact__info-background{
+      padding: 40px;
+    }   
+  }
+</style>
+<section data-section-type="contact-form" data-section-id="{{ section.id }}" style="background-color: {{ section.settings.background_color }}">
+  <div class="wrapper">
+    <div class="contact__block">
+
+      <div class="contact__form">
+        {%- form 'contact', id: 'ContactForm'  -%}
+          {%- comment -%}
+            Success message
+          {%- endcomment -%}
+          {%- if form.posted_successfully? -%}
+            <p class="note form-success">
+              {{- 'contact.form.post_success' | t -}}
+            </p>
+
+          {%- elsif form.errors -%}
+            {{- form.errors | default_errors -}}
+          {%- endif -%}
+
+          {{- form_fields -}}
+
+          {%- assign types = '' -%}
+          {%- for block in section.blocks -%}
+            {%- assign types = types | append: block.type -%}
+          {%- endfor -%}
+
+          {%- unless types contains "text" -%}
+            {%- assign name_attr = 'contact.form.name' | t | handle -%}
+            <div class="form__item">
+              <label for="Form-{{ section.id }}-Name" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+              <input type="text" id="Form-{{ section.id }}-Name" class="input--full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}" required>
+            </div>
+          {%- endunless -%}
+
+          {%- unless types contains "email" -%}
+            <div class="form__item">
+              <label for="Form-{{ section.id }}-Email" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+              <input type="email" id="Form-{{ section.id }}-Email" class="input--full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required>
+            </div>
+          {%- endunless -%}
+
+          {%- unless types contains "body" -%}
+            <div class="form__item">
+              <label for="Form-{{ section.id }}-Message" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+              <textarea rows="10" id="Form-{{ section.id }}-Message" class="input--full" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+            </div>
+          {%- endunless -%}
+
+          <div class="form__item form__item--submit">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+
+        {%- endform -%}
+      </div>
+      <div class="contact__info-background" style="background-image: url('{{ section.settings.image | img_url:'2048x' }}'); background-size: cover;">
+        <div class="contact__info">
+          <h3>Contact Details</h3>
+          <p>If you need any help and prefer to reach out directly, feel free to do it via phone or email.</p>
+
+          <div class="rte">
+            <ul class="contact_us_list">
+              <li>{%- render 'contact-email' -%}<a style="text-decoration: none;" href="mailto:info@gaiagoddesslifestyle.com">
+                <div class="email_contact">
+                 
+                 <img src="https://cdn.shopify.com/s/files/1/0535/9357/1505/files/info_gaiagoddesslifestyle.com.png?v=1650647141">
+                </div>
+                 </a></li>
+              <li>{%- render 'contact-phone' -%}000-000-0000</li>
+            </ul>
+
+              <div class="contact__divider"></div>
+            <p class="h5">Follow us on Social Media</p>
+
+            <div class="social-sharing-wrapper">
+                <a class="facebook" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                  {%- render 'icon-footer-facebook' -%}
+                </a>
+            
+                <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                  {%- render 'icon-footer-instagram' -%}
+                </a>
+          
+                <a class="twitter" rel="noopener" href = "{{ settings.social_twitter_link }}" title="{{ 'footer.socials.title' | t: social: 'Twitter', shop_name: shop.name }}">
+                  {%- render 'icon-footer-twitter' -%}
+                </a>
+          
+              
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Gaia",
+  "class": "shopify-section--contact-form",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Name, Email, and Message fields are required. You can add them as blocks in order to edit or reorder."
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FEF1F5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Info Card Background color",
+      "default": "#6C1D45"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Form heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Form heading",
+          "default": "Contact Us"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Form subheading",
+          "default": "If you have any questions, want to join as a healer, or just want to say hi, feel free to fill the form below."
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Color",
+          "default": "#6C1D45"
+        }
+      ]
+    },
+    {
+      "type": "email",
+      "name": "Email",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Email"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "body",
+      "name": "Message",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Label",
+          "default": "Message"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text line",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Name",
+          "info": "Example: Name"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "telephone",
+      "name": "Telephone",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Phone Number",
+          "info": "Example: Phone Number"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "spacer",
+      "name": "Spacer",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "line",
+          "label": "Show line",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "name": "Single checkbox",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Label",
+          "default": "Checkbox option",
+          "info": "Example: Subscribe to newsletter"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "name": "Select dropdown",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Select an option",
+          "info": "Example: Choose a delivery location"
+        },
+        {
+          "type": "header",
+          "content": "Include up to six options",
+          "info":  "Leave option text blank to exclude"
+        },
+        {
+          "type": "text",
+          "id": "label-one",
+          "default": "Select option one",
+          "label": "Option one"
+        },
+        {
+          "type": "text",
+          "id": "label-two",
+          "default": "Select option two",
+          "label": "Option two"
+        },
+        {
+          "type": "text",
+          "id": "label-three",
+          "default": "Select option three",
+          "label": "Option three"
+        },
+        {
+          "type": "text",
+          "id": "label-four",
+          "default": "Select option four",
+          "label": "Option four"
+        },
+        {
+          "type": "text",
+          "id": "label-five",
+          "default": "Select option five",
+          "label": "Option five"
+        },
+        {
+          "type": "text",
+          "id": "label-six",
+          "default": "Select option six",
+          "label": "Option six"
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "Radio buttons",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Pick an option"
+        },
+        {
+          "type": "checkbox",
+          "id": "required",
+          "label": "Required",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Include up to six options",
+          "info":  "Leave option text blank to exclude"
+        },
+        {
+          "type": "text",
+          "id": "label-one",
+          "default": "Option one",
+          "label": "Option one"
+        },
+        {
+          "type": "text",
+          "id": "label-two",
+          "default": "Option two",
+          "label": "Option two"
+        },
+        {
+          "type": "text",
+          "id": "label-three",
+          "label": "Option three"
+        },
+        {
+          "type": "text",
+          "id": "label-four",
+          "label": "Option four"
+        },
+        {
+          "type": "text",
+          "id": "label-five",
+          "label": "Option five"
+        },
+        {
+          "type": "text",
+          "id": "label-six",
+          "label": "Option six"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Contact Gaia",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        },
+        {
+          "type": "email"
+        },
+        {
+          "type": "body"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
