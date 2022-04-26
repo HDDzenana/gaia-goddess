@@ -134,16 +134,16 @@
         {%- endif -%}
         {%for block in section.blocks %}
           {% if block.settings.point  != blank %}
-          <ul class="bulletpoints {%if block.settings.dm == false %} visuallyhiddenm {% endif %} " style=" margin-left:5px; margin-bottom:  5px; text-align: left; display: flex;">
-            <li>
-             <p class="feature__text">{{block.settings.point}} </p>
-            </li>
-          </ul>
-          {% endif %}
+            <div  class="bulletpoints">
+                <p class="feature__text" style="margin-left: 15px;">{{block.settings.point}}
+                </p>
+              </div>
+         
+        {% endif %}
         {%endfor%}
 
         {%- if button_text != blank -%}
-          <a href="{{ button_link }}" class="gbtn btn btn--product-feature" style="background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
+          <a href="{{ button_link }}" class="gbtn btn btn--product-feature" style="margin-top: 20px; background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
         {%- endif -%}
       </div>
     </div>
@@ -329,7 +329,7 @@
           "type": "text",
           "id": "point",
           "label": "Bullet Point"
-        },{
+        }, {
           "type": "checkbox",
           "id": "dm",
           "label": "Display On Mobile",
@@ -349,7 +349,15 @@
 {% endschema %}
 
 <style>
+.bulletpoints {
+  background:url({{ 'bulletpoint.svg' | asset_url }});
+  /* width: 20px;
+  height: 20px; */
+    background-repeat: no-repeat;
 
+    background-position-y: center;
+
+}
 
   a.btn--product-feature:before {
     background: {{section.settings.button_hover_color}}!important;
