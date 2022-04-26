@@ -76,7 +76,7 @@
         "16509781953152df75-1": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.<\/p>",
             "image": "shopify:\/\/shop_images\/image_15.png",
             "img_border_radius": 0,
             "image_width": 100,
@@ -90,7 +90,8 @@
         "16509781953152df75-2": {
           "type": "testimonial",
           "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_15.png",
             "img_border_radius": 0,
             "image_width": 100,
             "customer_name": "Mycroft Holmes",
