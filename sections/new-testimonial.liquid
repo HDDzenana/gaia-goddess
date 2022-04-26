@@ -46,8 +46,8 @@
                 {%- assign testimonial_text = block.settings.testimonial_text -%}
 
                 {%- unless image == blank and customer_name == blank and testimonial_text == blank -%}
-                  <div class="testimonial__item  swipertestimonial {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }} style="width: 65%;">
-                    <div class="testimonial__inner {% if section.settings.testimonial_layout == 'imgfirst'%} crev-{{block.id}} {%endif%} {% if section.settings.boxsh %} tibox-{{block.id}} {%endif%}" style="padding: 5px !important;">
+                  <div class="testimonial__item  swipertestimonial {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }} style="width: 75%;">
+                    <div class="testimonial__inner {% if section.settings.testimonial_layout == 'imgfirst'%} crev-{{block.id}} {%endif%} {% if section.settings.boxsh %} tibox-{{block.id}} {%endif%}" style="padding: 15px !important;">
                       <div class="testimonial__text text-center">{{ testimonial_text }}
                         <div class="social-sharing-wrapper" style="margin: auto; justify-content: center; margin-bottom: 10px;">
                           {%- if block.settings.social_mail != blank -%}
