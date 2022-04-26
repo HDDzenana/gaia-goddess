@@ -281,6 +281,12 @@
 
 
 <style>
+  .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align-last: center !important;
+}
 
   {% for block in section.blocks %}
  .swigpertestimonial {
