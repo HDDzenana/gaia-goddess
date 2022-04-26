@@ -27,11 +27,11 @@
     #ProductFeature--{{ section.id }} {
       background-color: {{ bg_color }};
     }
-    #ProductFeature--template--15510524199089__164943162342f7aac5{
+    #ProductFeature--{{ section.id }}{
       z-index: 1;
-      position: relative;
+      position: relative; 
     }
-    #ProductFeature--template--15510524199089__164943162342f7aac5::before{
+    #ProductFeature--{{ section.id }}::before{
       content: "";
       background-image: url('{{ section.settings.image_background | image_url }}');
       background-size: contain;
