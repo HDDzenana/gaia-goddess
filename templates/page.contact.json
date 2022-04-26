@@ -7,70 +7,36 @@
         "show_page_title": true
       }
     },
-    "165063548869f3ef9a": {
-      "type": "section-contact-form-gaia",
-      "blocks": {
-        "165063548847d953fa-0": {
-          "type": "heading",
-          "settings": {
-            "title": "Contact us",
-            "subheading": "If you have any questions, want to join as a healer, or just want to say hi, feel free to fill the form below.",
-            "heading_color": "#6c1d45"
-          }
-        },
-        "165063548847d953fa-1": {
-          "type": "text",
-          "settings": {
-            "title": "Full Name",
-            "required": true
-          }
-        },
-        "165063548847d953fa-2": {
-          "type": "email",
-          "settings": {
-            "title": "Email",
-            "required": true
-          }
-        },
-        "5b313a25-3876-4fd2-89fe-b70ca77133df": {
-          "type": "telephone",
-          "settings": {
-            "title": "Phone",
-            "required": true
-          }
-        },
-        "d595a593-4f6c-4b95-960d-d2e080e930aa": {
-          "type": "text",
-          "settings": {
-            "title": "Subject",
-            "required": true
-          }
-        },
-        "165063548847d953fa-3": {
-          "type": "body",
-          "settings": {
-            "title": "What can we help you with?\nFeel free to be as detailed as possible.",
-            "required": false
-          }
-        }
-      },
-      "block_order": [
-        "165063548847d953fa-0",
-        "165063548847d953fa-1",
-        "165063548847d953fa-2",
-        "5b313a25-3876-4fd2-89fe-b70ca77133df",
-        "d595a593-4f6c-4b95-960d-d2e080e930aa",
-        "165063548847d953fa-3"
-      ],
+    "1650969866cbff56ab": {
+      "type": "section-contact-form-mailerlite",
       "settings": {
-        "background_color": "#fef1f5",
+        "heading_alignment": "left",
+        "heading": "Contact Us",
+        "sub_heading": "If you have any questions, want to join as a healer, or just want to say hi, feel free to fill the form bellow.",
+        "heading_color": "#6C1D45",
+        "background_color": "#FEF1F5",
         "image": "shopify:\/\/shop_images\/antonino-visalli-RNiBLy7aHck-unsplash.png",
-        "card_background_color": "#6C1D45"
+        "card_background_color": "#6C1D45",
+        "text_color": "#FFFFFF",
+        "heading_details": "Contact Details",
+        "sub_heading_details": "If you need any help and prefer to reach out directly, feel free to do it via phone or email.",
+        "show_email": true,
+        "email_text": "info@gmail.com",
+        "show_phone": true,
+        "phone_text": "000-000-0000",
+        "social_title": "Follow us on Social Media",
+        "social_description": "Follow us on Social Media to find great tips about Yoga, Healthy Lifestyle, and much more!",
+        "social_facebook": true,
+        "social_instagram": true,
+        "social_twitter": true,
+        "show_border": true,
+        "border_width": 1,
+        "border_color": "#FFFFFF"
       }
     }
   },
   "order": [
     "main",
-    "165063548869f3ef9a"
+    "1650969866cbff56ab"
   ]
 }
