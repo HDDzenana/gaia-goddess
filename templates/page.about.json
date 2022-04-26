@@ -40,6 +40,7 @@
         "text_position": "right",
         "text_alignment": "left",
         "mobile_button_position": "center",
+        "showpointmobile": false,
         "image_1": "shopify:\/\/shop_images\/image_11.png",
         "image_link_1": "",
         "image_link_2": "",
@@ -53,6 +54,67 @@
         "button_hover_color": "#fafafa",
         "video_url": "",
         "bg_color": ""
+      }
+    },
+    "165097819584ecc11d": {
+      "type": "new-testimonial",
+      "blocks": {
+        "16509781953152df75-0": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "image": "shopify:\/\/shop_images\/image_16.png",
+            "img_border_radius": 0,
+            "image_width": 100,
+            "customer_name": "Apparel",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
+          }
+        },
+        "16509781953152df75-1": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "img_border_radius": 0,
+            "image_width": 100,
+            "customer_name": "John Watson",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
+          }
+        },
+        "16509781953152df75-2": {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
+            "img_border_radius": 0,
+            "image_width": 100,
+            "customer_name": "Mycroft Holmes",
+            "short_text": "",
+            "customer_name_color": "#6c1d45",
+            "social_linkedin": "",
+            "social_mail": ""
+          }
+        }
+      },
+      "block_order": [
+        "16509781953152df75-0",
+        "16509781953152df75-1",
+        "16509781953152df75-2"
+      ],
+      "settings": {
+        "title": "Multi Column",
+        "heading_color": "#6C1D45",
+        "subtitle": "Lorem Ipsum...",
+        "testimonial_layout": "imgfirst",
+        "border_radius": 0,
+        "show_quotes": true,
+        "bg_color": "",
+        "boxsh": false,
+        "boxshadow_color": "#fef1f5"
       }
     },
     "1649923327baec26bf": {
@@ -251,6 +313,7 @@
   "order": [
     "16504194475f30e158",
     "product-feature",
+    "165097819584ecc11d",
     "1649923327baec26bf",
     "16499498117f4285ec",
     "1649923387792dd1b0",
