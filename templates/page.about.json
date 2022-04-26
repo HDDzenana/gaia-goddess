@@ -109,13 +109,13 @@
       ],
       "settings": {
         "title": "Three Pillars of our Brands",
-        "heading_color": "#6C1D45",
-        "subtitle": "Lorem Ipsum...",
+        "heading_color": "#6c1d45",
+        "subtitle": "Lorem Ipsum... <br>",
         "testimonial_layout": "imgfirst",
-        "border_radius": 0,
+        "border_radius": 4,
         "show_quotes": true,
         "bg_color": "",
-        "boxsh": false,
+        "boxsh": true,
         "boxshadow_color": "#fef1f5"
       }
     },
