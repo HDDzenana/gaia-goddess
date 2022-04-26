@@ -135,7 +135,7 @@
         {%for block in section.blocks %}
           {% if block.settings.point  != blank %}
             <div  class="bulletpoints">
-                <p class="feature__text" style="margin-left: 15px;">{{block.settings.point}}
+                <p class="feature__text" style="margin-left: 15px; margin-top: 3px;">{{block.settings.point}}
                 </p>
               </div>
          
@@ -238,6 +238,11 @@
         }
       ]
     }, {
+      "type": "checkbox",
+      "id": "showpointmobile",
+      "default": false,
+      "label": "Show bulletpoints on mobile"
+    }, {
       "type": "header",
       "content": "Images"
     }, {
@@ -329,11 +334,6 @@
           "type": "text",
           "id": "point",
           "label": "Bullet Point"
-        }, {
-          "type": "checkbox",
-          "id": "dm",
-          "label": "Display On Mobile",
-          "default": false
         }
       ]
     }
@@ -349,6 +349,7 @@
 {% endschema %}
 
 <style>
+
 .bulletpoints {
   background:url({{ 'bulletpoint.svg' | asset_url }});
   /* width: 20px;
@@ -356,9 +357,23 @@
     background-repeat: no-repeat;
 
     background-position-y: center;
-
 }
 
+    {%if section.settings.showpointmobile == false %}
+@media screen and (max-width: 768px) {
+  .bulletpoints {
+    display: none;
+  }
+}
+
+{% else %}
+@media screen and (max-width: 768px) {
+  .bulletpoints {
+    display: block;
+    text-align-last: left;
+  }
+}
+{%endif %}
   a.btn--product-feature:before {
     background: {{section.settings.button_hover_color}}!important;
   }
