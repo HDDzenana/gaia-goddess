@@ -94,20 +94,6 @@ h2 span {
   }
 }
 
-@media only screen and (min-width: 768px) {
-  #FeaturedImage--template--15541367308465__1650633606e64bec24 .featured-image__content .wrapper {
-    padding: 0 170px;
-  }
-}
-#FeaturedImage--template--15541367308465__1650633606e64bec24 .featured-image__content .wrapper .slide__heading {
-  font-size: 50px;
-  margin-bottom: 20px;
-}
-#FeaturedImage--template--15541367308465__1650633606e64bec24 .featured-image__content .wrapper .slide__caption {
-  font-size: 16px;
-  line-height: 24px;
-}
-
 
 /* Styling for account flow (login, sign in, etc)*/
 .page-customer{
