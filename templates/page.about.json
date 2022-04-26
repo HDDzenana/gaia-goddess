@@ -113,7 +113,7 @@
         "subtitle": "Lorem Ipsum... <br>  <br>",
         "testimonial_layout": "imgfirst",
         "border_radius": 4,
-        "show_quotes": true,
+        "show_quotes": false,
         "bg_color": "",
         "boxsh": true,
         "boxshadow_color": "#f4e5e9"
@@ -284,7 +284,7 @@
       ],
       "settings": {
         "title": "Our Leaders",
-        "heading_color": "#6C1D45",
+        "heading_color": "#6c1d45",
         "subtitle": "Lorem Ipsum...  <br>",
         "testimonial_layout": "imgfirst",
         "border_radius": 0,
