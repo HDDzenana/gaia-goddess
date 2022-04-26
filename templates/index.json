@@ -21,7 +21,6 @@
     },
     "1649147513ace08e02": {
       "type": "section-product-feature",
-      "disabled": true,
       "settings": {
         "bg": "#FEFAFB",
         "image_layout": "square",
@@ -114,6 +113,7 @@
     },
     "165098805093b9905f": {
       "type": "section-product-feature",
+      "disabled": true,
       "settings": {
         "bg": "#FEFAFB",
         "image_layout": "square",
@@ -122,7 +122,7 @@
         "text_alignment": "left",
         "mobile_button_position": "center",
         "showpointmobile": false,
-        "image_1": "shopify:\/\/shop_images\/image-about.png",
+        "image_1": "shopify:\/\/shop_images\/antonino-visalli-RNiBLy7aHck-unsplash.png",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
