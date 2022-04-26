@@ -80,11 +80,17 @@ h2 span {
 .center {
   text-align: center;
 }
+#shopify-section-template--15510524264625__16508830961e8582ae{
+  padding-top: 0;
+}
 
 
 @media only screen and (max-width: 768px) {
   .visuallyhiddenm {
     display: none !important;
+  }
+  .site-header>.wrapper{
+    padding-left: 20px;
   }
 }
 
@@ -100,4 +106,43 @@ h2 span {
 #FeaturedImage--template--15541367308465__1650633606e64bec24 .featured-image__content .wrapper .slide__caption {
   font-size: 16px;
   line-height: 24px;
+}
+
+
+/* Styling for account flow (login, sign in, etc)*/
+.page-customer{
+  background-image: url(//cdn.shopify.com/s/files/1/0535/9357/1505/files/Group_674.png?v=1650955083);
+  background-size: cover;
+}
+.page-customer .wrapper .form-vertical-wrapper{
+  text-align: center;
+}
+.account__heading--small{
+  font-size: 50px;
+  color: #FFFFFF
+}
+.registration-p, .login-p{
+  color: #FFFFFF
+}
+.form-vertical{
+  width: 80%;
+  margin: 0 auto;
+}
+#CreateCustomer > input, #CustomerLogin > input{
+  background: none;
+  border-radius: 40px;
+  height: 60px;
+}
+#CreateCustomer > input::placeholder, #CustomerLogin > input::placeholder, .return, #RecoverPassword {
+  color: #FFFFFF;
+}
+#RecoverPassword {
+  font-size: 20px;
+}
+.return{
+  font-size: 16px;
+  margin-top: 30px;
+}
+#CreateCustomer .btn, #CustomerLogin .btn {
+  margin: 30px auto 0 auto;
 }

@@ -1,0 +1,336 @@
+<style>
+    .contact__block{
+      display: flex;
+    }
+    .email_contact{
+      display: inline-block;
+      width: 60%;
+    }
+    .wrapper {
+      padding: 0 0 0 var(--gutter);
+    }
+    .contact__form{
+      width: 45%;
+      padding: 40px 20px 0 0;
+    }
+    .contact__info-background{
+      width: 60%;
+    }
+    .contact__info{
+      background-color: {{ section.settings.card_background_color }};
+      width: 55%;
+      margin: 20% auto;
+      padding: 40px;
+    }
+    .contact__info > p, .contact__info > h3, .contact__info .rte > ul, .contact__info .rte > p {
+      color: {{ section.settings.text_color }}
+    }
+    .contact_us_list{
+      margin: 0 0 20px;
+    }
+    .contact__divider{
+      border-top: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
+      margin-bottom: 30px;
+    }
+    .form__heading, .form__subheading {
+      text-align: {{ section.settings.heading_alignment }}
+    }
+    .form__subheading {
+        width: 75%;
+    }
+    .contact-form-wrapper{
+        width: 100%;
+    }
+    .social-sharing-wrapper-contact{
+        justify-content: left !important;
+    }
+    @media only screen and (max-width: 767px){
+      .contact__block{
+        display: block;
+      }
+      .contact__form, .contact__info-background {
+        width: 100%;
+      }
+      .wrapper{
+        padding: 0;
+      }
+      .contact__form {
+        padding: 40px;
+      }
+      .btn-primary{
+        width: 50%;
+      }  
+      .form__heading, .form__subheading {
+        text-align: center;
+      }
+      .contact__info {
+        width: 100%;
+        margin: 0% auto;
+        padding: 40px;
+      }
+      .contact__info-background{
+        padding: 40px;
+      }
+      .form__subheading{
+        width: 82%;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+    .email_contact {
+        width: 80%;
+    }
+    }
+  </style>
+  
+  <section data-section-type="contact-form" data-section-id="{{ section.id }}" style="background-color: {{ section.settings.background_color }}">
+    <div id="contact-form-wrapper" class="wrapper contact-form-wrapper">
+      <div class="contact__block">
+  
+        <div id="contact__form" class="contact__form">
+            {% if section.settings.heading != blank %}
+                <h2 class="form__heading" style="color: {{ section.settings.heading_color}}">{{ section.settings.heading }}</h2>
+            {% endif %}
+            {% if section.settings.sub_heading != blank %}
+                <p class="form__subheading">{{ section.settings.sub_heading }}</p>
+            {% endif %}
+
+          {% render 'mailerlite-contact-form' %}
+        </div>
+        <div class="contact__info-background" style="background-image: url('{{ section.settings.image | img_url:'2048x' }}'); background-size: cover;">
+          <div class="contact__info">
+            <h3>{{ section.settings.heading_details }}</h3>
+            <p>{{ section.settings.sub_heading_details }}</p>
+  
+            <div class="rte">
+              <ul class="contact_us_list">
+                {% if section.settings.show_email %}
+                <li>{%- render 'contact-email' -%}<a style="text-decoration: none;" href="mailto:info@gaiagoddesslifestyle.com">
+                  <div class="email_contact">
+                   
+                   <img src="https://cdn.shopify.com/s/files/1/0535/9357/1505/files/info_gaiagoddesslifestyle.com.png?v=1650647141">
+                  </div>
+                   </a></li>
+                {% endif %}
+                {% if section.settings.show_phone %}
+                    <li>{%- render 'contact-phone' -%}{{ section.settings.phone_text }}</li>
+                {% endif %}
+              </ul>
+  
+              {% if section.settings.show_border %}
+                <div class="contact__divider"></div>
+              {% endif %}
+
+              {% if section.settings.social_title != blank%}
+                <p class="h5">{{ section.settings.social_title }}</p>
+              {% endif %}
+
+              {% if section.settings.social_description != blank%}
+                <p>{{ section.settings.social_description }}</p>
+              {% endif %}
+  
+              <div class="social-sharing-wrapper social-sharing-wrapper-contact">
+                {% if section.settings.social_facebook %}
+                  <a class="facebook" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                    {%- render 'icon-contact-facebook' -%}
+                  </a>
+                {% endif %}
+              
+                {% if section.settings.social_instagram %}
+                  <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                    {%- render 'icon-instagram' -%}
+                  </a>
+                {% endif %}
+            
+                {% if section.settings.social_twitter %}
+                  <a class="twitter" rel="noopener" href = "{{ settings.social_twitter_link }}" title="{{ 'footer.socials.title' | t: social: 'Twitter', shop_name: shop.name }}">
+                    {%- render 'icon-twitter' -%}
+                  </a>
+                {% endif %}
+                
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% schema %}
+{
+  "name": "Contact Us (Gaia)",
+  "settings": [
+    {
+        "type": "header",
+        "content": "Heading"
+    },
+    {
+        "type": "select",
+        "id": "heading_alignment",
+        "label": "Heading alignment",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "Left"
+          },
+          {
+            "value": "center",
+            "label": "Center"
+          },
+          {
+            "value": "right",
+            "label": "Right"
+          }
+        ]
+      },
+      {
+        "type": "text", 
+        "id": "heading",
+        "label": "Heading",
+        "default": "Contact Us"
+      },
+      {
+        "type": "textarea", 
+        "id": "sub_heading",
+        "label": "Sub Heading",
+        "default": "If you have any questions, want to join as a healer, or just want to say hi, feel free to fill the form bellow."
+      },
+      {
+        "type": "color",
+        "id": "heading_color",
+        "label": "Heading color",
+        "default": "#6C1D45"
+      },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FEF1F5"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Right image"
+    },
+    {
+      "type": "color",
+      "id": "card_background_color",
+      "label": "Info Card Background color",
+      "default": "#6C1D45"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+        "type": "header",
+        "content": "Contact Info"
+    },
+    {
+        "type": "text", 
+        "id": "heading_details",
+        "label": "Contact Details",
+        "default": "Contact Details"
+      },
+      {
+        "type": "textarea", 
+        "id": "sub_heading_details",
+        "label": "Contact Details description",
+        "default": "If you need any help and prefer to reach out directly, feel free to do it via phone or email."
+      },
+      {
+        "type": "checkbox",
+        "id": "show_email",
+        "label": "Show Email Icon",
+        "default": true
+    },
+    {
+        "type": "text",
+        "id": "email_text",
+        "label": "Email",
+        "default": "info@gmail.com"
+    },
+    {
+        "type": "checkbox",
+        "id": "show_phone",
+        "label": "Show Cellphone Icon",
+        "default": true
+    },
+    {
+        "type": "text",
+        "id": "phone_text",
+        "label": "Phone number",
+        "default": "000-000-0000"
+    },
+    {
+        "type": "text",
+        "id": "social_title",
+        "label": "Heading",
+        "default": "Follow us on Social Media"
+    },
+    {
+        "type": "textarea",
+        "id": "social_description",
+        "label": "Description",
+        "default": "Follow us on Social Media to find great tips about Yoga, Healthy Lifestyle, and much more!"
+    },
+    {
+        "type": "checkbox",
+        "id": "social_facebook",
+        "label": "Show Facebook Icon",
+        "default": true
+    },
+    {
+        "type": "checkbox",
+        "id": "social_instagram",
+        "label": "Show Instagram Icon",
+        "default": true
+    },
+    {
+        "type": "checkbox",
+        "id": "social_twitter",
+        "label": "Show Twitter Icon",
+        "default": true
+    },
+    {
+        "type": "header",
+        "content": "Divider"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_border",
+        "label": "Display divider?",
+        "default": true
+      },
+      {
+        "type": "range",
+        "id": "border_width",
+        "label": "Border width",
+        "min": 1,
+        "max": 10,
+        "default": 1,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "color",
+        "id": "border_color",
+        "label": "Border Color",
+        "default": "#FFFFFF"
+      }
+  ],
+  "presets": [
+    {
+      "name": "Contact Gaia",
+      "category": "Text"
+    }
+  ]
+}
+{% endschema %}
