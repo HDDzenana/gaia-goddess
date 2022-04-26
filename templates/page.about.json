@@ -68,7 +68,7 @@
             "image_width": 100,
             "customer_name": "Apparel",
             "short_text": "",
-            "customer_name_color": "#6c1d45",
+            "customer_name_color": "#eb6fbd",
             "social_linkedin": "",
             "social_mail": ""
           }
@@ -82,7 +82,7 @@
             "image_width": 100,
             "customer_name": "Community",
             "short_text": "",
-            "customer_name_color": "#6c1d45",
+            "customer_name_color": "#eb6fbd",
             "social_linkedin": "",
             "social_mail": ""
           }
@@ -96,7 +96,7 @@
             "image_width": 100,
             "customer_name": "Retreats",
             "short_text": "",
-            "customer_name_color": "#6c1d45",
+            "customer_name_color": "#eb6fbd",
             "social_linkedin": "",
             "social_mail": ""
           }
@@ -110,13 +110,13 @@
       "settings": {
         "title": "Three Pillars of our Brands",
         "heading_color": "#6c1d45",
-        "subtitle": "Lorem Ipsum... <br>",
+        "subtitle": "Lorem Ipsum... <br>  <br>",
         "testimonial_layout": "imgfirst",
         "border_radius": 4,
         "show_quotes": true,
         "bg_color": "",
         "boxsh": true,
-        "boxshadow_color": "#fef1f5"
+        "boxshadow_color": "#f4e5e9"
       }
     },
     "1649923327baec26bf": {
