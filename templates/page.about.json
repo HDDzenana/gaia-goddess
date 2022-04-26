@@ -119,70 +119,6 @@
         "boxshadow_color": "#f4e5e9"
       }
     },
-    "1649923327baec26bf": {
-      "type": "section-testimonials",
-      "disabled": true,
-      "blocks": {
-        "16499233277907de75-0": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.\"<\/p>",
-            "image": "shopify:\/\/shop_images\/image_16.png",
-            "img_border_radius": 0,
-            "image_width": 200,
-            "customer_name": "Apparel",
-            "short_text": "",
-            "customer_name_color": "#eb6fbd",
-            "social_linkedin": "",
-            "social_mail": ""
-          }
-        },
-        "16499233277907de75-1": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.\"<\/p>",
-            "image": "shopify:\/\/shop_images\/image_15.png",
-            "img_border_radius": 0,
-            "image_width": 200,
-            "customer_name": "Community",
-            "short_text": "",
-            "customer_name_color": "#eb6fbd",
-            "social_linkedin": "",
-            "social_mail": ""
-          }
-        },
-        "16499233277907de75-2": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.\"<\/p>",
-            "image": "shopify:\/\/shop_images\/image_17.png",
-            "img_border_radius": 100,
-            "image_width": 200,
-            "customer_name": "Retreats",
-            "short_text": "",
-            "customer_name_color": "#eb6fbd",
-            "social_linkedin": "",
-            "social_mail": ""
-          }
-        }
-      },
-      "block_order": [
-        "16499233277907de75-0",
-        "16499233277907de75-1",
-        "16499233277907de75-2"
-      ],
-      "settings": {
-        "title": "Three Pillars of our Brands",
-        "heading_color": "#6c1d45",
-        "subtitle": "Lorem Ipsum...",
-        "testimonial_layout": "imgfirst",
-        "border_radius": 6,
-        "show_quotes": false,
-        "bg_color": "#ffffff",
-        "boxsh": true,
-        "boxshadow_color": "#fef1f5"
-      }
-    },
     "16499498117f4285ec": {
       "type": "section-values",
       "blocks": {
@@ -258,8 +194,8 @@
             "customer_name": "Parker Nayman",
             "short_text": "CCO",
             "customer_name_color": "#eb6fbd",
-            "social_linkedin": "",
-            "social_mail": ""
+            "social_linkedin": "#",
+            "social_mail": "#"
           }
         },
         "165097999198c4c09f-2": {
@@ -272,8 +208,8 @@
             "customer_name": "Mycroft Holmes",
             "short_text": "COO",
             "customer_name_color": "#eb6fbd",
-            "social_linkedin": "",
-            "social_mail": ""
+            "social_linkedin": "#",
+            "social_mail": "#"
           }
         }
       },
@@ -286,70 +222,6 @@
         "title": "Our Leaders",
         "heading_color": "#6c1d45",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque.",
-        "testimonial_layout": "imgfirst",
-        "border_radius": 0,
-        "show_quotes": true,
-        "bg_color": "",
-        "boxsh": false,
-        "boxshadow_color": "#fef1f5"
-      }
-    },
-    "1649923387792dd1b0": {
-      "type": "section-testimonials",
-      "disabled": true,
-      "blocks": {
-        "1649923387b93629e7-0": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
-            "image": "shopify:\/\/shop_images\/image_12.png",
-            "img_border_radius": 0,
-            "image_width": 200,
-            "customer_name": "Maria Marshall",
-            "short_text": "CEO + Founder",
-            "customer_name_color": "#eb6fbd",
-            "social_linkedin": "account",
-            "social_mail": "account"
-          }
-        },
-        "1649923387b93629e7-1": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
-            "image": "shopify:\/\/shop_images\/image_13.png",
-            "img_border_radius": 0,
-            "image_width": 200,
-            "customer_name": "Parker Nayman",
-            "short_text": "CCO",
-            "customer_name_color": "#eb6fbd",
-            "social_linkedin": "#",
-            "social_mail": "#"
-          }
-        },
-        "1649923387b93629e7-2": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
-            "image": "shopify:\/\/shop_images\/image_14.png",
-            "img_border_radius": 0,
-            "image_width": 200,
-            "customer_name": "Kevin Locke",
-            "short_text": "COO",
-            "customer_name_color": "#eb6fbd",
-            "social_linkedin": "#",
-            "social_mail": "#"
-          }
-        }
-      },
-      "block_order": [
-        "1649923387b93629e7-0",
-        "1649923387b93629e7-1",
-        "1649923387b93629e7-2"
-      ],
-      "settings": {
-        "title": "Our Leaders",
-        "heading_color": "#6c1d45",
-        "subtitle": "Lorem Ipsum...",
         "testimonial_layout": "imgfirst",
         "border_radius": 0,
         "show_quotes": true,
@@ -382,10 +254,8 @@
     "16504194475f30e158",
     "product-feature",
     "165097819584ecc11d",
-    "1649923327baec26bf",
     "16499498117f4285ec",
     "1650979992e272da25",
-    "1649923387792dd1b0",
     "main",
     "1649923445dbb0994e"
   ]
