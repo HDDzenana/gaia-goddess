@@ -8,19 +8,25 @@
 						{{ 'customer.recover_password.success' | t }}
 					</div>
 					<h2 class="account__heading account__heading--small">{{ 'customer.login.title' | t }}</h2>
+
+					<div class="social-icons"></div>
+					<p class="login-p">or use your email account:</p>
+
 					{{ form.errors | default_errors }}
 					<label for="CustomerEmail" class="hidden-label">{{ 'customer.login.email' | t }}</label>
 					<input type="email" name="customer[email]" id="CustomerEmail" class="input--full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off" autofocus required>
 					{% if form.password_needed %}
 						<label for="CustomerPassword" class="hidden-label">{{ 'customer.login.password' | t }}</label>
-						<input type="password" value="" name="customer[password]" id="CustomerPassword" class="input--full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}" required>
+						<input type="password" value="" name="customer[password]" id="CustomerPassword" class="input--full{% if form.errors contains 'password' %} error{% endif %}" placeholder="{{ 'customer.login.password' | t }}" required style="margin-bottom: 30px;">
 					{% endif %}
-					<button type="submit" class="btn">{{ 'customer.login.sign_in' | t }}</button>
+					
+					{% if form.password_needed %}
+						<a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}</a>
+					{% endif %}
+
+					<button type="submit" class="btn">Sign-In</button>
 					<div class = "return light-gray">
-						{% if form.password_needed %}
-							<a href="#recover" id="RecoverPassword">{{ 'customer.login.forgot_password' | t }}  •  </a>
-						{% endif %}
-						<a href="{{ routes.account_register_url }}">{{ 'layout.customer.create_account' | t }}</a>
+						Don't have an account? <a href="{{ routes.account_register_url }}" style="color: #EB6FBD; text-decoration: underline;">Create now!</a>
 					</div>
 				{% endform %}
 			</div>
