@@ -7,6 +7,71 @@
         "show_page_title": true
       }
     },
+    "16510797131a8810b2": {
+      "type": "section-featured-collections",
+      "blocks": {
+        "eebea0da-2750-4ce0-b6b1-c3ca27b0dd8d": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": ""
+          }
+        },
+        "ab53b94d-3555-4a0a-b076-c874923bc2a0": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": ""
+          }
+        },
+        "bcb02ca5-4ef0-4db4-a600-8b4a56c21f56": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": ""
+          }
+        },
+        "e3577d9e-13c0-424e-9771-dacb42ac50e4": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "eebea0da-2750-4ce0-b6b1-c3ca27b0dd8d",
+        "ab53b94d-3555-4a0a-b076-c874923bc2a0",
+        "bcb02ca5-4ef0-4db4-a600-8b4a56c21f56",
+        "e3577d9e-13c0-424e-9771-dacb42ac50e4"
+      ],
+      "settings": {
+        "heading": "Our Healers",
+        "heading_color": "#6C1D45",
+        "heading_alignment": "left",
+        "show_filter": true,
+        "bg_color": "",
+        "healer_title_color": "#eb6fbd",
+        "healer_subtitle_color": "#6c1d45",
+        "enable_slider": true
+      }
+    },
     "16502926109923d142": {
       "type": "section-jointeam-mailerlite",
       "settings": {
@@ -16,13 +81,14 @@
         "image_1": "shopify:\/\/shop_images\/apply_healer.png",
         "heading": "Want to be part of the team?",
         "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
-        "heading_color": "#6C1D45",
+        "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }
     }
   },
   "order": [
     "main",
+    "16510797131a8810b2",
     "16502926109923d142"
   ]
 }
