@@ -167,3 +167,30 @@ h2 span {
   font-weight: 700;
   margin-bottom: 10px;
 }
+
+/* Mobile header menu */
+.drawer--left{
+  width: 100%;
+  left: 0;
+  border-left: none;
+}
+.drawer {
+  max-width: 100%;
+  transition: none;
+  padding-bottom: 0;
+}
+.js-drawer-open-left .drawer--left{
+  transform: none;
+}
+.mobile-nav{
+  height: 100%;
+}
+.icon-close{
+  fill: #EB6FBD;
+  stroke: #EB6FBD;
+  stroke-width: 40px;
+}
+.drawer__title{
+  width: 100%;
+  margin: 0;
+}
