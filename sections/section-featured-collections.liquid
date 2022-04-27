@@ -1,0 +1,304 @@
+<!-- /sections/featured-collections.liquid -->
+{%- liquid
+  assign columns = settings.products_per_row_on_desktop | plus: 1
+  assign columns_small = columns | at_most: 2
+  assign columns_mobile = settings.products_per_row_on_mobile | plus: 0
+  assign layout = section.settings.products_layout
+  assign bg_color = section.settings.bg_color
+
+  assign carousel = false
+  if layout == 'carousel'
+    assign carousel = true
+  endif
+
+  assign grid_mobile = ' grid--mobile'
+	if section.settings.enable_slider
+  	assign grid_mobile = ' grid--mobile-carousel'
+	endif
+-%}
+
+{%- style -%}
+  {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+    #FeaturedCollection--{{ section.id }} {
+      background-color: {{ bg_color }};
+    }
+    #FeaturedCollection--{{ section.id }} .product-grid-item {
+      --bg: {{ bg_color }};
+    }
+  {%- endif -%}
+
+  @media screen and (min-width: 1024px) {
+    #FeaturedCollection--{{ section.id }} {
+      --grid: repeat({{ columns }}, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 1023px) {
+    #FeaturedCollection--{{ section.id }} {
+      --grid: repeat({{ columns_small }}, minmax(0, 1fr));
+    }
+  }
+
+  @media screen and (max-width: 479px) {
+    #FeaturedCollection--{{ section.id }} {
+      --grid-mobile: repeat({{ columns_mobile }}, minmax(0, 1fr));
+    }
+  }
+
+  .healer-description, .healer-events, .healer-events-title{
+    text-align: left;
+  }
+  .healer-events-title, .healer-heading__subtitle{
+    color: {{ section.settings.healer_subtitle_color }};
+  }
+  .healer-heading{
+    text-align: left;
+  }
+  .healer-heading{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .healer-heading__title{
+    margin-bottom: 0;
+    color: {{ section.settings.healer_title_color }}
+  }
+  .healer-heading__subtitle{
+    margin: 0;
+  }
+  .healer-heading__icons{
+    display: flex;
+    align-items: center;
+  }
+  .social-circle{
+    margin-right: 0;
+    margin-left: 0;
+  }
+  .social-circle:last-child{
+    margin-left: 5px;
+  }
+  .section__heading{
+    color: {{ section.settings.heading_color }};
+    text-align: {{ section.settings.heading_alignment }};
+    font-weight: 500;
+  }
+  .wrapper-section__heading{
+    display: flex;
+    justify-content: space-between;
+  }
+  .healers-filter__dropdown{
+    border-radius: 40px;
+    border: 1px solid #6C1D45;
+    width: 100%;
+  }
+  .healers-filter{
+    width: 200px;
+  }
+{%- endstyle -%}
+
+<section
+  id="FeaturedCollection--{{ section.id }}"
+  class="featured-collection featured-collection--{{ layout }}"
+  data-section-id="{{ section.id }}"
+  data-section-type="featured-collection">
+
+    <div class="featured-collection__title">
+      <div class="wrapper">
+        <div class="wrapper-section__heading">
+          <h2 class="section__heading">{{ section.settings.heading }}</h2>
+
+          {%- if settings.show_spacer_lines -%}
+            <hr>
+          {%- endif -%}
+
+          {% if section.settings.show_filter %}
+            <div class="healers-filter">
+              <select name="category" id="category" class="healers-filter__dropdown">
+                <option selected disabled>Category</option>
+                <option value="yoga">Yoga</option>
+                <option value="meditation">Meditation</option>
+                <option value="reiki">Reiki</option>
+
+              </select>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+  <div class="wrapper">
+    <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid__container{% endif %}">
+      <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}"{% if carousel %} data-collection-slider{% endif %}>
+        {% for block in section.blocks %}
+          {% assign collection = collections[block.settings.collection] | default: false %}
+
+          <div class="healer-card">
+            <img alt="Healer card image" src="{{ collection.featured_image | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
+
+            <div class="healer-heading">
+              <div class="healer-heading__info">
+                <h3 class="healer-heading__title">{{ collection.title }}</h3>
+                <p class="healer-heading__subtitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
+              </div>
+
+              <div class="healer-heading__icons">
+                {% if block.settings.show_instagram_icon %}
+                  <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+                    {%- render 'healer-insta' -%}
+                  </a>
+                {% endif %}
+
+                {% if block.settings.show_website_icon %}
+                  <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_website_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+                    {%- render 'healer-website' -%}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+
+            <p class="healer-description">{{ collection.description }}</p>
+
+            <p class="healer-events-title">Upcoming events</p>
+            <p class="healer-events"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              {% comment %} Add products on the upcoming events
+              {% for product in collection.products %}
+                {{ product.title }}
+              {% endfor %}
+            {% endcomment %}
+            </p>
+          </div>
+
+        {% endfor %}
+
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured healers",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Heading"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Our Healers"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#6C1D45"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "label": "Heading alignment",
+      "default": "left",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_filter",
+      "label": "Show collection filter",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    },
+    {
+      "type": "color",
+      "id": "healer_title_color",
+      "label": "Healer Title Color"
+    },
+    {
+      "type": "color",
+      "id": "healer_subtitle_color",
+      "label": "Healer Subtitle Color"
+    },
+    {
+      "type": "header",
+      "content": "Mobile slider"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_slider",
+      "label": "Enable slider",
+      "default": true,
+      "info": "Horizontal slider in mobile layout."
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Featured Collection",
+      "type": "collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Healer"
+        },
+        {
+          "type": "text",
+          "id": "healer_subtitle",
+          "label": "Healer Subtitle"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_instagram_icon",
+          "label": "Show instagram",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "social_instagram_link",
+          "label": "Facebook"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_website_icon",
+          "label": "Show Webpage",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "social_website_link",
+          "label": "Page"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured healers",
+      "category": "Collection"
+    }
+  ]
+}
+{% endschema %}
