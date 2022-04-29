@@ -1,0 +1,380 @@
+{%- comment -%} Product Feature {%- endcomment -%}
+
+{%- liquid
+    comment
+      Layout
+    endcomment
+    assign section_id = section.id
+    assign text_position = section.settings.text_position
+    assign text_alignment = section.settings.text_alignment
+  
+    comment
+      Text
+    endcomment
+    assign heading = section.settings.heading
+    assign subheading = section.settings.subheading
+    assign description = section.settings.description
+    assign line_color = section.settings.line_color
+  
+    comment
+      Button
+    endcomment
+    assign button_text = section.settings.button_text
+    assign button_link = section.settings.button_link | default: '#'
+    assign button_style = section.settings.button_style
+  
+    comment
+      Images
+    endcomment
+    assign image_1 = section.settings.image_1
+  
+    comment
+      Colors
+    endcomment
+    assign bg_color = section.settings.bg_color
+  -%}
+  
+  {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+    {%- style -%}
+      #ProductFeature--{{ section.id }} {
+        background-color: {{ bg_color }};
+      }
+    {%- endstyle -%}
+  {%- endif -%}
+
+  <style>
+    .about-card{
+        margin: 0 auto;
+        background-color: #FEF1F5;
+        border-radius: 40px;
+        height: 600px;
+        width: 420px;
+        box-shadow: 0 2px 10px rgb(0 0 0 / 20%)
+    }
+    a.btn--about-card:before {
+        background: {{ section.settings.button_hover_color }} !important;
+    }
+    .about-card__info{
+        padding: 40px;
+    }
+    .about-card__title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: {{ section.settings.card_title_color }}
+    }
+    .about-card__list{
+        list-style: none;
+    }
+    .about-card__list > li::before {
+        content: url({{ 'bulletpoint.svg' | asset_url }});
+    }
+    .about-card__list > li {
+        margin-bottom: 20px;
+    }
+    .about-card__bullet{
+        color: #6C1D45;
+    }
+    .about-info {
+        text-align: {{ section.settings.text_alignment }};
+        line-height: 1.2;
+    }
+    .about-events{
+        width: 45%;
+        display: block;
+        position: sticky;
+        top: 3rem;
+        z-index: 2;
+    }
+    .about-info > p{
+        margin: 30px 0 !important;
+    }
+    .about-info__image-bg{
+        padding-top: 80%;
+        background-size: contain;
+    }
+    @media only screen and (max-width: 768px){
+        .btn--about-card{
+            margin-top: 15px;
+        }
+        .about__block{
+            flex-direction: column-reverse;
+            display: flex;
+          }
+        .about-info {
+            padding-left: var(--gutter-mobile);
+            padding-right: var(--gutter-mobile);
+            text-align: center;
+        }
+        .about-info__image-bg{
+            padding-top: 100%;
+            background-position: 50%;
+        }
+        .about-events {
+            width: 100%;
+        }
+        .about-card {
+            margin: 0 30px;
+            width: auto;
+            height: auto;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        .about__block{
+            align-items: flex-start;
+        }
+    }
+    @media only screen and (min-width: 1024px){
+        .about-info{
+            max-width: calc(60% - var(--gutter)*2);
+            margin-left: 0;
+        }
+    }
+
+
+    .retreat-feature{
+        padding: 0;
+    }
+    .retreat-wrapper{
+        padding: 0;
+    }
+    .retreat-feature__text > p {
+        line-height: 1.2;
+    }
+    .retreat-wrapper{
+      width: 100%;
+    }
+    @media only screen and (min-width: 768px){
+        .retreat-feature__text {
+            width: 50%;
+            padding: var(--gutter) !important;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .retreat-feature__text{
+            text-align: center;
+            padding: 40px;
+        }
+        .btn{
+            width: 50%;
+        }
+        .rte h3{
+            margin: 0;
+        }
+        .subheading-p {
+            font-size: 16px;
+        }
+        .about-info__heading{
+            font-size: 30px;
+        }
+    }
+    </style>
+  
+  <section id="ProductFeature--{{ section.id }}" class="retreat-feature" data-section-id="{{ section.id }}" data-section-type="product-feature">
+    <div class="wrapper retreat-wrapper">
+      
+      <div class="product-feature__block about__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
+        <div class="about-events">
+
+            <div class="about-card">
+                <div class="about-card__info">
+                    {% render 'healer-about' %}
+                    {% if section.settings.card_title != blank %}
+                        <h3 class="about-card__title">{{ section.settings.card_title }}</h3>
+                    {% endif %}
+                    {% if section.settings.card_text != blank %}
+                        <p>{{ section.settings.card_text }}</p>
+                    {% endif %}
+                    {% if section.settings.card_bullet != blank %}
+                        {% assign bullets = section.settings.card_bullet | split: "-" %}
+                        <ul class="about-card__list">
+                        {% for bullet in bullets %}
+                            {% if bullet != blank %}
+                                <li><span class="about-card__bullet">{{ bullet }}</span></li>
+                            {% endif %}
+                        {% endfor %}
+                        </ul>
+                    {% endif %}
+                    {%- if button_text != blank -%}
+                        <a href="{{ button_link }}" class="btn btn--about-card" style="background-color: {{ section.settings.button_color }} !important; border: 1px solid {{ section.settings.button_color }} !important;">{{ button_text }}</a>
+                    {%- endif -%}
+                </div>
+            </div>
+          
+        </div>
+      
+        <div class="product-feature__text about-info rte">
+          {%- if heading != blank -%}
+            <h2 class="about-info__heading" style="color: {{ section.settings.header_color }}">{{ heading | escape }}</h2>
+          {%- endif -%}
+
+          {%- if subheading != blank -%}
+            <p class="about-info__subheading">{{ subheading | escape }}</p>
+          {%- endif -%}
+      
+          {%- if settings.show_spacer_lines -%}
+            <hr>
+          {%- endif -%}
+      
+          {%- if description != blank -%}
+            {{- description -}}
+          {%- endif -%}
+
+          <div class="product-feature__image product-feature__image--primary">
+            {%- if image_1 != blank -%}
+              {%- assign image = image_1 -%}
+              <div class="about-info__image-bg product-feature__image-bg lazyload"
+                data-bgset="{% render 'bgset', image: image %}"
+                data-sizes="auto"
+                data-parent-fit="cover">
+              </div>
+              <noscript>
+                <div class="bout-info__image-bg product-feature__image-bg" style="background-image: url({{ image | img_url: '1024x' }});"></div>
+              </noscript>
+            {%- else -%}
+              <div class="bout-info__image-bg product-feature__image-bg placeholder-svg--overlayed">
+                {{- 'image' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
+              </div>
+            {%- endif -%}
+          </div>
+      
+        </div>
+      </div>
+    </div>
+  </section>
+   
+  {% schema %}
+  {
+    "name": "About Healers",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "Text position",
+        "default": "right",
+        "options": [
+          { "label": "Left", "value": "left" },
+          { "label": "Right", "value": "right" }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "text_alignment",
+        "label": "Text alignment",
+        "default": "center",
+        "options": [
+          { "label": "Center", "value": "center" },
+          { "label": "Left", "value": "left" }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "Images"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image"
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },  
+      {
+        "type": "color",
+        "id": "header_color",
+        "label": "Header Color",
+        "default": "#6C1D45"
+      },
+      {
+        "type": "textarea",
+        "id": "heading",
+        "label": "Heading",
+        "default": "About Sophie Moore"
+      },
+      {
+        "type": "textarea",
+        "id": "subheading",
+        "label": "Sub Heading",
+        "default": "The pain itself is love, the main storage system. Performance The kids are not running, but the disease is at least not pregnant. Aliquet lectus eget varius nec dictum . Pure and not ok my eu eu, id. Eleifend vengeful malesuada id et malesuada augue vel, porta rhoncus. Hunger is the place to start, so that I can drink my heart. He needs to feel good about the ugly and not the earth. And the chocolate in the valley."
+      },
+      {
+        "type": "liquid",
+        "id": "description",
+        "label": "Description (HTML)",
+        "default": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.</p>"
+      },
+      {
+        "type": "header",
+        "content": "Card"
+      },
+      {
+        "type": "text",
+        "id": "card_title",
+        "label": "Card Title",
+        "default": "Events/Classes by Sophie"
+      },
+      {
+        "type": "color",
+        "id": "card_title_color",
+        "label": "Card Header Color",
+        "default": "#6C1D45"
+      },
+      {
+        "type": "text",
+        "id": "card_text",
+        "label": "Card Text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
+      },
+      {
+        "type": "textarea",
+        "id": "card_bullet",
+        "label": "Card Bullet points",
+        "default": "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      },
+      {
+        "type": "header",
+        "content": "Card button"
+      },
+      {
+        "type": "text",
+        "id": "button_text",
+        "label": "Text"
+      },
+      {
+        "type": "url",
+        "id": "button_link",
+        "label": "Link"
+      },
+      {
+        "type": "color",
+        "id": "button_color",
+        "label": "Button Color",
+        "default": "#6C1D45"
+      },  {
+        "type": "color",
+        "id": "button_hover_color",
+        "label": "Button Hover Color",
+        "default": "#FAFAFA"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background"
+      }
+    ],
+    "presets": [
+      {
+        "name": "About Healers",
+        "category": "Image"
+      }
+    ]
+  }
+  {% endschema %}

@@ -1,0 +1,81 @@
+{
+  "sections": {
+    "hero": {
+      "type": "collection-image-with-title",
+      "disabled": true,
+      "settings": {
+        "show_image": true,
+        "banner_height": "normal",
+        "text_position": "center",
+        "text_color": "text-light",
+        "overlay_opacity": 20,
+        "banner_bg_color": "#fafafa"
+      }
+    },
+    "subcollections": {
+      "type": "subcollections",
+      "disabled": true,
+      "settings": {
+        "layout": "grid",
+        "image_source": "collection",
+        "image_aspect_ratio": 0.6,
+        "image_overlay_opacity": 0,
+        "image_overlay_color": "#000000",
+        "bg_color": "",
+        "text_color": "text-light"
+      }
+    },
+    "main": {
+      "type": "collection",
+      "disabled": true,
+      "settings": {
+        "show_breadcrumbs": true,
+        "enable_sorting": true,
+        "enable_filters": true,
+        "filter_mode": "default",
+        "bg_color": ""
+      }
+    },
+    "16512183549435ee0d": {
+      "type": "section-superco-about-healers",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/5eef9a3fd97fc34b298a81f1_5ed92c919177097e77bf911f_image-biography-01-yogi-template.png",
+        "header_color": "#6c1d45",
+        "heading": "About Sophie Moore",
+        "subheading": "The pain itself is love, the main storage system. Performance The kids are not running, but the disease is at least not pregnant. Aliquet lectus eget varius nec dictum . Pure and not ok my eu eu, id. Eleifend vengeful malesuada id et malesuada augue vel, porta rhoncus. Hunger is the place to start, so that I can drink my heart. He needs to feel good about the ugly and not the earth. And the chocolate in the valley.",
+        "description": "<style>.description-highlight{color: #EB6FBD; font-size: 25px; font-weight: 700;}@media only screen and (max-width: 768px){ .description-highlight { font-size: 20px; padding-left: 40px; padding-right: 40px; }}<\/style><p class=\"description-highlight\">The pain itself is love, the main storage system.<\/p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi at gravida non. Aliquet lectus eget varius nec dictum.<\/p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Trisquite nullablandit tincidunt. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Trisquite nullablandit tincidunt. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi at gravida non. Aliquet lectus eget varius nec dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi at gravida non. Aliquet lectus eget varius nec dictum.<\/p>",
+        "card_title": "Events\/Classes by Sophie",
+        "card_title_color": "#6c1d45",
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "card_bullet": "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "button_text": "Register Now",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "bg_color": ""
+      }
+    },
+    "16512183744a86c2dd": {
+      "type": "section-jointeam-mailerlite",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "center",
+        "image_layout": "square",
+        "image_1": "shopify:\/\/shop_images\/apply_healer.png",
+        "heading": "Want to be part of the team?",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading_color": "#6c1d45",
+        "bg_color": "#fefafb"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "subcollections",
+    "main",
+    "16512183549435ee0d",
+    "16512183744a86c2dd"
+  ]
+}

@@ -1,0 +1,127 @@
+{% assign product = all_products[section.settings.product] %}
+
+<style>
+    .swiper {
+        width: auto;
+        height: auto;
+      }
+      .swiper-button-prev:after , .swiper-button-next:after{
+        content: ' ';
+      }
+      .swiper-button-prev {
+        background-image: url("https://cdn.shopify.com/s/files/1/0535/9357/1505/files/Group_463.png?v=1651246134") !important;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      
+      .swiper-button-next {
+        background-image: url("https://cdn.shopify.com/s/files/1/0535/9357/1505/files/Group_464.png?v=1651246134") !important;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+      .slider-heading{
+        width: 60%;
+    }
+    @media only screen and (max-width: 768px){
+        .slider-heading{
+            width: 100%;
+            text-align: center;
+        }
+    }
+</style>
+
+<section id="Slider--{{ section.id }}" class="slider-section" data-section-id="{{ section.id }}" data-section-type="slider">
+    <div class="wrapper">
+        <div class="slider-heading">
+            <h2 style="color: {{ section.settings.header_color }}">{{ section.settings.header }}</h2>
+            <p>{{ section.settings.subheader }}</p>
+        </div>
+
+        <!-- Slider main container -->
+        <div class="swiper">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+            <!-- Slides -->
+            {% for image in product.images %}
+                <div class="swiper-slide">
+                    <img class="hidde" data-src="{{ image | img_url: '800x' }}" src="{{ image | img_url: '800x' }}" alt="{{ image.alt | escape }}" width="" height=""/>
+                </div>
+            {% endfor %}
+            </div>
+        
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+
+        
+    </div>
+</section>
+
+<script>
+    const swiper = new Swiper('.swiper', {
+        // Optional parameters
+        direction: 'horizontal',
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 10,
+
+        // Responsive breakpoints
+        breakpoints: {
+            // when window width is >= 768px
+            768: {
+            slidesPerView: 3,
+            spaceBetween: 30
+            }
+        },
+      
+        // If we need pagination
+        pagination: {
+          el: '.swiper-pagination',
+        },
+      
+        // Navigation arrows
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+</script>
+
+{% schema %}
+    {
+        "name": "Slider Product",
+        "settings": [
+            {
+            "type": "product",
+            "id": "product",
+            "label": "Product"
+            },
+            {
+                "type": "color",
+                "id": "header_color",
+                "label": "Header Color",
+                "default": "#6C1D45"
+              },
+              {
+                "type": "textarea",
+                "id": "header",
+                "label": "Heading",
+                "default": "A Quick Glance at exploring Cairo, Egypt"
+              },
+              {
+                "type": "text",
+                "id": "subheader",
+                "label": "Sub Header",
+                "default": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam et vel perferendis veniam vero repellendus enim iusto officiis! Velit accusamus corrupti delectus perferendis sit nobis odio maxime, placeat rem? Nulla!"
+              }
+        ],
+        "presets": [
+            {
+                "category": "Image",
+                "name": "Slider Product"
+            }
+        ]
+    }
+{% endschema %}
+
