@@ -28,7 +28,6 @@
   assign bg_color = section.settings.bg_color
 -%}
 
-{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
   {%- style -%}
     #ProductFeature--{{ section.id }} {
       background-color: {{ bg_color }};
@@ -36,11 +35,11 @@
     .product-feature__image{
       width: 100%;
     }
-    .product-feature__text p{
+    .apply-mailerlite__text p{
       margin: 0;
     }
     @media only screen and (min-width: 1024px)
-      .product-feature__text {
+      .apply-mailerlite__text {
         padding-left: 0;
       }
     }
@@ -71,7 +70,6 @@
       }
     }
   {%- endstyle -%}
-{%- endif -%}
 
 <section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature">
   <div class="wrapper">
@@ -99,7 +97,7 @@
       
       </div>
     
-      <div class="product-feature__text product-feature__text--{{ text_alignment }} rte offerings-feature__text">
+      <div class="apply-mailerlite__text product-feature__text product-feature__text--{{ text_alignment }} rte offerings-feature__text">
         {%- if heading != blank -%}
           <h3 style="color: {{ heading_color }}">{{ heading }}</h3>
         {%- endif -%}

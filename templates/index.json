@@ -7,8 +7,8 @@
         "text_position": "center-center",
         "hero_video_link": "",
         "hero_video_link_internal": "https:\/\/cdn.shopify.com\/s\/files\/1\/0535\/9357\/1505\/files\/GAIA_GODDESS_LANDING_PAGE_VIDEO_FINAL_EXPORT_19.66MB_1_14b5693f-6421-4bd6-83dd-ba387cf02d47.mp4?v=1645608634",
+        "hero_video_link_internal_mobile": "https:\/\/cdn.shopify.com\/s\/files\/1\/0535\/9357\/1505\/files\/GAIA_GODDESS_MOBILE_UPDATE.mp4?v=1646323092",
         "video_enable_sound": false,
-        "image": "shopify:\/\/shop_images\/video-placeholder.png",
         "overlay_opacity": 0,
         "text_color": "text-light",
         "title": "Let's get the",
@@ -28,6 +28,7 @@
         "text_position": "right",
         "text_alignment": "left",
         "mobile_button_position": "right",
+        "showpointmobile": false,
         "image_1": "shopify:\/\/shop_images\/image-about.png",
         "image_link_1": "",
         "image_link_2": "",
@@ -110,35 +111,56 @@
         "border_color": "rgba(0,0,0,0)"
       }
     },
+    "165098805093b9905f": {
+      "type": "section-product-feature",
+      "disabled": true,
+      "settings": {
+        "bg": "#FEFAFB",
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "right",
+        "text_alignment": "left",
+        "mobile_button_position": "center",
+        "showpointmobile": false,
+        "image_1": "shopify:\/\/shop_images\/antonino-visalli-RNiBLy7aHck-unsplash.png",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "text_color": "#eb6fbd",
+        "heading": "About Gaia Goddess",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<\/p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
+        "button_text": "Learn More",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#FAFAFA",
+        "bg_color": ""
+      }
+    },
     "164914858208709152": {
       "type": "section-product-feature",
       "blocks": {
         "974f5137-8051-413b-8561-bef71aa5d95d": {
           "type": "Point",
           "settings": {
-            "point": "Premier access to exclusive events",
-            "dm": true
+            "point": "Premier access to exclusive events"
           }
         },
         "1c0e4b2e-60ca-4ea0-82a2-38d4d2761ada": {
           "type": "Point",
           "settings": {
-            "point": "Unlock all of Gaia Content Gallery",
-            "dm": true
+            "point": "Unlock all of Gaia Content Gallery"
           }
         },
         "eba56e47-1c75-45c2-b1a5-8c10d7b06dc3": {
           "type": "Point",
           "settings": {
-            "point": "Connect with the Gaia network of women",
-            "dm": true
+            "point": "Connect with the Gaia network of women"
           }
         },
         "ebd6e8c2-aed7-4a4d-8d0a-05cb92685db3": {
           "type": "Point",
           "settings": {
-            "point": "Receive a free member gift",
-            "dm": true
+            "point": "Receive a free member gift"
           }
         }
       },
@@ -154,7 +176,8 @@
         "image_position": "inline",
         "text_position": "left",
         "text_alignment": "left",
-        "mobile_button_position": "left",
+        "mobile_button_position": "center",
+        "showpointmobile": false,
         "image_1": "shopify:\/\/shop_images\/erik-brolin-ZARfCYDaVg0-unsplash_image.png",
         "image_link_1": "",
         "image_link_2": "",
@@ -175,6 +198,7 @@
       "settings": {
         "text_position": "left",
         "text_alignment": "left",
+        "image_background": "shopify:\/\/shop_images\/flower-of-life-v3-01-01.png",
         "heading": "Subscribe to our newsletters today for a <span style=\"color: #EB6FBD\">FREE<\/span> meditation class",
         "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
         "heading_color": "#6c1d45",
@@ -186,6 +210,7 @@
     "1649146796fe3d4805",
     "1649147513ace08e02",
     "1649346336161dd843",
+    "165098805093b9905f",
     "164914858208709152",
     "164943162342f7aac5"
   ]

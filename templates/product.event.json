@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "disabled": true,
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading": "breadcrumbs",
+            "show_rating": true,
+            "show_rating_count": false
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_payment_button": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "tabs_style": "accordions",
+            "tab_title_1": "Tab",
+            "tab_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tab_title_2": "Info",
+            "tab_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "tab_title_3": "",
+            "tab_content_3": "",
+            "tab_title_4": "",
+            "tab_content_4": "",
+            "tab_title_5": "",
+            "tab_content_5": ""
+          }
+        },
+        "social-sharing": {
+          "type": "social-sharing",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "form",
+        "description",
+        "social-sharing"
+      ],
+      "settings": {
+        "image_gallery": "zoom",
+        "enable_video_looping": false,
+        "bg_color": ""
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "show_section": true,
+        "limit": 4,
+        "product_recommendations_heading": "You May Also Like",
+        "bg_color": ""
+      }
+    },
+    "16512439155b379122": {
+      "type": "section-slider",
+      "settings": {
+        "product": "fear-is-a-liar",
+        "header_color": "#6c1d45",
+        "header": "A Quick Glance at exploring Cairo, Egypt",
+        "subheader": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam et vel perferendis veniam vero repellendus enim iusto officiis! Velit accusamus corrupti delectus perferendis sit nobis odio maxime, placeat rem? Nulla!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related",
+    "16512439155b379122"
+  ]
+}
