@@ -1,12 +1,131 @@
 {
   "sections": {
+    "16514856733972d9a8": {
+      "type": "gaia-banner",
+      "blocks": {
+        "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913": {
+          "type": "Image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
+            "dm": true
+          }
+        }
+      },
+      "block_order": [
+        "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913"
+      ],
+      "settings": {
+        "padding_top": 52,
+        "padding_bottom": 52,
+        "bg": "#fef1f5",
+        "heading": "7 Yoga Poses to Keep Your Body Fit",
+        "heading_color": "#6c1d45",
+        "text_content": ""
+      }
+    },
     "main": {
       "type": "article",
+      "disabled": true,
       "settings": {
+        "show_share_buttons": true
+      }
+    },
+    "1651485677611fe850": {
+      "type": "section-superco-blog-article",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "left",
+        "header_color": "#6c1d45",
+        "card_title_color": "#6c1d45",
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "bg_color": ""
+      }
+    },
+    "1651485257a3c9365c": {
+      "type": "section-blog",
+      "blocks": {
+        "1651485257ddf294db-0": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "1651485257ddf294db-1": {
+          "type": "article",
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "1651485257ddf294db-2": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "1651485257ddf294db-3": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        },
+        "1651485257ddf294db-4": {
+          "type": "article",
+          "disabled": true,
+          "settings": {
+            "article": "",
+            "product1": "",
+            "product2": "",
+            "product3": ""
+          }
+        }
+      },
+      "block_order": [
+        "1651485257ddf294db-0",
+        "1651485257ddf294db-1",
+        "1651485257ddf294db-2",
+        "1651485257ddf294db-3",
+        "1651485257ddf294db-4"
+      ],
+      "settings": {
+        "title": "Related Video and Podcasts",
+        "bg_color": ""
+      }
+    },
+    "1651485344dc097ec1": {
+      "type": "section-newsletter-mailerlite",
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "left",
+        "heading": "Subscribe to out newsletters today for a <span style=\"color: #EB6FBD;\">FREE<\/span> meditation class",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading_color": "#6c1d45",
+        "bg_color": "#fefafb"
       }
     }
   },
   "order": [
-    "main"
+    "16514856733972d9a8",
+    "main",
+    "1651485677611fe850",
+    "1651485257a3c9365c",
+    "1651485344dc097ec1"
   ]
 }

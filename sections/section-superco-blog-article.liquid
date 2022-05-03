@@ -11,9 +11,6 @@
     comment
       Text
     endcomment
-    assign heading = section.settings.heading
-    assign subheading = section.settings.subheading
-    assign description = section.settings.description
     assign line_color = section.settings.line_color
   
     comment
@@ -22,11 +19,6 @@
     assign button_text = section.settings.button_text
     assign button_link = section.settings.button_link | default: '#'
     assign button_style = section.settings.button_style
-  
-    comment
-      Images
-    endcomment
-    assign image_1 = section.settings.image_1
   
     comment
       Colors
@@ -43,11 +35,24 @@
   {%- endif -%}
 
   <style>
+    .card_icons{
+        justify-content: center !important;
+    }
+    .border{
+        border-bottom: 1px solid #EB6FBD;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+    .blog-article{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
     .about-card{
         margin: 0 auto;
         background-color: #FEF1F5;
         border-radius: 40px;
-        height: 600px;
+        height: auto;
         width: 420px;
         box-shadow: 0 2px 10px rgb(0 0 0 / 20%)
     }
@@ -88,10 +93,6 @@
     .about-info > p{
         margin: 30px 0 !important;
     }
-    .about-info__image-bg{
-        padding-top: 80%;
-        background-size: contain;
-    }
     @media only screen and (max-width: 768px){
         .btn--about-card{
             margin-top: 15px;
@@ -105,10 +106,6 @@
             padding-right: var(--gutter-mobile);
             text-align: center;
         }
-        .about-info__image-bg{
-            padding-top: 100%;
-            background-position: 50%;
-        }
         .about-events {
             width: 100%;
         }
@@ -116,6 +113,12 @@
             margin: 0 30px;
             width: auto;
             height: auto;
+        }
+        .about-events{
+            margin-top: 60px;
+        }
+        .border{
+            margin-top: 0px;
         }
     }
     @media only screen and (min-width: 768px){
@@ -130,10 +133,6 @@
         }
     }
 
-
-    .retreat-feature{
-        padding: 0;
-    }
     .retreat-wrapper{
         padding: 0;
     }
@@ -160,16 +159,23 @@
         .rte h3{
             margin: 0;
         }
-        .subheading-p {
-            font-size: 16px;
-        }
         .about-info__heading{
             font-size: 30px;
         }
     }
+    .article_card_text, .article_card_title{
+        text-align: center;
+    }
+    .article__image__wrapper{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .responsive-image img{
+        border-radius: 100px;
+    }
     </style>
   
-  <section id="ProductFeature--{{ section.id }}" class="retreat-feature" data-section-id="{{ section.id }}" data-section-type="product-feature">
+  <section id="ProductFeature--{{ section.id }}" class="blog-article" data-section-id="{{ section.id }}" data-section-type="product-feature">
     <div class="wrapper retreat-wrapper">
       
       <div class="product-feature__block about__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
@@ -177,74 +183,95 @@
 
             <div class="about-card">
                 <div class="about-card__info">
-                    {% render 'healer-about' %}
-                    {% if section.settings.card_title != blank %}
-                        <h3 class="about-card__title">{{ section.settings.card_title }}</h3>
-                    {% endif %}
+                    {%- if article.image -%}
+                        <div class="article__image__wrapper">
+                          {%- render 'responsive-image', image: article.image, image_class: 'article__image', image_alt: article.image.alt -%}
+                        </div>
+                      {%- endif -%}
+
+                    <h3 class="about-card__title article_card_title">{{ article.author }}</h3>
+
                     {% if section.settings.card_text != blank %}
-                        <p>{{ section.settings.card_text }}</p>
-                    {% endif %}
-                    {% if section.settings.card_bullet != blank %}
-                        {% assign bullets = section.settings.card_bullet | split: "-" %}
-                        <ul class="about-card__list">
-                        {% for bullet in bullets %}
-                            {% if bullet != blank %}
-                                <li><span class="about-card__bullet">{{ bullet }}</span></li>
-                            {% endif %}
-                        {% endfor %}
-                        </ul>
+                        <p class="article_card_text">{{ section.settings.card_text }}</p>
                     {% endif %}
                     {%- if button_text != blank -%}
                         <a href="{{ button_link }}" class="btn btn--about-card" style="background-color: {{ section.settings.button_color }} !important; border: 1px solid {{ section.settings.button_color }} !important;">{{ button_text }}</a>
                     {%- endif -%}
+
+                    <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact">
+                        {% if section.settings.card_social %}
+                          <a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                            {%- render 'healer-insta' -%}
+                          </a>
+                        {% endif %}
+                      
+                        {% if section.settings.card_social %}
+                          <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                            {%- render 'healer-insta' -%}
+                          </a>
+                        {% endif %}
+                    
+                        {% if section.settings.card_social %}
+                          <a class="website" rel="noopener" href = "{{ settings.social_twitter_link }}" title="">
+                            {%- render 'healer-website' -%}
+                          </a>
+                        {% endif %}
+                        
+                      </div>
                 </div>
             </div>
           
         </div>
       
         <div class="product-feature__text about-info rte">
-          {%- if heading != blank -%}
-            <h2 class="about-info__heading" style="color: {{ section.settings.header_color }}">{{ heading | escape }}</h2>
-          {%- endif -%}
-
-          {%- if subheading != blank -%}
-            <p class="about-info__subheading">{{ subheading | escape }}</p>
-          {%- endif -%}
+          <h2 class="about-info__heading" style="color: {{ section.settings.header_color }}">{{ article.title }}</h2>
       
-          {%- if settings.show_spacer_lines -%}
-            <hr>
+          {%- if article.content != blank -%}
+            {{- article.content -}}
           {%- endif -%}
-      
-          {%- if description != blank -%}
-            {{- description -}}
-          {%- endif -%}
-
-          <div class="product-feature__image product-feature__image--primary">
-            {%- if image_1 != blank -%}
-              {%- assign image = image_1 -%}
-              <div class="about-info__image-bg product-feature__image-bg lazyload"
-                data-bgset="{% render 'bgset', image: image %}"
-                data-sizes="auto"
-                data-parent-fit="cover">
-              </div>
-              <noscript>
-                <div class="about-info__image-bg product-feature__image-bg" style="background-image: url({{ image | img_url: '1024x' }});"></div>
-              </noscript>
-            {%- else -%}
-              <div class="about-info__image-bg product-feature__image-bg placeholder-svg--overlayed">
-                {{- 'image' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
-              </div>
-            {%- endif -%}
-          </div>
       
         </div>
       </div>
     </div>
   </section>
+  
+  <div class="border"></div>
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Article",
+      "articleBody": {{ article.content | strip_html | json }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ shop.url | append: page.url | json }}
+      },
+      "headline": {{ article.title | json }},
+      {% if article.excerpt != blank %}
+        "description": {{ article.excerpt | strip_html | json }},
+      {% endif %}
+      {% if article.image %}
+        {% assign image_size = article.image.width | append: 'x' %}
+        "image": [
+          {{ article | img_url: image_size | prepend: "https:" | json }}
+        ],
+      {% endif %}
+      "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+      "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+      "author": {
+        "@type": "Person",
+        "name": {{ article.author | json }}
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": {{ shop.name | json }}
+      }
+    }
+  </script>
    
   {% schema %}
   {
-    "name": "About Healers",
+    "name": "Blog Article",
     "settings": [
       {
         "type": "header",
@@ -272,15 +299,6 @@
       },
       {
         "type": "header",
-        "content": "Images"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_1",
-        "label": "Image"
-      },
-      {
-        "type": "header",
         "content": "Text"
       },  
       {
@@ -290,32 +308,8 @@
         "default": "#6C1D45"
       },
       {
-        "type": "textarea",
-        "id": "heading",
-        "label": "Heading",
-        "default": "About Sophie Moore"
-      },
-      {
-        "type": "textarea",
-        "id": "subheading",
-        "label": "Sub Heading",
-        "default": "The pain itself is love, the main storage system. Performance The kids are not running, but the disease is at least not pregnant. Aliquet lectus eget varius nec dictum . Pure and not ok my eu eu, id. Eleifend vengeful malesuada id et malesuada augue vel, porta rhoncus. Hunger is the place to start, so that I can drink my heart. He needs to feel good about the ugly and not the earth. And the chocolate in the valley."
-      },
-      {
-        "type": "liquid",
-        "id": "description",
-        "label": "Description (HTML)",
-        "default": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.</p>"
-      },
-      {
         "type": "header",
         "content": "Card"
-      },
-      {
-        "type": "text",
-        "id": "card_title",
-        "label": "Card Title",
-        "default": "Events/Classes by Sophie"
       },
       {
         "type": "color",
@@ -324,16 +318,16 @@
         "default": "#6C1D45"
       },
       {
-        "type": "text",
-        "id": "card_text",
-        "label": "Card Text",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
+        "type": "checkbox",
+        "id": "card_social",
+        "label": "Show social icons on card?",
+        "default": true
       },
       {
         "type": "textarea",
-        "id": "card_bullet",
-        "label": "Card Bullet points",
-        "default": "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        "id": "card_text",
+        "label": "Card Text",
+        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
       },
       {
         "type": "header",
@@ -372,7 +366,7 @@
     ],
     "presets": [
       {
-        "name": "About Healers",
+        "name": "Blog article",
         "category": "Image"
       }
     ]

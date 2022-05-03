@@ -62,11 +62,11 @@
         "bg_color": ""
       }
     },
-    "16512439155b379122": {
-      "type": "section-slider",
+    "1651505822baf8a6bf": {
+      "type": "section-superco-slider",
       "settings": {
         "product": "fear-is-a-liar",
-        "header_color": "#6c1d45",
+        "header_color": "#6C1D45",
         "header": "A Quick Glance at exploring Cairo, Egypt",
         "subheader": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam et vel perferendis veniam vero repellendus enim iusto officiis! Velit accusamus corrupti delectus perferendis sit nobis odio maxime, placeat rem? Nulla!"
       }
@@ -75,6 +75,6 @@
   "order": [
     "main",
     "related",
-    "16512439155b379122"
+    "1651505822baf8a6bf"
   ]
 }
