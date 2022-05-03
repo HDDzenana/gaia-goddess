@@ -11,6 +11,28 @@
     assign carousel = true
   endif
 
+  case columns
+    when 1
+      assign size_desktop = 'one-whole'
+    when 2
+      assign size_desktop = 'one-half'
+    when 3
+      assign size_desktop = 'one-third'
+    when 4
+      assign size_desktop = 'one-quarter'
+  endcase
+
+  case columns_mobile
+    when 1
+      assign size_mobile = 'mobile--one-whole'
+    when 2
+      assign size_mobile = 'mobile--one-half'
+  endcase
+
+  if carousel == true
+    assign size_mobile = 'mobile--one-whole'
+  endif
+
   assign grid_mobile = ' grid--mobile'
 	if section.settings.enable_slider
   	assign grid_mobile = ' grid--mobile-carousel'
@@ -80,7 +102,7 @@
   .section__heading{
     color: {{ section.settings.heading_color }};
     text-align: {{ section.settings.heading_alignment }};
-    font-weight: 500;
+    font-weight: 700;
   }
   .wrapper-section__heading{
     display: flex;
@@ -93,6 +115,23 @@
   }
   .healers-filter{
     width: 200px;
+  }
+  .healers-filter__dropdown {
+    color: #6C1D45;
+    appearance: auto;
+  }
+  @media only screen and (max-width: 768px){
+    .section__heading{
+      font-size: 30px;
+    }
+    .healers-filter{
+      width: 150px;
+    }
+    .grid--mobile-carousel{
+      white-space: break-spaces;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
   }
 {%- endstyle -%}
 
@@ -132,7 +171,7 @@
         {% for block in section.blocks %}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
-          <div class="healer-card">
+          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
             <img alt="Healer card image" src="{{ collection.featured_image | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
 
             <div class="healer-heading">
@@ -222,6 +261,17 @@
       "id": "show_filter",
       "label": "Show collection filter",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "products_layout",
+      "label": "Layout",
+      "info": "Product images slideshow will be disabled if layout is set to Carousel.",
+      "default": "grid",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "carousel", "label": "Carousel" }
+      ]
     },
     {
       "type": "header",

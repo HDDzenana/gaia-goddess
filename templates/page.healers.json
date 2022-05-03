@@ -66,6 +66,7 @@
         "heading_color": "#6c1d45",
         "heading_alignment": "left",
         "show_filter": true,
+        "products_layout": "carousel",
         "bg_color": "",
         "healer_title_color": "#eb6fbd",
         "healer_subtitle_color": "#6c1d45",
