@@ -71,7 +71,7 @@
 {%- endstyle -%}
 {%- endif -%}
 
-<section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature" style="background: {{section.settings.bg}};   {% if section.settings.section_bg_image != blank %}background: url('{{ section.settings.section_bg_image | img_url: 'master' }}');{% endif %}">
+<section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature" style="background: {{section.settings.bg}};   {% if section.settings.section_bg_image != blank %}background: url('{{ section.settings.section_bg_image | img_url: '100x' }}');{% endif %}">
   <div class="wrapper">
 
     <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
