@@ -9,7 +9,7 @@
         "image_position": "inline",
         "text_position": "right",
         "text_alignment": "left",
-        "mobile_button_position": "right",
+        "mobile_button_position": "center",
         "showpointmobile": false,
         "image_1": "shopify:\/\/shop_images\/image_19.png",
         "image_link_1": "",
@@ -34,6 +34,13 @@
         "bg_color": ""
       }
     },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true
+      }
+    },
     "1649923445dbb0994e": {
       "type": "section-newsletter-mailerlite",
       "settings": {
@@ -44,19 +51,12 @@
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }
-    },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "show_page_title": true
-      }
     }
   },
   "order": [
     "product-feature",
     "1651636686774f656e",
-    "1649923445dbb0994e",
-    "main"
+    "main",
+    "1649923445dbb0994e"
   ]
 }
