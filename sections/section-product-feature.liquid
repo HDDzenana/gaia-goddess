@@ -6,6 +6,12 @@
       text-align: {{section.settings.mobile_button_position}} !important;
     }
   }
+  
+  {% if section.settings.section_bg_image != blank %}
+  .ProductFeature--{{ section.id }} {
+  		background: url('{{ section.settings.section_bg_image | img_url: 'master' }}');
+          }
+  {% endif %}
 </style>
 {%- liquid
   comment
