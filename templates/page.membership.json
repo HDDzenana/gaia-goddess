@@ -9,6 +9,7 @@
         "text_position": "right",
         "text_alignment": "left",
         "mobile_button_position": "right",
+        "showpointmobile": false,
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
@@ -21,14 +22,6 @@
         "button_hover_color": "#fafafa",
         "video_url": "",
         "bg_color": "#fefafb"
-      }
-    },
-    "16499239590217fada": {
-      "type": "section-custom-html",
-      "settings": {
-        "title": "Tiers Table",
-        "html": "<p>Once you write some HTML, it will render right here.<\/p>",
-        "bg_color": ""
       }
     },
     "1649923445dbb0994e": {
@@ -52,7 +45,6 @@
   },
   "order": [
     "product-feature",
-    "16499239590217fada",
     "1649923445dbb0994e",
     "main"
   ]
