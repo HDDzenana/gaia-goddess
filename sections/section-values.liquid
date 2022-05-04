@@ -21,6 +21,13 @@
 			color: {{ section.settings.heading_color }}; 
 			text-align: {{ section.settings.text_alignment }};
 		}
+		@media only screen and (max-width: 1024px){
+			.values__slider > .value__item:last-child{
+				grid-column: 1 / -1;
+				width: 100%;
+				margin: 0 auto;
+			}
+		}
 		@media only screen and (max-width:767px){
 			.values_title{
 				margin: 0 20px 0 20px;
@@ -37,9 +44,7 @@
 				width: 100%;
 			}
 			.values__slider > .value__item:last-child{
-				grid-column: 1 / -1;
 				width: 50%;
-				margin: 0 auto;
 			}
 		}
 	{%- endstyle -%}

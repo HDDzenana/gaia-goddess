@@ -72,7 +72,7 @@
 <section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature" style="background: {{section.settings.bg}};">
   <div class="wrapper">
 
-    <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
+    <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}" {% if section.settings.aos == true %} data-aos="fade-up" data-aos-delay="150" data-aos-offset="100" data-aos-duration="700"{% endif %}>
       <div class="product-feature__images product-feature__images--{{ image_position }}{% if image_2 == blank %} product-feature__images--single{% endif %}{% if hide_image_2 or image_2 == blank %} product-feature__images--single-mobile{% endif %}">
         {{- video_link -}}
 
@@ -150,6 +150,13 @@
   </div>
 </section>
 
+<script>
+  AOS.init();
+  document.addEventListener("shopify:section:load", () => {
+    AOS.init();
+  }) 
+</script>
+
 {% schema %}
 
 {
@@ -158,6 +165,11 @@
     {
       "type": "header",
       "content": "Layout"
+    }, {
+      "type":"checkbox",
+      "id":"aos",
+      "default": false,
+      "label":"Animate on scroll"
     }, {
       "type": "color_background",
       "id": "bg",

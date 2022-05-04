@@ -34,6 +34,7 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "aos": false,
         "bg": "#fefafb",
         "image_layout": "square",
         "image_position": "inline",
@@ -205,7 +206,7 @@
             "image": "shopify:\/\/shop_images\/image_14.png",
             "img_border_radius": 0,
             "image_width": 165,
-            "customer_name": "Mycroft Holmes",
+            "customer_name": "Kevin Locke",
             "short_text": "COO",
             "customer_name_color": "#eb6fbd",
             "social_linkedin": "#",
