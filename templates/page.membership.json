@@ -26,6 +26,14 @@
         "bg_color": "#fefafb"
       }
     },
+    "1651636686774f656e": {
+      "type": "section-custom-html",
+      "settings": {
+        "title": "HTML code",
+        "html": "<p>Once you write some HTML, it will render right here.<\/p>",
+        "bg_color": ""
+      }
+    },
     "1649923445dbb0994e": {
       "type": "section-newsletter-mailerlite",
       "settings": {
@@ -47,6 +55,7 @@
   },
   "order": [
     "product-feature",
+    "1651636686774f656e",
     "1649923445dbb0994e",
     "main"
   ]
