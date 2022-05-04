@@ -51,13 +51,13 @@
                       <div class="testimonial__text text-center">{{ testimonial_text }}
                         <div class="social-sharing-wrapper" style="margin: auto; justify-content: center; margin-bottom: 10px;">
                           {%- if block.settings.social_mail != blank -%}
-                            <a class="mailsvg icon-hover" rel="noopener" href="{{block.settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                            <a class="mailsvg" rel="noopener" href="{{block.settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
                               {%- render 'icon-mail' -%}
                             </a>
                           {%- endif -%}
 
                           {%- if block.settings.social_linkedin != blank -%}
-                            <a class="linkedingsvg icon-hover" rel="noopener" href="{{ block.settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                            <a class="linkedingsvg" rel="noopener" href="{{ block.settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
                               {%- render 'icon-linkedin' -%}
                             </a>
                           {%- endif -%}
