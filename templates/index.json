@@ -27,7 +27,7 @@
         "image_position": "inline",
         "text_position": "right",
         "text_alignment": "left",
-        "mobile_button_position": "right",
+        "mobile_button_position": "center",
         "showpointmobile": false,
         "image_1": "shopify:\/\/shop_images\/image-about.png",
         "image_link_1": "",
@@ -132,7 +132,8 @@
         "button_text": "Learn More",
         "button_link": "",
         "button_color": "#6c1d45",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
+        "video_url": "",
         "bg_color": ""
       }
     },
