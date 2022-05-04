@@ -34,6 +34,7 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "aos": false,
         "bg": "#fefafb",
         "image_layout": "square",
         "image_position": "inline",

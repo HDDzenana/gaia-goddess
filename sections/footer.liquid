@@ -61,12 +61,12 @@
 		margin-bottom: 0px;
 		margin-right: 250px;
 	}
-	.copyright-mobile{
-		display: none;
-	}
 	.footer_contact{
 		display: inline-block;
-		width: 75%;
+		width: 80%;
+	}
+	.footer-bottom__links-mobile{
+		display: none;
 	}
 	.footer-content__logo{
 		justify-content: center;
@@ -90,11 +90,14 @@
 			text-align: center;
 			margin-top: 26px;
 		}
-		.footer_bottom__copyright, .footer_bottom__credits{
+		.footer-bottom__links {
 			display: none;
 		}
-		.copyright-mobile{
+		.footer-bottom__links-mobile {
 			display: block;
+		}
+		.footer_bottom__credits{
+			display: none;
 		}
 		.footer-title__button{
 			width: 42%;
@@ -110,10 +113,13 @@
 		.social-sharing-wrapper a {
 			margin: 0 8px;
 		}
+		.footer-bottom__div {
+			height: auto;
+		}
 	}
 	@media only screen and (max-width: 600px){
 		.footer_contact{
-			width: 50%;
+			width: 60%;
 		}
 	}
 	@media only screen and (max-width:1024px){
@@ -266,7 +272,7 @@
 									{% if block.settings.footer_email %}<li>{%- render 'footer-email' -%}<a style="text-decoration: none;" href="mailto:info@gaiagoddesslifestyle.com">
 										<div class="footer_contact">
 									   
-										 <img src="https://cdn.shopify.com/s/files/1/0535/9357/1505/files/gaia_001_footer_email-image.png?v=1649865252">
+										 {% render 'gaia-email' %}
 										</div>
 									   </a></li>{% endif %}
 									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%}{{ block.settings.footer_phone_text }}</li>{% endif %}
@@ -313,8 +319,8 @@
 			<div class="footer-bottom__links">
 				<p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
 			</div>
-			<div class="copyright-mobile">
-				<p>©2022 GAIA GODDESS, ALL RIGHT RESERVED. <a href="#">CREDITS</a> </p>
+			<div class="footer-bottom__links-mobile">
+				<p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Credits</a></p>
 			</div>
 			<div class="footer_bottom__copyright">
 				<p>©2022 GAIA GODDESS, ALL RIGHT RESERVED.</p>

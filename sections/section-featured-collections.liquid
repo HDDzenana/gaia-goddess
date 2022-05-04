@@ -11,6 +11,28 @@
     assign carousel = true
   endif
 
+  case columns
+    when 1
+      assign size_desktop = 'one-whole'
+    when 2
+      assign size_desktop = 'one-half'
+    when 3
+      assign size_desktop = 'one-third'
+    when 4
+      assign size_desktop = 'one-quarter'
+  endcase
+
+  case columns_mobile
+    when 1
+      assign size_mobile = 'mobile--one-whole'
+    when 2
+      assign size_mobile = 'mobile--one-half'
+  endcase
+
+  if carousel == true
+    assign size_mobile = 'mobile--one-whole'
+  endif
+
   assign grid_mobile = ' grid--mobile'
 	if section.settings.enable_slider
   	assign grid_mobile = ' grid--mobile-carousel'
@@ -80,7 +102,7 @@
   .section__heading{
     color: {{ section.settings.heading_color }};
     text-align: {{ section.settings.heading_alignment }};
-    font-weight: 500;
+    font-weight: 700;
   }
   .wrapper-section__heading{
     display: flex;
@@ -93,6 +115,35 @@
   }
   .healers-filter{
     width: 200px;
+  }
+  .healers-filter__dropdown {
+    color: #6C1D45;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.958984 1.323L7.32617 7.689L13.6919 1.323" stroke="%236C1D45" stroke-width="2"/></svg>');
+    background-position: right 20px top 50%;
+    background-repeat: no-repeat;
+    background-size: 10px;
+  }
+  
+  
+  @media only screen and (max-width: 768px){
+    .section__heading{
+      font-size: 30px;
+    }
+    .healers-filter{
+      width: 150px;
+    }
+    .grid--mobile-carousel{
+      white-space: break-spaces;
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+  }
+  @media only screen and (min-width: 768px) and (max-width: 1024px){
+  .carousel{
+    display: flex;
   }
 {%- endstyle -%}
 
@@ -132,7 +183,7 @@
         {% for block in section.blocks %}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
-          <div class="healer-card">
+          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
             <img alt="Healer card image" src="{{ collection.featured_image | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
 
             <div class="healer-heading">
@@ -222,6 +273,17 @@
       "id": "show_filter",
       "label": "Show collection filter",
       "default": true
+    },
+    {
+      "type": "select",
+      "id": "products_layout",
+      "label": "Layout",
+      "info": "Product images slideshow will be disabled if layout is set to Carousel.",
+      "default": "grid",
+      "options": [
+        { "value": "grid", "label": "Grid" },
+        { "value": "carousel", "label": "Carousel" }
+      ]
     },
     {
       "type": "header",

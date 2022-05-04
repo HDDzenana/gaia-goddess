@@ -51,6 +51,13 @@
           width: 140px;
           height: 140px;
         }
+        {% if section.settings.parallax %}
+        .featured-offerings__scale .featured-image__bg{
+          background-attachment: fixed; 
+          background-repeat: no-repeat; 
+          background-size: cover;
+        }
+        {% endif %}
 
     @media only screen and (max-width: 992px) {
       {% if section.settings.mobile_slider %}
@@ -222,6 +229,12 @@
       "type": "header",
       "content": "Layout"
     },
+    {
+      "type":"checkbox",
+      "id":"parallax",
+      "default": false,
+      "label":"Add parallax effect"
+    }, 
     {
       "type": "select",
       "id": "image_height",
