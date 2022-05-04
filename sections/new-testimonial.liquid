@@ -46,7 +46,7 @@
                 {%- assign testimonial_text = block.settings.testimonial_text -%}
 
                 {%- unless image == blank and customer_name == blank and testimonial_text == blank -%}
-                  <div class="testimonial__item  swipertestimonial {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }} style="width: 85%;">
+                  <div class="testimonial__item  swipertestimonial {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }} style="margin: auto; width: 85%;">
                     <div class="testimonial__inner {% if section.settings.testimonial_layout == 'imgfirst'%} crev-{{block.id}} {%endif%} {% if section.settings.boxsh %} tibox-{{block.id}} {%endif%}" style="padding: 15px !important;">
                       <div class="testimonial__text text-center">{{ testimonial_text }}
                         <div class="social-sharing-wrapper" style="margin: auto; justify-content: center; margin-bottom: 10px;">
@@ -411,3 +411,13 @@
   })
 </script>
 
+<style>
+  .flickity-enabled:hover .flickity-prev-next-button:not(:disabled), .touch .flickity-prev-next-button:not(:disabled),
+  .flickity-page-dots {
+  visibility: hidden !important;
+  }
+  
+  .swiper-backface-hidden .swiper-slide {
+    margin-top: 5%;
+  }
+</style>

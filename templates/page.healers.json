@@ -1,5 +1,30 @@
 {
   "sections": {
+    "165163688289226a64": {
+      "type": "section-product-feature",
+      "settings": {
+        "section_bg_image": "shopify:\/\/shop_images\/image_22.png",
+        "bg": "#FEFAFB",
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "left",
+        "text_alignment": "left",
+        "mobile_button_position": "center",
+        "showpointmobile": false,
+        "image_1": "shopify:\/\/shop_images\/5eef9a3fd97fc34b298a81f1_5ed92c919177097e77bf911f_image-biography-01-yogi-template.png",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "text_color": "#6c1d45",
+        "heading": "Our Healers\n<br>\n<span style=\"color: #EB6FBD;\"> _ <\/span>\n<br><br>\nDiosa <br><br>",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#800000",
+        "button_hover_color": "#FAFAFA",
+        "bg_color": ""
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -88,6 +113,7 @@
     }
   },
   "order": [
+    "165163688289226a64",
     "main",
     "16510797131a8810b2",
     "16502926109923d142"

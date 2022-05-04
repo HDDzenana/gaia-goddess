@@ -28,7 +28,7 @@
         "image_position": "inline",
         "text_position": "right",
         "text_alignment": "left",
-        "mobile_button_position": "right",
+        "mobile_button_position": "center",
         "showpointmobile": false,
         "image_1": "shopify:\/\/shop_images\/image-about.png",
         "image_link_1": "",

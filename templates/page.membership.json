@@ -3,12 +3,15 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "section_bg_image": "shopify:\/\/shop_images\/image_21.png",
         "bg": "linear-gradient(130deg, rgba(35, 125, 207, 0.6) 58%, rgba(255, 255, 255, 1) 58%)",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "right",
         "text_alignment": "left",
-        "mobile_button_position": "right",
+        "mobile_button_position": "center",
+        "showpointmobile": false,
+        "image_1": "shopify:\/\/shop_images\/image_19.png",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
@@ -23,12 +26,19 @@
         "bg_color": "#fefafb"
       }
     },
-    "16499239590217fada": {
+    "1651636686774f656e": {
       "type": "section-custom-html",
       "settings": {
-        "title": "Tiers Table",
+        "title": "HTML code",
         "html": "<p>Once you write some HTML, it will render right here.<\/p>",
         "bg_color": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true
       }
     },
     "1649923445dbb0994e": {
@@ -41,19 +51,12 @@
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }
-    },
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "show_page_title": true
-      }
     }
   },
   "order": [
     "product-feature",
-    "16499239590217fada",
-    "1649923445dbb0994e",
-    "main"
+    "1651636686774f656e",
+    "main",
+    "1649923445dbb0994e"
   ]
 }
