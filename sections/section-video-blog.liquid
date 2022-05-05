@@ -1,0 +1,156 @@
+{% comment %} /sections/video-blog.liquid {% endcomment %}
+
+{%- liquid
+    assign video_id = section.settings.hero_video_link.id
+    assign title = section.settings.title
+    assign subheading = section.settings.main_subheading
+  -%}
+  
+  {%- style -%}
+    {% comment %}#FeaturedVideo--{{ section.id }}{% endcomment %}
+    .video-vimeo-wrapper{
+        padding: 20px 100px 0px 100px;
+    }
+    .vimeo-video {
+        margin: 0 auto;
+        width: 100%;
+    }
+    .vimeo-section {
+        background-color: {{ section.settings.bg_color }};
+    }
+    .video-uploaded {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .main_subheading {
+        color: #6C1D45;
+    }
+    .vimeo-iframe {
+        width: 100%;
+    }
+    .healer-title {
+        text-align: center; 
+        color: #6C1D45; 
+        margin-left: 20px;
+    }
+    @media only screen and (max-width: 767px){
+      .video-vimeo-wrapper {
+            padding: 20px 0px 0px 0px;
+        }
+        .vimeo-iframe {
+            height: auto;
+        }
+        .video-uploaded {
+            flex-direction: column;
+        }
+    .healer-title {
+        margin-left: 0px;
+        margin-top: 20px;
+        font-size: 12px;
+    }
+    }
+  {%- endstyle -%}
+  
+  <div class="featured-video-section vimeo-section"
+    id="FeaturedVideo--{{ section.id }}"
+    data-section-id="{{ section.id }}"
+    data-section-type="featured-video">
+    <div class="video-wrapper video-vimeo-wrapper">
+      {% comment %} Video {% endcomment %}
+      <div class="vimeo-video">
+        <iframe class="vimeo-iframe" src="https://player.vimeo.com/video/12434588?h=caeba2496a" width="640" height="512" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+  
+  
+    </div>
+
+    {% comment %} Text {% endcomment %}
+    <div class="video-text-wrapper wrapper wrapper--small">
+        <div class="video-uploaded">
+            <img class="lazyload" src="{{ section.settings.img_healer | img_url: '50x' }}" data-sizes="auto" style=" border-radius: {{ section.settings.healer_img_border_radius }}%;" alt="{{ section.settings.img_healer.alt | escape }}">
+            {%- if title != blank -%}
+            <h4 class="healer-title">{{ title | escape }}</h4>
+            {%- endif -%}
+        </div>
+
+        {%- if subheading != blank -%}
+          <p style="text-align: center; margin: 0 auto; width: 80%;">{{ subheading | escape }}</p>
+        {%- endif -%}
+      </div>
+  </div>
+  
+  {% schema %}
+  {
+    "name": "Video Post",
+    "class": "featured-video-section transparent-header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Layout"
+      },
+      {
+        "type": "color",
+        "id": "bg_color",
+        "label": "Background",
+        "default": "#FEF1F5"
+      },
+      {
+        "type": "header",
+        "content": "Video"
+      },
+      {
+        "type": "video_url",
+        "id": "hero_video_link",
+        "label": "Video link",
+        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "accept": [
+          "youtube", "vimeo"
+        ],
+        "info": "YouTube links only"
+      },
+      {
+        "type": "image_picker",
+        "id": "img_healer",
+        "label": "Healer image"
+      },
+      {
+        "type": "range",
+        "id": "healer_img_border_radius",
+        "label": "Healer Image border radius",
+        "min": 0,
+        "max": 95,
+        "step": 5,
+        "unit": "%",
+        "default": 20
+      },
+      {
+        "type": "header",
+        "content": "Text"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Heading",
+        "default": "Emily Sherman / Uploaded on 05th February, 2022"
+      },
+      {
+        "type": "textarea",
+        "id": "main_subheading",
+        "label": "Subheading",
+        "default": "This subheading helps you provide some more detail about the healer and the video."
+      },
+      {
+        "type": "header",
+        "content": "Button"
+      }
+    ],
+    "presets": [
+      {
+        "name": "Video Post",
+        "category": "Image"
+      }
+    ]
+  }
+  {% endschema %}
