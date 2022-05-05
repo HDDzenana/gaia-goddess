@@ -23,6 +23,25 @@
         "text_content": ""
       }
     },
+    "165175747597f3837f": {
+      "type": "section-video",
+      "settings": {
+        "video_height": "sixty-fifty-height-hero",
+        "text_position": "center-center",
+        "hero_video_link": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "hero_video_link_internal": "",
+        "hero_video_link_internal_mobile": "",
+        "video_enable_sound": false,
+        "overlay_opacity": 20,
+        "text_color": "text-light",
+        "title": "Welcome to Palo Alto",
+        "subtitle": "to Palo Alto",
+        "main_subheading": "This subheading helps you provide some more detail to the title above.",
+        "button_text": "Welcome",
+        "button_link": "",
+        "button_style": "secondary"
+      }
+    },
     "main": {
       "type": "article",
       "disabled": true,
@@ -44,6 +63,7 @@
   },
   "order": [
     "16514856733972d9a8",
+    "165175747597f3837f",
     "main",
     "1651485344dc097ec1"
   ]
