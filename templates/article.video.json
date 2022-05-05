@@ -2,21 +2,9 @@
   "sections": {
     "16514856733972d9a8": {
       "type": "gaia-banner",
-      "blocks": {
-        "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913": {
-          "type": "Image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
-            "dm": true
-          }
-        }
-      },
-      "block_order": [
-        "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913"
-      ],
       "settings": {
         "padding_top": 52,
-        "padding_bottom": 52,
+        "padding_bottom": 56,
         "bg": "#fef1f5",
         "heading": "How to Create a Friendly Environment to Pratice Yoga",
         "heading_color": "#6c1d45",
