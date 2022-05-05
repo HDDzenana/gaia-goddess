@@ -60,7 +60,7 @@
     <div class="video-wrapper video-vimeo-wrapper">
       {% comment %} Video {% endcomment %}
       <div class="vimeo-video">
-        <iframe class="vimeo-iframe" src="https://player.vimeo.com/video/12434588?h=caeba2496a" width="640" height="512" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="vimeo-iframe" src="{{ section.settings.hero_video_link }}" width="640" height="512" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
   
   
@@ -104,11 +104,11 @@
         "type": "video_url",
         "id": "hero_video_link",
         "label": "Video link",
-        "default": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "default": "https://vimeo.com/455054503#t=10s",
         "accept": [
-          "youtube", "vimeo"
+          "vimeo"
         ],
-        "info": "YouTube links only"
+        "info": "Vimeo links only"
       },
       {
         "type": "image_picker",
