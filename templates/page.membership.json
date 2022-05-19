@@ -3,8 +3,8 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
-        "section_bg_image": "shopify:\/\/shop_images\/image_21.png",
-        "bg": "linear-gradient(130deg, rgba(35, 125, 207, 0.6) 58%, rgba(255, 255, 255, 1) 58%)",
+        "aos": true,
+        "bg": "linear-gradient(130deg, rgba(235, 111, 189, 0.13) 58%, rgba(255, 255, 255, 1) 58%)",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "right",
