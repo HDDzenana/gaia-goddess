@@ -1,5 +1,22 @@
 {
   "sections": {
+    "1652955546338d77d3": {
+      "type": "section-featured-image",
+      "settings": {
+        "image_height": "sixty-fifty-height-hero",
+        "text_position": "center-center",
+        "enable_parallax": false,
+        "image": "shopify:\/\/shop_images\/image_23.png",
+        "image_position": "center-center",
+        "overlay_opacity": 65,
+        "text_color": "text-light",
+        "title": "Join Our Retreat Events",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla.",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
     "main": {
       "type": "main-page",
       "settings": {
@@ -13,15 +30,15 @@
         "text_alignment": "left",
         "image_1": "shopify:\/\/shop_images\/image-hero-retreat-yogi-template.png",
         "image_link_1": "",
-        "header_color": "#6C1D45",
-        "subheader_color": "#EB6FBD",
+        "header_color": "#6c1d45",
+        "subheader_color": "#eb6fbd",
         "heading": "7 Day Retreat, Yoga and Meditation in Lovina, Bali",
         "subheading": "Lovina, Bali - June 27 to July 04, 2022",
         "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
         "button_text": "Register Now",
         "button_link": "",
         "button_color": "#6c1d45",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
         "bg_color": ""
       }
     },
@@ -32,15 +49,15 @@
         "text_alignment": "left",
         "image_1": "shopify:\/\/shop_images\/image-last-retreat-03-yoga-template.png",
         "image_link_1": "",
-        "header_color": "#6C1D45",
-        "subheader_color": "#EB6FBD",
+        "header_color": "#6c1d45",
+        "subheader_color": "#eb6fbd",
         "heading": "7 Day Retreat, Yoga and Meditation in Lovina, Bali",
         "subheading": "Lovina, Bali - June 27 to July 04, 2022",
         "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
         "button_text": "Register Now",
         "button_link": "",
         "button_color": "#6c1d45",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
         "bg_color": ""
       }
     },
@@ -51,20 +68,21 @@
         "text_alignment": "left",
         "image_1": "shopify:\/\/shop_images\/image-register-now-yogi-template.png",
         "image_link_1": "",
-        "header_color": "#6C1D45",
-        "subheader_color": "#EB6FBD",
+        "header_color": "#6c1d45",
+        "subheader_color": "#eb6fbd",
         "heading": "7 Day Retreat, Yoga and Meditation in Lovina, Bali",
         "subheading": "Lovina, Bali - June 27 to July 04, 2022",
         "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
         "button_text": "Register Now",
         "button_link": "",
         "button_color": "#6c1d45",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
         "bg_color": ""
       }
     }
   },
   "order": [
+    "1652955546338d77d3",
     "main",
     "1650362749939c3a23",
     "1650362761ce8d90de",
