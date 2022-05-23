@@ -3,8 +3,8 @@
     "165163688289226a64": {
       "type": "section-product-feature",
       "settings": {
-        "section_bg_image": "shopify:\/\/shop_images\/image_22.png",
-        "bg": "#FEFAFB",
+        "aos": true,
+        "bg": "linear-gradient(90deg, rgba(254, 250, 251, 1) 60%, rgba(254, 241, 245, 1) 60%)",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "left",
@@ -21,7 +21,8 @@
         "button_text": "",
         "button_link": "",
         "button_color": "#800000",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
+        "video_url": "",
         "bg_color": ""
       }
     },
