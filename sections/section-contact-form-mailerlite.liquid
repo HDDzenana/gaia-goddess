@@ -9,6 +9,9 @@
     .wrapper {
       padding: 0 0 0 var(--gutter);
     }
+  
+  .textual-contact {
+  max-width: 648px;}
     .contact__form{
       width: 45%;
       padding: 40px 20px 0 0;
@@ -89,14 +92,15 @@
     <div id="contact-form-wrapper" class="wrapper contact-form-wrapper">
       <div class="contact__block">
   
-        <div id="contact__form" class="contact__form">
+        <div id="contact__form" class="contact__form"> 
+          <div class="textual-contact">
             {% if section.settings.heading != blank %}
                 <h2 class="form__heading" style="color: {{ section.settings.heading_color}}">{{ section.settings.heading }}</h2>
             {% endif %}
             {% if section.settings.sub_heading != blank %}
                 <p class="form__subheading">{{ section.settings.sub_heading }}</p>
             {% endif %}
-
+          </div>
           {% render 'mailerlite-contact-form' %}
         </div>
         <div class="contact__info-background" style="background-image: url('{{ section.settings.image | img_url:'2048x' }}'); background-size: cover;">
