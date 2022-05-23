@@ -57,7 +57,7 @@
           "header_transparent": false,
           "header_text_color": "black",
           "logo_not_home": "shopify:\/\/shop_images\/Path_1_1.png",
-          "logo_max_width": 100,
+          "logo_max_width": 140,
           "show_shop_name": false,
           "main-menu": "main-menu-public-portion",
           "menu_position": "right",
