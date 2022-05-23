@@ -4,7 +4,7 @@
       "type": "section-product-feature",
       "settings": {
         "aos": true,
-        "bg": "linear-gradient(130deg, rgba(235, 111, 189, 0.13) 58%, rgba(255, 255, 255, 1) 58%)",
+        "bg": "linear-gradient(90deg, rgba(235, 111, 189, 0.13) 58%, rgba(255, 255, 255, 1) 58%, rgba(254, 250, 251, 1) 58%)",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "right",
@@ -24,14 +24,6 @@
         "button_hover_color": "#fafafa",
         "video_url": "",
         "bg_color": "#fefafb"
-      }
-    },
-    "1651636686774f656e": {
-      "type": "section-custom-html",
-      "settings": {
-        "title": "HTML code",
-        "html": "<p>Once you write some HTML, it will render right here.<\/p>",
-        "bg_color": ""
       }
     },
     "main": {
@@ -55,7 +47,6 @@
   },
   "order": [
     "product-feature",
-    "1651636686774f656e",
     "main",
     "1649923445dbb0994e"
   ]
