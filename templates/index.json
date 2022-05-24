@@ -22,6 +22,7 @@
     "1649147513ace08e02": {
       "type": "section-product-feature",
       "settings": {
+        "aos": true,
         "bg": "#FEFAFB",
         "image_layout": "square",
         "image_position": "inline",
@@ -67,16 +68,6 @@
             "offering_text_color": "#ffffff"
           }
         },
-        "55e51fa2-1e42-463f-a316-671ec51e0ecc": {
-          "type": "text",
-          "settings": {
-            "icon_image": "shopify:\/\/shop_images\/our-offerings-retreats.png",
-            "text_alignment": "left",
-            "title": "Retreats",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "offering_text_color": "#ffffff"
-          }
-        },
         "eb6d628c-d850-424b-b0ed-95e83184f8e1": {
           "type": "text",
           "settings": {
@@ -86,13 +77,23 @@
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "offering_text_color": "#ffffff"
           }
+        },
+        "55e51fa2-1e42-463f-a316-671ec51e0ecc": {
+          "type": "text",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/our-offerings-retreats.png",
+            "text_alignment": "left",
+            "title": "Retreats",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "offering_text_color": "#ffffff"
+          }
         }
       },
       "block_order": [
         "a54f4f61-d4d1-4dea-ae44-982e2d2429f1",
         "5fa7835c-8484-464a-859b-97a212757abe",
-        "55e51fa2-1e42-463f-a316-671ec51e0ecc",
-        "eb6d628c-d850-424b-b0ed-95e83184f8e1"
+        "eb6d628c-d850-424b-b0ed-95e83184f8e1",
+        "55e51fa2-1e42-463f-a316-671ec51e0ecc"
       ],
       "settings": {
         "parallax": true,
@@ -116,6 +117,7 @@
       "type": "section-product-feature",
       "disabled": true,
       "settings": {
+        "aos": true,
         "bg": "#FEFAFB",
         "image_layout": "square",
         "image_position": "inline",
@@ -173,6 +175,7 @@
         "ebd6e8c2-aed7-4a4d-8d0a-05cb92685db3"
       ],
       "settings": {
+        "aos": true,
         "bg": "#FEFAFB",
         "image_layout": "square",
         "image_position": "inline",
