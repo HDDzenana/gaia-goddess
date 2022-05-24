@@ -249,66 +249,6 @@
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }
-    },
-    "16533921457ee3c68f": {
-      "type": "new-testimonial",
-      "blocks": {
-        "1653392145ada3388f-0": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
-            "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "Sherlock Holmes",
-            "short_text": "",
-            "customer_name_color": "#6c1d45",
-            "social_linkedin": "",
-            "social_mail": ""
-          }
-        },
-        "1653392145ada3388f-1": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
-            "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "John Watson",
-            "short_text": "",
-            "customer_name_color": "#6c1d45",
-            "social_linkedin": "",
-            "social_mail": ""
-          }
-        },
-        "1653392145ada3388f-2": {
-          "type": "testimonial",
-          "settings": {
-            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.<\/p>",
-            "img_border_radius": 0,
-            "image_width": 100,
-            "customer_name": "Mycroft Holmes",
-            "short_text": "",
-            "customer_name_color": "#6c1d45",
-            "social_linkedin": "",
-            "social_mail": ""
-          }
-        }
-      },
-      "block_order": [
-        "1653392145ada3388f-0",
-        "1653392145ada3388f-1",
-        "1653392145ada3388f-2"
-      ],
-      "settings": {
-        "title": "Multi Column",
-        "heading_color": "#6C1D45",
-        "subtitle": "Lorem Ipsum...",
-        "testimonial_layout": "imgfirst",
-        "border_radius": 0,
-        "show_quotes": true,
-        "bg_color": "",
-        "boxsh": false,
-        "boxshadow_color": "#fef1f5"
-      }
     }
   },
   "order": [
@@ -318,7 +258,6 @@
     "16499498117f4285ec",
     "1650979992e272da25",
     "main",
-    "1649923445dbb0994e",
-    "16533921457ee3c68f"
+    "1649923445dbb0994e"
   ]
 }
