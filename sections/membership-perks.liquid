@@ -1,12 +1,50 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Membership Perks",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg",
+      "default": "transparent",
+      "label": "Section Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+   	  "label": "Image"
+	},
+    {
+      "type": "textarea",
+      "id": "header",
+      "default": "Limited Time Free Membership",
+      "label": "Header"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Perk",
+      "name": "Perk",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "perkimage",
+		   "label": "Perk Image"
+        },
+        {
+          "type": "text",
+          "id": "perktext",
+          "default": "Access to Gaia's Content Library",
+		  "label": "Perk Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Gaia Membership Perks"
+    }
+  ]
+}
+
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
