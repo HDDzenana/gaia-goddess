@@ -235,6 +235,8 @@
     "165455166429e6cc9b": {
       "type": "founder",
       "settings": {
+        "padding_top": 55,
+        "padding_bottom": 25,
         "bg": "#ffffff",
         "image": "shopify:\/\/shop_images\/Screenshot_2022-06-06_at_23.47.33.png",
         "header": "Our Founder",
