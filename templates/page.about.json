@@ -170,6 +170,7 @@
     },
     "1650979992e272da25": {
       "type": "new-testimonial",
+      "disabled": true,
       "blocks": {
         "165097999198c4c09f-0": {
           "type": "testimonial",
