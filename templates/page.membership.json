@@ -50,12 +50,21 @@
         "7de09b2a-f5f8-49bc-a98c-66ed1487e069": {
           "type": "Perk",
           "settings": {
+            "perkimage": "shopify:\/\/shop_images\/gg_fav_icon_03cbfc2e-41e0-4189-a05a-4240f3732a6f.jpg",
+            "perktext": "Access to Gaia's Content Library"
+          }
+        },
+        "508e915e-640d-497c-b1e5-f64cba4ffe48": {
+          "type": "Perk",
+          "settings": {
+            "perkimage": "shopify:\/\/shop_images\/gg_fav_icon_03cbfc2e-41e0-4189-a05a-4240f3732a6f.jpg",
             "perktext": "Access to Gaia's Content Library"
           }
         }
       },
       "block_order": [
-        "7de09b2a-f5f8-49bc-a98c-66ed1487e069"
+        "7de09b2a-f5f8-49bc-a98c-66ed1487e069",
+        "508e915e-640d-497c-b1e5-f64cba4ffe48"
       ],
       "settings": {
         "bg": "#6c1d45",
