@@ -231,6 +231,17 @@
         "boxshadow_color": "#fef1f5"
       }
     },
+    "165455166429e6cc9b": {
+      "type": "founder",
+      "settings": {
+        "bg": "transparent",
+        "image": "shopify:\/\/shop_images\/image_12.png",
+        "header": "Our Founder",
+        "name": "Maria Marshall",
+        "role": "Founder",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex .."
+      }
+    },
     "main": {
       "type": "main-page",
       "disabled": true,
@@ -257,6 +268,7 @@
     "165097819584ecc11d",
     "16499498117f4285ec",
     "1650979992e272da25",
+    "165455166429e6cc9b",
     "main",
     "1649923445dbb0994e"
   ]
