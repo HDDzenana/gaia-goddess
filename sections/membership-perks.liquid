@@ -21,6 +21,10 @@
 
 <div class="description_div" style="margin-top: 5%; text-align: center;">
 {{section.settings.description}}
+  
+    {%- if button_text != blank -%}
+          <a href="{{ button_link }}" class="gbtn btn btn--product-feature" style="margin-top: 30px; background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ button_text }}</a>
+        {%- endif -%}
 </div>
 
 <style>
