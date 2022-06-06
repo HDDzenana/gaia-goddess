@@ -48,6 +48,16 @@
     "1649346336161dd843": {
       "type": "section-featured-offerings",
       "blocks": {
+        "eb6d628c-d850-424b-b0ed-95e83184f8e1": {
+          "type": "text",
+          "settings": {
+            "icon_image": "shopify:\/\/shop_images\/our-offerings-education2.png",
+            "text_alignment": "left",
+            "title": "Education",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "offering_text_color": "#ffffff"
+          }
+        },
         "a54f4f61-d4d1-4dea-ae44-982e2d2429f1": {
           "type": "text",
           "settings": {
@@ -63,17 +73,7 @@
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/our-offerings-education.png",
             "text_alignment": "left",
-            "title": "Education",
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            "offering_text_color": "#ffffff"
-          }
-        },
-        "eb6d628c-d850-424b-b0ed-95e83184f8e1": {
-          "type": "text",
-          "settings": {
-            "icon_image": "shopify:\/\/shop_images\/our-offerings-education2.png",
-            "text_alignment": "left",
-            "title": "Education",
+            "title": "Community",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "offering_text_color": "#ffffff"
           }
@@ -83,16 +83,16 @@
           "settings": {
             "icon_image": "shopify:\/\/shop_images\/our-offerings-retreats.png",
             "text_alignment": "left",
-            "title": "Retreats",
+            "title": "Empowerment",
             "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
             "offering_text_color": "#ffffff"
           }
         }
       },
       "block_order": [
+        "eb6d628c-d850-424b-b0ed-95e83184f8e1",
         "a54f4f61-d4d1-4dea-ae44-982e2d2429f1",
         "5fa7835c-8484-464a-859b-97a212757abe",
-        "eb6d628c-d850-424b-b0ed-95e83184f8e1",
         "55e51fa2-1e42-463f-a316-671ec51e0ecc"
       ],
       "settings": {
