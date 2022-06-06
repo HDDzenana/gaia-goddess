@@ -1,6 +1,10 @@
 <div class="mp-{{section.id}}">
   
-  <div class="imgwrapper-{{section.id}}"> </div>
+  <div class="imgwrapper-{{section.id}}">
+  {%render 'gaia-image',
+  	image: section.settings.image 
+    %}
+    </div>
   <h2> {{section.settings.header}} </h2>
   
   
