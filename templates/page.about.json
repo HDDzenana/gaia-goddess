@@ -237,9 +237,13 @@
         "bg": "#ffffff",
         "image": "shopify:\/\/shop_images\/Screenshot_2022-06-06_at_23.47.33.png",
         "header": "Our Founder",
+        "headercolor": "#6c1d45",
         "name": "Maria Marshall",
-        "role": "Founder",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex .."
+        "namecolor": "#d874d4",
+        "role": "CEO + Founder",
+        "rolecolor": "#6c1d45",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ..",
+        "descriptioncolor": "#000000"
       }
     },
     "main": {
