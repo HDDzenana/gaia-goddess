@@ -8,7 +8,9 @@
   
   <div class="mpcard-{{section.id}}">
   <h6 class="mpheader-{{section.id}}"> {{section.settings.header}} </h6>
-  
+  		{% for block in section.blocks %}
+    <p> {{block.settings.perk}} </p>
+    {% endfor %}
   </div>
 </div>
 
