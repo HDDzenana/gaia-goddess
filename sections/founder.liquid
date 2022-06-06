@@ -6,10 +6,24 @@
     grid-gap: 50px;
     align-items: center;
   }
+  .header-{{section.id}} {
+    color: {{section.settings.headercolor}};
+  }
   
+  .role-{{section.id}} {
+    color: {{section.settings.rolecolor}};
+  }
   
-  .founderinfo {
+  .description-{{section.id}} { 
+    color: {{section.settings.descriptioncolor}};
+  }
+  
+  .founderinfo-{{section.id}} {
     width: 70%;
+  }
+  
+  .name-{{section.id}} {
+    color: {{section.settings.namecolor}};
   }
   
   @media only screen and (max-width: 900px) {
@@ -40,8 +54,8 @@
     
     <h1 class="header-{{section.id}}"> {{ section.settings.header }} </h1>
     <h3 class="name-{{section.id}}"> {{section.settings.name }} </h3>
-       <subtitle class="center" style="margin-top: -4%;margin-bottom: 4%; color:#6C1D45;">{{section.settings.role}}</subtitle>
-    <p> {{ section.settings.description }} </p>
+       <subtitle class="role-{{section.id}}" >{{section.settings.role}}</subtitle>
+    <p class="description-{{section.id}}"> {{ section.settings.description }} </p>
     
   </div>
   
@@ -70,23 +84,43 @@
       "id": "header",
       "placeholder": "Our Founder",
       "label": "Header"
+    },   {
+      "type": "color",
+      "id": "headercolor",
+      "default": "#000000",
+      "label": "Header Color"
     },
     {
       "type": "text",
       "id": "name",
       "placeholder": "Maria Marshall",
       "label": "name"
+    },  {
+      "type": "color",
+      "id": "namecolor",
+      "default": "#000000",
+      "label": "Name Color"
     },
     {
       "type": "text",
       "id": "role",
       "placeholder": "Founder",
       "label": "Role"
+    },  {
+      "type": "color",
+      "id": "rolecolor",
+      "default": "#000000",
+      "label": "Role Color"
     },
     {
       "type": "textarea",
       "id": "description",
       "label": "Description"
+    },  {
+      "type": "color",
+      "id": "descriptioncolor",
+      "default": "#000000",
+      "label": "Description Color"
     }
 
      ],
