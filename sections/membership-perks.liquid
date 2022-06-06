@@ -9,7 +9,7 @@
   <div class="mpcard-{{section.id}}">
   <h6 class="mpheader-{{section.id}}"> {{section.settings.header}} </h6>
   		{% for block in section.blocks %}
-    <p> {{block.settings.perktext}} </p>
+    <p class="perktext"> {{block.settings.perktext}} </p>
     {% endfor %}
   </div>
 </div>
@@ -30,6 +30,10 @@
     padding-top: 100px;
     margin-top: -60px;
     border-radius: 15px;
+  }
+  
+  .perktext {
+    color: white;
   }
   
   .imgwrapper-{{section.id}},   .imgwrapper-{{section.id}} .gaia-image {
