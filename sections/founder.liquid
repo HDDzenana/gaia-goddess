@@ -11,6 +11,19 @@
   .founderinfo {
     width: 70%;
   }
+  
+  @media only screen and (max-width: 900px) {
+      .wrapper-{{section.id}} {
+    background: {{section.settings.bg}};
+    display: flex !important;
+
+    align-items: center;
+  }
+    
+      .founderinfo {
+    width: 100%;
+  }
+  }
 </style>
 
 
