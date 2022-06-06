@@ -8,8 +8,10 @@
   
   <div class="mpcard-{{section.id}}">
   <h6 class="mpheader-{{section.id}}"> {{section.settings.header}} </h6>
-  		{% for block in section.blocks %}
-    <p class="perktext"> {{block.settings.perktext}} </p>
+  		{% for block in section.blocks %} <div class="mbp">{%render 'gaia-image',
+  	image: block.settings.perkimage 
+    %}
+    <p class="perktext"> {{block.settings.perktext}} </p> </div>
     {% endfor %}
   </div>
 </div>
