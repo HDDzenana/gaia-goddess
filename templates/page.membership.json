@@ -43,11 +43,31 @@
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }
+    },
+    "1654553919c0856caf": {
+      "type": "membership-perks",
+      "blocks": {
+        "7de09b2a-f5f8-49bc-a98c-66ed1487e069": {
+          "type": "Perk",
+          "settings": {
+            "perktext": "Access to Gaia's Content Library"
+          }
+        }
+      },
+      "block_order": [
+        "7de09b2a-f5f8-49bc-a98c-66ed1487e069"
+      ],
+      "settings": {
+        "bg": "#6c1d45",
+        "image": "shopify:\/\/shop_images\/Screenshot_2022-06-06_at_23.47.33.png",
+        "header": "Limited Time Free Membership"
+      }
     }
   },
   "order": [
     "product-feature",
     "main",
-    "1649923445dbb0994e"
+    "1649923445dbb0994e",
+    "1654553919c0856caf"
   ]
 }
