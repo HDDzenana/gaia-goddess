@@ -8,9 +8,12 @@
   
   <div class="mpcard-{{section.id}}">
   <h6 class="mpheader-{{section.id}}"> {{section.settings.header}} </h6>
-  		{% for block in section.blocks %} <div class="mbp">{%render 'gaia-image',
+  		{% for block in section.blocks %} 
+    <div class="mbp">
+     <div class="mbpimg">
+    {%render 'gaia-image',
   	image: block.settings.perkimage 
-    %}
+       %} </div>
     <p class="perktext"> {{block.settings.perktext}} </p> </div>
     {% endfor %}
   </div>
@@ -53,6 +56,11 @@
     border: 9px solid white;
     border-radius: 50%;
 }
+  
+  .mbpimg {
+    width: 50px;
+    height: 50px;
+  }
   
 </style>
 
