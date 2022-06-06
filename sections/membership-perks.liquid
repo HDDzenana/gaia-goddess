@@ -5,7 +5,7 @@
   	image: section.settings.image 
     %}
     </div>
-  <h6> {{section.settings.header}} </h6>
+  <h6 class="mpheader-{{section.id}}"> {{section.settings.header}} </h6>
   
   
 </div>
@@ -13,9 +13,14 @@
 
 
 <style>
+  
+  .mpheader-{{section.id}} {
+  	margin: auto;
+  }
   .imgwrapper-{{section.id}},   .imgwrapper-{{section.id}} .gaia-image {
     width: 120px;
     height: 120px;
+    margin: auto;
   }
   
   .imgwrapper-{{section.id}}  .gaia-image img {
