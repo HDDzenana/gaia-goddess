@@ -234,7 +234,7 @@
     "165455166429e6cc9b": {
       "type": "founder",
       "settings": {
-        "bg": "transparent",
+        "bg": "#ffffff",
         "image": "shopify:\/\/shop_images\/image_12.png",
         "header": "Our Founder",
         "name": "Maria Marshall",
