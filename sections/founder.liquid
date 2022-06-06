@@ -1,3 +1,22 @@
+<div class="wrapper-{{section.id}}">
+  
+  <div class="img">
+    {%render 'gaia-image'%,
+    image: section.settings.image
+    %}
+    
+  </div>
+  
+  <div class="founderinfo">
+    
+    <h1 class="header-{{section.id}}"> {{ section.settings.header }} </h1>
+  </div>
+  
+  
+</div>
+
+
+
 {% schema %}
 {
   "name": "Founder",
