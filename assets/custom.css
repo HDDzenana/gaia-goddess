@@ -212,3 +212,7 @@ h2 span {
 .site-header>.wrapper {
 padding-top: 25px !important;
 }
+
+.uppercase {
+  text-transform: uppercase;
+}
