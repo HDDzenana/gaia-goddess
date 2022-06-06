@@ -85,11 +85,17 @@
     object-fit: scale-down;
   }
   
-  .mbp:after {
+  .mbp:after,
+  .mbp:before {
    content: "";
    position: absolute;
    height: 5px;
    border-bottom: 1px solid white;
+  }
+  
+  .mbp:before {
+    bottom: 100%;
+    margin-right: 15px;
   }
 </style>
 
