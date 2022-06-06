@@ -1,12 +1,44 @@
 {% schema %}
-  {
-    "name": "Section name",
-    "settings": []
-  }
+{
+  "name": "Founder",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg",
+      "default": "transparent",
+      "label": "Section Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+	  "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "header",
+      "placeholder": "Our Founder",
+      "label": "Header"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "placeholder": "Maria Marshall",
+      "label": "name"
+    },
+    {
+      "type": "text",
+      "id": "role",
+      "placeholder": "Founder",
+      "label": "Role"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    }
+  ],
+  "blocks": [
+  
+  ]
+}
 {% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
