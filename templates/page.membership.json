@@ -58,7 +58,13 @@
       "settings": {
         "bg": "#6c1d45",
         "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
-        "header": "Limited Time Free Membership"
+        "header": "Limited Time Free Membership",
+        "headercolor": "#6c1d45",
+        "description": "Sign up today to become a member of Gaia Goddess and get access to amazing content, join fantastic retreats and events.",
+        "button_text": "Sign Up Now",
+        "button_link": "shopify:\/\/blogs\/news\/lorem-ipsum-dolor-sit-amet-2",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#FAFAFA"
       }
     },
     "1649923445dbb0994e": {
