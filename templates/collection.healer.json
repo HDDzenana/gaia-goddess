@@ -12,6 +12,40 @@
         "banner_bg_color": "#fafafa"
       }
     },
+    "16545995910e1f9f10": {
+      "type": "healer-ind",
+      "blocks": {
+        "8d27600b-411b-4726-8405-25c566509e49": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "title": "Sophie Moore",
+            "healer_subtitle": "Yoga Instructor",
+            "textbtn": "Diosa",
+            "show_instagram_icon": true,
+            "social_instagram_link": "#Facebook",
+            "show_website_icon": true,
+            "social_website_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8d27600b-411b-4726-8405-25c566509e49"
+      ],
+      "settings": {
+        "bg": "#fef1f5",
+        "heading": "",
+        "bg-image": "shopify:\/\/shop_images\/Screenshot_2022-06-07_at_13.23.56.png",
+        "heading_color": "#6c1d45",
+        "heading_alignment": "left",
+        "show_filter": false,
+        "products_layout": "grid",
+        "bg_color": "",
+        "healer_title_color": "#6c1d45",
+        "healer_subtitle_color": "#eb6fbd",
+        "enable_slider": true
+      }
+    },
     "subcollections": {
       "type": "subcollections",
       "disabled": true,
@@ -59,6 +93,7 @@
     },
     "16512183744a86c2dd": {
       "type": "section-jointeam-mailerlite",
+      "disabled": true,
       "settings": {
         "text_position": "right",
         "text_alignment": "center",
@@ -73,6 +108,7 @@
   },
   "order": [
     "hero",
+    "16545995910e1f9f10",
     "subcollections",
     "main",
     "16512183549435ee0d",

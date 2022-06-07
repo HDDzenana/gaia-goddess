@@ -3,6 +3,7 @@
     "1652955546338d77d3": {
       "type": "section-featured-image",
       "settings": {
+        "scroller": true,
         "image_height": "sixty-fifty-height-hero",
         "text_position": "center-center",
         "enable_parallax": false,
