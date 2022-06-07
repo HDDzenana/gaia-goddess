@@ -1,0 +1,138 @@
+{% if  section.blocks.size > 0 %}
+<div class="podcast-sec-{{section.id}}">
+  <div class="page-width">
+    {% if section.settings.title != blank %}
+    <div class="header-typ2 fs-36 green ff-uf u-case mb-20">{{section.settings.title}}</div>    
+    {% endif%}
+    {% for block in section.blocks %}
+    	<div class="row f fw mb-30">
+          <div class="col-md-4 col mb-30">
+          	<div class="cont-wrapper">
+              {% if block.settings.image != blank %}
+              <div class="mb-20"><img src="{{block.settings.image | img_url:'master'}}" /></div>
+              {% endif %}
+              {% if block.settings.lf_desc != blank %}
+              <div class="mb-40 fs-18 ff-uf">{{block.settings.lf_desc}}</div>
+              {% endif%}
+              {% if block.settings.hosted != blank %}
+              <div class="host-by fs-18 u-case ff-uf">
+                <label class=" txt-color">Hosted By</label>
+                <div><strong>{{block.settings.hosted}}</strong></div>
+              </div>
+              {% endif%}
+            </div>
+          </div>
+          <div class="col-md-8 col mb-30">
+            <div class="audio-wrapper fs-18 ff-uf">
+              {% if block.settings.eps != blank %}
+              <div class="ep-num mb-15">{{block.settings.eps}}</div>
+              {% endif %}
+              {% if block.settings.rt_title != blank %}
+              	<div class="fs-24 green ff-uf mb-15">{{block.settings.rt_title}}</div>
+              {% endif %}
+              {% if block.settings.rt_dec != blank %}
+              	<div class="txt-color ff-uf fs-18 mb-40">{{block.settings.rt_dec}}</div>
+              {% endif %}
+              <div clss="f ">
+                <span class="play-btn"><a href="javascript:;"  id="play{{forloop.index}}"  class="btn">Play</a></span>
+              {% if block.settings.date != blank %}
+              <span class="epi-data">{{block.settings.date}}</span>
+              {% endif %}
+              {% if block.settings.eps_time != blank %}
+              <span class="est-time">{{block.settings.eps_time}}</span>
+              {% endif %}
+              </div>
+              {% if block.settings.audio != blank %}
+              <audio controls class="audio-tag mt-45" id="music{{forloop.index}}">
+                <source src="{{block.settings.audio}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+              {% endif %}
+            </div>
+          </div>
+    	</div>
+    {% endfor %}
+  </div>
+</div>
+{% endif %}
+
+{% schema %}
+  {
+    "name": "Podcast Section",
+    "settings": [
+		{
+            "type": "text",
+            "id": "title",
+            "label": "Section Title"
+        }
+	],
+	"blocks": [
+     {
+       "name": "Podcast",
+       "type": "podcast",
+       "settings": [
+		{
+          "type": "header",
+      	   "content": "Left Side"
+    	},
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+		{
+           "type": "richtext",
+           "id": "lf_desc",
+           "label": "Description"
+         },
+		 {
+           "type": "text",
+           "id": "hosted",
+           "label": "Hosted By"
+         },
+		 {
+          "type": "header",
+      	   "content": "Right Side"
+    	},
+		{
+           "type": "text",
+           "id": "eps",
+           "label": "EPS. Number"
+         },
+		 {
+           "type": "text",
+           "id": "rt_title",
+           "label": "Enter Episode Title"
+         },
+		 {
+           "type": "textarea",
+           "id": "rt_dec",
+           "label": "Short Description"
+         },
+		 {
+           "type": "text",
+           "id": "date",
+           "label": "EPS. Date"
+         },
+		 {
+           "type": "text",
+           "id": "eps_time",
+           "label": "EPS. Time"
+         },
+	     {
+           "type": "url",
+           "id": "audio",
+           "label": "MP3 URL",
+		   "info": "MP3 audio URL only"
+         }
+       ]
+     }
+   ],
+    "presets": [
+      {
+        "name": "Podcast"
+
+      }
+    ]
+  }
+{% endschema %}
