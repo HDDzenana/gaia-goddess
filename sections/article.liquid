@@ -15,8 +15,13 @@
 
     <header class="section-header section-header--article">
       <h1>{{ article.title }}</h1>
-      {%- capture author -%}{{ article.author }}{%- endcapture -%}
-      {%- capture date -%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>{%- endcapture -%}
+      {%- capture author -%}
+        {{ article.author }}
+      {%- endcapture -%}
+
+      {%- capture date -%}
+        <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+      {%- endcapture -%}
       <small class="light-gray">{{ 'blogs.article.author_on_date_html' | t: author: author, date: date }}</small>
     </header>
 
@@ -112,16 +117,16 @@
           <div class="form-vertical">
             {% form 'new_comment', article, id: 'NewComment' %}
 
-            {%- assign post_message = 'blogs.comments.success' -%}
-            {%- if blog.moderated? and comment.status == 'pending' -%}
-              {%- assign post_message = 'blogs.comments.success_moderated' -%}
-            {%- elsif comment.status == 'unapproved' or comment.status == 'spam' -%}
-              {%- assign post_message = 'blogs.comments.unapproved' -%}
-            {%- endif -%}
+              {%- assign post_message = 'blogs.comments.success' -%}
+              {%- if blog.moderated? and comment.status == 'pending' -%}
+                {%- assign post_message = 'blogs.comments.success_moderated' -%}
+              {%- elsif comment.status == 'unapproved' or comment.status == 'spam' -%}
+                {%- assign post_message = 'blogs.comments.unapproved' -%}
+              {%- endif -%}
 
-            {%- if form.posted_successfully? -%}
-              <p class="note form-success">{{ post_message | t }}</p>
-            {%- endif -%}
+              {%- if form.posted_successfully? -%}
+                <p class="note form-success">{{ post_message | t }}</p>
+              {%- endif -%}
 
               {% comment %}
                 #AddCommentTitle is used simply as an anchor link
@@ -133,32 +138,36 @@
               <div class="comment__wrapper">
 
                 <div class="comment__left">
-                  <label for="CommentAuthor" class="hidden-label">{{ 'blogs.comments.name' | t }}</label>
+                  <label class="hidden-label" for="CommentAuthor">{{ 'blogs.comments.name' | t }}</label>
                   <input type="text" name="comment[author]" id="CommentAuthor" class="input--full{% if form.errors contains 'author' %} error{% endif %}" placeholder="{{ 'blogs.comments.name' | t }}" value="{{ form.author }}" autocapitalize="words" required>
 
-                  <label for="CommentEmail" class="hidden-label">{{ 'blogs.comments.email' | t }}</label>
+                  <label class="hidden-label" for="CommentEmail">{{ 'blogs.comments.email' | t }}</label>
                   <input type="email" name="comment[email]" id="CommentEmail" class="input--full{% if form.errors contains 'email' %} error{% endif %}" placeholder="{{ 'blogs.comments.email' | t }}" value="{{ form.email }}" autocorrect="off" autocapitalize="off" required>
                 </div>
 
                 <div class="comment__right">
-                  <label for="CommentBody" class="hidden-label">{{ 'blogs.comments.message' | t }}</label>
+                  <label class="hidden-label" for="CommentBody">{{ 'blogs.comments.message' | t }}</label>
                   <textarea name="comment[body]" id="CommentBody" class="input--full{% if form.errors contains 'body' %} error {% endif %}" placeholder="{{ 'blogs.comments.message' | t }}" required>{{ form.body }}</textarea>
                 </div>
 
               </div>
 
               {%- if blog.moderated? -%}
-                <small class = "light-gray">{{ 'blogs.comments.moderated' | t }}</small>
+                <small class="light-gray">{{ 'blogs.comments.moderated' | t }}</small>
               {%- endif -%}
 
-              <button type="submit" class="btn post-comment">{{ 'blogs.comments.post_comment' | t }}</button>
+              <button class="btn post-comment" type="submit">{{ 'blogs.comments.post_comment' | t }}</button>
 
               {%- if form.errors -%}
-                <script type="text/javascript">theme.settings.newHash = 'AddCommentTitle';</script>
+                <script type="text/javascript">
+                  theme.settings.newHash = "AddCommentTitle";
+                </script>
               {%- endif -%}
 
               {%- if form.posted_successfully? -%}
-                <script type="text/javascript">theme.settings.newHash = 'Comments';</script>
+                <script type="text/javascript">
+                  theme.settings.newHash = "Comments";
+                </script>
               {%- endif -%}
 
             {%- endform -%}
@@ -176,52 +185,36 @@
 </div>
 
 <script type="application/ld+json">
-  {
-    "@context": "http://schema.org",
-    "@type": "Article",
-    "articleBody": {{ article.content | strip_html | json }},
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": {{ shop.url | append: page.url | json }}
-    },
-    "headline": {{ article.title | json }},
-    {% if article.excerpt != blank %}
-      "description": {{ article.excerpt | strip_html | json }},
-    {% endif %}
-    {% if article.image %}
-      {% assign image_size = article.image.width | append: 'x' %}
-      "image": [
-        {{ article | img_url: image_size | prepend: "https:" | json }}
-      ],
-    {% endif %}
-    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
-    "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
-    "author": {
-      "@type": "Person",
-      "name": {{ article.author | json }}
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": {{ shop.name | json }}
-    }
-  }
+
+
+[36mLine: 1[0m
+[31m[36 mLine : 1 [[0m
+[31m        0 m [[0m
+[31m            31 m {[0m
+[31m                [[0m
+[31m                    0 m [[0m
+[31m                        31 m "@context" : "http://schema.org",[0m
+[31m                        [[0m
+
 </script>
 
 {% schema %}
-  {
-    "name": "Posts",
-    "settings": [
-      {
-        "type": "checkbox",
-        "id": "show_share_buttons",
-        "label": "Show social sharing buttons",
-        "default": true
-      }
-    ],
-    "blocks": [
-      {
-        "type": "@app"
-      }
-    ]
-  }
+
+{
+  "name": "Posts",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show social sharing buttons",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    }
+  ]
+}
+
 {% endschema %}

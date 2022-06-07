@@ -47,6 +47,8 @@
                 <source src="{{block.settings.audio}}" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
+              {%else%} 
+              {{article.metafields.my_fields.mp3}}
               {% endif %}
             </div>
           </div>
@@ -120,7 +122,7 @@
            "label": "EPS. Time"
          },
 	     {
-           "type": "url",
+           "type": "textarea",
            "id": "audio",
            "label": "MP3 URL",
 		   "info": "MP3 audio URL only"

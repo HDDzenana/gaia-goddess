@@ -25,16 +25,18 @@
     endcomment
     assign bg_color = section.settings.bg_color
   -%}
-  
-  {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
-    {%- style -%}
-      #ProductFeature--{{ section.id }} {
-        background-color: {{ bg_color }};
-      }
-    {%- endstyle -%}
-  {%- endif -%}
 
-  <style>
+{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+  {%- style -%}
+
+#ProductFeature--{{section.id}}{
+  background-color: {{bg_color}};
+}
+
+{%- endstyle -%}
+{%- endif -%}
+
+<style>
     .card_icons{
         justify-content: center !important;
     }
@@ -69,7 +71,7 @@
     }
     .about-card__list{
         list-style: none;
-    }
+    }  
     .about-card__list > li::before {
         content: url({{ 'bulletpoint.svg' | asset_url }});
     }
@@ -176,6 +178,26 @@
     </style>
   
   <section id="ProductFeature--{{ section.id }}" class="blog-article" data-section-id="{{ section.id }}" data-section-type="product-feature">
+    <div class="upperpart-{{section.id}} center "> 
+    
+      <div class="aboutarticle-{{section.id}}"> 
+     {%render 'breadcrumbs'%}  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+    
+    <h1>
+      {{article.title}}
+    </h1>  {{ article.author }}
+</div> 
+{%if section.settings.image == blank %}
+{% assign image_src=article.image.src | img_url: 'large' %}
+<div class="container">
+<img src="{{ image_src }}">
+</div>
+{%else %}
+{% render 'gaia-image',
+image: section.settings.image %}
+{%endif%}
+</div>
+    
     <div class="wrapper retreat-wrapper">
       
       <div class="product-feature__block about__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
@@ -216,12 +238,21 @@
                             {%- render 'healer-website' -%}
                           </a>
                         {% endif %}
-                        
+                         
+    
+    
                       </div>
                 </div>
-            </div>
-          
+            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card">  <div class="about-card__info" style="margin-top:50px ;">
+                 <span class="center center-{{section.id}}"> Share This  Article </span> 
+               <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact"> 
+               
+             {%- render 'social-sharing', article: article -%}
+             </div></div>    {%- endif -%}
+             </div>
         </div>
+
+        
       
         <div class="product-feature__text about-info rte">
           <h2 class="about-info__heading" style="color: {{ section.settings.header_color }}">{{ article.title }}</h2>
@@ -238,137 +269,157 @@
   <div class="border"></div>
 
   <script type="application/ld+json">
-    {
-      "@context": "http://schema.org",
-      "@type": "Article",
-      "articleBody": {{ article.content | strip_html | json }},
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": {{ shop.url | append: page.url | json }}
-      },
-      "headline": {{ article.title | json }},
-      {% if article.excerpt != blank %}
-        "description": {{ article.excerpt | strip_html | json }},
-      {% endif %}
-      {% if article.image %}
-        {% assign image_size = article.image.width | append: 'x' %}
-        "image": [
-          {{ article | img_url: image_size | prepend: "https:" | json }}
-        ],
-      {% endif %}
-      "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
-      "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
-      "author": {
-        "@type": "Person",
-        "name": {{ article.author | json }}
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": {{ shop.name | json }}
-      }
-    }
-  </script>
+
+
+[36mLine: 1[0m
+[31m[36 mLine : 2 [[0m
+[31m        0 m [[0m
+[31m            31 m(empty line)[[0m
+[31m                0 m [[0m
+[31m                    31 m(empty line)[[0m
+[31m                        0 m [[0m
+[31m                            31 m[[0m
+
+</script>
    
   {% schema %}
-  {
-    "name": "Blog Article",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Layout"
-      },
-      {
-        "type": "select",
-        "id": "text_position",
-        "label": "Text position",
-        "default": "right",
-        "options": [
-          { "label": "Left", "value": "left" },
-          { "label": "Right", "value": "right" }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "text_alignment",
-        "label": "Text alignment",
-        "default": "center",
-        "options": [
-          { "label": "Center", "value": "center" },
-          { "label": "Left", "value": "left" }
-        ]
-      },
-      {
-        "type": "header",
-        "content": "Text"
-      },  
-      {
-        "type": "color",
-        "id": "header_color",
-        "label": "Header Color",
-        "default": "#6C1D45"
-      },
-      {
-        "type": "header",
-        "content": "Card"
-      },
-      {
-        "type": "color",
-        "id": "card_title_color",
-        "label": "Card Header Color",
-        "default": "#6C1D45"
-      },
-      {
-        "type": "checkbox",
-        "id": "card_social",
-        "label": "Show social icons on card?",
-        "default": true
-      },
-      {
-        "type": "textarea",
-        "id": "card_text",
-        "label": "Card Text",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
-      },
-      {
-        "type": "header",
-        "content": "Card button"
-      },
-      {
-        "type": "text",
-        "id": "button_text",
-        "label": "Text"
-      },
-      {
-        "type": "url",
-        "id": "button_link",
-        "label": "Link"
-      },
-      {
-        "type": "color",
-        "id": "button_color",
-        "label": "Button Color",
-        "default": "#6C1D45"
-      },  {
-        "type": "color",
-        "id": "button_hover_color",
-        "label": "Button Hover Color",
-        "default": "#FAFAFA"
-      },
-      {
-        "type": "header",
-        "content": "Colors"
-      },
-      {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background"
+
+{
+  "name": "Blog Article",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show social sharing buttons",
+      "default": true
+    }, {
+      "type": "color",
+      "id": "bg",
+      "label": "Background",
+      "default": "#fef1f5"
+    }, {
+      "type": "header",
+      "content": "Layout"
+    }, {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "default": "right",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        }, {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    }, {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "label": "Center",
+          "value": "center"
+        }, {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    }, {
+      "type": "header",
+      "content": "Text"
+    }, {
+      "type": "color",
+      "id": "header_color",
+      "label": "Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "header",
+      "content": "Card"
+    }, {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "checkbox",
+      "id": "card_social",
+      "label": "Show social icons on card?",
+      "default": true
+    }, {
+      "type": "textarea",
+      "id": "card_text",
+      "label": "Card Text",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
+    }, {
+      "type": "header",
+      "content": "Card button"
+    }, {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }, {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button Hover Color",
+      "default": "#FAFAFA"
+    }, {
+      "type": "header",
+      "content": "Colors"
+    }, {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog article",
+      "category": "Image"
+    }
+  ]
+}
+
+{% endschema %}
+
+  <style>
+    .center-{{section.id}} {
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    font-weight: 900;
+    color: #6c1d45;
+
+    }
+
+    .upperpart-{{section.id}} {
+      background: {{section.settings.bg}};
+      padding: 50px 0;
+      margin-bottom: 150px;
+    }
+
+    .aboutarticle-{{section.id}} * {
+         color: #6c1d45;
+    }
+    @media only screen and (min-width: 900px) {
+      .aboutarticle-{{section.id}} {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 50px;
       }
-    ],
-    "presets": [
-      {
-        "name": "Blog article",
-        "category": "Image"
-      }
-    ]
-  }
-  {% endschema %}
+    }
+  </style>

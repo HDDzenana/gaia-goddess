@@ -1,0 +1,286 @@
+<div class="bloglist-{{section.id}}" style="  background: {{section.settings.section_bg}}; padding: 50px 0;">
+
+  <p class="caption center cc-{{section.id}}"  style="text-decoration:none ; color: {{section.settings.heading_color}} !important;">{{section.settings.caption}}</p>
+  <h1 class="heading-{{section.id}} center"  style="text-decoration:none ; color: {{section.settings.heading_color}} !important;"
+>{% if section.settings.heading == blank %}
+    {{ blog.handle }}
+    {%else%} 
+    {{section.settings.heading }}
+    {% endif %}
+  </h1>
+  <div class="blogcontents page-width">
+    <div class="allartc">
+<!-- <!-- new -->
+      <ul>
+  {%- for article in blog.articles -%}
+    <li class="articless" style="background: white; 
+    display: flex;
+    justify-content: space-around; margin-bottom: 20px;
+ ">
+ 
+        <a href="{{ article.url }}">
+
+          {%- if article.image -%}
+            <img src="{{ article.image | img_url: '300x300' }}" alt="" style="
+    margin-bottom: -10px !important;     object-fit: cover;
+    min-width: 100%;">
+</a>
+            <noscript>
+            <p>
+              {{ article | img_url: '455x300', scale: 2 | img_tag: article.title }}
+            </p>
+            </noscript>
+          {%- endif -%} <div class="articlecontent" style="
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-evenly; margin: 5px 10px;
+">
+ {% for tag in article.tags  limit: 1 %}
+            <span class="tags-{{section.id}}">
+    			{{ tag }} 
+            </span>
+           
+            
+{% endfor %}
+      <h2>    <a href="{{ article.url }}" style="text-decoration: none; color: #c9b02c;">
+          {{ article.title }}
+        </a>
+      </h2>
+<div class="caption vd">
+      {%- if section.settings.blog_show_author -%}
+        <span>
+          By {{ article.author }}
+        </span>
+      {%- endif -%}
+|
+      {%- if section.settings.blog_show_date -%}
+        <span>
+          {{ article.published_at | time_tag: format: 'date' }}
+        </span>
+  {%- endif -%} </div>
+
+      <p>
+        {%- if article.excerpt.size > 0 -%}
+          {{ article.excerpt }}
+        {%- else -%}
+          {{ article.content | strip_html | truncate: 90 }}
+        {%- endif -%}
+      </p>
+
+     
+      
+          <a href="{{ article.url }}" aria-label="Read more: {{ article.title }}"  class="uppercase" style="width: 50%; color: black;">
+            Read more
+          </a>
+     
+    
+
+    </li>
+  {%- endfor -%}
+</ul>
+      <ul>  </ul></div>
+
+    <div class="alltg" style="color: {{section.settings.heading_colors}}; padding: 0 40px; text">
+   
+        <h1 style="color: {{section.settings.heading_colors}};">
+          tags.
+        </h1>
+
+        {% if blog.all_tags != blank %}
+        
+          <ul id="nav" style="color: {{section.settings.heading_colors}};">
+            {% for tag in blog.all_tags %}
+              <li style="color: {{section.settings.heading_colors}} !important">
+                <a href="{{ shop.url}}/blogs/{{ blog.handle }}/tagged/{{ tag | handleize }}" style="color: {{section.settings.heading_colors}} !important">{{ tag }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %} 
+ 
+ 
+
+   </div>
+ 
+  <div class="center" style="width:100% ;"> 
+  <a class="center" href="{{section.settings.link}}" style="text-decoration:none ; color: {{section.settings.heading_color}} !important;"> <div class="  button button--outline" 
+    style="border: 1px solid {{section.settings.heading_color}} !important; ;">  {{section.settings.link_label}}</div>  </a> </div>
+</div>
+
+</div> 
+{% schema %}
+
+{
+  "name": "Blog List",
+  "settings": [
+    {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section Background",
+      "default": "#000000"
+    }, {
+      "type": "checkbox",
+      "id": "show_image",
+      "default": true,
+      "label": "t:sections.main-blog.settings.show_image.label"
+    }, {
+      "type": "select",
+      "id": "image_height",
+      "options": [
+        {
+          "value": "adapt",
+          "label": "t:sections.main-blog.settings.image_height.options__1.label"
+        }, {
+          "value": "small",
+          "label": "t:sections.main-blog.settings.image_height.options__2.label"
+        }, {
+          "value": "medium",
+          "label": "t:sections.main-blog.settings.image_height.options__3.label"
+        }, {
+          "value": "large",
+          "label": "t:sections.main-blog.settings.image_height.options__4.label"
+        }
+      ],
+      "default": "medium",
+      "label": "t:sections.main-blog.settings.image_height.label",
+      "info": "t:sections.main-blog.settings.image_height.info"
+    }, {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog"
+    }, {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#FAFAFA"
+    }, {
+      "type": "color",
+      "id": "heading_colors",
+      "label": "Tag Color",
+      "default": "#FAFAFA"
+    }, {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption",
+      "default": "Read About"
+    }, {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "MIND"
+    }, {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    }, {
+      "type": "checkbox",
+      "id": "blog_show_author",
+      "label": "Show author",
+      "default": true
+    }, {
+      "type": "checkbox",
+      "id": "blog_show_date",
+      "label": "Show date",
+      "default": true
+    }, {
+      "type": "text",
+      "id": "link_label",
+      "label": "Button label",
+      "default": "LOAD MORE"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "header",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "article",
+          "id": "article",
+          "label": "Article"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Tag/List Blog"
+    }
+  ]
+}
+
+{% endschema %}
+
+
+<style>
+  .tags-{{section.id}} {
+  width: 51px;
+height: 18px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+ 
+text-transform: uppercase;
+ 
+/* ALL Primary */
+
+color: #B6994F;
+ 
+  }
+  
+  .card {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 50px 0;
+    text-align: left;
+    text-align-last: left;
+  }
+
+  .blogcontents {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    background: {{section.settings.section_bg}};
+    padding-left: 35px;
+  }
+  .cc-{{section.id}}, .heading-{{section.id}}{
+    color: {{section.settings.heading_color}};
+  }
+
+  .center {
+    margin: auto;
+    width: 100%;
+    }
+  
+      .articless {
+    overflow: hidden;
+}
+  
+  @media only screen and (max-width: 900px) {
+  .blogcontents {
+    display: flex !important;
+    flex-direction: column;
+    background: #000000;
+    padding: 20px !important;
+}
+    
+    .articless {
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+}
+    
+    ul { 
+    margin: 0;
+    padding: 0 !important;
+     }
+   
+  } </style>
