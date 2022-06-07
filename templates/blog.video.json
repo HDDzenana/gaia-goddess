@@ -3,6 +3,9 @@
     "main": {
       "type": "blog",
       "settings": {
+        "post_columns": 2,
+        "image_aspect_ratio": 0.6,
+        "show_rss_icon": false
       }
     }
   },
