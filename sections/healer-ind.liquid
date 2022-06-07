@@ -167,13 +167,8 @@
 
 {%- endstyle -%}
 
-<section id="FeaturedCollection--{{ section.id }}" class="featured-collection featured-collection--{{ layout }}" data-section-id="{{ section.id }}" data-section-type="featured-collection">
-
-  <div class="featured-collection__title">
-    <div class="wrapper">
-      <div class="wrapper-section__heading">
-        <h2 class="section__heading">{{ section.settings.heading }}</h2>
-
+ 
+ 
         {%- if settings.show_spacer_lines -%}
           <hr>
         {%- endif -%}
@@ -358,6 +353,7 @@
 
 {
   "name": "Individual healers",
+  "class": "transparent-header",
   "settings": [
     {
       "type": "header",
@@ -500,6 +496,8 @@
 
 <style>
 
+ 
+
   .healer-description {
 
     border-top: 1px solid;
@@ -512,6 +510,7 @@
     grid-template-columns: 1fr 1fr;
     background: {{section.settings.bg}};
     height: 70vh;
+    margin-bottom: 150px;
   }
   .pw {
     display: flex;
@@ -537,4 +536,11 @@
     padding: 10px 20px;
     border-radius: 40px;
   }
-</style>
+
+    @media only screen and (max-width: 769px) {
+      .wrappers-{{section.id}} {
+    display: flex !important;
+    flex-direction: column !important;
+  } 
+  }
+</style> 

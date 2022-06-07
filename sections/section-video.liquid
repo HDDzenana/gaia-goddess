@@ -23,59 +23,62 @@
 -%}
 
 {%- style -%}
-  #FeaturedVideo--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
-  .video__iframe, .video__iframe_mobile{
-    min-height: 0;
-    opacity: 1;
+
+#FeaturedVideo--{{section.id}}{
+  --overlay-opacity: {{overlay_opacity}};
+}
+
+.video__iframe,
+.video__iframe_mobile {
+  min-height: 0;
+  opacity: 1;
+}
+
+.video__iframe__video {
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+}
+
+.video__iframe_mobile {
+  display: none;
+}
+
+@media only screen and(max-width: 767px) {
+  .video__iframe_mobile {
+    display: block;
   }
-  .video__iframe__video{
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: auto;
-  }
-  .video__iframe_mobile{
+  
+.video__iframe_desktop {
     display: none;
   }
-  @media only screen and (max-width: 767px){
-    .video__iframe_mobile{
-      display: block;
-    }
-    .video__iframe_desktop{
-      display: none;
-    }
-    .video__iframe_mobile {
-      width: 0px!important;
-    }
+  
+.video__iframe_mobile {
+    width: 0 !important;
   }
-  @media only screen and (max-width: 380px){
-      .video__iframe_mobile {
-        width: 380px!important;
-    }
+}
+
+@media only screen and(max-width: 380px) {
+  .video__iframe_mobile {
+    width: 380px !important;
   }
+}
+
 {%- endstyle -%}
 
-<div class="featured-video-section {{ section.settings.video_height }}"
-  id="FeaturedVideo--{{ section.id }}"
-  data-section-id="{{ section.id }}"
-  data-section-type="featured-video"
-  data-enable-sound="{{ video_enable_sound }}">
+<div class="featured-video-section {{ section.settings.video_height }}" id="FeaturedVideo--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="featured-video" data-enable-sound="{{ video_enable_sound }}">
   <div class="video-wrapper">
     {% comment %} Video {% endcomment %}
     <div class="video__container video__container--{{ section.id }}" id="video-{{ section.id }}-container">
 
-      <div class="video__background{% if image == blank %} placeholder-bg{% else %} lazyload{% endif %}"
-        {% unless image == blank %}
-          data-bgset="{% render 'bgset', image: image %}"
-          data-sizes="auto"
-          data-parent-fit="cover"
-        {% endunless %}>
+      <div class="video__background{% if image == blank %} placeholder-bg{% else %} lazyload{% endif %}" {% unless image == blank %} data-bgset="{% render 'bgset', image: image %}" data-sizes="auto" data-parent-fit="cover" {% endunless %}>
         {%- if image == blank -%}
           {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
         {%- endif -%}
       </div>
       <noscript>
-        <div class="video__background{% if image == blank %} placeholder-bg{% endif %}"{% unless image == blank %} style="background-image: url({{ image | img_url: '2048x' }});"{% endunless %}>
+        <div class="video__background{% if image == blank %} placeholder-bg{% endif %}" {% unless image == blank %} style="background-image: url({{ image | img_url: '2048x' }});" {% endunless %}>
           {%- if image == blank -%}
             {{- 'lifestyle-1' | placeholder_svg_tag: 'placeholder-svg-filled' -}}
           {%- endif -%}
@@ -83,18 +86,18 @@
       </noscript>
 
       {%- if video_id != blank -%}
-        <div class="video__iframe" id="video-{{ section.id }}" data-video-id="{{ video_id }}"></div> 
+        <div class="video__iframe" id="video-{{ section.id }}" data-video-id="{{ video_id }}"></div>
       {%- elsif section.settings.hero_video_link_internal != blank -%}
         <div class="video__iframe video__iframe_desktop">
-            <video autoplay muted loop playsinline class="video__iframe__video">
+          <video autoplay class="video__iframe__video" loop muted playsinline>
             <source src="{{ section.settings.hero_video_link_internal }}" type="video/mp4">
           </video>
         </div>
         <div class="video__iframe video__iframe_mobile" style="width: 0px;">
-          <video autoplay muted loop playsinline class="video__iframe__video">
-          <source src="{{ section.settings.hero_video_link_internal_mobile }}" type="video/mp4">
-        </video>
-      </div>
+          <video autoplay class="video__iframe__video" loop muted playsinline>
+            <source src="{{ section.settings.hero_video_link_internal_mobile }}" type="video/mp4">
+          </video>
+        </div>
       {%- endif -%}
 
       <div class="overlay video__overlay"></div>

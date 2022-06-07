@@ -5,92 +5,117 @@
     assign title = section.settings.title
     assign subheading = section.settings.main_subheading
   -%}
-  
-  {%- style -%}
-    {% comment %}#FeaturedVideo--{{ section.id }}{% endcomment %}
-    .video-vimeo-wrapper{
-        padding: 20px 100px 0px 100px;
-    }
-    .vimeo-video {
-        margin: 0 auto;
-        width: 100%;
-    }
-    .vimeo-section {
-        background-color: {{ section.settings.bg_color }};
-    }
-    .video-uploaded {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 20px;
-    }
-    .main_subheading {
-        color: #6C1D45;
-    }
-    .vimeo-iframe {
-        width: 100%;
-    }
-    .healer-title {
-        text-align: center; 
-        color: #6C1D45; 
-        margin-left: 20px;
-    }
-    @media only screen and (max-width: 767px){
-      .video-vimeo-wrapper {
-            padding: 20px 0px 0px 0px;
-        }
-        .vimeo-iframe {
-            height: auto;
-        }
-        .video-uploaded {
-            flex-direction: column;
-        }
-    .healer-title {
-        margin-left: 0px;
-        margin-top: 20px;
-        font-size: 12px;
-    }
-    }
-  {%- endstyle -%}
-  
-  <div class="featured-video-section vimeo-section"
-    id="FeaturedVideo--{{ section.id }}"
-    data-section-id="{{ section.id }}"
-    data-section-type="featured-video">
-    <div class="video-wrapper video-vimeo-wrapper">
-      {% comment %} Video {% endcomment %}
-      <div class="vimeo-video">
-        <!--<iframe class="vimeo-iframe" src="{{ section.settings.hero_video_link }}" width="640" height="512" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>-->
-        <div style="padding:56.25% 0 0 0;position:relative;"><iframe class="vimeo-iframe" src="{{ section.settings.hero_video_link }}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
+{%- style -%}
+
+<temp data-prettydiff-ignore > <temp data-prettydiff-ignore >{% comment %}
+  #FeaturedVideo--{{section.id}}{% endcomment %}
+</temp > </temp > .video-vimeo-wrapper {
+  padding: 20px 100px 0;
+}
+
+.vimeo-video {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.vimeo-section {
+  background-color: {{section.settings.bg_color}};
+}
+
+.video-uploaded {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.main_subheading {
+  color: #6C1D45;
+}
+
+.vimeo-iframe {
+  width: 100%;
+}
+
+.healer-title {
+  text-align: center;
+  color: #6C1D45;
+  margin-left: 20px;
+}
+
+@media only screen and(max-width: 767px) {
+  .video-vimeo-wrapper {
+    padding: 20px 0 0;
+  }
+
+  .vimeo-iframe {
+    height: auto;
+  }
+
+  .video-uploaded {
+    flex-direction: column;
+  }
+
+  .healer-title {
+    margin-left: 0;
+    margin-top: 20px;
+    font-size: 12px;
+  }
+}
+
+{%- endstyle -%}
+
+<div class="featured-video-section vimeo-section" id="FeaturedVideo--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="featured-video">
+
+  <h1>{{article.title}}</h1>
+  <div class="video-wrapper video-vimeo-wrapper">
+    {% comment %} Video {% endcomment %}
+    <div class="vimeo-video">
+      <!--<iframe class="vimeo-iframe" src="{{ section.settings.hero_video_link }}" width="640" height="512" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>-->
+      <div style="padding:56.25% 0 0 0;position:relative;">
+        <iframe class="vimeo-iframe" src="{{ section.settings.hero_video_link }}" style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
       </div>
-  
-  
+      <script src="https://player.vimeo.com/api/player.js"></script>
     </div>
 
-    {% comment %} Text {% endcomment %}
-    <div class="video-text-wrapper wrapper wrapper--small">
-        <div class="video-uploaded">
-            <img class="lazyload" src="{{ section.settings.img_healer | img_url: '50x' }}" data-sizes="auto" style=" border-radius: {{ section.settings.healer_img_border_radius }}%;" alt="{{ section.settings.img_healer.alt | escape }}">
-            {%- if title != blank -%}
-            <h4 class="healer-title">{{ title | escape }}</h4>
-            {%- endif -%}
-        </div>
 
-        {%- if subheading != blank -%}
-          <p style="text-align: center; margin: 0 auto; width: 80%;">{{ subheading | escape }}</p>
-        {%- endif -%}
-      </div>
   </div>
-  
-  {% schema %}
-  {
+
+  {% comment %} Text {% endcomment %}
+  <div class="video-text-wrapper wrapper wrapper--small">
+    <div class="video-uploaded">
+      <img class="lazyload" src="{{ section.settings.img_healer | img_url: '50x' }}" data-sizes="auto" style=" border-radius: {{ section.settings.healer_img_border_radius }}%;" alt="{{ section.settings.img_healer.alt | escape }}">
+      {%- if title != blank -%}
+        <h4 class="healer-title">{{ title | escape }}</h4>
+      {%- endif -%}
+    </div>
+
+    {%- if subheading != blank -%}
+      <p style="text-align: center; margin: 0 auto; width: 80%;">{{ subheading | escape }}</p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
     "name": "Video Post",
     "class": "featured-video-section transparent-header",
     "settings": [
       {
         "type": "header",
         "content": "Layout"
-      },
+      }, {
+   "type": "checkbox",
+   "id": "show_date",
+   "label": "Show Date",
+   "default": true,
+   "info": "Check This If Date Should Be Shown"
+ },{
+   "type": "article",
+   "id": "article",
+   "label": "Article" 
+ },
       {
         "type": "color",
         "id": "bg_color",
@@ -154,4 +179,4 @@
       }
     ]
   }
-  {% endschema %}
+{% endschema %}
