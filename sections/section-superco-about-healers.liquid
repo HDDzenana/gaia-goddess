@@ -33,16 +33,18 @@
     endcomment
     assign bg_color = section.settings.bg_color
   -%}
-  
-  {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
-    {%- style -%}
-      #ProductFeature--{{ section.id }} {
-        background-color: {{ bg_color }};
-      }
-    {%- endstyle -%}
-  {%- endif -%}
 
-  <style>
+{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+  {%- style -%}
+
+#ProductFeature--{{section.id}}{
+  background-color: {{bg_color}};
+}
+
+{%- endstyle -%}
+{%- endif -%}
+
+<style>
     .about-card{
         margin: 0 auto;
         background-color: #FEF1F5;
@@ -243,138 +245,137 @@
   </section>
    
   {% schema %}
-  {
-    "name": "About Healers",
-    "settings": [
-      {
-        "type": "header",
-        "content": "Layout"
-      },
-      {
-        "type": "select",
-        "id": "text_position",
-        "label": "Text position",
-        "default": "right",
-        "options": [
-          { "label": "Left", "value": "left" },
-          { "label": "Right", "value": "right" }
-        ]
-      },
-      {
-        "type": "select",
-        "id": "text_alignment",
-        "label": "Text alignment",
-        "default": "center",
-        "options": [
-          { "label": "Center", "value": "center" },
-          { "label": "Left", "value": "left" }
-        ]
-      },
-      {
-        "type": "header",
-        "content": "Images"
-      },
-      {
-        "type": "image_picker",
-        "id": "image_1",
-        "label": "Image"
-      },
-      {
-        "type": "header",
-        "content": "Text"
-      },  
-      {
-        "type": "color",
-        "id": "header_color",
-        "label": "Header Color",
-        "default": "#6C1D45"
-      },
-      {
-        "type": "textarea",
-        "id": "heading",
-        "label": "Heading",
-        "default": "About Sophie Moore"
-      },
-      {
-        "type": "textarea",
-        "id": "subheading",
-        "label": "Sub Heading",
-        "default": "The pain itself is love, the main storage system. Performance The kids are not running, but the disease is at least not pregnant. Aliquet lectus eget varius nec dictum . Pure and not ok my eu eu, id. Eleifend vengeful malesuada id et malesuada augue vel, porta rhoncus. Hunger is the place to start, so that I can drink my heart. He needs to feel good about the ugly and not the earth. And the chocolate in the valley."
-      },
-      {
-        "type": "liquid",
-        "id": "description",
-        "label": "Description (HTML)",
-        "default": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.</p>"
-      },
-      {
-        "type": "header",
-        "content": "Card"
-      },
-      {
-        "type": "text",
-        "id": "card_title",
-        "label": "Card Title",
-        "default": "Events/Classes by Sophie"
-      },
-      {
-        "type": "color",
-        "id": "card_title_color",
-        "label": "Card Header Color",
-        "default": "#6C1D45"
-      },
-      {
-        "type": "text",
-        "id": "card_text",
-        "label": "Card Text",
-        "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
-      },
-      {
-        "type": "textarea",
-        "id": "card_bullet",
-        "label": "Card Bullet points",
-        "default": "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      },
-      {
-        "type": "header",
-        "content": "Card button"
-      },
-      {
-        "type": "text",
-        "id": "button_text",
-        "label": "Text"
-      },
-      {
-        "type": "url",
-        "id": "button_link",
-        "label": "Link"
-      },
-      {
-        "type": "color",
-        "id": "button_color",
-        "label": "Button Color",
-        "default": "#6C1D45"
-      },  {
-        "type": "color",
-        "id": "button_hover_color",
-        "label": "Button Hover Color",
-        "default": "#FAFAFA"
-      },
-      {
-        "type": "header",
-        "content": "Colors"
-      },
-      {
-        "type": "color",
-        "id": "bg_color",
-        "label": "Background"
-      }
-    ],
-    "presets": [
-      {
-        "name": "About Healers",
-        "category": "Image"
-      }
-    ]
-  }
-  {% endschema %}
+
+{
+  "name": "About Healers",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    }, {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "default": "right",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        }, {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    }, {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "label": "Center",
+          "value": "center"
+        }, {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    }, {
+      "type": "header",
+      "content": "Images"
+    }, {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image"
+    }, {
+      "type": "header",
+      "content": "Text"
+    }, {
+      "type": "color",
+      "id": "header_color",
+      "label": "Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "textarea",
+      "id": "heading",
+      "label": "Heading",
+      "default": "About Sophie Moore"
+    }, {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Sub Heading",
+      "default": "The pain itself is love, the main storage system. Performance The kids are not running, but the disease is at least not pregnant. Aliquet lectus eget varius nec dictum . Pure and not ok my eu eu, id. Eleifend vengeful malesuada id et malesuada augue vel, porta rhoncus. Hunger is the place to start, so that I can drink my heart. He needs to feel good about the ugly and not the earth. And the chocolate in the valley."
+    }, {
+      "type": "liquid",
+      "id": "description",
+      "label": "Description (HTML)",
+      "default": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.</p>"
+    }, {
+      "type": "header",
+      "content": "Card"
+    }, {
+      "type": "text",
+      "id": "card_title",
+      "label": "Card Title",
+      "default": "Events/Classes by Sophie"
+    }, {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "text",
+      "id": "card_text",
+      "label": "Card Text",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
+    }, {
+      "type": "textarea",
+      "id": "card_bullet",
+      "label": "Card Bullet points",
+      "default": "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    }, {
+      "type": "header",
+      "content": "Card button"
+    }, {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }, {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button Hover Color",
+      "default": "#FAFAFA"
+    }, {
+      "type": "header",
+      "content": "Colors"
+    }, {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Healers",
+      "category": "Image"
+    }
+  ]
+}
+
+{% endschema %}
+
+
+  <style>
+    .product-feature__image {
+      width: 100% !important;
+    }
+  </style>

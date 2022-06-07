@@ -22,22 +22,26 @@
 -%}
 
 {%- style -%}
-  #FeaturedImage--{{ section.id }} { --overlay-opacity: {{ overlay_opacity }}; }
-  {% if page.title == "Shop" %}
-    @media only screen and (min-width: 768px) {
-      #FeaturedImage--{{ section.id }} .featured-image__content .wrapper {
-        padding: 0 170px;
-      }
+
+#FeaturedImage--{{section.id}}{
+  --overlay-opacity: {{overlay_opacity}};
+}
+{% if page.title == "Shop" %}
+  @media only screen and(min-width: 768px) {
+    #FeaturedImage--{{section.id}}.featured-image__content .wrapper {
+      padding: 0 170px;
     }
-    #FeaturedImage--{{ section.id }} .featured-image__content .wrapper .slide__heading {
-      font-size: 50px;
-      margin-bottom: 20px;
-    }
-    #FeaturedImage--{{ section.id }} .featured-image__content .wrapper .slide__caption {
-      font-size: 16px;
-      line-height: 24px;
-    }
-  {% endif %}
+  }
+  #FeaturedImage--{{section.id}}.featured-image__content .wrapper .slide__heading {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  #FeaturedImage--{{section.id}}.featured-image__content .wrapper .slide__caption {
+    font-size: 16px;
+    line-height: 24px;
+  }
+{% endif %}
+
 {%- endstyle -%}
 
 {%- capture featured_image -%}
@@ -97,53 +101,60 @@
 
       <div class="overlay"></div>
     </div>
+
+    {%if section.settings.scroller %}
+<div class="scroll-downs">
+  <div class="mousey">
+    <div class="scroller"></div>
+  </div>
+</div>
+    {%endif%}
   </div>
   
   {{- featured_content -}}
 </section>
 
 {% schema %}
-  {
+
+{
   "name": "Featured image",
   "class": "transparent-header",
   "settings": [
     {
       "type": "header",
       "content": "Layout"
-    },
-    {
+    }, {
+      "type": "checkbox",
+      "id": "scroller",
+      "label": "Add Scroller",
+      "default": false
+    }, {
       "type": "select",
       "id": "image_height",
       "label": "Height",
       "default": "one-hundred-height-hero",
       "options": [
-      {
+        {
           "value": "one-hundred-height-hero",
           "label": "Full screen"
-        },
-        {
+        }, {
           "value": "original-height",
           "label": "Original"
-        },
-        {
+        }, {
           "value": "seven-fifty-height-hero",
           "label": "750px"
-        },
-        {
+        }, {
           "value": "sixty-fifty-height-hero",
           "label": "650px"
-        },
-        {
+        }, {
           "value": "five-fifty-height-hero",
           "label": "550px"
-        },
-        {
+        }, {
           "value": "four-fifty-height-hero",
           "label": "450px"
         }
       ]
-    },
-    {
+    }, {
       "type": "select",
       "id": "text_position",
       "label": "Content alignment",
@@ -152,62 +163,62 @@
         {
           "value": "top-left",
           "label": "Top left"
-        },
-        {
+        }, {
           "value": "top-center",
           "label": "Top center"
-        },
-        {
+        }, {
           "value": "top-right",
           "label": "Top right"
-        },
-        {
+        }, {
           "value": "center-center",
           "label": "Center"
-        },
-        {
+        }, {
           "value": "bottom-left",
           "label": "Bottom left"
-        },
-        {
+        }, {
           "value": "bottom-center",
           "label": "Bottom center"
-        },
-        {
+        }, {
           "value": "bottom-right",
           "label": "Bottom right"
         }
       ]
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "enable_parallax",
       "label": "Enable parallax",
       "default": false
-    },
-    {
+    }, {
       "type": "header",
       "content": "Image"
-    },
-    {
+    }, {
       "type": "image_picker",
       "id": "image",
       "label": "Image"
-    },
-    {
+    }, {
       "type": "select",
       "label": "Position",
       "id": "image_position",
       "default": "center-center",
       "options": [
-        { "label": "Top", "value": "center-top" },
-        { "label": "Right", "value": "right-center" },
-        { "label": "Center", "value": "center-center" },
-        { "label": "Left", "value": "left-center" },
-        { "label": "Bottom", "value": "center-bottom" }
+        {
+          "label": "Top",
+          "value": "center-top"
+        }, {
+          "label": "Right",
+          "value": "right-center"
+        }, {
+          "label": "Center",
+          "value": "center-center"
+        }, {
+          "label": "Left",
+          "value": "left-center"
+        }, {
+          "label": "Bottom",
+          "value": "center-bottom"
+        }
       ]
-    },
-    {
+    }, {
       "type": "range",
       "id": "overlay_opacity",
       "label": "Overlay opacity",
@@ -216,12 +227,10 @@
       "step": 5,
       "unit": "%",
       "default": 20
-    },
-    {
+    }, {
       "type": "header",
       "content": "Text"
-    },
-    {
+    }, {
       "type": "select",
       "id": "text_color",
       "label": "Color",
@@ -230,47 +239,45 @@
         {
           "value": "text-light",
           "label": "Light"
-        },
-        {
+        }, {
           "value": "text-dark",
           "label": "Dark"
         }
       ]
-    },
-    {
+    }, {
       "type": "text",
       "id": "title",
       "label": "Heading",
       "default": "Welcome to Palo Alto"
-    },
-    {
+    }, {
       "type": "textarea",
       "id": "subheading",
       "label": "Subheading",
       "default": "Describe in a few words your special products, collection, or brand."
-    },
-    {
+    }, {
       "type": "header",
       "content": "Button"
-    },
-    {
+    }, {
       "type": "text",
       "id": "button_text",
       "label": "Text"
-    },
-    {
+    }, {
       "type": "url",
       "id": "button_link",
       "label": "Link"
-    },
-    {
+    }, {
       "type": "select",
       "id": "button_style",
       "label": "Style",
       "default": "primary",
       "options": [
-        { "label": "Primary", "value": "primary" },
-        { "label": "Secondary", "value": "secondary" }
+        {
+          "label": "Primary",
+          "value": "primary"
+        }, {
+          "label": "Secondary",
+          "value": "secondary"
+        }
       ]
     }
   ],
@@ -281,4 +288,43 @@
     }
   ]
 }
+
 {% endschema %}
+<style>
+
+.scroll-downs {
+  position: absolute;
+  top: 80%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  
+  width :34px;
+  height: 55px;
+}
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
+}
+</style>
