@@ -17,12 +17,22 @@
           %}
 
       </div>
+
+        {% if block.settings.fw and section.blocks.size < 2 %} 
+ <style>.gaiabimg  .wrapper,
+   .gaiabimg:last-of-type {
+     min-width: 100%;
+     object-fit: cover;
+   } 
+ </style>
+        {%endif%}
     {% endfor %}
   </div>
 </section>
 
 
 <style>
+ 
   .gaia {
     display: flex;
     flex-direction: row;
@@ -121,6 +131,11 @@
       "name": "Image",
       "settings": [
         {
+          "type": "checkbox",
+          "id": "fw",
+          "label": "Full Width Image",
+          "default": true
+        }, {
           "type": "image_picker",
           "id": "image",
           "label": "Desktop Image"

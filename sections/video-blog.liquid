@@ -42,7 +42,7 @@
     align-items: center;
     justify-content: center;
     margin: auto;
-    padding: 50px 0;
+    padding: 50px 0; 
   }
 
   .card-image {
@@ -196,16 +196,38 @@
    time {
      margin-left: 5px;
    }
- 
+ .td {
+   display: flex;
+   justify-content: center; 
+   align-items: center;
+   margin-bottom: 20px;
+ }
     
     </style>
   
   <section id="ProductFeature--{{ section.id }}" class="blog-article" data-section-id="{{ section.id }}" data-section-type="product-feature">
     <div class="upperpart-{{section.id}} center "> 
-    
-      <div class="aboutarticle-{{section.id}}"> 
-     {%render 'breadcrumbs'%}  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
-    
+ 
+      <div class="aboutarticle-{{section.id}}">  <div class="brti"> 
+    <div class="breadcrumbs" style="display: flex; align-items: center;"> {%render 'brhome'%} 
+      <a href="{{section.settings.prevlink}}" style="
+    margin-top: 10px;    font-weight: bolder;">
+      <strong> {{section.settings.prevtext}} /  {{article.title}}</strong></a></div>
+     <div class="td"> {%for tag in article.tags %}
+    {%if article.tags contains 'general' %}
+<div class="icn" style="    width: 50px !important;
+">  
+    {%render 'generalblog'%}</div>
+  {%endif%}
+       {%if article.tags contains 'podcast' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'podcasticn'%}</div>
+{%endif%}    {%if article.tags contains 'video' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'videoicn'%}</div>
+{%endif%} 
+    {%endfor%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
+    </div></div>
     <h1>
       {{article.title}}   
     </h1>      
@@ -272,6 +294,15 @@
   "class": "transparent-header",
   "settings": [
     {
+      "type": "url",
+      "id": "prevlink",
+      "label": "Breadcrumb"
+    }, {
+      "type": "text",
+      "id": "prevtext",
+      "label": "Breadcrumb Text",
+      "default": "Discover"
+    }, {
       "type": "image_picker",
       "id": "authorimage",
       "label": "Author Image"

@@ -134,6 +134,7 @@
   }
  .title * {
    color: {{section.settings.heading_colors}};
+   min-width: 100%;
  }
  .healers-filter__dropdown {
     border: 1px solid #6C1D45;
@@ -205,15 +206,28 @@
                    (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %}, calc(100vw - 30px)" alt="{{ block.settings.image.alt }}" height="{{ block.settings.image.height }}" width="{{ block.settings.image.width }}" loading="lazy">
 </div> {%else %}
          <div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}'); 
-    background-size: cover;height: 300px;" > 
+    background-size: cover;height: 300px; background-position: center;" > 
    
             
             
             </div> 
 {% endif %}  <div class="articlecontents-{{section.id}}">  
-   <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">   
-     <img src="{{ block.settings.iconimg | img_url: '400x' }}" alt="{{ image.alt | escape }}" style="width:50px;height: 50px;">
-                             
+   <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">    
+    {%for tag in article.tags %}
+    {%if article.tags contains 'general' %}
+<div class="icn" style="    width: 50px !important;
+">  
+    {%render 'generalblog'%}</div>
+  {%endif%}
+       {%if article.tags contains 'podcast' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'podcasticn'%}</div>
+{%endif%}    {%if article.tags contains 'video' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'videoicn'%}</div>
+{%endif%} 
+    {%endfor%}
+                 
   {{ article.published_at | time_tag: format: 'date' }}
 </span> 
         {% if block.settings.title %}
@@ -230,21 +244,32 @@
         
          <p style="width: 100% !important;">
         {%- if article.excerpt.size > 0 -%}
-          {{ article.excerpt }}
+       <p class="exc">   {{ article.excerpt }}</p> 
         {%- else -%}
-          {{ article.content | strip_html | truncate:120 }}
+        <p class="exc">  {{ article.content | strip_html | truncate:120 }} </p>
         {%- endif -%}
       </p>
 
-      <a href="{{article.url}}" class="leftlink">{{block.settings.linktext}}</a>
+      <a href="{{article.url}}" class="leftlink">
+         {%for tag in article.tags %}
+    {%if article.tags contains 'general' %}
+Read More</div>
+  {%endif%}
+       {%if article.tags contains 'podcast' %}
+ Listen Now
+{%endif%}    {%if article.tags contains 'video' %}
+Watch
+{%endif%} 
+    {%endfor%}
+      </a>
     </div> 
-          </div></div>
+          </div>
  
 
     {% endfor %}  
   </div>
 </div>
-</div>
+</div> 
 
 {% schema %}
 
@@ -385,12 +410,7 @@
         }, {
           "type": "text",
           "id": "title",
-          "label": "Title",
-          "default": "Card Title"
-        }, {
-          "type": "image_picker",
-          "id": "iconimg",
-          "label": "Icon"
+          "label": "Title"
         }, {
           "type": "liquid",
           "id": "description",
@@ -399,11 +419,6 @@
           "type": "article",
           "id": "article",
           "label": "Article"
-        }, {
-          "type": "text",
-          "id": "linktext",
-          "label": "Link Text",
-          "default": "Read More"
         }, {
           "type": "image_picker",
           "id": "icon",
@@ -432,6 +447,8 @@
   vertical-align: middle;
   object-fit: cover;
 }
- 
+ .exc *{
+   min-width:100%; text-align: left;
+ }
 
 </style>

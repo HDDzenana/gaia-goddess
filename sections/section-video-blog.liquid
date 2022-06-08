@@ -8,8 +8,6 @@
 
 {%- style -%}
 
-<temp data-prettydiff-ignore > <temp data-prettydiff-ignore >{% comment %}
-  #FeaturedVideo--{{section.id}}{% endcomment %}
 </temp > </temp > .video-vimeo-wrapper {
   padding: 20px 100px 0;
 }
@@ -67,7 +65,7 @@
 {%- endstyle -%}
 
 <div class="featured-video-section vimeo-section" id="FeaturedVideo--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="featured-video">
-
+ 
   <h1>{{article.title}}</h1>
   <div class="video-wrapper video-vimeo-wrapper">
     {% comment %} Video {% endcomment %}
