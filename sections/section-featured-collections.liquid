@@ -1,5 +1,3 @@
-{%assign product = block.settings.product %}
-
 <!-- /sections/featured-collections.liquid -->
 {%- liquid
   assign columns = settings.products_per_row_on_desktop | plus: 1
@@ -256,44 +254,38 @@
           <!-- dzenana -->
 
           {%when 'product'%}
-          {% assign product = products[block.settings.product] | default: false %}
+          {% for product in collection.products %}
+       
 
           <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
-            <img alt="Healer card image" src="{{ product.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
+            <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
 
             <div class="healer-heading">
               <div class="healer-heading__info">
  
-                <p class="healer-heading__subtitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
-              </div>
+                <p class="ptitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
+              </div> 
+  
+            </div> <p class="pad">  
+{{product.metafields.my_fields.place_and_date}} </p>
 
-              <div class="healer-heading__icons">
-                {% if block.settings.show_instagram_icon %}
-                  <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
-                    {%- render 'healer-insta' -%}
-                  </a>
-                {% endif %}
+            <p class="pdesc">{{ collection.description }}</p>
 
-                {% if block.settings.show_website_icon %}
-                  <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_website_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
-                    {%- render 'healer-website' -%}
-                  </a>
-                {% endif %}
-              </div>
-            </div>
-
-            <p class="healer-description">{{ collection.description }}</p>
-
-        
+ 
             <p class="healer-events">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  {{product.metafields.my_fields.short_description}}
               {% comment %} Add products on the upcoming events
               {% for product in collection.products %}
                 {{ product.title }}
               {% endfor %}
             {% endcomment %}
-            </p>
+            </p> 
+      <p class="hb">      Hosted by     <br> <p class="hbm">    {{product.metafields.my_fields.hosted_by}}  </p></p>
+      <br> 
+     <a  class="gbtn btn btn--product-feature" href="{{product.url}}"
+       style="color: white;float: left;">Register Now</a>  
           </div>
+          {%endfor%}
 {%endcase%}
         {% endfor %}
 
@@ -301,7 +293,7 @@
       </div>
     </div>
 
-  </div>
+  </div> </section>
 </section>
 
 {% schema %}
@@ -447,8 +439,7 @@
         }, {
           "type": "text",
           "id": "description",
-          "label": "Description",
-		  "default":"product.metafields.my_fields.short_description"
+          "label": "Description"
         }, {
           "type": "image_picker",
           "id": "imagef",
@@ -474,3 +465,69 @@
 }
 
 {% endschema %}
+<style>
+
+  .pad  {font-family: 'Acumin Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+text-align: left;
+margin: 0;
+padding: 0;
+color: #EB6FBD;
+}
+
+.ptitle {font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+margin: 0;
+color: #6C1D45;
+}
+
+.pdesc {font-family: 'Acumin Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+margin: 0;
+padding: 0;
+
+color: #575757;
+}
+
+.hb {
+  font-family: 'Acumin Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+text-align: left;
+color: #EB6FBD;
+
+}
+
+.hbm {
+  font-size: 16px;
+line-height: 19px;
+text-align: left;
+font-weight: 800;
+color: #6C1D45;
+}
+
+.btntext {
+  font-family: 'Acumin Pro';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #6C1D45;
+}
+.healer-card .one-quarter .mobile--one-whole * {
+  text-align: left;
+}
+</style>

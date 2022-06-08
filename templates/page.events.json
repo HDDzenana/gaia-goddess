@@ -24,6 +24,18 @@
     "16546676202d6edaf3": {
       "type": "section-featured-collections",
       "blocks": {
+        "ef69b0bf-c83e-4322-a852-0e85d4e12392": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "7-days-exploring-sightseeing-in-cairo-egypt",
+            "healer_subtitle": "{{ block.settings.product.title }}",
+            "description": "",
+            "imagef": "shopify:\/\/shop_images\/aussieactive-GNdp2Q4VZjw-unsplash_b985b0dc-b322-44ee-a2e3-4d2a762803cd.png",
+            "hostedby": "g",
+            "placedate": ""
+          }
+        },
         "dbcf1d19-e1cb-4cea-9f85-5b297081c4f2": {
           "type": "collection",
           "settings": {
@@ -68,22 +80,26 @@
             "filteroption": ""
           }
         },
-        "ef69b0bf-c83e-4322-a852-0e85d4e12392": {
+        "823865af-6dd5-4486-949b-26331afeaa19": {
           "type": "product",
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
-            "healer_subtitle": "{{ block.settings.product.title }}",
-            "description": ""
+            "healer_subtitle": "",
+            "description": "",
+            "imagef": "shopify:\/\/shop_images\/omar-elsharawy-pwMbtwA9LRc-unsplash_61f16d3d-1de3-40b8-b384-231e83dfd2bc.png",
+            "hostedby": "",
+            "placedate": ""
           }
         }
       },
       "block_order": [
+        "ef69b0bf-c83e-4322-a852-0e85d4e12392",
         "dbcf1d19-e1cb-4cea-9f85-5b297081c4f2",
         "ffbe4eaa-3f63-4019-becb-f370e08236c4",
         "6cd95c5e-5c85-4750-8582-3809e2e84247",
         "0e7a9c34-6bda-4963-9890-0a8a99246d52",
         "b9944b4e-3374-445b-8002-96857b72d2ab",
-        "ef69b0bf-c83e-4322-a852-0e85d4e12392"
+        "823865af-6dd5-4486-949b-26331afeaa19"
       ],
       "settings": {
         "heading": "Events and Retreats",
