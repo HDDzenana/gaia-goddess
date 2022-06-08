@@ -1,0 +1,425 @@
+{%- comment -%} Product Feature {%- endcomment -%}
+
+{%- liquid
+    comment
+      Layout
+    endcomment
+    assign section_id = section.id
+    assign text_position = section.settings.text_position
+    assign text_alignment = section.settings.text_alignment
+  
+    comment
+      Text
+    endcomment
+    assign line_color = section.settings.line_color
+  
+    comment
+      Button
+    endcomment
+    assign button_text = section.settings.button_text
+    assign button_link = section.settings.button_link | default: '#'
+    assign button_style = section.settings.button_style
+  
+    comment
+      Colors
+    endcomment
+    assign bg_color = section.settings.bg_color
+  -%}
+
+{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+  {%- style -%}
+
+#ProductFeature--{{section.id}}{
+  background-color: {{bg_color}};
+}
+
+{%- endstyle -%}
+{%- endif -%}
+
+<style>
+  .card-{{section.id}} {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 50px 0;
+  }
+
+  .card-image {
+    display: flex;
+    flex-direction: column;
+  }
+    .card_icons{
+        justify-content: center !important;
+    }
+    .border{
+        border-bottom: 1px solid #EB6FBD;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+ card{
+        margin: 0 auto;
+        background-color: #FEF1F5;
+        border-radius: 40px;
+        height: auto;
+        width: 420px;
+        box-shadow: 0 2px 10px rgb(0 0 0 / 20%)
+    }
+    a.btn--about-card:before {
+        background: {{ section.settings.button_hover_color }} !important;
+    }
+    .about-card__info{
+        padding: 40px;
+    }
+    .about-card__title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: {{ section.settings.card_title_color }}
+    }
+    .about-card__list{
+        list-style: none;
+    }  
+    .about-card__list > li::before {
+        content: url({{ 'bulletpoint.svg' | asset_url }});
+    }
+    .about-card__list > li {
+        margin-bottom: 20px;
+    }
+    .about-card__bullet{
+        color: #6C1D45;
+    }
+    .about-info {
+        text-align: {{ section.settings.text_alignment }};
+        line-height: 1.2;
+    }
+    .about-events{
+        width: 45%;
+        display: block;
+        position: sticky;
+        top: 3rem;
+        z-index: 2;
+    }
+    .about-info > p{
+        margin: 30px 0 !important;
+    }
+    @media only screen and (max-width: 768px){
+        .btn--about-card{
+            margin-top: 15px;
+        }
+        .about__block{
+            flex-direction: column-reverse;
+            display: flex;
+          }
+        .about-info {
+            padding-left: var(--gutter-mobile);
+            padding-right: var(--gutter-mobile);
+            text-align: center;
+        }
+        .about-events {
+            width: 100%;
+        }
+       
+        .about-events{
+            margin-top: 60px;
+        }
+        .border{
+            margin-top: 0px;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        .about__block{
+            align-items: flex-start;
+        }
+    }
+    @media only screen and (min-width: 1024px){
+        .about-info{
+            max-width: calc(60% - var(--gutter)*2);
+            margin-left: 0;
+        }
+    }
+
+    .retreat-wrapper{
+        padding: 0;
+    }
+    .retreat-feature__text > p {
+        line-height: 1.2;
+    }
+    .retreat-wrapper{
+      width: 100%;
+    }
+    @media only screen and (min-width: 768px){
+        .retreat-feature__text {
+            width: 50%;
+            padding: var(--gutter) !important;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .retreat-feature__text{
+            text-align: center;
+            padding: 40px;
+        }
+        .btn{
+            width: 50%;
+        }
+        .rte h3{
+            margin: 0;
+        }
+        .about-info__heading{
+            font-size: 30px;
+        }
+    }
+    .article_card_text, .article_card_title{
+        text-align: center;
+    }
+    .article__image__wrapper{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .responsive-image img{
+        border-radius: 100px;
+    } 
+
+    .uploadedby {
+      display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    color:#6c1d45;
+    font-weight: 700;
+} 
+ .uploadedby  .img img {
+   border-radius: 50%;
+   margin-right: 10px;
+ }
+   time {
+     margin-left: 5px;
+   }
+ 
+    
+    </style>
+  
+  <section id="ProductFeature--{{ section.id }}" class="blog-article" data-section-id="{{ section.id }}" data-section-type="product-feature">
+    <div class="upperpart-{{section.id}} center "> 
+    
+      <div class="aboutarticle-{{section.id}}"> 
+     {%render 'breadcrumbs'%}  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
+    
+    <h1>
+      {{article.title}}   
+    </h1>      
+</div> <div class="articlecontent">
+ {%- if article.content != blank -%}
+            {{- article.content -}}
+          {%- endif -%}
+
+      </div>          {% if article.metafields.my_fields.authorimage  != blank %}
+      <div class="uploadedby">  
+ 
+ <div class="img"> 
+    <img src="{{ article.metafields.my_fields.authorimage   | img_url: '400x' }}" alt="{{article.metafields.my_fields.authorimage }}" 
+    style="width: 50px; height: 50px;"> 
+  </div>  {{ article.author }}  / Uploaded on        
+                                  
+  {{ article.published_at | time_tag: format: 'date' }}
+  
+</div> {%endif%}
+
+<p class="center wrapper wrapper-{{section.id}}"> {{article.metafields.my_fields.about_author}}</p>
+  </section>
+
+
+  <div class=" card-{{section.id}}" style="background: {{section.settings.bg}};">
+<div class="card-image">
+   <div class="imagecard"> 
+    <img src="{{ article.metafields.my_fields.authorimage   | img_url: '400x' }}" alt="{{article.metafields.my_fields.authorimage }}" 
+    style="width: 350px; height:400px;"> 
+</div>
+ 
+<div class="aboutcard">
+  <p style="color:white ; margin-bottom: 0px; font-weight:700 ;">  {{article.author}}</p>
+ 
+<span class="role">  {{article.metafields.my_fields.authorrole}}</span>
+</div> </div>
+
+<div class="card-text">
+   <p class="ct"> About {{article.author}}</p>
+   <p class="aal">{{article.metafields.my_fields.about_author_long}}  </p>
+</div>
+  </div>
+</div> 
+   
+  
+  <script type="application/ld+json">
+
+
+[36mLine: 1[0m
+[31m[36 mLine : 1 [[0m
+[31m        0 m [[0m
+[31m            31 m[[0m
+[31m                36 mLine : 2 [[0m
+[31m                    [[0m
+[31m                        0 m [[0m
+[31m                            31 m 0 m [[0m
+
+</script>
+   
+  {% schema %}
+
+{
+  "name": "Video Article  ",
+  "class": "transparent-header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "authorimage",
+      "label": "Author Image"
+    }, {
+      "type": "color",
+      "id": "bg",
+      "label": " Background Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "header",
+      "content": "Layout"
+    }, {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "default": "right",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        }, {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    }, {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "label": "Center",
+          "value": "center"
+        }, {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    }, {
+      "type": "header",
+      "content": "Text"
+    }, {
+      "type": "color",
+      "id": "header_color",
+      "label": "Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "header",
+      "content": "Card"
+    }, {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "checkbox",
+      "id": "card_social",
+      "label": "Show social icons on card?",
+      "default": true
+    }, {
+      "type": "textarea",
+      "id": "card_text",
+      "label": "Card Text",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
+    }, {
+      "type": "header",
+      "content": "Card button"
+    }, {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }, {
+      "type": "header",
+      "content": "Colors"
+    }, {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video article",
+      "category": "Image"
+    }
+  ]
+}
+
+{% endschema %}
+
+  <style>
+    .center-{{section.id}} {
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    font-weight: 900;
+    color: #6c1d45;
+
+    } 
+.upperpart-{{section.id}} {
+background: {{section.settings.bg}};
+padding: 50px 0;
+/* margin-bottom: 150px; */
+padding-top: 0px
+}
+
+.aboutarticle-{{section.id}} * {
+color: #6c1d45;
+}
+@media only screen and (min-width: 900px) {
+.aboutarticle-{{section.id}} {
+width: 60%;
+margin: auto;
+margin-bottom: 50px;
+}
+}   .card-image,
+.aboutcard {
+background-color: {{section.settings.card_bg}};
+border-radius: 20px;
+
+}
+
+.ct  {color: {{section.settings.card_bg}};
+font-weight: 800;
+}
+
+.aboutcard{    padding-left: 10px;
+padding-bottom: 20px;
+}
+
+.card-image img {
+border-top-left-radius: 20px;
+border-top-right-radius: 20px;
+}
+
+.card-text{
+  width: 30%;
+  margin-left: 50px;}
+  </style>
