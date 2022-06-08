@@ -11537,3 +11537,15 @@ values__each {
 .center {
   test-align: center !important;
 }
+ 
+.gaia-image {
+  display: block;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.gaia-image img {
+  display: block;
+  vertical-align: middle;
+  object-fit: cover;
+}
+ 
