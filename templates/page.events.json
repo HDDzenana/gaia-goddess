@@ -7,6 +7,24 @@
         "show_page_title": true
       }
     },
+    "1654692668fb597b57": {
+      "type": "section-featured-image",
+      "settings": {
+        "scroller": true,
+        "image_height": "sixty-fifty-height-hero",
+        "text_position": "center-center",
+        "enable_parallax": false,
+        "image": "shopify:\/\/shop_images\/image.png",
+        "image_position": "center-center",
+        "overlay_opacity": 20,
+        "text_color": "text-light",
+        "title": "5-Days Meditation Program at Connecticut",
+        "subheading": "5-Days Meditation Program\nat Connecticut",
+        "button_text": "",
+        "button_link": "",
+        "button_style": "primary"
+      }
+    },
     "165466737515567fe5": {
       "type": "section-collection",
       "disabled": true,
@@ -84,7 +102,7 @@
           "type": "product",
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
-            "healer_subtitle": "",
+            "healer_subtitle": "5-Days Meditation Programat Connecticut",
             "description": "",
             "imagef": "shopify:\/\/shop_images\/omar-elsharawy-pwMbtwA9LRc-unsplash_61f16d3d-1de3-40b8-b384-231e83dfd2bc.png",
             "hostedby": "",
@@ -116,6 +134,7 @@
   },
   "order": [
     "main",
+    "1654692668fb597b57",
     "165466737515567fe5",
     "16546676202d6edaf3"
   ]

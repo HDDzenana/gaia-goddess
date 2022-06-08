@@ -47,7 +47,7 @@
         margin-top: 60px;
     }
     .blog-article{
-        padding-top: 60px;
+        /* padding-top: 60px; */
         padding-bottom: 60px;
     }
     .about-card{
@@ -181,7 +181,10 @@
     <div class="upperpart-{{section.id}} center "> 
     
       <div class="aboutarticle-{{section.id}}"> 
-     {%render 'breadcrumbs'%}    <div class="td"> {%for tag in article.tags %}
+       <div class="breadcrumbs" style="display: flex; align-items: center;"> {%render 'brhome'%} 
+      <a href="{{section.settings.prevlink}}" style="
+    margin-top: 10px;    font-weight: bolder;">
+      <strong> {{section.settings.prevtext}} /  {{article.title}}</strong></a></div>   <div class="td"> {%for tag in article.tags %}
     {%if article.tags contains 'general' %}
 <div class="icn" style="    width: 50px !important;
 ">  
@@ -220,8 +223,8 @@ image: section.settings.image %}
                 <div class="about-card__info">
                     {%- if article.image -%}
                         <div class="article__image__wrapper">
-                          {%- render 'responsive-image', image: article.image, image_class: 'article__image', image_alt: article.image.alt -%}
-                        </div>
+                          <img src="{{ article.metafields.my_fields.authorimage   | img_url: '400x' }}" alt="{{article.metafields.my_fields.authorimage }}" 
+    style="width: 100px; height: 100px; border-radius: 50%;">   </div>
                       {%- endif -%}
 
                     <h3 class="about-card__title article_card_title">{{ article.author }}</h3>
@@ -236,13 +239,13 @@ image: section.settings.image %}
                     <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact">
                         {% if section.settings.card_social %}
                           <a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
-                            {%- render 'healer-insta' -%}
+                            {%- render 'icon-footer-facebook' -%}
                           </a>
                         {% endif %}
                       
                         {% if section.settings.card_social %}
                           <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
-                            {%- render 'healer-insta' -%}
+                            {%- render 'icon-footer-instagram' -%}
                           </a>
                         {% endif %}
                     
@@ -256,7 +259,7 @@ image: section.settings.image %}
     
                       </div>
                 </div>
-            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background-color:transparent ;">  <div class="about-card__info" style="margin-top:50px ;">
+            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
                  <span class="center center-{{section.id}}"> Share This  Article </span> 
                <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact"> 
                
@@ -285,13 +288,13 @@ image: section.settings.image %}
 
 
 [36mLine: 1[0m
-[31m[36 mLine : 1 [[0m
+[31m[36 mLine : 2 [[0m
 [31m        0 m [[0m
-[31m            31 m[[0m
-[31m                36 mLine : 2 [[0m
-[31m                    [[0m
+[31m            31 m(empty line)[[0m
+[31m                0 m [[0m
+[31m                    31 m(empty line)[[0m
 [31m                        0 m [[0m
-[31m                            31 m 0 m [[0m
+[31m                            31 m[[0m
 
 </script>
    
@@ -299,8 +302,22 @@ image: section.settings.image %}
 
 {
   "name": "Blog Article",
+  "class": "transparent-header",
   "settings": [
     {
+      "type": "url",
+      "id": "prevlink",
+      "label": "Breadcrumb"
+    }, {
+      "type": "text",
+      "id": "prevtext",
+      "label": "Breadcrumb Text",
+      "default": "Discover"
+    }, {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }, {
       "type": "checkbox",
       "id": "show_share_buttons",
       "label": "Show social sharing buttons",

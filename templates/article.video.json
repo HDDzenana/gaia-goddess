@@ -3,7 +3,10 @@
     "1654650664605690f0": {
       "type": "video-blog",
       "settings": {
+        "prevlink": "",
+        "prevtext": "Discover",
         "bg": "#fef1f5",
+        "card_bg": "#6c1d45",
         "text_position": "right",
         "text_alignment": "center",
         "header_color": "#6c1d45",
@@ -55,11 +58,9 @@
           "type": "Card",
           "settings": {
             "link": "",
-            "title": "Card Title",
-            "iconimg": "shopify:\/\/shop_images\/image_1.png",
+            "title": "",
             "description": "",
-            "article": "news\/lorem-ipsum-dolor-sit-amet-4",
-            "linktext": "Listen Now"
+            "article": "news\/podcast-test"
           }
         },
         "27fabd75-872f-46ce-b601-919bf785638b": {
@@ -67,10 +68,8 @@
           "settings": {
             "link": "",
             "title": "",
-            "iconimg": "shopify:\/\/shop_images\/image_1.png",
             "description": "",
-            "article": "news\/lorem-ipsum-dolor-sit-amet-5",
-            "linktext": "Listen Now"
+            "article": "news\/lorem-ipsum-dolor-sit-amet-5"
           }
         }
       },

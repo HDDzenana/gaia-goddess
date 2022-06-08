@@ -9,7 +9,7 @@
         "enable_parallax": false,
         "image": "shopify:\/\/shop_images\/image_23.png",
         "image_position": "center-center",
-        "overlay_opacity": 65,
+        "overlay_opacity": 50,
         "text_color": "text-light",
         "title": "Join Our Retreat Events",
         "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla.",

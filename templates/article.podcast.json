@@ -2,11 +2,11 @@
   "sections": {
     "16514856733972d9a8": {
       "type": "gaia-banner",
-      "disabled": true,
       "blocks": {
         "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913": {
           "type": "Image",
           "settings": {
+            "fw": true,
             "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
             "dm": true
           }

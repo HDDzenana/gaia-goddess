@@ -215,13 +215,13 @@
    <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">    
     {%for tag in article.tags %}
     {%if article.tags contains 'general' %}
-<div class="icn" style="    width: 50px !important;
+<div class="icn" style=" width: 50px !important;
 ">  
     {%render 'generalblog'%}</div>
   {%endif%}
        {%if article.tags contains 'podcast' %}
 <div class="icn" style="    width: 50px !important;
-"> {%render 'podcasticn'%}</div>
+"> {%render 'podcasticn'%} </div>
 {%endif%}    {%if article.tags contains 'video' %}
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
@@ -256,9 +256,11 @@
 Read More</div>
   {%endif%}
        {%if article.tags contains 'podcast' %}
- Listen Now
-{%endif%}    {%if article.tags contains 'video' %}
-Watch
+ Listen Now </div>
+{%endif%}   
+
+{%if article.tags contains 'video' %}
+Watch </div>
 {%endif%} 
     {%endfor%}
       </a>
@@ -269,7 +271,7 @@ Watch
     {% endfor %}  
   </div>
 </div>
-</div> 
+</div>
 
 {% schema %}
 
@@ -447,8 +449,8 @@ Watch
   vertical-align: middle;
   object-fit: cover;
 }
- .exc *{
-   min-width:100%; text-align: left;
+ .exc *, p.exc{
+   min-width:100% !important; text-align: left;
  }
 
 </style>

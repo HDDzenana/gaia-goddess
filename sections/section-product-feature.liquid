@@ -124,15 +124,17 @@
       </div>
 
       <div class="product-feature__text product-feature__text--{{ text_alignment }} rte gbtn">
+        <subtitle style="color: {{section.settings.caption_color}}"> {{section.settings.caption}} </subtitle>
         {%- if heading != blank -%}
           <h2 style="color: {{section.settings.text_color}}">{{ heading  }}</h2>
         {%- endif -%}
+        <div class="subheading" style="color: {{section.settings.subheading_color}}"> {{section.settings.subheading}}</div>
 
         {%- if settings.show_spacer_lines -%}
-          <hr>
+          <hr> 
         {%- endif -%}
 
-        {%- if description != blank -%}
+        {%- if description != blank -%} 
           {{- description -}}
         {%- endif -%}
         {%for block in section.blocks %}
@@ -163,16 +165,17 @@
 {% schema %}
 
 {
-  "name": "Product feature",	"class": "slideshow transparent-header",
+  "name": "Product feature",
+  "class": "slideshow transparent-header",
   "settings": [
     {
       "type": "header",
       "content": "Layout"
     }, {
-      "type":"checkbox",
-      "id":"aos",
+      "type": "checkbox",
+      "id": "aos",
       "default": true,
-      "label":"Animate on scroll"
+      "label": "Animate on scroll"
     }, {
       "type": "color_background",
       "id": "bg",
@@ -252,8 +255,8 @@
           "value": "center"
         }
       ],
-"default": "center",
-"label": "Mobile Text Alignment" 
+      "default": "center",
+      "label": "Mobile Text Alignment"
     }, {
       "type": "checkbox",
       "id": "showpointmobile",
@@ -288,6 +291,14 @@
       "content": "Text"
     }, {
       "type": "color",
+      "id": "caption_color",
+      "label": "caption"
+    }, {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    }, {
+      "type": "color",
       "id": "text_color",
       "label": "Text Color",
       "default": "#800000"
@@ -296,6 +307,15 @@
       "id": "heading",
       "label": "Heading",
       "default": "This is a heading for a Product feature block."
+    }, {
+      "type": "html",
+      "id": "subheading",
+      "label": "Subheading"
+    }, {
+      "type": "color",
+      "id": "ssubheading_color",
+      "label": "Subheading Color",
+      "default": "#800000"
     }, {
       "type": "richtext",
       "id": "description",
