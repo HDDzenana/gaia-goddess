@@ -1,3 +1,5 @@
+{%assign product = block.settings.product %}
+
 <!-- /sections/featured-collections.liquid -->
 {%- liquid
   assign columns = settings.products_per_row_on_desktop | plus: 1
@@ -40,147 +42,179 @@
 -%}
 
 {%- style -%}
-  {%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
-    #FeaturedCollection--{{ section.id }} {
-      background-color: {{ bg_color }};
-    }
-    #FeaturedCollection--{{ section.id }} .product-grid-item {
-      --bg: {{ bg_color }};
-    }
-  {%- endif -%}
 
-  @media screen and (min-width: 1024px) {
-    #FeaturedCollection--{{ section.id }} {
-      --grid: repeat({{ columns }}, minmax(0, 1fr));
-    }
+{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+  #FeaturedCollection--{{section.id}}{
+    background-color: {{bg_color}};
+  }
+  #FeaturedCollection--{{section.id}}.product-grid-item {
+    --bg: {{bg_color}};
+  }
+{%- endif -%}
+
+@media screen and(min-width: 1024px) {
+  #FeaturedCollection--{{section.id}}{
+    --grid: repeat({{ columns }}, minmax(0, 1fr));
+  }
+}
+
+@media screen and(min-width: 480px) and(max-width: 1023px) {
+  #FeaturedCollection--{{section.id}}{
+    --grid: repeat({{ columns_small }}, minmax(0, 1fr));
+  }
+}
+
+@media screen and(max-width: 479px) {
+  #FeaturedCollection--{{section.id}}{
+    --grid-mobile: repeat({{ columns_mobile }}, minmax(0, 1fr));
+  }
+}
+
+.healer-description,
+.healer-events,
+.healer-events-title {
+  text-align: left;
+}
+
+.healer-events-title,
+.healer-heading__subtitle {
+  color: {{section.settings.healer_subtitle_color}};
+}
+
+.healer-heading {
+  text-align: left;
+}
+
+.healer-heading {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.healer-heading__title {
+  margin-bottom: 0;
+  color: {{section.settings.healer_title_color}}}
+
+.healer-heading__subtitle {
+  margin: 0;
+}
+
+.healer-heading__icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-circle {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.social-circle:last-child {
+  margin-left: 5px;
+}
+
+.section__heading {
+  color: {{section.settings.heading_color}};
+  text-align: {{section.settings.heading_alignment}};
+  font-weight: 700;
+}
+
+.wrapper-section__heading {
+  display: flex;
+  justify-content: space-between;
+}
+
+.healers-filter__dropdown {
+  border-radius: 40px;
+  border: 1px solid #6C1D45;
+  width: 100%;
+}
+
+.healers-filter {
+  width: 200px;
+}
+
+.healers-filter__dropdown {
+  color: #6C1D45;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url('data:image/svg+xml;utf8, <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.958984 1.323L7.32617 7.689L13.6919 1.323" stroke="%236C1D45" stroke-width="2"/></svg>');
+  background-position: right 20px top 50%;
+  background-repeat: no-repeat;
+  background-size: 10px;
+}
+
+
+@media only screen and(max-width: 768px) {
+  .section__heading {
+    font-size: 30px;
   }
 
-  @media screen and (min-width: 480px) and (max-width: 1023px) {
-    #FeaturedCollection--{{ section.id }} {
-      --grid: repeat({{ columns_small }}, minmax(0, 1fr));
-    }
+  .healers-filter {
+    width: 150px;
   }
 
-  @media screen and (max-width: 479px) {
-    #FeaturedCollection--{{ section.id }} {
-      --grid-mobile: repeat({{ columns_mobile }}, minmax(0, 1fr));
-    }
+  .grid--mobile-carousel {
+    white-space: break-spaces;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media only screen and(min-width: 768px) and(max-width: 1024px) {
+  .carousel {
+    display: flex;
   }
 
-  .healer-description, .healer-events, .healer-events-title{
-    text-align: left;
-  }
-  .healer-events-title, .healer-heading__subtitle{
-    color: {{ section.settings.healer_subtitle_color }};
-  }
-  .healer-heading{
-    text-align: left;
-  }
-  .healer-heading{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  .healer-heading__title{
-    margin-bottom: 0;
-    color: {{ section.settings.healer_title_color }}
-  }
-  .healer-heading__subtitle{
-    margin: 0;
-  }
-  .healer-heading__icons{
-    display: flex;
-    align-items: center;
-  }
-  .social-circle{
-    margin-right: 0;
-    margin-left: 0;
-  }
-  .social-circle:last-child{
-    margin-left: 5px;
-  }
-  .section__heading{
-    color: {{ section.settings.heading_color }};
-    text-align: {{ section.settings.heading_alignment }};
-    font-weight: 700;
-  }
-  .wrapper-section__heading{
-    display: flex;
-    justify-content: space-between;
-  }
-  .healers-filter__dropdown{
-    border-radius: 40px;
-    border: 1px solid #6C1D45;
-    width: 100%;
-  }
-  .healers-filter{
-    width: 200px;
-  }
-  .healers-filter__dropdown {
-    color: #6C1D45;
-    appearance: none;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    background-image: url('data:image/svg+xml;utf8,<svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.958984 1.323L7.32617 7.689L13.6919 1.323" stroke="%236C1D45" stroke-width="2"/></svg>');
-    background-position: right 20px top 50%;
-    background-repeat: no-repeat;
-    background-size: 10px;
-  }
-  
-  
-  @media only screen and (max-width: 768px){
-    .section__heading{
-      font-size: 30px;
-    }
-    .healers-filter{
-      width: 150px;
-    }
-    .grid--mobile-carousel{
-      white-space: break-spaces;
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-  }
-  @media only screen and (min-width: 768px) and (max-width: 1024px){
-  .carousel{
-    display: flex;
-  }
 {%- endstyle -%}
 
-<section
-  id="FeaturedCollection--{{ section.id }}"
-  class="featured-collection featured-collection--{{ layout }}"
-  data-section-id="{{ section.id }}"
-  data-section-type="featured-collection">
+<section id="FeaturedCollection--{{ section.id }}" class="featured-collection featured-collection--{{ layout }}" data-section-id="{{ section.id }}" data-section-type="featured-collection">
 
-    <div class="featured-collection__title">
-      <div class="wrapper">
-        <div class="wrapper-section__heading">
-          <h2 class="section__heading">{{ section.settings.heading }}</h2>
+  <div class="featured-collection__title">
+    <div class="wrapper">
+      <div class="wrapper-section__heading">
+        <h2 class="section__heading">{{ section.settings.heading }}</h2>
 
-          {%- if settings.show_spacer_lines -%}
-            <hr>
-          {%- endif -%}
+        {%- if settings.show_spacer_lines -%}
+          <hr>
+        {%- endif -%}
 
-          {% if section.settings.show_filter %}
-            <div class="healers-filter">
-              <select name="category" id="category" class="healers-filter__dropdown">
-                <option selected disabled>Category</option>
-                <option value="yoga">Yoga</option>
-                <option value="meditation">Meditation</option>
-                <option value="reiki">Reiki</option>
+        {% if section.settings.show_filter %}
+          <div class="healers-filter">
+            <select class="healers-filter__dropdown" id="category" name="category">
+              <option disabled selected>Category</option>
+              <option value="yoga">Yoga</option>
+              <option value="meditation">Meditation</option>
+              <option value="reiki">Reiki</option>
 
-              </select>
-            </div>
-          {% endif %}
-        </div>
+            </select>
+          </div>
+        {% endif %}
+
+        {%for block in section.blocks %}
+        {% case block.type %}
+        {%when 'Filter'%}
+          <div class="healers-filter healers-filter-{{section.id}}">
+            <select class="healers-filter__dropdown" id="category" name="category">
+              <option disabled selected>{{block.settings.filtername}}</option>
+              <option value="{{block.settings.filteroption}}">{{block.settings.filteroption}}</option>
+
+
+            </select>
+          </div>
+          {%endcase%}
+        {% endfor %}
       </div>
     </div>
+  </div>
 
   <div class="wrapper">
     <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid__container{% endif %}">
-      <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}"{% if carousel %} data-collection-slider{% endif %}>
+      <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}" {% if carousel %} data-collection-slider {% endif %}>
         {% for block in section.blocks %}
+            {% case block.type %}
+        {%when 'collection'%}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
           <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
@@ -210,7 +244,8 @@
             <p class="healer-description">{{ collection.description }}</p>
 
             <p class="healer-events-title">Upcoming events</p>
-            <p class="healer-events"> Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            <p class="healer-events">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
               {% comment %} Add products on the upcoming events
               {% for product in collection.products %}
                 {{ product.title }}
@@ -218,7 +253,48 @@
             {% endcomment %}
             </p>
           </div>
+          <!-- dzenana -->
 
+          {%when 'product'%}
+          {% assign product = products[block.settings.product] | default: false %}
+
+          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
+            <img alt="Healer card image" src="{{ product.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
+
+            <div class="healer-heading">
+              <div class="healer-heading__info">
+ 
+                <p class="healer-heading__subtitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
+              </div>
+
+              <div class="healer-heading__icons">
+                {% if block.settings.show_instagram_icon %}
+                  <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+                    {%- render 'healer-insta' -%}
+                  </a>
+                {% endif %}
+
+                {% if block.settings.show_website_icon %}
+                  <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_website_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+                    {%- render 'healer-website' -%}
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+
+            <p class="healer-description">{{ collection.description }}</p>
+
+        
+            <p class="healer-events">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              {% comment %} Add products on the upcoming events
+              {% for product in collection.products %}
+                {{ product.title }}
+              {% endfor %}
+            {% endcomment %}
+            </p>
+          </div>
+{%endcase%}
         {% endfor %}
 
 
@@ -229,26 +305,24 @@
 </section>
 
 {% schema %}
+
 {
   "name": "Featured healers",
   "settings": [
     {
       "type": "header",
       "content": "Heading"
-    },
-    {
+    }, {
       "type": "text",
       "id": "heading",
       "label": "Heading",
       "default": "Our Healers"
-    },
-    {
+    }, {
       "type": "color",
       "id": "heading_color",
       "label": "Heading Color",
       "default": "#6C1D45"
-    },
-    {
+    }, {
       "type": "select",
       "id": "heading_alignment",
       "label": "Heading alignment",
@@ -257,58 +331,53 @@
         {
           "value": "left",
           "label": "Left"
-        },
-        {
+        }, {
           "value": "center",
           "label": "Center"
-        },
-        {
+        }, {
           "value": "right",
           "label": "Right"
         }
       ]
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "show_filter",
       "label": "Show collection filter",
       "default": true
-    },
-    {
+    }, {
       "type": "select",
       "id": "products_layout",
       "label": "Layout",
       "info": "Product images slideshow will be disabled if layout is set to Carousel.",
       "default": "grid",
       "options": [
-        { "value": "grid", "label": "Grid" },
-        { "value": "carousel", "label": "Carousel" }
+        {
+          "value": "grid",
+          "label": "Grid"
+        }, {
+          "value": "carousel",
+          "label": "Carousel"
+        }
       ]
-    },
-    {
+    }, {
       "type": "header",
       "content": "Colors"
-    },
-    {
+    }, {
       "type": "color",
       "id": "bg_color",
       "label": "Background"
-    },
-    {
+    }, {
       "type": "color",
       "id": "healer_title_color",
       "label": "Healer Title Color"
-    },
-    {
+    }, {
       "type": "color",
       "id": "healer_subtitle_color",
       "label": "Healer Subtitle Color"
-    },
-    {
+    }, {
       "type": "header",
       "content": "Mobile slider"
-    },
-    {
+    }, {
       "type": "checkbox",
       "id": "enable_slider",
       "label": "Enable slider",
@@ -318,6 +387,20 @@
   ],
   "blocks": [
     {
+      "name": "Filter  ",
+      "type": "Filter",
+      "settings": [
+        {
+          "type": "text",
+          "id": "filtername",
+          "label": "Filter Name"
+        }, {
+          "type": "text",
+          "id": "filteroption",
+          "label": "Filter Option"
+        }
+      ]
+    }, {
       "name": "Featured Collection",
       "type": "collection",
       "settings": [
@@ -325,33 +408,58 @@
           "type": "collection",
           "id": "collection",
           "label": "Healer"
-        },
-        {
+        }, {
           "type": "text",
           "id": "healer_subtitle",
           "label": "Healer Subtitle"
-        },
-        {
+        }, {
           "type": "checkbox",
           "id": "show_instagram_icon",
           "label": "Show instagram",
           "default": true
-        },
-        {
+        }, {
           "type": "text",
           "id": "social_instagram_link",
           "label": "Facebook"
-        },
-        {
+        }, {
           "type": "checkbox",
           "id": "show_website_icon",
           "label": "Show Webpage",
           "default": true
-        },
-        {
+        }, {
           "type": "text",
           "id": "social_website_link",
           "label": "Page"
+        }
+      ]
+    }, {
+      "name": "Product",
+      "type": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Event"
+        }, {
+          "type": "text",
+          "id": "healer_subtitle",
+          "label": "Event Subtitle"
+        }, {
+          "type": "text",
+          "id": "description",
+          "label": "Description"
+        }, {
+          "type": "image_picker",
+          "id": "imagef",
+          "label": "Image"
+        }, {
+          "type": "text",
+          "id": "hostedby",
+          "label": "Hosted By"
+        }, {
+          "type": "text",
+          "id": "placedate",
+          "label": "Date and Place"
         }
       ]
     }
@@ -363,4 +471,5 @@
     }
   ]
 }
+
 {% endschema %}
