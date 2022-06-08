@@ -102,9 +102,9 @@
       "settings": {
         "parallax": true,
         "image_height": "seven-fifty-height-hero",
-        "image": "shopify:\/\/shop_images\/our-offerings-background.png",
+        "image": "shopify:\/\/shop_images\/Screenshot_2022-06-08_at_16.25.18.png",
         "image_position": "center-center",
-        "overlay_opacity": 20,
+        "overlay_opacity": 35,
         "text_color": "#ffffff",
         "title": "Our Offerings",
         "subheading": "Describe in a few words your special offers\/values.",
