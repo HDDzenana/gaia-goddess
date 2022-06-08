@@ -3,24 +3,26 @@
     "16504194475f30e158": {
       "type": "gaia-banner",
       "blocks": {
-        "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201": {
-          "type": "Image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/TREE4-01.png",
-            "dm": true
-          }
-        },
         "1b78109d-aa10-4c9c-b3c0-e52879c6bcba": {
           "type": "Image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/image_10.png",
+            "fw": true,
+            "image": "shopify:\/\/shop_images\/8_hVCVKx.jpg",
             "dm": false
+          }
+        },
+        "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201": {
+          "type": "Image",
+          "settings": {
+            "fw": true,
+            "image": "shopify:\/\/shop_images\/X7A0206.jpg",
+            "dm": true
           }
         }
       },
       "block_order": [
-        "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201",
-        "1b78109d-aa10-4c9c-b3c0-e52879c6bcba"
+        "1b78109d-aa10-4c9c-b3c0-e52879c6bcba",
+        "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201"
       ],
       "settings": {
         "padding_top": 64,
@@ -46,8 +48,12 @@
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
+        "caption_color": "",
+        "caption": "",
         "text_color": "#800000",
         "heading": "Our Mission",
+        "subheading": "",
+        "ssubheading_color": "#800000",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque. Arcu, ac id platea euismod elit. <\/p><p><\/p><p>Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>",
         "button_text": "Join Us",
         "button_link": "",
