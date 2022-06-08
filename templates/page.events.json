@@ -13,7 +13,7 @@
         "scroller": true,
         "image_height": "sixty-fifty-height-hero",
         "text_position": "center-center",
-        "enable_parallax": false,
+        "enable_parallax": true,
         "image": "shopify:\/\/shop_images\/image.png",
         "image_position": "center-center",
         "overlay_opacity": 20,
