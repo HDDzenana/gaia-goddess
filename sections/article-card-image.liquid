@@ -14,14 +14,15 @@
   }
 
   .articlecontents-{{section.id}} {
-    box-shadow: -10px 16px 20px 14px #dea6b4;
-    min-width: 80%;
+    box-shadow: -6px 7px 20px 0px #6c1d4580;
+    min-width: 90%;
     float: left;
     padding: 40px;
     padding-left: 10px;
     margin-top: -20px;
+    border-radius: 5px;
 }
-  }
+ 
   {% if section.settings.numberofcolumns == '360' %}
     .cards-{{section.id}}  .multicolumncard__image {
     width: 360px !important;
@@ -49,7 +50,7 @@
     .cards-{{section.id}} p {
       margin: 0;
     }
-
+ 
   .center {
     text-align: center; 
     color: {{section.settings.heading_color}};
@@ -72,6 +73,7 @@
     text-align: center !important;
     word-break: keep-all;
     width: 100% !important;
+    text-align: left;
   }
     {% for block in section.blocks %}
     .card-{{block.id}} * {
@@ -107,6 +109,28 @@
     margin-bottom: 40px !important;}
   }
        {% endfor %}
+    .articlecontents-{{section.id}} {
+          background: white;
+    margin-top:-100px;
+
+    }
+  .leftlink,
+    .time, .time * {    display: flex;
+    text-align: left;
+    text-align-last: left;
+    width: 100% !important;
+  }
+
+  .leftlink, a.leftlink {
+    text-align: left;
+    color:#6c1d45;
+    margin-top: 20px;
+    font-weight: 600;
+
+  }
+ .title * {
+   color: {{section.settings.heading_colors}};
+ }
   </style>
 <div class="newestcards-{{Section.id}}" style="background-color: {{section.settings.section_bg}};"> 
 <div class="cards-{{section.id}} page-width">
@@ -141,31 +165,18 @@
         <img class="multicolumncard__image" srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | img_url: '275x' }} 275w,{%- endif -%} {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | img_url: '550x' }} 550w,{%- endif -%} {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | img_url: '710x' }} 710w,{%- endif -%} {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | img_url: '1420x' }} 1420w,{%- endif -%} {{ block.settings.image | img_url: 'master' }} {{ block.settings.image.width }}w" src="{{ block.settings.image | img_url: '550x' }}" sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
                    (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %}, calc(100vw - 30px)" alt="{{ block.settings.image.alt }}" height="{{ block.settings.image.height }}" width="{{ block.settings.image.width }}" loading="lazy">
 </div> {%else %}
-         <div class="img-{{section.id}}" style="background-image: url("{{ article.image.src }}"); height: 300px;" > 
-         <!-- <img
-                srcset="{%- if article.image.src.width >= 165 -%}{{ article.image.src | image_url: width: 165 }} 165w,{%- endif -%}
-                  {%- if article.image.src.width >= 360 -%}{{ article.image.src | image_url: width: 360 }} 360w,{%- endif -%}
-                  {%- if article.image.src.width >= 533 -%}{{ article.image.src | image_url: width: 533 }} 533w,{%- endif -%}
-                  {%- if article.image.src.width >= 720 -%}{{ article.image.src | image_url: width: 720 }} 720w,{%- endif -%}
-                  {%- if article.image.src.width >= 1000 -%}{{ article.image.src | image_url: width: 1000 }} 1000w,{%- endif -%}
-                  {%- if article.image.src.width >= 1500 -%}{{ article.image.src | image_url: width: 1500 }} 1500w,{%- endif -%}
-                  {{ article.image.src | image_url }} {{ article.image.src.width }}w"
-                src="{{ article.image.src | image_url: width: 533 }}"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | divided_by: 2 }}px, (min-width: 750px) calc((100vw - 130px) / 2), calc((100vw - 50px) / 2)"
-                alt="{{ article.image.src.alt | escape }}"
-                class="motion-reduce"
-                {% unless lazy_load == false %}loading="lazy"{% endunless %}
-                width="260px"
-                height="260px"
-                
-              > -->
+         <div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}'); 
+    background-size: cover;height: 300px;" > 
+   
             
             
             </div>
-{% endif %}  <div class="articlecontents-{{section.id}}">  <span style="color: rgba(28, 28, 28, 0.5); font-size:12px;">{{ article.published_at | time_tag: format: 'date' }}</span> 
+{% endif %}  <div class="articlecontents-{{section.id}}">   <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">
+ 
+  {{ article.published_at | time_tag: format: 'date' }}</span> 
         {% if block.settings.title %}
         <a class="card-link"  href="{{block.settings.link}}" style="margin-top:5px;">
-     <{{section.settings.link_style}} class="title" style="   color: {{section.settings.heading_color}};width: 100%;word-break: keep-all; margin: 10px 0;">
+     <{{section.settings.link_style}} class="title" style="   color: {{section.settings.heading_colors}};width: 100%;text-align: left;word-break: keep-all; margin: 10px 0;">
          {%if block.settings.title != blank %}   <p>  {{block.settings.title}} </p>
        {%else%}     <p>    {{article.title}}  </p>{%endif%}
           </{{section.settings.link_style}}> 
@@ -175,7 +186,15 @@
      <div class="lefti link_style txt-color   ff-uf" >   {{block.settings.description }}  </div> 
         {%endif%}
         
-      {{article.author}}
+         <p style="width: 100% !important;">
+        {%- if article.excerpt.size > 0 -%}
+          {{ article.excerpt }}
+        {%- else -%}
+          {{ article.content | strip_html | truncate:120 }}
+        {%- endif -%}
+      </p>
+
+      <a href="{{article.url}}" class="leftlink">{{block.settings.linktext}}</a>
     </div> 
           </div></div>
  
@@ -194,6 +213,11 @@
    "type": "color",
    "id": "heading_color",
    "label": "Text Color",
+   "default": "#FAFAFA"
+ }, {
+   "type": "color",
+   "id": "heading_colors",
+   "label": "Block Text Color",
    "default": "#FAFAFA"
  },
 {
@@ -334,6 +358,10 @@
           "id": "title",
           "label": "Title",
           "default": "Card Title"
+        },{
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
         },
        {
          "type": "liquid",
@@ -343,7 +371,13 @@
           "type": "article",
           "id": "article",
           "label": "Article"
-        }
+        },
+       {
+         "type": "text",
+         "id": "linktext",
+         "label": "Link Text",
+         "default": "Read More" 
+       }
     
       ]
     }
