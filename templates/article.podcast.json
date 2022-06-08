@@ -2,6 +2,7 @@
   "sections": {
     "16514856733972d9a8": {
       "type": "gaia-banner",
+      "disabled": true,
       "blocks": {
         "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913": {
           "type": "Image",
@@ -21,6 +22,12 @@
         "heading": "How to Start Praticing Yoga in Your Home",
         "heading_color": "#6c1d45",
         "text_content": ""
+      }
+    },
+    "165466236852a57a63": {
+      "type": "section-liquid",
+      "settings": {
+        "custom_liquid": "<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div>"
       }
     },
     "main": {
@@ -44,6 +51,7 @@
   },
   "order": [
     "16514856733972d9a8",
+    "165466236852a57a63",
     "main",
     "1651485344dc097ec1"
   ]

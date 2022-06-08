@@ -143,12 +143,6 @@
           "hikoimages": true,
           "hikofonts": true
         }
-      },
-      "9733397566846298151": {
-        "type": "shopify:\/\/apps\/common-ninja-audio-player\/blocks\/app-embed-block\/acde948c-1624-41bc-ae85-7c56cb077c19",
-        "disabled": false,
-        "settings": {
-        }
       }
     }
   },
