@@ -1,0 +1,198 @@
+<div class="mp-{{section.id}}">
+  
+  <div class="imgwrapper-{{section.id}}">
+  {%render 'gaia-image',
+  	image: section.settings.image 
+    %}
+    </div>
+  
+  <div class="mpcard-{{section.id}}">
+  <h2 class="mpheader-{{section.id}}"> {{section.settings.header}} </h2>
+  	<div class="mbpb">	{% for block in section.blocks %} 
+    <div class="mbp">
+     <div class="mbpimg">
+    {%render 'gaia-image',
+  	image: block.settings.perkimage 
+       %} </div>
+    <p class="perktext uppercase" style="color: {{section.settings.headercolor}}"> {{block.settings.perktext}} </p> </div>
+      {% endfor %} </div>
+  </div>
+</div>
+
+<div class="description_div" style="margin-top: 3%; text-align: center;">
+{{section.settings.description}}
+  <br>
+ 
+          <a href="{{ section.settings.button_link }}" class="gbtn btn btn--product-feature" style="margin-top: 30px; background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ section.settings.button_text }}</a>
+     
+</div>
+
+<style>
+  @media only screen and (max-width:900px) {
+  .mpcard-{{section.id}} {
+  	width: 96% !important;
+    font-size: 34px !important;
+   }
+   
+  .perktext {
+    margin-left: 0px !important;
+    font-weight: 900;
+    display: flex;
+    align-self: center;
+}
+   .mbp {
+     text-align: center;
+   }
+  }
+  .mpheader-{{section.id}} {
+  	margin: auto;
+    text-align: center;
+  }
+  
+  .mpheader-{{section.id}} {
+  	color: white;
+    font-size: 40px;
+    margin: -40px 0 10px 0;
+  }
+  .mpcard-{{section.id}} {
+    width: 42.5%;
+    margin: auto;
+    background: {{section.settings.bg}};
+    padding-top: 100px;
+    margin-top: -60px;
+    border-radius: 15px;
+    box-shadow: 4px 18px 20px 0px #6c1d453b;
+    overflow: hidden;
+  }
+  
+  .perktext {
+    margin-left: 10px;
+    font-weight: 900;
+  }
+  
+  .mbpb {
+    background: white;
+ 
+    padding: 0 50px;
+  }
+
+  .mbp {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;    
+    border-bottom:1px solid #6c1d4514;
+    margin: auto;
+    justify-content: space-evenly;    
+    padding: 15px 0;
+  }
+  
+  .imgwrapper-{{section.id}},   .imgwrapper-{{section.id}} .gaia-image {
+    width: 120px;
+    height: 120px;
+    margin: auto;
+  }
+  
+  .imgwrapper-{{section.id}}  .gaia-image img {
+    display: block;
+    vertical-align: middle;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 9px solid white;
+    border-radius: 50%;
+}
+  
+  .mbpimg,  .mbpimg .gaia-image  {
+    width: 50px;
+    height: 50px;
+  }
+  .mbpimg .gaia-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+  }
+  
+ 
+</style>
+
+
+{% schema %}
+{
+  "name": "Membership Perks",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg",
+      "default": "transparent",
+      "label": "Section Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+   	  "label": "Image"
+	},
+    {
+      "type": "textarea",
+      "id": "header",
+      "default": "Limited Time Free Membership",
+      "label": "Header"
+    },   {
+      "type": "color",
+      "id": "headercolor",
+      "default": "#6c1d45",
+      "label": "Perk Color"
+    },   {
+      "type": "textarea",
+      "id": "description",
+      "default": "Sign up today to become a member of Gaia Goddess and get access to amazing content, join fantastic retreats and events.",
+      "label": "Description"
+    },{ "type": "header",
+      "content": "Button"
+    }, {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }, {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#800000"
+    }, {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button Hover Color",
+      "default": "#FAFAFA"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Perk",
+      "name": "Perk",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "perkimage",
+		   "label": "Perk Image"
+        },
+        {
+          "type": "text",
+          "id": "perktext",
+          "default": "Access to Gaia's Content Library",
+		  "label": "Perk Title"
+        }
+      ]
+    } 
+  ],
+  "presets": [
+    {
+      "name": "Gaia Membership Perks"
+    }
+  ]
+}
+
+{% endschema %}

@@ -1,0 +1,19 @@
+<picture class="gaia-image">
+  <source media="(max-width:768px)" srcset="{% if mobile_image == blank %} {{ image | img_url: '1400x' }} {% else %} {{ mobile_image | img_url: 'master' }} {% endif %}">
+  <source media="(max-width:1000px)" srcset="{{ image | img_url: '1000x' }}">
+  <source media="(min-width:1200px)" srcset="{{ image | img_url: 'master' }}">
+  <img alt="Description image" src="{{ image | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
+</picture>
+
+<style>
+  .gaia-image {
+    display: block;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+  .gaia-image img {
+    display: block;
+    vertical-align: middle;
+    object-fit: cover;
+  }
+</style>

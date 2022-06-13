@@ -1,0 +1,461 @@
+{%- comment -%} Product Feature {%- endcomment -%}
+
+{%- liquid
+    comment
+      Layout
+    endcomment
+    assign section_id = section.id
+    assign text_position = section.settings.text_position
+    assign text_alignment = section.settings.text_alignment
+  
+    comment
+      Text
+    endcomment
+    assign line_color = section.settings.line_color
+  
+    comment
+      Button
+    endcomment
+    assign button_text = section.settings.button_text
+    assign button_link = section.settings.button_link | default: '#'
+    assign button_style = section.settings.button_style
+  
+    comment
+      Colors
+    endcomment
+    assign bg_color = section.settings.bg_color
+  -%}
+
+{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+  {%- style -%}
+
+#ProductFeature--{{section.id}}{
+  background-color: {{bg_color}};
+}
+
+{%- endstyle -%}
+{%- endif -%}
+
+<style>
+    .card_icons{
+        justify-content: center !important;
+    }
+    .border{
+        border-bottom: 1px solid #EB6FBD;
+        width: 90%;
+        margin: 0 auto;
+        margin-top: 60px;
+    }
+    .blog-article{
+        /* padding-top: 60px; */
+        padding-bottom: 60px;
+    }
+    .about-card{
+        margin: 0 auto;
+        background-color: #FEF1F5;
+        border-radius: 40px;
+        height: auto;
+        width: 420px;
+        box-shadow: 0 2px 10px rgb(0 0 0 / 20%)
+    }
+    a.btn--about-card:before {
+        background: {{ section.settings.button_hover_color }} !important;
+    }
+    .about-card__info{
+        padding: 40px;
+    }
+    .about-card__title {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: {{ section.settings.card_title_color }}
+    }
+    .about-card__list{
+        list-style: none;
+    }  
+    .about-card__list > li::before {
+        content: url({{ 'bulletpoint.svg' | asset_url }});
+    }
+    .about-card__list > li {
+        margin-bottom: 20px;
+    }
+    .about-card__bullet{
+        color: #6C1D45;
+    }
+    .about-info {
+        text-align: {{ section.settings.text_alignment }};
+        line-height: 1.2;
+    }
+    .about-events{
+        width: 45%;
+        display: block;
+        position: sticky;
+        top: 3rem;
+        z-index: 2;
+    }
+    .about-info > p{
+        margin: 30px 0 !important;
+    }
+    @media only screen and (max-width: 768px){
+        .btn--about-card{
+            margin-top: 15px;
+        }
+        .about__block{
+            flex-direction: column-reverse;
+            display: flex;
+          }
+        .about-info {
+            padding-left: var(--gutter-mobile);
+            padding-right: var(--gutter-mobile);
+            text-align: center;
+        }
+        .about-events {
+            width: 100%;
+        }
+        .about-card {
+            margin: 0 30px;
+            width: auto;
+            height: auto;
+        }
+        .about-events{
+            margin-top: 60px;
+        }
+        .border{
+            margin-top: 0px;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        .about__block{
+            align-items: flex-start;
+        }
+    }
+    @media only screen and (min-width: 1024px){
+        .about-info{
+            max-width: calc(60% - var(--gutter)*2);
+            margin-left: 0;
+        }
+    }
+
+    .retreat-wrapper{
+        padding: 0;
+    }
+    .retreat-feature__text > p {
+        line-height: 1.2;
+    }
+    .retreat-wrapper{
+      width: 100%;
+    }
+    @media only screen and (min-width: 768px){
+        .retreat-feature__text {
+            width: 50%;
+            padding: var(--gutter) !important;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        .retreat-feature__text{
+            text-align: center;
+            padding: 40px;
+        }
+        .btn{
+            width: 50%;
+        }
+        .rte h3{
+            margin: 0;
+        }
+        .about-info__heading{
+            font-size: 30px;
+        }
+    }
+    .article_card_text, .article_card_title{
+        text-align: center;
+    }
+    .article__image__wrapper{
+        width: 60%;
+        margin: 0 auto;
+    }
+    .responsive-image img{
+        border-radius: 100px;
+    }
+    </style>
+  
+  <section id="ProductFeature--{{ section.id }}" class="blog-article" data-section-id="{{ section.id }}" data-section-type="product-feature">
+    <div class="upperpart-{{section.id}} center "> 
+    
+      <div class="aboutarticle-{{section.id}}"> 
+       <div class="breadcrumbs" style="display: flex; align-items: center;"> {%render 'brhome'%} 
+      <a href="{{section.settings.prevlink}}" style="
+    margin-top: 10px;    font-weight: bolder;">
+      <strong> {{section.settings.prevtext}} /  {{article.title}}</strong></a></div>   <div class="td"> {%for tag in article.tags %}
+    {%if article.tags contains 'general' %}
+<div class="icn" style="    width: 50px !important;
+">  
+    {%render 'generalblog'%}</div>
+  {%endif%}
+       {%if article.tags contains 'podcast' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'podcasticn'%}</div>
+{%endif%}    {%if article.tags contains 'video' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'videoicn'%}</div>
+{%endif%} 
+    {%endfor%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+    </div>
+    <h1>
+      {{article.title}}
+    </h1>  {{ article.author }}
+</div> 
+{%if section.settings.image == blank %}
+{% assign image_src=article.image.src | img_url: 'large' %}
+<div class="container">
+<img src="{{ image_src }}">
+</div>
+{%else %}
+{% render 'gaia-image',
+image: section.settings.image %}
+{%endif%}
+</div>
+    
+    <div class="wrapper retreat-wrapper">
+      
+      <div class="product-feature__block about__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
+        <div class="about-events">
+
+            <div class="about-card">
+                <div class="about-card__info">
+                    {%- if article.image -%}
+                        <div class="article__image__wrapper">
+                          <img src="{{ article.metafields.my_fields.authorimage   | img_url: '400x' }}" alt="{{article.metafields.my_fields.authorimage }}" 
+    style="width: 100px; height: 100px; border-radius: 50%;">   </div>
+                      {%- endif -%}
+
+                    <h3 class="about-card__title article_card_title">{{ article.author }}</h3>
+
+                    {% if section.settings.card_text != blank %}
+                        <p class="article_card_text">{{ section.settings.card_text }}</p>
+                    {% endif %}
+                    {%- if button_text != blank -%}
+                        <a href="{{ button_link }}" class="btn btn--about-card" style="background-color: {{ section.settings.button_color }} !important; border: 1px solid {{ section.settings.button_color }} !important;">{{ button_text }}</a>
+                    {%- endif -%}
+
+                    <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact">
+                        {% if section.settings.card_social %}
+                          <a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                            {%- render 'icon-footer-facebook' -%}
+                          </a>
+                        {% endif %}
+                      
+                        {% if section.settings.card_social %}
+                          <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                            {%- render 'icon-footer-instagram' -%}
+                          </a>
+                        {% endif %}
+                    
+                        {% if section.settings.card_social %}
+                          <a class="website" rel="noopener" href = "{{ settings.social_twitter_link }}" title="">
+                            {%- render 'healer-website' -%}
+                          </a>
+                        {% endif %}
+                         
+    
+    
+                      </div>
+                </div>
+            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
+                 <span class="center center-{{section.id}}"> Share This  Article </span> 
+               <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact"> 
+               
+             {%- render 'social-sharing', article: article -%}
+             </div></div>    {%- endif -%}
+             </div>
+        </div>
+
+        
+      
+        <div class="product-feature__text about-info rte">
+          <h2 class="about-info__heading" style="color: {{ section.settings.header_color }}">{{ article.title }}</h2>
+      
+          {%- if article.content != blank -%}
+            {{- article.content -}}
+          {%- endif -%}
+      
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <div class="border"></div>
+
+  <script type="application/ld+json">
+
+
+[36mLine: 1[0m
+[31m[36 mLine : 2 [[0m
+[31m        0 m [[0m
+[31m            31 m(empty line)[[0m
+[31m                0 m [[0m
+[31m                    31 m(empty line)[[0m
+[31m                        0 m [[0m
+[31m                            31 m[[0m
+
+</script>
+   
+  {% schema %}
+
+{
+  "name": "Blog Article",
+  "class": "transparent-header",
+  "settings": [
+    {
+      "type": "url",
+      "id": "prevlink",
+      "label": "Breadcrumb"
+    }, {
+      "type": "text",
+      "id": "prevtext",
+      "label": "Breadcrumb Text",
+      "default": "Discover"
+    }, {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    }, {
+      "type": "checkbox",
+      "id": "show_share_buttons",
+      "label": "Show social sharing buttons",
+      "default": true
+    }, {
+      "type": "color",
+      "id": "bg",
+      "label": "Background",
+      "default": "#fef1f5"
+    }, {
+      "type": "header",
+      "content": "Layout"
+    }, {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "default": "right",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        }, {
+          "label": "Right",
+          "value": "right"
+        }
+      ]
+    }, {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "default": "center",
+      "options": [
+        {
+          "label": "Center",
+          "value": "center"
+        }, {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    }, {
+      "type": "header",
+      "content": "Text"
+    }, {
+      "type": "color",
+      "id": "header_color",
+      "label": "Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "header",
+      "content": "Card"
+    }, {
+      "type": "color",
+      "id": "card_title_color",
+      "label": "Card Header Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "checkbox",
+      "id": "card_social",
+      "label": "Show social icons on card?",
+      "default": true
+    }, {
+      "type": "textarea",
+      "id": "card_text",
+      "label": "Card Text",
+      "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi."
+    }, {
+      "type": "header",
+      "content": "Card button"
+    }, {
+      "type": "text",
+      "id": "button_text",
+      "label": "Text"
+    }, {
+      "type": "url",
+      "id": "button_link",
+      "label": "Link"
+    }, {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Button Hover Color",
+      "default": "#FAFAFA"
+    }, {
+      "type": "header",
+      "content": "Colors"
+    }, {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog article",
+      "category": "Image"
+    }
+  ]
+}
+
+{% endschema %}
+
+  <style>
+    .center-{{section.id}} {
+
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+    font-weight: 900;
+    color: #6c1d45;
+
+    }
+ .td {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 20px;
+ }
+    
+    .upperpart-{{section.id}} {
+      background: {{section.settings.bg}};
+      padding: 50px 0;
+      margin-bottom: 150px;
+    }
+
+    .aboutarticle-{{section.id}} * {
+         color: #6c1d45;
+    }
+    @media only screen and (min-width: 900px) {
+      .aboutarticle-{{section.id}} {
+        width: 60%;
+        margin: auto;
+        margin-bottom: 50px;
+      }
+    }
+  </style>

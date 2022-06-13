@@ -1,0 +1,423 @@
+<link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet"/>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+<!-- /sections/testimonials.liquid -->
+
+{%- liquid
+	assign total_blocks = section.blocks.size
+	assign bg_color = section.settings.bg_color
+-%}
+
+{%- if bg_color != 'rgba(0,0,0,0)' and bg_color != '' -%}
+  {%- style -%}
+
+#Testimonials--{{section.id}}{
+  background: {{bg_color}};
+}
+
+{%- endstyle -%}
+{%- endif -%}
+
+<section id="Testimonials--{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="testimonials" class="testimonials-section{% if section.settings.show_quotes %} has-quotes{% endif %}">
+  <div class="wrapper">
+    {%- if section.settings.title != blank -%}
+      <h2 class="testimonials__header" style="margin-bottom: 10px; color: {{section.settings.heading_color}};">{{ section.settings.title | escape }}</h2>
+      <div class="description_div">
+        <p style="text-align: center; margin-bottom: 20px; margin-top: 0px;">{{ section.settings. subtitle}}
+        </p>
+      </div>
+    {%- endif -%}
+
+    <div class="testimonials__wrapper">
+      <div class="testimonials__slide {% if section.blocks.size == 1 %} testimonials--single{% endif %} swipete-{{section.id}}" data-slider>
+
+        <!-- Slider main container -->
+        <div class="swiper  swiper-{{ section.id }}">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            {%- for block in section.blocks -%}
+              <div class="swiper-slide">
+
+                {%- assign image = block.settings.image -%}
+
+                {%- assign customer_name = block.settings.customer_name -%}
+                {%- assign testimonial_text = block.settings.testimonial_text -%}
+
+                {%- unless image == blank and customer_name == blank and testimonial_text == blank -%}
+                  <div class="testimonial__item  swipertestimonial {% if section.settings.testimonial_layout == 'imgfirst'%} crevs-{{block.id}} {%endif%} " data-item {{ block.shopify_attributes }} style="margin: auto; width: 85%;">
+                    <div class="testimonial__inner {% if section.settings.testimonial_layout == 'imgfirst'%} crev-{{block.id}} {%endif%} {% if section.settings.boxsh %} tibox-{{block.id}} {%endif%}" style="padding: 15px !important;">
+                      <div class="testimonial__text text-center">{{ testimonial_text }}
+                        <div class="social-sharing-wrapper" style="margin: auto; justify-content: center; margin-bottom: 10px;">
+                          {%- if block.settings.social_mail != blank -%}
+                            <a class="mailsvg" rel="noopener" href="{{block.settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                              {%- render 'icon-mail' -%}
+                            </a>
+                          {%- endif -%}
+
+                          {%- if block.settings.social_linkedin != blank -%}
+                            <a class="linkedingsvg" rel="noopener" href="{{ block.settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                              {%- render 'icon-linkedin' -%}
+                            </a>
+                          {%- endif -%}
+
+
+                        </div>
+                      </div>
+
+                      {%- if image != blank or customer_name != blank -%}
+
+                        <div class="testimonial__user">
+                          {%- if image != blank -%}
+                            {%- assign image_width = block.settings.image_width -%}
+                            {%- assign image_height = image_width | divided_by: image.aspect_ratio -%}
+
+                            <div class="testimonial__user__image">
+                              {%- assign image_url_pattern = image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' -%}
+                              {%- assign image_widths = "[180, 360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048, 2450, 2700, 3000, 3350, 3750, 4100]" -%}
+
+                              {%- comment -%} Image height must be max 200px {%- endcomment -%}
+                              {%- if image_height > 200 -%}
+                                {%- assign image_height = 200 -%}
+                                {%- assign image_width = image_height | times: image.aspect_ratio | round -%}
+                              {%- endif -%}
+
+                              <img class="lazyload" src="{{ 'blank.gif' | asset_img_url: '1x1' }}" data-src="{{ image_url_pattern }}" data-widths="{{ image_widths }}" data-aspectratio="{{image.aspect_ratio }}" data-sizes="auto" style=" border-radius: {{block.settings.img_border_radius}}%; width: {{ image_width | append: 'px' }}; height: {{ image_height | append: 'px' }};" alt="{{ image.alt | escape }}">
+                              <noscript>
+                                <img src="{{ image | img_url: '400x' }}" alt="{{ image.alt | escape }}" style="width: {{ image_width | append: 'px' }}; height: {{ image_height | append: 'px' }};">
+                              </noscript>
+                            </div>
+                          {%- endif -%}
+
+                          {%- if customer_name != blank -%}
+                            <div class="testimonial__user__name" style="color: {{block.settings.customer_name_color}}; font-weight: 700; margin: 10% 0;">{{ customer_name | escape }}</div>
+                            <subtitle class="center" style="margin-top: -4%;margin-bottom: 4%; color:#6C1D45;">{{block.settings.short_text}}</subtitle>
+                          {%- endif -%}
+                        </div>
+
+                      {%- endif -%}
+
+                    </div>
+                  </div>
+                {%- endunless -%}
+              </div>
+            {%- endfor -%}
+
+
+          </div>
+          <div class="swiper-pagination"></div>
+
+        </div>
+        <!-- If we need pagination -->
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+{% schema %}
+
+{
+  "name": "Multi Column New",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Multi Column"
+    }, {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading Color",
+      "default": "#6C1D45"
+    }, {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Lorem Ipsum..."
+    }, {
+      "type": "select",
+      "options": [
+        {
+          "value": "imgfirst",
+          "label": "Image First"
+        }, {
+          "value": "textfirst",
+          "label": "Text First"
+        }
+      ],
+      "id": "testimonial_layout",
+      "default": "imgfirst",
+      "label": "Testimonial Layout",
+      "info": "Layout applies to both: desktop and mobile"
+    }, {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Card Border Radius",
+      "unit": "%",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }, {
+      "type": "checkbox",
+      "id": "show_quotes",
+      "label": "Show quotation marks",
+      "default": true
+    }, {
+      "type": "header",
+      "content": "Colors"
+    }, {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background"
+    }, {
+      "type": "checkbox",
+      "id": "boxsh",
+      "label": "Show Box Shadow",
+      "default": false
+    }, {
+      "type": "color",
+      "id": "boxshadow_color",
+      "label": "Box Shadow Color",
+      "default": "#fef1f5",
+      "info": "If box shadow is not enabled, this setting won't apply."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "testimonial_text",
+          "label": "Testimonial",
+          "default": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>"
+        }, {
+          "type": "image_picker",
+          "id": "image",
+          "label": " Photo"
+        }, {
+          "type": "range",
+          "id": "img_border_radius",
+          "label": "Image Border Radius",
+          "unit": "%",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        }, {
+          "type": "range",
+          "id": "image_width",
+          "label": "Image width (in pixels)",
+          "min": 50,
+          "max": 200,
+          "default": 100,
+          "step": 5,
+          "unit": "px"
+        }, {
+          "type": "liquid",
+          "id": "customer_name",
+          "label": "Name",
+          "default": "John Doe"
+        }, {
+          "type": "text",
+          "id": "short_text",
+          "label": "Short Text",
+          "info": "This can be used for job roles or similar."
+        }, {
+          "type": "color",
+          "id": "customer_name_color",
+          "label": "Name Color",
+          "default": "#6c1d45"
+        }, {
+          "type": "header",
+          "content": "Social links"
+        }, {
+          "type": "text",
+          "id": "social_linkedin",
+          "label": "LinkedIn"
+        }, {
+          "type": "text",
+          "id": "social_mail",
+          "label": "Email"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "MultiNEW Column",
+      "category": "Text",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
+            "customer_name": "Sherlock Holmes"
+          }
+        }, {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
+            "customer_name": "John Watson"
+          }
+        }, {
+          "type": "testimonial",
+          "settings": {
+            "testimonial_text": "<p>Use this testimonial as an opportunity for your customers to discuss your brand and what sets you apart from the competition.</p>",
+            "customer_name": "Mycroft Holmes"
+          }
+        }
+      ]
+    }
+  ]
+}
+
+{% endschema %}
+
+
+<style>
+  .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align-last: center !important;
+}
+
+  {% for block in section.blocks %}
+ .swigpertestimonial {
+    width: 75% !important;
+  }
+ @media  only screen and (max-width: 768px) {
+  .swiper .swiper-{{section.id}}  .swipertestimonial {
+    width: 85% !important;
+    height: 100%;
+  }
+.swiper-pagination {
+    position: relative;
+    min-height: 100px;
+    padding-top: 10% !important;
+  }
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+   background: url({{ 'active.svg' | asset_url }});
+   height: 20px;
+   width: 20px;
+   border: 0px;
+  }
+   .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align-last: center;
+}
+
+  }
+
+    .testimonial__inner.crev-{{block.id}}{
+      display: flex;
+      flex-direction: column-reverse !important;
+      border-radius: {{section.settings.border_radius}}%;
+    }
+
+
+    .crevs-{{block.id}}{
+      padding: 0 5.2%;
+    }
+    .tibox-{{block.id}}{
+      box-shadow: -10px 16px 20px 14px{{section.settings.boxshadow_color}};
+      margin-bottom: 25%;
+      margin-top: 10%;
+    }
+
+
+  {% endfor %}
+
+
+
+.testimonials__slider {
+  text-align-last: center;
+}
+</style>
+<script>
+    (function () {
+  const swiper = new Swiper(".swiper-{{ section.id }}", {
+    // Optional parameters
+    
+        slidesPerView: 3,
+        spaceBetween: 0,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        loop: false,
+          breakpoints:  {
+          200: {
+            slidesPerView:1,
+            spaceBetween: 0,
+          }, 
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 3.1,
+            spaceBetween: 0,
+          },
+        },
+    });
+  }())
+
+  document.addEventListener('shopify:section:load', () => {
+   (function () {
+  const swiper = new Swiper(".swiper-{{ section.id }}", {
+    // Optional parameters
+    
+        slidesPerView: 3,
+        spaceBetween: 0,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        loop: false,
+          breakpoints:  {
+          200: {
+            slidesPerView:1,
+            spaceBetween: 0,
+          }, 
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          768: {
+            slidesPerView: 1,
+            spaceBetween: 0,
+          },
+          1024: {
+            slidesPerView: 3.1,
+            spaceBetween: 0,
+          },
+        },
+    });
+  }())
+  })
+</script>
+
+<style>
+  .flickity-enabled:hover .flickity-prev-next-button:not(:disabled), .touch .flickity-prev-next-button:not(:disabled),
+  .flickity-page-dots {
+  visibility: hidden !important;
+  }
+  
+  .swiper-backface-hidden .swiper-slide {
+    margin-top: 5%;
+  }
+</style>

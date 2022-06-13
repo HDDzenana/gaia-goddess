@@ -1,0 +1,258 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "disabled": true,
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading": "breadcrumbs",
+            "show_rating": true,
+            "show_rating_count": false
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_payment_button": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "tabs_style": "accordions",
+            "tab_title_1": "Tab",
+            "tab_content_1": "<p>This content type will accept <strong>rich text</strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.</p>",
+            "tab_title_2": "Info",
+            "tab_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.</p>",
+            "tab_title_3": "",
+            "tab_content_3": "",
+            "tab_title_4": "",
+            "tab_content_4": "",
+            "tab_title_5": "",
+            "tab_content_5": ""
+          }
+        },
+        "social-sharing": {
+          "type": "social-sharing",
+          "settings": {}
+        }
+      },
+      "block_order": ["title", "form", "description", "social-sharing"],
+      "settings": {
+        "image_gallery": "zoom",
+        "enable_video_looping": false,
+        "bg_color": ""
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "show_section": true,
+        "limit": 4,
+        "product_recommendations_heading": "You May Also Like",
+        "bg_color": ""
+      }
+    },
+    "1651505822baf8a6bf": {
+      "type": "section-superco-slider",
+      "disabled": true,
+      "settings": {
+        "product": "fear-is-a-liar",
+        "header_color": "#6c1d45",
+        "header": "A Quick Glance at exploring Cairo, Egypt",
+        "subheader": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam et vel perferendis veniam vero repellendus enim iusto officiis! Velit accusamus corrupti delectus perferendis sit nobis odio maxime, placeat rem? Nulla!"
+      }
+    },
+    "16546730446afb0e39": {
+      "type": "section-product-feature",
+      "settings": {
+        "aos": true,
+        "bg": "#FEFAFB",
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "left",
+        "text_alignment": "left",
+        "mobile_button_position": "left",
+        "showpointmobile": false,
+        "image_1": "shopify://shop_images/spencer-davis-ONVA6s03hg8-unsplash_f0554e4d-a51e-4ddb-bac7-c57b604b9935.png",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "caption_color": "#eb6fbd",
+        "caption": "Cairo, Egypt -  June 4 to June 11, 2022",
+        "text_color": "#6c1d45",
+        "heading": "7 Days Exploring &amp;\nSightseeing in\nCairo, Egypt <br>",
+        "subheading": "",
+        "ssubheading_color": "#800000",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.</p>",
+        "button_text": "Register Now",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "16546732413e9ddfdf": {
+      "type": "imgslider",
+      "blocks": {
+        "bcd6a620-f006-451a-88cc-32f357468542": {
+          "type": "image",
+          "settings": {
+            "img": "shopify://shop_images/yousef-salhamoud-77PROJB-LSs-unsplash_f75a9457-dd38-419a-8662-4beca767f296.png",
+            "link": ""
+          }
+        },
+        "98a59c92-4a19-47b2-82b8-77a11ba71493": {
+          "type": "image",
+          "settings": {
+            "img": "shopify://shop_images/aussieactive-GNdp2Q4VZjw-unsplash_b985b0dc-b322-44ee-a2e3-4d2a762803cd.png",
+            "link": ""
+          }
+        },
+        "e19f4ab6-0f89-4218-b0b6-1494c52f5906": {
+          "type": "image",
+          "settings": {
+            "img": "shopify://shop_images/rosario-janza-69qT-N3L5sc-unsplash.jpg",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "bcd6a620-f006-451a-88cc-32f357468542",
+        "98a59c92-4a19-47b2-82b8-77a11ba71493",
+        "e19f4ab6-0f89-4218-b0b6-1494c52f5906"
+      ],
+      "settings": {
+        "bg": "#fafafa",
+        "arrow_color": "#000000",
+        "main_heading": "A Quick Glance atexploring Cairo, Egypt",
+        "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis amet diam cras cursus. Mi et, egestas nec mollis pharetra."
+      }
+    },
+    "16546731605bb17586": {
+      "type": "section-product-feature",
+      "settings": {
+        "aos": true,
+        "bg": "#FEFAFB",
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "right",
+        "text_alignment": "left",
+        "mobile_button_position": "center",
+        "showpointmobile": false,
+        "image_1": "shopify://shop_images/omar-elsharawy-pwMbtwA9LRc-unsplash_61f16d3d-1de3-40b8-b384-231e83dfd2bc.png",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "caption_color": "#eb6fbd",
+        "caption": "",
+        "text_color": "#6c1d45",
+        "heading": "A Travel Experience\nfor History lovers <br>",
+        "subheading": "<span style=\"color: #EB6FBD;\">Trip Itinerary: </span> <br> <strong style=\"color: #6C1D45;\"> June\" 4th: trip  to pyramids <br>\nJune 5th: Yoga near the Nile</strong>",
+        "ssubheading_color": "#6c1d45",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.</p>",
+        "button_text": "Register Now",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "1654673309a0794981": {
+      "type": "section-liquid",
+      "settings": {
+        "custom_liquid": "<h1 style=\"font-family: 'Playfair Display';\nfont-style: normal;\nfont-weight: 700;\ntext-align:center;\nline-height: 67px;\ncolor: #6C1D45;padding: 30px;\n\"> Meet the Healers Hosting This Event </h1>"
+      }
+    },
+    "1654676625fadd6092": {
+      "type": "swatch",
+      "blocks": {
+        "8ec7d357-44b5-4adb-9ced-145e566399e6": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "About Sophia Moore",
+            "product": "",
+            "content_subheading": "About Sophia Moore",
+            "sub_image": "shopify://shop_images/spencer-davis-ONVA6s03hg8-unsplash_f79a1907-f592-4811-84ae-fa3bfdaad69d.png",
+            "content_desc": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur.",
+            "content_btn": "",
+            "content_btn_url": "",
+            "btn_bg": "#58cc4b",
+            "main_image": "shopify://shop_images/spencer-davis-ONVA6s03hg8-unsplash_f79a1907-f592-4811-84ae-fa3bfdaad69d.png",
+            "healername": "Sophia Moore",
+            "role": "Yoga Instructor",
+            "instagram": "shopify://policies/refund-policy",
+            "facebook": "shopify://pages/healers",
+            "web": "shopify://blogs/news"
+          }
+        },
+        "13d0ba29-c141-4e42-a970-cb428cbe79b2": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "Switch Button",
+            "product": "",
+            "content_subheading": "About our other healer",
+            "sub_image": "shopify://shop_images/Screenshot_2022-06-06_at_23.47.33.png",
+            "content_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.",
+            "content_btn": "",
+            "content_btn_url": "",
+            "btn_bg": "#58cc4b",
+            "main_image": "shopify://shop_images/Screenshot_2022-06-07_at_13.23.56.png",
+            "healername": "Healer",
+            "role": "Yoga Instructor",
+            "instagram": "#",
+            "facebook": "#",
+            "web": ""
+          }
+        },
+        "cbc45080-ffae-44db-a8bc-f6f8a436cf69": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "switch_btn_title": "Switch Button",
+            "product": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "btn_bg": "#58cc4b",
+            "healername": "Sophia Moore",
+            "role": "Yoga Instructor",
+            "instagram": "",
+            "facebook": "",
+            "web": ""
+          }
+        }
+      },
+      "block_order": [
+        "8ec7d357-44b5-4adb-9ced-145e566399e6",
+        "13d0ba29-c141-4e42-a970-cb428cbe79b2",
+        "cbc45080-ffae-44db-a8bc-f6f8a436cf69"
+      ],
+      "settings": {
+        "heading_color": "#6c1d45",
+        "showcontent": true,
+        "border_w": 1,
+        "btn_border": "#000000",
+        "animate": false,
+        "background": "",
+        "padding": "10"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related",
+    "1651505822baf8a6bf",
+    "16546730446afb0e39",
+    "16546732413e9ddfdf",
+    "16546731605bb17586",
+    "1654673309a0794981",
+    "1654676625fadd6092"
+  ]
+}

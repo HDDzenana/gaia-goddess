@@ -1,0 +1,21 @@
+{
+  "sections": {
+    "main": {
+      "type": "list-collections",
+      "settings": {
+        "layout": "carousel",
+        "columns": 3,
+        "title": "Collection list",
+        "button_text": "Shop all",
+        "button_style": "secondary",
+        "overlay_opacity": 20,
+        "bg_color": "",
+        "text_color": "light",
+        "enable_slider": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

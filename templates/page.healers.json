@@ -1,0 +1,122 @@
+{
+  "sections": {
+    "165163688289226a64": {
+      "type": "section-product-feature",
+      "settings": {
+        "aos": true,
+        "bg": "linear-gradient(90deg, rgba(254, 250, 251, 1) 60%, rgba(254, 241, 245, 1) 60%)",
+        "image_layout": "square",
+        "image_position": "inline",
+        "text_position": "left",
+        "text_alignment": "left",
+        "mobile_button_position": "center",
+        "showpointmobile": false,
+        "image_1": "shopify:\/\/shop_images\/5eef9a3fd97fc34b298a81f1_5ed92c919177097e77bf911f_image-biography-01-yogi-template.png",
+        "image_link_1": "",
+        "image_link_2": "",
+        "hide_image_2": false,
+        "text_color": "#6c1d45",
+        "heading": "Our Healers\n<br>\n<span style=\"color: #EB6FBD;\"> _ <\/span>\n<br><br>\nDiosa <br><br>",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#800000",
+        "button_hover_color": "#fafafa",
+        "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true
+      }
+    },
+    "16510797131a8810b2": {
+      "type": "section-featured-collections",
+      "blocks": {
+        "eebea0da-2750-4ce0-b6b1-c3ca27b0dd8d": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+          }
+        },
+        "ab53b94d-3555-4a0a-b076-c874923bc2a0": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+          }
+        },
+        "bcb02ca5-4ef0-4db4-a600-8b4a56c21f56": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+          }
+        },
+        "e3577d9e-13c0-424e-9771-dacb42ac50e4": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "healer_subtitle": "Yoga Instructor",
+            "show_instagram_icon": true,
+            "social_instagram_link": "",
+            "show_website_icon": true,
+            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+          }
+        }
+      },
+      "block_order": [
+        "eebea0da-2750-4ce0-b6b1-c3ca27b0dd8d",
+        "ab53b94d-3555-4a0a-b076-c874923bc2a0",
+        "bcb02ca5-4ef0-4db4-a600-8b4a56c21f56",
+        "e3577d9e-13c0-424e-9771-dacb42ac50e4"
+      ],
+      "settings": {
+        "heading": "Our Healers",
+        "heading_color": "#6c1d45",
+        "heading_alignment": "left",
+        "show_filter": true,
+        "products_layout": "carousel",
+        "bg_color": "",
+        "healer_title_color": "#eb6fbd",
+        "healer_subtitle_color": "#6c1d45",
+        "enable_slider": true
+      }
+    },
+    "16502926109923d142": {
+      "type": "section-jointeam-mailerlite",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "left",
+        "image_layout": "square",
+        "image_1": "shopify:\/\/shop_images\/apply_healer.png",
+        "heading": "Want to be part of the team?",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading_color": "#6c1d45",
+        "bg_color": "#fefafb"
+      }
+    }
+  },
+  "order": [
+    "165163688289226a64",
+    "main",
+    "16510797131a8810b2",
+    "16502926109923d142"
+  ]
+}

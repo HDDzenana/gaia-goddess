@@ -1,0 +1,160 @@
+<style>
+  .wrapper-{{section.id}} {
+    background: {{section.settings.bg}};
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 50px;
+    align-items: center;
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  .header-{{section.id}} {
+    color: {{section.settings.headercolor}};
+    padding: 5px 0;
+    margin: 5px 0;
+  }
+  
+  .role-{{section.id}} {
+    color: {{section.settings.rolecolor}};
+    font-weight: 900;
+    text-transform: italic;
+  }
+  
+  .description-{{section.id}} { 
+    color: {{section.settings.descriptioncolor}};
+  }
+  
+  .founderinfo-{{section.id}} {
+    width: 70%;
+  }
+  
+  .name-{{section.id}} {
+    color: {{section.settings.namecolor}};
+    padding: 0;
+    margin: 0;
+  }
+  
+ @media only screen and (max-width: 900px) {
+  .wrapper-{{section.id}} {
+    background: {{section.settings.bg}};
+    display: flex !important;
+	flex-direction: column;
+    align-items: center;
+  }
+    
+  .founderinfo {
+    width: 100%;
+  }
+ }
+</style>
+
+
+<div class="wrapper wrapper-{{section.id}}">
+  
+  <div class="img">
+    {%render 'gaia-image'%,
+    image: section.settings.image
+    %}
+    
+  </div>
+  
+  <div class="founderinfo">
+    
+    <h1 class="header-{{section.id}}"> {{ section.settings.header }} </h1>
+    <h3 class="name-{{section.id}}"> {{section.settings.name }} </h3>
+       <subtitle class="role-{{section.id}}" >{{section.settings.role}}</subtitle>
+    <p class="description-{{section.id}}"> {{ section.settings.description }} </p>
+    
+  </div>
+  
+  
+</div>
+
+
+
+{% schema %}
+{
+  "name": "Founder",
+  "settings": [
+ {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding Top",
+      "min": 0,
+      "max": 200,
+      "default": 100,
+      "step": 5,
+      "unit": "px"
+    }, {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding Bottom",
+      "min": 0,
+      "max": 200,
+      "default": 100,
+      "step": 5,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "bg",
+      "default": "transparent",
+      "label": "Section Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+	  "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "header",
+      "placeholder": "Our Founder",
+      "label": "Header"
+    },   {
+      "type": "color",
+      "id": "headercolor",
+      "default": "#000000",
+      "label": "Header Color"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "placeholder": "Maria Marshall",
+      "label": "name"
+    },  {
+      "type": "color",
+      "id": "namecolor",
+      "default": "#000000",
+      "label": "Name Color"
+    },
+    {
+      "type": "text",
+      "id": "role",
+      "placeholder": "Founder",
+      "label": "Role"
+    },  {
+      "type": "color",
+      "id": "rolecolor",
+      "default": "#000000",
+      "label": "Role Color"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    },  {
+      "type": "color",
+      "id": "descriptioncolor",
+      "default": "#000000",
+      "label": "Description Color"
+    }
+
+     ],
+    "presets": [
+      {
+        "name": "Our Founder"
+      }
+    ]
+  }
+  {% endschema %}

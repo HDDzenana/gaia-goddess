@@ -1,0 +1,456 @@
+{{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
+
+{%- assign article = block.settings.article -%}
+
+<style>
+
+  .cards-{{section.id}} {
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+ .img-{{section.id}}, .img-{{section.id}} img {
+    min-width: 100% !important;
+    object-fit: cover;
+  }
+
+  .articlecontents-{{section.id}} {
+    box-shadow: -6px 7px 20px 0px #6c1d4580;
+    min-width: 90%;
+    float: left;
+    padding: 40px;
+    padding-left: 10px;
+    margin-top: -20px;
+    border-radius: 5px;
+}
+ 
+  {% if section.settings.numberofcolumns == '360' %}
+    .cards-{{section.id}}  .multicolumncard__image {
+    width: 360px !important;
+    height: 360px;
+  }
+   .cards-{{section.id}} p 
+   {
+    width: 320px !important;
+ 
+  }
+  {% endif %}
+
+    {% if section.settings.numberofcolumns == '260' %}
+  .cards-{{section.id}}    .multicolumncard__image {
+    width: 260px;
+    height: 260px;
+  }   .cards-{{section.id}} p 
+   {
+    width: 260px !important;
+ 
+  }
+
+  
+  {% endif %}
+    .cards-{{section.id}} p {
+      margin: 0;
+    }
+ 
+  .center {
+    text-align: center; 
+    color: {{section.settings.heading_color}};
+  }
+  .multicolumncard__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+ 
+  }
+ 
+  .card-link {
+    text-decoration: none;
+   color: {{section.settings.heading_color}};
+    text-align: center !important;
+    word-break: keep-all;
+    width: 100% !important;
+    text-align: left;
+  }
+    {% for block in section.blocks %}
+    .card-{{block.id}} * {
+      display: flex;
+      flex-direction: column;
+      width: 260px; 
+      margin: auto;
+      border-radius: 3px;
+      word-break: break-all;
+      margin-top: {{section.settings.spacing_cards}}px;
+   }
+   .additional-wrapper {
+     width: 45%;
+   }
+    .lefti {
+      text-align:left;
+      margin-top: 0;
+      width: 100%;
+    }
+  @media only screen and (max-width: 768px) {
+     
+      .card-{{block.id}}  * {
+      /* width: 160px !important; */
+      text-align: center;
+    }
+    .multicolumncard__image {
+    width: 100%;
+    height: 160px !important;
+    object-fit: cover;
+  }
+    
+    .additional-wrapper {
+    margin-bottom: 40px !important;}
+  }
+       {% endfor %}
+    .articlecontents-{{section.id}} {
+          background: white;
+    margin-top:-100px;
+
+    }
+  .leftlink,
+    .time, .time * {    display: flex;
+    text-align: left;
+    text-align-last: left;
+    width: 100% !important;
+    align-items: center;
+    margin: 0;
+    padding:0;
+    flex-direction: row;
+  }
+
+  .leftlink, a.leftlink {
+    text-align: left;
+    color:#6c1d45;
+    margin-top: 20px;
+    font-weight: 600;
+
+  }
+ .title * {
+   color: {{section.settings.heading_colors}};
+   min-width: 100%;
+ }
+ .healers-filter__dropdown {
+    border: 1px solid #6C1D45;
+    border-radius: 60px;
+    padding: 10px 20px;
+    color: #6C1D45;
+}
+
+ .collapsible-content__header {
+    display: flex;
+    margin: auto !important;
+    justify-content: space-around;
+  }
+
+  .time img,   .time .gaia-image {
+    height: 50px;
+    width: 50px !important;
+    object-fit: contain;
+    margin: 0;
+    padding: 0;
+  }
+  </style>
+<div class="newestcards-{{Section.id}}" style="background-color: {{section.settings.section_bg}};"> 
+<div class="cards-{{section.id}} page-width">
+    <div class="collapsible-content__header  " style="text-align: center; margin: auto !important;">
+          {%- if section.settings.caption != blank -%}
+            <p class="caption-with-letter-spacing" style="text-align: center; margin: auto !important; color: {{section.settings.heading_color}}"> {{ section.settings.caption | escape }}</p>
+          {% endif %}
+      
+   
+  {% if section.settings.heading %}  
+ <h2 class="center ff-uf green u-case mb-10"  > {{ section.settings.heading }} </h2>    <div class="healers-filter-{{section.id}}">
+            <select class="healers-filter__dropdown" id="category" name="category">
+              <option disabled selected>All Filters    </option>
+              <option value="yoga">Podcast</option>
+              <option value="meditation">Video</option>
+              <option value="reiki">Blog</option>
+            </select>
+
+
+           <select class="healers-filter__dropdown" id="category" name="category">
+              <option disabled selected>Members Only</option>
+              <option value="yoga">Members Only</option>
+              <option value="meditation">Public</option>
+            </select>
+          </div>    
+          </div>
+ 
+  {% endif %}
+
+    {% if section.settings.description %}
+        	<div class="fs-18 txt-color text-center ff-uf">{{section.settings.description}}</div>
+        {% endif %} 
+  <div class="cards-wrapper">
+    {% for block in section.blocks %}
+
+   {%- assign article = block.settings.article -%}
+
+
+    <div class="additional-wrapper" style="
+ 
+    background: {{section.settings.card_bg}};
+    padding: 15px;
+    margin: 0;
+">
+      <div class="card-{{block.id}}"> 
+        {% if block.settings.image != blank %} <div class="img-{{section.id}}"> 
+        <img class="multicolumncard__image" srcset="{%- if block.settings.image.width >= 275 -%}{{ block.settings.image | img_url: '275x' }} 275w,{%- endif -%} {%- if block.settings.image.width >= 550 -%}{{ block.settings.image | img_url: '550x' }} 550w,{%- endif -%} {%- if block.settings.image.width >= 710 -%}{{ block.settings.image | img_url: '710x' }} 710w,{%- endif -%} {%- if block.settings.image.width >= 1420 -%}{{ block.settings.image | img_url: '1420x' }} 1420w,{%- endif -%} {{ block.settings.image | img_url: 'master' }} {{ block.settings.image.width }}w" src="{{ block.settings.image | img_url: '550x' }}" sizes="(min-width: 990px) {% if section.blocks.size <= 2 %}710px{% else %}550px{% endif %},
+                   (min-width: 750px) {% if section.blocks.size == 1 %}710px{% else %}550px{% endif %}, calc(100vw - 30px)" alt="{{ block.settings.image.alt }}" height="{{ block.settings.image.height }}" width="{{ block.settings.image.width }}" loading="lazy">
+</div> {%else %}
+         <div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}'); 
+    background-size: cover;height: 300px; background-position: center;" > 
+   
+            
+            
+            </div> 
+{% endif %}  <div class="articlecontents-{{section.id}}">  
+   <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">    
+    {%for tag in article.tags %}
+    {%if article.tags contains 'general' %}
+<div class="icn" style=" width: 50px !important;
+">  
+    {%render 'generalblog'%}</div>
+  {%endif%}
+       {%if article.tags contains 'podcast' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'podcasticn'%} </div>
+{%endif%}    {%if article.tags contains 'video' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'videoicn'%}</div>
+{%endif%} 
+    {%endfor%}
+                 
+  {{ article.published_at | time_tag: format: 'date' }}
+</span> 
+        {% if block.settings.title %}
+        <a class="card-link"  href="{{block.settings.link}}" style="margin-top:5px;">
+     <{{section.settings.link_style}} class="title" style="   color: {{section.settings.heading_colors}};width: 100%;text-align: left;word-break: keep-all; margin: 10px 0;">
+         {%if block.settings.title != blank %}   <p>  {{block.settings.title}} </p>
+       {%else%}     <p>    {{article.title}}  </p>{%endif%}
+          </{{section.settings.link_style}}>  
+        </a>
+        {% endif %}
+        {% if block.settings.description %}
+     <div class="lefti link_style txt-color   ff-uf" >   {{block.settings.description }}  </div> 
+        {%endif%}
+        
+         <p style="width: 100% !important;">
+        {%- if article.excerpt.size > 0 -%}
+       <p class="exc">   {{ article.excerpt }}</p> 
+        {%- else -%}
+        <p class="exc">  {{ article.content | strip_html | truncate:120 }} </p>
+        {%- endif -%}
+      </p>
+
+      <a href="{{article.url}}" class="leftlink">
+         {%for tag in article.tags %}
+    {%if article.tags contains 'general' %}
+Read More</div>
+  {%endif%}
+       {%if article.tags contains 'podcast' %}
+ Listen Now </div>
+{%endif%}   
+
+{%if article.tags contains 'video' %}
+Watch </div>
+{%endif%} 
+    {%endfor%}
+      </a>
+    </div> 
+          </div>
+ 
+
+    {% endfor %}  
+  </div>
+</div>
+</div>
+
+{% schema %}
+
+{
+  "name": "Cards",
+  "class": "section",
+  "settings": [
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Text Color",
+      "default": "#FAFAFA"
+    }, {
+      "type": "color",
+      "id": "heading_colors",
+      "label": "Block Text Color",
+      "default": "#FAFAFA"
+    }, {
+      "type": "color",
+      "id": "section_bg",
+      "label": "Section Bg",
+      "default": "#000000"
+    }, {
+      "type": "color",
+      "id": "card_bg",
+      "label": "Card Background",
+      "default": "#FAFAFA"
+    }, {
+      "type": "text",
+      "id": "caption",
+      "label": "t:sections.collapsible_content.settings.caption.label"
+    }, {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.collapsible_content.settings.heading.label",
+      "default": "Collapsible content"
+    }, {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description"
+    }, {
+      "type": "header",
+      "content": "Section Layout"
+    }, {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.rich-text.settings.color_scheme.options__1.label"
+        }, {
+          "value": "accent-2",
+          "label": "t:sections.rich-text.settings.color_scheme.options__2.label"
+        }, {
+          "value": "background-1",
+          "label": "t:sections.rich-text.settings.color_scheme.options__3.label"
+        }, {
+          "value": "background-2",
+          "label": "t:sections.rich-text.settings.color_scheme.options__4.label"
+        }, {
+          "value": "inverse",
+          "label": "t:sections.rich-text.settings.color_scheme.options__5.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.rich-text.settings.color_scheme.label"
+    }, {
+      "type": "select",
+      "id": "link_style",
+      "options": [
+        {
+          "value": "h2",
+          "label": "Heading "
+        }, {
+          "value": "p",
+          "label": "Paragraph"
+        }
+      ],
+      "default": "h2",
+      "label": "Card Title - Font Size"
+    }, {
+      "type": "select",
+      "id": "numberofcolumns",
+      "label": "Number Of Columns",
+      "options": [
+        {
+          "value": "260",
+          "label": "4-Column"
+        }, {
+          "value": "360",
+          "label": "3-Column"
+        }
+      ],
+      "default": "260",
+      "label": "Number of columns in one row"
+    }, {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Top Padding",
+      "default": 0
+    }, {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Bottom Padding",
+      "default": 0
+    }, {
+      "type": "range",
+      "id": "spacing_cards",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Vertical Cards Spacing",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }, {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        }, {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        }, {
+          "type": "liquid",
+          "id": "description",
+          "label": "Description"
+        }, {
+          "type": "article",
+          "id": "article",
+          "label": "Article"
+        }, {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cards"
+    }
+  ]
+}
+
+{% endschema %}
+
+<style>
+  .gaia-image {
+  display: block;
+  vertical-align: middle;
+  object-fit: cover;
+}
+.gaia-image img {
+  display: block;
+  vertical-align: middle;
+  object-fit: cover;
+}
+ .exc *, p.exc{
+   min-width:100% !important; text-align: left;
+ }
+
+</style>
