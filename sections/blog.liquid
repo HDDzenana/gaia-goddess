@@ -14,13 +14,13 @@
   }
 
   .articlecontents-{{section.id}} {
-box-shadow: -6px 7px 20px 0px #d9d2d5eb;
+box-shadow: -6px 7px 20px 0px #d9d2d5eb; 
     min-width: 90%;
     float: left;
     padding: 40px;
     padding-left: 10px;
     margin-top: -20px;
-    border-radius: 5px;
+    /* border-radius: 5px; */
 }
  
   {% if section.settings.numberofcolumns == '360' %}
@@ -211,8 +211,21 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
             </div> 
 {% endif %}  <div class="articlecontents-{{section.id}}">  
    <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">   
-     <img src="{{ block.settings.iconimg | img_url: '400x' }}" alt="{{ image.alt | escape }}" style="width:50px;height: 50px;">
-                             
+    
+    {%for tag in article.tags %}
+    {%if article.tags contains 'general' %}
+<div class="icn" style=" width: 50px !important;
+">  
+    {%render 'generalblog'%}</div>
+  {%endif%}
+       {%if article.tags contains 'podcast' %} 
+<div class="icn" style="    width: 50px !important;
+"> {%render 'podcasticn'%} </div>
+{%endif%}    {%if article.tags contains 'video' %}
+<div class="icn" style="    width: 50px !important;
+"> {%render 'videoicn'%}</div>
+{%endif%} 
+    {%endfor%}                        
   {{ article.published_at | time_tag: format: 'date' }}
 </span> 
             <h5 style="min-width:100%; color: #6C1D45;">    {{article.title}}  </h5> 
