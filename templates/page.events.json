@@ -105,19 +105,29 @@
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
             "healer_subtitle": "5-Days Meditation Program at Connecticut",
             "description": "",
-            "imagef": "shopify:\/\/shop_images\/omar-elsharawy-pwMbtwA9LRc-unsplash_61f16d3d-1de3-40b8-b384-231e83dfd2bc.png",
+            "imagef": "shopify:\/\/shop_images\/image_3.png",
             "hostedby": "",
             "placedate": ""
           }
         },
         "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c": {
           "type": "product",
-          "disabled": true,
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
             "healer_subtitle": "5-Days Meditation Program at Connecticut",
             "description": "",
-            "imagef": "shopify:\/\/shop_images\/pexels-taryn-elliott-7565610-min.jpg",
+            "imagef": "shopify:\/\/shop_images\/image_2.png",
+            "hostedby": "",
+            "placedate": ""
+          }
+        },
+        "f4ce4b4c-e4a0-4323-aabc-597055f1200d": {
+          "type": "product",
+          "settings": {
+            "product": "7-days-exploring-sightseeing-in-cairo-egypt",
+            "healer_subtitle": "Retreat at Home: OnlineYoga & Life Drawing",
+            "description": "",
+            "imagef": "shopify:\/\/shop_images\/image_3.png",
             "hostedby": "",
             "placedate": ""
           }
@@ -131,7 +141,8 @@
         "0e7a9c34-6bda-4963-9890-0a8a99246d52",
         "b9944b4e-3374-445b-8002-96857b72d2ab",
         "823865af-6dd5-4486-949b-26331afeaa19",
-        "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c"
+        "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c",
+        "f4ce4b4c-e4a0-4323-aabc-597055f1200d"
       ],
       "settings": {
         "heading": "Events and Retreats",
