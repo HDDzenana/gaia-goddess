@@ -193,7 +193,9 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
 
 <ul class="wrapper blogsall">
   {%- for article in blog.articles -%}
-    <li>
+    <li style="
+    margin-bottom: 50px;
+">
     <div class="additional-wrapper" style="
  
     background: {{section.settings.card_bg}};
@@ -230,10 +232,8 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
 </span> 
             <h5 style="min-width:100%; color: #6C1D45;">    {{article.title}}  </h5> 
         
-        
-        <!-- {% if block.settings.description %}
-     <div class="lefti link_style txt-color   ff-uf" >   {{block.settings.description }}  </div> 
-        {%endif%} -->
+          
+      
         
         <p style="width: 100% !important;">
           {%- if article.excerpt.size > 0 -%}
@@ -251,7 +251,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
   {%endfor%}</ul>
   </div>
 </div>
-</div>
+</div>  
 
 {% schema %}
 
