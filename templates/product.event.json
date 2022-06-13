@@ -134,6 +134,7 @@
       ],
       "settings": {
         "bg": "#fafafa",
+        "heading_color": "#6C1D45",
         "arrow_color": "#000000",
         "main_heading": "A Quick Glance atexploring Cairo, Egypt",
         "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis amet diam cras cursus. Mi et, egestas nec mollis pharetra."
@@ -203,12 +204,12 @@
             "switch_btn_title": "Switch Button",
             "product": "",
             "content_subheading": "About our other healer",
-            "sub_image": "shopify:\/\/shop_images\/Screenshot_2022-06-06_at_23.47.33.png",
-            "content_desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.",
+            "sub_image": "shopify:\/\/shop_images\/IMG_5453-min.jpg",
+            "content_desc": "Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.",
             "content_btn": "",
             "content_btn_url": "",
             "btn_bg": "#58cc4b",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-07_at_13.23.56.png",
+            "main_image": "shopify:\/\/shop_images\/IMG_5453-min.jpg",
             "healername": "Healer",
             "role": "Yoga Instructor",
             "instagram": "#",
