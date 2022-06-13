@@ -157,7 +157,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     padding: 0;
   }
   </style>
-<div class="newestcards-{{Section.id}}" style="background-color: {{section.settings.section_bg}};"> 
+<div class="newestcards-{{Section.id}} wrapper" style="background-color: {{section.settings.section_bg}};"> 
 <div class="cards-{{section.id}} page-width">
     <div class="collapsible-content__header  " style="text-align: center; margin: auto !important;">
           {%- if section.settings.caption != blank -%}
@@ -231,15 +231,17 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
             <h5 style="min-width:100%; color: #6C1D45;">    {{article.title}}  </h5> 
         
         
-        {% if block.settings.description %}
+        <!-- {% if block.settings.description %}
      <div class="lefti link_style txt-color   ff-uf" >   {{block.settings.description }}  </div> 
-        {%endif%}
+        {%endif%} -->
         
-         <p style="width: 100% !important;">
-      
-          {{ article.content | strip_html | truncate:120 }}
-         
-      </p>
+        <p style="width: 100% !important;">
+          {%- if article.excerpt.size > 0 -%}
+         <p class="exc">   {{ article.excerpt | strip_html | truncate:120}}</p> 
+          {%- else -%}
+          <p class="exc">  {{ article.content | strip_html | truncate:120 }} </p>
+          {%- endif -%}
+        </p>
 
       <a href="{{article.url}}" class="leftlink"> Read Article</a>
     </div> 
