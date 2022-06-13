@@ -56,6 +56,7 @@
         },
         "dbcf1d19-e1cb-4cea-9f85-5b297081c4f2": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "events",
             "healer_subtitle": "",
@@ -108,6 +109,18 @@
             "hostedby": "",
             "placedate": ""
           }
+        },
+        "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c": {
+          "type": "product",
+          "disabled": true,
+          "settings": {
+            "product": "7-days-exploring-sightseeing-in-cairo-egypt",
+            "healer_subtitle": "5-Days Meditation Program at Connecticut",
+            "description": "",
+            "imagef": "shopify:\/\/shop_images\/pexels-taryn-elliott-7565610-min.jpg",
+            "hostedby": "",
+            "placedate": ""
+          }
         }
       },
       "block_order": [
@@ -117,7 +130,8 @@
         "6cd95c5e-5c85-4750-8582-3809e2e84247",
         "0e7a9c34-6bda-4963-9890-0a8a99246d52",
         "b9944b4e-3374-445b-8002-96857b72d2ab",
-        "823865af-6dd5-4486-949b-26331afeaa19"
+        "823865af-6dd5-4486-949b-26331afeaa19",
+        "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c"
       ],
       "settings": {
         "heading": "Events and Retreats",
