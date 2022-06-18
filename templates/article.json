@@ -2,10 +2,12 @@
   "sections": {
     "16514856733972d9a8": {
       "type": "gaia-banner",
+      "disabled": true,
       "blocks": {
         "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913": {
           "type": "Image",
           "settings": {
+            "fw": true,
             "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
             "dm": true
           }
@@ -33,10 +35,15 @@
     "1651485677611fe850": {
       "type": "section-superco-blog-article",
       "settings": {
+        "prevlink": "",
+        "prevtext": "Discover",
+        "show_share_buttons": true,
+        "bg": "#fef1f5",
         "text_position": "right",
         "text_alignment": "left",
         "header_color": "#6c1d45",
         "card_title_color": "#6c1d45",
+        "card_social": true,
         "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
         "button_text": "",
         "button_link": "",

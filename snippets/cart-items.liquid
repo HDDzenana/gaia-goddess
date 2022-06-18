@@ -2,12 +2,28 @@
   <table class="cart-table full table--responsive">
     <thead class="cart__header-labels">
       <th colspan="1"></th>
-      <th colspan="2" class="text-left">{{ 'cart.label.product' | t }}</th>
-      <th colspan="1" class="text-center">{{ 'cart.label.price' | t }}</th>
-      <th class="text-center">{{ 'cart.label.quantity' | t }}</th>
-      <th class="text-right">{{ 'cart.label.total' | t }}</th>
+      <th colspan="2" class="text-left"> </th>
+      <!-- <th colspan="0.3" class="text-center"> </th> -->
+      <th class="text-center" style="
+      /* font-family: 'Acumin Pro'; */
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      
+      color: #6C1D45;
+      ">ATTENDEES</th>
+      <th class="text-right" style="
+      /* font-family: 'Acumin Pro'; */
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      
+      color: #6C1D45;
+      ">TOTAL</th>
     </thead>
-    <tbody class="cart__items" data-item-count="{{ cart.item_count }}">
+    <tbody class="cart__items" data-item-count="{{ cart.item_count }}" style="border-top: 1px solid #EB6FBD !important;border-bottom: 1px solid #EB6FBD;">
       {%- for item in cart.items -%}
         {%- liquid
           assign quantity = item.quantity
@@ -58,9 +74,10 @@
             </div>
           </td>
           <td class="cart__cell cart__cell--title">
-            <a href="{{ item.url }}">
-              {{- item.product.title | strip_html -}}
-    
+            <a href="{{ item.url }}" >
+         <p style="font-weight: 700;color: #6C1D45;">
+               {{- item.product.title | strip_html -}}
+          </p>
               {%- unless item.product.has_only_default_variant -%}
                 <span class="cart-item__variant">{{ item.variant.title }}</span>
               {%- endunless -%}
@@ -69,37 +86,17 @@
               <div class="cart-item__selling-plan">
                 <span>{{ item.selling_plan_allocation.selling_plan.name }}</span>
               </div>
-            {%- endunless -%}
-          </td>
-          <td class="cart__cell cart__cell--price text-center" data-label="{{ 'cart.label.price' | t }}">
-            <span class="price">
+            {%- endunless -%} 
+            <span class="price" style="color: #EB6FBD;">
               {% if item.original_price > item.final_price %}
-                <s>{{ item.original_price | money }}</s>
+                <s style="color: #EB6FBD;">{{ item.original_price | money }}</s>
               {% endif %}
               {{ item.final_price | money }}
             </span>
-    
-            {%- if item.unit_price_measurement -%}
-              {%- capture unit_price_separator -%}
-                <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
-              {%- endcapture -%}
-    
-              {%- capture unit_base -%}
-                {%- if item.unit_price_measurement.reference_value != 1 -%}
-                  {{- item.unit_price_measurement.reference_value -}}
-                {%- endif -%}
-                {{ item.unit_price_measurement.reference_unit }}
-              {%- endcapture -%}
-    
-              <span class="product__unit-price">
-                {{ item.unit_price | money }}
-                {{ unit_price_separator }}
-                {{ unit_base }}
-              </span>
-            {%- endif -%}
           </td>
+ 
           <td class="cart__cell cart__cell--quantity" data-label="{{ 'cart.label.quantity' | t }}">
-            <input type="number" name="updates[]" class="js-qty__num" id="updates_{{ item.id }}" value="{{ quantity }}" min="0" data-id="updates_{{ item.id }}">
+            <input type="number" name="updates[]" class="js-qty__num"   value="{{ quantity }}" >
             <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" class="cart__remove cart__remove--text">
               {{- 'cart.general.remove' | t -}}
             </a>
@@ -141,7 +138,7 @@
     {%- endif -%}
 
     <div class="cart__bottom__payment">
-      <div class="cart__subtotal">
+      <div class="cart__subtotal center" style="color: #979797; text-align: center;">
         {%- assign free_shipping_text = 'cart.general.free_shipping_message_html' | t -%}
 
 {%- if settings.show_free_shipping_message and settings.free_shipping_limit != blank and free_shipping_text != blank -%}
@@ -191,8 +188,10 @@
         {%- endif -%}
 
         {% comment %} Cart level subtotal {% endcomment %}
-        <div class="cart__row--bottom cart__subtotal">
-          <span class="cart__subtotal__title">{{ 'cart.general.subtotal' | t }}</span>
+        <div class="cart__row--bottom cart__subtotal" style="
+        color: #6C1D45; font-weight: 700">
+          <span class="cart__subtotal__title" style="
+          color: #6C1D45; font-weight: 700">{{ 'cart.general.subtotal' | t }}</span>
           <span class="cart__subtotal__price">{{ cart.total_price | money }}</span>
         </div>
 
@@ -235,3 +234,14 @@
     </div>
   </div>
 </form>
+
+
+<style>
+
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+
+color: #6C1D45;
+
+</style>

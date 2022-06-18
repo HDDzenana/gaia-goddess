@@ -7,12 +7,14 @@
           "type": "Image",
           "settings": {
             "fw": true,
-            "image": "shopify://shop_images/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
+            "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
             "dm": true
           }
         }
       },
-      "block_order": ["a32a3d6a-b6e8-42c7-b1e7-a381afdb4913"],
+      "block_order": [
+        "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913"
+      ],
       "settings": {
         "padding_top": 52,
         "padding_bottom": 52,
@@ -25,7 +27,7 @@
     "165466236852a57a63": {
       "type": "section-liquid",
       "settings": {
-        "custom_liquid": "<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"></div>"
+        "custom_liquid": "<br><div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n\n\n<style> .jTjVKK {\n  border-radius: 20px !important;}\n\n\n.custompodcast, .custompodcast * {\nbckground: #FEF1F5 !important;\n}\n<\/style>\n<br>\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n\n<br>\n<style> \n.custompodcast, .custompodcast * {\nbckground: #FEF1F5 !important;\n}\n<\/style>\n\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n<br>\n\n<style> \n.custompodcast *  {\nbackground: #FEF1F5;\n}\n.duNgJY * {\nbackground: white !important;\n}\n<\/style> <br>\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div><br>"
       }
     },
     "main": {
@@ -35,15 +37,55 @@
         "show_share_buttons": true
       }
     },
+    "165513984159871db8": {
+      "type": "podcast-article",
+      "settings": {
+        "prevlink": "",
+        "prevtext": "Discover",
+        "authorimage": "shopify:\/\/shop_images\/Screenshot_2022-06-08_at_16.35.41.png",
+        "bg": "#ffffff",
+        "card_bg": "#6C1D45",
+        "text_position": "right",
+        "text_alignment": "center",
+        "header_color": "#6C1D45",
+        "card_title_color": "#6C1D45",
+        "card_social": true,
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "button_text": "",
+        "button_link": "",
+        "bg_color": ""
+      }
+    },
     "1651485344dc097ec1": {
       "type": "section-newsletter-mailerlite",
       "settings": {
         "text_position": "left",
         "text_alignment": "left",
-        "heading": "Subscribe to out newsletters today for a <span style=\"color: #EB6FBD;\">FREE</span> meditation class",
-        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.</p>",
+        "heading": "Subscribe to out newsletters today for a <span style=\"color: #EB6FBD;\">FREE<\/span> meditation class",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
+      }
+    },
+    "16551396468964d651": {
+      "type": "section-superco-blog-article",
+      "disabled": true,
+      "settings": {
+        "prevlink": "",
+        "prevtext": "Discover",
+        "show_share_buttons": true,
+        "bg": "#fef1f5",
+        "text_position": "right",
+        "text_alignment": "center",
+        "header_color": "#6c1d45",
+        "card_title_color": "#6c1d45",
+        "card_social": true,
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "bg_color": ""
       }
     }
   },
@@ -51,6 +93,8 @@
     "16514856733972d9a8",
     "165466236852a57a63",
     "main",
-    "1651485344dc097ec1"
+    "165513984159871db8",
+    "1651485344dc097ec1",
+    "16551396468964d651"
   ]
 }

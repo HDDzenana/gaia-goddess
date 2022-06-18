@@ -3,6 +3,19 @@
     "main": {
       "type": "blog",
       "settings": {
+        "heading_color": "#6c1d45",
+        "heading_colors": "#000000",
+        "section_bg": "#ffffff",
+        "card_bg": "#ffffff",
+        "caption": "",
+        "heading": "Related Videos and Podcasts",
+        "description": "",
+        "color_scheme": "background-1",
+        "link_style": "h2",
+        "numberofcolumns": "260",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "spacing_cards": 20
       }
     }
   },

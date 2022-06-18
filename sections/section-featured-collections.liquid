@@ -254,8 +254,8 @@
           <!-- dzenana -->
 
           {%when 'product'%}
-          {% for product in collection.products %}
-       
+         
+       {%assign product = block.settings.product %}
 
           <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
             <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
@@ -285,7 +285,7 @@
      <a  class="gbtn btn btn--product-feature" href="{{product.url}}"
        style="color: white;float: left;">Register Now</a>  
           </div>
-          {%endfor%}
+ 
 {%endcase%}
         {% endfor %}
 
