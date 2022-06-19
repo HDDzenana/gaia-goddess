@@ -26,20 +26,8 @@
 <div id="NavDrawer" class="drawer drawer--left" role="navigation">
 	<div class="drawer__header">
 		{%- if logo != blank -%}
-			<div class="drawer__title"><a href="/">{%- render 'logo-header' -%}</a></div>
+			<div class="drawer__title">{{ logo }}</div>
 		{%- endif -%}
-
-
-
-		<a href="{{ routes.account_url }}" class="nav__link" style="padding: 6px 0px; margin-top: 3px;">
-			<span class="visually-hidden">{{ 'general.accessibility.my_account' | t }}</span>
-			{%- render 'icon-user' -%}
-		  </a>
-		
-		  <a href="{{ routes.cart_url }}" class="cart__toggle {% unless template == 'cart' or settings.cart_type == 'page' %}js-drawer-open-cart{% endunless %} cart__count{% if cart.item_count > 0 %} cart__count--has-items{% endif %}{% if cart_animation %} cart__count--animation{% endif %}" aria-controls="CartDrawer" aria-expanded="false" data-drawer="right">
-			<span class="visually-hidden">{{ 'general.accessibility.open_cart' | t }}</span>
-			{%- render 'icon-shopping-bag' -%}
-		  </a>
 
 		<button type="button" class="drawer__close-button icon-fallback-text js-drawer-close">
 			<span class="visually-hidden">{{ 'general.accessibility.close_drawer' | t }}</span>
