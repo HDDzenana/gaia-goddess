@@ -59,7 +59,8 @@
 					</div>
 					<div class="account__table__item">
                       {%render 'gaia-image',
-                      image:      "{{ customer.metafields.cf_app.profile_image}}" %}
+                      image:{{ customer.metafields.cf_app.profile_image}}
+                      %}
                     {{ customer.metafields.cf_app.profile_image}}
                             customer_token: "{{ customer.metafields.cf_app.api_token }}" 
 							<h4>{{ 'customer.account.details' | t }}</h4>
