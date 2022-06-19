@@ -1,0 +1,184 @@
+
+{% assign menu = section.settings.menu%}
+<style>
+
+.customaccount-{{section.id}} {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* MENU STYLING GENERAL */
+.accountnav {
+  background: white;
+  list-style: none;
+  width: 300px;
+  margin: auto;
+  border-radius: 40px;
+  overflow: hidden;
+  filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
+}
+
+.active {
+  background-color: #EB6FBD;
+  font-weight: 700;
+}
+.accountnav ul {
+  margin: 0;
+  /* padding-left: 15px !important; */
+  padding-bottom: 15px;
+  /* padding-inline-start: 0 !important; */
+}
+
+.accountnav li {
+  border-top: 1px solid #FEF1F5;
+  list-style: none;
+  padding-left: 40px !important;
+  padding: 15px 0;
+}
+.accountnav li  a {
+  color: #6C1D45 !important;
+  font-size: 18px;
+}
+
+.accountnav li:last-child {
+  padding-bottom: 0px !important;
+}
+
+.menu-title {
+  text-align: center;
+  background-color: #EB6FBD; 
+  color: white;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.accountnav-wrapper {
+  width: 25%;
+  display: flex;
+}
+/* END MENU STYLING - GENERAL  */
+.content-{{section.id}} {
+  background:{{section.settings.bg}};
+  width: 75%;
+}
+
+.topbanner {
+  max-height: 250px;
+}
+
+.profilepicturewrapper {
+  margin: auto;
+  margin-top: -5%;
+  display: flex;
+}
+.profilepicture {
+  margin: auto;
+  border-radius: 50%;
+}
+</style>
+
+<div class="customaccount-{{section.id}}"> 
+<!-- MENU -->
+<div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
+<nav role="accountnav" class="accountnav">
+  <h4 class="menu-title">  {{ menu.title }}  </h4>
+  <ul>
+    {%- for link in menu.links -%}
+      <li>
+        <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
+          {{ link.title }}
+        </a>
+
+        {%- if link.links != blank -%}
+          <ul>
+            {%- for child_link in link.links -%}
+              <li>
+                <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
+                  {{ child_link.title }}
+                </a>
+
+                {%- if child_link.links != blank -%}
+                  <ul>
+                    {%- for grandchild_link in child_link.links -%}
+                      <li>
+                        <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
+                          {{ grandchild_link.title }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav> 
+<!-- endmenu -->
+</div> 
+<!-- endmenuwrapper -->
+<div class="content-{{section.id}}">
+  <div class="topbanner">
+    {%render 'gaia-image',
+    image: section.settings.banner_top 
+    %}
+    
+    <div class="profilepicturewrapper"> 
+    
+      <img src=" {{ customer.metafields.cf_app.profile_image}}" alt="Girl in a jacket" width="500" height="600">
+      <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="200" height="200" class="profilepicture">
+  </div>
+</div>
+  <!-- notmenu -->
+</div>
+</div>
+{% schema %}
+{
+  "name": "Account",
+  "class": "transparent-header",
+  "settings": [
+    {
+      "type": "color",
+      "id": "bg",
+      "default": "transparent",
+      "label": "Section Background"
+    },{
+      "type": "color",
+      "id": "menu_bg",
+      "label": "Menu Background",
+      "default": "#FEF1F5"
+    },
+   {
+    "type": "image_picker",
+    "id": "banner_top",
+    "label": "Banner"
+   },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "Form",
+      "name": "Form",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "text"
+        }
+      ]
+    }
+  ], "presets":[
+  {
+    "name":"Custom Account"
+  }
+]
+}
+{% endschema %}
