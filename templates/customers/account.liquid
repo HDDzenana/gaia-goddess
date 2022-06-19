@@ -58,12 +58,9 @@
 						{% endpaginate %}
 					</div>
 					<div class="account__table__item">
-                      {%render 'gaia-image',
-                      image:{{ customer.metafields.cf_app.profile_image}}
-                      %}
+                 
                       <img src=" {{ customer.metafields.cf_app.profile_image}}" alt="Girl in a jacket" width="500" height="600">
-                    {{ customer.metafields.cf_app.profile_image}}
-                            customer_token: "{{ customer.metafields.cf_app.api_token }}" 
+                              customer_token: "{{ customer.metafields.cf_app.api_token }}" 
 							<h4>{{ 'customer.account.details' | t }}</h4>
 
 							{% if customer.default_address != nil %}
