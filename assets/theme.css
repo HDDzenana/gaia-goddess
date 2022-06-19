@@ -11557,3 +11557,18 @@ values__each {
 #shopify-section-template--15648068337841__165466236852a57a63 {
   background-color:#FEF1F5 !important ;
 }
+
+
+
+/* MY ACCOUNT PAGE */
+
+.marronbold {
+  color: #6C1D45;
+  font-weight: 700;
+  line-height: 22px;  
+}
+.grayregular {
+  color: #000000;
+  line-height: 22px;
+  font-weight: 400;
+}
