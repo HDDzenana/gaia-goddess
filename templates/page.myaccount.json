@@ -1,0 +1,24 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_page_title": true
+      }
+    },
+    "16556523051a6ca254": {
+      "type": "custom-account",
+      "settings": {
+        "bg": "rgba(0,0,0,0)",
+        "menu_bg": "#FEF1F5",
+        "banner_top": "shopify:\/\/shop_images\/image_4.png",
+        "menu": "my-account"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "16556523051a6ca254"
+  ]
+}
