@@ -120,7 +120,9 @@
 </nav> 
 <!-- endmenu -->
 </div> 
-<!-- endmenuwrapper -->
+<!-- endmenuwrapper --> 
+ 
+
 <div class="content-{{section.id}}">
   <div class="topbanner">
     {%render 'gaia-image',
@@ -129,8 +131,7 @@
     
     <div class="profilepicturewrapper"> 
     
-      <img src=" {{ customer.metafields.cf_app.profile_image}}" alt="Girl in a jacket" width="500" height="600">
-      <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="200" height="200" class="profilepicture">
+     <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="200" height="200" class="profilepicture">
   </div>
 </div>
   <!-- notmenu -->
