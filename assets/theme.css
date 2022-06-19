@@ -6178,8 +6178,10 @@ button.mfp-close {
   background-size: 32px auto;
 }
 .ajaxcart__product__title {
+
   display: block;
-  color: var(--heading);
+  color: #6C1D45;
+  font-weight: 700;
   text-decoration: none;
   font-size: calc(1rem * var(---font-adjust-body));
 }
@@ -11577,4 +11579,12 @@ values__each {
   color: #000000;
   line-height: 22px;
   font-weight: 400;
+}
+
+.cart {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
