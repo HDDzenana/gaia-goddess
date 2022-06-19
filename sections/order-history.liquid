@@ -239,7 +239,7 @@ overflow: hidden;
   </div>
 <!-- order -->
 
- 
+ {%if customer %}
 {% for order in customer.orders %}
 {% paginate customer.orders by 20 %}
 {% if customer.orders.size != 0 %}
@@ -307,6 +307,15 @@ overflow: hidden;
 {% endif %}
 {% endpaginate %}
 {%endfor%}
+{%else%}
+ 
+<script>
+// Simulate a mouse click:
+window.location.href = "/account/register";
+
+// Sim 
+</script>
+{%endif%}
 <!-- endorder -->
 </div>
   <!-- notmenu --> 
