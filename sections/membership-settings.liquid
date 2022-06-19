@@ -18,11 +18,17 @@
   /* position: fixed; */
   filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
 }
-
-.active {
-  background-color: #EB6FBD;
+ 
+li.active 
+ {
+  background-color: #FFD9E5;
   font-weight: 700;
+  border-top: none !important;
+  border: none !important;
+  margin-bottom: -1px;
 }
+ 
+ 
 .accountnav ul {
   margin: 0;
   /* padding-left: 15px !important; */
@@ -120,6 +126,11 @@
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
  }
+ .icon {
+overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: -15px !important;
+  margin-right: 5px;}
 </style>
 
 <div class="customaccount-{{section.id}}"> 
@@ -129,7 +140,16 @@
   <h4 class="menu-title">  {{ menu.title }}  </h4>
   <ul>
     {%- for link in menu.links -%}
-      <li>
+      <li  {% if link.active %}  class="active" {% endif %}>  <div class="icon">
+        {%if link.title contains 'Profile' %}
+        {%render 'profileicon' %}{%endif%}
+        {%if link.title contains 'Membership' %}
+        {%render 'ms' %}{%endif%}
+        {%if link.title contains 'Order' %}
+        {%render 'orderhistory' %}{%endif%} 
+        {%if link.title contains 'Logout' %}
+        {%render 'logout' %}{%endif%} 
+       </div>
         <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
           {{ link.title }}
         </a>
@@ -137,7 +157,7 @@
         {%- if link.links != blank -%}
           <ul>
             {%- for child_link in link.links -%}
-              <li>
+            <li  {% if link.active %}  class="active"{% endif %}>
                 <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
                   {{ child_link.title }}
                 </a>
@@ -145,7 +165,7 @@
                 {%- if child_link.links != blank -%}
                   <ul>
                     {%- for grandchild_link in child_link.links -%}
-                      <li>
+                    <li  {% if link.active %}  class="active"{% endif %}>
                         <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
                           {{ grandchild_link.title }}
                         </a>
@@ -173,12 +193,14 @@
     {%render 'gaia-image',
     image: section.settings.banner_top 
     %}
-    
+    {%if customer%}
     <div class="profilepicturewrapper"> 
     
      <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
   </div>
+  {%endif%}
   </div>
+  {%if customer %}
   <div class="membership-info">
    <h4 class="maroonbold " style="width: 50%; margin: auto; padding: 10px 0;;">
       Current Membership
@@ -206,7 +228,8 @@
       to cancel your active membership
     </p>
    </div>
-  </div>
+  </div> 
+  {%endif%}
 </div>
   <!-- notmenu --> 
 </div>

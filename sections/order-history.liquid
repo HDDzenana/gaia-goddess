@@ -19,10 +19,15 @@
   filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
 }
 
-.active {
-  background-color: #EB6FBD;
+li.active 
+ {
+  background-color: #FFD9E5;
   font-weight: 700;
+  border-top: none !important;
+  border: none !important;
+  margin-bottom: -1px;
 }
+ 
 .accountnav ul {
   margin: 0;
   /* padding-left: 15px !important; */
@@ -103,8 +108,8 @@
     width: 50%;
     background: #FFD9E5;
     padding: 40px 0;
-    border-top-right-radius: 30px;
-    border-top-left-radius: 30px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
     filter: drop-shadow(10px -10px 20px rgba(108, 29, 69, 0.161));
  }
 
@@ -120,6 +125,48 @@
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
  }
+
+ .oh-{{section.id}} {
+  max-width: 90%;
+  margin: auto;
+ }
+ .oh-{{section.id}} th {
+  background-color: #EB6FBD;
+  color: white;
+  font-weight: 700;
+  text-align: center;
+  text-transform: capitalize;
+  overflow: hidden;
+ }
+table {
+  border-color: transparent !important;
+}
+ .customaccount-{{section.id}} table.full {
+ 
+    overflow: hidden;  border: #FFD9E5;
+
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px !important;
+ }
+
+ .oh-{{section.id}} th:first-of-type {
+  border-top-left-radius: 20px;
+  overflow: hidden;
+ }
+
+ .oh-{{section.id}} th:last-of-type {
+  border-top-right-radius: 20px;
+ 
+ }
+
+ .oh-{{section.id}} td, th {
+  border-color: #FFD9E5 !important;
+ }
+ .icon {
+overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: -15px !important;
+  margin-right: 5px;}
 </style>
 
 <div class="customaccount-{{section.id}}"> 
@@ -129,7 +176,17 @@
   <h4 class="menu-title">  {{ menu.title }}  </h4>
   <ul>
     {%- for link in menu.links -%}
-      <li>
+    <li  {% if link.active %}  class="active" {% endif %}>
+      <div class="icon">
+        {%if link.title contains 'Profile' %}
+        {%render 'profileicon' %}{%endif%}
+        {%if link.title contains 'Membership' %}
+        {%render 'ms' %}{%endif%}
+        {%if link.title contains 'Order' %}
+        {%render 'orderhistory' %}{%endif%} 
+        {%if link.title contains 'Logout' %}
+        {%render 'logout' %}{%endif%} 
+       </div>
         <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
           {{ link.title }}
         </a>
@@ -137,7 +194,7 @@
         {%- if link.links != blank -%}
           <ul>
             {%- for child_link in link.links -%}
-              <li>
+            <li  {% if link.active %}  class="active" {% endif %}>
                 <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
                   {{ child_link.title }}
                 </a>
@@ -145,7 +202,7 @@
                 {%- if child_link.links != blank -%}
                   <ul>
                     {%- for grandchild_link in child_link.links -%}
-                      <li>
+                    <li  {% if link.active %}  class="active" {% endif %}>
                         <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
                           {{ grandchild_link.title }}
                         </a>
@@ -173,14 +230,83 @@
     {%render 'gaia-image',
     image: section.settings.banner_top 
     %}
-    
+    {%if customer%}
     <div class="profilepicturewrapper"> 
     
      <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
   </div>
+  {%endif%}
   </div>
 <!-- order -->
 
+ 
+{% for order in customer.orders %}
+{% paginate customer.orders by 20 %}
+{% if customer.orders.size != 0 %}
+  <div class="table-wrap oh-{{section.id}}" >
+    <table class="full">
+      <thead class="desktop-order">
+        <tr>
+          <th>{{ 'customer.orders.date' | t }}</th>
+          <th>Order</th>
+          <th> Order Number </th>
+   
+          <th>{{ 'customer.orders.total' | t }}</th>
+          <th>Download Invoice</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in customer.orders %}
+          <tr class="responsive-order">
+            <th>{{ 'customer.orders.date' | t  | link_to: order.customer_url }}</th>
+            <td>{{ order.created_at | date: format: 'month_day_year'  | link_to: order.customer_url }}</td>
+
+            {% for line_item in order.line_items %}
+            
+              <th>{{ 'customer.order.product' | t }}</th>
+              <td>   <div class="lineimage" style="
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+            ">    {{ line_item.image | img_url: '100x100' | img_tag }} 
+                <p style="color: #6C1D45; font-weight: 700;">
+                {{ line_item.title | strip_html | escape | link_to: line_item.product.url }}
+                </p></div>
+                {%endfor%}
+
+
+            <th class="order-title">{{ 'customer.orders.order_number' | t }}</th>
+
+
+            <td class="order-title">{{ order.name | link_to: order.customer_url }}
+   </td>
+        
+   <th>{{ 'customer.orders.total' | t  | link_to: order.customer_url }}</th>
+   <td>{{- order.total_price | money | link_to: order.customer_url -}}</td>
+            <th>{{ 'customer.orders.payment_status' | t  | link_to: order.customer_url }}</th>
+            <td> <div style="margin-top: 10px; display: flex; justify-content: center; flex-direction: row"><a href="https://api-pdf.vify.io/api/pdf-preview/invoice?shop_domain={{ shop.permanent_domain }}&order_id={{ order.id }}&locale=en" style="background-color: #6c1d45; border-color: #6c1d45; color: #fff; display:flex;padding:10px 15px;margin-bottom:0;font-size:14px;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px; margin-right: 10px; margin-top: 4px; align-self: center" target="_blank"> Download PDF</a></div>
+        </td>
+        
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% else %}
+  <p>{{ 'customer.orders.none' | t }}</p>
+{% endif %}
+
+{% if paginate.pages > 1 %}
+  {%- if settings.show_spacer_lines -%}
+    <hr>
+  {%- endif -%}
+  <div class="pagination">
+    {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+  </div>
+{% endif %}
+{% endpaginate %}
+{%endfor%}
 <!-- endorder -->
 </div>
   <!-- notmenu --> 

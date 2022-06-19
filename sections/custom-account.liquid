@@ -21,10 +21,17 @@
   filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
 }
 
-.active {
-  background-color: #EB6FBD;
+li.active 
+ {
+  background-color: #FFD9E5;
   font-weight: 700;
+  border-top: none !important;
+  border: none !important;
+  margin-bottom: -1px;
 }
+ 
+
+
 .accountnav ul {
   margin: 0;
   /* padding-left: 15px !important; */
@@ -41,6 +48,9 @@
 .accountnav li  a {
   color: #6C1D45 !important;
   font-size: 18px;
+    margin-top: 10px !important;
+    /* margin-left: 5px; */
+
 }
 
 .accountnav li:last-child {
@@ -129,6 +139,12 @@ input[type="radio"]:checked::before{
   font-weight: bolder;
   font-size: 21px;
 }
+
+.icon {
+overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: -15px !important;
+  margin-right: 5px;}
 </style>
 
 <div class="customaccount-{{section.id}}"> 
@@ -138,15 +154,27 @@ input[type="radio"]:checked::before{
   <h4 class="menu-title">  {{ menu.title }}  </h4>
   <ul>
     {%- for link in menu.links -%}
-      <li>
-        <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
+    <li  {% if link.active %}  class="active" {% endif %}>
+      <div class="icon">
+        {%if link.title contains 'Profile' %}
+        {%render 'profileicon' %}{%endif%}
+        {%if link.title contains 'Membership' %}
+        {%render 'ms' %}{%endif%}
+        {%if link.title contains 'Order' %}
+        {%render 'orderhistory' %}{%endif%} 
+        {%if link.title contains 'Logout' %}
+        {%render 'logout' %}{%endif%} 
+       </div>
+      <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
+   
           {{ link.title }}
+      
         </a>
 
         {%- if link.links != blank -%}
           <ul>
             {%- for child_link in link.links -%}
-              <li>
+            <li  {% if link.active %}  class="active" {% endif %}>
                 <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
                   {{ child_link.title }}
                 </a>
@@ -154,7 +182,7 @@ input[type="radio"]:checked::before{
                 {%- if child_link.links != blank -%}
                   <ul>
                     {%- for grandchild_link in child_link.links -%}
-                      <li>
+                    <li  {% if link.active %}  class="active" {% endif %}>
                         <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
                           {{ grandchild_link.title }}
                         </a>
@@ -178,11 +206,12 @@ input[type="radio"]:checked::before{
  
 
 <div class="content-{{section.id}}">
+  {%if customer%}
   <div class="topbanner">
     {%render 'gaia-image',
     image: section.settings.banner_top 
     %}
-    
+   
     <div class="profilepicturewrapper"> 
     
      <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
@@ -197,8 +226,9 @@ input[type="radio"]:checked::before{
 
     </div> 
    </div> 
+   {%endif%}
 </div>
-  <!-- notmenu --> 
+ 
 </div>
  
 {% schema %}

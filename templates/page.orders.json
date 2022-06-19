@@ -2,11 +2,23 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
+        "show_page_title": true
+      }
+    },
+    "1655669157ee52f3f6": {
+      "type": "order-history",
+      "settings": {
+        "bg": "transparent",
+        "menu_bg": "#FEF1F5",
+        "banner_top": "shopify:\/\/shop_images\/image_4.png",
+        "menu": "my-account"
       }
     }
   },
   "order": [
-    "main"
+    "main",
+    "1655669157ee52f3f6"
   ]
 }
