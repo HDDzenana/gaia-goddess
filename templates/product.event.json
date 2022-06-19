@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "product",
-      "disabled": true,
       "blocks": {
         "title": {
           "type": "title",
@@ -134,7 +133,7 @@
       ],
       "settings": {
         "bg": "#fafafa",
-        "heading_color": "#6C1D45",
+        "heading_color": "#6c1d45",
         "arrow_color": "#000000",
         "main_heading": "A Quick Glance atexploring Cairo, Egypt",
         "main_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sagittis amet diam cras cursus. Mi et, egestas nec mollis pharetra."

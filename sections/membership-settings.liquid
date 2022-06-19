@@ -15,12 +15,10 @@
   margin: auto;
   border-radius: 40px;
   overflow: hidden;
-  position: fixed;
-  margin-left: 50px;
-  margin-top: 50px;
+  /* position: fixed; */
   filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
 }
-
+ 
 li.active 
  {
   background-color: #FFD9E5;
@@ -30,8 +28,7 @@ li.active
   margin-bottom: -1px;
 }
  
-
-
+ 
 .accountnav ul {
   margin: 0;
   /* padding-left: 15px !important; */
@@ -48,9 +45,6 @@ li.active
 .accountnav li  a {
   color: #6C1D45 !important;
   font-size: 18px;
-    margin-top: 10px !important;
-    /* margin-left: 5px; */
-
 }
 
 .accountnav li:last-child {
@@ -66,13 +60,13 @@ li.active
   padding-bottom: 15px;
 }
 .accountnav-wrapper {
-  width: 500px;
+  width: 25%;
   display: flex;
 }
 /* END MENU STYLING - GENERAL  */
 .content-{{section.id}} {
   background:{{section.settings.bg}};
-  width: 100%;
+  width: 75%;
 }
 
 .topbanner  * {
@@ -107,40 +101,32 @@ li.active
 .acfimg {
   display: none !important; 
 }
+ .member-level {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background: #FFD9E5;
+    padding: 40px 0;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    filter: drop-shadow(10px -10px 20px rgba(108, 29, 69, 0.161));
+ }
 
-/* BUTTONS STYLING */
-input[type="radio"]{
-   appearance: none;
-   border: 1px solid #9d9898;
-   width: 15px;
-   height: 15px;
-   content: none;
-   outline: none;
-   margin: 0;
-   border-radius: 0px !important;
-   /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
-}
-
-input[type="radio"]:checked {
-  appearance: none;
-  outline: none;
-  padding: 0;
-  background-color: #6C1D45 !important;
-  border: 1px solid rgb(227, 227, 227);
-  border-radius: 0px !important;
-  content: none;
-  border: none;
-}
-
-input[type="radio"]:checked::before{
-  position: absolute;
-  color: #6C1D45 !important;
-  border: 1px solid #e3dddd;
-  font-weight: bolder;
-  font-size: 21px;
-}
-
-.icon {
+ .memberdeactivate {
+  display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    filter: drop-shadow(9px 10px 20px rgba(108, 29, 69, 0.161));
+    background-color: white;
+    /* padding: 40px 0; */
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+ }
+ .icon {
 overflow: hidden;
   margin-top: 10px;
   margin-bottom: -15px !important;
@@ -154,8 +140,7 @@ overflow: hidden;
   <h4 class="menu-title">  {{ menu.title }}  </h4>
   <ul>
     {%- for link in menu.links -%}
-    <li  {% if link.active %}  class="active" {% endif %}>
-      <div class="icon">
+      <li  {% if link.active %}  class="active" {% endif %}>  <div class="icon">
         {%if link.title contains 'Profile' %}
         {%render 'profileicon' %}{%endif%}
         {%if link.title contains 'Membership' %}
@@ -165,16 +150,14 @@ overflow: hidden;
         {%if link.title contains 'Logout' %}
         {%render 'logout' %}{%endif%} 
        </div>
-      <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
-   
+        <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
           {{ link.title }}
-      
         </a>
 
         {%- if link.links != blank -%}
           <ul>
             {%- for child_link in link.links -%}
-            <li  {% if link.active %}  class="active" {% endif %}>
+            <li  {% if link.active %}  class="active"{% endif %}>
                 <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
                   {{ child_link.title }}
                 </a>
@@ -182,7 +165,7 @@ overflow: hidden;
                 {%- if child_link.links != blank -%}
                   <ul>
                     {%- for grandchild_link in child_link.links -%}
-                    <li  {% if link.active %}  class="active" {% endif %}>
+                    <li  {% if link.active %}  class="active"{% endif %}>
                         <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
                           {{ grandchild_link.title }}
                         </a>
@@ -206,34 +189,53 @@ overflow: hidden;
  
 
 <div class="content-{{section.id}}">
-  {%if customer%}
   <div class="topbanner">
     {%render 'gaia-image',
     image: section.settings.banner_top 
     %}
-   
+    {%if customer%}
     <div class="profilepicturewrapper"> 
     
      <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
   </div>
+  {%endif%}
   </div>
-  <div class="editform">
+  {%if customer %}
+  <div class="membership-info">
+   <h4 class="maroonbold " style="width: 50%; margin: auto; padding: 10px 0;;">
+      Current Membership
 
- <div class="form-vertical" style="padding:0 5px ;">
-      <!-- <p class="registration-p">or use your email for registration:</p> -->
-      
-      {% include 'cf-app.customers.register' %}
-
-    </div> 
-   </div> 
-   {%endif%}
+      <br>
+      <br> <br>
+     
+   </h4>         
+    <div class="member-level">
+                <img src="{{section.settings.image | img_url: '100x'}}" style="
+                width: 80px;
+                height: 80px;
+                object-fit: contain;
+            ">
+                
+                <h1 class="maroonbold" style="
+                margin: 10px 5px;"> Free Member </h1>
+                
+            <p>    {{ customer.account.created_at  }}
+</p> </div>
+   <div class="memberdeactivate">
+    <p class="grayregular">
+      Please click 
+     <a href="/account/logout">here </a>  
+      to cancel your active membership
+    </p>
+   </div>
+  </div> 
+  {%endif%}
 </div>
- 
+  <!-- notmenu --> 
 </div>
- 
 {% schema %}
 {
-  "name": "Account",
+  "name": "Membership Settings",
   "class": "transparent-header",
   "settings": [
     {
@@ -252,6 +254,11 @@ overflow: hidden;
     "id": "banner_top",
     "label": "Banner"
    },
+  {
+    "type": "image_picker",
+    "id": "image",
+    "label": "Membership Image"
+  },
     {
       "type": "link_list",
       "id": "menu",
@@ -272,7 +279,7 @@ overflow: hidden;
     }
   ], "presets":[
   {
-    "name":"Custom Account"
+    "name":"Membership Settings"
   }
 ]
 }
