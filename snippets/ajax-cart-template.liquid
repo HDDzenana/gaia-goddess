@@ -157,11 +157,12 @@
 
 <script id="JsQty" type="text/x-template">
 {% raw %}
-<div class="qty js-qty">
+<div class="qty js-qty"> 
 	<button type="button" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemMinus}}">
 		{% endraw %} {%- render 'icon-minus' -%} {% raw %}
 		<span class="fallback-text">&minus;</span>
 	</button>
+	<p>  Attendees </p>
 	<input type="number" class="qty__input js-qty__input" value="{{it.itemQty}}" min="1" data-id="{{it.id}}" aria-label="quantity" pattern="[0-9]*" name="{{it.inputName}}" id="{{it.inputId}}">
 	<button type="button" class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemAdd}}">
 		{% endraw %} {%- render 'icon-plus' -%} {% raw %}
