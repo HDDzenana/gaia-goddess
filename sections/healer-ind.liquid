@@ -91,6 +91,7 @@
 
 .healer-heading__title {
   margin-bottom: 0;
+  line-height: 30px !important;
   color: {{section.settings.healer_title_color}}}
 
 .healer-heading__subtitle {
@@ -180,7 +181,7 @@
 
             <div class="healer-heading">
               <div class="healer-heading__info">
-                <h1 class="healer-heading__title">{{ block.settings.title }}</h1>
+                <h1 class="healer-heading__title" style="line-height:21.6px ;"> {{ block.settings.title }}</h1>
                 <p class="healer-heading__subtitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
                 <div class="btnlike">
                   {{block.settings.textbtn}}
@@ -190,8 +191,8 @@
 
             </div>
 
-            <p class="healer-description">{{ collection.description }}</p>
-
+            <p class="healer-description">{{ collection.description }} <br> </p>
+ <br>
           </div>
           <div class="healer-heading__icons">
             {% if block.settings.show_instagram_icon %}
@@ -453,5 +454,9 @@
   .breadcrumbs__link[aria-current="page"]:hover,
   .breadcrumbs__link[aria-current="page"]:focus {
     text-decoration: underline;
+  }
+
+  .healer-description {
+    line-height: 19.2px;
   }
 </style>

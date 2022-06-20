@@ -11595,3 +11595,7 @@ values__each {
   padding-top: 10px;
   border-top: 1px solid #EB6FBD;
 }
+
+p, .p {
+  line-height: 19.2px;
+}
