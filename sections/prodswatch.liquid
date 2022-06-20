@@ -3,7 +3,9 @@
 <script src="{{ 'component-switch-blocks.js' | asset_url }}" defer="defer"></script>
 
 <style>
-
+.switch-blocks .switch-blocks-{{ section.id }}- {  padding-bottom: 100px; 
+    
+    margin: auto; margin-top: 100px; margin-bottom: 50px; display: flex; flex-direction: column-reverse !important;}
   .wrapthis .button, .wrappthis button {
     border-radius: 0 !important ;
   }
@@ -46,11 +48,11 @@
     max-width: 40vw;
   }
   .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__right {
-    margin-left: 10px;
+    /* margin-left: 10px;
     width: 40vw;
     max-height: 40vh;
     
-    max-width: 40vw;
+    max-width: 40vw; */
   } 
   .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .inner-headings {
     text-align: left !important;
@@ -142,14 +144,13 @@
     justify-items: center;
   }
       .switch-blocks-{{ section.id }}- .main-image .gaia-image img  {
-  max-height: 20vh;
+ 
   width: 100%;
   object-fit: contain;
 	height: 100%;
       }
     .switch-blocks-{{ section.id }}-  .main-image .gaia-image {
-      min-height: 20vh;
-      max-height: 20vh;
+ 
     }
 
   	.buttontext { 
@@ -285,9 +286,9 @@
   }
 
   .switch-blocks-{{ section.id }}- .buttons-container button { 
-     min-width: 40vw !important; 
+     /* min-width: 40vw !important; 
      height: 25vh;
-     margin-bottom: 10px;
+     margin-bottom: 10px; */
   }
 
  
@@ -397,9 +398,10 @@ overflow: hidden;
     <p>{{section.settings.disclaimer}}</p>
   </div>
 </div>
-<div class="switch-blocks switch-blocks-{{ section.id }}-" style="padding-bottom: 100px; 
-    
-    margin: auto; margin-top: 100px; margin-bottom: 50px; display: flex; flex-direction: column-reverse;">
+<div class="switch-blocks switch-blocks-{{ section.id }}-" style="
+display: flex;
+flex-direction: column-reverse;
+margin: auto">
  
   <div class="inner">
     {% unless section.settings.heading == blank and section.settings.subheading == blank %}
@@ -636,3 +638,25 @@ overflow: hidden;
   ]
 }
 {% endschema %}
+
+<style>
+  @media only screen and (max-width: 900px) {
+    .wrapthis {
+      flex-direction: column !important;
+    }
+    .switch-blocks .buttons-container {
+      flex-wrap: wrap !important;
+    }
+
+    .switch-blocks-{{ section.id }}- .inner {
+  padding: 0 !important;
+    }
+    .switch-blocks-{{ section.id }}- .inner {
+      margin: 0 !important;
+    }
+
+    .switch-blocks .switch-blocks-{{ section.id }}- {
+      margin: 0 !important;
+    padding: 0 !important}
+  }
+ </style>

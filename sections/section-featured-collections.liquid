@@ -119,6 +119,7 @@
 
 .wrapper-section__heading {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -257,7 +258,9 @@
           {%when 'product'%}
          
        {%assign product = block.settings.product %}
-
+       <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid_container{% endif %}" >
+        <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}" {% if carousel %} data-collection-slider {% endif %}   >
+      
           <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
             <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="428" height="300px" object-fit="cover" style="object-fit:cover;">
 
@@ -286,7 +289,7 @@
      <a  class="gbtn btn btn--product-feature" href="{{product.url}}"
        style="float: left;">Register Now</a>  
           </div>
- 
+ </div> </div>
 {%endcase%}
         {% endfor %}
 
@@ -530,5 +533,25 @@ color: #6C1D45;
 }
 .healer-card .one-quarter .mobile--one-whole * {
   text-align: left;
+}
+
+@media only screen and (max-width: 900px) {
+  .filterino {
+    display: none !important;
+  }
+
+  .healer-card .one-quarter .mobile--one-whole {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 40px !important;
+    padding-top: 50px !important;
+  }
+  .mobile--one-whole {
+    width: calc(100vw - var(--gutter) * 2 - var(--grid-gutter));
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    margin: auto;
+}
 }
 </style>

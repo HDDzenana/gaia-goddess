@@ -11651,3 +11651,10 @@ p, .p {
  #ymq-price-addons {
   display: none;
  }
+
+
+ @media only screen and (max-width: 900px) {
+  .product-single__gallery {
+    overflow: hidden;
+  }
+ }

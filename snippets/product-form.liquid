@@ -195,7 +195,7 @@
   {%- comment -%}
     Buttons
   {%- endcomment -%}
-  <div class="buttons-grid{% if show_payment_button %} buttons-grid--half{% endif %}" style="display: flex; align-items: center">
+  <div class="buttons-grid{% if show_payment_button %} buttons-grid--half{% endif %}" style="display: flex; flex-wrap: wrap; align-items: center">
     <h1 class="maroonbold product__price" data-price-wrapper>
       {%- unless product == blank -%}
         <h1 class="maroonbold" data-product-price>{{ current_variant.price | money }} </h1>
