@@ -11638,3 +11638,16 @@ p, .p {
   display: flex !important;
   flex-wrap: wrap;
  }
+
+ .ymq_lable {
+  margin-left: 10px;
+  color: #6C1D45
+ }
+ .ymq-options-box {
+  display: flex;
+  flex-direction: row-reverse;
+ }
+
+ #ymq-price-addons {
+  display: none;
+ }
