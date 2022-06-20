@@ -181,6 +181,7 @@ h2 span {
   max-width: 100%;
   transition: none;
   padding-bottom: 0;
+ 
 }
 .js-drawer-open-left .drawer--left{
   transform: none;
@@ -222,3 +223,13 @@ padding-top: 25px !important;
   background: #FEF1F5 !important; 
 }
  
+
+@media only screen and (min-width: 1000px) {
+  .js-drawer-open-right .drawer--right {
+    min-width: 500px !important;
+    left: 90% !important
+  }
+  .js-drawer-open-right .drawer--right > body {
+    opacity: .4;
+  }
+}
