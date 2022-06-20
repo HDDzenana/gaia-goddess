@@ -1,0 +1,6 @@
+
+<!--  Spice Product Addons Snippet Starts -->
+
+<div id="spiceaddonsappid">{% assign product_collections = product.collections | map: "id" %}{% if product_collections %}<input type="hidden" id="sgcollections" value="{{ product_collections | join: ',' }}"/>{% endif %}</div>
+
+<!--   Spice Product Addons Snippet ends  -->

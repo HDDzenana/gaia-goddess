@@ -1,0 +1,638 @@
+{{ 'titan-fp.css' | asset_url | stylesheet_tag }}
+
+<script src="{{ 'component-switch-blocks.js' | asset_url }}" defer="defer"></script>
+
+<style>
+
+  .wrapthis .button, .wrappthis button {
+    border-radius: 0 !important ;
+  }
+  .switch-blocks .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 60vw;
+    margin: auto;
+  }
+  .switch-blocks .buttons-container button {
+    min-width: 120px;
+    text-align: center;
+    margin: auto;
+   border-radius: 0 !important;
+  }
+  .switch-blocks .inner {
+    max-width: 100vw;
+    margin: auto;
+  } 
+  .switch-blocks-{{ section.id }}- .inner   {
+    padding: 0 {{ section.settings.padding }}vw ;
+
+    margin-bottom: 20px;
+  }
+  .switch-blocks-{{ section.id }}- .inner .inner-content {
+ 	display: flex;
+    flex-direction: row;
+   max-height: 40vh;
+   align-items: center;
+   justify-items: center;
+    
+    max-width: 80vw;
+    margin: auto;
+  }
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left {
+    margin-right: 10px;
+    max-height: 40vh;
+    
+    max-width: 40vw;
+  }
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__right {
+    margin-left: 10px;
+    width: 40vw;
+    max-height: 40vh;
+    
+    max-width: 40vw;
+  } 
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .inner-headings {
+    text-align: left !important;
+    text-transform: uppercase;
+    /* margin-top: 40px; */
+  }
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .inner-headings .inner-heading {
+    font-size: 48px;
+    letter-spacing: 2px;
+    color: #fff;
+  }
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .inner-headings .inner-subheading {
+    font-size: 14px;
+}
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .contents-btn {
+    text-align: center;
+    margin-top: 15px;
+    padding: 0 !important;
+    margin-bottom: 50px;
+ 
+  }
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .contents-btn a {
+    display: block;
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: #58cc4b;
+    color: white;
+    font-size: 12px;
+    min-width: 150px;
+    max-width: 200px;
+    border: 1px solid #58cc4b ;
+    border-radius: 0px !important;
+    padding: 10px;
+    letter-spacing: 1.5px;
+    }
+
+ 
+  .switch-blocks-{{ section.id }}- .inner .inner-content .content-desc p {
+    margin: 0;
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 1.2px;
+    font-weight: 100;
+  }
+  .switch-blocks-{{ section.id }}- {
+    background: {{ section.settings.background }};
+  }
+  .switch-blocks-{{ section.id }}- .switch-block {
+    display: none;
+  }
+  .switch-blocks-{{ section.id }}- :first-child .switch-block {
+    display: block;
+  }
+  .switch-blocks-{{ section.id }}- .content-img img{
+    display: block;
+    max-width: 100%;
+    ;
+  }
+  .switch-blocks-{{ section.id }}- .main-image img  {
+    display: block;
+    max-width: 100%;
+  }
+  .switch-blocks-{{ section.id }}- .content-img {
+    margin: 20px 0;
+  }
+  .switch-blocks-{{ section.id }}- .main-image .gaia-image img  {
+  max-height: 40vh;
+  width: 38vw;
+  object-fit: contain;
+	min-width: 38vw;
+}
+/* Mobile */
+@media only screen and (max-width:768px) {
+    .switch-blocks-{{ section.id }}- .inner .inner-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 40vh;
+    max-height: 40vh;
+    margin-bottom: 5%;
+  	}
+  
+    .switch-blocks-{{ section.id }}- .buttons-container {
+    display: flex !important;
+    flex-direction: row; 
+    height: max-content !important;
+      overflow: scroll;
+    justify-items: center;
+  }
+      .switch-blocks-{{ section.id }}- .main-image .gaia-image img  {
+  max-height: 20vh;
+  width: 100%;
+  object-fit: contain;
+	height: 100%;
+      }
+    .switch-blocks-{{ section.id }}-  .main-image .gaia-image {
+      min-height: 20vh;
+      max-height: 20vh;
+    }
+
+  	.buttontext { 
+      text-align: center;
+ 
+    height: 5vh;
+    margin: 5px 0;
+    border-bottom: 1px solid #DADADA !important;
+    margin-bottom: 0;
+    color: #6C1D45;
+    text-transform: uppercase;
+    font-weight: 700;
+
+
+	}
+  .switch-blocks-{{ section.id }}- .buttons-container {
+   overflow-y: scroll;
+  }
+	
+    /* .switch-blocks-{{ section.id }}- .buttons-container button {
+    min-width: 80vw !important;
+    max-width: 80vw !important;
+    } */
+
+
+  h1.subheading-{{ block.id }}  {
+    text-align: left;
+  }
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left {
+    margin-right: 10px;
+    width: 80vw;
+    text-align: center;
+  }
+
+  .content-desc{
+    text-align: left;
+  }
+   .switch-blocks-{{ section.id }}- .inner {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    .switch-blocks-{{ section.id }}- .inner .main-subheading {
+      font-size: 12px !important;
+    }
+    .switch-blocks-{{ section.id }}- .inner .main-heading {
+      font-size: 22px !important;
+      letter-spacing: 1.4px;
+    }
+    .switch-blocks-{{ section.id }}- .inner .inner-content {
+      margin-top: 50px;
+    }
+    .switch-blocks-{{ section.id }}- .inner .inner-headings {
+      padding-top: 0px;
+    }
+    .switch-blocks-{{ section.id }}- .inner .inner-headings > * {
+      text-align: center;
+    }
+    .switch-blocks-{{ section.id }}- .inner-content {
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+
+    }
+    .switch-blocks-{{ section.id }}-  {}
+    .switch-blocks-{{ section.id }}- .main-image img  {
+      max-width: 100%;
+      height: 100%;
+    }
+
+    .switch-blocks-{{ section.id }}- .gaia-image {
+      margin: 0;
+      padding: 0;
+
+
+    }
+    .switch-blocks-{{ section.id }}- .buttons-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 300px;
+      margin: auto;
+    }
+    .switch-blocks-{{ section.id }}- .buttons-container button {
+      margin: 0 2px;
+      min-width: 110px;
+    }
+    .switch-blocks-{{ section.id }}- .buttons-container button img {
+      /* min-height: 200px !important;
+      max-height: 200px !important; */
+    } 
+    .switch-blocks-{{ section.id }}- .contents-btn a {
+      margin: auto;
+    }
+     .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left {
+     margin-right: 0px;
+     max-width: 80vw;
+    }
+    .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__right {
+      margin-left: 0px;
+      height: 100%;
+    } 
+  
+
+      @keyframes shadow-pulse
+      {
+        0% {
+          box-shadow: 0 0 0 0px var(--btnColor);
+        }
+        100% {
+          box-shadow: 0 0 0 4px rgba(255, 255, 255, 0);
+        }
+      }
+
+
+  .switch-blocks .buttons-container  {
+    display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+
+  min-width: 95vw;
+  margin-top: 40px; 
+  max-width: 98vw;
+  }
+  .switch-blocks-{{ section.id }}- h1, .h1 {
+    font-size: 7vmin;
+  }
+
+  .switch-blocks-{{ section.id }}- .buttons-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    height: max-content;
+        justify-items: center;
+  }
+
+  .switch-blocks-{{ section.id }}- .buttons-container button { 
+     min-width: 40vw !important; 
+     height: 25vh;
+     margin-bottom: 10px;
+  }
+
+ 
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .contents-btn { 
+
+    margin-bottom: 0px;
+  }
+  
+}
+/* TABLET */
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1144px) {
+
+
+  .switch-blocks-{{ section.id }}- .inner .inner-content .inner-content__left .contents-btn { 
+
+    float: left;
+  }
+      .switch-blocks-{{ section.id }}- .inner .inner-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    height: 40vh;
+    max-height: 40vh;
+    margin: auto;
+    padding: 0;
+  }
+      .switch-blocks-{{ section.id }}- h1, .h1 {
+    font-size: 5vmin;
+  } 
+  .buttontext {
+    margin-bottom: 10px !important;
+  }
+    h1, .h1 {
+      font-size: 35px;
+      text-align: left;
+    }
+     .switch-blocks-{{ section.id }}- .buttons-container {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;  
+    height: max-content !important;
+    justify-items: center;
+  }
+    
+
+     .switch-blocks-{{ section.id }}- .main-image .gaia-image img  { 
+      min-height: 30vh !important;
+      max-height: 30vh !important;
+
+     }
+.switch-blocks .buttons-container .block-btn-{{block.id}} {
+
+      width: 250px;
+    height: 250px;
+}
+
+  .switch-blocks .buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    max-width: 98vw;
+  }
+  .switch-blocks .buttons-container button {
+    min-width: 120px;
+    max-width: 300px;
+    margin: 0 10px;
+    outline: none;
+    font-weight: 900;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 12px !important;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    transition: background 100ms linear;
+    cursor: pointer;
+    height: 25vh;
+    max-width:40vw;
+    width:40vw;
+    display: flex;
+    grid-template-rows: 1fr 1fr;
+    margin-bottom: 20px;
+  }
+  
+  .gaia-image {
+    margin: 0;
+  }
+  }
+</style>
+<div class="wrapper wrapthis"style="
+display: flex;
+flex-direction: row;
+align-items: center;
+overflow: hidden;
+"> 
+  <div class="sidetext" style="min-width: 25%;">
+    <div class="textualcontentgg" style="width: 100%; margin: auto"> 
+    <p class="pink" style="text-align:left;">
+    {{section.settings.where}}</p>
+    <h1 class="maroonbold">{{section.settings.header}}</h1>
+    <p> {{section.settings.desc}}</p>
+
+    <br>
+    <p>{{section.settings.disclaimer}}</p>
+  </div>
+</div>
+<div class="switch-blocks switch-blocks-{{ section.id }}-" style="padding-bottom: 100px; 
+    
+    margin: auto; margin-top: 100px; margin-bottom: 50px; display: flex; flex-direction: column-reverse;">
+ 
+  <div class="inner">
+    {% unless section.settings.heading == blank and section.settings.subheading == blank %}
+    
+    
+    {% endunless %}
+
+  
+    {% for block in section.blocks %}
+    {% assign products = all_products[block.settings.product] %}
+    <style>
+      .subheading-{{ block.id }} {
+        color:{{ section.settings.switch_btn_color }};
+        font-family: "Raleway";
+        font-size: 4vmin; 
+      }
+    </style>
+      <div class="switch-block switch-block-{{ block.id }}-" {% unless forloop.first %} style="display: none;" {% endunless %} data-id={{ block.id }}>
+        <div class="inner-content" style="margin-top: 50px;">
+
+           <div class="inner-content__right">
+          <div class="main-image">
+            {% if block.settings.main_image != blank %}
+              {% render 'gaia-image' 
+                image: block.settings.main_image
+                mobile_image: block.settings.mobile_main_image
+                lazy_loading: false
+            %} 
+        
+               {% endif %}
+          </div>
+        </div>
+           
+         
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="buttons-container titanbutton">
+    {% for block in section.blocks %}
+  
+    <style>
+   
+ 
+    .buttontext {
+      min-height: 5vh;
+    display: flex;
+    margin: 5px 0;
+    align-items: center;
+    height: 5vh;
+    margin: 5px 0;
+    border-bottom: 1px solid #DADADA ;
+    margin-bottom: 0;
+    color: #6C1D45;
+    text-transform: uppercase;
+    font-weight: 700;
+    justify-content: center;
+    text-align: center;
+     text-transform: uppercase;
+    }
+
+      .switch-blocks .buttons-container .selected-{{ block.id }} {
+      
+        border-bottom: 2.5px solid #EB6FBD;
+      }
+      .switch-blocks .buttons-container .block-btn-{{ block.id }}:hover { 
+        opacity: 0.8;
+
+      }
+
+      .switch-blocks .buttons-container .block-btn-{{ block.id }}:hover {
+        /* background: {{ block.settings.switch_btn_color }}; */
+      }
+
+      .block-btn block-btn-{{ block.id }} img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    .inner {
+      min-height: 320px;
+    }
+    </style>
+ <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
+      <button class="block-btn block-btn-{{ block.id }} {% if forloop.first %} selected-{{block.id}} {% endif %}" data-id={{ block.id }}>
+        <img src="{{block.settings.sub_image | image_url: width:250}}" alt="{{block.settings.sub_image.alt | escape }}"  loading="lazy" >
+        <div class="buttontext">
+        {{ block.settings.switch_btn_title }}
+      </div>
+        <a href="{{ block.settings.product.url}}" style="text-decoration: none;">
+    
+    </a> 
+      </button>
+    </div>
+ 
+
+    {% endfor %}
+  </div>
+</div>
+</div>
+
+
+
+
+
+<script>
+  const switchBlocks = () => {
+    const switchButtons = document.querySelectorAll('.switch-blocks-{{ section.id }}- .block-btn');
+    const switchBlocks = document.querySelectorAll('.switch-blocks-{{ section.id }}- .switch-block');
+    switchButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const id = btn.getAttribute('data-id')
+        btn.classList.add(`selected-${id}`);
+        console.log(e.target)
+        switchButtons.forEach(el => {
+          const id = el.getAttribute('data-id')
+          if (e.target.getAttribute('data-id') !== id) {
+            el.classList.remove(`selected-${id}`);
+          }
+          
+        })
+        const btnId = btn.getAttribute('data-id');
+        switchBlocks.forEach(block => {
+          const blockId = block.getAttribute('data-id');
+          if ( btnId === blockId ) {
+            block.style.display = 'block';
+          } else {
+            block.style.display = 'none';
+          }
+        })
+      })
+    })
+  } 
+  switchBlocks();
+  document.addEventListener('shopify:section:load', switchBlocks);
+</script>
+
+
+{% schema %}
+{
+  "name":"Switch blocks",
+  "tag":"section",
+  "settings": [
+   {
+    "type": "text",
+    "id": "where",
+    "label": "When and Where",
+    "default": "June 4 to June 11, 2022"
+   },
+  {
+    "type": "text",
+    "id": "header",
+    "label": "Header",
+    "default": "Schedule"
+  },
+ {
+  "type": "textarea",
+  "id": "desc",
+  "label": "Description",
+  "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum."
+ },
+{
+  "type": "text",
+  "id": "disclaimer",
+  "label": "Disclaimer",
+  "default": "*Host and schedule subject to change." 
+},
+ 
+   {
+     "type": "color",
+     "id": "heading_color",
+     "label": "Block Heading Colors",
+     "default": "#FFFFFF"
+
+   },
+ 
+ 
+    {
+      "type":"header",
+      "content": "general"
+    },
+  
+     {
+      "type":"select",
+      "id":"padding",
+      "label":"Vertical padding",
+      "default":"10",
+      "options":[
+        {
+          "value":"2",
+          "label":"Small"
+        },
+        {
+          "value":"6",
+          "label":"Medium"
+        },
+        {
+          "value":"10",
+          "label":"Large"
+        }
+      ],
+      "info":"Vertical padding in view heights (2/6/10)"
+    }
+  ],
+    "blocks": [
+    {
+      "type": "text",
+      "name": "Content block",
+      "settings": [
+        {
+          "type":"header",
+          "content": "buttons"
+        },
+        {
+          "type":"text",
+          "id":"switch_btn_title",
+          "label":"Switch button title",
+          "default":"Switch Button"
+        },
+   
+  
+        {
+          "type":"image_picker",
+          "id":"main_image",
+          "label":"Main image",
+          "info":"Main image on the left"
+        } 
+      ]
+    }
+  ],
+  "presets":[
+    {
+      "name":"Switch blocks"
+    }
+  ]
+}
+{% endschema %}

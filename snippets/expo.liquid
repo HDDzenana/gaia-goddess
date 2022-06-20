@@ -1,0 +1,13 @@
+<script src="{{ 'expo-init.js' | asset_url }}"></script>
+          <script>
+                var expoCurrentCart = {{ cart | json }}
+                var expoCurrentPage = "{{ request.page_type }}"
+          </script>
+          {% if request.page_type == 'product' %}
+          
+              <script>
+                  var currentProduct = {{ product | json }}
+              </script>
+          
+          {% endif %}
+          

@@ -27,12 +27,6 @@
             "tab_content_5": ""
           }
         },
-        "75839429-9cd7-45bf-bc60-748edd7cefe2": {
-          "type": "custom_liquid",
-          "settings": {
-            "custom_liquid": "<p class=\"pink\"> Addons: <\/p>"
-          }
-        },
         "form": {
           "type": "form",
           "settings": {
@@ -49,7 +43,6 @@
       "block_order": [
         "title",
         "description",
-        "75839429-9cd7-45bf-bc60-748edd7cefe2",
         "form",
         "social-sharing"
       ],
@@ -57,6 +50,56 @@
         "image_gallery": "zoom",
         "enable_video_looping": false,
         "bg_color": ""
+      }
+    },
+    "16557573091d4ff900": {
+      "type": "prodswatch",
+      "blocks": {
+        "1a2adb16-83f7-4d38-b129-6f7b9dff334a": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "Switch Button",
+            "product": "this is <br> product   description tpp",
+            "switch_btn_color": "#fff",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "Learn More",
+            "content_btn_url": ""
+          }
+        },
+        "a937477e-6738-467d-a0b7-42fee2993af5": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "Switch Button",
+            "product": "this is <br> product   description tpp",
+            "switch_btn_color": "#fff",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "Learn More",
+            "content_btn_url": ""
+          }
+        },
+        "45077e2a-49ae-443c-9db0-69c2a4b8114c": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "Switch Button",
+            "product": "this is <br> product   description tpp",
+            "switch_btn_color": "#fff",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "Learn More",
+            "content_btn_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "1a2adb16-83f7-4d38-b129-6f7b9dff334a",
+        "a937477e-6738-467d-a0b7-42fee2993af5",
+        "45077e2a-49ae-443c-9db0-69c2a4b8114c"
+      ],
+      "settings": {
+        "background": "#3d3d3d",
+        "padding": "10"
       }
     },
     "165575462437461494": {
@@ -70,21 +113,21 @@
         "text_alignment": "left",
         "mobile_button_position": "left",
         "showpointmobile": false,
-        "image_1": "shopify:\/\/shop_images\/image_14_dbdea3ed-124b-480b-9813-976ec8de59f1.png",
+        "image_1": "shopify:\/\/shop_images\/omar-elsharawy-pwMbtwA9LRc-unsplash.png",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
         "caption_color": "",
         "caption": "",
         "text_color": "#6c1d45",
-        "heading": "A Retreat Experience\nfor Yoga lovers",
+        "heading": "A Travel Experience\nfor History lovers",
         "subheading": "",
         "ssubheading_color": "#6c1d45",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
         "button_text": "Add to cart",
         "button_link": "",
         "button_color": "#6c1d45",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
         "video_url": "",
         "bg_color": ""
       }
@@ -144,7 +187,7 @@
           "type": "faq",
           "settings": {
             "checkbox_expanded": false,
-            "title": "What Yoga Styles are Taught on Retreat?",
+            "title": "What is The Daily Itinerary on the Trip?",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>"
           }
         },
@@ -160,7 +203,7 @@
           "type": "faq",
           "settings": {
             "checkbox_expanded": false,
-            "title": "What Yoga Styles are Taught on Retreat?",
+            "title": "What is The Daily Itinerary on the Trip?",
             "content": "<p>FAQ content<\/p>"
           }
         },
@@ -168,7 +211,7 @@
           "type": "faq",
           "settings": {
             "checkbox_expanded": false,
-            "title": "Can we Book Extra Yoga Classes During the Retreat?",
+            "title": "What is The Daily Itinerary on the Trip?",
             "content": "<p>FAQ content<\/p>"
           }
         },
@@ -176,7 +219,7 @@
           "type": "faq",
           "settings": {
             "checkbox_expanded": false,
-            "title": "How Many People Assist the Yoga Retreat?",
+            "title": "What is The Daily Itinerary on the Trip?",
             "content": "<p>FAQ content<\/p>"
           }
         },
@@ -184,7 +227,7 @@
           "type": "faq",
           "settings": {
             "checkbox_expanded": false,
-            "title": "Can I Arrive Early or Stay Later Afterthe Yoga Retreat Ends?",
+            "title": "What is The Daily Itinerary on the Trip?",
             "content": "<p>FAQ content<\/p>"
           }
         }
@@ -215,6 +258,7 @@
   },
   "order": [
     "main",
+    "16557573091d4ff900",
     "165575462437461494",
     "faq",
     "related",
