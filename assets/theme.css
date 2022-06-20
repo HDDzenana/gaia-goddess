@@ -11586,6 +11586,7 @@ values__each {
   color: #000000;
   line-height: 22px;
   font-weight: 400;
+  padding: 20px 0;
 }
 
 .cart {
@@ -11632,3 +11633,21 @@ p, .p {
   background-image:url({{ 'mainbg.png' | asset_url }}) !important;
   /* background: blue !important; */
 }
+
+.cf-app__radios-direction--h, .cfradio {
+  display: flex !important;
+  flex-wrap: wrap;
+ }
+
+ .ymq_lable {
+  margin-left: 10px;
+  color: #6C1D45
+ }
+ .ymq-options-box {
+  display: flex;
+  flex-direction: row-reverse;
+ }
+
+ #ymq-price-addons {
+  display: none;
+ }

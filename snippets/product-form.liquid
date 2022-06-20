@@ -124,15 +124,15 @@
       {%- endcomment -%}
       <div class="quantity-wrapper{% if enable_variant_boxes %} quantity-wrapper--half{% endif %}">
         <div class="popout" data-popout-option>
-          <button type="button" class="popout__toggle popout__toggle--product option__select" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-popout-toggle data-popout-quantity>
+          <!-- <button type="button" class="popout__toggle popout__toggle--product option__select" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-popout-toggle data-popout-quantity>
             <h1 class="quantity__text">{{ 'products.product.quantity' | t }}: </h1>
 
             <span class="popout__toggle-value" data-popout-text data-quantity-select>1</h1>
 
             {%- render 'icon-arrow' -%}
-          </button>
+          </button> -->
 
-          <ul id="option-list" class="popout-list popout-list-option popout-list--product" data-popout-list>
+          <!-- <ul id="option-lst" class="popout-list popout-list-option popout-list--product" data-popout-list>
             {%- for qty_num in (1..10) -%}
               <li class="popout-list__item" data-popout-item>
                 <a class="popout-list__option popout-list__option--product" href="#" data-value="{{ qty_num }}" data-popout-option>
@@ -143,22 +143,33 @@
                 </a>
               </li>
             {%- endfor -%}
-          </ul>
+          </ul> -->
 
-          <button type="button" class="quantity__btn visually-hidden quantity__btn--decrease" data-quantity-button>
-            <span class="visually-hidden">{{ 'general.accessibility.decrease' | t }}/h1>
+          <!-- <button type="button" class="quantity__btn visually-hidden quantity__btn--decrease" data-quantity-button>
+            <span class="visually-hidden">{{ 'general.accessibility.decrease' | t }}</h1>
             {%- render 'icon-minus' -%}
           </button>
 
-          <input type="hidden" name="quantity" value="1" min="1" pattern="[0-9]*" class="quantity__selector quantity__input" data-popout-input data-quantity-input/>
+          <input type="hidden" name="quantity" value="1" min="1" pattern="[0-9]*" class="quantity__seler quantity__input" data-popout-input data-quantity-input/>
 
           <button type="button" class="quantity__btn visually-hidden quantity__btn--increase" data-quantity-button>
-            <span class="visually-hidden">{{ 'general.accessibility.increase' | t }}/h1>
+            <span class="visually-hidden">{{ 'general.accessibility.increase' | t }}</h1>
             {%- render 'icon-plus' -%}
-          </button>
-
+          </button> -->
+         
         </div>
-
+ {% if template contains 'trip'  or 'retreat' %}
+        <label for="quantity" class="maroonbold">Atendees: </label>
+        <input min="1" type="number" id="quantity" name="quantity" value="1" />
+        <style>#quantity { 
+  padding: 5px;
+  width: 64px;
+  border: transparent;
+  text-align: center;
+  background: #FFE0F3;
+  margin: 5px;
+  border-radius: 20px; }</style>
+{%endif%}
         <noscript>
           <label for="quantity--{{ unique }}">{{ 'products.product.quantity' | t }}</label>
           <input type="number" name="quantity" id="quantity--{{ unique }}" value="1" min="1">
