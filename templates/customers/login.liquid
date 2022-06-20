@@ -1,6 +1,11 @@
 {%- comment -%} /templates/customers/login.liquid {%- endcomment -%}
-<section class="page-customer">
+ 
+<section class="page-customer"><h1 class="account__heading inline-list center "
+  style="text-align: center; 
+  width: 100% !important;
+  color: white;">Sign-in</h1>
   <div class="wrapper">
+    
     <div class="form-vertical-wrapper">
       <div class="form-vertical" id="CustomerLoginForm">
         {% form 'customer_login', id: 'CustomerLogin' %}
@@ -8,6 +13,7 @@
             {{ 'customer.recover_password.success' | t }}
           </div>
 
+ 
           <div class="social-icons"></div>
           <p class="login-p">
             use your email account:</p>

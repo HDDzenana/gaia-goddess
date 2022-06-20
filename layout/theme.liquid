@@ -5,7 +5,7 @@
   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
   <link rel="canonical" href="{{ canonical_url }}" />
- 
+
   <link rel="preload" as="style" href="{{ 'theme.css' | asset_url }}">
   <link rel="preload" as="style" href="{{ 'custom.css' | asset_url }}">
   <link rel="preload" as="script" href="{{ 'lazysizes.min.js' | asset_url }}">
@@ -38,7 +38,7 @@
   {%- endunless -%}
 
   {%- render 'social-meta-tags' -%}
-     
+
   {%- render 'css-variables' -%}
 
   {%- comment -%} CSS {%- endcomment -%}
@@ -162,26 +162,15 @@
 
 <!-- MailerLite Universal -->
 <script>
-(function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
-var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
-f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
-var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
-_.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
-
-var ml_account = ml('accounts', '3695480', 'f1j0d1r4n4', 'load');
+  (function(m,a,i,l,e,r){ m['MailerLiteObject']=e;function f(){
+  var c={ a:arguments,q:[]};var r=this.push(c);return "number"!=typeof r?r:f.bind(c.q);}
+  f.q=f.q||[];m[e]=m[e]||f.bind(f.q);m[e].q=m[e].q||f.q;r=a.createElement(i);
+  var _=a.getElementsByTagName(i)[0];r.async=1;r.src=l+'?v'+(~~(new Date().getTime()/1000000));
+  _.parentNode.insertBefore(r,_);})(window, document, 'script', 'https://static.mailerlite.com/js/universal.js', 'ml');
+  
+  var ml_account = ml('accounts', '3695480', 'f1j0d1r4n4', 'load');
 </script>
 <!-- End MailerLite Universal -->
-
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-/>
-
-<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 </head>
 
@@ -212,6 +201,5 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 	{%- render 'ajax-cart-template' -%}
 
 	{%- section 'popup' -%}
-	
 </body>
 </html>

@@ -19,11 +19,8 @@
 -%}
 
 <div class="cart-section{% if cart.item_count == 0 %} cart-section--empty{% endif %}" data-cart-section>
-  <div class="wrapper"> 
-    <div class="cart-top"> 
-    <h1 class="cart__title">Your Cart</h1> 
-    <a href="{{ continue_shopping_link }}" class="continue-shopping" data-continue-shopping{% if settings.continue_shopping_link != blank %} data-custom-link{% endif %}>{{ 'cart.general.continue_shopping' | t }}</a>
-  </div>
+  <div class="wrapper">
+    <h1 class="cart__title">{{ 'cart.general.title' | t }}</h1>
 
     <div class="cart__errors errors" data-cart-errors{% if cart_errors != blank %} style="display: block"{% endif %}>
       <p data-cart-errors-message>
@@ -69,39 +66,3 @@
     ]
   }
 {% endschema %}
-
-<style>
-.cart__title {
-font-weight: 700;
-font-size: 50px;
-line-height: 67px;
-/* identical to box height */
-color: #6C1D45;
-padding-top: 50px;
-padding-bottom: 50px;
-}
-
-.cart-section {
-background: #FEFAFB;
-padding-top: 50px;
-}
-
-.main-content > .shopify-section:not(.shopify-section--product):first-child:not(.transparent-header) {
-padding-top: 0px !important
-}
-
-.cart-top {
-display: flex;
-width: 100%;
-align-items: center;
-justify-content: space-between;
-flex-wrap: wrap;
-}
-
-a.continue-shopping {
-text-decoration-line: underline;
-
-text-underline-position: under;
-color: #6C1D45;
-}
-</style>

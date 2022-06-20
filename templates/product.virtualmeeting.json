@@ -1,0 +1,163 @@
+{
+  "sections": {
+    "main": {
+      "type": "product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "subheading": "breadcrumbs",
+            "show_rating": true,
+            "show_rating_count": false
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "tabs_style": "accordions",
+            "tab_title_1": "Tab",
+            "tab_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tab_title_2": "Info",
+            "tab_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "tab_title_3": "",
+            "tab_content_3": "",
+            "tab_title_4": "",
+            "tab_content_4": "",
+            "tab_title_5": "",
+            "tab_content_5": ""
+          }
+        },
+        "form": {
+          "type": "form",
+          "settings": {
+            "show_payment_button": true
+          }
+        },
+        "social-sharing": {
+          "type": "social-sharing",
+          "settings": {
+          }
+        },
+        "5233243e-f9c4-42a4-ad43-45e54e5183a9": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": ""
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "description",
+        "form",
+        "social-sharing",
+        "5233243e-f9c4-42a4-ad43-45e54e5183a9"
+      ],
+      "settings": {
+        "image_gallery": "none",
+        "enable_video_looping": true,
+        "bg_color": "rgba(0,0,0,0)"
+      }
+    },
+    "related": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "show_section": true,
+        "limit": 4,
+        "product_recommendations_heading": "You May Also Like",
+        "bg_color": ""
+      }
+    },
+    "16557318544e0040bc": {
+      "type": "product-faq",
+      "blocks": {
+        "4309b5c2-bcaf-41e9-b00b-33f7363df652": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": true,
+            "title": "What are the benefits of meditation?",
+            "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>"
+          }
+        },
+        "3f868865-66ed-4dd3-8bcd-1aedcfc631e1": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "Do I have to share during the reflection check in?",
+            "content": "<p>FAQ content<\/p>"
+          }
+        },
+        "1e44da0d-aea8-45f6-b04d-d526d38d2008": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "What if I don't want to join with my webcam?",
+            "content": "<p>FAQ content<\/p>"
+          }
+        },
+        "b18675e3-1ac3-4167-b042-477c9aa786ab": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "Is there a cost to participate in Meditate Together?",
+            "content": "<p>FAQ content<\/p>"
+          }
+        },
+        "64aad6fe-798f-4d74-a034-e814f0d06661": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "Are sessions hosted on holidays?",
+            "content": "<p>FAQ content<\/p>"
+          }
+        },
+        "5fb55632-2105-4d9e-9c8b-1a1b7116240b": {
+          "type": "faq",
+          "settings": {
+            "checkbox_expanded": false,
+            "title": "Can I share my personal contact information withother participants or facilitators in MeditateTogether sessions?",
+            "content": "<p>FAQ content<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "4309b5c2-bcaf-41e9-b00b-33f7363df652",
+        "3f868865-66ed-4dd3-8bcd-1aedcfc631e1",
+        "1e44da0d-aea8-45f6-b04d-d526d38d2008",
+        "b18675e3-1ac3-4167-b042-477c9aa786ab",
+        "64aad6fe-798f-4d74-a034-e814f0d06661",
+        "5fb55632-2105-4d9e-9c8b-1a1b7116240b"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "enable_rich_schema": true,
+        "max_width": "72rem",
+        "margin_top": 1,
+        "margin_bottom": 1,
+        "background_color": "rgba(0,0,0,0)",
+        "border_color": "#ffe0f3",
+        "panel_color": "#ffe0f3",
+        "q_size_small": 1,
+        "q_size_large": 1.4,
+        "q_color": "#6c1d45",
+        "a_color": "#6c1d45"
+      }
+    },
+    "1651505822baf8a6bf": {
+      "type": "section-superco-slider",
+      "disabled": true,
+      "settings": {
+        "product": "fear-is-a-liar",
+        "header_color": "#6c1d45",
+        "header": "A Quick Glance at exploring Cairo, Egypt",
+        "subheader": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laboriosam et vel perferendis veniam vero repellendus enim iusto officiis! Velit accusamus corrupti delectus perferendis sit nobis odio maxime, placeat rem? Nulla!"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related",
+    "16557318544e0040bc",
+    "1651505822baf8a6bf"
+  ]
+}

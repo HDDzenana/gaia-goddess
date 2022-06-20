@@ -8,10 +8,13 @@
   {%- endstyle -%}
 {%- endif -%}
 
-<section id="ProductTemplate--{{ section.id }}"
+<section id="ProductTemplate--{{ section.id }}" 
   class="product-single"
   data-section-type="product-template"
-  data-section-id="{{ section.id }}">
+  data-section-id="{{ section.id }}" style="  background-image:url({{ 'mainbg.svg' | asset_url }}) !important;    
+  background-repeat: no-repeat !important;
+  background-size: cover;
+">
   <div class="wrapper">
     {%- render 'product' section: section, unique: section.id -%}
   </div>
@@ -118,6 +121,18 @@
     }
   ],
   "blocks": [
+ {
+  "type": "text",
+  "name": "text",
+  "limit": 10,
+ "settings": [
+ {
+  "type": "text",
+  "id": "textual",
+  "label": "Text"
+}
+]
+},
     {
       "type": "@app"
     },

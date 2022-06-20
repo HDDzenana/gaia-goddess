@@ -73,6 +73,7 @@
 								{{/each}}
 							{{/if}}
 						</p>
+						<p>  Attendees </p>
 						<div class="qty js-qty">
 							<button type="button" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{val.id}}" data-qty="{{val.itemMinus}}" data-line="{{val.line}}">
 								{% endraw %}{%- render 'icon-minus' -%}{% raw %}
@@ -124,7 +125,7 @@
 			<div class="cart__buttons{% if settings.enable_accept_terms %}{% raw %}{{ @if (it.acceptanceChecked == false ) }} cart__buttons--disabled{{ /if }}{% endraw %}{% endif %}" data-cart-buttons>
 				<fieldset class="cart__buttons__fieldset" data-cart-buttons-fieldset>
 					<button type="submit" name="checkout" class="cart__checkout btn btn--full drawer__button">
-						{{- 'cart.general.checkout' | t -}}
+					Proceed to Checkout
 					</button>
 
 					{%- if additional_checkout_buttons -%}
@@ -157,11 +158,13 @@
 
 <script id="JsQty" type="text/x-template">
 {% raw %}
-<div class="qty js-qty">
+<p>  Attendees </p>
+<div class="qty js-qty"> 
 	<button type="button" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemMinus}}">
 		{% endraw %} {%- render 'icon-minus' -%} {% raw %}
 		<span class="fallback-text">&minus;</span>
 	</button>
+ 
 	<input type="number" class="qty__input js-qty__input" value="{{it.itemQty}}" min="1" data-id="{{it.id}}" aria-label="quantity" pattern="[0-9]*" name="{{it.inputName}}" id="{{it.inputId}}">
 	<button type="button" class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemAdd}}">
 		{% endraw %} {%- render 'icon-plus' -%} {% raw %}

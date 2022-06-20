@@ -189,11 +189,12 @@
             </select>
           </div>
         {% endif %}
-
-        {%for block in section.blocks %}
+        <div class="filterino" style="display:flex; flex-wrap: wrap;"> 
+        {%for block in section.blocks %}   
         {% case block.type %}
+   
         {%when 'Filter'%}
-          <div class="healers-filter healers-filter-{{section.id}}">
+          <div class="healers-filter healers-filter-{{section.id}}" style="margin:0 5px ;">
             <select class="healers-filter__dropdown" id="category" name="category">
               <option disabled selected>{{block.settings.filtername}}</option>
               <option value="{{block.settings.filteroption}}">{{block.settings.filteroption}}</option>
@@ -201,21 +202,21 @@
 
             </select>
           </div>
-          {%endcase%}
-        {% endfor %}
+          {%endcase%} 
+        {% endfor %}</div>
       </div>
     </div>
   </div>
 
   <div class="wrapper">
-    <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid__container{% endif %}">
-      <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}" {% if carousel %} data-collection-slider {% endif %}>
+    <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid_container{% endif %}" >
+      <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}" {% if carousel %} data-collection-slider {% endif %}   >
         {% for block in section.blocks %}
             {% case block.type %}
         {%when 'collection'%}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
-          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
+          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}" style="max-width:500px;">
             <img alt="Healer card image" src="{{ collection.featured_image | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
 
             <div class="healer-heading">
@@ -258,12 +259,12 @@
        {%assign product = block.settings.product %}
 
           <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
-            <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
+            <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="428" height="300px" object-fit="cover" style="object-fit:cover;">
 
             <div class="healer-heading">
               <div class="healer-heading__info">
  
-                <p class="ptitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
+                <h3 class="ptitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</h3>
               </div> 
   
             </div> <p class="pad">  
@@ -283,7 +284,7 @@
       <p class="hb">      Hosted by     <br> <p class="hbm">    {{product.metafields.my_fields.hosted_by}}  </p></p>
       <br> 
      <a  class="gbtn btn btn--product-feature" href="{{product.url}}"
-       style="color: white;float: left;">Register Now</a>  
+       style="float: left;">Register Now</a>  
           </div>
  
 {%endcase%}

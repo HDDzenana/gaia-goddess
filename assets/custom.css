@@ -35,7 +35,7 @@ h1 {
   font-family: 'Playfair' !important;
   font-size: 50px;
   font-weight: 700;
-  line-height: 52px;
+  line-height: 67px;
 }
 h2,
 h2 span {
@@ -46,6 +46,7 @@ h2 span {
 }
 
 .btn {
+  line-height: 21.6px;
   font-size: 18px;
   border-radius: 30px;
   min-width: 200px;

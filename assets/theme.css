@@ -1484,7 +1484,7 @@ sub {
 }
 @media only screen and (min-width: 1024px) {
   .grid {
-    grid-template-columns: var(--grid);
+    grid-template-columns:1fr 1fr 1fr 1fr;
   }
 }
 @media only screen and (max-width: 1023px) {
@@ -3731,6 +3731,7 @@ button.mfp-close {
   font-size: calc(1.125rem * var(---font-adjust-heading));
   line-height: 1.3;
   color: inherit;
+  height: 46.49px;
 }
 .has-scrolled .logo {
   margin-top: 0;
@@ -4630,6 +4631,7 @@ button.mfp-close {
   visibility: visible;
   transform: translateX(calc(var(--drawer-width) * -1));
   transition: var(--drawer-transition), visibility 0s linear 0s;
+  border-left: 0px;
 }
 .is-moved-by-drawer {
   will-change: transform;
@@ -4687,7 +4689,7 @@ button.mfp-close {
   display: block;
   width: 100%;
   margin-bottom: calc(var(--gutter) / 2);
-  border-bottom: 2px solid var(--accent);
+  border-bottom:1px solid #EB6FBD;
 }
 .site-footer {
   background: var(--bg);
@@ -6177,8 +6179,10 @@ button.mfp-close {
   background-size: 32px auto;
 }
 .ajaxcart__product__title {
+
   display: block;
-  color: var(--heading);
+  color: #6C1D45;
+  font-weight: 700;
   text-decoration: none;
   font-size: calc(1rem * var(---font-adjust-body));
 }
@@ -6239,6 +6243,11 @@ button.mfp-close {
   padding: 5px 25px;
   margin: 0;
   color: var(--text);
+
+  background: #FFE0F3;
+  color: #6C1D45 !important;
+  font-weight: 600;
+  border-radius: 30px;
 }
 .ajaxcart .qty {
   margin-left: -8px;
@@ -9875,6 +9884,7 @@ button.collection__filters__toggle {
 }
 .product-feature__text h2 {
   margin: 0 0 15px;
+  line-height: 66.65px;
 }
 .product-feature__text p {
   margin: 15px 0;
@@ -11565,10 +11575,60 @@ values__each {
 .maroonbold {
   color: #6C1D45;
   font-weight: 700;
-  line-height: 22px;  
+  /* line-height: 22px;   */
 }
+
+.maroon, .maroonbold {
+  color: #6C1D45;
+}
+
 .grayregular {
   color: #000000;
   line-height: 22px;
   font-weight: 400;
+}
+
+.cart {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.ajaxcart__footer {
+  padding-top: 10px;
+  border-top: 1px solid #EB6FBD;
+}
+
+p, .p {
+  line-height: 19.2px;
+}
+
+
+/* REGISTER FORM */
+
+.cf-app__field .btn {
+  margin: auto !important;
+}
+
+.h_buttons div {
+  border: 1px solid #EB6FBD !important;
+}
+
+.pink {
+  /* font-family: 'Acumin Pro'; */
+  font-style: normal;
+  font-weight: 600;
+  /* font-size: 20px; */
+  line-height: 24px;
+  /* identical to box height */
+  
+  
+  color: #EB6FBD;
+}
+
+ .shopify-section--product, .product-single  {
+  background-image:url({{ 'mainbg.png' | asset_url }}) !important;
+  /* background: blue !important; */
 }

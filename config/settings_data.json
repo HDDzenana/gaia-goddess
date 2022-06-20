@@ -21,6 +21,7 @@
     "show_payment_button": true,
     "quick_button": "view",
     "cart_type": "drawer",
+    "enable_cart_animation": false,
     "enable_cart_notes": false,
     "social_facebook_link": "",
     "social_twitter_link": "",

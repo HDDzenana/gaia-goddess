@@ -37,6 +37,7 @@
       "settings": {
         "prevlink": "",
         "prevtext": "Discover",
+        "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
         "show_share_buttons": true,
         "bg": "#fef1f5",
         "text_position": "right",
@@ -52,68 +53,46 @@
         "bg_color": ""
       }
     },
-    "1651485257a3c9365c": {
-      "type": "section-blog",
+    "1655722204c5e5892e": {
+      "type": "article-card-image",
       "blocks": {
-        "1651485257ddf294db-0": {
-          "type": "article",
+        "ef49ea6e-11e3-4794-885a-de6f6956885b": {
+          "type": "Card",
           "settings": {
-            "article": "",
-            "product1": "",
-            "product2": "",
-            "product3": ""
+            "link": "",
+            "title": "",
+            "description": "",
+            "article": "news\/podcast-test"
           }
         },
-        "1651485257ddf294db-1": {
-          "type": "article",
+        "0c53343c-2bdb-429f-ae56-2bca6ea2fd0c": {
+          "type": "Card",
           "settings": {
-            "article": "",
-            "product1": "",
-            "product2": "",
-            "product3": ""
-          }
-        },
-        "1651485257ddf294db-2": {
-          "type": "article",
-          "disabled": true,
-          "settings": {
-            "article": "",
-            "product1": "",
-            "product2": "",
-            "product3": ""
-          }
-        },
-        "1651485257ddf294db-3": {
-          "type": "article",
-          "disabled": true,
-          "settings": {
-            "article": "",
-            "product1": "",
-            "product2": "",
-            "product3": ""
-          }
-        },
-        "1651485257ddf294db-4": {
-          "type": "article",
-          "disabled": true,
-          "settings": {
-            "article": "",
-            "product1": "",
-            "product2": "",
-            "product3": ""
+            "link": "",
+            "title": "",
+            "description": "",
+            "article": "news\/lorem-ipsum-dolor-sit-amet-1"
           }
         }
       },
       "block_order": [
-        "1651485257ddf294db-0",
-        "1651485257ddf294db-1",
-        "1651485257ddf294db-2",
-        "1651485257ddf294db-3",
-        "1651485257ddf294db-4"
+        "ef49ea6e-11e3-4794-885a-de6f6956885b",
+        "0c53343c-2bdb-429f-ae56-2bca6ea2fd0c"
       ],
       "settings": {
-        "title": "Related Video and Podcasts",
-        "bg_color": ""
+        "heading_color": "#6c1d45",
+        "heading_colors": "#000000",
+        "section_bg": "rgba(0,0,0,0)",
+        "card_bg": "rgba(0,0,0,0)",
+        "caption": "",
+        "heading": "Related Videos and Podcasts",
+        "description": "",
+        "color_scheme": "background-1",
+        "link_style": "h2",
+        "numberofcolumns": "260",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "spacing_cards": 20
       }
     },
     "1651485344dc097ec1": {
@@ -132,7 +111,7 @@
     "16514856733972d9a8",
     "main",
     "1651485677611fe850",
-    "1651485257a3c9365c",
+    "1655722204c5e5892e",
     "1651485344dc097ec1"
   ]
 }
