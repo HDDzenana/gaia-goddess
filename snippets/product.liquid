@@ -1,4 +1,6 @@
-<!-- /snippets/product.liquid -->
+<!-- <div class="custombg" style="
+background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
+ <!-- /snippets/product.liquid -->
 
 {%- comment -%}
     Renders product content
@@ -41,9 +43,26 @@
   if product.media.size < 2 and section_type == 'featured'
     assign hide_product_thumbnails = true
   endif
--%}
+-%}{%case block.type%}
+{%- when 'breadcrumbs' -%}
+                  {%- render 'breadcrumbs' -%}
 
-<div class="product-single__wrapper" data-section-id="{{ unique }}" data-product>
+                {%- when 'collection' -%}   
+                  {%- if collection or product.collections.size > 0 -%}
+                    {%- assign collection = collection | default: product.collections[0] -%}
+              
+                    <nav class="breadcrumbs">
+                      <a href="{{ collection.url }}" title="{{ collection.title | strip_html | escape }}">{{ collection.title }}</a>
+                    </nav>
+                  {%- endif -%} {%endcase%}
+
+              <div class="breadcrumb" style="display:flex; margin-bottom: 30px;">
+                {%render 'home' %}
+                {%- render 'breadcrumbs' -%}
+</div>
+ 
+<div class="product-single__wrapper" data-section-id="{{ unique }}" data-product >
+  
   {%- comment -%} Product media {%- endcomment -%}
   {%- unless product == blank -%}
     <div class="product-single__gallery"
@@ -167,20 +186,11 @@
               {{ app_code }}
             {%- endif -%}
 
-          {%- when 'title' -%}
+          {%- when 'title' -%}    
+          <p class="pink" style="margin:0 ; padding:0;">{{product.metafields.my_fields.short_description}}</p>
             <div class="product__title-and-price" {{ block.shopify_attributes }}>
               {%- case block.settings.subheading -%}
-                {%- when 'breadcrumbs' -%}
-                  {%- render 'breadcrumbs' -%}
-
-                {%- when 'collection' -%}
-                  {%- if collection or product.collections.size > 0 -%}
-                    {%- assign collection = collection | default: product.collections[0] -%}
-              
-                    <nav class="breadcrumbs">
-                      <a href="{{ collection.url }}" title="{{ collection.title | strip_html | escape }}">{{ collection.title }}</a>
-                    </nav>
-                  {%- endif -%}
+                 
 
                 {%- when 'vendor' -%}
                   {%- unless product == blank -%}
@@ -196,22 +206,26 @@
 
               <h1 class="product__title">
                 {%- if template == 'product' and section_type != 'featured' -%}
-                  {{- product_title -}}
+               <h1 class="maroonbold">    {{- product_title -}} </h1>
                 {%- else -%}
-                  <a href="{{ product_url }}" title="{{ product_title }}">{{ product_title }}</a>
+                  <a href="{{ product_url }}" title="{{ product_title }}">   <h1 class="maroonbold"> 
+                       {{- product_title -}} </h1>
+                  </a>
                 {%- endif -%}
               </h1>
-
-              <div class="product__price-and-badge">
-  {%- if block.settings.show_rating or settings.show_rating and section_type == 'quickview' -%}
+              {%if product.metafields.my_fields.hosted_by  %}
+    <p class="pink" style="margin-bottom: 0 !important;">  Hosted By:   <span class="maroonbold">       {{product.metafields.my_fields.hosted_by}}</span>    </p>
+              {%endif%}
+              <!-- <div class="product__price-and-badge">
+  <!-- {%- if block.settings.show_rating or settings.show_rating and section_type == 'quickview' -%}
     {%- unless product == blank -%}
       {%- render 'rating', show_rating_count: block.settings.show_rating_count, single_star: true, reviews: product.metafields.reviews -%}
     {%- else -%}
       {%- render 'rating', show_rating_count: block.settings.show_rating_count, single_star: true, onboarding: true -%}
     {%- endunless -%}
-  {%- endif -%}
-
-  <p class="product__price" data-price-wrapper>
+  {%- endif -%} -->
+ <!-- main price  -->
+  <!-- <p class="product__price" data-price-wrapper>
     {%- unless product == blank -%}
       <span data-product-price>{{ current_variant.price | money }} </span>
     {%- else -%}
@@ -240,10 +254,10 @@
         <span data-unit-base>{{ current_variant.unit_price_measurement.reference_unit }}</span>
       </span>
     {%- endif -%}
-    </p>
-</div>
-            </div>
-
+    </p> -->
+<!-- </div> -->
+            </div> 
+            
           {%- when 'form' -%}
             {%- unless product == blank -%}
               <div class="product__form__wrapper" data-product-form-wrapper {{ block.shopify_attributes }}>
@@ -257,17 +271,36 @@
             {%- else -%}
               {%- render 'product-form-onboarding', show_payment_button: block.settings.show_payment_button -%}
             {%- endunless -%}
-
+            {%- when 'text' -%}
+<div class="textual">{{block.settings.text}} </div>
           {%- when 'pickup-availability' -%}
             {%- comment -%} Surface pickup availability {%- endcomment -%}
             <div class="product-single__store-availability-container" data-store-availability-container {{ block.shopify_attributes }}></div>
-
+ 
           {%- when 'description' -%}
             {%- comment -%} Product Description and product tabs {%- endcomment -%}
-            <div class="product__description rte" {{ block.shopify_attributes }}>
+            <div class="product__description rte" {{ block.shopify_attributes }} style="margin: 0 !important;">
               {%- unless product == blank -%}
                 {{- product.description -}}
 
+                {%if product.metafields.custom.days %}
+                <div class="pink" style="
+                margin: 0 !important;
+                padding: 0;
+            "> 
+                   Days:   <span class="maroonbold">       {{product.metafields.custom.days}}
+    
+                   </span> 
+                  </div>
+                          {%endif%}
+                 
+              {%if product.metafields.custom.time %}
+              <div class="pink" style="
+              margin: 0;
+              padding: 0;
+          ">
+                  Time:   <span class="maroonbold">       {{product.metafields.custom.time}}</span>    </div>
+                        {%endif%}
                 {%- if template == 'product' and block.settings.tabs_style != 'tabs_disabled' and section_type != 'featured' -%}
                   {%- render 'product-tabs', block_settings: block.settings -%}
                 {%- endif -%}
@@ -336,6 +369,7 @@
 </div>
 
       <div class="product__form__wrapper" data-product-form-wrapper>
+        
         {%- comment -%} Product Form Snippet {%- endcomment -%}
         {%- render 'product-form', product: product, current_variant: current_variant, show_payment_button: show_payment_button, unique: unique -%}
 
@@ -351,3 +385,27 @@
 
 <script type="application/json" id="ProductJson-{{ unique }}" data-product-json>{{ product | json }}</script>
 <script type="application/json" id="ModelJson-{{ unique }}">{{ product.media | where: 'media_type', 'model' | json }}</script>
+
+</div>
+<style>
+  .bulletpoints,.product__description  ul li, ::marker {
+  background:url({{ 'bulletpoint.svg' | asset_url }});
+  /* color: #EB6FBD; */
+  /* width: 20px;
+  height: 20px; */
+    background-repeat: no-repeat;
+    padding-left: 20px;
+        /* margin: 5px */
+    background-position-y: center;
+}
+::marker {
+  display: none !important;
+}
+.product__description ul {
+        list-style-type: none;
+    }
+    .product__description *
+    {
+      margin-top: 0 !important;
+    }
+</style>

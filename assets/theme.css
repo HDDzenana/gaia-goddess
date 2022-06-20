@@ -11575,8 +11575,13 @@ values__each {
 .maroonbold {
   color: #6C1D45;
   font-weight: 700;
-  line-height: 22px;  
+  /* line-height: 22px;   */
 }
+
+.maroon, .maroonbold {
+  color: #6C1D45;
+}
+
 .grayregular {
   color: #000000;
   line-height: 22px;
@@ -11609,4 +11614,21 @@ p, .p {
 
 .h_buttons div {
   border: 1px solid #EB6FBD !important;
+}
+
+.pink {
+  /* font-family: 'Acumin Pro'; */
+  font-style: normal;
+  font-weight: 600;
+  /* font-size: 20px; */
+  line-height: 24px;
+  /* identical to box height */
+  
+  
+  color: #EB6FBD;
+}
+
+ .shopify-section--product, .product-single  {
+  background-image:url({{ 'mainbg.png' | asset_url }}) !important;
+  /* background: blue !important; */
 }

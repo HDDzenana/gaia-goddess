@@ -125,9 +125,9 @@
       <div class="quantity-wrapper{% if enable_variant_boxes %} quantity-wrapper--half{% endif %}">
         <div class="popout" data-popout-option>
           <button type="button" class="popout__toggle popout__toggle--product option__select" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-popout-toggle data-popout-quantity>
-            <span class="quantity__text">{{ 'products.product.quantity' | t }}: </span>
+            <h1 class="quantity__text">{{ 'products.product.quantity' | t }}: /h1>
 
-            <span class="popout__toggle-value" data-popout-text data-quantity-select>1</span>
+            <span class="popout__toggle-value" data-popout-text data-quantity-select>1/h1>
 
             {%- render 'icon-arrow' -%}
           </button>
@@ -139,21 +139,21 @@
                   <span>
                     {{- qty_num -}}
                     {%- if forloop.last -%}+{%- endif-%}
-                  </span>
+                  /h1>
                 </a>
               </li>
             {%- endfor -%}
           </ul>
 
           <button type="button" class="quantity__btn visually-hidden quantity__btn--decrease" data-quantity-button>
-            <span class="visually-hidden">{{ 'general.accessibility.decrease' | t }}</span>
+            <span class="visually-hidden">{{ 'general.accessibility.decrease' | t }}/h1>
             {%- render 'icon-minus' -%}
           </button>
 
           <input type="hidden" name="quantity" value="1" min="1" pattern="[0-9]*" class="quantity__selector quantity__input" data-popout-input data-quantity-input/>
 
           <button type="button" class="quantity__btn visually-hidden quantity__btn--increase" data-quantity-button>
-            <span class="visually-hidden">{{ 'general.accessibility.increase' | t }}</span>
+            <span class="visually-hidden">{{ 'general.accessibility.increase' | t }}/h1>
             {%- render 'icon-plus' -%}
           </button>
 
@@ -169,11 +169,49 @@
       <input type="hidden" name="quantity" value="1">
     {%- endif -%}
   </div>
-
+  <p class="line-item-property__field">
+    <input type="hidden" name="properties[I agree to terms and conditions]" value="No">
+    <input id="i-agree-to-terms-and-conditions" type="checkbox" name="properties[I agree to terms and conditions]" value="Yes">
+    <label for="i-agree-to-terms-and-conditions">I agree to <a class="maroon" href="/policies/terms-of-service" style="color:#6C1D45;">
+       Terms & Conditions 
+      </a>
+    </label>
+  </p>
   {%- comment -%}
     Buttons
   {%- endcomment -%}
-  <div class="buttons-grid{% if show_payment_button %} buttons-grid--half{% endif %}">
+  <div class="buttons-grid{% if show_payment_button %} buttons-grid--half{% endif %}" style="display: flex; align-items: self-end;">
+    <h1 class="maroonbold product__price" data-price-wrapper>
+      {%- unless product == blank -%}
+        <h1 class="maroonbold" data-product-price>{{ current_variant.price | money }} </h1>
+      {%- else -%}
+        <h1 class="maroonbold" id="ProductPrice">{{ 1999 | money }}</h1>
+      {%- endunless -%}
+  
+      <h1 class="product__price__sale" data-compare-price>
+        {%- if current_variant.compare_at_price -%}
+          {{- current_variant.compare_at_price | money -}}
+        {%- endif -%}
+      </h1>
+  
+      {%- if current_variant.unit_price_measurement -%}
+        {%- capture unit_price_separator -%}
+          <h1 aria-hidden="true"></h1><h1 class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</h1>
+        {%- endcapture -%}
+  
+        <h1 class="product__unit-price" data-unit-wrapper>
+          <h1 data-unit-price>
+            {{ current_variant.unit_price | money }}
+            {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
+              {{- current_variant.unit_price_measurement.reference_value -}}
+            {%- endif -%}
+          </h1>
+          {{ unit_price_separator }}
+          <h1 data-unit-base>{{ current_variant.unit_price_measurement.reference_unit }} </h1>
+        /h1>
+      {%- endif -%}
+      </h1>
+
     <button type="submit" name="add" id="AddToCart--{{ unique }}" class="btn btn--submit"{% if sold_out %} disabled{% endif %} data-add-to-cart>
       <span id="AddToCartText" data-add-to-cart-text>
         {%- if sold_out -%}
@@ -187,10 +225,10 @@
       {%- render 'icon-loading' -%}
     </button>
 
-    {%- if show_payment_button -%}
+    <!-- {%- if show_payment_button -%}
       <div data-payment-button="{{ section.settings.show_payment_button }}" data-quickview-payment-button="{{ settings.show_payment_button }}">
         {{- form | payment_button -}}
       </div>
-    {%- endif -%}
+    {%- endif -%} -->
   </div>
 {%- endform -%}
