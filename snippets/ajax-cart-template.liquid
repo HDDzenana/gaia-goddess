@@ -125,7 +125,7 @@
 			<div class="cart__buttons{% if settings.enable_accept_terms %}{% raw %}{{ @if (it.acceptanceChecked == false ) }} cart__buttons--disabled{{ /if }}{% endraw %}{% endif %}" data-cart-buttons>
 				<fieldset class="cart__buttons__fieldset" data-cart-buttons-fieldset>
 					<button type="submit" name="checkout" class="cart__checkout btn btn--full drawer__button">
-						{{- 'cart.general.checkout' | t -}}
+					Proceed to Checkout
 					</button>
 
 					{%- if additional_checkout_buttons -%}
