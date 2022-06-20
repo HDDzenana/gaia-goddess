@@ -205,13 +205,19 @@
 </div> 
 {%if section.settings.image == blank %}
 {% assign image_src=article.image.src | img_url: 'large' %}
-<div class="container">
-<img src="{{ image_src }}">
+<div class="wrapper container"  >
+<img src="{{ image_src }}" style="
+width: 80%;
+max-height: 350px;
+object-fit: cover;
+">
 </div>
 {%else %}
+<div class="wrapper container"  >  
 {% render 'gaia-image',
 image: section.settings.image %}
 {%endif%}
+</div>
 </div>
     
     <div class="wrapper retreat-wrapper">
