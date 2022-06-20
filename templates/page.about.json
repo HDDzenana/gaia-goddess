@@ -28,9 +28,9 @@
         "padding_top": 64,
         "padding_bottom": 76,
         "bg": "#fef1f5",
-        "heading": "Let's get the balance of living!",
+        "heading": "Let's get the <br> balance of living!",
         "heading_color": "#6c1d45",
-        "text_content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>  Mus vulputate scelerisque mollis luctus risus nulla. <br> Pharetra laoreet felis euismod et. Id bibendum."
+        "text_content": "<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>  Mus vulputate scelerisque mollis luctus risus nulla. <br> Pharetra laoreet felis euismod et. Id bibendum. <br><br>"
       }
     },
     "product-feature": {
@@ -50,9 +50,9 @@
         "hide_image_2": false,
         "caption_color": "",
         "caption": "",
-        "text_color": "#800000",
+        "text_color": "#6c1d45",
         "heading": "Our Mission",
-        "subheading": "",
+        "subheading": "<br>",
         "ssubheading_color": "#800000",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque. Arcu, ac id platea euismod elit. <\/p><p><\/p><p>Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>",
         "button_text": "Join Us",
@@ -117,7 +117,7 @@
       "settings": {
         "title": "Three Pillars of our Brands",
         "heading_color": "#6c1d45",
-        "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.",
+        "subtitle": "<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.",
         "testimonial_layout": "imgfirst",
         "border_radius": 4,
         "show_quotes": false,
@@ -247,12 +247,12 @@
         "image": "shopify:\/\/shop_images\/Screenshot_2022-06-06_at_23.47.33.png",
         "header": "Our Founder",
         "headercolor": "#6c1d45",
-        "name": "Maria Marshall",
+        "name": "<br><br> Maria Marshall",
         "namecolor": "#d874d4",
         "role": "CEO + Founder",
         "rolecolor": "#6c1d45",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ..",
-        "descriptioncolor": "#000000"
+        "descriptioncolor": "#575757"
       }
     },
     "main": {

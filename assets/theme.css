@@ -3731,6 +3731,7 @@ button.mfp-close {
   font-size: calc(1.125rem * var(---font-adjust-heading));
   line-height: 1.3;
   color: inherit;
+  height: 46.49px;
 }
 .has-scrolled .logo {
   margin-top: 0;
@@ -9883,6 +9884,7 @@ button.collection__filters__toggle {
 }
 .product-feature__text h2 {
   margin: 0 0 15px;
+  line-height: 66.65px;
 }
 .product-feature__text p {
   margin: 15px 0;

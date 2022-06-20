@@ -46,6 +46,7 @@ h2 span {
 }
 
 .btn {
+  line-height: 21.6px;
   font-size: 18px;
   border-radius: 30px;
   min-width: 200px;

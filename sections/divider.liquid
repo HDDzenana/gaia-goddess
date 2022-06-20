@@ -1,0 +1,152 @@
+<style>
+  .divider-{{ section.id }} {
+   	  background: {{ section.settings.background }};
+  }
+  
+  .divider-{{ section.id }} .inner {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     height: {{ section.settings.height | append: 'vh' }};
+  }
+  
+  .divider-{{ section.id }} .inner .divider-line {
+     display: block;
+     height: {{ section.settings.line_height }}px;
+     width: {{ section.settings.line_width }}%;
+     background: {{ section.settings.line_color }};
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+  }
+  
+/*   MOBILE  */
+  
+ @media (max-width: 768px) {
+  .divider-{{ section.id }} {
+   	 background: {{ section.settings.background }};
+   }
+   
+  .divider-{{ section.id }} .inner {
+   	 height: {{ section.settings.height_sm | append: 'vh' }};
+   }
+   
+  .divider-{{ section.id }} .inner .divider-line {
+     display: block;
+     height: {{ section.settings.line_height_sm }}px;
+     width: {{ section.settings.line_width_sm }}%;
+     background: {{ section.settings.line_color_sm }};
+   }
+ }
+
+ 
+  
+</style>
+
+<div class="divider-{{ section.id }}">
+  <div class="inner">
+    <div class="divider-line">
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name":"Divider",
+  "tag":"section",
+  "settings":[
+    {
+      "type":"header",
+      "content":"General"
+    },
+    {
+      "type":"color_background",
+      "id":"background",
+      "label":"Background",
+      "default":"transparent"
+    },
+    {
+      "type":"color",
+      "id":"line_color",
+      "label":"Divider line color",
+      "default":"transparent"
+    },
+    {
+      "type":"range",
+      "id":"height",
+      "min": 0,
+      "max": 40,
+      "default": 5,
+      "unit":"vh",
+      "label":"Divider height"
+    },
+    {
+      "type":"range",
+      "id":"line_height",
+      "min": 0,
+      "max": 10,
+      "default": 0,
+      "unit":"px",
+      "label":"Divider line height"
+    },
+ 
+    {
+      "type":"range",
+      "id":"line_width",
+      "min": 0,
+      "max": 100,
+      "default": 80,
+      "unit":"%",
+      "label":"Divider line width"
+    },
+    {
+      "type":"header",
+      "content":"Mobile"
+    },
+   {
+      "type":"color",
+      "id":"background_sm",
+      "label":"Background",
+      "default":"transparent"
+    },
+    {
+      "type":"color",
+      "id":"line_color_sm",
+      "label":"Divider line color",
+      "default":"transparent"
+    },
+    {
+      "type":"range",
+      "id":"height_sm",
+      "min": 0,
+      "max": 40,
+      "default": 5,
+      "unit":"vh",
+      "label":"Divider height"
+    },
+    {
+      "type":"range",
+      "id":"line_height_sm",
+      "min": 0,
+      "max": 10,
+      "default": 0,
+      "unit":"px",
+      "label":"Divider line height"
+    },
+    {
+      "type":"range",
+      "id":"line_width_sm",
+      "min": 0,
+      "max": 100,
+      "default": 80,
+      "unit":"%",
+      "label":"Divider line width"
+    }
+  ],
+  "presets":[
+    {
+      "name":"Divider"
+    }
+  ]
+}
+{% endschema %}
