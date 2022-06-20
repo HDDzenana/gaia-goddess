@@ -67,6 +67,8 @@ li.active
 .content-{{section.id}} {
   background:{{section.settings.bg}};
   width: 75%;
+  align-self: center;
+  margin-top: -100px;
 }
 
 .topbanner  * {
@@ -189,17 +191,7 @@ overflow: hidden;
  
 
 <div class="content-{{section.id}}">
-  <div class="topbanner">
-    {%render 'gaia-image',
-    image: section.settings.banner_top 
-    %}
-    {%if customer%}
-    <div class="profilepicturewrapper"> 
-    
-     <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
-  </div>
-  {%endif%}
-  </div>
+ 
   {%if customer %}
   <div class="membership-info">
    <h4 class="maroonbold " style="width: 50%; margin: auto; padding: 10px 0;;">
