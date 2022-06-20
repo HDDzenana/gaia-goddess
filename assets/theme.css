@@ -11599,3 +11599,14 @@ values__each {
 p, .p {
   line-height: 19.2px;
 }
+
+
+/* REGISTER FORM */
+
+.cf-app__field .btn {
+  margin: auto !important;
+}
+
+.h_buttons div {
+  border: 1px solid #EB6FBD !important;
+}
