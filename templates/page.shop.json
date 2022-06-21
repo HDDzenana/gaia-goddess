@@ -18,7 +18,7 @@
         "image_position": "center-center",
         "overlay_opacity": 20,
         "text_color": "text-light",
-        "title": "Our Shop is Coming Soon!",
+        "title": "Our Shop is <br> Coming Soon!",
         "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ullamcorper tincidunt massa nec ultrices. Fusce lobortis pellentesque risus sed finibus.",
         "button_text": "",
         "button_link": "",
