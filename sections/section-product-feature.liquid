@@ -68,6 +68,9 @@
 
 #ProductFeature--{{section.id}}{
   background-color: {{bg_color}};
+  background-image:url('{{ section.settings.bgimg | img_url: 'master' }}'); 
+  background-repeat:no-repeat;
+  background-size: cover;
 }
 
 {%- endstyle -%}
@@ -169,7 +172,11 @@
 {
   "name": "Product feature",
   "class": "slideshow transparent-header",
-  "settings": [
+  "settings": [ {
+      "type": "image_picker",
+      "id": "bgimg",
+      "label": "Background image"
+    },
     {
       "type": "header",
       "content": "Layout"
@@ -178,7 +185,8 @@
       "id": "aos",
       "default": true,
       "label": "Animate on scroll"
-    }, {
+    },
+     {
       "type": "color_background",
       "id": "bg",
       "label": "Section Background",

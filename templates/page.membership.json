@@ -3,8 +3,9 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "bgimg": "shopify:\/\/shop_images\/image_18_6f1490ae-558d-446a-8b48-5c17a01d457d.png",
         "aos": true,
-        "bg": "linear-gradient(90deg, rgba(254, 250, 251, 1) 38%, rgba(235, 111, 189, 0.13) 39%)",
+        "bg": "",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "right",
@@ -51,7 +52,7 @@
           "type": "Perk",
           "settings": {
             "perkimage": "shopify:\/\/shop_images\/image_9_5ee86c70-e3ff-4487-b938-6f749ec01dcb.png",
-            "perktext": "Access to Gaia's Content Library"
+            "perktext": "BE A PART OF A HEALING COMMUNITY"
           }
         }
       },
@@ -69,6 +70,21 @@
         "button_link": "shopify:\/\/blogs\/news\/lorem-ipsum-dolor-sit-amet-2",
         "button_color": "#6c1d45",
         "button_hover_color": "#fafafa"
+      }
+    },
+    "1655849924e2bfc021": {
+      "type": "divider",
+      "settings": {
+        "background": "transparent",
+        "line_color": "#eb6fbd",
+        "height": 5,
+        "line_height": 1,
+        "line_width": 80,
+        "background_sm": "transparent",
+        "line_color_sm": "transparent",
+        "height_sm": 5,
+        "line_height_sm": 0,
+        "line_width_sm": 80
       }
     },
     "16545924127a999d6a": {
@@ -117,6 +133,7 @@
     "product-feature",
     "main",
     "1654553919c0856caf",
+    "1655849924e2bfc021",
     "16545924127a999d6a",
     "1649923445dbb0994e"
   ]

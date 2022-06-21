@@ -170,10 +170,11 @@
 
   
   <div class="wrappers-{{section.id}}">
-    <div class="pw">
+    
+    <div class="pw">       
       <div class="smt">
   
- 
+        {% render 'breadcrumbs' %}
         {% for block in section.blocks %}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
