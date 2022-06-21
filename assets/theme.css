@@ -11663,7 +11663,8 @@ p, .p {
     flex-direction: column;
 }
    .healers-filter-{{section.id}},
-    .healers-filter-{{block.id}}{
+   .healers-filter-{{block.id}}},
+    .healers-filter__dropdown {
 display: none !important;
 }
 
@@ -11674,7 +11675,7 @@ display: none !important;
     flex-direction: column;
 }
 .additional-wrapper {
-      width: 100%;
+      width: 100% !important;
 }
 
 .card-template--15567860269233__165513984159871db8 {
