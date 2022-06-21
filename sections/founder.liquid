@@ -17,7 +17,7 @@
   .role-{{section.id}} {
     color: {{section.settings.rolecolor}};
     font-weight: 900;
-    text-transform: italic;
+    font-style: italic;
   }
   
   .description-{{section.id}} { 
@@ -63,7 +63,7 @@
     <h1 class="header-{{section.id}}"> {{ section.settings.header }} </h1>
     <h3 class="name-{{section.id}}"> {{section.settings.name }} </h3>
        <subtitle class="role-{{section.id}}" >{{section.settings.role}}</subtitle>
-    <p class="description-{{section.id}}"> {{ section.settings.description }} </p>
+    <p class="description-{{section.id}}"> {{ section.settings.description | escape }} </p>
     
   </div>
   

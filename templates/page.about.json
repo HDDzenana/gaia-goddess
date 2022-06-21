@@ -115,7 +115,7 @@
         "16509781953152df75-2"
       ],
       "settings": {
-        "title": "Three Pillars of our Brands",
+        "title": "Three Pillars of Our Brand",
         "heading_color": "#6c1d45",
         "subtitle": "<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.",
         "testimonial_layout": "imgfirst",
@@ -247,11 +247,11 @@
         "image": "shopify:\/\/shop_images\/Screenshot_2022-06-06_at_23.47.33.png",
         "header": "Our Founder",
         "headercolor": "#6c1d45",
-        "name": "<br><br> Maria Marshall",
-        "namecolor": "#d874d4",
+        "name": "<br>  Maria Marshall",
+        "namecolor": "#eb6fbd",
         "role": "CEO + Founder",
         "rolecolor": "#6c1d45",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ..",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et molestie ac feugiat sed lectus. Orci sagittis eu volutpat odio facilisis mauris sit. A lacus vestibulum sed arcu. Blandit massa enim nec dui. In ornare quam viverra orci sagittis. Mi proin sed libero enim sed. Commodo viverra maecenas accumsan lacus vel facilisis. Posuere sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Venenatis lectus magna fringilla urna porttitor. Non odio euismod lacinia at quis risus sed vulputate.",
         "descriptioncolor": "#575757"
       }
     },

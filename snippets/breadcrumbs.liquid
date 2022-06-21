@@ -8,7 +8,7 @@
     <a class="maroon" href="{{ routes.collections_url }}">
       {{- 'collections.breadcrumbs.collections' | t -}}
     </a>
-    <span class="breadcrumbs__sep">/</span>
+ >
 
     {%- if collection.handle -%}
       <span class="breadcrumbs__current">
@@ -27,7 +27,7 @@
     {%- assign product_collection = collection | default: product.collections[0] -%}
     {%- if product_collection.handle != blank -%}
     <p class="maroon" style="margin: 3px;">   {{- product_collection.title | link_to: product_collection.url -}} </p>
-      <span class="breadcrumbs__sep">/</span>
+ >
     {%- endif -%}
 
     {%- if product.handle -%}
