@@ -1,6 +1,26 @@
-
+<style>
+  
+</style>
 {% assign menu = section.settings.menu%}
 <style>
+
+  @media only screen and (max-width: 1000px) {
+    .accountnav {
+      max-width: 500px!important;
+    }
+
+    .accountnav {
+      position:  relative !important;
+      display: flex;
+      flex-direction: column;
+      
+    margin-left: 15% !important;
+    }
+
+    .customaccount-{{section.id}} {
+      flex-direction: column-reverse;
+    }
+  }
 
 .customaccount-{{section.id}} {
   display: flex;
@@ -78,6 +98,8 @@ li.active
   width: 100%;
 }
 
+.cf-app__file-preview.has-file,.cf-app__file-preview-wrapper {visibility: hidden !important; display: none;}
+
 .topbanner  * {
   max-height: 250px;
 }
@@ -108,7 +130,7 @@ li.active
   padding: 10px 0.5em;
 }
 .acfimg {
-  display: none !important; 
+  /* display: none !important;  */
 }
 
 .cfradio .cf-app__field-label {
@@ -225,11 +247,26 @@ overflow: hidden;
     %}
    
     <div class="profilepicturewrapper"> 
-    
+     {%if  customer.metafields.cf_app.profile_image %}
      <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
-  </div>
-  </div>
-  <div class="editform">
+    
+     {%endif%}
+  
+    </div>
+    <div class="changeimg" 
+    style=" background: url({{ 'changeimage.svg' | asset_url }}); 
+    background-repeat:no-repeat;height:50px;
+    margin-top: -150px;
+    display: flex;
+    width: 100%;
+    margin-left: 53%;
+    z-index: 99999999999999999 !important;">  
+    </div>
+ 
+  </div>  
+   <div class="editform" style="
+   min-height: max-content; padding: 100px 0 !important;
+">
 
  <div class="form-vertical" style="padding:0 5px ;">
       <!-- <p class="registration-p">or use your email for registration:</p> -->

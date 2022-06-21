@@ -1,6 +1,24 @@
 
 {% assign menu = section.settings.menu%}
 <style>
+    @media only screen and (max-width: 1000px) {
+    .accountnav {
+      max-width: 500px!important;
+    }
+
+    .accountnav {
+      position:  relative !important;
+      display: flex;
+      flex-direction: column;
+      
+    margin-left: 15% !important;
+    }
+
+    .customaccount-{{section.id}} {
+      flex-direction: column-reverse;
+    }
+  }
+
 
 .customaccount-{{section.id}} {
   display: flex;
