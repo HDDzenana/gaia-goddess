@@ -11657,4 +11657,41 @@ p, .p {
   .product-single__gallery {
     overflow: hidden;
   }
+ .retreat-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+ healers-filter-template--15538594218161__1655722204c5e5892e {
+display: none;
+}
+
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.additional-wrapper {
+      width: 100%;
+}
+
+.card-template--15567860269233__165513984159871db8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 50px 0;
+    flex-wrap: wrap;
+} 
+.card-text {
+width: 100%
+}
+
+.card-text {
+    width: 90%;
+    float: 50px;
+    padding: 0 50px;
+    text-align: justify;
+} 
  }
