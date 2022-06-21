@@ -218,7 +218,7 @@ display: none !important;
         {%when 'collection'%}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
-          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}" style="max-width:500px;">
+          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}" style="max-width:350px;">
             <img alt="Healer card image" src="{{ collection.featured_image | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
 
             <div class="healer-heading">
