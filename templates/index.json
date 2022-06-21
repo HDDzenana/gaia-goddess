@@ -3,7 +3,7 @@
     "1649146796fe3d4805": {
       "type": "section-video",
       "settings": {
-        "video_height": "sixty-fifty-height-hero",
+        "video_height": "seven-fifty-height-hero",
         "text_position": "center-center",
         "hero_video_link": "",
         "hero_video_link_internal": "https:\/\/cdn.shopify.com\/s\/files\/1\/0535\/9357\/1505\/files\/GAIA_GODDESS_LANDING_PAGE_VIDEO_FINAL_EXPORT_19.66MB_1_14b5693f-6421-4bd6-83dd-ba387cf02d47.mp4?v=1645608634",
@@ -184,7 +184,7 @@
       ],
       "settings": {
         "aos": true,
-        "bg": "#FEFAFB",
+        "bg": "",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "left",
@@ -198,7 +198,7 @@
         "caption_color": "",
         "caption": "",
         "text_color": "#6c1d45",
-        "heading": "Become a <br>Member of Gaia.",
+        "heading": "Become a <br>Member of Gaia",
         "subheading": "",
         "ssubheading_color": "#800000",
         "description": "<p>Becoming a member of Gaia Goddess will introduce you to a new world for a community of holistic healing. Key benefits of our memberships include:<br\/><br\/><\/p>",

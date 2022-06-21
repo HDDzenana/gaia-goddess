@@ -107,11 +107,11 @@
       {% comment %} Text {% endcomment %}
       <div class="video-text-wrapper wrapper wrapper--small">
         {%- if title != blank -%}
-          <h2 class="{{ section.settings.text_color }}">{{ title | escape }}</h2>
+          <h1 class="{{ section.settings.text_color }}">{{ title  }}</h1>
         {%- endif -%}
 
         {%- if subtitle != blank -%}
-          <h2 class="{{ section.settings.text_color }}">{{ subtitle | escape }}</h2>
+          <h1 class="{{ section.settings.text_color }}">{{ subtitle | escape }}</h1>
         {%- endif -%}
 
         {%- if subheading != blank -%}

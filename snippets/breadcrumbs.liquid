@@ -1,10 +1,10 @@
 <nav class="breadcrumbs" style="margin-left: 10px;">
-  <a href="{{ routes.root_url }}" class="pink" title="{{'collections.breadcrumbs.back_to_home' | t }}">
+  <!-- <a href="{{ routes.root_url }}" class="pink" title="{{'collections.breadcrumbs.back_to_home' | t }}">
     {{- 'collections.breadcrumbs.home' | t -}}
-  </a>
+  </a> -->
 
   {%- if template contains 'collection' -%}
-    <span class="breadcrumbs__sep">/</span>
+    <!-- <span class="breadcrumbs__sep">/</span> -->
     <a class="maroon" href="{{ routes.collections_url }}">
       {{- 'collections.breadcrumbs.collections' | t -}}
     </a>
@@ -22,7 +22,7 @@
   {%- endif -%}
 
   {%- if template contains 'product' -%}
-    <span class="breadcrumbs__sep">/</span>
+    <!-- <span class="breadcrumbs__sep">/</span> -->
 
     {%- assign product_collection = collection | default: product.collections[0] -%}
     {%- if product_collection.handle != blank -%}

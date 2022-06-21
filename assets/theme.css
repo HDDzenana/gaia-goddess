@@ -1,3 +1,15 @@
+@font-face {
+  font-family: 'Playfair';
+  src: url('PlayfairDisplay-Regular.ttf') format('woff2'),
+    url('PlayfairDisplay-Regular.ttf') format('woff');
+}
+
+@font-face {
+  font-family: 'Acumin_Pro';
+  src: url('Acumin_Pro_Book.woff2') format('woff2'),
+    url('Acumin_Pro_Book.woff') format('woff');
+}
+ 
 @charset "UTF-8";
 :root {
   --bg: var(---color-bg);
@@ -1305,14 +1317,19 @@ sub {
     font-size: calc(2rem * var(---font-adjust-heading));
   }
 }
+
+/* main subh change */
 .main-subheading {
   display: block;
   margin-bottom: 10px;
   color: var(--text);
-  font-size: calc(1.3125rem * var(---font-adjust-body));
-  font-family: var(---font-stack-body);
-  font-weight: var(---font-weight-body);
-  font-style: var(---font-style-body);
+
+  font-family: 'Acumin_Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
 }
 @media only screen and (max-width: 767px) {
   .main-subheading {
@@ -1349,6 +1366,7 @@ sub {
 }
 .text-light {
   color: #fff;
+  margin-bottom: 0 !important;
 }
 .text-dark {
   color: #000;
@@ -11701,4 +11719,13 @@ display: none !important;
 
  #shopify-section-template--15660035440817__165466236852a57a63 {
   background: #FEF1F5 !important;
+ }
+
+ /* EVENTS */
+
+ .breadcrumbs * {
+  font-size: 14px !important; 
+  text-decoration: none;
+  font-weight: 300 !important;
+  margin: 3px !important;
  }

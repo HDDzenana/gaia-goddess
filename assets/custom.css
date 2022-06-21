@@ -22,6 +22,9 @@ textarea {
   font-family: 'Acumin_Pro' !important;
 }
 
+#text {
+  margin: 0 !important;
+}
 p {
   font-size: 16px;
   color: #575757;
@@ -31,26 +34,32 @@ h3 {
   font-size: 25px;
 }
 
-h1 {
+h1, .h1 {
   font-family: 'Playfair' !important;
   font-size: 50px;
-  font-weight: 700;
-  line-height: 67px;
+  font-weight: 700 !important;
+  line-height: 67px !important;
 }
 h2,
 h2 span {
   font-family: 'Playfair' !important;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 52px;
 }
 
 .btn {
-  line-height: 21.6px;
-  font-size: 18px;
+  /* /* line-height: 21.6px; */
+  /* font-size: 17px; */
   border-radius: 30px;
-  min-width: 200px;
+  /* min-width: 200px; */
+  font-size: inherit;
+  line-height: inherit;
 }
+
+.btn a {
+  padding: 0 !important
+margin: 0 !important}
 
 .value__each {
   margin: 15px auto 26px;
