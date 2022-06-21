@@ -131,6 +131,17 @@
             "hostedby": "",
             "placedate": ""
           }
+        },
+        "2b2046af-4b1f-4669-825e-68c84f833eaa": {
+          "type": "product",
+          "settings": {
+            "product": "7-days-exploring-sightseeing-in-cairo-egypt",
+            "healer_subtitle": "Retreat at Home: OnlineYoga & Life Drawing",
+            "description": "Retreat at Home: OnlineYoga & Life Drawing",
+            "imagef": "shopify:\/\/shop_images\/image_2.png",
+            "hostedby": "",
+            "placedate": ""
+          }
         }
       },
       "block_order": [
@@ -142,7 +153,8 @@
         "b9944b4e-3374-445b-8002-96857b72d2ab",
         "823865af-6dd5-4486-949b-26331afeaa19",
         "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c",
-        "f4ce4b4c-e4a0-4323-aabc-597055f1200d"
+        "f4ce4b4c-e4a0-4323-aabc-597055f1200d",
+        "2b2046af-4b1f-4669-825e-68c84f833eaa"
       ],
       "settings": {
         "heading": "Events and Retreats",
