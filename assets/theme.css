@@ -11662,7 +11662,7 @@ p, .p {
     display: flex;
     flex-direction: column;
 }
- healers-filter-template--15538594218161__1655722204c5e5892e {
+   .healers-filter-template-{{section.id}} {
 display: none;
 }
 
