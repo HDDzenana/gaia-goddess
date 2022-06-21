@@ -11654,19 +11654,7 @@ p, .p {
 
 
  @media only screen and (max-width: 900px) {
-  .product-single__gallery {
-    overflow: hidden;
-  }
- .retreat-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
-   .healers-filter-{{section.id}},
-   .healers-filter-{{block.id}}},
-    .healers-filter__dropdown {
-display: none !important;
-}
+ 
 
 .cards-wrapper {
     display: flex;
@@ -11696,4 +11684,17 @@ width: 100%
     padding: 0 50px;
     text-align: justify;
 } 
+     .product-single__gallery {
+    overflow: hidden;
+  }
+ .retreat-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+   .healers-filter-{{section.id}},
+   .healers-filter-{{block.id}}}
+ {
+display: none !important;
+ }
  }
