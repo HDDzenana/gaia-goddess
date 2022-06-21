@@ -172,7 +172,7 @@ display: none !important;
 <section id="FeaturedCollection--{{ section.id }}" class="featured-collection featured-collection--{{ layout }}" data-section-id="{{ section.id }}" data-section-type="featured-collection">
 
   <div class="featured-collection__title">
-    <div class="wrapper">
+    <div class="wrapper" style="max-width: 80%; margin: auto;">
       <div class="wrapper-section__heading">
         <h2 class="section__heading">{{ section.settings.heading }}</h2>
 
@@ -189,7 +189,7 @@ display: none !important;
               <option value="reiki">Reiki</option>
 
             </select>
-          </div>
+          
         {% endif %}
         <div class="filterino" style="display:flex; flex-wrap: wrap;"> 
         {%for block in section.blocks %}   
@@ -203,9 +203,9 @@ display: none !important;
 
 
             </select>
-          </div>
+          </div> 
           {%endcase%} 
-        {% endfor %}</div>
+        {% endfor %}</div> </div>
       </div>
     </div>
   </div>
