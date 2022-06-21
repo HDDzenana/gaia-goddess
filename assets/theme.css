@@ -11662,8 +11662,8 @@ p, .p {
     display: flex;
     flex-direction: column;
 }
-   .healers-filter-template-{{section.id}},
-    .healers-filter-template-{{block.id}}{
+   .healers-filter-{{section.id}},
+    .healers-filter-{{block.id}}{
 display: none !important;
 }
 
