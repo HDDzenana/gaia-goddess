@@ -14,7 +14,6 @@
     "type_heading_font": "playfair_display_n4",
     "type_nav_font": "body",
     "products_per_row_on_desktop": 4,
-    "image_aspect_ratio": 0.5,
     "product_grid_hover_image": false,
     "product_grid_slideshow": false,
     "product_grid_slideshow_arrows": "black",
