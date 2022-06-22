@@ -264,7 +264,7 @@ display: none !important;
         <div class="{% if carousel %}carousel{% else %} {{ grid_mobile }}{% endif %}" {% if carousel %} data-collection-slider {% endif %}   >
       
           <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
-            <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="428" height="300px" object-fit="cover" style="object-fit:cover;">
+            <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="428" height="300px" object-fit="contain" style="object-fit:contain;">
 
             <div class="healer-heading">
               <div class="healer-heading__info">
