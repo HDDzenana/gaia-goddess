@@ -11115,6 +11115,9 @@ input[type='radio'].variant-input {
   .testimonials__wrapper {
     display: block;
   }
+  .testimonials-section {
+    padding-bottom: 10px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .testimonials__wrapper {
