@@ -136,12 +136,32 @@
         "button_text": "Shop now",
         "button_url": "",
         "button_style": "primary",
-        "text_color": "#000",
-        "bg_color": "#fff"
+        "text_color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "16559016345cf5a948": {
+      "type": "section-retreats",
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/GRID-01_39852d55-01bc-4956-a24a-ddbf3ccc401c.png",
+        "image_link_1": "",
+        "header_color": "#6c1d45",
+        "subheader_color": "#eb6fbd",
+        "heading": "<h1 class=\"maroonbold\">  Membership Benefits<\/h1>",
+        "subheading": "",
+        "description": "<p>In the next year, Gaia Goddess will transition to tiered paid memberships with more exciting content, web features and valualbe perk across multiple subscriptions to choose from. All members who <strong>sign-up now for our limited free membership<\/strong> will receive an automatic discounted membership pricing if they choose to upgrade.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#800000",
+        "button_hover_color": "#fafafa",
+        "bg_color": ""
       }
     },
     "16545924127a999d6a": {
       "type": "section-product-feature",
+      "disabled": true,
       "settings": {
         "aos": true,
         "bg": "",
@@ -198,26 +218,6 @@
         "video_url": "",
         "bg_color": ""
       }
-    },
-    "16559016345cf5a948": {
-      "type": "section-retreats",
-      "disabled": true,
-      "settings": {
-        "text_position": "left",
-        "text_alignment": "left",
-        "image_1": "shopify:\/\/shop_images\/GRID-01_39852d55-01bc-4956-a24a-ddbf3ccc401c.png",
-        "image_link_1": "",
-        "header_color": "#6C1D45",
-        "subheader_color": "#EB6FBD",
-        "heading": "<h1>  Membership Benefits<\/h1>",
-        "subheading": "",
-        "description": "<p> <\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque.Arcu, ac id platea euismod elit. Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>",
-        "button_text": "",
-        "button_link": "",
-        "button_color": "#800000",
-        "button_hover_color": "#FAFAFA",
-        "bg_color": ""
-      }
     }
   },
   "order": [
@@ -227,9 +227,9 @@
     "1655849924e2bfc021",
     "1655885830e9659bc6",
     "1655901604009e30c3",
+    "16559016345cf5a948",
     "16545924127a999d6a",
     "1649923445dbb0994e",
-    "1655885819b062f291",
-    "16559016345cf5a948"
+    "1655885819b062f291"
   ]
 }
