@@ -31,7 +31,7 @@
       "settings": {
         "collection": "events",
         "products_rows": 2,
-        "products_layout": "grid",
+        "products_layout": "carousel",
         "show_title": true,
         "show_collection_button": true,
         "button_style": "primary",
