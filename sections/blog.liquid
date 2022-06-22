@@ -157,7 +157,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     padding: 0;
   }
   </style>
-<div class="newestcards-{{Section.id}} wrapper" style="background-color: {{section.settings.section_bg}};"> 
+<div class="newestcards-{{Section.id}} " style="background-color: {{section.settings.section_bg}};"> 
 <div class="cards-{{section.id}} page-width">
     <div class="collapsible-content__header  " style="text-align: center; margin: auto !important;">
           {%- if section.settings.caption != blank -%}
@@ -230,7 +230,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     {%endfor%}                        
   {{ article.published_at | time_tag: format: 'date' }}
 </span> 
-            <h5 style="min-width:100%; color: #6C1D45;">    {{article.title}}  </h5> 
+            <h5 class="maroonbold" style="min-width:100%; color: #6C1D45;">    {{article.title}}  </h5> 
         
           
       
