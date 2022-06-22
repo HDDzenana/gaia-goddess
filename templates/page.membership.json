@@ -113,6 +113,33 @@
         "col_order": "image-right"
       }
     },
+    "1655901604009e30c3": {
+      "type": "section-image-columns",
+      "disabled": true,
+      "blocks": {
+        "386772fa-250c-436c-ade5-f853b4e5e141": {
+          "type": "image",
+          "settings": {
+            "product": "",
+            "position_x": 50,
+            "position_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "386772fa-250c-436c-ade5-f853b4e5e141"
+      ],
+      "settings": {
+        "section_height": "sixty-fifty-height-hero",
+        "title": "Our Story",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_text": "Shop now",
+        "button_url": "",
+        "button_style": "primary",
+        "text_color": "#000",
+        "bg_color": "#fff"
+      }
+    },
     "16545924127a999d6a": {
       "type": "section-product-feature",
       "settings": {
@@ -171,6 +198,26 @@
         "video_url": "",
         "bg_color": ""
       }
+    },
+    "16559016345cf5a948": {
+      "type": "section-retreats",
+      "disabled": true,
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/GRID-01_39852d55-01bc-4956-a24a-ddbf3ccc401c.png",
+        "image_link_1": "",
+        "header_color": "#6C1D45",
+        "subheader_color": "#EB6FBD",
+        "heading": "<h1>  Membership Benefits<\/h1>",
+        "subheading": "",
+        "description": "<p> <\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque.Arcu, ac id platea euismod elit. Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#800000",
+        "button_hover_color": "#FAFAFA",
+        "bg_color": ""
+      }
     }
   },
   "order": [
@@ -179,8 +226,10 @@
     "1654553919c0856caf",
     "1655849924e2bfc021",
     "1655885830e9659bc6",
+    "1655901604009e30c3",
     "16545924127a999d6a",
     "1649923445dbb0994e",
-    "1655885819b062f291"
+    "1655885819b062f291",
+    "16559016345cf5a948"
   ]
 }
