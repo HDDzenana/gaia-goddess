@@ -13,11 +13,11 @@
         "heading_alignment": "left",
         "heading": "Contact Us",
         "sub_heading": "If you have any questions, want to join as a healer, or just want to say hi, feel free to fill the form bellow.",
-        "heading_color": "#6c1d45",
-        "background_color": "#fef1f5",
+        "heading_color": "#6C1D45",
+        "background_color": "#FEF1F5",
         "image": "shopify:\/\/shop_images\/antonino-visalli-RNiBLy7aHck-unsplash.png",
-        "card_background_color": "#ffffff",
-        "text_color": "#6c1d45",
+        "card_background_color": "#6C1D45",
+        "text_color": "#FFFFFF",
         "heading_details": "Contact Details",
         "sub_heading_details": "If you need any help and prefer to reach out directly, feel free to do it via phone or email.",
         "show_email": true,
@@ -31,7 +31,7 @@
         "social_twitter": true,
         "show_border": true,
         "border_width": 1,
-        "border_color": "#ffffff"
+        "border_color": "#FFFFFF"
       }
     }
   },

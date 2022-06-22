@@ -117,7 +117,7 @@
                 <li>{%- render 'contact-email' -%}<a style="text-decoration: none;" href="mailto:info@gaiagoddesslifestyle.com">
                   <div class="email_contact">
                    
-                    info@gaiagoddesslifestyle.com   </div>
+               <p class="maroon" >     info@gaiagoddesslifestyle.com</p>   </div>
                    </a></li>
                 {% endif %}
                 {% if section.settings.show_phone %}
@@ -140,19 +140,19 @@
               <div class="social-sharing-wrapper social-sharing-wrapper-contact">
                 {% if section.settings.social_facebook %}
                   <a class="facebook" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
-                    {%- render 'icon-contact-facebook' -%}
+                    {%- render 'icon-footer-facebook' -%}
                   </a>
                 {% endif %}
               
                 {% if section.settings.social_instagram %}
                   <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
-                    {%- render 'icon-contact-instagram' -%}
+                    {%- render 'icon-footer-instagram' -%}
                   </a>
                 {% endif %}
             
                 {% if section.settings.social_twitter %}
                   <a class="twitter" rel="noopener" href = "{{ settings.social_twitter_link }}" title="{{ 'footer.socials.title' | t: social: 'Twitter', shop_name: shop.name }}">
-                    {%- render 'icon-contact-twitter' -%}
+                    {%- render 'icon-footer-twitter' -%}
                   </a>
                 {% endif %}
                 
