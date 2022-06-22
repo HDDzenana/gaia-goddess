@@ -42,7 +42,7 @@ h1, .h1 {
 }
 h2,
 h2 span {
-  /* font-family: 'Playfair' !important; */
+  font-family: 'Playfair' !important;
   font-size: 50px;
   font-weight: 700 !important;
   line-height: 52px;
