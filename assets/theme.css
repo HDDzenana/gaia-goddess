@@ -11741,3 +11741,7 @@ display: none !important;
   .btn * {
     font-weight: 600;
   }
+
+  .healers-filter__dropdown * {
+    font-weight: bold !important;
+  }
