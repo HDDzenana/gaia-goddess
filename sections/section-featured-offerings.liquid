@@ -160,7 +160,7 @@
 
           {%- assign icon_image = block.settings.icon_image -%}
 
-          <div class="featured-offerings-block" style="display: flex">
+          <div class="featured-offerings-block" style="display: flex; align-items: center;">
             {%- if icon_image != blank -%}
             {%- assign icon_image_width = 140 -%}
             {%- assign icon_image_height = icon_image_width | divided_by: icon_image.aspect_ratio -%}
@@ -188,9 +188,9 @@
 
             </div>
             {%- endif -%}
-            <div class="featured-offerings-block-text" style="text-align: {{ block.settings.text_alignment }};">
-              <h3 class="offerings-title" style="color: {{ block.settings.offering_text_color }};">{{ block.settings.title }}</h3>
-              <p class="offerings-description" style="color: {{ block.settings.offering_text_color }}">{{ block.settings.description }}</p>
+            <div class="featured-offerings-block-text" style="text-align: {{ block.settings.text_alignment }}; margin-top: 25px;">
+              <h3 class="offerings-title" style="color: {{ block.settings.offering_text_color }};">{{ block.settings.title | escape }}</h3>
+              <p class="offerings-description" style="color: {{ block.settings.offering_text_color }}">{{ block.settings.description | escape }}</p>
             </div>
           </div>
         {% endfor %}
