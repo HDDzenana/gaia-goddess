@@ -263,12 +263,31 @@
 <div class="aboutcard">
   <p style="color:white ; margin-bottom: 0px; font-weight:700 ;">  {{article.author}}</p>
  
-<span class="role">  {{article.metafields.my_fields.authorrole}}</span>
+<span class="role">  {{article.metafields.my_fields.authorrole}}</span>   
+<a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }} "style="
+margin-left: 15%;
+padding-top: 40px !important;
+">
+  {%- render 'icon-footer-facebook' -%}
+</a>
+ 
+ 
+<a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+  {%- render 'icon-footer-instagram' -%}
+</a>
+ 
+
+
+<a class="website" rel="noopener" href = "{{ settings.social_twitter_link }}" title="">
+  {%- render 'healer-website' -%}
+</a>
+ 
 </div> </div>
 
 <div class="card-text">
    <p class="ct"> About {{article.author}}</p>
    <p class="aal">{{article.metafields.my_fields.about_author_long}}  </p>
+   
 </div>
   </div>
 </div> 
