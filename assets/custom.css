@@ -243,3 +243,7 @@ padding-top: 25px !important;
     opacity: .4;
   }
 }
+
+.description_div p  {
+  color: #575757 !important;
+}
