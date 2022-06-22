@@ -80,11 +80,37 @@
         "height": 5,
         "line_height": 1,
         "line_width": 80,
-        "background_sm": "transparent",
-        "line_color_sm": "transparent",
+        "background_sm": "rgba(0,0,0,0)",
+        "line_color_sm": "rgba(0,0,0,0)",
         "height_sm": 5,
         "line_height_sm": 0,
         "line_width_sm": 80
+      }
+    },
+    "1655885830e9659bc6": {
+      "type": "iwt",
+      "disabled": true,
+      "blocks": {
+        "35addce1-70a8-4eec-9c26-484aebd1c57f": {
+          "type": "heading",
+          "settings": {
+            "heading_label": "Membership Benefits"
+          }
+        },
+        "a151d97b-8417-4ba9-b8ec-d211783d7537": {
+          "type": "text",
+          "settings": {
+            "content": "<p> <\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque.Arcu, ac id platea euismod elit. Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "35addce1-70a8-4eec-9c26-484aebd1c57f",
+        "a151d97b-8417-4ba9-b8ec-d211783d7537"
+      ],
+      "settings": {
+        "image_with_text": "shopify:\/\/shop_images\/GRID-01_39852d55-01bc-4956-a24a-ddbf3ccc401c.png",
+        "col_order": "image-right"
       }
     },
     "16545924127a999d6a": {
@@ -127,6 +153,23 @@
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }
+    },
+    "1655885819b062f291": {
+      "type": "section-image-with-text",
+      "disabled": true,
+      "settings": {
+        "section_height": "sixty-fifty-height-hero",
+        "text_position": "left",
+        "image_background": false,
+        "bg_position": "center-center",
+        "subheading": "Subheading",
+        "heading": "Our Story",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_text": "Learn More",
+        "button_url": "",
+        "button_style": "primary",
+        "bg_color": ""
+      }
     }
   },
   "order": [
@@ -134,7 +177,9 @@
     "main",
     "1654553919c0856caf",
     "1655849924e2bfc021",
+    "1655885830e9659bc6",
     "16545924127a999d6a",
-    "1649923445dbb0994e"
+    "1649923445dbb0994e",
+    "1655885819b062f291"
   ]
 }
