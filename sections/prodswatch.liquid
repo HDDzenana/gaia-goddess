@@ -465,7 +465,10 @@ margin: auto">
     text-align: center;
      text-transform: uppercase;
     }
-
+ 
+    .bg-yellow  {
+      border-bottom: 2.5px solid #EB6FBD;
+    }
       .switch-blocks .buttons-container .selected-{{ block.id }} {
       
         border-bottom: 2.5px solid #EB6FBD;
@@ -487,7 +490,7 @@ margin: auto">
       min-height: 320px;
     }
     </style>
- <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}'>
+ <div data-slick='{"slidesToShow": 1, "slidesToScroll": 1}' class="tothis">
       <button class="block-btn block-btn-{{ block.id }} {% if forloop.first %} selected-{{block.id}} {% endif %}" data-id={{ block.id }}>
         <img src="{{block.settings.sub_image | image_url: width:250}}" alt="{{block.settings.sub_image.alt | escape }}"  loading="lazy" >
         <div class="buttontext">
@@ -663,3 +666,13 @@ margin: auto">
     padding: 0 !important}
   }
  </style>
+
+ <script>
+const boxes = document.querySelectorAll('.tothis');
+
+for (const box of boxes) {
+  box.addEventListener('click', function handleClick() {
+    box.classList.add('bg-yellow');
+  });
+}
+ </script>
