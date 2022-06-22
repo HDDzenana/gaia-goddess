@@ -197,7 +197,7 @@
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+    {%endfor%}<time class="pink" datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD !important;">{{ article.published_at | date: format: 'month_day_year' }}</time>
     </div>
     <h1>
       {{article.title}}
@@ -272,7 +272,10 @@ image: section.settings.image %}
     
                       </div>
                 </div>
-            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
+            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background: #FFFFFF;
+box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161);
+background: #FFFFFF !important;
+box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
                  <span class="center center-{{section.id}}"> Share This  Article </span> 
                <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact"> 
                
