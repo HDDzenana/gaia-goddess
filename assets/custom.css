@@ -55,6 +55,7 @@ h2 span {
   /* min-width: 200px; */
   font-size: inherit;
   line-height: inherit;
+  font-weight: bold;
 }
 
 .btn a {
