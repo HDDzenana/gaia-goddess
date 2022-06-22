@@ -11730,3 +11730,8 @@ display: none !important;
   margin: 3px !important;
   gap: 3px !important;
  }
+  
+  
+  .btn * {
+    font-weight: 600;
+  }
