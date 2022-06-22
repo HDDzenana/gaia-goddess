@@ -20,7 +20,7 @@
         "caption": "",
         "text_color": "#6c1d45",
         "heading": "Become a Gaia Goddess Member",
-        "subheading": "<br>",
+        "subheading": "",
         "ssubheading_color": "#800000",
         "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
         "button_text": "Learn More",
@@ -168,6 +168,7 @@
         "button_text": "Learn More",
         "button_url": "",
         "button_style": "primary",
+        "video_url": "",
         "bg_color": ""
       }
     }
