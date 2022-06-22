@@ -134,6 +134,7 @@
         },
         "2b2046af-4b1f-4669-825e-68c84f833eaa": {
           "type": "product",
+          "disabled": true,
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
             "healer_subtitle": "Retreat at Home: OnlineYoga & Life Drawing",
