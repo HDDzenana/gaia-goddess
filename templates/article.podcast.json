@@ -1,5 +1,27 @@
 {
   "sections": {
+    "16558982789d877b23": {
+      "type": "podcast",
+      "settings": {
+        "prevlink": "",
+        "prevtext": "Discover",
+        "bg": "#6C1D45",
+        "card_bg": "#6C1D45",
+        "text_position": "right",
+        "text_alignment": "center",
+        "header_color": "#6C1D45",
+        "card_title_color": "#6C1D45",
+        "card_social": true,
+        "show_instagram_icon": true,
+        "social_instagram_link": "",
+        "show_website_icon": true,
+        "social_website_link": "",
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "button_text": "",
+        "button_link": "",
+        "bg_color": ""
+      }
+    },
     "16551396468964d651": {
       "type": "section-superco-blog-article",
       "disabled": true,
@@ -7,7 +29,7 @@
         "prevlink": "",
         "prevtext": "Discover",
         "show_share_buttons": true,
-        "bg": "#fef1f5",
+        "bg": "#1990c6",
         "text_position": "right",
         "text_alignment": "center",
         "header_color": "#6c1d45",
@@ -37,10 +59,10 @@
         "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913"
       ],
       "settings": {
-        "padding_top": 52,
+        "padding_top": 0,
         "padding_bottom": 52,
         "bg": "#fef1f5",
-        "heading": "How to Start Praticing Yoga in Your Home",
+        "heading": "",
         "heading_color": "#6c1d45",
         "text_content": ""
       }
@@ -98,12 +120,12 @@
       "settings": {
         "prevlink": "",
         "prevtext": "Discover",
-        "bg": "#6C1D45",
-        "card_bg": "#6C1D45",
+        "bg": "#6c1d45",
+        "card_bg": "#6c1d45",
         "text_position": "right",
         "text_alignment": "center",
-        "header_color": "#6C1D45",
-        "card_title_color": "#6C1D45",
+        "header_color": "#6c1d45",
+        "card_title_color": "#6c1d45",
         "card_social": true,
         "show_instagram_icon": true,
         "social_instagram_link": "",
@@ -117,6 +139,7 @@
     }
   },
   "order": [
+    "16558982789d877b23",
     "16551396468964d651",
     "16514856733972d9a8",
     "165466236852a57a63",
