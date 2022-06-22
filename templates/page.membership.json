@@ -142,6 +142,7 @@
     },
     "16559016345cf5a948": {
       "type": "section-retreats",
+      "disabled": true,
       "settings": {
         "text_position": "left",
         "text_alignment": "left",
@@ -161,7 +162,6 @@
     },
     "16545924127a999d6a": {
       "type": "section-product-feature",
-      "disabled": true,
       "settings": {
         "aos": true,
         "bg": "",
