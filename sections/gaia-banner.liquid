@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<section class="supperco-banner-{{section.id}}" style=" background: {{section.settings.bg}};">
+<section class="supperco-banner-{{section.id}}" style=" background: {{section.settings.bg}}; height:100%;">
   <div class="wrapper">  
   <div class="description_div">
-    <h1 class="center " style="color: {{section.settings.heading_color}};">
-      {{section.settings.heading}}
+    <h1 class="center " style="color: {{section.settings.heading_color}};padding-top: 20px; padding-bottom: 0px; margin-bottom: 0px !important">
+      {{section.settings.heading }}
     </h1>
-    <div class="grayregular" style="margin-top: 20px; text-align: center;">
+    <div class="grayregular" style="text-align: center; margin-top: 0;">
       {{section.settings.text_content  }}
     </div>
   </div>
@@ -42,7 +42,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    height: 350px;
+    height: 40vh;
     flex-wrap: wrap;
     overflow: hidden;
   }
@@ -54,7 +54,7 @@
 
   .gaiabimg:last-of-type {
     width: 35.5%;
-    height: 350px;
+    height: 40vh;
     padding: 0;
   }
   .gaia-image,
