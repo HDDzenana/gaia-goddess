@@ -7976,6 +7976,7 @@ button.collection__filters__toggle {
 }
 .video__overlay {
   z-index: auto;
+  background-color: transparent !important;
 }
 .text-inside {
   position: absolute;
