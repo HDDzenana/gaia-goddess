@@ -115,7 +115,7 @@
 
 {%- if logo_not_home != blank or logo_home != blank or section.settings.show_shop_name -%}
 	<h1 class="logo">
-    <a href="{{ routes.root_url }}">
+    <a href="{{ routes.root_url }}" style="height: 50px;">
       {%- render 'logo-header' -%}
     </a>
 		{% comment %}{{- logo_not_home -}}

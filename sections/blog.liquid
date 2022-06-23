@@ -94,11 +94,27 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
       margin-top: 0;
       width: 100%;
     }
-  @media only screen and (max-width: 768px) {
-     
+  @media only screen and (max-width: 998px) {
+     .newestcards-{{section.id}} {
+      padding-top: 10px;
+     }
+     .blogsall {
+      display: flex !important;
+      flex-direction: column !important;
+     }
+
+     .articlecontents-{{section.id}} {
+      text-align: left !important;
+     }
+     .card  {
+      height: 200px !important;
+     }
+     .healers-filter__dropdown {
+      display: none !important;
+     }
       .card   * {
       /* width: 160px !important; */
-      text-align: center;
+      text-align: left !important;
     }
     .multicolumncard__image {
     width: 100%;
@@ -113,7 +129,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     .articlecontents-{{section.id}} {
           background: white;
     margin-top:-100px;
-      min-height: 275px;
+      min-height: 205px;
     }
   .leftlink,
     .time, .time * {    display: flex;
@@ -158,7 +174,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     padding: 0;
   }
   </style>
-<div class="newestcards-{{Section.id}} " style="background-color: {{section.settings.section_bg}};"> 
+<div class="newestcards-{{section.id}} " style="background-color: {{section.settings.section_bg}};"> 
 <div class="cards-{{section.id}} page-width">
     <div class="collapsible-content__header  " style="text-align: center; margin: auto !important;">
           {%- if section.settings.caption != blank -%}
@@ -204,7 +220,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     margin: 0;
 ">
       <div class="card "> 
-        {% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;height: 300px;" "> 
+        {% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;height: 280px;" "> 
          </div> {%else %}
          <div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}'); 
     background-size: cover;height: 300px;" > 
@@ -231,16 +247,16 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     {%endfor%}                        
   {{ article.published_at | time_tag: format: 'date' }}
 </span> 
-            <h5 class="maroonbold" style="min-width:100%; color: #6C1D45;">    {{article.title}}  </h5> 
+            <h5 class="maroonbold" style="min-width:100%; color: #6C1D45; margin-bottom: 15px;">    {{article.title}}  </h5> 
         
           
       
         
         <p style="width: 100% !important;">
           {%- if article.excerpt.size > 0 -%}
-         <p class="exc">   {{ article.excerpt | strip_html | truncate:120}}</p> 
+         <p class="exc">   {{ article.excerpt | strip_html | truncate:130}}</p> 
           {%- else -%}
-          <p class="exc">  {{ article.content | strip_html | truncate:120 }} </p>
+          <p class="exc">  {{ article.content | strip_html | truncate:130 }} </p>
           {%- endif -%}
         </p>
 
