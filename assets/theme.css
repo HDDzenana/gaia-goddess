@@ -3758,7 +3758,7 @@ button.mfp-close {
 }
 @media only screen and (min-width: 768px) {
   .logo {
-    margin-top: 5px;
+    margin-top: 15px;
     margin-bottom: -10px !important;
   }
 }
@@ -9740,6 +9740,9 @@ button.collection__filters__toggle {
 @media only screen and (max-width: 767px) {
   .product-tab__title {
     font-size: calc(1.25rem * var(---font-adjust-heading));
+  }
+  .logomob {
+    height: 50px;
   }
 }
 .product-tab__title .icon {
