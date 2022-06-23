@@ -81,9 +81,9 @@
         "line_height": 1,
         "line_width": 70,
         "background_sm": "rgba(0,0,0,0)",
-        "line_color_sm": "rgba(0,0,0,0)",
+        "line_color_sm": "#eb6fbd",
         "height_sm": 5,
-        "line_height_sm": 0,
+        "line_height_sm": 1,
         "line_width_sm": 80
       }
     },

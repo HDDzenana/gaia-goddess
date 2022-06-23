@@ -14,7 +14,7 @@
     {%render 'gaia-image',
   	image: block.settings.perkimage 
        %} </div>
-    <p class="perktext uppercase" style="color: {{section.settings.headercolor}}"> {{block.settings.perktext}} </p> </div>
+    <p class="perktext maroonbold uppercase" style="color: {{section.settings.headercolor}}"> {{block.settings.perktext}} </p> </div>
       {% endfor %} </div>
   </div>
 </div>
@@ -32,10 +32,15 @@
 <style>
   @media only screen and (max-width:900px) {
   .mpcard-{{section.id}} {
-  	width: 96% !important;
+  	width: 94% !important;
     font-size: 34px !important;
    }
-   
+   .mbpimg,  .mbpimg .gaia-image  {
+    width: 30px !important;
+    height: 20px !important;
+    margin: auto;
+    margin-right: 10px;
+  }
   .perktext {
     margin-left: 0px !important;
     font-weight: 900;
@@ -53,7 +58,7 @@
   
   .mpheader-{{section.id}} {
   	color: white;
-    font-size: 40px;
+    /* font-size: 40px; */
     margin: -40px 0 10px 0;
   }
   .mpcard-{{section.id}} {
