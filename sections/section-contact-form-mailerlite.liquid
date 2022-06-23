@@ -108,7 +108,7 @@
         </div>
         <div class="contact__info-background" style="background-image: url('{{ section.settings.image | img_url:'2048x' }}'); background-size: cover;">
           <div class="contact__info">
-            <h3>{{ section.settings.heading_details }}</h3>
+            <h3 style="font-weight: bold;">{{ section.settings.heading_details }}</h3>
             <p>{{ section.settings.sub_heading_details }}</p>
   
             <div class="rte">
@@ -130,7 +130,7 @@
               {% endif %}
 
               {% if section.settings.social_title != blank%}
-                <p class="h5">{{ section.settings.social_title }}</p>
+                <p class="h5 maroonbold">{{ section.settings.social_title }}</p>
               {% endif %}
 
               {% if section.settings.social_description != blank%}

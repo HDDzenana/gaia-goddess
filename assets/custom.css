@@ -110,6 +110,11 @@ margin: 0 !important}
 .page-customer{
   background-image: url(//cdn.shopify.com/s/files/1/0535/9357/1505/files/Group_674.png?v=1650955083);
   background-size: cover;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .page-customer .wrapper .form-vertical-wrapper{
   text-align: center;

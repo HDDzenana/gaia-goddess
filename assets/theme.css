@@ -9260,6 +9260,9 @@ button.collection__filters__toggle {
   .product__price {
     font-size: calc(1rem * var(---font-adjust-body));
   }
+  .account__heading {
+    margin-right: 0 !important;
+  }
 }
 .product__price--with-sale {
   margin-right: 5px;
