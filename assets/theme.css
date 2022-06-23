@@ -9261,7 +9261,7 @@ button.collection__filters__toggle {
     font-size: calc(1rem * var(---font-adjust-body));
   }
   .account__heading {
-    margin-right: 0 !important;
+    margin-right: 0 !importantS;
   }
 }
 .product__price--with-sale {

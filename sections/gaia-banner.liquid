@@ -1,16 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <section class="supperco-banner-{{section.id}}" style=" background: {{section.settings.bg}};">
+  <div class="wrapper">  
   <div class="description_div">
-    <h1 class="center wrapper" style="color: {{section.settings.heading_color}};">
+    <h1 class="center " style="color: {{section.settings.heading_color}};">
       {{section.settings.heading}}
     </h1>
     <div class="grayregular" style="margin-top: 20px; text-align: center;">
       {{section.settings.text_content  }}
     </div>
   </div>
-  <div class="gaia wrapper">
+  <div class="gaia
+ gaia"  style="margin: 0; padding: 0;">
     {% for block in section.blocks %}
-
-      <div class="gaiabimg {%if block.settings.dm == false %} visuallyhiddenm {% endif %} wrapper">
+ 
+      <div class="gaiabimg {%if block.settings.dm == false %} visuallyhiddenm {% endif %} wrapper"  data-aos="fade-up" data-aos-delay="150" data-aos-offset="100" data-aos-duration="700" >
         {% render 'gaia-image'
           image: block.settings.image,
           mobile_image: block.settings.mobile_image
@@ -27,7 +32,7 @@
  </style>
         {%endif%}
     {% endfor %}
-  </div>
+  </div></div>
 </section>
 
 
@@ -48,7 +53,7 @@
   }
 
   .gaiabimg:last-of-type {
-    width: 34%;
+    width: 35.5%;
     height: 350px;
     padding: 0;
   }
@@ -169,7 +174,7 @@
   }
 
   @media screen and(min-width: 750px) {
-    .supperco-banner-{{section.id}}}
+    .supperco-banner-{{section.id}}
   {
     padding-top: {{section.settings.padding_top}}px;
     padding-bottom: {{section.settings.padding_bottom}}px;
