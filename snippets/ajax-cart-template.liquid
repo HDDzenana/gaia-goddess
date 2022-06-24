@@ -73,17 +73,12 @@
 								{{/each}}
 							{{/if}}
 						</p>
-						<p>  Attendees </p>
+						<div class="paac" style="display: flex;"> 
+						<p class="pink">  Attendees </p>
 						<div class="qty js-qty" id="qrta">
-							<!-- <button type="button" id="qrta" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{val.id}}" data-qty="{{val.itemMinus}}" data-line="{{val.line}}">
-		 
-			 
-							</button> -->
+					 
 							<input type="number" name="updates[]" class="qty__input js-qty__input" value="{{val.itemQty}}" min="0" id="quantity"  data-id="{{val.id}}" data-line="{{val.line}}" aria-label="quantity" pattern="[0-9]*" readonly>
-							<!-- <button type="button" id="qrta" class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{val.id}}" data-line="{{val.line}}" data-qty="{{val.itemAdd}}"> -->
-			 
-						 
-							</button>
+						</div>
 						</div>
 					</div>
 				</div>
