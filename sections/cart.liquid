@@ -19,7 +19,7 @@
 -%}
 
 <div class="cart-section{% if cart.item_count == 0 %} cart-section--empty{% endif %}" data-cart-section>
-  <div class="wrapper" style="margin: 100px 0;">
+  <div class="wrapper" style="margin: 100px auto;">
     <h1 class="maroonbold cart__title">{{ 'cart.general.title' | t }}</h1>
 
     <div class="cart__errors errors" data-cart-errors{% if cart_errors != blank %} style="display: block"{% endif %}>
