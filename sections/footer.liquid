@@ -296,7 +296,28 @@
 							{%- if block.settings.footer_social_title != blank -%}
 								<p class="footer-title h5">{{ block.settings.footer_social_title }}</p>
 							{%- endif -%}
- 	 
+	
+								<div class="mysocial-sharing-wrapper">
+									{%- if block.settings.footer_social_facebook != blank -%}
+										<a class="facebook" rel="noopener" href = "{{settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+											{%- render 'icon-footer-facebook' -%}
+										</a>
+									{%- endif -%}
+								
+									{%- if block.settings.footer_social_instagram != blank -%}
+										<a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+											{%- render 'icon-footer-instagram' -%}
+										</a>
+									{%- endif -%}
+							
+									{%- if block.settings.footer_social_twitter != blank -%}
+										<a class="twitter" rel="noopener" href = "{{ settings.social_twitter_link }}" title="{{ 'footer.socials.title' | t: social: 'Twitter', shop_name: shop.name }}">
+											{%- render 'icon-footer-twitter' -%}
+										</a>
+									{%- endif -%}
+							
+									
+								</div>
 							</div>
 						</div>
 				{%- endcase -%}
