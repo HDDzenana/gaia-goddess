@@ -27,13 +27,16 @@
   --overlay-opacity: {{overlay_opacity}};
 }
 {% if page.title == "Shop" %}
+  @media only screen and(max-width: 768px) { 
+.br, br {
+display: none !important;}
+  
+}
   @media only screen and(min-width: 768px) {
     #FeaturedImage--{{section.id}}.featured-image__content .wrapper {
       padding: 0 170px;
     }
-.br, br {
-display: none !important;}
-  }
+ 
   #FeaturedImage--{{section.id}}.featured-image__content .wrapper .slide__heading {
     font-size: 50px;
     margin-bottom: 20px;
