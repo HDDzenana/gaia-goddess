@@ -245,7 +245,7 @@
         
          <p style="width: 100% !important;">
         {%- if article.excerpt.size > 0 -%}
-       <p class="exc">   {{ article.excerpt }}</p> 
+       <p class="exc">   {{ article.excerpt  | truncate:100 }}</p> 
         {%- else -%}
         <p class="exc">  {{ article.content | strip_html | truncate:120 }} </p>
         {%- endif -%}
