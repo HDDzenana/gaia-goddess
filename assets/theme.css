@@ -7829,7 +7829,7 @@ button.collection__filters__toggle {
   right: 0;
   bottom: 0;
   background-position: 50%;
-  background-position-x: 10%;
+  background-position-x: 30% !important;
   
   background-repeat: no-repeat;
   background-size: cover;
