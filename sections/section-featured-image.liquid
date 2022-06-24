@@ -344,3 +344,14 @@ display: none !important;}
   100% { transform: translateY(15px); opacity: 0;}
 }
 </style>
+
+
+<style>
+{% if template contains "shop" %}
+  @media only screen and(max-width: 768px) { 
+.br, br {
+display: none !important;}
+  
+  }
+  {%endif%}
+</style>
