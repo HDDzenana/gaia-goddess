@@ -1,3 +1,5 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {%- comment -%} Product Feature {%- endcomment -%}
 <style>
 @media only screen and (max-width:767px){ 
@@ -66,6 +68,9 @@
 
 #ProductFeature--{{section.id}}{
   background-color: {{bg_color}};
+  background-image:url('{{ section.settings.bgimg | img_url: 'master' }}'); 
+  background-repeat:no-repeat;
+  background-size: cover;
 }
 
 {%- endstyle -%}
@@ -167,7 +172,11 @@
 {
   "name": "Product feature",
   "class": "slideshow transparent-header",
-  "settings": [
+  "settings": [ {
+      "type": "image_picker",
+      "id": "bgimg",
+      "label": "Background image"
+    },
     {
       "type": "header",
       "content": "Layout"
@@ -176,7 +185,8 @@
       "id": "aos",
       "default": true,
       "label": "Animate on scroll"
-    }, {
+    },
+     {
       "type": "color_background",
       "id": "bg",
       "label": "Section Background",
@@ -414,4 +424,14 @@
   a.btn--product-feature:before {
     background: {{section.settings.button_hover_color}}!important;
   }
+  
+  .rte a {
+    
+    color: #eb6fbd;
+  }
+  
+  .rte :last-child {
+    margin-bottom: 0;
+    letter-spacing: .030em;
+}
 </style>

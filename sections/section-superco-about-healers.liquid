@@ -86,6 +86,7 @@
         position: sticky;
         top: 3rem;
         z-index: 2;
+        padding-bottom: 50px;
     }
     .about-info > p{
         margin: 30px 0 !important;
@@ -170,13 +171,13 @@
         }
     }
     </style>
-  
+ 
   <section id="ProductFeature--{{ section.id }}" class="retreat-feature" data-section-id="{{ section.id }}" data-section-type="product-feature">
     <div class="wrapper retreat-wrapper">
-      
+    
       <div class="product-feature__block about__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}">
         <div class="about-events">
-
+ 
             <div class="about-card">
                 <div class="about-card__info">
                     {% render 'healer-about' %}

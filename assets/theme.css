@@ -1,3 +1,15 @@
+/* @font-face {
+  font-family: 'Playfair';
+  src: url('PlayfairDisplay-Regular.ttf') format('woff2'),
+    url('PlayfairDisplay-Regular.ttf') format('woff');
+} */
+
+@font-face {
+  font-family: 'Acumin_Pro';
+  src: url('Acumin_Pro_Book.woff2') format('woff2'),
+    url('Acumin_Pro_Book.woff') format('woff');
+}
+ 
 @charset "UTF-8";
 :root {
   --bg: var(---color-bg);
@@ -1305,14 +1317,19 @@ sub {
     font-size: calc(2rem * var(---font-adjust-heading));
   }
 }
+
+/* main subh change */
 .main-subheading {
   display: block;
   margin-bottom: 10px;
   color: var(--text);
-  font-size: calc(1.3125rem * var(---font-adjust-body));
-  font-family: var(---font-stack-body);
-  font-weight: var(---font-weight-body);
-  font-style: var(---font-style-body);
+
+  font-family: 'Acumin_Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
 }
 @media only screen and (max-width: 767px) {
   .main-subheading {
@@ -1349,6 +1366,7 @@ sub {
 }
 .text-light {
   color: #fff;
+  margin-bottom: 0 !important;
 }
 .text-dark {
   color: #000;
@@ -3740,8 +3758,8 @@ button.mfp-close {
 }
 @media only screen and (min-width: 768px) {
   .logo {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: -10px !important;
   }
 }
 @media only screen and (max-width: 1023px) {
@@ -4921,6 +4939,9 @@ button.mfp-close {
   margin: 0 8px;
   opacity: 1;
   transition: opacity 0.25s;
+}
+.social-sharing-wrapper a:first-of-type {
+  margin-left: 0px !important;
 }
 .social-sharing-wrapper a:hover {
   opacity: 0.7;
@@ -7808,6 +7829,8 @@ button.collection__filters__toggle {
   right: 0;
   bottom: 0;
   background-position: 50%;
+  background-position-x: 30% !important;
+  
   background-repeat: no-repeat;
   background-size: cover;
   overflow: hidden;
@@ -7955,6 +7978,7 @@ button.collection__filters__toggle {
 }
 .video__overlay {
   z-index: auto;
+  background-color: transparent !important;
 }
 .text-inside {
   position: absolute;
@@ -9239,6 +9263,9 @@ button.collection__filters__toggle {
   .product__price {
     font-size: calc(1rem * var(---font-adjust-body));
   }
+  .account__heading {
+    margin-right: 0 !importantS;
+  }
 }
 .product__price--with-sale {
   margin-right: 5px;
@@ -9716,6 +9743,9 @@ button.collection__filters__toggle {
 @media only screen and (max-width: 767px) {
   .product-tab__title {
     font-size: calc(1.25rem * var(---font-adjust-heading));
+  }
+  .logomob {
+    height: 50px;
   }
 }
 .product-tab__title .icon {
@@ -11094,6 +11124,9 @@ input[type='radio'].variant-input {
   .testimonials__wrapper {
     display: block;
   }
+  .testimonials-section {
+    padding-bottom: 10px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .testimonials__wrapper {
@@ -11651,3 +11684,73 @@ p, .p {
  #ymq-price-addons {
   display: none;
  }
+
+
+ @media only screen and (max-width: 900px) {
+ 
+
+.cards-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+.additional-wrapper {
+      width: 100% !important;
+}
+
+.card-template--15567860269233__165513984159871db8 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    padding: 50px 0;
+    flex-wrap: wrap;
+} 
+.card-text {
+width: 100%
+}
+
+.card-text {
+    width: 90%;
+    float: 50px;
+    padding: 0 50px;
+    text-align: justify;
+} 
+     .product-single__gallery {
+    overflow: hidden;
+  }
+ .retreat-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+   .healers-filter-{{section.id}},
+   .healers-filter-{{block.id}}}
+ {
+display: none !important;
+ }
+ }
+
+ #shopify-section-template--15660035440817__165466236852a57a63 {
+  background: #FEF1F5 !important;
+ }
+
+ /* EVENTS */
+
+ .breadcrumbs * {
+  font-size: 14px !important; 
+  text-decoration: none;
+  font-weight: 300 !important;
+  margin: 3px !important;
+  gap: 3px !important;
+ }
+  
+  
+  .btn * {
+    font-weight: 600;
+  }
+
+  .healers-filter__dropdown * {
+    font-weight: bold !important;
+  }

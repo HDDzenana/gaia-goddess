@@ -72,6 +72,7 @@
         }
         .rte h3{
             margin: 0;
+            font-weight: bold;
         }
         .subheading-p {
             font-size: 16px;
@@ -122,7 +123,7 @@
       
         <div class="product-feature__text retreat-feature__text product-feature__text--{{ text_alignment }} rte">
           {%- if heading != blank -%}
-            <h3 style="color: {{ section.settings.header_color }}">{{ heading | escape }}</h3>
+            <h3 style="color: {{ section.settings.header_color }}; font-weight: bold;">{{ heading  }}</h3>
           {%- endif -%}
 
           {%- if subheading != blank -%}
@@ -264,3 +265,26 @@
     ]
   }
   {% endschema %}
+
+
+
+<style>
+   
+  {% if template contains 'retreat' %}
+  
+  @media only screen and (min-width: 1200px) {
+  .product-feature__block
+.product-feature__text.retreat-feature__text.product-feature__text--left.rte {
+      margin-left: 2%;
+    max-width: 30%;
+}
+  
+  .product-feature__block--reverse 
+  .product-feature__text.retreat-feature__text.product-feature__text--left.rte {
+  
+    margin-left: 10%;
+    max-width: 30%;
+  }
+}
+  {%endif%}
+</style>

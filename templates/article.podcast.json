@@ -1,5 +1,48 @@
 {
   "sections": {
+    "16558982789d877b23": {
+      "type": "podcast",
+      "settings": {
+        "prevlink": "",
+        "prevtext": "Discover",
+        "bg": "#6C1D45",
+        "card_bg": "#6C1D45",
+        "text_position": "right",
+        "text_alignment": "center",
+        "header_color": "#6C1D45",
+        "card_title_color": "#6C1D45",
+        "card_social": true,
+        "show_instagram_icon": true,
+        "social_instagram_link": "",
+        "show_website_icon": true,
+        "social_website_link": "",
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "button_text": "",
+        "button_link": "",
+        "bg_color": ""
+      }
+    },
+    "16551396468964d651": {
+      "type": "section-superco-blog-article",
+      "disabled": true,
+      "settings": {
+        "prevlink": "",
+        "prevtext": "Discover",
+        "show_share_buttons": true,
+        "bg": "#1990c6",
+        "text_position": "right",
+        "text_alignment": "center",
+        "header_color": "#6c1d45",
+        "card_title_color": "#6c1d45",
+        "card_social": true,
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "bg_color": ""
+      }
+    },
     "16514856733972d9a8": {
       "type": "gaia-banner",
       "blocks": {
@@ -7,7 +50,7 @@
           "type": "Image",
           "settings": {
             "fw": true,
-            "image": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
+            "image": "shopify:\/\/shop_images\/image_19_3a59dcf4-e589-4939-8f64-e0adbf5914fe.png",
             "dm": true
           }
         }
@@ -16,10 +59,10 @@
         "a32a3d6a-b6e8-42c7-b1e7-a381afdb4913"
       ],
       "settings": {
-        "padding_top": 52,
+        "padding_top": 0,
         "padding_bottom": 52,
         "bg": "#fef1f5",
-        "heading": "How to Start Praticing Yoga in Your Home",
+        "heading": "",
         "heading_color": "#6c1d45",
         "text_content": ""
       }
@@ -44,12 +87,16 @@
         "prevtext": "Discover",
         "authorimage": "shopify:\/\/shop_images\/Screenshot_2022-06-08_at_16.35.41.png",
         "bg": "#ffffff",
-        "card_bg": "#6C1D45",
+        "card_bg": "#eb6fbd",
         "text_position": "right",
         "text_alignment": "center",
-        "header_color": "#6C1D45",
-        "card_title_color": "#6C1D45",
+        "header_color": "#6c1d45",
+        "card_title_color": "#6c1d45",
         "card_social": true,
+        "show_instagram_icon": true,
+        "social_instagram_link": "",
+        "show_website_icon": true,
+        "social_website_link": "",
         "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
         "button_text": "",
         "button_link": "",
@@ -67,34 +114,38 @@
         "bg_color": "#fefafb"
       }
     },
-    "16551396468964d651": {
-      "type": "section-superco-blog-article",
+    "165589753821418c1d": {
+      "type": "podcast-article",
       "disabled": true,
       "settings": {
         "prevlink": "",
         "prevtext": "Discover",
-        "show_share_buttons": true,
-        "bg": "#fef1f5",
+        "bg": "#6c1d45",
+        "card_bg": "#6c1d45",
         "text_position": "right",
         "text_alignment": "center",
         "header_color": "#6c1d45",
         "card_title_color": "#6c1d45",
         "card_social": true,
+        "show_instagram_icon": true,
+        "social_instagram_link": "",
+        "show_website_icon": true,
+        "social_website_link": "",
         "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
         "button_text": "",
         "button_link": "",
-        "button_color": "#6c1d45",
-        "button_hover_color": "#fafafa",
         "bg_color": ""
       }
     }
   },
   "order": [
+    "16558982789d877b23",
+    "16551396468964d651",
     "16514856733972d9a8",
     "165466236852a57a63",
     "main",
     "165513984159871db8",
     "1651485344dc097ec1",
-    "16551396468964d651"
+    "165589753821418c1d"
   ]
 }

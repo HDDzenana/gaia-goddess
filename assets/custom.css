@@ -1,8 +1,8 @@
-@font-face {
+/* @font-face {
   font-family: 'Playfair';
   src: url('PlayfairDisplay-Regular.ttf') format('woff2'),
     url('PlayfairDisplay-Regular.ttf') format('woff');
-}
+} */
 
 @font-face {
   font-family: 'Acumin_Pro';
@@ -22,6 +22,9 @@ textarea {
   font-family: 'Acumin_Pro' !important;
 }
 
+#text {
+  margin: 0 !important;
+}
 p {
   font-size: 16px;
   color: #575757;
@@ -31,26 +34,33 @@ h3 {
   font-size: 25px;
 }
 
-h1 {
-  font-family: 'Playfair' !important;
+h1, .h1 {
+  /* font-family: 'Playfair' !important; */
   font-size: 50px;
-  font-weight: 700;
-  line-height: 67px;
+  font-weight: 700 !important;
+  line-height: 67px !important;
 }
 h2,
 h2 span {
   font-family: 'Playfair' !important;
   font-size: 50px;
-  font-weight: 700;
+  font-weight: 700 !important;
   line-height: 52px;
 }
 
 .btn {
-  line-height: 21.6px;
-  font-size: 18px;
+  /* /* line-height: 21.6px; */
+  /* font-size: 17px; */
   border-radius: 30px;
-  min-width: 200px;
+  /* min-width: 200px; */
+  font-size: inherit;
+  line-height: inherit;
+  font-weight: bold;
 }
+
+.btn a {
+  padding: 0 !important
+margin: 0 !important}
 
 .value__each {
   margin: 15px auto 26px;
@@ -100,6 +110,11 @@ h2 span {
 .page-customer{
   background-image: url(//cdn.shopify.com/s/files/1/0535/9357/1505/files/Group_674.png?v=1650955083);
   background-size: cover;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .page-customer .wrapper .form-vertical-wrapper{
   text-align: center;
@@ -148,6 +163,9 @@ h2 span {
   .logo a svg{
     width: 90%;
   }
+  #FeaturedVideo--template--15660035768497__1649146796fe3d4805 {
+    height: 700px !important;
+  }
 }
 
 .mobile-nav{
@@ -181,6 +199,7 @@ h2 span {
   max-width: 100%;
   transition: none;
   padding-bottom: 0;
+ 
 }
 .js-drawer-open-left .drawer--left{
   transform: none;
@@ -222,3 +241,17 @@ padding-top: 25px !important;
   background: #FEF1F5 !important; 
 }
  
+
+@media only screen and (min-width: 1000px) {
+  .js-drawer-open-right .drawer--right {
+    min-width: 500px !important;
+    left: 90% !important
+  }
+  .js-drawer-open-right .drawer--right > body {
+    opacity: .4;
+  }
+}
+
+.description_div p  {
+  color: #575757 !important;
+}

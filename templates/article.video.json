@@ -6,11 +6,11 @@
         "prevlink": "",
         "prevtext": "Discover",
         "bg": "#fef1f5",
-        "card_bg": "#6c1d45",
+        "card_bg": "#eb6fbd",
         "text_position": "right",
         "text_alignment": "center",
-        "header_color": "#6c1d45",
-        "card_title_color": "#6c1d45",
+        "header_color": "#eb6fbd",
+        "card_title_color": "#eb6fbd",
         "card_social": true,
         "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
         "button_text": "",
@@ -37,10 +37,10 @@
         "show_date": true,
         "article": "",
         "bg_color": "#fef1f5",
-        "hero_video_link": "https://player.vimeo.com/video/455054503?h=d9a4972d9c&title=0&byline=0&portrait=0",
-        "img_healer": "shopify://shop_images/apply_healer.png",
+        "hero_video_link": "https:\/\/player.vimeo.com\/video\/455054503?h=d9a4972d9c&title=0&byline=0&portrait=0",
+        "img_healer": "shopify:\/\/shop_images\/apply_healer.png",
         "healer_img_border_radius": 60,
-        "title": "Emily Sherman / Uploaded on 05th February, 2022",
+        "title": "Emily Sherman \/ Uploaded on 05th February, 2022",
         "main_subheading": "This subheading helps you provide some more detail about the healer and the video."
       }
     },
@@ -60,7 +60,7 @@
             "link": "",
             "title": "",
             "description": "",
-            "article": "news/podcast-test"
+            "article": "news\/podcast-test"
           }
         },
         "27fabd75-872f-46ce-b601-919bf785638b": {
@@ -69,7 +69,7 @@
             "link": "",
             "title": "",
             "description": "",
-            "article": "news/lorem-ipsum-dolor-sit-amet-5"
+            "article": "news\/lorem-ipsum-dolor-sit-amet-5"
           }
         }
       },
@@ -98,8 +98,8 @@
       "settings": {
         "text_position": "left",
         "text_alignment": "left",
-        "heading": "Subscribe to out newsletters today for a <span style=\"color: #EB6FBD;\">FREE</span> meditation class",
-        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.</p>",
+        "heading": "Subscribe to out newsletters today for a <span style=\"color: #EB6FBD;\">FREE<\/span> meditation class",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }

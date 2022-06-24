@@ -4,7 +4,7 @@
       "type": "section-featured-image",
       "settings": {
         "scroller": true,
-        "image_height": "sixty-fifty-height-hero",
+        "image_height": "one-hundred-height-hero",
         "text_position": "center-center",
         "enable_parallax": false,
         "image": "shopify:\/\/shop_images\/image_23.png",
@@ -12,7 +12,7 @@
         "overlay_opacity": 50,
         "text_color": "text-light",
         "title": "Join Our <br> Retreat Events",
-        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla.",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>Mus vulputate scelerisque mollis luctus risus nulla. Phatera laoreet felis euismod et. Id bibendum.",
         "button_text": "",
         "button_link": "",
         "button_style": "primary"
@@ -20,8 +20,25 @@
     },
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
-        "show_page_title": true
+        "show_page_title": false
+      }
+    },
+    "16558507273ac36d15": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {
+        "background": "transparent",
+        "line_color": "rgba(0,0,0,0)",
+        "height": 14,
+        "line_height": 0,
+        "line_width": 80,
+        "background_sm": "rgba(0,0,0,0)",
+        "line_color_sm": "rgba(0,0,0,0)",
+        "height_sm": 5,
+        "line_height_sm": 0,
+        "line_width_sm": 80
       }
     },
     "1650362749939c3a23": {
@@ -85,6 +102,7 @@
   "order": [
     "1652955546338d77d3",
     "main",
+    "16558507273ac36d15",
     "1650362749939c3a23",
     "1650362761ce8d90de",
     "1650362961c71e1b88"

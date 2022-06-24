@@ -59,80 +59,49 @@
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 1",
-            "product": "this is <br> product   description tpp",
-            "switch_btn_color": "rgba(0,0,0,0)",
-            "content_subheading": "",
-            "content_desc": "",
-            "content_btn": "Learn More",
-            "content_btn_url": "",
-            "btn_bg": "#58cc4b",
-            "main_image": "shopify:\/\/shop_images\/image_16_df171bbb-6a47-48c7-afaf-0b99adb515ec.png"
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
           }
         },
         "a937477e-6738-467d-a0b7-42fee2993af5": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 2",
-            "product": "this is <br> product   description tpp",
-            "switch_btn_color": "#000000",
-            "content_subheading": "",
-            "content_desc": "",
-            "content_btn": "Learn More",
-            "content_btn_url": "",
-            "btn_bg": "#58cc4b",
-            "main_image": "shopify:\/\/shop_images\/image_16_df171bbb-6a47-48c7-afaf-0b99adb515ec.png"
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
           }
         },
         "45077e2a-49ae-443c-9db0-69c2a4b8114c": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 3",
-            "product": "this is <br> product   description tpp",
-            "switch_btn_color": "#ffffff",
-            "content_subheading": "",
-            "content_desc": "",
-            "content_btn": "Learn More",
-            "content_btn_url": "",
-            "btn_bg": "#58cc4b"
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+          }
+        },
+        "f1ac7833-e2df-4bce-8ac0-14312ada2cca": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 4",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
           }
         },
         "54f8f723-cf03-4266-b63d-85f8cb78dc71": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 5",
-            "product": "",
-            "switch_btn_color": "",
-            "content_subheading": "",
-            "content_desc": "",
-            "content_btn": "",
-            "content_btn_url": "",
-            "btn_bg": "#58cc4b"
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
           }
         },
         "0202af4b-ec17-4b9e-a066-ba4725e8d8bf": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 6",
-            "product": "",
-            "switch_btn_color": "",
-            "content_subheading": "",
-            "content_desc": "",
-            "content_btn": "",
-            "content_btn_url": "",
-            "btn_bg": "#58cc4b"
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
           }
         },
         "db411d86-076b-43c7-9796-d1c0b0fa65f8": {
           "type": "text",
           "settings": {
             "switch_btn_title": "day 7",
-            "product": "",
-            "switch_btn_color": "",
-            "content_subheading": "",
-            "content_desc": "",
-            "content_btn": "",
-            "content_btn_url": "",
-            "btn_bg": "#58cc4b"
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
           }
         }
       },
@@ -140,17 +109,17 @@
         "1a2adb16-83f7-4d38-b129-6f7b9dff334a",
         "a937477e-6738-467d-a0b7-42fee2993af5",
         "45077e2a-49ae-443c-9db0-69c2a4b8114c",
+        "f1ac7833-e2df-4bce-8ac0-14312ada2cca",
         "54f8f723-cf03-4266-b63d-85f8cb78dc71",
         "0202af4b-ec17-4b9e-a066-ba4725e8d8bf",
         "db411d86-076b-43c7-9796-d1c0b0fa65f8"
       ],
       "settings": {
+        "where": "June 4 to June 11, 2022",
+        "header": "Schedule",
+        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.",
+        "disclaimer": "*Host and schedule subject to change.",
         "heading_color": "#000000",
-        "border_w": 1,
-        "btn_border": "#000000",
-        "animate": true,
-        "show_price": true,
-        "background": "",
         "padding": "10"
       }
     },

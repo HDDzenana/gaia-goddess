@@ -217,7 +217,20 @@ card{
 <p style="color:white ; margin-bottom: 0px; font-weight:700 ;">  {{article.author}}</p>
 
 <span class="role">  {{article.metafields.my_fields.authorrole}}</span>
-</div> </div>
+{% if section.settings.show_instagram_icon %}
+<a target="_blank" rel="noopener" class="social-circle facebook" href="{{ section.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+  {%- render 'icon-footer-instagram' -%}
+</a>
+{% endif %}
+<a target="_blank" rel="noopener" class="social-circle facebook" href="{{ section.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">
+{%- render 'icon-footer-facebook' -%}
+</a>
+{% if section.settings.show_website_icon %}
+<a target="_blank" rel="noopener" class="social-circle facebook" href="{{ section.settings.social_website_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+  {%- render 'healer-website' -%}
+</a>
+{% endif %}
+</div>   </div>
 
 <div class="card-text">
  <p class="ct"> About {{article.author}}</p>
@@ -323,6 +336,24 @@ card{
     "label": "Show social icons on card?",
     "default": true
   }, {
+    "type": "checkbox",
+    "id": "show_instagram_icon",
+    "label": "Show instagram",
+    "default": true
+  }, {
+    "type": "text",
+    "id": "social_instagram_link",
+    "label": "Facebook"
+  }, {
+    "type": "checkbox",
+    "id": "show_website_icon",
+    "label": "Show Webpage",
+    "default": true
+  }, {
+    "type": "text",
+    "id": "social_website_link",
+    "label": "Page"
+  }, {
     "type": "textarea",
     "id": "card_text",
     "label": "Card Text",
@@ -382,7 +413,7 @@ color: #6c1d45;
 .aboutarticle-{{section.id}} {
 width: 60%;
 margin: auto;
-margin-bottom: 50px;
+margin-bottom: 50px; 
 }
 }   .card-image,
 .aboutcard {

@@ -13,7 +13,7 @@
   .divider-{{ section.id }} .inner .divider-line {
      display: block;
      height: {{ section.settings.line_height }}px;
-     width: {{ section.settings.line_width }}%;
+     /* width: {{ section.settings.line_width }}%; */
      background: {{ section.settings.line_color }};
      background-position: center;
      background-repeat: no-repeat;
@@ -34,7 +34,7 @@
   .divider-{{ section.id }} .inner .divider-line {
      display: block;
      height: {{ section.settings.line_height_sm }}px;
-     width: {{ section.settings.line_width_sm }}%;
+     /* width: {{ section.settings.line_width_sm }}%; */
      background: {{ section.settings.line_color_sm }};
    }
  }
@@ -43,9 +43,9 @@
   
 </style>
 
-<div class="divider-{{ section.id }}">
+<div class="wrapper divider-{{ section.id }}">
   <div class="inner">
-    <div class="divider-line">
+    <div class="wrapper divider-line">
     </div>
   </div>
 </div>

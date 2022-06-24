@@ -19,8 +19,8 @@
 -%}
 
 <div class="cart-section{% if cart.item_count == 0 %} cart-section--empty{% endif %}" data-cart-section>
-  <div class="wrapper">
-    <h1 class="cart__title">{{ 'cart.general.title' | t }}</h1>
+  <div class="wrapper" style="margin: 100px auto;">
+    <h1 class="maroonbold cart__title">{{ 'cart.general.title' | t }}</h1>
 
     <div class="cart__errors errors" data-cart-errors{% if cart_errors != blank %} style="display: block"{% endif %}>
       <p data-cart-errors-message>
@@ -42,11 +42,11 @@
         {% comment %}
           The cart is empty
         {% endcomment %}
-        <div class="text-center">
+        <div class="text-center" style="padding-bottom: 1px"> 
           <p>{{ 'cart.general.empty' | t }}</p>
-
-          <p><a href="{{ routes.root_url }}" class="btn">{{ 'cart.general.continue_shopping' | t }}</a></p>
         </div>
+          <p><a href="{{ routes.root_url }}" class="btn">{{ 'cart.general.continue_shopping' | t }}</a></p>
+ 
       {%- endif -%}
 
       {%- for block in section.blocks -%}

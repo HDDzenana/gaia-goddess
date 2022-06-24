@@ -170,10 +170,11 @@
 
   
   <div class="wrappers-{{section.id}}">
-    <div class="pw">
+    
+    <div class="pw">       
       <div class="smt">
   
- 
+        {% render 'breadcrumbs' %}
         {% for block in section.blocks %}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
@@ -197,7 +198,7 @@
           <div class="healer-heading__icons">
             {% if block.settings.show_instagram_icon %}
               <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
-                {%- render 'healer-insta' -%}
+                {%- render 'icon-footer-instagram' -%}
               </a>
             {% endif %}
             <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">

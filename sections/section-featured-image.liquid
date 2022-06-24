@@ -27,11 +27,16 @@
   --overlay-opacity: {{overlay_opacity}};
 }
 {% if page.title == "Shop" %}
+  @media only screen and(max-width: 768px) { 
+.br, br {
+display: none !important;}
+  
+}
   @media only screen and(min-width: 768px) {
     #FeaturedImage--{{section.id}}.featured-image__content .wrapper {
       padding: 0 170px;
     }
-  }
+ 
   #FeaturedImage--{{section.id}}.featured-image__content .wrapper .slide__heading {
     font-size: 50px;
     margin-bottom: 20px;
@@ -69,9 +74,9 @@
         <h1 class="slide__heading main-heading">{{ title  }}</h1>
       {%- endif -%}
       {%- if subheading != blank -%}
-        <h2 class="slide__caption main-subheading" style="font-family: 'Acumin Pro !important';
+        <h2 class="slide__caption main-subheading" style="font-family: 'Acumin_Pro' !important;
         font-size: 16px;
-        font-weight: 400;
+        font-weight: 100 !important;
         line-height: 19px;
         letter-spacing: 0em;
         text-align: center;">{{ subheading  }}</h2>
@@ -111,8 +116,14 @@
 <div class="scroll-downs">
   <div class="mousey">
     <div class="scroller"></div>
+   
   </div>
-</div>
+ 
+  <br> 
+      <span class="center text-light"style="
+    min-width: 100%;
+    margin-left: -10px;
+">    SCROLL </span></div>
     {%endif%}
   </div>
   
@@ -299,7 +310,7 @@
 
 .scroll-downs {
   position: absolute;
-  top: 80%;
+  top: 75%;
   right: 0;
   bottom: 0;
   left: 0;
@@ -321,7 +332,7 @@
   width: 3px;
   height: 10px;
   border-radius: 25%;
-  background-color: #fff;
+  background-color: #eb6fbd !important;
   animation-name: scroll;
   animation-duration: 2.2s;
   animation-timing-function: cubic-bezier(.15,.41,.69,.94);
@@ -332,4 +343,20 @@
   10% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(15px); opacity: 0;}
 }
+</style>
+
+
+<style>
+   
+  {% if template contains 'shop' %}
+  @media only screen and(max-width: 768px) { 
+.br, br {
+display: none !important;}
+  
+  }
+ .main-heading {
+
+    font-size: 50px;}
+  }
+  {%endif%}
 </style>

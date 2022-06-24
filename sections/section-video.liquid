@@ -107,15 +107,15 @@
       {% comment %} Text {% endcomment %}
       <div class="video-text-wrapper wrapper wrapper--small">
         {%- if title != blank -%}
-          <h2 class="{{ section.settings.text_color }}">{{ title | escape }}</h2>
+          <h1 class="{{ section.settings.text_color }}">{{ title  }}</h1>
         {%- endif -%}
 
         {%- if subtitle != blank -%}
-          <h2 class="{{ section.settings.text_color }}">{{ subtitle | escape }}</h2>
+          <h1 class="{{ section.settings.text_color }}">{{ subtitle | escape }}</h1>
         {%- endif -%}
 
         {%- if subheading != blank -%}
-          <p class="main-subheading {{ section.settings.text_color }}">{{ subheading | escape }}</p>
+          <p class="main-subheading {{ section.settings.text_color }}" style="margin: 15px 0; padding-bottom: 10px;">{{ subheading | escape }}</p>
         {%- endif -%}
 
         {% comment %} Button {% endcomment %}

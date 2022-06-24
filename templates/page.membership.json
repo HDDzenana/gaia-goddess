@@ -3,8 +3,9 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "bgimg": "shopify:\/\/shop_images\/image_18_6f1490ae-558d-446a-8b48-5c17a01d457d.png",
         "aos": true,
-        "bg": "linear-gradient(90deg, rgba(254, 250, 251, 1) 38%, rgba(235, 111, 189, 0.13) 39%)",
+        "bg": "",
         "image_layout": "square",
         "image_position": "inline",
         "text_position": "right",
@@ -19,10 +20,10 @@
         "caption": "",
         "text_color": "#6c1d45",
         "heading": "Become a Gaia Goddess Member",
-        "subheading": "<br>",
+        "subheading": "",
         "ssubheading_color": "#800000",
         "description": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.<\/p>",
-        "button_text": "Learn More",
+        "button_text": "",
         "button_link": "",
         "button_color": "#6c1d45",
         "button_hover_color": "#fafafa",
@@ -51,7 +52,7 @@
           "type": "Perk",
           "settings": {
             "perkimage": "shopify:\/\/shop_images\/image_9_5ee86c70-e3ff-4487-b938-6f749ec01dcb.png",
-            "perktext": "Access to Gaia's Content Library"
+            "perktext": "BE A PART OF A HEALING COMMUNITY"
           }
         }
       },
@@ -69,6 +70,94 @@
         "button_link": "shopify:\/\/blogs\/news\/lorem-ipsum-dolor-sit-amet-2",
         "button_color": "#6c1d45",
         "button_hover_color": "#fafafa"
+      }
+    },
+    "1655849924e2bfc021": {
+      "type": "divider",
+      "settings": {
+        "background": "transparent",
+        "line_color": "#eb6fbd",
+        "height": 5,
+        "line_height": 1,
+        "line_width": 70,
+        "background_sm": "rgba(0,0,0,0)",
+        "line_color_sm": "#eb6fbd",
+        "height_sm": 5,
+        "line_height_sm": 1,
+        "line_width_sm": 80
+      }
+    },
+    "1655885830e9659bc6": {
+      "type": "iwt",
+      "disabled": true,
+      "blocks": {
+        "35addce1-70a8-4eec-9c26-484aebd1c57f": {
+          "type": "heading",
+          "settings": {
+            "heading_label": "Membership Benefits"
+          }
+        },
+        "a151d97b-8417-4ba9-b8ec-d211783d7537": {
+          "type": "text",
+          "settings": {
+            "content": "<p> <\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque.Arcu, ac id platea euismod elit. Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "35addce1-70a8-4eec-9c26-484aebd1c57f",
+        "a151d97b-8417-4ba9-b8ec-d211783d7537"
+      ],
+      "settings": {
+        "image_with_text": "shopify:\/\/shop_images\/GRID-01_39852d55-01bc-4956-a24a-ddbf3ccc401c.png",
+        "col_order": "image-right"
+      }
+    },
+    "1655901604009e30c3": {
+      "type": "section-image-columns",
+      "disabled": true,
+      "blocks": {
+        "386772fa-250c-436c-ade5-f853b4e5e141": {
+          "type": "image",
+          "settings": {
+            "product": "",
+            "position_x": 50,
+            "position_y": 50
+          }
+        }
+      },
+      "block_order": [
+        "386772fa-250c-436c-ade5-f853b4e5e141"
+      ],
+      "settings": {
+        "section_height": "sixty-fifty-height-hero",
+        "title": "Our Story",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_text": "Shop now",
+        "button_url": "",
+        "button_style": "primary",
+        "text_color": "#000000",
+        "bg_color": "#ffffff"
+      }
+    },
+    "16559016345cf5a948": {
+      "type": "section-retreats",
+      "disabled": true,
+      "settings": {
+        "text_position": "left",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/GRID-01_39852d55-01bc-4956-a24a-ddbf3ccc401c.png",
+        "image_link_1": "",
+        "header_color": "#6c1d45",
+        "subheader_color": "#eb6fbd",
+        "heading": "<h1 class=\"maroonbold\">  Membership Benefits<\/h1>",
+        "subheading": "",
+        "description": "<p>In the next year, Gaia Goddess will transition to tiered paid memberships with more exciting content, web features and valualbe perk across multiple subscriptions to choose from. All members who <strong>sign-up now for our limited free membership<\/strong> will receive an automatic discounted membership pricing if they choose to upgrade.<\/p>",
+        "button_text": "",
+        "button_link": "",
+        "button_color": "#800000",
+        "button_hover_color": "#fafafa",
+        "bg_color": ""
       }
     },
     "16545924127a999d6a": {
@@ -90,9 +179,9 @@
         "caption": "",
         "text_color": "#6c1d45",
         "heading": "Membership Benefits",
-        "subheading": "<br>",
+        "subheading": "",
         "ssubheading_color": "#800000",
-        "description": "<p> <\/p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Consequat tellus pulvinar ut ac, accumsan quisque.Arcu, ac id platea euismod elit. Consectetur cras lacus, tellus et pellentesque. Fames vulputate adipiscing pellentesque id consectetur hac lorem amet, nulla.<\/p>",
+        "description": "<p>In the next year, Gaia Goddess will transition to tiered paid memberships with more exciting content, web features and valualbe perk across multiple subscriptions to choose from. All members who <strong>sign-up now for our limited free membership<\/strong> will receive an automatic discounted membership pricing if they choose to upgrade.<br\/><br\/>We are missing one sentence For further questions please contact <a href=\"mailto:info@gaiagoddesslifestyle.com\" target=\"_blank\">info@gaiagoddesslifestyle.com<\/a>.<\/p>",
         "button_text": "",
         "button_link": "",
         "button_color": "#800000",
@@ -106,10 +195,29 @@
       "settings": {
         "text_position": "left",
         "text_alignment": "left",
+        "image_background": "shopify:\/\/shop_images\/flower-of-life-v3-01-01.png",
         "heading": "Subscribe to our newsletters today for a <span style=\"color: #EB6FBD;\">FREE<\/span> meditation class",
         "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
+      }
+    },
+    "1655885819b062f291": {
+      "type": "section-image-with-text",
+      "disabled": true,
+      "settings": {
+        "section_height": "sixty-fifty-height-hero",
+        "text_position": "left",
+        "image_background": false,
+        "bg_position": "center-center",
+        "subheading": "Subheading",
+        "heading": "Our Story",
+        "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.<\/p>",
+        "button_text": "Learn More",
+        "button_url": "",
+        "button_style": "primary",
+        "video_url": "",
+        "bg_color": ""
       }
     }
   },
@@ -117,7 +225,12 @@
     "product-feature",
     "main",
     "1654553919c0856caf",
+    "1655849924e2bfc021",
+    "1655885830e9659bc6",
+    "1655901604009e30c3",
+    "16559016345cf5a948",
     "16545924127a999d6a",
-    "1649923445dbb0994e"
+    "1649923445dbb0994e",
+    "1655885819b062f291"
   ]
 }

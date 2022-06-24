@@ -91,6 +91,7 @@
 
 .healer-heading__title {
   margin-bottom: 0;
+  font-weight: bold;
   color: {{section.settings.healer_title_color}}}
 
 .healer-heading__subtitle {
@@ -119,6 +120,7 @@
 
 .wrapper-section__heading {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -151,6 +153,7 @@
 
   .healers-filter {
     width: 150px;
+display: none !important;
   }
 
   .grid--mobile-carousel {
@@ -170,8 +173,8 @@
 <section id="FeaturedCollection--{{ section.id }}" class="featured-collection featured-collection--{{ layout }}" data-section-id="{{ section.id }}" data-section-type="featured-collection">
 
   <div class="featured-collection__title">
-    <div class="wrapper">
-      <div class="wrapper-section__heading">
+    <!-- <div class="wrapper" style="max-width: 80%; margin: auto;"> -->
+      <div class="wrapper-section__heading" style="max-width:80%; margin:auto; padding: 0 7%;">
         <h2 class="section__heading">{{ section.settings.heading }}</h2>
 
         {%- if settings.show_spacer_lines -%}
@@ -187,7 +190,7 @@
               <option value="reiki">Reiki</option>
 
             </select>
-          </div>
+          
         {% endif %}
         <div class="filterino" style="display:flex; flex-wrap: wrap;"> 
         {%for block in section.blocks %}   
@@ -201,22 +204,22 @@
 
 
             </select>
-          </div>
+          </div> 
           {%endcase%} 
-        {% endfor %}</div>
+        {% endfor %}</div> </div>
       </div>
     </div>
   </div>
 
-  <div class="wrapper">
-    <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid_container{% endif %}" >
-      <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}" {% if carousel %} data-collection-slider {% endif %}   >
-        {% for block in section.blocks %}
+  <div class="wrapper" style="padding-bottom: 100px;">
+    <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid__container{% endif %}">
+      <div class="{% if carousel %}carousel{% else %}grid{{ grid_mobile }}{% endif %}{% if collection_empty %} featured-collection--empty{% endif %}"{% if carousel %} data-collection-slider{% endif %}>
+    {% for block in section.blocks %}
             {% case block.type %}
         {%when 'collection'%}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
-          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}" style="max-width:500px;">
+          <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }}  {{ size_mobile }}" style="max-width:290px;">
             <img alt="Healer card image" src="{{ collection.featured_image | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="" height="">
 
             <div class="healer-heading">
@@ -241,7 +244,7 @@
             </div>
 
             <p class="healer-description">{{ collection.description }}</p>
-
+<br>
             <p class="healer-events-title">Upcoming events</p>
             <p class="healer-events">
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -257,9 +260,11 @@
           {%when 'product'%}
          
        {%assign product = block.settings.product %}
-
+       <div class="featured-collection__container {% if carousel %}carousel__container{% else %}grid_container{% endif %}" >
+        <div class="{% if carousel %}carousel{% else %} {{ grid_mobile }}{% endif %}" {% if carousel %} data-collection-slider {% endif %}   >
+      
           <div class="healer-card{% if carousel %} carousel__item{% endif %} {{ size_desktop }} {{ size_mobile }}">
-            <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="428" height="300px" object-fit="cover" style="object-fit:cover;">
+            <img alt="Healer card image" src="{{ block.settings.imagef | img_url: 'master' }}" {% if lazy_loading == true %} loading="lazy" {% endif %} width="428" height="300px" object-fit="contain" style="object-fit:contain;">
 
             <div class="healer-heading">
               <div class="healer-heading__info">
@@ -286,7 +291,7 @@
      <a  class="gbtn btn btn--product-feature" href="{{product.url}}"
        style="float: left;">Register Now</a>  
           </div>
- 
+ </div> </div>
 {%endcase%}
         {% endfor %}
 
@@ -531,4 +536,32 @@ color: #6C1D45;
 .healer-card .one-quarter .mobile--one-whole * {
   text-align: left;
 }
+
+@media only screen and (max-width: 900px) {
+  .filterino {
+    display: none !important;
+  }
+
+  .healer-card .one-quarter .mobile--one-whole {
+    display: flex !important;
+    flex-direction: column !important;
+    margin-top: 40px !important;
+    padding-top: 50px !important;
+  }
+  .mobile--one-whole {
+    width: calc(100vw - var(--gutter) * 2 - var(--grid-gutter));
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    margin: auto;
+}
+ 
+   .healers-filter-{{section.id}},
+   .healers-filter-{{block.id}}},
+    .healers-filter__dropdown {
+display: none !important;
+}
+}
+
+
 </style>

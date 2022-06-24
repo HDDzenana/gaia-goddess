@@ -3,7 +3,7 @@
     "show_spacer_lines": false,
     "enable_infinity_scroll": true,
     "button_style": "rounded",
-    "favicon": "shopify:\/\/shop_images\/gg_fav_icon_03cbfc2e-41e0-4189-a05a-4240f3732a6f.jpg",
+    "favicon": "shopify:\/\/shop_images\/gaia_favicon_256x256px.png",
     "color_body_bg": "#ffffff",
     "color_headings": "#000",
     "color_body_text": "#000",
@@ -11,8 +11,9 @@
     "color_borders_and_lines": "#d3d3d3",
     "color_button_primary": "#6c1d45",
     "color_button_secondary": "#ffffff",
-    "type_heading_font": "harmonia_sans_n6",
+    "type_heading_font": "playfair_display_n4",
     "type_nav_font": "body",
+    "products_per_row_on_desktop": 3,
     "product_grid_hover_image": false,
     "product_grid_slideshow": false,
     "product_grid_slideshow_arrows": "black",
@@ -23,10 +24,10 @@
     "cart_type": "drawer",
     "enable_cart_animation": false,
     "enable_cart_notes": false,
-    "social_facebook_link": "",
-    "social_twitter_link": "",
+    "social_facebook_link": "https:\/\/www.facebook.com\/gaiagoddesslifestyle",
+    "social_twitter_link": "https:\/\/twitter.com\/gaiagoddesslife",
     "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_instagram_link": "https:\/\/www.instagram.com\/gaiagoddesslifestyle\/",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
@@ -73,8 +74,8 @@
           "footer-block-0": {
             "type": "link",
             "settings": {
-              "menu": "footer-menu-public-portion",
-              "show_title": true
+              "menu": "main-menu-public-portion",
+              "show_title": false
             }
           },
           "b4636f98-69e5-475b-9882-e632b447c9da": {
@@ -98,7 +99,7 @@
         ],
         "settings": {
           "image": "shopify:\/\/shop_images\/Group_26.png",
-          "logo_width": 200,
+          "logo_width": 250,
           "show_shop_name": false,
           "show_social_links": true,
           "show_payment_icons": false,

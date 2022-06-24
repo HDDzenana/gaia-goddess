@@ -1,392 +1,690 @@
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<!-- https://michalsnik.github.io/aos/ -->
-<style>
-/* GLOBAL */
-  {% if secton.settings.full_width %}
-  .iwt-{{section.id}} .iwt-inner { 
-    max-width: 100%;
-  }
-  {% endif %}
-  .iwt-{{section.id}} .iwt-inner {
-    margin: auto;
-  }
-  {% if section.settings.full_width == false %}
-  .iwt-{{section.id}},  .iwt-{{section.id}} .iwt-inner {
-    max-width: {{ section.settings.width }}px;
-    margin: auto;
-  }
-
-  {% else %}
-  /* Dynamic section width END */
-  .iwt-{{section.id}} .iwt-inner {
-    display: flex;
-    flex-direction: column; 
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-  }
-  {%endif%}
-
-  .textual-{{section.id}} {
-    text-align:{{section.settings.plus_slideshow_text_align}} !important;
-  }
-  .iwt-{{section.id}} .iwt-inner .iwt-inner__image {
-    max-width: 100%;
-    height: {{ section.settings.height }}px;
-  }
-  .iwt-{{section.id}} .iwt-inner .iwt-inner__text {
-    width: 90vw;
-    margin: auto;
-    text-align:{{section.settings.plus_slideshow_text_align}}  !important ;
-  }
-  .iwt-{{section.id}} picture { 
-    height: 100%;
-    width: 100%;
-  }
-  .iwt-{{section.id}} picture img {
-    width: {{section.settings.image_width}}px;
-    height: {{section.settings.image_height}}px;
-    max-width: 90vw;
-    object-fit: {{ section.settings.image_fit }};
-    border-radius: {{section.settings.circle}}%;
-  }
-/*   RESIZING IMAGE FOR TABLET */
-  @media only screen 
-  and (min-width: 768px) 
-  and (max-width: 1024px)  {
-    .iwt-{{section.id}} picture img {
-    width: calc({{section.settings.image_width}}px / 1.5);
-    margin: auto;
-    }
-    }
-/*  DESKTOPS */
-@media only screen and (min-width:768px) {
-  {% if section.settings.bgimage != blank %}
-  
-  .iwt-{{section.id}} {
-    background:url('{{ section.settings.bgimage | img_url: 'master' }}');
-    background-size: cover !important;
-    box-shadow: 5px 5px 43px 40px #000 inset;
-    background-repeat: round;
-  }
-  {% endif %}
-  .iwt-{{section.id}} .iwt-inner {
-    flex-direction: row;
-    flex-wrap: wrap;
-    display: flex;
-  }
-  
-  .iwt-{{section.id}} .iwt-inner .iwt-inner__image {
-    width: 46%;
-  }
-
-  .iwt-{{section.id}} .iwt-inner .iwt-inner__text {
-    width: 46%;
-      /* text-align: center; */
-  }
-}
-/* MOBILE */
-@media only screen and (max-width: 768px) {
-  {% if section.settings.swap_lg == true %}
-  .iwt-{{section.id}} .iwt-inner {
-    flex-direction: column-reverse !important;
-  }
-  {% endif %}
-
-  {% if section.settings.diffmobile == false %}
-  .iwt-{{section.id}} .iwt-inner {
-    background:url('{{ section.settings.bgimage | img_url: 'master' }}');
-    background-size: cover !important;
-    box-shadow: 5px 5px 43px 40px #000 inset;
-  }  
-  {% else %}
-  .iwt-{{section.id}} .iwt-inner {
-    background: transparent;
-  }
-  {% endif %}
-  /* .iwt-{{section.id}} .iwt-inner .iwt-inner__image   {
-    height: calc({{ section.settings.image_height }}px - 50%);  
-  } */
-
-  .textual-{{section.id}}  {
-    max-width: 98vw;
-    margin: auto;
-    text-align-last:{{ section.settings.mobile_align }} !important;
-  }
-  .iwt-{{section.id}} .iwt-inner .iwt-inner__image  img,
-  .iwt-{{section.id}} .iwt-inner .iwt-inner__image,
-  .iwt-{{section.id}} picture img { 
-    width: {{section.settings.mobile_image_width}}vw;
-    height: {{section.settings.mobile_image_height}}vh;
-    object-fit: {{section.settings.mobile_fit}};
-    margin: auto;  
-  }
- 
-  /* .iwt-{{section.id}} .iwt-inner .iwt-inner__image  img  {
-    max-height: calc({{ section.settings.image_height }}px - 80px);  
-  } */
-}
-</style>
-
-
-<div class="iwt iwt-{{ section.id }}" style="overflow: hidden;">
-  <div class="iwt-inner">
-    <div class="iwt-inner__image" {% if section.settings.aos == true %} data-aos="zoom-in" data-aos-delay="150" data-aos-offset="100" data-aos-duration="700" {% endif %} {% if section.settings.swap_lg == true %} style="order: 1" {% endif %}>
-      {% if section.settings.image != blank %}
-        {% render 'titan-image' 
-          image: section.settings.image
-          mobile_image: section.settings.image_sm
-        %}
-      {% endif %}
+<div class="container px-5 mx-auto my-10 image-with-text-section md:px-0">
+    <div class="flex gap-4 flex-col md:flex-row section-row col-order-{{ section.settings.col_order }} items-center justify-center">
+        <div class="w-full md:w-1/2 section-col-1">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'heading' %}
+                        <h2 class="my-2 text-6xl font-semibold" {{ block.shopify_attributes }}>{{ block.settings.heading_label }}</h2>
+                    {% when 'text' %}
+                    <div class="my-2" {{ block.shopify_attributes }}>{{ block.settings.content }}</div>
+                    {% when 'button' %}
+                    <a href="{{ block.settings.btn_url | url_escape }}" class="inline-block px-8 py-4 my-2 text-white transition duration-300 bg-teal-700 border border-teal-600 rounded hover:border-teal-700 hover:bg-teal-600 btn" {{ block.shopify_attributes }}>{{ block.settings.btn_label | escape }}</a>
+                {% endcase %}
+            {% endfor %}
+        </div>
+        <div class="w-full md:w-1/2 section-col-2">
+            {% if section.settings.image_with_text %}
+                <img src="{{ section.settings.image_with_text | image_url: width: 1024 }}" alt="{{ section.settings.image_with_text.alt }}" width="{{ section.settings.image_with_text.width }}" height="{{ section.settings.image_with_text.height }}" loading="lazy" />
+                {% else %}
+                {{ 'lifestyle-2' | placeholder_svg_tag: 'w-full' }}
+            {% endif %}
+        </div>
     </div>
-    <div class="iwt-inner__text">
-      <div class="textual-{{section.id}}">
-        {{section.settings.text_content}}
-        <a class="btn btn--product-feature" href="{{section.settings.button_url}}" background-color: {{section.settings.button_color}} !important; border: 1px solid {{section.settings.button_color}} !important;>{{section.settings.button_text}} </a>
-      </div>
-    </div>
-  </div>
 </div>
 
-<script>
-  AOS.init();
-  document.addEventListener("shopify:section:load", () => {
-    AOS.init();
-  }) 
-</script>
+<style>
+    #shopify-section-{{ section.id }} .col-order-image-left .section-col-1{
+        order: 2;
+    }
+    #shopify-section-{{ section.id }} .col-order-image-left .section-col-2{
+        order: 1;
+    }
+</style>
 
 {% schema %}
 {
-  "name":"Titan - image with text",
-  "tag":"section",
-  "settings":[
-    {
-      "type":"header",
-      "content":"General"
-    },  {
-      "type":"image_picker",
-      "id":"bgimage",
-      "label":"Background image"
+    "name": {
+        "en": "Image With Text"
     },
-  {
-    "type": "checkbox",
-    "id": "diffmobile",
-    "label": "Don't use bg on mobile",
-    "default": true
-  },
-    {
-      "type":"image_picker",
-      "id":"image",
-      "label":"Desktop image",
-      "info":"Image for screensizes greater than 768 pixels"
-    },
-    {
-      "type":"image_picker",
-      "id":"image_sm",
-      "label":"Mobile image"
-    },
-   {
-     "type": "range",
-     "id": "image_width",
-     "label": "Image Width",
-     "unit": "px",
-     "min": 100,
-     "max": 1000,
-     "step": 10,
-     "default": 400
-   },
-   {
-    "type": "range",
-    "id": "image_height",
-    "label": "Image Height",
-    "unit": "px",
-    "min": 100,
-    "max": 1000,
-    "step": 10,
-    "default": 400
-  },
-   {
-          "type": "range",
-          "id": "mobile_image_width",
-          "label": "Mobile Image Width",
-          "min": 1,
-          "max": 100,
-          "step": 1,
-          "unit": "vw",
-          "default": 70
+    "settings": [
+        {
+            "type": "image_picker",
+            "id": "image_with_text",
+            "label": "Choose image"
         },
         {
-          "type": "range",
-          "id": "mobile_image_height",
-          "label": "Mobile Image Height",
-          "min": 1,
-          "max": 100,
-          "step": 1,
-          "unit": "vh",
-          "default": 70
-        },
-  {
-    "type": "range",
-    "id": "circle",
-    "label": "Border Radius",
-    "unit": "%",
-    "min": 0,
-    "max": 100,
-    "step": 1,
-    "default": 0
-  },
-    {
-      "type":"header",
-      "content":"Appearance"
-    },
-    {
-      "type": "select",
-      "id": "image_fit",
-      "default": "cover",
-      "label":"Image fit",
-      "options": [
-        {
-          "value": "cover",
-          "label": "Cover"
+            "type": "header",
+            "content": "Settings"
         },
         {
-          "value": "contain",
-          "label": "Contain"
+            "type": "select",
+            "id": "col_order",
+            "label": "Column order",
+            "options": [
+                {
+                    "value": "image-left",
+                    "label": "Image Left"
+                },
+                {
+                    "value": "image-right",
+                    "label": "Image Right"
+                }
+            ],
+            "default": "image-right"
         }
-      ]
-    },
-     {
-      "type": "select",
-      "id": "mobile_fit",
-      "default": "contain",
-      "label":"Image fit on mobile",
-      "options": [
+    ],
+    "blocks": [
         {
-          "value": "cover",
-          "label": "Cover"
+            "type": "heading",
+            "name": "Heading",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "heading_label",
+                    "label": "Heading",
+                    "default": "Heading 2"
+                }
+            ]
         },
         {
-          "value": "contain",
-          "label": "Contain"
+            "type": "text",
+            "name": "Content",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Content",
+                    "default": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim deleniti laudantium fugit quae voluptatum voluptas iure eum magnam aliquid consequatur quaerat facilis rerum maiores, dolore, assumenda in animi atque modi quas voluptate voluptates nesciunt totam porro. Amet dicta facilis ut!</p>"
+                }
+            ]
+        },
+        {
+            "type": "button",
+            "name": "Button",
+            "limit": 1,
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "btn_label",
+                    "label": "Button label",
+                    "default": "Explore more"
+                },
+                {
+                    "type": "url",
+                    "id": "btn_url",
+                    "label": "URL",
+                    "default": "/"
+                }
+            ]
         }
-      ]
-    },
+    ],
+    "presets": [
     {
-      "type":"checkbox",
-      "id":"full_width",
-      "default": true,
-      "label":"Full width"
-    },
-    {
-      "type":"checkbox",
-      "id":"swap_lg",
-      "default": false,
-      "label":"Swap sides"
-    },
-    {
-      "type":"checkbox",
-      "id":"aos",
-      "default": false,
-      "label":"Animate on scroll"
-    },
-    {
-      "type": "range",
-      "id": "width",
-      "min": 800,
-      "max": 1400,
-      "step": 10,
-      "unit": "px",
-      "default": 1000,
-      "label":"Boxed width"
-    },
-    {
-      "type": "range",
-      "id": "height",
-      "min": 400,
-      "max": 1400,
-      "step": 10,
-      "unit": "px",
-      "default": 600,
-      "label":"Section height"
-    },
-    {
-      "type":"header",
-      "content":"Text"
-    },
-  
-    {
-      "type":"html",
-      "id":"text_content",
-      "label":"Text content"
-       },
-{
-        "type": "header",
-        "content": "Button"
-      },
-      {
-        "type": "text",
-        "id": "button_text",
-        "label": "Text",
-        "default": "Learn More"
-      },
-      {
-        "type": "url",
-        "id": "button_url",
-        "label": "Link"
-      },    {
-      "type": "color",
-      "id": "button_color",
-      "label": "Button Color",
-      "default": "#800000"
-    },  {
-      "type": "color",
-      "id": "button_hover_color",
-      "label": "Button Hover Color",
-      "default": "#FAFAFA"
-    },{ 
-      "type": "select", 
-      "id": "plus_slideshow_text_align", 
-      "label": "Text alignment", 
-      "options": [ 
-        { 
-          "value": "left", 
-          "label": "Left" 
-        }, 
-        { 
-          "value": "center", 
-          "label": "Center" 
-        }, 
-        { 
-          "value": "right", 
-          "label": "Right" 
-        } 
-       ],
-      "default": "center" 
-    },{ 
-      "type": "select", 
-      "id": "mobile_align", 
-      "label": "Mobile Text alignment", 
-      "options": [ 
-        { 
-          "value": "left", 
-          "label": "Left" 
-        }, 
-        { 
-          "value": "center", 
-          "label": "Center" 
-        }, 
-        { 
-          "value": "right", 
-          "label": "Right" 
-        } 
-       ],
-      "default": "center" 
+        "name": "Image with text"
     }
-
-  ],
-  "presets":[{
-    "name":"Gaia image with text"
-  }]
+  ]
 }
 {% endschema %}
+
+
+<style>
+  /*
+! tailwindcss v3.0.23 | MIT License | https://tailwindcss.com
+*/
+
+/*
+1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
+2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
+*/
+ 
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+ 
+
+/*
+1. Remove the margin in all browsers.
+2. Inherit line-height from `html` so users can set them as a class directly on the `html` element.
+*/
+ 
+/*
+Add the correct text decoration in Chrome, Edge, and Safari.
+*/
+
+abbr:where([title]) {
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+}
+
+/*
+Remove the default font size and weight for headings.
+*/
+ 
+
+/*
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+ 
+
+/*
+Add the correct font weight in Edge and Safari.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. Use the user's configured `mono` font family by default.
+2. Correct the odd `em` font sizing in all browsers.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
+}
+
+/*
+Add the correct font size in all browsers.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+Prevent `sub` and `sup` elements from affecting the line height in all browsers.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
+2. Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+3. Remove gaps between table borders by default.
+*/
+
+table {
+  text-indent: 0;
+  /* 1 */
+  border-color: inherit;
+  /* 2 */
+  border-collapse: collapse;
+  /* 3 */
+}
+
+/*
+1. Change the font styles in all browsers.
+2. Remove the margin in Firefox and Safari.
+3. Remove default padding in all browsers.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: inherit;
+  /* 1 */
+  color: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */
+  padding: 0;
+  /* 3 */
+}
+
+/*
+Remove the inheritance of text transform in Edge and Firefox.
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Remove default button styles.
+*/
+
+button,
+[type='button'],
+[type='reset'],
+[type='submit'] {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+Use the modern Firefox focus style for all focusable elements.
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+Remove the additional `:invalid` styles in Firefox. (https://github.com/mozilla/gecko-dev/blob/2f9eacd9d3d995c937b4251a5557d95d494c9be1/layout/style/res/forms.css#L728-L737)
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+Add the correct vertical alignment in Chrome and Firefox.
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+Correct the cursor style of increment and decrement buttons in Safari.
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. Correct the odd appearance in Chrome and Safari.
+2. Correct the outline style in Safari.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
+}
+
+/*
+Remove the inner padding in Chrome and Safari on macOS.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. Correct the inability to style clickable types in iOS and Safari.
+2. Change font properties to `inherit` in Safari.
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+}
+
+/*
+Add the correct display in Chrome and Safari.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+Removes the default spacing and border for appropriate elements.
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+Prevent resizing textareas horizontally by default.
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. Reset the default placeholder opacity in Firefox. (https://github.com/tailwindlabs/tailwindcss/issues/3300)
+2. Set the default placeholder color to the user's configured gray 400 color.
+*/
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  /* 1 */
+  color: #9ca3af;
+  /* 2 */
+}
+
+/*
+Set the default cursor for buttons.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+Make sure disabled buttons don't get the pointer cursor.
+*/
+
+:disabled {
+  cursor: default;
+}
+
+/*
+1. Make replaced elements `display: block` by default. (https://github.com/mozdevs/cssremedy/issues/14)
+2. Add `vertical-align: middle` to align replaced elements more sensibly by default. (https://github.com/jensimmons/cssremedy/issues/14#issuecomment-634934210)
+   This can trigger a poorly considered lint error in some tools but is included by design.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  /* 1 */
+  vertical-align: middle;
+  /* 2 */
+}
+
+/*
+Constrain images and videos to the parent width and preserve their intrinsic aspect ratio. (https://github.com/mozdevs/cssremedy/issues/14)
+*/
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/*
+Ensure the default browser behavior of the `hidden` attribute.
+*/
+
+[hidden] {
+  display: none;
+}
+
+*, ::before, ::after {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-rotate: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-pan-x:  ;
+  --tw-pan-y:  ;
+  --tw-pinch-zoom:  ;
+  --tw-scroll-snap-strictness: proximity;
+  --tw-ordinal:  ;
+  --tw-slashed-zero:  ;
+  --tw-numeric-figure:  ;
+  --tw-numeric-spacing:  ;
+  --tw-numeric-fraction:  ;
+  --tw-ring-inset:  ;
+  --tw-ring-offset-width: 0px;
+  --tw-ring-offset-color: #fff;
+  --tw-ring-color: rgb(59 130 246 / 0.5);
+  --tw-ring-offset-shadow: 0 0 #0000;
+  --tw-ring-shadow: 0 0 #0000;
+  --tw-shadow: 0 0 #0000;
+  --tw-shadow-colored: 0 0 #0000;
+  --tw-blur:  ;
+  --tw-brightness:  ;
+  --tw-contrast:  ;
+  --tw-grayscale:  ;
+  --tw-hue-rotate:  ;
+  --tw-invert:  ;
+  --tw-saturate:  ;
+  --tw-sepia:  ;
+  --tw-drop-shadow:  ;
+  --tw-backdrop-blur:  ;
+  --tw-backdrop-brightness:  ;
+  --tw-backdrop-contrast:  ;
+  --tw-backdrop-grayscale:  ;
+  --tw-backdrop-hue-rotate:  ;
+  --tw-backdrop-invert:  ;
+  --tw-backdrop-opacity:  ;
+  --tw-backdrop-saturate:  ;
+  --tw-backdrop-sepia:  ;
+}
+
+.container {
+  width: 100%;
+}
+
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.block {
+  display: block;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.flex {
+  display: flex;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-4 {
+  gap: 1rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.border-teal-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(13 148 136 / var(--tw-border-opacity));
+}
+
+.bg-teal-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(15 118 110 / var(--tw-bg-opacity));
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.transition {
+  transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
+.hover\:border-teal-700:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(15 118 110 / var(--tw-border-opacity));
+}
+
+.hover\:bg-teal-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(13 148 136 / var(--tw-bg-opacity));
+}
+
+@media (min-width: 768px) {
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}

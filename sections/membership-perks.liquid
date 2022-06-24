@@ -14,13 +14,15 @@
     {%render 'gaia-image',
   	image: block.settings.perkimage 
        %} </div>
-    <p class="perktext uppercase" style="color: {{section.settings.headercolor}}"> {{block.settings.perktext}} </p> </div>
+    <p class="perktext maroonbold uppercase" style="color: {{section.settings.headercolor}}"> {{block.settings.perktext}} </p> </div>
       {% endfor %} </div>
   </div>
 </div>
 
-<div class="description_div" style="margin-top: 3%; text-align: center;">
-{{section.settings.description}}
+<div class="description_div grayregular" style="color: #575757;margin-top: 3%; text-align: center; font-weight: bolder;">
+<p style="margin-bottom: 0 !important; padding-bottom:0 !important;"> {{section.settings.description}}
+  
+</p>
   <br>
  
           <a href="{{ section.settings.button_link }}" class="gbtn btn btn--product-feature" style="margin-top: 30px; background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ section.settings.button_text }}</a>
@@ -30,10 +32,15 @@
 <style>
   @media only screen and (max-width:900px) {
   .mpcard-{{section.id}} {
-  	width: 96% !important;
+  	width: 94% !important;
     font-size: 34px !important;
    }
-   
+   .mbpimg,  .mbpimg .gaia-image  {
+    width: 30px !important;
+    height: 20px !important;
+    margin: auto;
+    margin-right: 10px;
+  }
   .perktext {
     margin-left: 0px !important;
     font-weight: 900;
@@ -51,7 +58,7 @@
   
   .mpheader-{{section.id}} {
   	color: white;
-    font-size: 40px;
+    /* font-size: 40px; */
     margin: -40px 0 10px 0;
   }
   .mpcard-{{section.id}} {

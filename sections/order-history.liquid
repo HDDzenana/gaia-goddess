@@ -1,6 +1,23 @@
 
 {% assign menu = section.settings.menu%}
 <style>
+  @media only screen and (max-width: 1000px) {
+    .accountnav {
+      max-width: 500px!important;
+    }
+
+    .accountnav {
+      position:  relative !important;
+      display: flex;
+      flex-direction: column;
+      
+    margin-left: 15% !important;
+    }
+
+    .customaccount-{{section.id}} {
+      flex-direction: column-reverse;
+    }
+  }
 
 .customaccount-{{section.id}} {
   display: flex;
@@ -110,6 +127,8 @@ li.active
     padding: 40px 0;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
     filter: drop-shadow(10px -10px 20px rgba(108, 29, 69, 0.161));
  }
 
@@ -128,7 +147,12 @@ li.active
 
  .oh-{{section.id}} {
   max-width: 90%;
-  margin: auto;
+  margin: auto; 
+    box-shadow: -1px 3px 10px 8px #eb6fbd0d;
+    /* overflow: hidden; */
+
+    border-bottom-left-radius: 20px; border-bottom:2px solid #FFD9E5 !important; border-let: 1px solid #FFD9E5 !important; 
+    border-bottom-right-radius: 20px;
  }
  .oh-{{section.id}} th {
   background-color: #EB6FBD;
@@ -240,6 +264,8 @@ overflow: hidden;
 <!-- order -->
 
  {%if customer %}
+ <h1 class="wrapper maroonbold" style="
+ margin: 50px 5px;">Order History </h1>
 {% for order in customer.orders %}
 {% paginate customer.orders by 20 %}
 {% if customer.orders.size != 0 %}
@@ -285,7 +311,8 @@ overflow: hidden;
    <th>{{ 'customer.orders.total' | t  | link_to: order.customer_url }}</th>
    <td>{{- order.total_price | money | link_to: order.customer_url -}}</td>
             <th>{{ 'customer.orders.payment_status' | t  | link_to: order.customer_url }}</th>
-            <td> <div style="margin-top: 10px; display: flex; justify-content: center; flex-direction: row"><a href="https://api-pdf.vify.io/api/pdf-preview/invoice?shop_domain={{ shop.permanent_domain }}&order_id={{ order.id }}&locale=en" style="background-color: #6c1d45; border-color: #6c1d45; color: #fff; display:flex;padding:10px 15px;margin-bottom:0;font-size:14px;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px; margin-right: 10px; margin-top: 4px; align-self: center" target="_blank"> Download PDF</a></div>
+            <td> <div style="margin-top: 10px; display: flex; justify-content: center; flex-direction: row"><a href="https://api-pdf.vify.io/api/pdf-preview/invoice?shop_domain={{ shop.permanent_domain }}&order_id={{ order.id }}&locale=en" style="background-color: #6c1d45; 
+              border-radius: 20px !important; border-color: #6c1d45; color: #fff; display:flex;padding:5px 15px;margin-bottom:0;font-size:14px;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px; margin-right: 10px; margin-top: 4px; align-self: center" target="_blank"> Download PDF</a></div>
         </td>
         
           </tr>

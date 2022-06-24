@@ -18,14 +18,29 @@
 		background-color: #FFD9E5;
 		width: 100%;
 	}
+ 
+	.footer-bottom__div  * {
+		color: #6C1D45 !important;
+	}
+
+	.footer-bottom__links {
+		text-decoration: underline;
+	}
+	.footer_bottom__credits p a:hover ,
+	.footer-bottom__links p a:hover,
+	.footer-bottom__links:hover  {
+		color: #e272ac !important;
+	}
 	.footer-bottom__div{
-		display: flex;
-    	justify-content: space-between;
+		display: grid;
+		grid-template-columns: 1fr 3fr 1fr;
 		font-size: 14px;
     	color: #6C1D45;
 		height: 90px;
     	align-items: center;
 	}
+
+ 
 	.footer-bottom__links p a{
 		text-decoration: none;
 	}
@@ -50,11 +65,11 @@
 	.contact_us_list li:first-child svg {
 		margin-right: 4px
 	}
-	.social-sharing-wrapper{
+	.mysocial-sharing-wrapper{
 		color: #6C1D45;
 		justify-content: normal;
 	}
-	.social-sharing-wrapper a:hover{
+	.mysocial-sharing-wrapper a:hover{
 		color: red;
 	}
 	.footer-content__logo{
@@ -71,7 +86,7 @@
 	.footer-content__logo{
 		justify-content: center;
 	}
-	.social-sharing-wrapper{
+	.mysocial-sharing-wrapper{
 		margin-top: 0;
 	}
 	@media only screen and (max-width: 767px){
@@ -81,8 +96,9 @@
 		}
 		.footer-text{
 			text-align: center;
+			margin-bottom: 25px ;
 		}
-		.social-sharing-wrapper{
+		.mysocial-sharing-wrapper{
 			justify-content: center;
 		}
 		.footer-bottom__div{
@@ -110,7 +126,7 @@
 		.footer_contact{
 			width: 34%;
 		}
-		.social-sharing-wrapper a {
+		.mysocial-sharing-wrapper a {
 			margin: 0 8px;
 		}
 		.footer-bottom__div {
@@ -281,7 +297,7 @@
 								<p class="footer-title h5">{{ block.settings.footer_social_title }}</p>
 							{%- endif -%}
 	
-								<div class="social-sharing-wrapper">
+								<div class="mysocial-sharing-wrapper">
 									{%- if block.settings.footer_social_facebook != blank -%}
 										<a class="facebook" rel="noopener" href = "{{settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
 											{%- render 'icon-footer-facebook' -%}
@@ -316,10 +332,10 @@
 
 		<div class="footer-bottom__div">
 			<div class="footer-bottom__links">
-				<p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+				<p><a href="/policies/terms-of-service">Terms & Conditions</a> | <a href="/policies/privacy-policy">Privacy Policy</a></p>
 			</div>
 			<div class="footer-bottom__links-mobile">
-				<p><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Credits</a></p>
+				<p><a href="/policies/terms-of-service">Terms & Conditions</a> | <a href="/policies/privacy-policy">Privacy Policy</a> | <a href="#">Credits</a></p>
 			</div>
 			<div class="footer_bottom__copyright">
 				<p>©2022 GAIA GODDESS, ALL RIGHT RESERVED.</p>
@@ -585,3 +601,22 @@
 	]
 }
 {% endschema %}
+
+<style>
+  
+  .site-footer .social-sharing-wrapper{
+		color: #6C1D45;
+		justify-content: normal;
+ 		display: none !important;
+	}
+
+.mysocial-sharing-wrapper * {
+  text-decoration: none !important;
+}
+  .footer_contact{
+  color: #575757 !important;
+  }
+  .footer_contact::hover {
+  color: #EB6FBD !important;
+  }
+</style>

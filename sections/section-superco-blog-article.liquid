@@ -86,7 +86,7 @@
         line-height: 1.2;
     }
     .about-events{
-        width: 45%;
+        width: 40%;
         display: block;
         position: sticky;
         top: 3rem;
@@ -181,10 +181,10 @@
     <div class="upperpart-{{section.id}} center "> 
     
       <div class="aboutarticle-{{section.id}}"> 
-       <div class="breadcrumbs" style="display: flex; align-items: center;"> {%render 'brhome'%} 
+       <div class="breadcrumbs" style="display: flex; align-items: center; margin-bottom: 50px;"> {%render 'brhome'%} 
       <a href="{{section.settings.prevlink}}" style="
     margin-top: 10px;    font-weight: bolder;">
-      <strong> {{section.settings.prevtext}} /  {{article.title}}</strong></a></div>   <div class="td"> {%for tag in article.tags %}
+      <strong> <span class="pink" style="color:#EB6FBD ;"> {{section.settings.prevtext}} ></span><span class="maroon"> {{article.title}}</span></strong></a></div>   <div class="td"> {%for tag in article.tags %}
     {%if article.tags contains 'general' %}
 <div class="icn" style="    width: 50px !important;
 ">  
@@ -197,11 +197,18 @@
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">{{ article.published_at | date: format: 'month_day_year' }}</time>
+    {%endfor%}<time class="pink" datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD !important;">{{ article.published_at | date: format: 'month_day_year' }}</time>
     </div>
     <h1>
       {{article.title}}
-    </h1>  {{ article.author }}
+    </h1>    
+    <p class="maroon" style="
+    display: flex;
+    justify-content: center;
+    place-items: center;
+"> 
+    <img src="{{ article.metafields.my_fields.authorimage   | img_url: '400x' }}" alt="{{article.metafields.my_fields.authorimage }}" 
+    style="width: 55px; height: 45px; border-radius: 50%; object-fit: cover;">    {{ article.author }}</p>
 </div> 
 {%if section.settings.image == blank %}
 {% assign image_src=article.image.src | img_url: 'large' %}
@@ -265,7 +272,10 @@ image: section.settings.image %}
     
                       </div>
                 </div>
-            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
+            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background: #FFFFFF;
+box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161);
+background: #FFFFFF !important;
+box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
                  <span class="center center-{{section.id}}"> Share This  Article </span> 
                <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact"> 
                
