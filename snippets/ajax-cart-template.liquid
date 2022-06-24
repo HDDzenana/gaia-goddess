@@ -75,13 +75,13 @@
 						</p>
 						<p>  Attendees </p>
 						<div class="qty js-qty">
-							<button type="button" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{val.id}}" data-qty="{{val.itemMinus}}" data-line="{{val.line}}">
-								{% endraw %}{%- render 'icon-minus' -%}{% raw %}
+							<button type="button" id="qrta" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{val.id}}" data-qty="{{val.itemMinus}}" data-line="{{val.line}}">
+		 
 								<span class="fallback-text">&minus;</span>
 							</button>
 							<input type="number" name="updates[]" class="qty__input js-qty__input" value="{{val.itemQty}}" min="0" data-id="{{val.id}}" data-line="{{val.line}}" aria-label="quantity" pattern="[0-9]*">
 							<button type="button" class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{val.id}}" data-line="{{val.line}}" data-qty="{{val.itemAdd}}">
-								{% endraw %}{%- render 'icon-plus' -%}{% raw %}
+			 
 								<span class="fallback-text">+</span>
 							</button>
 						</div>
@@ -159,18 +159,23 @@
 <script id="JsQty" type="text/x-template">
 {% raw %}
 <p>  Attendees </p>
-<div class="qty js-qty"> 
-	<button type="button" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemMinus}}">
+<div class="qty js-qty" id="qrta"> 
+	<button type="button " id="qrta" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemMinus}}">
 		{% endraw %} {%- render 'icon-minus' -%} {% raw %}
 		<span class="fallback-text">&minus;</span>
 	</button>
  
-	<input type="number" class="qty__input js-qty__input" value="{{it.itemQty}}" min="1" data-id="{{it.id}}" aria-label="quantity" pattern="[0-9]*" name="{{it.inputName}}" id="{{it.inputId}}">
-	<button type="button" class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemAdd}}">
-		{% endraw %} {%- render 'icon-plus' -%} {% raw %}
+	<input type="number" id="qrta" class="qty__input js-qty__input" value="{{it.itemQty}}" min="1" data-id="{{it.id}}" aria-label="quantity" pattern="[0-9]*" name="{{it.inputName}}" id="{{it.inputId}}">
+	<button type="button" id="qrta"  class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemAdd}}">
+ 
 		<span class="fallback-text">+</span>
 	</button>
 </div>
 {% endraw %}
 </script>
 <style>#AjaxifyCart .additional-checkout-buttons,#ajaxifyCart .additional-checkout-buttons {display:none;}</style>
+
+
+<script>
+	document.getElementById("qrta").readOnly = true;
+	</script>
