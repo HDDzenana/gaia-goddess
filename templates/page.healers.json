@@ -18,7 +18,7 @@
         "caption_color": "",
         "caption": "",
         "text_color": "#6c1d45",
-        "heading": "Our Healers\n<br>\n<span style=\"color: #EB6FBD;\"> _ <\/span>\n<br><br>\nDiosa <br><br>",
+        "heading": "<h2 class=\"maroonbold oh\">Our Healers <\/h2>\n{% render 'pinkline' %}\n<br><br><br>\n<h2 class=\"maroonbold\">\nDiosa <br><br> <\/h2>",
         "subheading": "",
         "ssubheading_color": "#800000",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
@@ -37,69 +37,75 @@
         "show_page_title": true
       }
     },
-    "16510797131a8810b2": {
-      "type": "section-featured-collections",
+    "165624679769ba56ed": {
+      "type": "healer-list",
       "blocks": {
-        "eebea0da-2750-4ce0-b6b1-c3ca27b0dd8d": {
+        "ac35fc3e-7d2d-41b0-a406-0121b42a271a": {
           "type": "collection",
           "settings": {
-            "collection": "sophie-moore",
-            "healer_subtitle": "Yoga Instructor",
-            "show_instagram_icon": true,
-            "social_instagram_link": "",
-            "show_website_icon": true,
-            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+            "collection": "sophie-moore"
           }
         },
-        "ab53b94d-3555-4a0a-b076-c874923bc2a0": {
+        "16562467977a3dddb2-4": {
           "type": "collection",
           "settings": {
-            "collection": "sophie-moore",
-            "healer_subtitle": "Yoga Instructor",
-            "show_instagram_icon": true,
-            "social_instagram_link": "",
-            "show_website_icon": true,
-            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+            "collection": "darlene-shaw"
           }
         },
-        "bcb02ca5-4ef0-4db4-a600-8b4a56c21f56": {
+        "16562467977a3dddb2-1": {
           "type": "collection",
           "settings": {
-            "collection": "sophie-moore",
-            "healer_subtitle": "Yoga Instructor",
-            "show_instagram_icon": true,
-            "social_instagram_link": "",
-            "show_website_icon": true,
-            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+            "collection": "emily-sherman"
           }
         },
-        "e3577d9e-13c0-424e-9771-dacb42ac50e4": {
+        "16562467977a3dddb2-2": {
           "type": "collection",
           "settings": {
-            "collection": "sophie-moore",
-            "healer_subtitle": "Yoga Instructor",
-            "show_instagram_icon": true,
-            "social_instagram_link": "",
-            "show_website_icon": true,
-            "social_website_link": "https:\/\/gaiagoddesslifestyle.com\/collections\/sophie-moore"
+            "collection": "luna-pixie"
+          }
+        },
+        "16562467977a3dddb2-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore"
+          }
+        },
+        "91856dfd-fc64-4ae6-9838-966f4d7e4432": {
+          "type": "collection",
+          "settings": {
+            "collection": "darlene-shaw"
+          }
+        },
+        "8bdc2567-1971-46c6-83b4-5b7d601e9caa": {
+          "type": "collection",
+          "settings": {
+            "collection": "emily-sherman"
+          }
+        },
+        "1a2e4088-8f7d-426a-b60d-6fcec9a9700e": {
+          "type": "collection",
+          "settings": {
+            "collection": "luna-pixie"
           }
         }
       },
       "block_order": [
-        "eebea0da-2750-4ce0-b6b1-c3ca27b0dd8d",
-        "ab53b94d-3555-4a0a-b076-c874923bc2a0",
-        "bcb02ca5-4ef0-4db4-a600-8b4a56c21f56",
-        "e3577d9e-13c0-424e-9771-dacb42ac50e4"
+        "ac35fc3e-7d2d-41b0-a406-0121b42a271a",
+        "16562467977a3dddb2-4",
+        "16562467977a3dddb2-1",
+        "16562467977a3dddb2-2",
+        "16562467977a3dddb2-3",
+        "91856dfd-fc64-4ae6-9838-966f4d7e4432",
+        "8bdc2567-1971-46c6-83b4-5b7d601e9caa",
+        "1a2e4088-8f7d-426a-b60d-6fcec9a9700e"
       ],
       "settings": {
-        "heading": "Our Healers",
-        "heading_color": "#6c1d45",
-        "heading_alignment": "left",
-        "show_filter": true,
-        "products_layout": "carousel",
+        "title": "Our Healers",
+        "button_text": "Shop all",
+        "button_style": "primary",
+        "overlay_opacity": 20,
         "bg_color": "",
-        "healer_title_color": "#eb6fbd",
-        "healer_subtitle_color": "#6c1d45",
+        "text_color": "light",
         "enable_slider": true
       }
     },
@@ -120,7 +126,7 @@
   "order": [
     "165163688289226a64",
     "main",
-    "16510797131a8810b2",
+    "165624679769ba56ed",
     "16502926109923d142"
   ]
 }

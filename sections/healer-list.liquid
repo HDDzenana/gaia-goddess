@@ -10,14 +10,14 @@
   <h1 class="maroonbold"> {{section.settings.title}} </h1>
   <div class="filter-title">
     <select name="cat-filter" id="cat-filter">
-      <option value="none-selected">Select category</option>
-      <option value="yoga">Yoga</option>
+      <option class="maroonbold" value="none-selected">Category</option>
+      <option value="yoga instructor">Yoga</option>
       <option value="meditation">Meditation</option>
       <option value="reiki">Reiki</option>
     </select>
   </div>
 </div>
-
+ 
 
 <div class="swiper  swiper-{{ section.id }}">
   <div class="swiper-wrapper">  
@@ -35,11 +35,11 @@
         <img src="{{collection.featured_image | img_url: 'medium'}}"> 
       {%endif %}
     
-     <h5 class="pink bold ct" style="margin-top: 20px;"> 
+     <h5 class="pink bold ct" style="margin-top: 20px;">  
       {{collection.title}} 
     </h5> 
      <div class="about">
-      <div class="healersocials">  
+      <div class="healersocials">   
       <div class="ig"> 
         <a href="{{collection.metafields.custom.instagram}} "> 
         {%render 'healer-ig'%}
@@ -55,7 +55,7 @@
       {{collection.metafields.custom.type}} 
       </span> </div>
       <p class="grayregular desc">
-        {{collection.description   | truncate: 200 }}
+        {{ collection.description  }}
       </p>
        
  
@@ -81,17 +81,21 @@
   
   @media only screen and (min-width: 768px) {
     .swiper-wrapper {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 5px;  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;  
     padding: 5% 0;
     max-width: 1400px;
     margin: 0 30px;
     grid-row-gap: 100px;
+    margin: auto;
+    justify-content: center;
     justify-items: center;
   }
+  .swiper-slide,
   .healercard {
-    max-width: 300px
+    max-width: 300px !important;
+    width: 300px !important;
   }
   }
   .healer-list-{{section.id}} {
@@ -105,7 +109,7 @@
   }
   .healer-list-{{section.id}} .title {
     padding-top: 100px;
-    max-width: 1400px; 
+    max-width: 1280px; 
     margin: auto; 
     grid-column-gap: 5px;
     grid-row-gap: 100px; 
@@ -118,7 +122,40 @@
     height: 280px;
   }
  
+  .filter-title {
+    width: 140px; 
+  }
 
+  #cat-filter {
+    border-radius: 30px !important; 
+    border-color: #6C1D45;
+    border: 2px solid #6C1D45;
+    width: 140px;
+    height: 50px;
+  }
+  select,
+  option {
+    color: #6C1D45 !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+    padding-right: 2rem !important;
+  }
+  .title {
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+  }
+  h1.maroonbold {
+    font-weight: 100 !important;
+    margin: 0 !important;
+  }
   .healersocials {
     display: flex;
     flex-direction: row;
@@ -387,8 +424,29 @@ const swiper = new Swiper(".swiper-{{ section.id }}", {
   .swiper .swiper-{{section.id}}  .swipertestimonial {
     /* width: 85% !important; */
     height: 100%;
+    padding
   }
-
+  .title {
+    padding: 5% !important;
+  }
+  .healercard {
+    padding: 5%;
+  }
+  h1.maroonbold {
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  #cat-filter {
+    border-radius: 40px !important;
+    border-color: #6C1D45;
+    border: 1px solid #6C1D45;
+    width: 140px;
+    height: 38px;
+    font-size: 14px;
+    padding: 0 15px;
+}
   .healer-list-{{section.id}} img { 
     text-align-last: center;
     width: 100%;
