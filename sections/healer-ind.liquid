@@ -204,12 +204,12 @@
                 {%- render 'icon-footer-instagram' -%}
               </a>
             {% endif %}
-            <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">
+            <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_facebook_link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">
               {%- render 'icon-footer-facebook' -%}
             </a>
             {% if block.settings.show_website_icon %}
               <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_website_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
-                {%- render 'healer-website' -%}
+                {%- render 'healer-ind-site' -%}
               </a>
             {% endif %}
           </div>
@@ -343,7 +343,16 @@
         }, {
           "type": "text",
           "id": "social_instagram_link",
-          "label": "Facebook"
+          "label": "Instagram Link"
+        }, {
+          "type": "checkbox",
+          "id": "show_facebook_icon",
+          "label": "Show Facebook",
+          "default": true
+        }, {
+          "type": "text",
+          "id": "social_facebook_link",
+          "label": "Facebook Link"
         }, {
           "type": "checkbox",
           "id": "show_website_icon",
@@ -352,7 +361,7 @@
         }, {
           "type": "text",
           "id": "social_website_link",
-          "label": "Page"
+          "label": "Website Link"
         }
       ]
     }
@@ -448,7 +457,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: {{section.settings.bg}};
-    height: 70vh;
+    height: 700px;
+    overflow: hidden;
     margin-bottom: 150px;
   }
   .pw {
@@ -483,7 +493,7 @@
   } 
   }
  
-  .breadcrumbs {
+  /* .breadcrumbs {
     margin: 0 0 2em;
   }
 
@@ -527,5 +537,12 @@
 
   .healer-description {
     line-height: 19.2px;
+  } */
+/* deskk */
+  @media only screen and (min-width: 769px) {
+    .healer-heading__info *,
+    .healer-description {
+      text-align-last: left !important;
+    }
   }
 </style>
