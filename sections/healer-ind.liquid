@@ -174,8 +174,11 @@
     
     <div class="pw">       
       <div class="smt">
-  
+
+
         {% render 'breadcrumbs' %}
+
+
         {% for block in section.blocks %}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
@@ -381,7 +384,7 @@
 /* mobb */
  @media only screen and (max-width: 768px) {
   h1, .h1, .heading__title {
-    font-size: 42px !important;
+    font-size: 38px !important;
   }
   .page-width-{{section.id}}{
     height: 400px;
