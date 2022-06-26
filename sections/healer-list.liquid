@@ -1,0 +1,262 @@
+{%   assign collection = collections[section.settings.collection] | default: false %}
+<div class="healer-list-{{section.id}}"> 
+<div class="list-healer title">
+  <h1 class="maroonbold"> {{section.settings.title}} </h1>
+</div>
+ 
+<div class="list-healer">
+  {%for block in section.blocks %}
+  {% case block.type %}
+  {% when 'collection' %}
+  {% assign collection = collections[block.settings.collection] | default: false %}
+    <div class="healercard" style="max-width: 250px">
+        {% if block.settings.image != blank %}
+        {%render 'gaia-image',
+        image: block.settings.image %}
+        {% else  %}
+        <img src="{{collection.featured_image | img_url: 'medium'}}"> 
+      {%endif %}
+    
+     <h5 class="pink bold" style="margin-top: 20px;"> 
+      {{collection.title}} 
+    </h5>
+     <div class="about">
+      <div class="healersocials">  
+      <div class="ig"> 
+        <a href="{{collection.metafields.custom.instagram}} "> 
+        {%render 'healer-ig'%}
+      </a>
+      </div>
+      <div class="site">
+        <a href="{{collection.metafields.custom.healer_site}}">
+          {%render 'healer-site'%}
+        </a>
+      </div>
+      </div>  
+      <span class="maroon typeof">
+      {{collection.metafields.custom.type}} 
+      </span> </div>
+      <p class="grayregular desc">
+        {{collection.description   | truncate: 200 }}
+      </p>
+       
+ 
+      <p class="maroon evup">
+        Upcoming Events
+      </p>
+      <span class="grayregular upev">
+        {{collection.metafields.custom.upcoming_events}} 
+      </span>
+ </div>
+ 
+{% endcase %}
+{%endfor%} 
+</div></div>
+</div>  
+ 
+
+<style>
+  .healer-list-{{section.id}} {
+    background: white;
+  }
+
+  .healer-list-{{section.id}} .title {
+    padding-top: 100px;
+  }
+
+  .healer-list-{{section.id}} img {
+    margin: auto;
+    width: 250px;
+    height: 250px;
+  }
+  .list-healer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;  
+    padding: 5% 0;
+    max-width: 1400px;
+    margin: auto;
+    grid-row-gap: 100px;
+    justify-items: center;
+  }
+
+  .healersocials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .about {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .typeof {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #6C1D45;
+  }
+
+  .desc,
+  .upev {
+    font-family: 'Acumin_Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 10px;
+    padding-top: 0;
+    color: #575757;
+  }
+
+  .evup {
+    font-family: 'Acumin_Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #6C1D45;
+    margin-bottom: 5px;
+    padding: 0 !important;
+  }
+  .upev {
+    margin: 0 !important;
+  }
+</style>
+
+
+
+{% schema %}
+	{
+		"name": "Collection list",
+		"class": "collection-list",
+		"max_blocks": 12,
+		"settings": [
+			{
+				"type": "header",
+				"content": "Layout"
+			},
+			 
+			 
+			{
+				"type": "text",
+				"id": "title",
+        "label":"Title",
+				"default": "Our Healers"
+			},
+			{
+				"type": "text",
+				"id": "button_text",
+				"label": "View collection button text",
+				"default": "Shop all"
+			},
+			{
+				"type": "select",
+				"id": "button_style",
+				"label": "Button style",
+				"default": "secondary",
+				"options": [
+					{ "label": "Primary", "value": "primary" },
+					{ "label": "Secondary", "value": "secondary" }
+				]
+			},
+			{
+				"type": "header",
+				"content": "Items"
+			},
+			{
+				"type": "range",
+				"id": "overlay_opacity",
+				"label": "Overlay opacity",
+				"min": 0,
+				"max": 95,
+				"step": 5,
+				"unit": "%",
+				"default": 20
+			},
+			{
+				"type": "header",
+				"content": "Colors"
+			},
+			{
+				"type": "color",
+				"id": "bg_color",
+				"label": "Background"
+			},
+			{
+				"type": "select",
+				"id": "text_color",
+				"label": "Text",
+				"default": "light",
+				"options": [
+					{
+						"value": "light",
+						"label": "Light"
+					},
+					{
+						"value": "dark",
+						"label": "Dark"
+					}
+				]
+			},
+			{
+				"type": "header",
+				"content": "Mobile slider"
+			},
+			{
+				"type": "checkbox",
+				"id": "enable_slider",
+				"label": "Enable slider",
+				"default": true,
+				"info": "Horizontal slider in mobile layout."
+			}
+		],
+		"blocks": [
+			{
+				"type": "collection",
+				"name": "Collection",
+				"settings": [
+					{
+						"label": "Collection",
+						"id": "collection",
+						"type": "collection"
+					},
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Replacement image"
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Healer list",
+				"category": "Collection",
+				"blocks": [
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					}
+				]
+			}
+		]
+	}
+{% endschema %}
