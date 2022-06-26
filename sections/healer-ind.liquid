@@ -91,11 +91,12 @@
 
 .healer-heading__title {
   margin-bottom: 0;
-  line-height: 30px !important;
+
   color: {{section.settings.healer_title_color}}}
 
 .healer-heading__subtitle {
   margin: 20px 0;
+  font-weight: 900;
 }
 
 .healer-heading__icons {
@@ -182,11 +183,13 @@
 
             <div class="healer-heading">
               <div class="healer-heading__info">
-                <h1 class="healer-heading__title" style="line-height:21.6px ;"> {{ block.settings.title }}</h1>
+                <h1 class="healer-heading__title maroonbold" > {{ block.settings.title | escape_html }}</h1>
+                <div class="abouthealersub">
                 <p class="healer-heading__subtitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
                 <div class="btnlike">
                   {{block.settings.textbtn}}
                 </div>
+              </div>
               </div>
 
 
@@ -366,8 +369,73 @@
 
 
 <style>
+/* mobb */
+ @media only screen and (max-width: 768px) {
+  h1, .h1, .heading__title {
+    font-size: 42px !important;
+  }
+  .page-width-{{section.id}}{
+    height: 400px;
+    background-size: cover;
+  }
+  .wrappers-{{section.id}}{
+    min-height: 100%;
+    height: 100% !important;
+  }
+  .about-info {
+    padding: 10px 0 !important;
+  }
+  .about-info > p {
+    padding: 0 20px !important;
+  }
+  .abouthealersub {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    place-content: center;
+    gap: 20px;
+}
+.healer-description {
+  width: 100% !important;
+}
 
- 
+.healer-heading__info {
+  width: 100% !important;
+  margin: auto
+}
+
+.healer-heading__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrappers-{{section.id}}{ 
+  min-width: fit-content !important;
+  height: 100%;
+  margin-bottom: 0px !important;
+}
+
+.healer-description {
+  padding: 10px 0 !important;
+}
+
+.btnlike {
+
+  padding: 5px 15px !important;
+}
+ }
+
+ /* ENDMOBILE */
+.healer-card {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-width: 100%;
+    text-align: center;
+    text-align-last: center;
+ }
 
   .healer-description {
 
@@ -414,7 +482,7 @@
     flex-direction: column !important;
   } 
   }
-</style>        <style>
+ 
   .breadcrumbs {
     margin: 0 0 2em;
   }
