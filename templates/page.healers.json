@@ -18,7 +18,7 @@
         "caption_color": "",
         "caption": "",
         "text_color": "#6c1d45",
-        "heading": "Our Healers\n<br>\n<span style=\"color: #EB6FBD;\"> _ <\/span>\n<br><br>\nDiosa <br><br>",
+        "heading": "<h2 class=\"maroonbold oh\">Our Healers <\/h2>\n{% render 'pinkline' %}\n<br><br><br>\n<h2 class=\"maroonbold\">\nDiosa <br><br> <\/h2>",
         "subheading": "",
         "ssubheading_color": "#800000",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
