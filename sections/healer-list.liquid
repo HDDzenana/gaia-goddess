@@ -5,24 +5,29 @@
 
 <!-- section -->
 <div class="healer-list-{{section.id}}"> 
+
 <div class="title">
   <h1 class="maroonbold"> {{section.settings.title}} </h1>
+  <div class="filter-title">
+    <select name="cat-filter" id="cat-filter">
+      <option value="none-selected">Select category</option>
+      <option value="yoga">Yoga</option>
+      <option value="meditation">Meditation</option>
+      <option value="reiki">Reiki</option>
+    </select>
+  </div>
 </div>
 
-         <!-- Slider main container -->
-        
-          <!-- Additional required wrapper -->
-        
-            <!-- Slides -->
-            <div class="swiper  swiper-{{ section.id }}">
-              <div class="swiper-wrapper">  
+
+<div class="swiper  swiper-{{ section.id }}">
+  <div class="swiper-wrapper">  
   {%for block in section.blocks %}
   {% case block.type %}
   {% when 'collection' %}
   <div class="swiper-slide">
 
   {% assign collection = collections[block.settings.collection] | default: false %}
-    <div class="healercard" style=" margin: 0 10px;">
+    <div class="healercard" style=" margin: 0 10px;" data-metafield="{{ collection.metafields.custom.type }}">
         {% if block.settings.image != blank %}
         {%render 'gaia-image',
         image: block.settings.image %}
@@ -32,7 +37,7 @@
     
      <h5 class="pink bold ct" style="margin-top: 20px;"> 
       {{collection.title}} 
-    </h5>
+    </h5> 
      <div class="about">
       <div class="healersocials">  
       <div class="ig"> 
@@ -91,10 +96,12 @@
   }
   .healer-list-{{section.id}} {
     background: white;
+    margin: auto;
   }
 
   .healer-list-{{section.id}} * {
     text-align: left !important;
+    
   }
   .healer-list-{{section.id}} .title {
     padding-top: 100px;
@@ -467,6 +474,46 @@ function loadScriptFile(src){
   // append the <script> element to <head>
   $script.appendTo('head');
 }
-</script>
+
+// Preselected collections filtering
+const colFiltering = () => {
+  // Click event
+  const categories = document.querySelector('#cat-filter');
+  categories.addEventListener('change', () => {
+    const selectedValue = categories.value.toLowerCase();
+
+    // Display/hide logic func
+    showSelectedCollections(selectedValue);
+
+  })
+
+  const showSelectedCollections = (selectedValue) => {
+    /**
+     * @param String = selected option of filter menu
+    */
+      // Select all collections
+    const allCollections = document.querySelectorAll('.healer-list-{{ section.id }} .healercard');
+    allCollections.forEach( el => {
+      // Transform to lowercase
+      const collectionType = el.getAttribute('data-metafield').toLowerCase();
+      if ( selectedValue !== collectionType ) {
+        el.parentElement.style.display = 'none';
+      } else {
+        el.parentElement.style.display = 'block';
+      }
+      
+      // Display all collections if not filtering
+      if ( selectedValue === 'none-selected') {
+        el.parentElement.style.display = 'block';
+      }
+    })
+  }
+
+}
+
+
+colFiltering();
+document.addEventListener('shopify:section:load', colFiltering)
 
 </script>
+
