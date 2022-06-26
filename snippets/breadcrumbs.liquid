@@ -2,20 +2,22 @@
   <!-- <a href="{{ routes.root_url }}" class="pink" title="{{'collections.breadcrumbs.back_to_home' | t }}">
     {{- 'collections.breadcrumbs.home' | t -}}
   </a> -->
-
+  <svg width="26" height="15" viewBox="0 0 36 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M14.2492 29.267V20.067H21.4977V29.267H28.8664V15.467H33.5784L17.8734 1.66699L2.16846 15.467H6.87941V29.267H14.2492Z" stroke="#6C1D45" stroke-width="1.5"/>
+    </svg>
   {%- if template contains 'collection' -%}
     <!-- <span class="breadcrumbs__sep">/</span> -->
-    <a class="maroon" href="{{ routes.collections_url }}">
+    <a class="maroonbold" href="{{ routes.collections_url }}">
       {{- 'collections.breadcrumbs.collections' | t -}}
     </a>
- >
+    <span class="maroonbold"> > </span> 
 
     {%- if collection.handle -%}
-      <span class="breadcrumbs__current">
+      <span class="breadcrumbs__current pink maroonbold " style="padding-bottom:3px ;">
         {%- if collection.handle == 'all' -%}
           {{- 'collections.breadcrumbs.default_collection' | t -}}
         {%- else -%}
-          {{- collection.title -}}
+           {{- collection.title -}}
         {%- endif -%}
       </span>
     {%- endif -%}
@@ -26,12 +28,12 @@
 
     {%- assign product_collection = collection | default: product.collections[0] -%}
     {%- if product_collection.handle != blank -%}
-    <p class="maroon" style="margin: 3px;">   {{- product_collection.title | link_to: product_collection.url -}} </p>
- >
+    <p class="maroonbold" style="margin: 3px;" >   {{- product_collection.title | link_to: product_collection.url -}} </p>
+ <span class="maroonbold"> > </span> 
     {%- endif -%}
 
     {%- if product.handle -%}
-      <p class="maroon breadcrumbs__current" style="
+      <p class="maroonbold breadcrumbs__current maroonbold" style="
       margin: 3px; margin-left: 0 !important;
       font-size: 14px;color: #6C1D45 ; 
   ">{{ product.title | strip_html | escape }}</p>

@@ -1,0 +1,472 @@
+<link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet"/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+{%   assign collection = collections[section.settings.collection] | default: false %}
+
+<!-- section -->
+<div class="healer-list-{{section.id}}"> 
+<div class="title">
+  <h1 class="maroonbold"> {{section.settings.title}} </h1>
+</div>
+
+         <!-- Slider main container -->
+        
+          <!-- Additional required wrapper -->
+        
+            <!-- Slides -->
+            <div class="swiper  swiper-{{ section.id }}">
+              <div class="swiper-wrapper">  
+  {%for block in section.blocks %}
+  {% case block.type %}
+  {% when 'collection' %}
+  <div class="swiper-slide">
+
+  {% assign collection = collections[block.settings.collection] | default: false %}
+    <div class="healercard" style=" margin: 0 10px;">
+        {% if block.settings.image != blank %}
+        {%render 'gaia-image',
+        image: block.settings.image %}
+        {% else  %}
+        <img src="{{collection.featured_image | img_url: 'medium'}}"> 
+      {%endif %}
+    
+     <h5 class="pink bold ct" style="margin-top: 20px;"> 
+      {{collection.title}} 
+    </h5>
+     <div class="about">
+      <div class="healersocials">  
+      <div class="ig"> 
+        <a href="{{collection.metafields.custom.instagram}} "> 
+        {%render 'healer-ig'%}
+      </a>
+      </div>
+      <div class="site">
+        <a href="{{collection.metafields.custom.healer_site}}">
+          {%render 'healer-site'%}
+        </a>
+      </div>
+      </div>  
+      <span class="maroon typeof">
+      {{collection.metafields.custom.type}} 
+      </span> </div>
+      <p class="grayregular desc">
+        {{collection.description   | truncate: 200 }}
+      </p>
+       
+ 
+      <p class="maroon evup">
+        Upcoming Events
+      </p>
+      <span class="grayregular upev">
+        {{collection.metafields.custom.upcoming_events}} 
+      </span>
+ </div>
+ 
+{% endcase %}
+</div>
+{%endfor%} 
+</div>     <div class="swiper-pagination"></div>
+
+</div></div></div>
+</div></div>
+</div>  
+ 
+
+<style>
+  
+  @media only screen and (min-width: 768px) {
+    .swiper-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 5px;  
+    padding: 5% 0;
+    max-width: 1400px;
+    margin: 0 30px;
+    grid-row-gap: 100px;
+    justify-items: center;
+  }
+  .healercard {
+    max-width: 300px
+  }
+  }
+  .healer-list-{{section.id}} {
+    background: white;
+  }
+
+  .healer-list-{{section.id}} * {
+    text-align: left !important;
+  }
+  .healer-list-{{section.id}} .title {
+    padding-top: 100px;
+    max-width: 1400px; 
+    margin: auto; 
+    grid-column-gap: 5px;
+    grid-row-gap: 100px; 
+    justify-items: center; 
+  }
+
+  .healer-list-{{section.id}} img {
+    margin: auto;
+    width:300px;
+    height: 280px;
+  }
+ 
+
+  .healersocials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .about {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .typeof {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #6C1D45;
+  }
+
+  .desc,
+  .upev {
+    font-family: 'Acumin_Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 10px;
+    padding-top: 0;
+    color: #575757;
+  }
+
+  .evup {
+    font-family: 'Acumin_Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #6C1D45;
+    margin-bottom: 5px;
+    padding: 0 !important;
+  }
+  .upev {
+    margin: 0 !important;
+  }
+
+  .ct {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color: #EB6FBD;
+    margin-bottom: 0;
+    padding-bottom: 0 !important;
+
+  }
+</style>
+
+
+
+{% schema %}
+	{
+		"name": "Collection list",
+		"class": "collection-list",
+		"max_blocks": 12,
+		"settings": [
+			{
+				"type": "header",
+				"content": "Layout"
+			},
+			 
+			 
+			{
+				"type": "text",
+				"id": "title",
+        "label":"Title",
+				"default": "Our Healers"
+			},
+			{
+				"type": "text",
+				"id": "button_text",
+				"label": "View collection button text",
+				"default": "Shop all"
+			},
+			{
+				"type": "select",
+				"id": "button_style",
+				"label": "Button style",
+				"default": "secondary",
+				"options": [
+					{ "label": "Primary", "value": "primary" },
+					{ "label": "Secondary", "value": "secondary" }
+				]
+			},
+			{
+				"type": "header",
+				"content": "Items"
+			},
+			{
+				"type": "range",
+				"id": "overlay_opacity",
+				"label": "Overlay opacity",
+				"min": 0,
+				"max": 95,
+				"step": 5,
+				"unit": "%",
+				"default": 20
+			},
+			{
+				"type": "header",
+				"content": "Colors"
+			},
+			{
+				"type": "color",
+				"id": "bg_color",
+				"label": "Background"
+			},
+			{
+				"type": "select",
+				"id": "text_color",
+				"label": "Text",
+				"default": "light",
+				"options": [
+					{
+						"value": "light",
+						"label": "Light"
+					},
+					{
+						"value": "dark",
+						"label": "Dark"
+					}
+				]
+			},
+			{
+				"type": "header",
+				"content": "Mobile slider"
+			},
+			{
+				"type": "checkbox",
+				"id": "enable_slider",
+				"label": "Enable slider",
+				"default": true,
+				"info": "Horizontal slider in mobile layout."
+			}
+		],
+		"blocks": [
+			{
+				"type": "collection",
+				"name": "Collection",
+				"settings": [
+					{
+						"label": "Collection",
+						"id": "collection",
+						"type": "collection"
+					},
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Replacement image"
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Healer list",
+				"category": "Collection",
+				"blocks": [
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					}
+				]
+			}
+		]
+	}
+{% endschema %}
+
+
+<script>if(window.innerWidth <= 991){ 
+  (function () {
+    
+const swiper = new Swiper(".swiper-{{ section.id }}", {
+  // Optional parameters
+  
+      slidesPerView: 3,
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: false,
+        breakpoints:  {
+        200: {
+          slidesPerView:1,
+          spaceBetween: 0,
+        }, 
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 3.1,
+          spaceBetween: 0,
+        },
+      },
+  });
+}())
+
+document.addEventListener('shopify:section:load', () => {
+ (function () {
+const swiper = new Swiper(".swiper-{{ section.id }}", {
+  // Optional parameters
+  
+      slidesPerView: 3,
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: false,
+        breakpoints:  {
+        200: {
+          slidesPerView:1,
+          spaceBetween: 0,
+        }, 
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 3.1,
+          spaceBetween: 0,
+        },
+      },
+  });
+}())
+})
+}
+</script>
+
+<style>
+   @media  only screen and (max-width: 768px) {
+  .swiper .swiper-{{section.id}}  .swipertestimonial {
+    /* width: 85% !important; */
+    height: 100%;
+  }
+
+  .healer-list-{{section.id}} img { 
+    text-align-last: center;
+    width: 100%;
+    object-fit: cover;
+  }
+.swiper-pagination {
+    position: relative;
+    min-height: 100px;
+    padding-top: 10% !important;
+    text-align-last: center;
+  }
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+   background: url({{ 'active.svg' | asset_url }});
+   height: 20px;
+   width: 20px;
+   border: 0px;
+  }
+   .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+
+  }
+
+  .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; 
+}
+
+  {% for block in section.blocks %}
+ .swigpertestimonial {
+    /* width: 75% !important; */
+  }
+ @media  only screen and (max-width: 768px) {
+  .swiper .swiper-{{section.id}}  .swipertestimonial {
+    /* width: 85% !important; */
+    height: 100%;
+  }
+.swiper-pagination {
+    position: relative;
+    min-height: 100px;
+    padding-top: 10% !important;
+  }
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{
+   background: url({{ 'active.svg' | asset_url }});
+   height: 20px;
+   width: 20px;
+   border: 0px;
+  }
+   .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+
+  }
+
+ 
+ 
+
+
+  {% endfor %}
+
+
+ 
+</style>
+
+<script>
+  // loadScriptFile func
+function loadScriptFile(src){
+  // create element <script>
+  const $script = $('<script>');
+  // add type attribute
+  $script.attr('type', 'text/javascript');
+  // add src attribute
+  $script.attr('src', src);
+  // append the <script> element to <head>
+  $script.appendTo('head');
+}
+</script>
+
+</script>

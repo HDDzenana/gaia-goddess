@@ -91,11 +91,12 @@
 
 .healer-heading__title {
   margin-bottom: 0;
-  line-height: 30px !important;
+
   color: {{section.settings.healer_title_color}}}
 
 .healer-heading__subtitle {
   margin: 20px 0;
+  font-weight: 900;
 }
 
 .healer-heading__icons {
@@ -173,8 +174,11 @@
     
     <div class="pw">       
       <div class="smt">
-  
+
+
         {% render 'breadcrumbs' %}
+
+
         {% for block in section.blocks %}
           {% assign collection = collections[block.settings.collection] | default: false %}
 
@@ -182,11 +186,13 @@
 
             <div class="healer-heading">
               <div class="healer-heading__info">
-                <h1 class="healer-heading__title" style="line-height:21.6px ;"> {{ block.settings.title }}</h1>
+                <h1 class="healer-heading__title maroonbold" > {{ block.settings.title | escape_html }}</h1>
+                <div class="abouthealersub">
                 <p class="healer-heading__subtitle" style="font-size: 18px;">{{ block.settings.healer_subtitle }}</p>
                 <div class="btnlike">
                   {{block.settings.textbtn}}
                 </div>
+              </div>
               </div>
 
 
@@ -201,12 +207,12 @@
                 {%- render 'icon-footer-instagram' -%}
               </a>
             {% endif %}
-            <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">
+            <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_facebook_link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">
               {%- render 'icon-footer-facebook' -%}
             </a>
             {% if block.settings.show_website_icon %}
               <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_website_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
-                {%- render 'healer-website' -%}
+                {%- render 'healer-ind-site' -%}
               </a>
             {% endif %}
           </div>
@@ -340,7 +346,16 @@
         }, {
           "type": "text",
           "id": "social_instagram_link",
-          "label": "Facebook"
+          "label": "Instagram Link"
+        }, {
+          "type": "checkbox",
+          "id": "show_facebook_icon",
+          "label": "Show Facebook",
+          "default": true
+        }, {
+          "type": "text",
+          "id": "social_facebook_link",
+          "label": "Facebook Link"
         }, {
           "type": "checkbox",
           "id": "show_website_icon",
@@ -349,7 +364,7 @@
         }, {
           "type": "text",
           "id": "social_website_link",
-          "label": "Page"
+          "label": "Website Link"
         }
       ]
     }
@@ -366,8 +381,73 @@
 
 
 <style>
+/* mobb */
+ @media only screen and (max-width: 768px) {
+  h1, .h1, .heading__title {
+    font-size: 38px !important;
+  }
+  .page-width-{{section.id}}{
+    height: 400px;
+    background-size: cover;
+  }
+  .wrappers-{{section.id}}{
+    min-height: 100%;
+    height: 100% !important;
+  }
+  .about-info {
+    padding: 10px 0 !important;
+  }
+  .about-info > p {
+    padding: 0 20px !important;
+  }
+  .abouthealersub {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    align-items: center;
+    place-content: center;
+    gap: 20px;
+}
+.healer-description {
+  width: 100% !important;
+}
 
- 
+.healer-heading__info {
+  width: 100% !important;
+  margin: auto
+}
+
+.healer-heading__icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrappers-{{section.id}}{ 
+  min-width: fit-content !important;
+  height: 100%;
+  margin-bottom: 0px !important;
+}
+
+.healer-description {
+  padding: 10px 0 !important;
+}
+
+.btnlike {
+
+  padding: 5px 15px !important;
+}
+ }
+
+ /* ENDMOBILE */
+.healer-card {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    min-width: 100%;
+    text-align: center;
+    text-align-last: center;
+ }
 
   .healer-description {
 
@@ -380,7 +460,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     background: {{section.settings.bg}};
-    height: 70vh;
+    height: 700px;
+    overflow: hidden;
     margin-bottom: 150px;
   }
   .pw {
@@ -414,8 +495,8 @@
     flex-direction: column !important;
   } 
   }
-</style>        <style>
-  .breadcrumbs {
+ 
+  /* .breadcrumbs {
     margin: 0 0 2em;
   }
 
@@ -459,5 +540,12 @@
 
   .healer-description {
     line-height: 19.2px;
+  } */
+/* deskk */
+  @media only screen and (min-width: 769px) {
+    .healer-heading__info *,
+    .healer-description {
+      text-align-last: left !important;
+    }
   }
 </style>
