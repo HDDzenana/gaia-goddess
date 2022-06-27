@@ -14,11 +14,11 @@
   }
 
   .articlecontents-{{section.id}} {
-    box-shadow: -6px 7px 20px 0px #6c1d4580;
+    filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.149));
     min-width: 90%;
     float: left;
     padding: 40px;
-    padding-left: 10px;
+    padding-left: 40px;
     margin-top: -20px;
     border-radius: 5px;
 }
@@ -227,10 +227,10 @@
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}
+    {%endfor%} 
                  
-  {{ article.published_at | time_tag: format: 'date' }}
-</span> 
+ <p class="grayregular">  {{ article.published_at | time_tag: format: 'date' }}
+</p></span> 
         {% if block.settings.title %}
         <a class="card-link"  href="{{block.settings.link}}" style="margin-top:5px;">
      <{{section.settings.link_style}} class="title" style="   color: {{section.settings.heading_colors}};width: 100%;text-align: left;word-break: keep-all; margin: 10px 0;">
@@ -453,5 +453,8 @@ Watch </div>
  .exc *, p.exc{
    min-width:100% !important; text-align: left;
  }
+
+ .icn {
+    margin-left: -15px;}
 
 </style>

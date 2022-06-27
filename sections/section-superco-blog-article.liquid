@@ -203,7 +203,7 @@
       {{article.title}}
     </h1>    
     <p class="maroon" style="
-    display: flex;
+    display: flex; font-weight: 600; gap: 20px;
     justify-content: center;
     place-items: center;
 "> 
@@ -240,7 +240,7 @@ image: section.settings.image %}
     style="width: 100px; height: 100px; border-radius: 50%;">   </div>
                       {%- endif -%}
 
-                    <h3 class="about-card__title article_card_title">{{ article.author }}</h3>
+                    <h3 class="about-card__title article_card_title" style="font-weight:800 ;"> {{ article.author }}</h3>
 
                     {% if section.settings.card_text != blank %}
                         <p class="article_card_text">{{ section.settings.card_text }}</p>

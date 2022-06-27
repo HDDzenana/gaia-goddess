@@ -253,13 +253,8 @@ overflow: hidden;
     %}
    
     <div class="profilepicturewrapper"> 
-     {%if  customer.metafields.cf_app.profile_imag != blank %}
-     <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
-    {% else %}
-    <style> 
-    .profilepicture {    background: url({{ 'inactive.svg' | asset_url }})  }</style>
  
-     {%endif%}
+     <img src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
   
     </div>
     <div class="changeimg" 
