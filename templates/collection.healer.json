@@ -32,6 +32,8 @@
             "textbtn": "Diosa",
             "show_instagram_icon": true,
             "social_instagram_link": "#Facebook",
+            "show_facebook_icon": true,
+            "social_facebook_link": "",
             "show_website_icon": true,
             "social_website_link": ""
           }
@@ -88,7 +90,6 @@
     },
     "16512183744a86c2dd": {
       "type": "section-jointeam-mailerlite",
-      "disabled": true,
       "settings": {
         "text_position": "right",
         "text_alignment": "center",
