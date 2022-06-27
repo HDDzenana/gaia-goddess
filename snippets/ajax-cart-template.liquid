@@ -74,7 +74,7 @@
 							{{/if}}
 						</p>
 						<div class="paac"style="display: flex;width: 100%;align-items: center;"> 
-						<p class="pink" style="margin-right: 10px;">  Attendees </p>
+					{%if template != 'cart' %}	<p class="pink" style="margin-right: 10px;">  Attendees </p> {%endif%}
 						<div class="qty js-qty" id="qrta">
 					 
 							<input type="number" name="updates[]" class="qty__input js-qty__input" value="{{val.itemQty}}" min="0" id="quantity"  data-id="{{val.id}}" data-line="{{val.line}}" aria-label="quantity" pattern="[0-9]*" readonly>
