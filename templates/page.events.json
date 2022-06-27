@@ -19,7 +19,7 @@
         "overlay_opacity": 20,
         "text_color": "text-light",
         "title": "Join Our <br> Events & Retreats",
-        "subheading": "",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>\nMus vulputate scelerisque mollis luctus risus nulla. <br>\nPharetra laoreet felis euismod et. Id bibendum.",
         "button_text": "",
         "button_link": "",
         "button_style": "primary"
