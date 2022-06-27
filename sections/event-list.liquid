@@ -36,6 +36,7 @@
    {% when 'product' %}
    {%  assign product = all_products[block.settings.product] %}
    <div class="eventcard"  data-metafield="{{   product.metafields.custom.location  }}" >
+       <a href="{{product.url}}" > 
     <div class="eventcardimg">  
     {%if block.settings.image == blank %} 
     <img src="{{product.featured_image | img_url: 'medium'}}">
@@ -45,7 +46,7 @@
     %}
     {% endif %}
      </div>
-   
+     </a>
 
     <div class="eventdesc">
       <p class="maroonbold prodtitle">
