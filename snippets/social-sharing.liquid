@@ -35,7 +35,7 @@
   {%- if settings.share_pinterest != blank -%}
      <a target="_blank" rel="noopener" class="social-circle pinterest" href="{% if template contains 'password' %}{{ settings.social_pinterest_link }}{% else %}//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{% if template == 'product' or template == 'index' %}{{ product | img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endif %}&amp;description={{ shareTitle }}" title="{{ 'general.accessibility.pinterest_share' | t }}">
       <span class="visually-hidden">{{ 'general.accessibility.pinterest_share' | t }}</span>
-      {%- render 'icon-email'-%}
+      {%- render 'icon-share-email'-%}
     </a>
   {%- endif -%}
 
