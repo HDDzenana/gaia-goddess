@@ -1,3 +1,22 @@
+
+<style>
+  .supperco-banner-{{section.id}}{
+    padding-top: {{section.settings.padding_top | times: 0.75 | round: 0}}px;
+    padding-bottom: {{section.settings.padding_bottom | times: 0.75 | round: 0}}px;
+  }
+
+  @media only screen and (min-width: 750px) {
+    .supperco-banner-{{section.id}}
+  {
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+ .psi {
+    max-width: 70% !important;
+    margin: auto;  
+  }
+}
+</style>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
@@ -7,7 +26,7 @@
     <h1 class="center " style="color: {{section.settings.heading_color}};padding-top: 20px; padding-bottom: 0px; margin-bottom: 0px !important">
       {{section.settings.heading }}
     </h1>
-    <div class="grayregular" style="text-align: center; margin-top: 0;">
+    <div class="psi grayregular" style="text-align: center; margin-top: 0;">
       {{section.settings.text_content  }}
     </div>
   </div>
@@ -69,6 +88,7 @@
     display: none;
   }
  
+  
   .gaia,
   .gaiabimg {
     width: 100% !important;
@@ -166,18 +186,3 @@
 
 {% endschema %}
 
-
-<style>
-  .supperco-banner-{{section.id}}{
-    padding-top: {{section.settings.padding_top | times: 0.75 | round: 0}}px;
-    padding-bottom: {{section.settings.padding_bottom | times: 0.75 | round: 0}}px;
-  }
-
-  @media screen and(min-width: 750px) {
-    .supperco-banner-{{section.id}}
-  {
-    padding-top: {{section.settings.padding_top}}px;
-    padding-bottom: {{section.settings.padding_bottom}}px;
-  }
-}
-</style>
