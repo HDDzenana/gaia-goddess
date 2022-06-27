@@ -14,11 +14,9 @@
 
     {%- if collection.handle -%}
       <span class="breadcrumbs__current pink maroonbold " style="padding-bottom:3px ;">
-        {%- if collection.handle == 'all' -%}
-          {{- 'collections.breadcrumbs.default_collection' | t -}}
-        {%- else -%}
+     
            {{- collection.title -}}
-        {%- endif -%}
+      
       </span>
     {%- endif -%}
   {%- endif -%}
