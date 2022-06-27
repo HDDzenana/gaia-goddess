@@ -75,7 +75,7 @@
 						</p>
 						<div class="paac"style="display: flex;width: 100%;align-items: center;"> 
 				 <p class="pink" style="margin-right: 10px;">  Attendees </p> 
-						<div class="qty js-qty" id="qrta">
+						<div class="qty js-qty" id="quantity">
 					 
 							<input type="number" name="updates[]" class="qty__input js-qty__input" value="{{val.itemQty}}" min="0" id="quantity"  data-id="{{val.id}}" data-line="{{val.line}}" aria-label="quantity" pattern="[0-9]*" readonly>
 						</div>
@@ -156,14 +156,14 @@
 <script id="JsQty" type="text/x-template">
 {% raw %}
  
-<div class="qty js-qty" id="qrta"> 
-	<button type="button " id="qrta" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemMinus}}">
+<div class="qty js-qty" id="quantity"> 
+	<button type="button " id="quantity" class="qty__adjust qty__adjust--minus js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemMinus}}">
  
 		<span class="fallback-text">&minus;</span>
 	</button>
  
-	<input type="number" id="qrta" class="qty__input js-qty__input" value="{{it.itemQty}}" min="1" data-id="{{it.id}}" aria-label="quantity" pattern="[0-9]*" name="{{it.inputName}}" id="{{it.inputId}}">
-	<button type="button" id="qrta"  class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemAdd}}">
+	<input type="number" id="quantity" class="qty__input js-qty__input" value="{{it.itemQty}}" min="1" data-id="{{it.id}}" aria-label="quantity" pattern="[0-9]*" name="{{it.inputName}}" id="{{it.inputId}}">
+	<button type="button" id="quantity"  class="qty__adjust qty__adjust--plus js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{it.id}}" data-qty="{{it.itemAdd}}">
  
 		<span class="fallback-text">+</span>
 	</button>
