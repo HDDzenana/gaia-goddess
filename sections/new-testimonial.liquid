@@ -303,11 +303,12 @@
     padding-top: 10% !important;
   }
  
-span.swiper-pagination-bullet.swiper-pagination-bullet-active {    background: url({{ 'active.svg' | asset_url }})  ; 
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {    background: url({{ 'active.svg' | asset_url }}) !important ; 
+  opacity: 1;
 }
-span.swiper-pagination-bullet.swiper-pagination-bullet
+ .swiper-pagination-bullet.swiper-pagination-bullet
  {
-   background: url({{ 'inactive.svg' | asset_url }})  ; opacity: 1;
+   background: url({{ 'inactive.svg' | asset_url }})   ; opacity: 1;
  }
   .swiper-pagination-bullet {  
    height: 20px;
