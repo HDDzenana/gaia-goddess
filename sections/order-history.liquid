@@ -1,11 +1,42 @@
 
 {% assign menu = section.settings.menu%}
 <style>
+  .desktop-order {
+    height: 60px;
+  }
   @media only screen and (max-width: 1000px) {
     .accountnav {
       max-width: 500px!important;
     }
-
+    .oh-{{section.id}} th:last-of-type { 
+      border-top-right-radius: 0 !important;
+    }
+    .responsive-order td:first-of-type {
+     border: 1px solid #EB6FBD;
+    }
+    .accountnav-wrapper {
+      display: none !important;
+    }
+    .wrapper .maroonbold {
+      margin-top: 0px !important;
+      text-align: center;
+    }
+    .profilepicturewrapper {
+      margin-bottom: 0 !important;
+    }
+    .th, th a {
+      color: white !important;
+    }
+    .content-{{section.id}} { 
+      width: 100% !important;
+      padding-bottom: 50px;
+    }
+    .content-{{section.id}} * {
+      overflow: hidden !important;
+    }
+    .lineimage {
+      flex-direction: column;
+    }
     .accountnav {
       position:  relative !important;
       display: flex;
@@ -163,14 +194,21 @@ li.active
   overflow: hidden;
  }
 table {
-  border-color: transparent !important;
+  border-color: transparent !important;border-radius: 40px !important;
 }
  .customaccount-{{section.id}} table.full {
  
     overflow: hidden;  border: #FFD9E5;
+border-radius: 40px !important;
 
   border-top-left-radius: 20px;
   border-top-right-radius: 20px !important;
+ }
+
+ .table-wrap {
+
+  overflow: hidden !important;
+    border-radius: 45px !important;
  }
 
  .oh-{{section.id}} th:first-of-type {
@@ -185,6 +223,7 @@ table {
 
  .oh-{{section.id}} td, th {
   border-color: #FFD9E5 !important;
+  overflow: hidden;
  }
  .icon {
 overflow: hidden;
@@ -294,7 +333,7 @@ overflow: hidden;
               <td>   <div class="lineimage" style="
                 display: flex;
                 align-items: center;
-                justify-content: space-evenly;
+                justify-content: space-evenly; gap: 5px;
             ">    {{ line_item.image | img_url: '100x100' | img_tag }} 
                 <p style="color: #6C1D45; font-weight: 700;">
                 {{ line_item.title | strip_html | escape | link_to: line_item.product.url }}

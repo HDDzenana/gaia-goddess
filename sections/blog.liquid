@@ -230,9 +230,8 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
             </div> 
 {% endif %}  <div class="articlecontents-{{section.id}}">  
    <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">   
-    
-    {%for tag in article.tags %}
-    {%if article.tags contains 'general' %}
+     
+    {%if article.tags contains 'general'  %}
 <div class="icn" style=" width: 50px !important;
 ">  
     {%render 'generalblog'%}</div>
@@ -244,12 +243,17 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}                        
-  {{ article.published_at | time_tag: format: 'date' }}
+                     
+  {{ article.published_at | time_tag: format: 'date' }} 
+  {%if article.tags contains 'customeronly'  %}
+  <div class="icn" style=" width: 50px !important;
+  ">  
+      {%render 'lockedarticle'%}</div>
+    {%endif%}
 </span> 
             <h5 class="maroonbold" style="min-width:100%; color: #6C1D45; margin-bottom: 15px;">    {{article.title}}  </h5> 
         
-          
+       
       
         
         <p style="width: 100% !important;">
@@ -260,7 +264,20 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
           {%- endif -%}
         </p>
 
+     
+        {%if article.tags contains 'general'  %}
       <a href="{{article.url}}" class="leftlink"> Read Article</a>
+      {%endif%}
+      {%if article.tags contains 'podcast'  %}
+      <a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
+      {%endif%}
+      {%if article.tags contains 'video'  %}
+      <a href="{{article.url}}" class="leftlink"> Watch Video </a>
+      {%endif%}
+   
+ 
+ 
+ 
     </div> 
           </div></div>
  
