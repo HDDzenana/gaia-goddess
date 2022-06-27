@@ -28,11 +28,13 @@
 
   {% assign collection = collections[block.settings.collection] | default: false %}
     <div class="healercard" style=" margin: 0 10px;" data-metafield="{{ collection.metafields.custom.type }}">
-        {% if block.settings.image != blank %}
+      <a href="{{collection.url}}"> 
+      {% if block.settings.image != blank %}
         {%render 'gaia-image',
         image: block.settings.image %}
         {% else  %}
         <img src="{{collection.featured_image | img_url: 'medium'}}"> 
+      </a>
       {%endif %}
     
      <h5 class="pink bold ct" style="margin-top: 20px;">  
