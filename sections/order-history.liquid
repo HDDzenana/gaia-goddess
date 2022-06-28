@@ -12,7 +12,8 @@
       border-top-right-radius: 0 !important;
     }
     .responsive-order td:first-of-type {
-     border: 1px solid #EB6FBD;
+     /* border: 1px solid #EB6FBD; */
+     border-bottom-left-radius: 30px; margin-left3: -20px;
     }
     .accountnav-wrapper {
       display: none !important;
@@ -33,6 +34,7 @@
     }
     .content-{{section.id}} * {
       overflow: hidden !important;
+      text-decoration: none !important;
     }
     .lineimage {
       flex-direction: column;
@@ -158,8 +160,8 @@ li.active
     padding: 40px 0;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    /* border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px; */
     filter: drop-shadow(10px -10px 20px rgba(108, 29, 69, 0.161));
  }
 
@@ -172,18 +174,26 @@ li.active
     filter: drop-shadow(9px 10px 20px rgba(108, 29, 69, 0.161));
     background-color: white;
     /* padding: 40px 0; */
-    border-bottom-right-radius: 30px;
-    border-bottom-left-radius: 30px;
+    /* border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px; */
  }
 
  .oh-{{section.id}} {
   max-width: 90%;
   margin: auto; 
+  /* filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161)); */
     box-shadow: -1px 3px 10px 8px #eb6fbd0d;
     /* overflow: hidden; */
 
-    border-bottom-left-radius: 20px; border-bottom:2px solid #FFD9E5 !important; border-let: 1px solid #FFD9E5 !important; 
-    border-bottom-right-radius: 20px;
+    /* border-bottom-left-radius: 20px; */
+     border-bottom:none !important;  !important; 
+    /* border-bottom-right-radius: 20px; */
+ }
+
+ .full * ,
+ table *  {
+  overflow: hidden;
+text-decoration: none;
  }
  .oh-{{section.id}} th {
   background-color: #EB6FBD;
@@ -195,30 +205,34 @@ li.active
  }
 table {
   border-color: transparent !important;border-radius: 40px !important;
+  /* filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161)); */
 }
  .customaccount-{{section.id}} table.full {
  
     overflow: hidden;  border: #FFD9E5;
 border-radius: 40px !important;
-
+/* 
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px !important;
+  border-top-right-radius: 20px !important; */
  }
 
  .table-wrap {
 
+  border: .04px solid #EB6FBD;
   overflow: hidden !important;
-    border-radius: 45px !important;
+  
+    border-radius:46px !important;
  }
 
  .oh-{{section.id}} th:first-of-type {
   border-top-left-radius: 20px;
   overflow: hidden;
+  margin-right: -20px;
  }
 
  .oh-{{section.id}} th:last-of-type {
   border-top-right-radius: 20px;
- 
+  margin-right: -20px;
  }
 
  .oh-{{section.id}} td, th {
@@ -303,12 +317,12 @@ overflow: hidden;
 <!-- order -->
 
  {%if customer %}
- <h1 class="wrapper maroonbold" style="
+ <h1 class="wrapper maroonbold animate__animated animate__fadeInUp" style="
  margin: 50px 5px;">Order History </h1>
 {% for order in customer.orders %}
 {% paginate customer.orders by 20 %}
 {% if customer.orders.size != 0 %}
-  <div class="table-wrap oh-{{section.id}}" >
+  <div class="table-wrap oh-{{section.id}} animate__animated animate__fadeInUp" >
     <table class="full">
       <thead class="desktop-order">
         <tr>
@@ -335,8 +349,9 @@ overflow: hidden;
                 align-items: center;
                 justify-content: space-evenly; gap: 5px;
             ">    {{ line_item.image | img_url: '100x100' | img_tag }} 
-                <p style="color: #6C1D45; font-weight: 700;">
-                {{ line_item.title | strip_html | escape | link_to: line_item.product.url }}
+                <p  style="color: #6C1D45; font-weight: 700; text-decoration: none !important;">
+
+                {{ line_item.title | strip_html | escape | link_to: line_item.product.url  | escape}}
                 </p></div>
                 {%endfor%}
 
