@@ -214,7 +214,7 @@
             </div> 
 {% endif %}  <div class="articlecontents-{{section.id}}">  
    <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">    
-    {%for tag in article.tags %}
+    
     {%if article.tags contains 'general' %}
 <div class="icn" style=" width: 50px !important;
 ">  
@@ -227,7 +227,7 @@
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%} 
+ 
                  
  <p class="grayregular">  {{ article.published_at | time_tag: format: 'date' }}
 </p></span> 
@@ -252,7 +252,7 @@
       </p>
 
       <a href="{{article.url}}" class="leftlink">
-         {%for tag in article.tags %}
+ 
     {%if article.tags contains 'general' %}
 Read More</div>
   {%endif%}
@@ -263,7 +263,7 @@ Read More</div>
 {%if article.tags contains 'video' %}
 Watch </div>
 {%endif%} 
-    {%endfor%}
+ 
       </a>
     </div> 
           </div>
