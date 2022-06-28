@@ -7,24 +7,33 @@
     <div class="filters" style="
     display: flex;
     gap: 25px;
-">  
+">      <div class="filter-title">
+  <select name="cat-filter" id="cat-filterr" >  
+    <option class="maroonbold" value="none-selected">Week</option>
+    <!-- <option value="usa">USA</option>
+    <option value="egypt">Egypt</option>
+    <option value="virtual">Virtual</option> -->
+  </select>
+</div>
+
     <div class="filter-title">
-      <select name="cat-filter" id="cat-filter">
+      <select name="cat-filter" id="cat-filter" style="border-radius: 30px !important; border-color: #6C1D45; border: 2px solid #6C1D45; width: 140px; height: 50px; ">
         <option class="maroonbold" value="none-selected">Location</option>
         <option value="usa">USA</option>
         <option value="egypt">Egypt</option>
         <option value="virtual">Virtual</option>
       </select>
     </div>
-
     <div class="filter-title">
       <select name="cat-filter" id="cat-filter">
-        <option class="maroonbold" value="none-selected">Week</option>
-        <!-- <option value="usa">USA</option>
-        <option value="egypt">Egypt</option>
-        <option value="virtual">Virtual</option> -->
+        <option class="maroonbold" value="none-selected">All Filters</option>
+        <option value="retreat">Retreat</option>
+        <option value="travelexperience">Travel Experience</option>
+        <option value="education">Education</option>
+        <option value="fitness">Fitness</option>
       </select>
     </div>
+ 
   </div>
 </div>
    
@@ -35,7 +44,7 @@
    {%case block.type %}
    {% when 'product' %}
    {%  assign product = all_products[block.settings.product] %}
-   <div class="eventcard"  data-metafield="{{   product.metafields.custom.location  }}" >
+   <div class="eventcard"  data-metafield="{{   product.metafields.custom.location  }}"  data-all="{{ product.metafields.custom.type_of_event }}" >
        <a href="{{product.url}}" > 
     <div class="eventcardimg">  
     {%if block.settings.image == blank %} 
@@ -157,7 +166,16 @@
     gap: 25px;
     margin: auto;
 }
-#cat-filter {
+#cat-filter  {
+    border-radius: 40px !important;
+    border-color: #6C1D45;
+    border: 1px solid #6C1D45;
+    width: 140px;
+    height: 38px !important;
+    font-size: 14px;
+    padding: 0 15px;
+}
+#cat-filterr {
     border-radius: 40px !important;
     border-color: #6C1D45;
     border: 1px solid #6C1D45;
@@ -294,7 +312,7 @@ color: #6C1D45 !important;
      transform:scale(1.01);}
 
 
-  #cat-filter {
+  #cat-filter, #cat-filterr {
     border-radius: 30px !important; 
     border-color: #6C1D45;
     border: 2px solid #6C1D45;
@@ -360,3 +378,46 @@ document.addEventListener('shopify:section:load', colFiltering)
 
 </script>
  
+
+<script> 
+  // Preselected collections filtering
+  const colFiltering = () => {
+    // Click event
+    const categories = document.querySelector('#cat-filter');
+    categories.addEventListener('change', () => {
+      const selectedValue = categories.value.toLowerCase();
+      console.log("selectedValue");
+      // Display/hide logic func
+      showSelectedCollections(selectedValue);
+  
+    })
+  
+    const showSelectedCollections = (selectedValue) => {
+      /**
+       * @param String = selected option of filter menu
+      */
+        // Select all collections
+      const allCollections = document.querySelectorAll('.eventcard');
+      allCollections.forEach( el => {
+        // Transform to lowercase
+        const collectionType = el.getAttribute('data-all').toLowerCase();
+        if ( selectedValue !== collectionType ) {
+          el.style.display = 'none';
+        } else {
+          el.style.display = 'block';
+        }
+        
+        // Display all collections if not filtering
+        if ( selectedValue === 'none-selected') {
+          el.style.display = 'block';
+        }
+      })
+    }
+  
+  }
+  
+  
+  colFiltering();
+  document.addEventListener('shopify:section:load', colFiltering)
+  
+  </script>
