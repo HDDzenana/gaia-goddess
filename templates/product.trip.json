@@ -59,49 +59,105 @@
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 1",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+            "switch_btn_color": "#eb6fbd",
+            "switch_btn_text_color": "#6c1d45",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
+            "metafield": ""
           }
         },
         "a937477e-6738-467d-a0b7-42fee2993af5": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 2",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+            "switch_btn_color": "#eb6fbd",
+            "switch_btn_text_color": "#6c1d45",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
+            "metafield": ""
           }
         },
         "45077e2a-49ae-443c-9db0-69c2a4b8114c": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 3",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+            "switch_btn_color": "#eb6fbd",
+            "switch_btn_text_color": "#6c1d45",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
+            "metafield": ""
           }
         },
         "f1ac7833-e2df-4bce-8ac0-14312ada2cca": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 4",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+            "switch_btn_color": "#eb6fbd",
+            "switch_btn_text_color": "#6c1d45",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
+            "metafield": ""
           }
         },
         "54f8f723-cf03-4266-b63d-85f8cb78dc71": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 5",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+            "switch_btn_color": "#eb6fbd",
+            "switch_btn_text_color": "#6c1d45",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
+            "metafield": ""
           }
         },
         "0202af4b-ec17-4b9e-a066-ba4725e8d8bf": {
           "type": "text",
           "settings": {
             "switch_btn_title": "DAY 6",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+            "switch_btn_color": "#eb6fbd",
+            "switch_btn_text_color": "#6c1d45",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
+            "metafield": ""
           }
         },
         "db411d86-076b-43c7-9796-d1c0b0fa65f8": {
           "type": "text",
           "settings": {
             "switch_btn_title": "day 7",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png"
+            "switch_btn_color": "#eb6fbd",
+            "switch_btn_text_color": "#6c1d45",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
+            "metafield": ""
           }
         }
       },
@@ -115,16 +171,18 @@
         "db411d86-076b-43c7-9796-d1c0b0fa65f8"
       ],
       "settings": {
-        "where": "June 4 to June 11, 2022",
-        "header": "Schedule",
-        "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.",
-        "disclaimer": "*Host and schedule subject to change.",
-        "heading_color": "#000000",
+        "when": "June 4 to June 11, 2022",
+        "schedule": "Schedule",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<br\/><br\/>*Host and schedule subject to change.<\/p>",
+        "heading": "",
+        "subheading": "",
+        "background": "transparent",
         "padding": "10"
       }
     },
     "165575462437461494": {
       "type": "section-product-feature",
+      "disabled": true,
       "settings": {
         "aos": false,
         "bg": "#FEFAFB",
@@ -150,6 +208,25 @@
         "button_color": "#6c1d45",
         "button_hover_color": "#fafafa",
         "video_url": "",
+        "bg_color": ""
+      }
+    },
+    "1656395708e10de88f": {
+      "type": "section-retreats",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/omar-elsharawy-pwMbtwA9LRc-unsplash_61f16d3d-1de3-40b8-b384-231e83dfd2bc.png",
+        "image_link_1": "",
+        "header_color": "#6C1D45",
+        "subheader_color": "#EB6FBD",
+        "heading": "<h1> A Travel Experience for History lovers <\/h1>",
+        "subheading": "",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
+        "button_text": "Add to cart",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#FAFAFA",
         "bg_color": ""
       }
     },
@@ -281,6 +358,7 @@
     "main",
     "16557573091d4ff900",
     "165575462437461494",
+    "1656395708e10de88f",
     "faq",
     "related",
     "1655754744f7463197"
