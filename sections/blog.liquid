@@ -12,13 +12,16 @@
     min-width: 100% !important;
     object-fit: cover;
   }
+  .icn {
+    margin-left: -10px;
+  }
 
   .articlecontents-{{section.id}} {
 box-shadow: -6px 7px 20px 0px #d9d2d5eb; 
     min-width: 90%;
     float: left;
     padding: 40px;
-    padding-left: 10px;
+    padding-left: 40px;
     margin-top: -20px;
     /* border-radius: 5px; */
 }
@@ -94,6 +97,10 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
       margin-top: 0;
       width: 100%;
     }
+
+    .icn 
+    {
+    margin-left: -10px !important;}
   @media only screen and (max-width: 998px) {
      .newestcards-{{section.id}} {
       padding-top: 10px;
@@ -208,7 +215,9 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
 
    {%- assign article = block.settings.article -%}
 
-<ul class="wrapper blogsall">
+<ul class="blogsall" style="
+max-width: 1400px;
+width: 94%;">
   {%- for article in blog.articles -%}
     <li style="
     margin-bottom: 50px;

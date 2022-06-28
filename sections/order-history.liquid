@@ -190,6 +190,12 @@ li.active
     /* border-bottom-right-radius: 20px; */
  }
 
+ .profilepicture {
+  background: url({{ 'rose.svg' | asset_url }}); 
+  background-size: cover;
+}
+
+
  .full * ,
  table *  {
   overflow: hidden;
@@ -310,7 +316,7 @@ overflow: hidden;
     {%if customer%}
     <div class="profilepicturewrapper"> 
     
-     <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
+     <img src="{{customer.metafields.cf_app.profile_image}}"  width="170" height="170" class="profilepicture">
   </div>
   {%endif%}
   </div>
