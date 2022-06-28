@@ -396,13 +396,14 @@
 {% endschema %}
 
 <style>
-  
+  {% if section.settings.bgmim %}
   #ProductFeature--{{section.id}}{
-  background-color: {{bg_color}};
+
   background-image:url({{ section.settings.bgimg | img_url: 'master' }}) !important; 
   background-repeat:no-repeat;
   background-size: cover;
 }
+  {%endif%}
 
 .bulletpoints {
   background:url({{ 'bulletpoint.svg' | asset_url }});
