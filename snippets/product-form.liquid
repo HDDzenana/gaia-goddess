@@ -182,7 +182,7 @@
   </div>
 
   
-  <p class="line-item-property__field" style="margin: 0;">
+  <p class="line-item-property__field desktoponly" style="margin: 0;">
     <input type="hidden" name="properties[I agree to terms and conditions]" value="No">
     <input id="i-agree-to-terms-and-conditions" type="checkbox" name="properties[I agree to terms and conditions]" value="Yes">
     <label for="i-agree-to-terms-and-conditions">I agree to <a class="maroon" href="/policies/terms-of-service" style="color:#6C1D45;">
@@ -196,9 +196,9 @@
     Buttons
   {%- endcomment -%}
   <div class="buttons-grid{% if show_payment_button %} buttons-grid--half{% endif %}" style="display: flex; flex-wrap: wrap; align-items: center">
-    <h1 class="maroonbold product__price" data-price-wrapper>
+    <h1 class="maroonbold product__price" data-price-wrapper style="margin: 0;">
       {%- unless product == blank -%}
-        <h1 class="maroonbold" data-product-price>{{ current_variant.price | money }} </h1>
+        <h1 class="maroonbold" data-product-price style="margin: 0;"> {{ current_variant.price | money }} </h1>
       {%- else -%}
         <h1 class="maroonbold" id="ProductPrice">{{ 1999 | money }}</h1>
       {%- endunless -%}

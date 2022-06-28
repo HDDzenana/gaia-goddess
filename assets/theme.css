@@ -9230,6 +9230,7 @@ button.collection__filters__toggle {
 @media only screen and (max-width: 1023px) {
   .product-single__details {
     margin-top: 30px;
+    text-align: center;
   }
 }
 .product-single__details .breadcrumbs {
