@@ -57,7 +57,7 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
                   {%- endif -%} {%endcase%}
 
               <div class="breadcrumb" style="display:flex; margin-bottom: 10px;">
-                {%render 'home' %}
+        
                 {%- render 'breadcrumbs' -%}
 </div>
  
@@ -216,46 +216,7 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
               {%if product.metafields.my_fields.hosted_by  %}
     <p class="pink" style="margin-bottom: 0 !important;">  Hosted By:   <span class="maroonbold">       {{product.metafields.my_fields.hosted_by}}</span>    </p>
               {%endif%}
-              <!-- <div class="product__price-and-badge">
-  <!-- {%- if block.settings.show_rating or settings.show_rating and section_type == 'quickview' -%}
-    {%- unless product == blank -%}
-      {%- render 'rating', show_rating_count: block.settings.show_rating_count, single_star: true, reviews: product.metafields.reviews -%}
-    {%- else -%}
-      {%- render 'rating', show_rating_count: block.settings.show_rating_count, single_star: true, onboarding: true -%}
-    {%- endunless -%}
-  {%- endif -%} -->
- <!-- main price  -->
-  <!-- <p class="product__price" data-price-wrapper>
-    {%- unless product == blank -%}
-      <span data-product-price>{{ current_variant.price | money }} </span>
-    {%- else -%}
-      <span id="ProductPrice">{{ 1999 | money }}</span>
-    {%- endunless -%}
-
-    <s class="product__price__sale" data-compare-price>
-      {%- if current_variant.compare_at_price -%}
-        {{- current_variant.compare_at_price | money -}}
-      {%- endif -%}
-    </s>
-
-    {%- if current_variant.unit_price_measurement -%}
-      {%- capture unit_price_separator -%}
-        <span aria-hidden="true">/</span><span class="visually-hidden">{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
-      {%- endcapture -%}
-
-      <span class="product__unit-price" data-unit-wrapper>
-        <span data-unit-price>
-          {{ current_variant.unit_price | money }}
-          {%- if current_variant.unit_price_measurement.reference_value != 1 -%}
-            {{- current_variant.unit_price_measurement.reference_value -}}
-          {%- endif -%}
-        </span>
-        {{ unit_price_separator }}
-        <span data-unit-base>{{ current_variant.unit_price_measurement.reference_unit }}</span>
-      </span>
-    {%- endif -%}
-    </p> -->
-<!-- </div> -->
+             
             </div> 
             
           {%- when 'form' -%}
