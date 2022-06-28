@@ -66,8 +66,7 @@
             "content_desc": "",
             "content_btn": "",
             "content_btn_url": "",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
-            "metafield": ""
+            "metafield": "{{ product.metafields.global.day1.value }}"
           }
         },
         "a937477e-6738-467d-a0b7-42fee2993af5": {
@@ -81,8 +80,7 @@
             "content_desc": "",
             "content_btn": "",
             "content_btn_url": "",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
-            "metafield": ""
+            "metafield": "{{ product.metafields.global.day2.value }}"
           }
         },
         "45077e2a-49ae-443c-9db0-69c2a4b8114c": {
@@ -96,8 +94,7 @@
             "content_desc": "",
             "content_btn": "",
             "content_btn_url": "",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
-            "metafield": ""
+            "metafield": "{{ product.metafields.global.day1.value }}"
           }
         },
         "f1ac7833-e2df-4bce-8ac0-14312ada2cca": {
@@ -111,8 +108,7 @@
             "content_desc": "",
             "content_btn": "",
             "content_btn_url": "",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
-            "metafield": ""
+            "metafield": "{{ product.metafields.global.day1.value }}"
           }
         },
         "54f8f723-cf03-4266-b63d-85f8cb78dc71": {
@@ -126,8 +122,7 @@
             "content_desc": "",
             "content_btn": "",
             "content_btn_url": "",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
-            "metafield": ""
+            "metafield": "{{ product.metafields.global.day1.value }}"
           }
         },
         "0202af4b-ec17-4b9e-a066-ba4725e8d8bf": {
@@ -141,8 +136,7 @@
             "content_desc": "",
             "content_btn": "",
             "content_btn_url": "",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
-            "metafield": ""
+            "metafield": "{{ product.metafields.global.day1.value }}"
           }
         },
         "db411d86-076b-43c7-9796-d1c0b0fa65f8": {
@@ -156,8 +150,7 @@
             "content_desc": "",
             "content_btn": "",
             "content_btn_url": "",
-            "main_image": "shopify:\/\/shop_images\/Screenshot_2022-06-22_at_14.22.12.png",
-            "metafield": ""
+            "metafield": "{{ product.metafields.global.day1.value }}"
           }
         }
       },
