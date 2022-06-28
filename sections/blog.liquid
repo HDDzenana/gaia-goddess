@@ -44,7 +44,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     height: 260px;
   }   .cards-{{section.id}} p 
    {
-    width: 260px !important;
+    /* width: 260px !important; */
  
   }
 
@@ -80,6 +80,10 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     text-align: left;
   }
  
+  .texttopcont {
+    text-align: left;
+    margin-left: 2%;
+  }
     .card  * {
       display: flex;
       flex-direction: column;
@@ -189,8 +193,21 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
           {% endif %}
       
    
-  {% if section.settings.heading %}  
- <h2 class="center ff-uf green u-case mb-10"  > {{ section.settings.heading }} </h2>    <div class="healers-filter-{{section.id}}">
+  {% if section.settings.heading %}  <div class="topcont"  style="display:flex;flex-wrap: wrap;
+      max-width: 1400px;
+    width: 94%;
+  justify-content: space-between;
+    align-items: center;"> 
+    <div class="texttopcont" > 
+ <h2 class=" ff-uf green u-case mb-10" style="padding: 0; margin: 0;" > 
+  {{ section.settings.heading |escape }} 
+</h2> 
+<p class=" ff-uf green u-case mb-10 grayregular" style="max-width: 600px; text-align: left; padding:0">  
+   {{section.settings.description}}  
+  </p>
+  </div> 
+<div class="filters"> 
+<div class="healers-filter-{{section.id}}">
             <select class="healers-filter__dropdown" id="category" name="category">
               <option disabled selected>All Filters    </option>
               <option value="yoga">Podcast</option>
@@ -205,8 +222,9 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
               <option value="meditation">Public</option>
             </select>
           </div>    
-          </div>
- 
+          </div> 
+        </div>
+        </div>
   {% endif %}
 
  
@@ -229,7 +247,11 @@ width: 94%;">
     margin: 0;
 ">
       <div class="card "> 
-        {% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;height: 280px;" "> 
+        {% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;
+        height: 100%;
+        max-height: 280px;
+        min-height: 280px;
+        background-position: center;" "> 
          </div> {%else %}
          <div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}'); 
     background-size: cover;height: 300px;" > 
