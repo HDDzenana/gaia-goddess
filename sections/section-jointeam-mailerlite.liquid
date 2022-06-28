@@ -77,7 +77,7 @@
     <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %} offerings-feature__block">
       <div class="product-feature__images offerings-feature__mailerlite">
         
-        <div class="product-feature__image product-feature__image--primary">
+        <div class="product-feature__image product-feature__image--primary jttimg">
           {%- if image_1 != blank -%}
             {%- assign image = image_1 -%}
             <div class="product-feature__image-bg product-feature__image-bg--{{ image_layout }} lazyload"
@@ -203,3 +203,18 @@
   ]
 }
 {% endschema %}
+
+
+<style>
+
+  @media only screen and (max-width: 768px) {
+    .product-feature__text--left {
+      text-align: center!important;
+    }
+
+    .jttimg {
+      padding: 20px;
+      margin-top: -50px;
+    }
+  }
+</style>
