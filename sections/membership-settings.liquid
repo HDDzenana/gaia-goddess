@@ -1,4 +1,4 @@
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 {% assign menu = section.settings.menu%}
 <style>
     @media only screen and (max-width: 1000px) {
@@ -205,7 +205,7 @@ overflow: hidden;
   margin-right: 5px;}
 </style>
 
-<div class="customaccount-{{section.id}}"> 
+<div class="customaccount-{{section.id}} "  > 
 <!-- MENU -->
 <div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
 <nav role="accountnav" class="accountnav">
@@ -260,7 +260,7 @@ overflow: hidden;
 <!-- endmenuwrapper --> 
  
 
-<div class="content-{{section.id}}">
+<div class="content-{{section.id}}  animate__animated animate__fadeInUp" >
  {%- comment -%}
   /sections/contact-form.liquid
 {%- endcomment -%}
@@ -458,15 +458,15 @@ overflow: hidden;
 </div>
 <!-- endform -->
   {%if customer %}
-  <div class="membership-info">
+  <div class="membership-info" >
    <h4 class="maroonbold " style="width: 50%; margin: auto; padding: 10px 0;;">
       Current Membership
 
       <br>
-      <br> <br>
-     
+      <br>
+      
    </h4>         
-    <div class="member-level">
+    <div class="member-level" >
                 <img src="{{section.settings.image | img_url: '100x'}}" style="
                 width: 80px;
                 height: 80px;
@@ -478,7 +478,7 @@ overflow: hidden;
                 
             <p>    {{ customer.account.created_at  }}
 </p> </div>
-   <div class="memberdeactivate">
+   <div class="memberdeactivate"  >
     <p class="grayregular">
       Please click 
      <button id="here" onclick="myFunction()" style="text-decoration:underline ;">here </button>
@@ -549,18 +549,4 @@ window.location.href = "/account/register";
 ]
 }
 {% endschema %}
-
-
-<script>
-
  
-function myFunction() {
-  var x = document.getElementById("miniform");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
- 
-</script>
