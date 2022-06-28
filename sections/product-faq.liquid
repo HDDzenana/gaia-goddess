@@ -62,6 +62,39 @@ Get the latest version: https://github.com/mirceapiturca/Sections/tree/master/FA
     color: var(--answer-color);
   }
   
+  .faqtitle {
+  font-family: 'Acumin Pro';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px ; 
+        line-height: 24px;
+        color: #6C1D45; margin-left: 10px;}
+
+  @media only screen and (max-width: 768px ){
+.faqtitle {
+  font-size: 13px !important;
+  padding: 0 !important;
+  margin: 0 ;
+  margin-left: 10px !important
+}
+
+.fqpt {
+  font-size: 38px;
+  text-align: center;
+  margin: auto;
+  padding-bottom: 0;
+  padding-top: 50px !important;
+}
+.faq-button {
+  min-height: 20px !important;
+}
+.ggf {
+  padding: 10px 0px;
+}
+
+  }
+
+  /* endmobile */
   .faq-button {
     font: inherit;
     background: transparent;
@@ -98,8 +131,8 @@ Get the latest version: https://github.com/mirceapiturca/Sections/tree/master/FA
 {%- comment -%} ---------------- THE MARKUP ---------------- {%- endcomment -%}
 
 
-<h1 class="wrapper maroonbold" style="padding-top: 100px;">{{section.settings.heading}}</h1>
-<br> <br>
+<h1 class="wrapper maroonbold fqpt" style="padding-top: 100px;">{{section.settings.heading}}</h1>
+<br> 
 <div class="wrapper faq-container"> 
 {%- for block in section.blocks -%} 
 <div class="ggf">
@@ -125,13 +158,7 @@ Get the latest version: https://github.com/mirceapiturca/Sections/tree/master/FA
 
 
           
-        </svg>    <p style="font-family: 'Acumin Pro';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 20px !important;
-        line-height: 24px;
-        color: #6C1D45; margin-left: 10px;"
-        >{{ block.settings.title }}</p>
+        </svg>    <p  class="faqtitle"        >{{ block.settings.title }}</p>
  
       </button>
     </p>

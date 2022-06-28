@@ -13,8 +13,8 @@
       position:  relative !important;
       display: flex;
       flex-direction: column;
-      
-    margin-left: 15% !important;
+      margin-bottom: 0px !important;
+    margin-left: 8% !important;
     }
 
     .customaccount-{{section.id}} {
@@ -39,9 +39,9 @@
   border-radius: 40px;
   overflow: hidden;
   position: fixed;
-  margin-left: 50px;
-  margin-top: 250px;
-  margin-bottom: 400px !important;
+  margin-left: 2.5%;
+  margin-top: 120px;
+  margin-bottom: 500px ;
 
   filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
 }
@@ -80,6 +80,11 @@ li.active
 
 .accountnav li:last-child {
   padding-bottom: 0px !important;
+}
+
+.profilepicture {
+  background: url({{ 'rose.svg' | asset_url }}); 
+  background-size: cover;
 }
 
 .menu-title {
@@ -122,12 +127,16 @@ li.active
 }
 
 /* FORM STYLING */
-.cf-app__field input[type=text],
-.cf-app__field textarea,
-.cf-app__field input[type=email] {
+.cf-app__field input[type=text], .cf-app__field input[type=file],
+.cf-app__field textarea, .cf-app__field select,
+.cf-app__field input[type=email],.cf-app__field input[type=tel],.cf-app__field input[type=date] {
   filter: drop-shadow(0px 3px 5px rgba(108, 29, 69, 0.161));
+  border-radius: 40px;
 }
-
+.cf-app__field input[type=date]  {
+  background-color: #FFD9E5;
+  border: 1px solid #FFD9E5;
+}
 .grayregular {
   padding: 10px 0.5em;
 }
@@ -145,6 +154,7 @@ li.active
   grid-template-rows: 1fr 1fr;
   }
 /* BUTTONS STYLING */
+input[type='checkbox'],
 input[type="radio"]{
    appearance: none;
    border: 1px solid #9d9898;
@@ -156,18 +166,30 @@ input[type="radio"]{
    border-radius: 0px !important;
    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
 }
-
+input[type='checkbox']:checked,
 input[type="radio"]:checked {
   appearance: none;
   outline: none;
   padding: 0;
-  background-color: #6C1D45 !important;
-  border: 1px solid rgb(227, 227, 227);
-  border-radius: 0px !important;
-  content: none;
-  border: none;
-}
+  background: url({{ 'checked.svg' | asset_url }}) !important; 
 
+  background-size: cover;
+    background-repeat: no-repeat !imm;
+    /* background-color: #6C1D45 !important; */
+    border: 1px solid rgb(227, 227, 227);
+    border-radius: 0px !important;
+    content: none;
+    border: 1px solid white !important;
+    width: 20px;
+    height: 20px;
+
+  /* border: 1px solid white !important; */
+}
+input[type='checkbox'],
+input[type="radio"] {
+  width: 20px !important;
+  height: 20px !important;
+}
 input[type="radio"]:checked::before{
   position: absolute;
   color: #6C1D45 !important;
@@ -249,10 +271,8 @@ overflow: hidden;
     %}
    
     <div class="profilepicturewrapper"> 
-     {%if  customer.metafields.cf_app.profile_image %}
-     <img src="{{customer.metafields.cf_app.profile_image}}" alt="Gaia Goddess" width="170" height="170" class="profilepicture">
-    
-     {%endif%}
+ 
+     <img src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
   
     </div>
     <div class="changeimg" 
@@ -266,7 +286,7 @@ overflow: hidden;
     </div>
  
   </div>  
-   <div class="editform" style="
+   <div class="editform animate__animated animate__fadeInUp" style="
    min-height: max-content; padding: 100px 0 !important;
 ">
 

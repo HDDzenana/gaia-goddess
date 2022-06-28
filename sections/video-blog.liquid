@@ -214,7 +214,7 @@
         margin-top: 10px;    font-weight: bolder;">
           <strong> <span class="pink" style="color:#EB6FBD ;"> {{section.settings.prevtext}} ></span><span class="maroon"> {{article.title}}</span></strong></a>
         </div>
-     <div class="td"> {%for tag in article.tags %}
+     <div class="td">  
     {%if article.tags contains 'general' %}
 <div class="icn" style="    width: 50px !important;
 ">  
@@ -227,9 +227,9 @@
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
+ <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
     </div></div>
-    <h1>
+    <h1 class="w1200">
       {{article.title}}   
     </h1>      
 </div> <div class="articlecontent">
@@ -238,7 +238,7 @@
           {%- endif -%}
 
       </div>          {% if article.metafields.my_fields.authorimage  != blank %}
-      <div class="uploadedby">  
+      <div class=" grayregular uploadedby">  
  
  <div class="img"> 
     <img src="{{ article.metafields.my_fields.authorimage   | img_url: '400x' }}" alt="{{article.metafields.my_fields.authorimage }}" 
@@ -249,7 +249,8 @@
   
 </div> {%endif%}
 
-<p class="center wrapper wrapper-{{section.id}}"> {{article.metafields.my_fields.about_author}}</p>
+<p class="wrapper wrapper-{{section.id}} grayregular" style="max-width: 700px; padding: 0; padding-bottom: 70px;">
+   {{article.metafields.my_fields.about_author}}</p>
   </section>
 
 
@@ -261,28 +262,29 @@
 </div>
  
 <div class="aboutcard">
-  <p style="color:white ; margin-bottom: 0px; font-weight:700 ;">  {{article.author}}</p>
+  <div class="maininfo"> 
+  <p style="color:white ; margin-bottom: 0px; font-weight:900;font-size: 25px; padding-bottom: 0; margin-bottom: 0;">  {{article.author}}</p>
  
 <span class="role">  {{article.metafields.my_fields.authorrole}}</span>   
-<a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }} "style="
-margin-left: 15%;
-padding-top: 40px !important;
-">
-  {%- render 'icon-footer-facebook' -%}
+
+</div>
+<div class="abouticons"> 
+<a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }} ">
+  {%- render 'bcard-wicon' -%}
 </a>
  
  
 <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
-  {%- render 'icon-footer-instagram' -%}
+  {%- render 'bcard-iicon' -%}
 </a>
  
 
 
 <a class="website" rel="noopener" href = "{{ settings.social_twitter_link }}" title="">
-  {%- render 'healer-website' -%}
+  {%- render 'bcard-gicon' -%}
 </a>
  
-</div> </div>
+</div> </div></div> 
 
 <div class="card-text">
    <p class="ct"> About {{article.author}}</p>
@@ -473,4 +475,45 @@ border-top-right-radius: 20px;
 .card-text{
   width: 30%;
   margin-left: 50px;}
+
+  .role {font-weight: 400;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+
+color: #6C1D45;}
+.ct {
+  font-family: 'Acumin Pro';
+font-style: normal;
+font-weight: 700;
+font-size: 25px;
+line-height: 30px;
+/* identical to box height */
+
+
+color: #6C1D45;
+
+}
+
+.aal { 
+  font-family: 'Acumin Pro';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+color: #575757;
+
+}
+
+.aboutcard {    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.w1200 {
+max-width: 900px;
+text-align: center;
+margin: auto;
+}
   </style>

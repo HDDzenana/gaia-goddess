@@ -12,13 +12,16 @@
     min-width: 100% !important;
     object-fit: cover;
   }
+  .icn {
+    margin-left: -10px;
+  }
 
   .articlecontents-{{section.id}} {
 box-shadow: -6px 7px 20px 0px #d9d2d5eb; 
     min-width: 90%;
     float: left;
     padding: 40px;
-    padding-left: 10px;
+    padding-left: 40px;
     margin-top: -20px;
     /* border-radius: 5px; */
 }
@@ -41,7 +44,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     height: 260px;
   }   .cards-{{section.id}} p 
    {
-    width: 260px !important;
+    /* width: 260px !important; */
  
   }
 
@@ -77,6 +80,10 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     text-align: left;
   }
  
+  .texttopcont {
+    text-align: left;
+    margin-left: 2%;
+  }
     .card  * {
       display: flex;
       flex-direction: column;
@@ -94,6 +101,10 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
       margin-top: 0;
       width: 100%;
     }
+
+    .icn 
+    {
+    margin-left: -10px !important;}
   @media only screen and (max-width: 998px) {
      .newestcards-{{section.id}} {
       padding-top: 10px;
@@ -182,24 +193,38 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
           {% endif %}
       
    
-  {% if section.settings.heading %}  
- <h2 class="center ff-uf green u-case mb-10"  > {{ section.settings.heading }} </h2>    <div class="healers-filter-{{section.id}}">
-            <select class="healers-filter__dropdown" id="category" name="category">
+  {% if section.settings.heading %}  <div class="topcont"  style="display:flex;flex-wrap: wrap;
+      max-width: 1400px;
+    width: 94%;
+  justify-content: space-between;
+    align-items: center;"> 
+    <div class="texttopcont" > 
+ <h2 class=" ff-uf green u-case mb-10" style="padding: 0; margin: 0;" > 
+  {{ section.settings.heading |escape }} 
+</h2> 
+<p class=" ff-uf green u-case mb-10 grayregular" style="max-width: 600px; text-align: left; padding:0">  
+   {{section.settings.description}}  
+  </p>
+  </div> 
+<div class="filters"> 
+<div class="healers-filter-{{section.id}}">
+  <select class="healers-filter__dropdown" id="category" name="category">
+    <option disabled selected>Members Only</option>
+    <option value="yoga">Members Only</option>
+    <option value="meditation">Public</option>
+  </select>
+
+
+  <select class="healers-filter__dropdown" id="category" name="category">
               <option disabled selected>All Filters    </option>
               <option value="yoga">Podcast</option>
               <option value="meditation">Video</option>
               <option value="reiki">Blog</option>
             </select>
-
-
-           <select class="healers-filter__dropdown" id="category" name="category">
-              <option disabled selected>Members Only</option>
-              <option value="yoga">Members Only</option>
-              <option value="meditation">Public</option>
-            </select>
           </div>    
-          </div>
- 
+          </div> 
+        </div>
+        </div>
   {% endif %}
 
  
@@ -208,7 +233,9 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
 
    {%- assign article = block.settings.article -%}
 
-<ul class="wrapper blogsall">
+<ul class="blogsall" style="
+max-width: 1400px;
+width: 94%;">
   {%- for article in blog.articles -%}
     <li style="
     margin-bottom: 50px;
@@ -220,7 +247,11 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     margin: 0;
 ">
       <div class="card "> 
-        {% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;height: 280px;" "> 
+        {% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;
+        height: 100%;
+        max-height: 280px;
+        min-height: 280px;
+        background-position: center;" "> 
          </div> {%else %}
          <div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}'); 
     background-size: cover;height: 300px;" > 
@@ -230,9 +261,8 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
             </div> 
 {% endif %}  <div class="articlecontents-{{section.id}}">  
    <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">   
-    
-    {%for tag in article.tags %}
-    {%if article.tags contains 'general' %}
+     
+    {%if article.tags contains 'general'  %}
 <div class="icn" style=" width: 50px !important;
 ">  
     {%render 'generalblog'%}</div>
@@ -244,12 +274,17 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}                        
-  {{ article.published_at | time_tag: format: 'date' }}
+                     
+  {{ article.published_at | time_tag: format: 'date' }} 
+  {%if article.tags contains 'customeronly'  %}
+  <div class="icn" style=" width: 50px !important;
+  ">  
+      {%render 'lockedarticle'%}</div>
+    {%endif%}
 </span> 
             <h5 class="maroonbold" style="min-width:100%; color: #6C1D45; margin-bottom: 15px;">    {{article.title}}  </h5> 
         
-          
+       
       
         
         <p style="width: 100% !important;">
@@ -260,7 +295,20 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
           {%- endif -%}
         </p>
 
+     
+        {%if article.tags contains 'general'  %}
       <a href="{{article.url}}" class="leftlink"> Read Article</a>
+      {%endif%}
+      {%if article.tags contains 'podcast'  %}
+      <a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
+      {%endif%}
+      {%if article.tags contains 'video'  %}
+      <a href="{{article.url}}" class="leftlink"> Watch Video </a>
+      {%endif%}
+   
+ 
+ 
+ 
     </div> 
           </div></div>
  
@@ -465,4 +513,26 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
 li {
   list-style: none;
 }
+
+#cat-filter {
+    border-radius: 30px !important; 
+    border-color: #6C1D45;
+    border: 2px solid #6C1D45;
+    width: 140px;
+    height: 50px;
+  }
+  select,
+  option {
+    color: #6C1D45 !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+    padding-right: 2rem !important;
+  }
 </style>

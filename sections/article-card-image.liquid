@@ -14,11 +14,11 @@
   }
 
   .articlecontents-{{section.id}} {
-    box-shadow: -6px 7px 20px 0px #6c1d4580;
+    filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.149));
     min-width: 90%;
     float: left;
     padding: 40px;
-    padding-left: 10px;
+    padding-left: 40px;
     margin-top: -20px;
     border-radius: 5px;
 }
@@ -158,9 +158,11 @@
     padding: 0;
   }
   </style>
-<div class="newestcards-{{Section.id}}" style="background-color: {{section.settings.section_bg}};"> 
+<div class="newestcards-{{section.id}}" style="background-color: {{section.settings.section_bg}};"> 
 <div class="cards-{{section.id}} page-width">
-    <div class="collapsible-content__header  " style="text-align: center; margin: auto !important;">
+    <div class="cards-wrapper" style="text-align: center; margin: auto !important;
+    justify-content: space-between;
+    width: 90%;">
           {%- if section.settings.caption != blank -%}
             <p class="caption-with-letter-spacing" style="text-align: center; margin: auto !important; color: {{section.settings.heading_color}}"> {{ section.settings.caption | escape }}</p>
           {% endif %}
@@ -168,7 +170,16 @@
    
   {% if section.settings.heading %}  
  <h2 class="center ff-uf green u-case mb-10"  > {{ section.settings.heading }} </h2>    <div class="healers-filter-{{section.id}}">
-            <select class="healers-filter__dropdown" id="category" name="category">
+         
+  
+  <select class="healers-filter__dropdown" id="category" name="category">
+    <option disabled selected>Members Only</option>
+    <option value="yoga">Members Only</option>
+    <option value="meditation">Public</option>
+  </select>
+
+
+  <select class="healers-filter__dropdown" id="category" name="category">
               <option disabled selected>All Filters    </option>
               <option value="yoga">Podcast</option>
               <option value="meditation">Video</option>
@@ -176,11 +187,7 @@
             </select>
 
 
-           <select class="healers-filter__dropdown" id="category" name="category">
-              <option disabled selected>Members Only</option>
-              <option value="yoga">Members Only</option>
-              <option value="meditation">Public</option>
-            </select>
+         
           </div>    
           </div>
  
@@ -214,7 +221,7 @@
             </div> 
 {% endif %}  <div class="articlecontents-{{section.id}}">  
    <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">    
-    {%for tag in article.tags %}
+    
     {%if article.tags contains 'general' %}
 <div class="icn" style=" width: 50px !important;
 ">  
@@ -227,10 +234,10 @@
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}
+ 
                  
-  {{ article.published_at | time_tag: format: 'date' }}
-</span> 
+ <p class="grayregular">  {{ article.published_at | time_tag: format: 'date' }}
+</p></span> 
         {% if block.settings.title %}
         <a class="card-link"  href="{{block.settings.link}}" style="margin-top:5px;">
      <{{section.settings.link_style}} class="title" style="   color: {{section.settings.heading_colors}};width: 100%;text-align: left;word-break: keep-all; margin: 10px 0;">
@@ -252,7 +259,7 @@
       </p>
 
       <a href="{{article.url}}" class="leftlink">
-         {%for tag in article.tags %}
+ 
     {%if article.tags contains 'general' %}
 Read More</div>
   {%endif%}
@@ -263,7 +270,7 @@ Read More</div>
 {%if article.tags contains 'video' %}
 Watch </div>
 {%endif%} 
-    {%endfor%}
+ 
       </a>
     </div> 
           </div>
@@ -453,5 +460,30 @@ Watch </div>
  .exc *, p.exc{
    min-width:100% !important; text-align: left;
  }
+
+ .icn {
+    margin-left: -15px;}
+
+    #cat-filter {
+    border-radius: 30px !important; 
+    border-color: #6C1D45;
+    border: 2px solid #6C1D45;
+    width: 140px;
+    height: 50px;
+  }
+  select,
+  option {
+    color: #6C1D45 !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+    padding-right: 2rem !important;
+  }
 
 </style>

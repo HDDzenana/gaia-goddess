@@ -8,17 +8,15 @@
   {%- if template contains 'collection' -%}
     <!-- <span class="breadcrumbs__sep">/</span> -->
     <a class="maroonbold" href="{{ routes.collections_url }}">
-      {{- 'collections.breadcrumbs.collections' | t -}}
+<a class="maroonbold" href="javascript&colon; history.go(-1)">Healers</a>
     </a>
     <span class="maroonbold"> > </span> 
 
     {%- if collection.handle -%}
       <span class="breadcrumbs__current pink maroonbold " style="padding-bottom:3px ;">
-        {%- if collection.handle == 'all' -%}
-          {{- 'collections.breadcrumbs.default_collection' | t -}}
-        {%- else -%}
+     
            {{- collection.title -}}
-        {%- endif -%}
+      
       </span>
     {%- endif -%}
   {%- endif -%}

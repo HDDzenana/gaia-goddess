@@ -19,7 +19,7 @@
         "overlay_opacity": 20,
         "text_color": "text-light",
         "title": "Join Our <br> Events & Retreats",
-        "subheading": "",
+        "subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>\nMus vulputate scelerisque mollis luctus risus nulla. <br>\nPharetra laoreet felis euismod et. Id bibendum.",
         "button_text": "",
         "button_link": "",
         "button_style": "primary"
@@ -39,134 +39,62 @@
         "enable_slider": true
       }
     },
-    "16546676202d6edaf3": {
-      "type": "section-featured-collections",
+    "1656320348eac6908b": {
+      "type": "event-list",
       "blocks": {
-        "ef69b0bf-c83e-4322-a852-0e85d4e12392": {
-          "type": "product",
-          "disabled": true,
-          "settings": {
-            "product": "7-days-exploring-sightseeing-in-cairo-egypt",
-            "healer_subtitle": "{{ block.settings.product.title }}",
-            "description": "",
-            "imagef": "shopify:\/\/shop_images\/aussieactive-GNdp2Q4VZjw-unsplash_b985b0dc-b322-44ee-a2e3-4d2a762803cd.png",
-            "hostedby": "g",
-            "placedate": ""
-          }
-        },
-        "dbcf1d19-e1cb-4cea-9f85-5b297081c4f2": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection": "events",
-            "healer_subtitle": "",
-            "show_instagram_icon": false,
-            "social_instagram_link": "",
-            "show_website_icon": false,
-            "social_website_link": ""
-          }
-        },
-        "ffbe4eaa-3f63-4019-becb-f370e08236c4": {
-          "type": "collection",
-          "disabled": true,
-          "settings": {
-            "collection": "",
-            "healer_subtitle": "",
-            "show_instagram_icon": true,
-            "social_instagram_link": "",
-            "show_website_icon": true,
-            "social_website_link": ""
-          }
-        },
-        "6cd95c5e-5c85-4750-8582-3809e2e84247": {
-          "type": "Filter",
-          "settings": {
-            "filtername": "Month",
-            "filteroption": "June"
-          }
-        },
-        "0e7a9c34-6bda-4963-9890-0a8a99246d52": {
-          "type": "Filter",
-          "settings": {
-            "filtername": "Location",
-            "filteroption": "Cairo"
-          }
-        },
-        "b9944b4e-3374-445b-8002-96857b72d2ab": {
-          "type": "Filter",
-          "settings": {
-            "filtername": "All Filters",
-            "filteroption": ""
-          }
-        },
-        "823865af-6dd5-4486-949b-26331afeaa19": {
+        "1656320347e62f76bf-0": {
           "type": "product",
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
-            "healer_subtitle": "5-Days Meditation Program at Connecticut",
-            "description": "",
-            "imagef": "shopify:\/\/shop_images\/image_20.png",
-            "hostedby": "",
-            "placedate": ""
+            "image": "shopify:\/\/shop_images\/image_21_5aca60f8-d086-4261-95c1-3e35baf4e8dd.png"
           }
         },
-        "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c": {
+        "1656320347e62f76bf-1": {
+          "type": "product",
+          "settings": {
+            "product": "retreat",
+            "image": "shopify:\/\/shop_images\/image_20.png"
+          }
+        },
+        "1656320347e62f76bf-2": {
+          "type": "product",
+          "settings": {
+            "product": "retreat",
+            "image": "shopify:\/\/shop_images\/image_21_5aca60f8-d086-4261-95c1-3e35baf4e8dd.png"
+          }
+        },
+        "1656320347e62f76bf-3": {
           "type": "product",
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
-            "healer_subtitle": "5-Days Meditation Program at Connecticut",
-            "description": "",
-            "imagef": "shopify:\/\/shop_images\/image_21_5aca60f8-d086-4261-95c1-3e35baf4e8dd.png",
-            "hostedby": "",
-            "placedate": ""
+            "image": "shopify:\/\/shop_images\/image_22_4ff21882-66a4-401c-8dbc-9bd2552fb5ef.png"
           }
         },
-        "f4ce4b4c-e4a0-4323-aabc-597055f1200d": {
+        "1656320347e62f76bf-4": {
           "type": "product",
           "settings": {
-            "product": "7-days-exploring-sightseeing-in-cairo-egypt",
-            "healer_subtitle": "Retreat at Home: OnlineYoga & Life Drawing",
-            "description": "",
-            "imagef": "shopify:\/\/shop_images\/image_22_4ff21882-66a4-401c-8dbc-9bd2552fb5ef.png",
-            "hostedby": "",
-            "placedate": ""
+            "product": "virtual-meeting",
+            "image": "shopify:\/\/shop_images\/image_22_4ff21882-66a4-401c-8dbc-9bd2552fb5ef.png"
           }
         },
-        "2b2046af-4b1f-4669-825e-68c84f833eaa": {
+        "1c2a7a8c-2f74-4b90-b75c-e4a12ba532bc": {
           "type": "product",
-          "disabled": true,
           "settings": {
-            "product": "7-days-exploring-sightseeing-in-cairo-egypt",
-            "healer_subtitle": "Retreat at Home: OnlineYoga & Life Drawing",
-            "description": "Retreat at Home: OnlineYoga & Life Drawing",
-            "imagef": "shopify:\/\/shop_images\/image_2.png",
-            "hostedby": "",
-            "placedate": ""
+            "product": "retreat",
+            "image": "shopify:\/\/shop_images\/image_20.png"
           }
         }
       },
       "block_order": [
-        "ef69b0bf-c83e-4322-a852-0e85d4e12392",
-        "dbcf1d19-e1cb-4cea-9f85-5b297081c4f2",
-        "ffbe4eaa-3f63-4019-becb-f370e08236c4",
-        "6cd95c5e-5c85-4750-8582-3809e2e84247",
-        "0e7a9c34-6bda-4963-9890-0a8a99246d52",
-        "b9944b4e-3374-445b-8002-96857b72d2ab",
-        "823865af-6dd5-4486-949b-26331afeaa19",
-        "f153fe89-1d10-49d0-9ad4-fcc09da6ad9c",
-        "f4ce4b4c-e4a0-4323-aabc-597055f1200d",
-        "2b2046af-4b1f-4669-825e-68c84f833eaa"
+        "1656320347e62f76bf-0",
+        "1656320347e62f76bf-1",
+        "1656320347e62f76bf-2",
+        "1656320347e62f76bf-3",
+        "1656320347e62f76bf-4",
+        "1c2a7a8c-2f74-4b90-b75c-e4a12ba532bc"
       ],
       "settings": {
-        "heading": "Events and Retreats",
-        "heading_color": "#6c1d45",
-        "heading_alignment": "left",
-        "show_filter": false,
-        "products_layout": "grid",
-        "bg_color": "",
-        "healer_title_color": "",
-        "healer_subtitle_color": "",
-        "enable_slider": true
+        "heading": "Events & Retreats"
       }
     }
   },
@@ -174,6 +102,6 @@
     "main",
     "1654692668fb597b57",
     "165466737515567fe5",
-    "16546676202d6edaf3"
+    "1656320348eac6908b"
   ]
 }

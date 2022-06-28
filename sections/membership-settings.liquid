@@ -1,4 +1,4 @@
-
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 {% assign menu = section.settings.menu%}
 <style>
     @media only screen and (max-width: 1000px) {
@@ -11,13 +11,65 @@
       display: flex;
       flex-direction: column;
       
-    margin-left: 15% !important;
+    /* margin-left: 15% !important; */
     }
 
+
+    .miniformwrapper {
+    position: absolute;
+    z-index: 33333;
+    background: white;
+    filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
+    top: 15% !important;
+    left: 5% !important;
+    border-radius: 40px;
+    padding: 50px 0;
+    width: 90%;
+    margin: auto !important;
+} 
+    .accountnav-wrapper {
+      width: 100% !important;
+      padding: 50px 0;
+    }
     .customaccount-{{section.id}} {
       flex-direction: column-reverse;
     }
+    .membership-info {
+      padding-top: 150px;
+      padding-bottom: 80px
+    }
+    .member-level img {
+      margin-top: -25%;
+    }
+    .membership-info * {
+      min-width: 100% !important;
+      margin: auto;
+      text-align: center;
+    }
+    .membership-info h1 {
+      font-size: 40px;
+    }
+    #here {
+    text-decoration: underline;
+    width: 30px !important;
+    max-width: 30px !important;
+    min-width: 4px !important;
   }
+    .member-level {
+      flex-direction: column !important;
+    }
+  }
+ 
+  .miniformwrapper {
+    position: absolute;
+    z-index: 33333;
+    background: white;
+    filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
+    top: -50% !important;
+    left: 5% !important;
+    border-radius: 40px;
+    padding: 50px 0;
+}
 
 
 .customaccount-{{section.id}} {
@@ -153,7 +205,7 @@ overflow: hidden;
   margin-right: 5px;}
 </style>
 
-<div class="customaccount-{{section.id}}"> 
+<div class="customaccount-{{section.id}} "  > 
 <!-- MENU -->
 <div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
 <nav role="accountnav" class="accountnav">
@@ -208,18 +260,218 @@ overflow: hidden;
 <!-- endmenuwrapper --> 
  
 
-<div class="content-{{section.id}}">
- 
+<div class="content-{{section.id}}  animate__animated animate__fadeInUp" >
+ {%- comment -%}
+  /sections/contact-form.liquid
+{%- endcomment -%}
+<style>
+  .miniform * {
+    text-align: center !important;
+  
+  }
+
+  .miniform {   padding-bottom: 50px;
+  display: none;
+}
+  .miniform .input--full {
+    filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
+    width: 50%;
+    border: 1px solid rgba(108, 29, 69, 0.161);
+    border-radius: 40px;
+    max-height: 100px;
+  }
+</style> 
+<!-- form -->
+<div class="miniform" id="miniform" > 
+
+{%- capture form_fields -%}
+  {%- for block in section.blocks -%}
+    {%- assign required = '' -%}
+    {%- if block.settings.required -%}
+        {%- assign required = 'required' -%}
+    {%- endif -%}
+
+    {%- case block.type -%}
+
+      {%- when 'heading' -%}
+        <div class="form__item form__item--heading" {{ block.shopify_attributes }}>
+          <h2 class="form__heading">{{ block.settings.title }}</h2> 
+          <p class="grayregular" style="width: 60%; margin:auto; text-align: center;">We're sad to see that you are requesting a membership cancellation. Please
+            complete the form below and your membership will be cancelled shortly. </p>
+        </div>
+       <div class="line" style="margin: auto"> {%render 'pink-line'%}</div>
+      {%- when 'email' -%}
+      <p class="maroonbold">Email   <span class="grayregular">(required) </span> </p> 
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="email" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[email]" placeholder="{{ block.settings.title }}" autocorrect="off" autocapitalize="off" {{ required }}/>
+        </div>
+
+      {%- when 'body' -%}
+
+      <p class="maroonbold"> Reason for Cancelling <span class="grayregular">(required) </span> </p>
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <textarea rows="10" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[body]" placeholder="{{ block.settings.title }}" {{ required }}></textarea>
+        </div>
+
+      {%- when 'text' -%}
+      <p class="maroonbold"> Name  <span class="grayregular">(required) </span> </p>
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="text" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title | handleize }}]" autocapitalize="words" value="" placeholder="{{ block.settings.title }}" {{ required }}/>
+        </div>
+
+      {%- when 'textarea' -%} 
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <textarea rows="10" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[{{ block.settings.title | handleize }}]" placeholder="{{ block.settings.title }}" {{ required }}></textarea>
+        </div>
+
+      {%- when 'telephone' -%}
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="tel" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[telephone]" value="" placeholder="{{ block.settings.title }}" {{ required }}/>
+        </div>
+
+      {%- when 'spacer' -%}
+        {%- assign hr_class = 'hr--clear' -%}
+        {%- if block.settings.line -%}
+          {%- assign hr_class = '' -%}
+        {%- endif -%}
+        <div class="form__item">
+          <hr class="{{ hr_class }}" {{ block.shopify_attributes }}>
+        </div>
+
+      {%- when 'checkbox' -%}
+        <div class="form__item form__item--checkbox" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}">
+            <input type="checkbox" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--checkbox" name="contact[{{ block.settings.title | handleize }}]" value="{{ block.settings.title }}" {{ required }}></input>
+            <span>{{ block.settings.title }}</span>
+          </label>
+        </div>
+
+      {%- when 'radio' -%}
+        <fieldset class="form__item form__item--radio" {{ block.shopify_attributes }}>
+          {%- if block.settings.title != blank -%}
+            <legend class="form__label">{{ block.settings.title }}</legend>
+          {%- endif -%}
+
+          {%- for i in (1..6) -%}
+            {%- capture index -%}label-{%- cycle 'one', 'two', 'three', 'four', 'five', 'six' -%}{%- endcapture -%}
+
+            {%- if block.settings[index] != blank -%}
+              <label for="Form-{{ section.id }}-{{ block.id }}-{{ i }}">
+                <input type="radio" id="Form-{{ section.id }}-{{ block.id }}-{{ i }}" class="input--radio" name="contact[{{ block.settings.title | handleize }}-{{ block.id }}]" value="{{ block.settings[index] }}" {{ required }}>
+                <span>{{ block.settings[index] }}</span>
+              </label>
+            {%- endif -%}
+          {%- endfor -%}
+        </fieldset>
+
+      {%- when 'select' -%}
+        <fieldset class="form__item" {{ block.shopify_attributes }}>
+          {%- if block.settings.title != blank -%}
+            <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="form__label">{{ block.settings.title }}</label>
+          {%- endif -%}
+          <div class="selector-wrapper">
+            <select id="Form-{{ section.id }}-{{ forloop.index0 }}" class="FormSelect" name="contact[{{ block.settings.title | handleize }}]">
+              {%- for i in (1..6) -%}
+                {%- capture index -%}label-{%- cycle 'one', 'two', 'three', 'four', 'five', 'six' -%}{%- endcapture -%}
+
+                {%- if block.settings[index] != blank -%}
+                  <option value="{{ block.settings[index] }}">{{ block.settings[index] }}</option>
+                {%- endif -%}
+              {%- endfor -%}
+            </select>
+            {%- render 'icon-arrow' -%}
+          </div>
+        </fieldset>
+    {%- endcase -%}
+  {%- endfor -%}
+{%- endcapture -%}
+
+<section data-section-type="contact-form" data-section-id="{{ section.id }}">
+  <div class="wrapper wrapper--small miniformwrapper">
+
+    {%- form 'contact', id: 'ContactForm'  -%}
+      {%- comment -%}
+        Success message
+      {%- endcomment -%}
+      {%- if form.posted_successfully? -%}
+        <p class="note form-success">
+          {{- 'contact.form.post_success' | t -}}
+        </p>
+
+      {%- elsif form.errors -%}
+        {{- form.errors | default_errors -}}
+      {%- endif -%}
+
+      {{- form_fields -}}
+
+      {%- assign types = '' -%}
+      {%- for block in section.blocks -%}
+        {%- assign types = types | append: block.type -%}
+      {%- endfor -%}
+      <div class="close" style="
+      text-align: right !important;
+      padding-right: 10%; z-index:999999 !important ;
+  ">  
+      <button id="buttonss">   {%render 'close-popup' %}</button></div>
+      {%- unless types contains "text" -%}
+        {%- assign name_attr = 'contact.form.name' | t | handle -%}
+        <h1> 
+          Cancel Your Membership
+        </h1> 
+        
+
+        <p class="grayregular" style="width: 60%; margin:auto; text-align: center; padding-bottom: 10px;">We're sad to see that you are requesting a membership cancellation. Please
+          complete the form below and your membership will be cancelled shortly. </p>
+          <svg width="680" height="2" viewBox="0 0 680 2" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 1.49805H680" stroke="#FFD9E5"/>
+            </svg>
+              
+        <div class="form__item">
+          <p class="maroonbold">Name   <span class="grayregular">(required) </span> </p> 
+          <label for="Form-{{ section.id }}-Name" class="hidden-label">{{ 'contact.form.name' | t }}</label>
+          <input type="text" id="Form-{{ section.id }}-Name" class="input--full" name="contact[{{ name_attr }}]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form[name_attr] %}{{ form[name_attr] }}{% elsif customer %}{{ customer.name }}{% endif %}" required>
+        </div>
+      {%- endunless -%}
+
+      {%- unless types contains "email" -%}
+        <div class="form__item">
+          <p class="maroonbold">Email   <span class="grayregular">(required) </span> </p> 
+          <label for="Form-{{ section.id }}-Email" class="hidden-label">{{ 'contact.form.email' | t }}</label>
+          <input type="email" id="Form-{{ section.id }}-Email" class="input--full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required>
+        </div>
+      {%- endunless -%}
+      <p class="maroonbold">Reason for Cancelling   <span class="grayregular">(required) </span> </p> 
+      {%- unless types contains "body" -%}
+        <div class="form__item">
+          <label for="Form-{{ section.id }}-Message" class="hidden-label">{{ 'contact.form.message' | t }}</label>
+          <textarea rows="10" id="Form-{{ section.id }}-Message" class="input--full" name="contact[body]" placeholder="Please provide more details. (1000 characters max)" required>{% if form.body %}{{ form.body }}{% endif %}</textarea>
+        </div>
+      {%- endunless -%}
+
+      <div class="form__item form__item--submit">
+        <button type="submit" class="btn">{{ 'contact.form.send' | t }}</button>
+      </div>
+
+    {%- endform -%}
+  </div>
+</section>
+</div>
+<!-- endform -->
   {%if customer %}
-  <div class="membership-info">
+  <div class="membership-info" >
    <h4 class="maroonbold " style="width: 50%; margin: auto; padding: 10px 0;;">
       Current Membership
 
       <br>
-      <br> <br>
-     
+      <br>
+      
    </h4>         
-    <div class="member-level">
+    <div class="member-level" >
                 <img src="{{section.settings.image | img_url: '100x'}}" style="
                 width: 80px;
                 height: 80px;
@@ -231,10 +483,10 @@ overflow: hidden;
                 
             <p>    {{ customer.account.created_at  }}
 </p> </div>
-   <div class="memberdeactivate">
+   <div class="memberdeactivate"  >
     <p class="grayregular">
       Please click 
-     <a href="/account/logout">here </a>  
+     <button id="here" onclick="myFunction()" style="text-decoration:underline ;">here </button>
       to cancel your active membership
     </p>
    </div>
@@ -302,3 +554,28 @@ window.location.href = "/account/register";
 ]
 }
 {% endschema %}
+<script>
+  function myFunction() {
+    var x = document.getElementById("miniform");
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
+
+<script>
+var button = document.getElementById('buttonss');
+
+button.onclick = function() {
+    var div = document.getElementById('miniform');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+  </script>
+  

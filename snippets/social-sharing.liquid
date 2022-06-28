@@ -21,21 +21,22 @@
   {%- if settings.share_facebook != blank -%}
     <a target="_blank" rel="noopener" class="social-circle facebook" href="//www.facebook.com/sharer.php?u={{ permalinkURL }}" title="{{ 'general.accessibility.facebook_share' | t }}">
       <span class="visually-hidden">{{ 'general.accessibility.facebook_share' | t }}</span>
-      {%- render 'icon-facebook'-%}
+      {%- render 'icon-footer-facebook'-%}
     </a>
   {%- endif -%}
 
   {%- if settings.share_twitter != blank -%}
      <a target="_blank" rel="noopener" class="social-circle twitter" href="//twitter.com/share?text={{ product.title | strip_html | escape }}&amp;url={{ permalinkURL }}{% unless template == 'password' %}&amp;media={% if template == 'product' or template == 'index'%}{{ product.featured_media.preview_image.src | product_img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endunless %}" title="{{ 'general.accessibility.twitter_share' | t }}">
       <span class="visually-hidden">{{ 'general.accessibility.twitter_share' | t }}</span>
-      {%- render 'icon-twitter'-%}
+      {%- render 'icon-footer-twitter'-%}
     </a>
   {%- endif -%}
 
   {%- if settings.share_pinterest != blank -%}
-     <a target="_blank" rel="noopener" class="social-circle pinterest" href="{% if template contains 'password' %}{{ settings.social_pinterest_link }}{% else %}//pinterest.com/pin/create/button/?url={{ permalinkURL }}&amp;media=http:{% if template == 'product' or template == 'index' %}{{ product | img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endif %}&amp;description={{ shareTitle }}" title="{{ 'general.accessibility.pinterest_share' | t }}">
+     <a target="_blank" rel="noopener" class="social-circle pinterest" href="{% if template contains 'password' %}     <a target="_blank" rel="noopener" class="social-circle pinterest" href="{% if template contains 'password' %}{{ permalinkURL }}&amp;media=http:{% if template == 'product' or template == 'index' %}{{ product | img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endif %}&amp;description={{ shareTitle }}" title="{{ 'general.accessibility.pinterest_share' | t }}">
+{{ permalinkURL }}&amp;media=http:{% if template == 'product' or template == 'index' %}{{ product | img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endif %}&amp;description={{ shareTitle }}" title="{{ 'general.accessibility.pinterest_share' | t }}">
       <span class="visually-hidden">{{ 'general.accessibility.pinterest_share' | t }}</span>
-      {%- render 'icon-pinterest'-%}
+      {%- render 'icon-share-email'-%}
     </a>
   {%- endif -%}
 

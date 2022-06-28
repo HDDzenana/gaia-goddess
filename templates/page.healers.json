@@ -18,7 +18,7 @@
         "caption_color": "",
         "caption": "",
         "text_color": "#6c1d45",
-        "heading": "<h2 class=\"maroonbold oh\">Our Healers <\/h2>\n{% render 'pinkline' %}\n<br><br><br>\n<h2 class=\"maroonbold\">\nDiosa <br><br> <\/h2>",
+        "heading": "<h2 class=\"maroonbold oh\">Our Healers <\/h2>\n{% render 'pinkline' %}\n<br><br>\n<h2 class=\"maroonbold\">\nDiosa  <br> <\/h2>",
         "subheading": "",
         "ssubheading_color": "#800000",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
@@ -117,7 +117,7 @@
         "image_layout": "square",
         "image_1": "shopify:\/\/shop_images\/Screenshot_2022-06-08_at_16.37.34.png",
         "heading": "Want to be part of the team?",
-        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla.<\/p>",
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
       }

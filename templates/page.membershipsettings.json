@@ -10,16 +10,64 @@
     "16556732631cca8666": {
       "type": "membership-settings",
       "settings": {
-        "bg": "transparent",
-        "menu_bg": "#FEF1F5",
+        "bg": "rgba(0,0,0,0)",
+        "menu_bg": "#fef1f5",
         "banner_top": "shopify:\/\/shop_images\/image_4.png",
         "image": "shopify:\/\/shop_images\/image_6.png",
         "menu": "my-account"
+      }
+    },
+    "1656354110b4b52374": {
+      "type": "shortcontactform",
+      "blocks": {
+        "165635411088a91fac-0": {
+          "type": "heading",
+          "settings": {
+            "title": "Cancel Your Membership"
+          }
+        },
+        "f34fd382-1152-47e6-847a-90e7c1be7bd6": {
+          "type": "spacer",
+          "settings": {
+            "line": false
+          }
+        },
+        "165635411088a91fac-1": {
+          "type": "text",
+          "settings": {
+            "title": "Name",
+            "required": false
+          }
+        },
+        "165635411088a91fac-2": {
+          "type": "email",
+          "settings": {
+            "title": "Email",
+            "required": true
+          }
+        },
+        "165635411088a91fac-3": {
+          "type": "body",
+          "settings": {
+            "title": "Reason for Cancelling",
+            "required": true
+          }
+        }
+      },
+      "block_order": [
+        "165635411088a91fac-0",
+        "f34fd382-1152-47e6-847a-90e7c1be7bd6",
+        "165635411088a91fac-1",
+        "165635411088a91fac-2",
+        "165635411088a91fac-3"
+      ],
+      "settings": {
       }
     }
   },
   "order": [
     "main",
-    "16556732631cca8666"
+    "16556732631cca8666",
+    "1656354110b4b52374"
   ]
 }

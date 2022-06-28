@@ -1,0 +1,423 @@
+ 
+    {%  assign product = all_products[block.settings.product]
+      %}
+<div class="eventlist">
+  <div class="title">
+    <h1 class="maroonbold hdng"> {{section.settings.heading}}</h1>
+    <div class="filters" style="
+    display: flex;
+    gap: 25px;
+">      <div class="filter-title">
+  <select name="cat-filter" id="cat-filterr" >  
+    <option class="maroonbold" value="none-selected">Week</option>
+    <!-- <option value="usa">USA</option>
+    <option value="egypt">Egypt</option>
+    <option value="virtual">Virtual</option> -->
+  </select>
+</div> 
+
+    <div class="filter-title">
+      <select name="cat-filter" id="cat-filter" style="border-radius: 30px !important; border-color: #6C1D45; border: 2px solid #6C1D45; width: 140px; height: 50px; ">
+        <option class="maroonbold" value="none-selected">Location</option>
+        <option value="usa">USA</option>
+        <option value="egypt">Egypt</option>
+        <option value="virtual">Virtual</option>
+      </select>
+    </div>
+    <div class="filter-title">
+      <select name="cat-filter" id="cat-filter">
+        <option class="maroonbold" value="none-selected">All Filters</option>
+        <option value="retreat">Retreat</option>
+        <option value="travelexperience">Travel Experience</option>
+        <option value="education">Education</option>
+        <option value="fitness">Fitness</option>
+      </select>
+    </div>
+ 
+  </div>
+</div>
+   
+  </div>
+<div class="productevents">
+     {%for block in section.blocks %}
+      
+   {%case block.type %}
+   {% when 'product' %}
+   {%  assign product = all_products[block.settings.product] %}
+   <div class="eventcard"  data-metafield="{{   product.metafields.custom.location  }}"  data-all="{{ product.metafields.custom.type_of_event }}" >
+       <a href="{{product.url}}" > 
+    <div class="eventcardimg">  
+    {%if block.settings.image == blank %} 
+    <img src="{{product.featured_image | img_url: 'medium'}}">
+    {% else %}
+    {% render 'gaia-image'
+    image: block.settings.image
+    %}
+    {% endif %}
+     </div>
+     </a>
+
+    <div class="eventdesc">
+      <p class="maroonbold prodtitle">
+        {{product.title}}
+      </p>
+      <span class="pink ww"style="font-weight: 900;font-style: italic;">
+        {{product.metafields.my_fields.place_and_date}}
+      </span>
+      <p class="grayregular descp">
+        {{product.metafields.custom.event_description}}
+      </p>
+      <p class="hostedby pink" style="font-weight: 900;font-style: italic;">Hosted By</p>
+      <div class="hostedbymaroon"> {{product.metafields.my_fields.hosted_by}}</div>
+      <a href="{{product.url}}" > 
+          <div class="btnreg" style="color: white">
+    
+        Register Now
+      
+    </div> </a>
+    </div>
+  </div>
+     {%endcase %}
+     {%endfor%}
+</div>
+</div>
+<br> <br> <br> 
+
+
+{% schema %}
+{
+  "name": "Event List",
+  "settings": [
+ {
+  "type": "text",
+  "id": "heading",
+  "label": "Heading",
+  "default": "Events & Retreats"
+ }],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "product"
+        },{
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ],
+	"presets": [
+			{
+				"name": "Event list",
+				"category": "Collection",
+				"blocks": [
+					{
+						"type": "product"
+					},
+					{
+						"type": "product"
+					},
+					{
+						"type": "product"
+					},
+					{
+						"type": "product"
+					},
+					{
+						"type": "product"
+					}
+				]
+			}
+		]
+	}
+{% endschema %}
+
+
+
+<style>
+@media only screen and (max-width: 768px) {
+  .hdng {
+    padding: 20px 0 !important;  
+    font-size: 30px !important;
+    text-align: center !important;
+  }
+
+  .btnreg {
+  margin: 30px auto !important;
+  }
+  .eventdesc > * {
+    min-width: 90% !important
+    margin: auto;
+  }
+  .prodtitle {
+    text-align: center;
+  }
+  .pink .ww {
+    text-align: center !important;
+    font-style: italic;
+  }
+  .filters {
+    display: flex;
+    gap: 25px;
+    margin: auto;
+}
+#cat-filter  {
+    border-radius: 40px !important;
+    border-color: #6C1D45;
+    border: 1px solid #6C1D45;
+    width: 140px;
+    height: 38px !important;
+    font-size: 14px;
+    padding: 0 15px;
+}
+#cat-filterr {
+    border-radius: 40px !important;
+    border-color: #6C1D45;
+    border: 1px solid #6C1D45;
+    width: 140px;
+    height: 38px !important;
+    font-size: 14px;
+    padding: 0 15px;
+}
+ 
+  .title {
+    flex-direction: column;
+    margin: auto;
+    padding-bottom: 40px;
+
+  }
+  .eventdesc {
+    padding: 10px 0 !important;
+  }
+  .eventcard * {
+    width: 95% !important;
+    margin: auto;  
+    text-align: center;
+  }
+  .eventcardimg {
+    max-height: 200px !important;
+    min-height: 250px !important;
+    object-fit: contain;
+  }
+ .title .productevents {
+  row-gap: 0 !important;
+  gap: 0 !important
+ }
+ .productevents {
+  gap: 10px !important;
+ }
+}
+/* endmobile */
+  .eventlist {
+    /* max-width: 1200px; */
+    padding-top: 5% ;
+    margin: auto;
+  }
+  .title  {
+
+    max-width: 1300px;
+    display: flex !important;
+    justify-content: space-between !important;
+    margin: auto;
+  }
+
+  .productevents {
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;    max-width: 1300px;
+    justify-content: center;
+    gap: 20px;
+    row-gap: 100px;
+  }
+  .btnreg {
+    border-radius: 40px;
+    border: 1px solid #6C1D45;
+    color: #6C1D45 !important;
+    background-color: #FFF !important;
+    max-width: 50%;
+    text-align: center;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-weight: 800;
+  }
+ 
+  .btnreg:hover {
+    background: #6C1D45 !important;
+    color: #fff !important;
+  }
+  .eventcard * { 
+    width: 420px;
+  }
+  .eventcard {
+    display: flex;
+    flex-direction: column;
+  }
+  .eventcardimg {
+    min-height: 350px;
+    height: 350px;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  @media only screen and (min-width: 769px) {
+  .eventdesc > * {
+/*     max-width: 75%; */
+    padding: 0;
+    }
+  }
+  .prodtitle {
+font-size: 22px;
+line-height: 28px;
+}
+  .pink .ww {
+    font-weight: 100 !important;
+  }
+.hostedbymaroon,
+  .hostedbymaroon * ,
+  .hostedbymaroon a,
+  p.hostedbymaroon {
+font-weight: 600 !important;
+font-size: 16px;
+text-decoration: none!important;
+line-height: 19px;
+color: #6C1D45 !important;
+
+
+  }
+
+  .hdng {
+    padding-bottom: 50px;
+  }
+
+  .filter-title {
+    width: 140px; 
+  }
+  
+ 
+   .eventcardimg {
+  transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;}
+ .eventcardimg:hover{   -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.01); /* Firefox */
+    -ms-transform:scale(1.01); /* IE 9 */
+    -o-transform:scale(1.01); /* Opera */
+     transform:scale(1.01);}
+
+
+  #cat-filter, #cat-filterr {
+    border-radius: 30px !important; 
+    border-color: #6C1D45;
+    border: 2px solid #6C1D45;
+    width: 140px;
+    height: 50px;
+  }
+  select,
+  option {
+    color: #6C1D45 !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background-position: calc(100% - 0.75rem) center !important;
+    -moz-appearance:none !important;
+    -webkit-appearance: none !important; 
+    appearance: none !important;
+    padding-right: 2rem !important;
+  }
+</style>
+
+<script> 
+// Preselected collections filtering
+const colFiltering = () => {
+  // Click event
+  const categories = document.querySelector('#cat-filter');
+  categories.addEventListener('change', () => {
+    const selectedValue = categories.value.toLowerCase();
+    console.log("selectedValue");
+    // Display/hide logic func
+    showSelectedCollections(selectedValue);
+
+  })
+
+  const showSelectedCollections = (selectedValue) => {
+    /**
+     * @param String = selected option of filter menu
+    */
+      // Select all collections
+    const allCollections = document.querySelectorAll('.eventcard');
+    allCollections.forEach( el => {
+      // Transform to lowercase
+      const collectionType = el.getAttribute('data-metafield').toLowerCase();
+      if ( selectedValue !== collectionType ) {
+        el.style.display = 'none';
+      } else {
+        el.style.display = 'block';
+      }
+      
+      // Display all collections if not filtering
+      if ( selectedValue === 'none-selected') {
+        el.style.display = 'block';
+      }
+    })
+  }
+
+}
+
+
+colFiltering();
+document.addEventListener('shopify:section:load', colFiltering)
+
+</script>
+ 
+
+<script> 
+  // Preselected collections filtering
+  const colFiltering = () => {
+    // Click event
+    const categories = document.querySelector('#cat-filter');
+    categories.addEventListener('change', () => {
+      const selectedValue = categories.value.toLowerCase();
+      console.log("selectedValue");
+      // Display/hide logic func
+      showSelectedCollections(selectedValue);
+  
+    })
+  
+    const showSelectedCollections = (selectedValue) => {
+      /**
+       * @param String = selected option of filter menu
+      */
+        // Select all collections
+      const allCollections = document.querySelectorAll('.eventcard');
+      allCollections.forEach( el => {
+        // Transform to lowercase
+        const collectionType = el.getAttribute('data-all').toLowerCase();
+        if ( selectedValue !== collectionType ) {
+          el.style.display = 'none';
+        } else {
+          el.style.display = 'block';
+        }
+        
+        // Display all collections if not filtering
+        if ( selectedValue === 'none-selected') {
+          el.style.display = 'block';
+        }
+      })
+    }
+  
+  }
+  
+  
+  colFiltering();
+  document.addEventListener('shopify:section:load', colFiltering)
+  
+  </script>

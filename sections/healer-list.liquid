@@ -28,16 +28,18 @@
 
   {% assign collection = collections[block.settings.collection] | default: false %}
     <div class="healercard" style=" margin: 0 10px;" data-metafield="{{ collection.metafields.custom.type }}">
-        {% if block.settings.image != blank %}
+      <a href="{{collection.url}}"> 
+      {% if block.settings.image != blank %}
         {%render 'gaia-image',
         image: block.settings.image %}
         {% else  %}
         <img src="{{collection.featured_image | img_url: 'medium'}}"> 
+      </a>
       {%endif %}
     
      <h5 class="pink bold ct" style="margin-top: 20px;">  
       {{collection.title}} 
-    </h5> 
+    </h5>  
      <div class="about">
       <div class="healersocials">   
       <div class="ig"> 
@@ -45,13 +47,13 @@
         {%render 'healer-ig'%}
       </a>
       </div>
-      <div class="site">
+      <div class="site"> 
         <a href="{{collection.metafields.custom.healer_site}}">
           {%render 'healer-site'%}
         </a>
       </div>
       </div>  
-      <span class="maroon typeof">
+      <span class="maroon typeof" style="font-style: italic;">
       {{collection.metafields.custom.type}} 
       </span> </div>
       <p class="grayregular desc">
@@ -59,7 +61,7 @@
       </p>
        
  
-      <p class="maroon evup">
+      <p class="maroon evup" style="font-style: italic;">
         Upcoming Events
       </p>
       <span class="grayregular upev">
