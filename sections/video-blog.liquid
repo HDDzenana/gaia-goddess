@@ -208,12 +208,14 @@
   <section id="ProductFeature--{{ section.id }}" class="blog-article" data-section-id="{{ section.id }}" data-section-type="product-feature">
     <div class="upperpart-{{section.id}} center "> 
  
-      <div class="aboutarticle-{{section.id}}">  <div class="brti" style="padding-top: 15px;"> 
-        <div class="breadcrumbs" style="display: flex; align-items: center; margin-bottom: 50px;"> {%render 'brhome'%} 
-          <a href="{{section.settings.prevlink}}" style="
-        margin-top: 10px;    font-weight: bolder;">
-          <strong> <span class="pink" style="color:#EB6FBD ;"> {{section.settings.prevtext}} ></span><span class="maroon"> {{article.title}}</span></strong></a>
-        </div>
+      <div class="aboutarticle-{{section.id}}"> 
+        <div class="brti" style="padding-top: 20px ; padding-left: 30px;"> 
+          <div class="breadcrumbs" style="display: flex; align-items: center; padding-top: 100px;margin-bottom: 50px;"> {%render 'brhome'%} 
+            <a href="{{section.settings.prevlink}}" style="
+          margin-top: 10px;    font-weight: bolder;">
+            <strong> <span class="pink" style="color:#EB6FBD ;"> {{section.settings.prevtext}} ></span><span class="maroon"> {{article.title}}</span></strong></a>
+          </div>
+        
      <div class="td">  
     {%if article.tags contains 'general' %}
 <div class="icn" style="    width: 50px !important;
@@ -448,8 +450,7 @@ color: #6c1d45;
 }
 @media only screen and (min-width: 900px) {
 .aboutarticle-{{section.id}} {
-width: 60%;
-margin: auto;
+ margin: auto;
 margin-bottom: 50px;
 }
 }   .card-image,
@@ -515,5 +516,6 @@ color: #575757;
 max-width: 900px;
 text-align: center;
 margin: auto;
+width: 60%;
 }
   </style>

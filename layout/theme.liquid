@@ -51,6 +51,13 @@
     @import url(https://static.mailerlite.com/assets/plugins/groot/modules/includes/groot_fonts/import.css?version=1649315);
   </style>
 
+<style>
+  .player .vp-target,
+.player .vp-video-wrapper, 
+.player .vp-video-wrapper.transparent {
+  border-radius: 30px !important;
+}
+</style>
   {%- comment -%}{{- 'theme.dev.css' | asset_url | stylesheet_tag -}}{%- endcomment -%}
 
   {%- comment -%}
