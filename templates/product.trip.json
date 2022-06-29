@@ -216,7 +216,7 @@
         "subheader_color": "#eb6fbd",
         "heading": "<h1> A Travel Experience for History lovers <\/h1>",
         "subheading": "",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <\/p><p>Mus vulputate scelerisque mollis luctus risus nulla. <\/p><p>Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <\/p><p>Mus vulputate scelerisque mollis luctus risus nulla. <\/p><p>Pharetra laoreet felis euismod et. Id bibendum.<br\/><\/p><p><\/p>",
         "button_text": "Add to cart",
         "button_link": "",
         "button_color": "#6c1d45",
