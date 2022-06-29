@@ -3,6 +3,7 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": true,
         "bgimg": "shopify:\/\/shop_images\/image_18_6f1490ae-558d-446a-8b48-5c17a01d457d.png",
         "aos": true,
         "bg": "",
@@ -163,6 +164,7 @@
     "16545924127a999d6a": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": false,
         "aos": true,
         "bg": "",
         "image_layout": "square",
