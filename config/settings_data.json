@@ -76,8 +76,8 @@
           "footer-block-0": {
             "type": "link",
             "settings": {
-              "menu": "main-menu-public-portion",
-              "show_title": false
+              "menu": "footer-menu-public-portion",
+              "show_title": true
             }
           },
           "b4636f98-69e5-475b-9882-e632b447c9da": {
