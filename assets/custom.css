@@ -150,6 +150,7 @@ margin: 0 !important}
   background: none;
   border-radius: 40px;
   height: 60px;
+  color: white !important;
 }
 #CreateCustomer > input::placeholder, #CustomerLogin > input::placeholder, .return, #RecoverPassword {
   color: #FFFFFF;
@@ -308,13 +309,8 @@ Video blog styling
   border-radius: 30px !important;
 }
 
-{% comment %}
-Hide footer on contact
-  {%endcomment %}
-
-  {% if template contains 'contact' %}
-  .site-footer,
-  #shopify-section-footer {
-    display: none;
-  }
-    {% endif %}
+{% if template contains 'contact' %}
+#siteFooter, .site-footer {
+  display: none;
+}
+{% endif %}

@@ -30,7 +30,7 @@
             <a href="#recover" id="RecoverPassword" style="font-weight:bold;">{{ 'customer.login.forgot_password' | t }}</a>
           {% endif %}
 
-          <button class="btn" type="submit">Sign-In</button>
+          <!-- <button class="btn" type="submit">Sign-In</button> -->
           <div class="return light-gray">
             Don't have an account?
             <a href="{{ routes.account_register_url }}" style="color: #EB6FBD; text-decoration: underline;">Create now!</a>
@@ -38,9 +38,12 @@
         {% endform %}
       </div>
 
-      <div class="text-left" id="RecoverPasswordForm" style="display: none;">
-        <h2 class="account__heading account__heading--small">{{ 'customer.recover_password.title' | t }}</h2>
-        <p class="light-gray">{{ 'customer.recover_password.subtext' | t }}</p>
+      <div class="text-center" id="RecoverPasswordForm" style="display: none;">
+        <h2 class="account__heading account__heading--small" style="padding: 0; margin:0">
+          {{ 'customer.recover_password.title' | t }}</h2>
+        <p class="text-light" style="
+        margin-bottom: 20px !important;
+    ">{{ 'customer.recover_password.subtext' | t }}</p>
         <div class="form-vertical">
           {% form 'recover_customer_password', id: 'RecoverCustomerPassword' %}
             {{ form.errors | default_errors }}
@@ -49,8 +52,12 @@
               {% assign resetPassword = true %}
             {% endif %}
             <label class="hidden-label" for="RecoverEmail">{{ 'customer.recover_password.email' | t }}</label>
-            <input type="email" value="" name="email" id="RecoverEmail" class="input--full" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off" required>
-            <button class="btn" type="submit">{{ 'customer.recover_password.submit' | t }}</button>
+            <input type="email" value="" name="email" id="RecoverEmail" class="input--full" placeholder="{{ 'customer.recover_password.email' | t }}" autocorrect="off" autocapitalize="off" required style="
+            border-radius: 40px;
+            background: transparent;
+            color: white !important;
+        ">
+            <button class="btn" type="submit" style="width: 100% !important;">{{ 'customer.recover_password.submit' | t }}</button>
             <a class="return light-gray" href="#!" id="HideRecoverPasswordLink" type="button">{{ 'customer.recover_password.cancel' | t }}</a>
           {% endform %}
         </div>
