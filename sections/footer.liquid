@@ -287,10 +287,10 @@
 								<ul class="contact_us_list">
 									{% if block.settings.footer_email %}<li>{%- render 'footer-email' -%}<a style="text-decoration: none;" href="mailto:info@gaiagoddesslifestyle.com">
 										<div class="footer_contact">
-									  info@gaiagoddesslifestyle.com
-										</div>
+							<span class="grayregular hoverpink">  		  info@gaiagoddesslifestyle.com
+									</span>		</div>
 									   </a></li>{% endif %}
-									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%}{{ block.settings.footer_phone_text }}</li>{% endif %}
+									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%} <span class="grayregular hoverpink"> {{ block.settings.footer_phone_text }}</span></li>{% endif %}
 								</ul>
 
 							{%- if block.settings.footer_social_title != blank -%}

@@ -11755,3 +11755,7 @@ display: none !important;
   .healers-filter__dropdown * {
     font-weight: bold !important;
   }
+
+  .hoverpink:hover {
+    color: #EB6FBD !important;
+  }
