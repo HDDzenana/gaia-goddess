@@ -311,5 +311,5 @@ Video blog styling
 
 
 #ymq-price-addons {
-  display: none;
+  display: none !important;
 }
