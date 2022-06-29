@@ -25,7 +25,7 @@
     "cart_type": "drawer",
     "enable_cart_animation": false,
     "enable_cart_notes": false,
-    "enable_accept_terms": true,
+    "enable_accept_terms": false,
     "social_facebook_link": "https:\/\/www.facebook.com\/gaiagoddesslifestyle",
     "social_twitter_link": "https:\/\/twitter.com\/gaiagoddesslife",
     "social_pinterest_link": "",
