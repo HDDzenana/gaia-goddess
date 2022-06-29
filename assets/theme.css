@@ -1530,7 +1530,7 @@ sub {
     white-space: nowrap;
     padding: 0 calc(var(--gutter) - var(--grid-gutter)) 0 var(--gutter);
     font-size: 0;
-    scrollbar-width: none;
+    scrollbar-width: 0px !important;
     -ms-overflow-style: none;
   }
   .grid--mobile-carousel::-webkit-scrollbar {
