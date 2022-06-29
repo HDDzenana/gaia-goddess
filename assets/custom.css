@@ -307,3 +307,14 @@ Video blog styling
 .player .vp-video-wrapper.transparent {
   border-radius: 30px !important;
 }
+
+{% comment %}
+Hide footer on contact
+  {%endcomment %}
+
+  {% if template contains 'contact' %}
+  .site-footer,
+  #shopify-section-footer {
+    display: none;
+  }
+    {% endif %}
