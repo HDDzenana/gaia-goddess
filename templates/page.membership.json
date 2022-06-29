@@ -3,16 +3,17 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": true,
         "bgimg": "shopify:\/\/shop_images\/image_18_6f1490ae-558d-446a-8b48-5c17a01d457d.png",
         "aos": true,
         "bg": "",
         "image_layout": "square",
-        "image_position": "inline",
+        "image_position": "overlapping",
         "text_position": "right",
         "text_alignment": "left",
         "mobile_button_position": "center",
         "showpointmobile": false,
-        "image_1": "shopify:\/\/shop_images\/Screenshot_2022-06-08_at_16.35.41.png",
+        "image_1": "shopify:\/\/shop_images\/image_19.png",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
@@ -163,6 +164,7 @@
     "16545924127a999d6a": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": false,
         "aos": true,
         "bg": "",
         "image_layout": "square",
@@ -181,7 +183,7 @@
         "heading": "Membership Benefits",
         "subheading": "",
         "ssubheading_color": "#800000",
-        "description": "<p>In the next year, Gaia Goddess will transition to tiered paid memberships with more exciting content, web features and valualbe perk across multiple subscriptions to choose from. All members who <strong>sign-up now for our limited free membership<\/strong> will receive an automatic discounted membership pricing if they choose to upgrade.<br\/><br\/>We are missing one sentence For further questions please contact <a href=\"mailto:info@gaiagoddesslifestyle.com\" target=\"_blank\">info@gaiagoddesslifestyle.com<\/a>.<\/p>",
+        "description": "<p>In the next year, Gaia Goddess will transition to tiered paid memberships with more exciting content, web features and valualbe perk across multiple subscriptions to choose from. All members who <strong>sign-up now for our limited free membership<\/strong> will receive an automatic discounted membership pricing if they choose to upgrade.<br\/><br\/>We are missing one sentence For further questions please contact <a class=\"pink\" href=\"mailto:info@gaiagoddesslifestyle.com\" target=\"_blank\">info@gaiagoddesslifestyle.com<\/a>.<\/p>",
         "button_text": "",
         "button_link": "",
         "button_color": "#800000",

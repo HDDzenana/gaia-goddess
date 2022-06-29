@@ -3,6 +3,7 @@
     "165163688289226a64": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": true,
         "aos": true,
         "bg": "linear-gradient(90deg, rgba(254, 250, 251, 1) 60%, rgba(254, 241, 245, 1) 60%)",
         "image_layout": "square",

@@ -62,6 +62,7 @@
     "165575462437461494": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": false,
         "aos": false,
         "bg": "#FEFAFB",
         "image_layout": "square",
@@ -77,14 +78,14 @@
         "caption_color": "",
         "caption": "",
         "text_color": "#6c1d45",
-        "heading": "A Retreat Experience\nfor Yoga lovers",
+        "heading": "<h1 style=\"line-height: 50px !important;\">\nA Retreat Experience\nfor Yoga lovers<\/h1>",
         "subheading": "",
         "ssubheading_color": "#6c1d45",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
         "button_text": "Add to cart",
         "button_link": "",
         "button_color": "#6c1d45",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
         "video_url": "",
         "bg_color": ""
       }
@@ -211,6 +212,127 @@
         "q_color": "",
         "a_color": ""
       }
+    },
+    "16565072224010fbc4": {
+      "type": "prodswatch",
+      "blocks": {
+        "afdd44d2-beaf-4d08-9636-2cf1906bd07e": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 1",
+            "switch_btn_color": "#6c1d45",
+            "switch_btn_text_color": "#eb6fbd",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "19a1dc1a-4be2-4492-97ab-80ec9921bdd0": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 2",
+            "switch_btn_color": "#6c1d45",
+            "switch_btn_text_color": "#eb6fbd",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "a21453dd-5ac8-4bd1-a92f-aa8eb83104ee": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 3",
+            "switch_btn_color": "#6c1d45",
+            "switch_btn_text_color": "#eb6fbd",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "d5e5ac9b-8326-40cd-a53c-971724cde143": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 4",
+            "switch_btn_color": "#6c1d45",
+            "switch_btn_text_color": "#eb6fbd",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "14d73aa6-8afa-4a1c-af9f-6e9fe26ed709": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 5",
+            "switch_btn_color": "#6c1d45",
+            "switch_btn_text_color": "#eb6fbd",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "d8305ec8-f370-4a96-af3a-7a10bb994002": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 6",
+            "switch_btn_color": "#6c1d45",
+            "switch_btn_text_color": "#eb6fbd",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "de4d1a72-4a43-43dc-9082-4326676846a2": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 7",
+            "switch_btn_color": "#6c1d45",
+            "switch_btn_text_color": "#eb6fbd",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "afdd44d2-beaf-4d08-9636-2cf1906bd07e",
+        "19a1dc1a-4be2-4492-97ab-80ec9921bdd0",
+        "a21453dd-5ac8-4bd1-a92f-aa8eb83104ee",
+        "d5e5ac9b-8326-40cd-a53c-971724cde143",
+        "14d73aa6-8afa-4a1c-af9f-6e9fe26ed709",
+        "d8305ec8-f370-4a96-af3a-7a10bb994002",
+        "de4d1a72-4a43-43dc-9082-4326676846a2"
+      ],
+      "settings": {
+        "when": "June 4 to June 11, 2022",
+        "schedule": "Schedule",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<br\/><br\/>*Host and schedule subject to change.<\/p>",
+        "heading": "",
+        "subheading": "",
+        "background": "transparent",
+        "padding": "10"
+      }
     }
   },
   "order": [
@@ -218,6 +340,7 @@
     "165575462437461494",
     "faq",
     "related",
-    "1655754744f7463197"
+    "1655754744f7463197",
+    "16565072224010fbc4"
   ]
 }

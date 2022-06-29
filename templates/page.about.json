@@ -7,7 +7,7 @@
           "type": "Image",
           "settings": {
             "fw": true,
-            "image": "shopify:\/\/shop_images\/8_hVCVKx.jpg",
+            "image": "shopify:\/\/shop_images\/image_9.png",
             "dm": false
           }
         },
@@ -15,7 +15,7 @@
           "type": "Image",
           "settings": {
             "fw": true,
-            "image": "shopify:\/\/shop_images\/X7A0206.jpg",
+            "image": "shopify:\/\/shop_images\/image_10_7df20ef8-532f-403f-a585-a2b84c8071af.png",
             "dm": true
           }
         }
@@ -25,8 +25,8 @@
         "e7852d38-22b1-4d5c-bfdb-6f1d73fd6201"
       ],
       "settings": {
-        "padding_top": 64,
-        "padding_bottom": 76,
+        "padding_top": 100,
+        "padding_bottom": 100,
         "bg": "#fef1f5",
         "heading": "Let's get the <br> balance of living!",
         "heading_color": "#6c1d45",
@@ -36,6 +36,7 @@
     "product-feature": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": false,
         "aos": true,
         "bg": "#fefafb",
         "image_layout": "square",

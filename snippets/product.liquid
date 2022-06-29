@@ -365,10 +365,19 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
 .product__description ul {
         list-style-type: none;
     }
-    .product__description *
+    .product__description .rte td
     {
       margin-top: 0 !important;
       object-fit: contain !important;
       border: none;
+      padding-left: 0px !important;
     }
+  
+  .prodswatch-template--15663482306737__16557573091d4ff900 tr, td {
+border: none !important;
+    padding-left: 0 !important;
+  }
+  .product__description * {
+    border: 0px !important;
+  }
 </style>

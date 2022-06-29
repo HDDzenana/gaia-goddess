@@ -308,9 +308,8 @@ Video blog styling
 .player .vp-video-wrapper.transparent {
   border-radius: 30px !important;
 }
-
-{% if template contains 'contact' %}
-#siteFooter, .site-footer {
-  display: none;
+.ymq_tool_span,
+.ymq_option_text_span,
+#ymq-price-addons {
+  display: none !important;
 }
-{% endif %}

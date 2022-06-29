@@ -334,7 +334,7 @@
       "label": "Subheading Color",
       "default": "#800000"
     }, {
-      "type": "richtext",
+      "type": "liquid",
       "id": "description",
       "label": "Description",
       "default": "<p>Use this text to share information about the point put forth above. Describe a product, your brand, or what makes you special.</p>"
@@ -456,6 +456,10 @@
 .pf-{{section.id}} {
   min-height: 90vh !important;
   display: flex;
+}
+.pf-{{section.id}}  .product-feature__images {
+    width: 65% !important;
+    margin-left: -10%;
 }
 
 {% endif %}

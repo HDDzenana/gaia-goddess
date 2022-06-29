@@ -47,7 +47,7 @@
         "social-sharing"
       ],
       "settings": {
-        "image_gallery": "zoom",
+        "image_gallery": "none",
         "enable_video_looping": false,
         "bg_color": ""
       }
@@ -177,6 +177,7 @@
       "type": "section-product-feature",
       "disabled": true,
       "settings": {
+        "fullheight": false,
         "aos": false,
         "bg": "#FEFAFB",
         "image_layout": "square",
@@ -211,15 +212,15 @@
         "text_alignment": "left",
         "image_1": "shopify:\/\/shop_images\/omar-elsharawy-pwMbtwA9LRc-unsplash_61f16d3d-1de3-40b8-b384-231e83dfd2bc.png",
         "image_link_1": "",
-        "header_color": "#6C1D45",
-        "subheader_color": "#EB6FBD",
+        "header_color": "#6c1d45",
+        "subheader_color": "#eb6fbd",
         "heading": "<h1> A Travel Experience for History lovers <\/h1>",
         "subheading": "",
-        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <\/p><p>Mus vulputate scelerisque mollis luctus risus nulla. <\/p><p>Pharetra laoreet felis euismod et. Id bibendum.<\/p>",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <\/p><p>Mus vulputate scelerisque mollis luctus risus nulla. <\/p><p>Pharetra laoreet felis euismod et. Id bibendum.<br\/><\/p><p><\/p>",
         "button_text": "Add to cart",
         "button_link": "",
         "button_color": "#6c1d45",
-        "button_hover_color": "#FAFAFA",
+        "button_hover_color": "#fafafa",
         "bg_color": "#fef1f5"
       }
     },
@@ -337,9 +338,9 @@
         "max_width": "74rem",
         "margin_top": 1,
         "margin_bottom": 1,
-        "background_color": "#ffffff",
-        "border_color": "#eeeeee",
-        "panel_color": "#fdfdfd",
+        "background_color": "rgba(0,0,0,0)",
+        "border_color": "rgba(0,0,0,0)",
+        "panel_color": "rgba(0,0,0,0)",
         "q_size_small": 1,
         "q_size_large": 1.4,
         "q_color": "",
