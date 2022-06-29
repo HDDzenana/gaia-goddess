@@ -6,20 +6,37 @@
         "title": {
           "type": "title",
           "settings": {
+            "subheading": "breadcrumbs",
+            "show_rating": true,
+            "show_rating_count": false
           }
         },
         "form": {
           "type": "form",
           "settings": {
+            "show_payment_button": true
           }
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {
+            "tabs_style": "accordions",
+            "tab_title_1": "Tab",
+            "tab_content_1": "<p>This content type will accept <strong>rich text<\/strong> to help with adding styles and links to additional pages or content. Use this to add supplementary information to help your buyers.<\/p>",
+            "tab_title_2": "Info",
+            "tab_content_2": "<p>You can use product metafields to assign content to this tab that is unique to an individual product.  Use tabs to highlight unique features, sizing information, or other sales information.<\/p>",
+            "tab_title_3": "",
+            "tab_content_3": "",
+            "tab_title_4": "",
+            "tab_content_4": "",
+            "tab_title_5": "",
+            "tab_content_5": ""
           }
         },
         "social-sharing": {
           "type": "social-sharing",
+          "disabled": true,
           "settings": {
           }
         }
@@ -31,6 +48,9 @@
         "social-sharing"
       ],
       "settings": {
+        "image_gallery": "zoom",
+        "enable_video_looping": false,
+        "bg_color": ""
       }
     },
     "faq": {
@@ -40,16 +60,22 @@
         "faq-0": {
           "type": "item",
           "settings": {
+            "title": "Question",
+            "answer": "<p>Use this answer block to discuss some commonly asked questions you've discovered from your customers interactions. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your product or collection. This section will appear across all products.<\/p>"
           }
         },
         "faq-1": {
           "type": "item",
           "settings": {
+            "title": "Question",
+            "answer": "<p>Use this answer block to discuss some commonly asked questions you've discovered from your customers interactions. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your product or collection. This section will appear across all products.<\/p>"
           }
         },
         "faq-2": {
           "type": "item",
           "settings": {
+            "title": "Question",
+            "answer": "<p>Use this answer block to discuss some commonly asked questions you've discovered from your customers interactions. You could discuss product details, size fit, shipping policies, or anything you think would help merchants make an informed decision about your product or collection. This section will appear across all products.<\/p>"
           }
         }
       },
@@ -59,17 +85,147 @@
         "faq-2"
       ],
       "settings": {
+        "title": "FAQ",
+        "subheading": "Questions and answers",
+        "text": "",
+        "bg_color": ""
       }
     },
     "related": {
       "type": "related-products",
       "settings": {
+        "show_section": true,
+        "limit": 4,
+        "product_recommendations_heading": "You May Also Like",
+        "bg_color": ""
+      }
+    },
+    "16565069889955e322": {
+      "type": "prodswatch",
+      "blocks": {
+        "68d4074c-996b-4e5d-a08d-64c16e99e653": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 1",
+            "switch_btn_color": "#6C1D45",
+            "switch_btn_text_color": "#EB6FBD",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "abc0a482-e930-4ae1-b1cd-0e490b2e2b59": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 2",
+            "switch_btn_color": "#6C1D45",
+            "switch_btn_text_color": "#EB6FBD",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "e5f6772a-27e9-409e-a67e-d7b4bb9fb534": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 3",
+            "switch_btn_color": "#6C1D45",
+            "switch_btn_text_color": "#EB6FBD",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "ee924b80-fba7-4679-a05f-d7d6bfeaaaee": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 4",
+            "switch_btn_color": "#6C1D45",
+            "switch_btn_text_color": "#EB6FBD",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "3dbdf753-83b7-49d9-b75d-2458b187bdcd": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 5",
+            "switch_btn_color": "#6C1D45",
+            "switch_btn_text_color": "#EB6FBD",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "a498adc4-6a48-45ae-89f0-e1197fbea199": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 6",
+            "switch_btn_color": "#6C1D45",
+            "switch_btn_text_color": "#EB6FBD",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        },
+        "0ae8a5c2-a8a4-4344-8dcf-33e4b1b76e28": {
+          "type": "text",
+          "settings": {
+            "switch_btn_title": "DAY 7",
+            "switch_btn_color": "#6C1D45",
+            "switch_btn_text_color": "#EB6FBD",
+            "content_heading": "",
+            "content_subheading": "",
+            "content_desc": "",
+            "content_btn": "",
+            "content_btn_url": "",
+            "metafield": "{{ product.metafields.global.day2.value }}"
+          }
+        }
+      },
+      "block_order": [
+        "68d4074c-996b-4e5d-a08d-64c16e99e653",
+        "abc0a482-e930-4ae1-b1cd-0e490b2e2b59",
+        "e5f6772a-27e9-409e-a67e-d7b4bb9fb534",
+        "ee924b80-fba7-4679-a05f-d7d6bfeaaaee",
+        "3dbdf753-83b7-49d9-b75d-2458b187bdcd",
+        "a498adc4-6a48-45ae-89f0-e1197fbea199",
+        "0ae8a5c2-a8a4-4344-8dcf-33e4b1b76e28"
+      ],
+      "settings": {
+        "when": "June 4 to June 11, 2022",
+        "schedule": "Schedule",
+        "description": "",
+        "heading": "",
+        "subheading": "",
+        "background": "transparent",
+        "padding": "10"
       }
     }
   },
   "order": [
     "main",
     "faq",
-    "related"
+    "related",
+    "16565069889955e322"
   ]
 }
