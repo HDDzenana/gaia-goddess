@@ -285,9 +285,12 @@
 	
 							<div class="rte">
 								<ul class="contact_us_list">
-									{% if block.settings.footer_email %}<li>{%- render 'footer-email' -%}<a style="text-decoration: none;" href="mailto:info@gaiagoddesslifestyle.com">
+									{% if block.settings.footer_email %}<li>{%- render 'footer-email' -%}<a style="text-decoration: none;"  >
 										<div class="footer_contact">
-							<span class="grayregular hoverpink">  		  info@gaiagoddesslifestyle.com
+							<span class="grayregular hoverpink" style="
+    user-select: none;
+    -webkit-user-modify: read-only;overflow: hidden;
+" >  		  info@gaiagoddesslifestyle.com
 									</span>		</div>
 									   </a></li>{% endif %}
 									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%} <span class="grayregular hoverpink"> {{ block.settings.footer_phone_text }}</span></li>{% endif %}
