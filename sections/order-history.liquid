@@ -323,11 +323,18 @@ overflow: hidden;
 <!-- order -->
 
  {%if customer %}
- <h1 class="wrapper maroonbold animate__animated animate__fadeInUp" style="
- margin: 50px 5px;">Order History </h1>
+ 
 {% for order in customer.orders %}
+{% if customer.orders.size == 0 %}
+<h1 class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
+margin: 50px 5px;" >At this moment, you have no orders. </h1>
+<p class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
+margin: 50px 5px;" > Click <a href="/pages/events">  here </a>  to browse events.</p>
+       {% endif %}
 {% paginate customer.orders by 20 %}
 {% if customer.orders.size != 0 %}
+<h1 class="wrapper maroonbold animate__animated animate__fadeInUp" style="
+margin: 50px 5px;">Order History </h1> 
   <div class="table-wrap oh-{{section.id}} animate__animated animate__fadeInUp" >
     <table class="full">
       <thead class="desktop-order">
@@ -343,6 +350,7 @@ overflow: hidden;
       </thead>
       <tbody>
         {% for order in customer.orders %}
+      
           <tr class="responsive-order">
             <th>{{ 'customer.orders.date' | t  | link_to: order.customer_url }}</th>
             <td>{{ order.created_at | date: format: 'month_day_year'  | link_to: order.customer_url }}</td>
