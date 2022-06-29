@@ -91,7 +91,9 @@
                           {%- endif -%}
 
                           {%- if customer_name != blank -%}
-                            <div class="testimonial__user__name" style="font-size: 20px;color: {{block.settings.customer_name_color}}; font-weight: 700; margin: 10% 0;">{{ customer_name | escape }}</div>
+                            <div class="testimonial__user__name" style="
+                            font-size: 25px;
+                            line-height: 30px;color: {{block.settings.customer_name_color}}; font-weight: 700; margin: 10% 0 0 0;">{{ customer_name | escape }}</div>
                             <subtitle class="center" style="margin-top: -4%;margin-bottom: 4%; color:#6C1D45;"><p>{{block.settings.short_text}}</p></subtitle>
                           {%- endif -%}
                         </div>
@@ -327,9 +329,13 @@
       display: flex;
       flex-direction: column-reverse !important;
       border-radius: {{section.settings.border_radius}}%;
-	  min-height: 380px;
-    }
+	  min-height: 425px;
+    justify-content: flex-end;
+}
 
+.testimonial__user__name {
+  min-height: 48px;
+}
 
     .crevs-{{block.id}}{
       padding: 0 5.2%;
