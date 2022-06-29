@@ -11759,3 +11759,7 @@ display: none !important;
   .hoverpink:hover {
     color: #EB6FBD !important;
   }
+   .player .vp-video-wrapper, 
+.player .vp-video-wrapper.transparent {
+  border-radius: 30px !important;
+}

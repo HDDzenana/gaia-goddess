@@ -298,3 +298,12 @@ product__form, .buttons-grid {
 }
 }
 {%endfor%}
+
+
+ {% comment %} 
+Video blog styling
+ {% endcomment %}
+ .player .vp-video-wrapper, 
+.player .vp-video-wrapper.transparent {
+  border-radius: 30px !important;
+}
