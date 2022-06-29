@@ -2,6 +2,77 @@
 <script src="{{ 'component-switch-blocks.js' | asset_url }}" defer="defer"></script>
 
 <style>
+
+  /* Arrows START */
+  @media (max-width: 768px) {
+    .switch-blocks-{{ section.id }}- * { 
+scrollbar-color: white !important;
+}
+.prodswatch-{{section.id}}::-webkit-scrollbar-thumb {
+  min-width: 11px !important;\scrollbar-color: white !important;
+}
+    .icon-container {
+      position: absolute;
+      top: 18%;
+      left: 18%;
+      width: 60%;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+    }
+    .switch-blocks-{{ section.id }}- .buttons-container { 
+      max-width: 100% !important;
+    }
+    {% for block in section.blocks %}
+    .switch-blocks .buttons-container .selected-{{ block.id }} {
+    
+      min-width: 369px  !important;
+      text-decoration: underline;
+      text-decoration-color: #EB6FBD;
+    text-underline-position: under;
+
+      text-decoration-thickness: 2px;
+    width: 350px;
+    max-width: 100vw !important;
+    text-align: center;
+    }
+
+    .icon-container__rt {
+
+    transform: rotateZ(270deg);
+    }
+
+    .icon-container__lft{
+
+    transform: rotateZ(90deg);
+    } 
+    .switch-blocks .buttons-container .selected-{{ block.id }}:first-of-type {
+      padding: 0 !important;
+      margin-left: -25px;
+    }
+    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(5n) {
+      padding-left: 14% !important;
+    }
+    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(2n) {
+      margin-left: -10px !important;
+    }.switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(6n) {
+      padding-left: 20% !important;
+    }
+    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(4n) {
+      margin-left: 5px !important;
+    }
+    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(3n) {
+      /* margin-left: 0; */
+    /* margin: 0; */
+    /* padding: 20px; */
+    padding-left: 3% ;}
+    {%endfor %}
+  }
+
+  .switch-blocks {
+    position: relative;
+  }
+  /* Arrows END */
   .switch-blocks .buttons-container {
     display: flex;
     flex-direction: row;
@@ -105,6 +176,9 @@
     .switch-blocks-{{ section.id }}- .inner {
       padding-left: 5px;
       padding-right: 5px;
+
+    width: 350px;
+
     }  .prodswatch-{{section.id}} {
         display: flex;
         flex-wrap: wrap;
@@ -159,8 +233,10 @@ padding: 20px 0 0 0 ;
       margin: auto;
     }
     .switch-blocks-{{ section.id }}- .buttons-container button {
-      margin: 0 2px;
-      min-width: 110px;
+      margin: auto;
+      
+    min-width:350px;
+    width: 350px;
     }
     .switch-blocks-{{ section.id }}- .content-btn a {
       margin: auto;
@@ -215,6 +291,16 @@ padding: 20px 0 0 0 ;
     %}
     {% endunless %}
     <div class="buttons-container">
+      <div class="icon-container">
+        <!-- Left arrow -->
+        <div class="arrow-icon icon-container__lft">
+          {% render 'icon-chevron-down' %}
+        </div>
+        <!-- Right arrow -->
+        <div class="arrow-icon icon-container__rt">
+          {% render 'icon-chevron-down' %}
+        </div>
+      </div>
       {% for block in section.blocks %}
       {% unless block.settings.switch_btn_title == blank %}
       <style>
@@ -222,6 +308,13 @@ padding: 20px 0 0 0 ;
           color: {{ block.settings.switch_btn_text_color }};
           /* animation: shadow-pulse 1s infinite; */
           --btnColor: {{ block.settings.switch_btn_color }};
+    font-family: 'Acumin_Pro';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: #6C1D45;
+
  
         }
         .switch-blocks .buttons-container .selected-{{ block.id }} {
@@ -237,7 +330,7 @@ padding: 20px 0 0 0 ;
           color: {{ block.settings.switch_btn_color }};
         }
       </style>
-        <button class="block-btn block-btn-{{ block.id }} {% if forloop.first %} selected-{{block.id}} {% endif %}" data-id={{ block.id }}>{{ block.settings.switch_btn_title }}</button>
+        <button data-id="{{block.id}}" class="block-btn block-btn-{{ block.id }} {% if forloop.first %} selected-{{block.id}} {% endif %}" data-id={{ block.id }}>{{ block.settings.switch_btn_title }}</button>
         {% endunless %}
       {% endfor %}
     </div>
@@ -277,7 +370,6 @@ padding: 20px 0 0 0 ;
       btn.addEventListener('click', (e) => {
         const id = btn.getAttribute('data-id')
         btn.classList.add(`selected-${id}`);
-        console.log(e.target)
         switchButtons.forEach(el => {
           const id = el.getAttribute('data-id')
           if (e.target.getAttribute('data-id') !== id) {
@@ -299,6 +391,93 @@ padding: 20px 0 0 0 ;
   }
   switchBlocks();
   document.addEventListener('shopify:section:load', switchBlocks);
+
+
+
+  // Arrow scroll
+  const arrowScroll = () => {
+    // Position range - amount of units slider will move 
+    let posRange = 360;
+
+    // Select all block buttons
+    const blockButtons = document.querySelectorAll('.switch-blocks-{{ section.id }}- .block-btn');
+
+   const scrollClickPosition = (currentPostion) => {
+    // First button
+    if (currentPostion === 0) {
+      // Select first button
+      blockButtons[0].click();
+    }
+
+    if (currentPostion === posRange) {
+      blockButtons[1].click();
+    }
+
+    if (currentPostion === (posRange * 2)) {
+      blockButtons[2].click();
+    } 
+
+    if (currentPostion === (posRange * 3)) {
+      blockButtons[3].click();
+    } 
+
+    if (currentPostion === (posRange * 4)) {
+      blockButtons[4].click();
+    } 
+
+    if (currentPostion === (posRange * 5)) {
+      blockButtons[5].click();
+    } 
+
+    if (currentPostion === (posRange * 6)) {
+      blockButtons[6].click();
+    } 
+    
+   }
+
+    // Scrollable object
+    const scrollableObj = document.querySelector(`.switch-blocks-{{ section.id }}- .buttons-container`);
+    // Arrow click handler
+    /**
+     * @param {string} classname - classname of the clickable element
+    */
+
+    let scrollToPosition = 0;
+    
+    const arrowClickHandler = (arrow) => {
+      if (arrow.classList.contains('icon-container__lft')) {
+        // Left arrow click logic
+          scrollToPosition = scrollToPosition - posRange;
+          scrollableObj.scrollLeft = scrollToPosition;
+          scrollClickPosition(scrollToPosition);
+
+
+
+
+      } else {
+        // Right arrow click logic
+          scrollToPosition += posRange;
+          scrollableObj.scrollLeft = scrollToPosition;
+          scrollClickPosition(scrollToPosition);
+      }
+    }
+
+
+
+    // Seelct all arrow icons
+    const arrows = document.querySelectorAll('.arrow-icon');
+    // Loop through each arrow icon and check for the classname
+
+    arrows.forEach(arrow => {
+     arrow.addEventListener('click', () => {
+        arrowClickHandler(arrow);
+      })
+    })
+
+  }
+  document.addEventListener('DOMContentLoaded', arrowScroll); 
+  document.addEventListener('shopify:section:load', arrowScroll);
+
 </script>
 {% schema %}
 {

@@ -68,7 +68,7 @@
 
 #ProductFeature--{{section.id}}{
   background-color: {{bg_color}};
-  background-image:url('{{ section.settings.bgimg | img_url: 'master' }}'); 
+  background-image:url('{{ section.settings.bgimg | img_url: 'master' }}') !important; 
   background-repeat:no-repeat;
   background-size: cover;
 }
@@ -78,7 +78,7 @@
 
 <section id="ProductFeature--{{ section.id }}" class="product-feature" data-section-id="{{ section.id }}" data-section-type="product-feature" style="background: {{section.settings.bg}};   {% if section.settings.section_bg_image != blank %}background: url('{{ section.settings.section_bg_image | img_url: 'master' }}'); background-size: cover;
     background-repeat: no-repeat;{% endif %}">
-  <div class="wrapper">
+  <div class="wrapper pf-{{section.id}}">
 
     <div class="product-feature__block{% if text_position == 'left' %} product-feature__block--reverse{% endif %}" {% if section.settings.aos == true %} data-aos="fade-up" data-aos-delay="150" data-aos-offset="100" data-aos-duration="700"{% endif %}>
       <div class="product-feature__images product-feature__images--{{ image_position }}{% if image_2 == blank %} product-feature__images--single{% endif %}{% if hide_image_2 or image_2 == blank %} product-feature__images--single-mobile{% endif %}">
@@ -172,7 +172,14 @@
 {
   "name": "Product feature",
   "class": "slideshow transparent-header",
-  "settings": [ {
+  "settings": [ 
+   {
+    "type": "checkbox",
+    "id": "fullheight",
+    "label": "Full height",
+    "default": false
+  },  
+  {
       "type": "image_picker",
       "id": "bgimg",
       "label": "Background image"
@@ -396,6 +403,14 @@
 {% endschema %}
 
 <style>
+  {% if section.settings.bgmim %}
+  #ProductFeature--{{section.id}}{
+
+  background-image:url({{ section.settings.bgimg | img_url: 'master' }}) !important; 
+  background-repeat:no-repeat;
+  background-size: cover;
+}
+  {%endif%}
 
 .bulletpoints {
   background:url({{ 'bulletpoint.svg' | asset_url }});
@@ -430,5 +445,20 @@
   .rte :last-child {
     margin-bottom: 0;
     letter-spacing: .030em;
+}
+
+
+@media only screen and (min-width: 1000px)  {
+
+{% if section.settings.fullheight  %}
+
+#ProductFeature--{{ section.id }},
+.pf-{{section.id}} {
+  min-height: 90vh !important;
+  display: flex;
+}
+
+{% endif %}
+  
 }
 </style> 
