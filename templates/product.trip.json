@@ -339,7 +339,7 @@
         "margin_top": 1,
         "margin_bottom": 1,
         "background_color": "#ffffff",
-        "border_color": "#eeeeee",
+        "border_color": "rgba(0,0,0,0)",
         "panel_color": "#fdfdfd",
         "q_size_small": 1,
         "q_size_large": 1.4,
