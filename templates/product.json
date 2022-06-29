@@ -93,6 +93,7 @@
     },
     "related": {
       "type": "related-products",
+      "disabled": true,
       "settings": {
         "show_section": true,
         "limit": 4,
@@ -214,7 +215,7 @@
       "settings": {
         "when": "June 4 to June 11, 2022",
         "schedule": "Schedule",
-        "description": "",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<br\/><br\/>*Host and schedule subject to change.<\/p>",
         "heading": "",
         "subheading": "",
         "background": "transparent",
