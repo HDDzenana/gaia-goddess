@@ -1,326 +1,139 @@
- 
-    {%  assign product = all_products[block.settings.product]
-      %}
-<div class="eventlist">
-  <div class="title">
-    <h1 class="maroonbold hdng"> {{section.settings.heading}}</h1>
-    <div class="filters" style="
-    display: flex;
-    gap: 25px;
-">      <div class="filter-title">
-  <select name="cat-filter" id="cat-filterr" >  
-    <option class="maroonbold" value="none-selected">Week</option>
-    <!-- <option value="usa">USA</option>
-    <option value="egypt">Egypt</option>
-    <option value="virtual">Virtual</option> -->
-  </select>
-</div> 
+<link href="https://unpkg.com/swiper@8/swiper-bundle.min.css" rel="stylesheet"/>
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 
-    <div class="filter-title">
-      <select name="cat-filter" id="cat-filter" style="border-radius: 30px !important; border-color: #6C1D45; border: 2px solid #6C1D45; width: 160px; height: 50px; ">
-        <option class="maroonbold" value="none-selected">All locations</option>
-        <option value="usa">USA</option>
-        <option value="egypt">Egypt</option>
-        <option value="virtual">Virtual</option>
-      </select>
-    </div>
-    <div class="filter-title">
-      <select name="cat-filter" id="cat-filter">
-        <option class="maroonbold" value="none-selected">All Filters</option>
-        <option value="retreat">Retreat</option>
-        <option value="travelexperience">Travel Experience</option>
-        <option value="education">Education</option>
-        <option value="fitness">Fitness</option>
-      </select>
-    </div>
- 
+{%   assign collection = collections[section.settings.collection] | default: false %}
+
+<!-- section -->
+<div class="healer-list-{{section.id}}"> 
+
+<div class="title">
+  <h1 class="maroonbold"> {{section.settings.title}} </h1>
+  <div class="filter-title">
+    <select name="cat-filter" id="cat-filter">
+      <option class="maroonbold" value="none-selected">Category</option>
+      <option value="yoga instructor">Yoga</option>
+      <option value="meditation">Meditation</option>
+      <option value="reiki">Reiki</option>
+    </select>
   </div>
 </div>
-   
-  </div>
-<div class="productevents">
-     {%for block in section.blocks %}
-      
-   {%case block.type %}
-   {% when 'product' %}
-   {%  assign product = all_products[block.settings.product] %}
-   <div class="eventcard"  data-metafield="{{   product.metafields.custom.location  }}"  data-all="{{ product.metafields.custom.type_of_event }}" >
-       <a href="{{product.url}}" > 
-    <div class="eventcardimg">  
-    {%if block.settings.image == blank %} 
-    <img src="{{product.featured_image | img_url: 'medium'}}">
-    {% else %}
-    {% render 'gaia-image'
-    image: block.settings.image
-    %}
-    {% endif %}
-     </div>
-     </a>
+ 
 
-    <div class="eventdesc">
-      <p class="maroonbold prodtitle">
-        {{product.title}}
-      </p>
-      <span class="pink ww"style="font-weight: 900;font-style: italic;">
-        {{product.metafields.my_fields.place_and_date}}
-      </span>
-      <p class="grayregular descp">
-        {{product.metafields.custom.event_description}}
-      </p>
-      <p class="hostedby pink" style="font-weight: 900;font-style: italic;">Hosted By</p>
-      <div class="hostedbymaroon"> {{product.metafields.my_fields.hosted_by}}</div>
-      <a href="{{product.url}}" > 
-          <div class="btnreg" style="color: white">
+<div class="swiper  swiper-{{ section.id }}">
+  <div class="swiper-wrapper">  
+  {%for block in section.blocks %}
+  {% case block.type %}
+  {% when 'collection' %}
+  <div class="swiper-slide">
+
+  {% assign collection = collections[block.settings.collection] | default: false %}
+    <div class="healercard" style=" margin: 0 10px;" data-metafield="{{ collection.metafields.custom.type }}">
+      <a href="{{collection.url}}"> 
+      {% if block.settings.image != blank %}
+        {%render 'gaia-image',
+        image: block.settings.image %}
+        {% else  %}
+        <img src="{{collection.featured_image | img_url: 'medium'}}"> 
+      </a>
+      {%endif %}
     
-        Register Now
-      
-    </div> </a>
-    </div>
-  </div>
-     {%endcase %}
-     {%endfor%}
+     <h5 class="pink bold ct" style="margin-top: 20px;">  
+      {{collection.title}} 
+    </h5>  
+     <div class="about">
+      <div class="healersocials">   
+      <div class="ig"> 
+        <a href="{{collection.metafields.custom.instagram}} "> 
+        {%render 'healer-ig'%}
+      </a>
+      </div>
+      <div class="site"> 
+        <a href="{{collection.metafields.custom.healer_site}}">
+          {%render 'healer-site'%}
+        </a>
+      </div>
+      </div>  
+      <span class="maroon typeof" style="font-style: italic;">
+      {{collection.metafields.custom.type}} 
+      </span> </div>
+      <p class="grayregular desc">
+        {{ collection.description  }}
+      </p>
+       
+ 
+      <p class="maroon evup" style="font-style: italic;">
+        Upcoming Events
+      </p>
+      <span class="grayregular upev">
+        {{collection.metafields.custom.upcoming_events}} 
+      </span>
+ </div>
+ 
+{% endcase %}
 </div>
-</div>
-<br> <br> <br> 
+{%endfor%} 
+</div>     <div class="swiper-pagination"></div>
 
-
-{% schema %}
-{
-  "name": "Event List",
-  "settings": [
- {
-  "type": "text",
-  "id": "heading",
-  "label": "Heading",
-  "default": "Events & Retreats"
- }],
-  "blocks": [
-    {
-      "type": "product",
-      "name": "product",
-      "settings": [
-        {
-          "type": "product",
-          "id": "product",
-          "label": "product"
-        },{
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        }
-      ]
-    }
-  ],
-	"presets": [
-			{
-				"name": "Event list",
-				"category": "Collection",
-				"blocks": [
-					{
-						"type": "product"
-					},
-					{
-						"type": "product"
-					},
-					{
-						"type": "product"
-					},
-					{
-						"type": "product"
-					},
-					{
-						"type": "product"
-					}
-				]
-			}
-		]
-	}
-{% endschema %}
-
-
+</div></div></div>
+</div></div>
+</div>  
+ 
 
 <style>
-@media only screen and (max-width: 768px) {
-  .hdng {
-    padding: 20px 0 !important;  
-    font-size: 30px !important;
-    text-align: center !important;
-  }
-
-  .btnreg {
-  margin: 30px auto !important;
-  }
-  .eventdesc > * {
-    min-width: 90% !important
-    margin: auto;
-  }
-  .prodtitle {
-    text-align: center;
-  }
-  .pink .ww {
-    text-align: center !important;
-    font-style: italic;
-  }
-  .filters {
-    display: flex;
-    gap: 0px !important;
-    margin: auto;
-}
-.filter-title {
-  width: 110px !important;
-}
-#cat-filter  {
-    border-radius: 40px !important;
-    border-color: #6C1D45;
-    border: 1px solid #6C1D45;
-    width:  110px !important;
-    height: 38px !important;
-    font-size: 14px;
-    padding: 0 15px;
-}
-#cat-filterr {
-    border-radius: 40px !important;
-    border-color: #6C1D45;
-    border: 1px solid #6C1D45;
-    width: 110px  !important;
-    height: 38px !important;
-    font-size: 14px;
-    padding: 0 15px;
-}
- 
-  .title {
-    flex-direction: column;
-    margin: auto;
-    padding-bottom: 40px;
-
-  }
-  .eventdesc {
-    padding: 10px 0 !important;
-  }
-  .eventcard * {
-    width: 95% !important;
-    margin: auto;  
-    text-align: center;
-  }
-  .eventcardimg {
-    max-height: 200px !important;
-    min-height: 200px !important;
-    object-fit: contain;
-  }
- .title .productevents {
-  row-gap: 0 !important;
-  gap: 0 !important
- }
- .productevents {
-  gap: 10px !important;
- }
-}
-/* endmobile */
-  .eventlist {
-    /* max-width: 1200px; */
-    padding-top: 5% ;
-    margin: auto;
-  }
-  .title  {
-
-    max-width: 1300px;
-    display: flex !important;
-    justify-content: space-between !important;
-    margin: auto;
-  }
-
-  .productevents {
+  
+  @media only screen and (min-width: 768px) {
+    .swiper-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin: auto;    max-width: 1300px;
+    gap: 25px;  
+    padding: 5% 0;
+    max-width: 1400px;
+    margin: 0 30px;
+    grid-row-gap: 100px;
+    margin: auto;
     justify-content: center;
-    gap: 20px;
-    row-gap: 100px;
+    justify-items: center;
   }
-  .btnreg {
-    border-radius: 40px;
-    border: 1px solid #6C1D45;
-    color: #6C1D45 !important;
-    background-color: #FFF !important;
-    max-width: 50%;
-    text-align: center;
-    padding: 10px 20px;
-    margin-top: 10px;
-    font-weight: 800;
+  .swiper-slide,
+  .healercard {
+    max-width: 300px !important;
+    width: 300px !important;
+  }
+  }
+  .healer-list-{{section.id}} {
+    background: white;
+    margin: auto;
+  }
+
+  .healer-list-{{section.id}} * {
+    text-align: left !important;
+    
+  }
+  .healer-list-{{section.id}} .title {
+    padding-top: 100px;
+    max-width: 1280px; 
+    margin: auto; 
+    grid-column-gap: 5px;
+    grid-row-gap: 100px; 
+    justify-items: center; 
+  }
+
+  .healer-list-{{section.id}} img {
+    margin: auto;
+    width:300px;
+    height: 280px;
   }
  
-  .btnreg:hover {
-    background: #6C1D45 !important;
-    color: #fff !important;
-  }
-  .eventcard * { 
-    width: 420px;
-  }
-  .eventcard {
-    display: flex;
-    flex-direction: column;
-  }
-  .eventcardimg {
-    min-height: 300px;
-    height: 300px;
-    overflow: hidden;
-    object-fit: cover;
-  }
-
-  @media only screen and (min-width: 769px) {
-  .eventdesc > * {
-/*     max-width: 75%; */
-    padding: 0;
-    }
-  }
-  .prodtitle {
-font-size: 22px;
-line-height: 28px;
-}
-  .pink .ww {
-    font-weight: 100 !important;
-  }
-.hostedbymaroon,
-  .hostedbymaroon * ,
-  .hostedbymaroon a,
-  p.hostedbymaroon {
-font-weight: 600 !important;
-font-size: 16px;
-text-decoration: none!important;
-line-height: 19px;
-color: #6C1D45 !important;
-
-
-  }
-
-  .hdng {
-    padding-bottom: 50px;
-  }
-
   .filter-title {
-    width: 160px; 
+    width: 140px; 
   }
-  
- 
-   .eventcardimg {
-  transition: all 1s ease; /* Safari and Chrome */
-    -moz-transition: all 1s ease; /* Firefox */
-    -ms-transition: all 1s ease; /* IE 9 */
-    -o-transition: all 1s ease; /* Opera */
-    transition: all 1s ease;}
- .eventcardimg:hover{   -webkit-transform:scale(1.25); /* Safari and Chrome */
-    -moz-transform:scale(1.01); /* Firefox */
-    -ms-transform:scale(1.01); /* IE 9 */
-    -o-transform:scale(1.01); /* Opera */
-     transform:scale(1.01);}
 
-
-  #cat-filter, #cat-filterr {
+  #cat-filter {
     border-radius: 30px !important; 
     border-color: #6C1D45;
     border: 2px solid #6C1D45;
-    width: 160px;
-    height: 50px;
+    width: 140px;
+    height: 55px;
   }
   select,
   option {
@@ -329,23 +142,411 @@ color: #6C1D45 !important;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
-    background: url("data:image/svg+xml,<svg height='10px' width='10px' viewBox='0 0 16 16' fill='%23000000' xmlns='http://www.w3.org/2000/svg'><path d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/></svg>") no-repeat;
+    background: url("https://cdn.shopify.com/s/files/1/0535/9357/1505/files/output-onlinepngtools_2.png?v=1656509123") no-repeat;
     background-position: calc(100% - 0.75rem) center !important;
     -moz-appearance:none !important;
     -webkit-appearance: none !important; 
     appearance: none !important;
     padding-right: 2rem !important;
   }
+  .title {
+    display: flex;
+    place-items: center;
+    justify-content: space-between;
+  }
+  h1.maroonbold {
+    /* font-weight: 100 !important; */
+    margin: 0 !important;
+  }
+  .healersocials {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .about {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .typeof {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #6C1D45;
+  }
+
+  .desc,
+  .upev {
+    font-family: 'Acumin_Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    margin-top: 10px;
+    padding-top: 0;
+    color: #575757;
+  }
+
+  .evup {
+    font-family: 'Acumin_Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    color: #6C1D45;
+    margin-bottom: 5px;
+    padding: 0 !important;
+  }
+  .upev {
+    margin: 0 !important;
+  }
+
+  .ct {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 30px;
+    color: #EB6FBD;
+    margin-bottom: 0;
+    padding-bottom: 0 !important;
+
+  }
 </style>
 
-<script> 
+
+
+{% schema %}
+	{
+		"name": "Collection list",
+		"class": "collection-list",
+		"max_blocks": 12,
+		"settings": [
+			{
+				"type": "header",
+				"content": "Layout"
+			},
+			 
+			 
+			{
+				"type": "text",
+				"id": "title",
+        "label":"Title",
+				"default": "Our Healers"
+			},
+			{
+				"type": "text",
+				"id": "button_text",
+				"label": "View collection button text",
+				"default": "Shop all"
+			},
+			{
+				"type": "select",
+				"id": "button_style",
+				"label": "Button style",
+				"default": "secondary",
+				"options": [
+					{ "label": "Primary", "value": "primary" },
+					{ "label": "Secondary", "value": "secondary" }
+				]
+			},
+			{
+				"type": "header",
+				"content": "Items"
+			},
+			{
+				"type": "range",
+				"id": "overlay_opacity",
+				"label": "Overlay opacity",
+				"min": 0,
+				"max": 95,
+				"step": 5,
+				"unit": "%",
+				"default": 20
+			},
+			{
+				"type": "header",
+				"content": "Colors"
+			},
+			{
+				"type": "color",
+				"id": "bg_color",
+				"label": "Background"
+			},
+			{
+				"type": "select",
+				"id": "text_color",
+				"label": "Text",
+				"default": "light",
+				"options": [
+					{
+						"value": "light",
+						"label": "Light"
+					},
+					{
+						"value": "dark",
+						"label": "Dark"
+					}
+				]
+			},
+			{
+				"type": "header",
+				"content": "Mobile slider"
+			},
+			{
+				"type": "checkbox",
+				"id": "enable_slider",
+				"label": "Enable slider",
+				"default": true,
+				"info": "Horizontal slider in mobile layout."
+			}
+		],
+		"blocks": [
+			{
+				"type": "collection",
+				"name": "Collection",
+				"settings": [
+					{
+						"label": "Collection",
+						"id": "collection",
+						"type": "collection"
+					},
+					{
+						"type": "image_picker",
+						"id": "image",
+						"label": "Replacement image"
+					}
+				]
+			}
+		],
+		"presets": [
+			{
+				"name": "Healer list",
+				"category": "Collection",
+				"blocks": [
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					},
+					{
+						"type": "collection"
+					}
+				]
+			}
+		]
+	}
+{% endschema %}
+
+
+<script>if(window.innerWidth <= 991){ 
+  (function () {
+    
+const swiper = new Swiper(".swiper-{{ section.id }}", {
+  // Optional parameters
+  
+      slidesPerView: 3,
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: false,
+        breakpoints:  {
+        200: {
+          slidesPerView:1,
+          spaceBetween: 0,
+        }, 
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 3.1,
+          spaceBetween: 0,
+        },
+      },
+  });
+}())
+
+document.addEventListener('shopify:section:load', () => {
+ (function () {
+const swiper = new Swiper(".swiper-{{ section.id }}", {
+  // Optional parameters
+  
+      slidesPerView: 3,
+      spaceBetween: 0,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+      loop: false,
+        breakpoints:  {
+        200: {
+          slidesPerView:1,
+          spaceBetween: 0,
+        }, 
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        768: {
+          slidesPerView: 1,
+          spaceBetween: 0,
+        },
+        1024: {
+          slidesPerView: 3.1,
+          spaceBetween: 0,
+        },
+      },
+  });
+}())
+})
+}
+</script>
+
+<style>
+   @media  only screen and (max-width: 768px) {
+  .swiper .swiper-{{section.id}}  .swipertestimonial {
+    /* width: 85% !important; */
+    height: 100%;
+    padding
+  }
+  .title {
+    padding: 5% !important;
+  }
+  .healercard {
+    padding: 5%;
+  }
+  h1.maroonbold {
+    font-style: normal;
+    font-weight: 700 !important;
+    font-size: 30px;
+    line-height: 40px;
+  }
+  #cat-filter {
+    border-radius: 40px !important;
+    border-color: #6C1D45;
+    border: 1px solid #6C1D45;
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+    padding: 0 15px;
+}
+  .healer-list-{{section.id}} img { 
+    text-align-last: center;
+    width: 100%;
+    object-fit: cover;
+  }
+.swiper-pagination {
+    position: relative;
+    min-height: 100px;
+    padding-top: 10% !important;
+    text-align-last: center;
+  }
+   .swiper-pagination-bullet.swiper-pagination-bullet-active {    background: url({{ 'active.svg' | asset_url }}) !important ; 
+}
+ .swiper-pagination-bullet.swiper-pagination-bullet
+ {
+   background: url({{ 'inactive.svg' | asset_url }})   ; opacity: 1;
+ }
+  .swiper-pagination-bullet {  
+   height: 20px;
+   width: 20px;
+   border: 0px;
+  } 
+   .swiper-backface-hidden .swiper-slide { 
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    text-align-last: center;
+}
+ 
+ 
+
+  }
+
+  .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; 
+}
+
+  {% for block in section.blocks %}
+ .swigpertestimonial {
+    /* width: 75% !important; */
+  }
+ @media  only screen and (max-width: 768px) {
+  .swiper .swiper-{{section.id}}  .swipertestimonial {
+    /* width: 85% !important; */
+    height: 100%;
+  }
+.swiper-pagination {
+    position: relative;
+    min-height: 100px;
+    padding-top: 10% !important;
+  }
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet{ 
+   height: 20px;
+   width: 20px;
+   border: 0px;
+  }
+   .swiper-backface-hidden .swiper-slide {
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+}
+
+  }
+
+ 
+ 
+
+
+  {% endfor %}
+
+
+ 
+</style>
+
+<script>
+  // loadScriptFile func
+function loadScriptFile(src){
+  // create element <script>
+  const $script = $('<script>');
+  // add type attribute
+  $script.attr('type', 'text/javascript');
+  // add src attribute
+  $script.attr('src', src);
+  // append the <script> element to <head>
+  $script.appendTo('head');
+}
+
 // Preselected collections filtering
 const colFiltering = () => {
   // Click event
   const categories = document.querySelector('#cat-filter');
   categories.addEventListener('change', () => {
     const selectedValue = categories.value.toLowerCase();
-    console.log("selectedValue");
+
     // Display/hide logic func
     showSelectedCollections(selectedValue);
 
@@ -356,19 +557,19 @@ const colFiltering = () => {
      * @param String = selected option of filter menu
     */
       // Select all collections
-    const allCollections = document.querySelectorAll('.eventcard');
+    const allCollections = document.querySelectorAll('.healer-list-{{ section.id }} .healercard');
     allCollections.forEach( el => {
       // Transform to lowercase
       const collectionType = el.getAttribute('data-metafield').toLowerCase();
       if ( selectedValue !== collectionType ) {
-        el.style.display = 'none';
+        el.parentElement.style.display = 'none';
       } else {
-        el.style.display = 'block';
+        el.parentElement.style.display = 'block';
       }
       
       // Display all collections if not filtering
       if ( selectedValue === 'none-selected') {
-        el.style.display = 'block';
+        el.parentElement.style.display = 'block';
       }
     })
   }
@@ -380,47 +581,4 @@ colFiltering();
 document.addEventListener('shopify:section:load', colFiltering)
 
 </script>
- 
 
-<script> 
-  // Preselected collections filtering
-  const colFiltering = () => {
-    // Click event
-    const categories = document.querySelector('#cat-filter');
-    categories.addEventListener('change', () => {
-      const selectedValue = categories.value.toLowerCase();
-      console.log("selectedValue");
-      // Display/hide logic func
-      showSelectedCollections(selectedValue);
-  
-    })
-  
-    const showSelectedCollections = (selectedValue) => {
-      /**
-       * @param String = selected option of filter menu
-      */
-        // Select all collections
-      const allCollections = document.querySelectorAll('.eventcard');
-      allCollections.forEach( el => {
-        // Transform to lowercase
-        const collectionType = el.getAttribute('data-all').toLowerCase();
-        if ( selectedValue !== collectionType ) {
-          el.style.display = 'none';
-        } else {
-          el.style.display = 'block';
-        }
-        
-        // Display all collections if not filtering
-        if ( selectedValue === 'none-selected') {
-          el.style.display = 'block';
-        }
-      })
-    }
-  
-  }
-  
-  
-  colFiltering();
-  document.addEventListener('shopify:section:load', colFiltering)
-  
-  </script>
