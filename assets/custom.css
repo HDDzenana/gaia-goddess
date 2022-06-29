@@ -308,3 +308,8 @@ Video blog styling
 .player .vp-video-wrapper.transparent {
   border-radius: 30px !important;
 }
+
+
+#ymq-price-addons {
+  display: none;
+}
