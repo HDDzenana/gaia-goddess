@@ -173,7 +173,7 @@ input[type="radio"]:checked {
   padding: 0;
   background: url({{ 'checked.svg' | asset_url }}) !important; 
 
-  background-size: cover;
+  background-size: contain;
     background-repeat: no-repeat !imm;
     /* background-color: #6C1D45 !important; */
     border: 1px solid rgb(227, 227, 227);
@@ -181,14 +181,16 @@ input[type="radio"]:checked {
     content: none;
     border: 1px solid white !important;
     width: 20px;
-    height: 20px;
+    height: 20px; 
+    margin-bottom: -5px;
 
   /* border: 1px solid white !important; */
 }
 input[type='checkbox'],
 input[type="radio"] {
   width: 20px !important;
-  height: 20px !important;
+  height:20px !important;
+  margin-bottom: -5px;
 }
 input[type="radio"]:checked::before{
   position: absolute;

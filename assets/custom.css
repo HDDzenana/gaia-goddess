@@ -150,6 +150,7 @@ margin: 0 !important}
   background: none;
   border-radius: 40px;
   height: 60px;
+  color: white !important;
 }
 #CreateCustomer > input::placeholder, #CustomerLogin > input::placeholder, .return, #RecoverPassword {
   color: #FFFFFF;
