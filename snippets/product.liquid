@@ -242,11 +242,13 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
             {%- comment -%} Product Description and product tabs {%- endcomment -%}
             <div class="product__description rte" {{ block.shopify_attributes }} style="margin: 0 !important;">
               {%- unless product == blank -%}
+                  {% if section.settings.seatsleft %}
+                  {% for variant in product.variants %}
 
-
+            {% if variant.inventory_quantity < 11 %}
                   <div class="productseatleft">
                      {% comment %} Seats Left Logic {% endcomment %}
-                      {% for variant in product.variants %}
+
                           {% if variant.inventory_quantity == 1 %}
                               {% render '1seat' %}
                           {% endif %}
@@ -277,13 +279,20 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
                           {% if variant.inventory_quantity == 10 %}
                               {% render '10seats' %}
                           {% endif %}
-                      {% endfor %}
+
                       {% comment %}End Seats Left Logic {% endcomment %}
                       {{- product.description -}}
 
 
                   </div>
+                {% else  %}
+                {{- product.description -}}
 
+                {% endif %}
+                  {% endfor %}
+                  {% else  %}
+                      {{- product.description -}}
+                      {% endif %}
                   {%if product.metafields.custom.days %}
                 <div class="pink" style="
                 margin: 0 !important;
