@@ -242,9 +242,49 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
             {%- comment -%} Product Description and product tabs {%- endcomment -%}
             <div class="product__description rte" {{ block.shopify_attributes }} style="margin: 0 !important;">
               {%- unless product == blank -%}
-                {{- product.description -}}
 
-                {%if product.metafields.custom.days %}
+
+                  <div class="productseatleft">
+                     {% comment %} Seats Left Logic {% endcomment %}
+                      {% for variant in product.variants %}
+                          {% if variant.inventory_quantity == 1 %}
+                              {% render '1seat' %}
+                          {% endif %}
+                      {% if variant.inventory_quantity == 2 %}
+                            {% render '2seats' %}
+                      {% endif %}
+                          {% if variant.inventory_quantity == 3 %}
+                              {% render '3seats' %}
+                          {% endif %}
+                          {% if variant.inventory_quantity == 4 %}
+                      {% render '4seats' %}
+                      {% endif %}
+                          {% if variant.inventory_quantity == 5 %}
+                              {% render '5seats' %}
+                          {% endif %}
+                          {% if variant.inventory_quantity == 6 %}
+                              {% render '6seats' %}
+                          {% endif %}
+                          {% if variant.inventory_quantity == 7 %}
+                              {% render '7seats' %}
+                          {% endif %}
+                          {% if variant.inventory_quantity == 8 %}
+                              {% render '8seats' %}
+                          {% endif %}
+                          {% if variant.inventory_quantity == 9 %}
+                              {% render '9seats' %}
+                          {% endif %}
+                          {% if variant.inventory_quantity == 10 %}
+                              {% render '10seats' %}
+                          {% endif %}
+                      {% endfor %}
+                      {% comment %}End Seats Left Logic {% endcomment %}
+                      {{- product.description -}}
+
+
+                  </div>
+
+                  {%if product.metafields.custom.days %}
                 <div class="pink" style="
                 margin: 0 !important;
                 padding: 0;
@@ -379,5 +419,12 @@ border: none !important;
   }
   .product__description * {
     border: 0px !important;
+  }
+
+  .productseatleft {
+      display: grid;
+      grid-template-columns: .3fr 1fr;
+      align-items: center;
+      column-gap: 10px;
   }
 </style>

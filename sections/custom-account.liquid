@@ -113,13 +113,14 @@ li.active
 .topbanner  .gaia-image img {
   width: 100%;
 }
-.profilepicturewrapper {
+.profilepicturewrapper,
+.appimgacf {
   margin: auto;
   margin-top: -5%;
   display: flex;
   margin-bottom: 100px;
 }
-.profilepicture {
+.profilepicture, .appimgacf {
   margin: auto;
   border-radius: 50%;
   border:1px solid #6C1D45 !important;
@@ -274,19 +275,19 @@ overflow: hidden;
    
     <div class="profilepicturewrapper"> 
  
-     <img src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
+     <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
   
 
     </div>
-    <div class="changeimg" 
+    <button id="classimg" class="changeimg"   
     style=" background: url({{ 'changeimage.svg' | asset_url }}); 
     background-repeat:no-repeat;height:50px;
     margin-top: -150px;
     display: flex;
     width: 100%;
     margin-left: 53%;
-    z-index: 99999999999999999 !important;">  
-    </div> 
+    z-index: 99999999999999999 !important;" >  
+    </button> 
   </div>  
    <div class="editform animate__animated animate__fadeInUp" style="
    min-height: max-content; padding: 100px 0 !important;
@@ -395,20 +396,25 @@ uploadHereElement.innerHTML = `<div class="uploadherediv"><svg width="28" height
 <path d="M20.4154 16.3708V19.2468C20.4161 19.4351 20.3796 19.6216 20.3082 19.7957C20.2367 19.9698 20.1316 20.1281 19.9988 20.2616C19.8661 20.3951 19.7084 20.5011 19.5347 20.5735C19.361 20.646 19.1747 20.6835 18.9864 20.6838H9.01143C8.63199 20.682 8.2688 20.5296 8.00161 20.2602C7.73443 19.9908 7.58511 19.6263 7.58643 19.2468V16.3708" stroke="#6C1D45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M17.5645 11.3389L14.0015 7.7439L10.4375 11.3389" stroke="#6C1D45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M14.0005 7.7439V16.3709" stroke="#6C1D45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg><br> <strong class="black">Click to Upload <br>PNG or JPG file (256x256px) </strong>
- </div><br> <br><svg width="397" height="29" viewBox="0 0 397 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.85498 14.6399H396.455" stroke="#FFD9E5"/>
-<path d="M202 29C209.732 29 216 22.5081 216 14.5C216 6.49187 209.732 0 202 0C194.268 0 188 6.49187 188 14.5C188 22.5081 194.268 29 202 29Z" fill="#FFD9E5"/>
-<path d="M195.856 8.03001C197.147 8.03001 198.174 8.45467 198.937 9.30401C199.708 10.1447 200.094 11.2497 200.094 12.619C200.094 13.945 199.713 15.0543 198.95 15.947C198.187 16.8397 197.117 17.286 195.739 17.286C194.404 17.286 193.364 16.8527 192.619 15.986C191.874 15.1107 191.501 14.0013 191.501 12.658C191.501 11.3147 191.891 10.2097 192.671 9.34301C193.451 8.46767 194.513 8.03001 195.856 8.03001ZM197.689 10.318C197.264 9.72001 196.627 9.42101 195.778 9.42101C194.929 9.42101 194.292 9.71567 193.867 10.305C193.451 10.8857 193.243 11.657 193.243 12.619C193.243 13.5723 193.464 14.3567 193.906 14.972C194.348 15.5873 194.981 15.895 195.804 15.895C196.671 15.895 197.308 15.5917 197.715 14.985C198.131 14.3697 198.339 13.5897 198.339 12.645C198.339 11.6917 198.122 10.916 197.689 10.318ZM204.966 13.438H203.497V17.156H201.833V8.16001H205.642C206.578 8.16001 207.302 8.38967 207.813 8.84901C208.333 9.29967 208.593 9.88901 208.593 10.617C208.593 11.1717 208.459 11.6267 208.19 11.982C207.93 12.3373 207.601 12.5887 207.202 12.736C208.008 12.9873 208.411 13.7413 208.411 14.998V15.414C208.411 16.3067 208.454 16.8873 208.541 17.156H206.929C206.816 16.8787 206.76 16.2157 206.76 15.167V15.011C206.76 14.439 206.639 14.036 206.396 13.802C206.162 13.5593 205.685 13.438 204.966 13.438ZM203.497 9.52501V12.073H205.239C205.811 12.073 206.227 11.969 206.487 11.761C206.747 11.5443 206.877 11.2193 206.877 10.786C206.877 9.94534 206.353 9.52501 205.304 9.52501H203.497Z" fill="#6C1D45"/>
-</svg>
+</svg><br> <strong class="black">Click below to Upload <br>PNG or JPG file (256x256px) </strong>
+ </div><br> <br>
 `
 
 // Last element
 let chooseAvatarElement = document.createElement('div');
-chooseAvatarElement.innerHTML = `<div class="uploadavatarherediv"> <strong class="black"> Choose a avatar as per your preference </strong></div>`
+chooseAvatarElement.innerHTML = `<br>
+<div class="uploadavatarherediv">
+<svg width="397" height="29" viewBox="0 0 397 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.85498 14.6399H396.455" stroke="#FFD9E5"/>
+<path d="M202 29C209.732 29 216 22.5081 216 14.5C216 6.49187 209.732 0 202 0C194.268 0 188 6.49187 188 14.5C188 22.5081 194.268 29 202 29Z" fill="#FFD9E5"/>
+<path d="M197.005 9.874C198.296 9.874 199.323 10.2987 200.086 11.148C200.857 11.9887 201.243 13.0937 201.243 14.463C201.243 15.789 200.862 16.8983 200.099 17.791C199.336 18.6837 198.266 19.13 196.888 19.13C195.553 19.13 194.513 18.6967 193.768 17.83C193.023 16.9547 192.65 15.8453 192.65 14.502C192.65 13.1587 193.04 12.0537 193.82 11.187C194.6 10.3117 195.662 9.874 197.005 9.874ZM198.838 12.162C198.413 11.564 197.776 11.265 196.927 11.265C196.078 11.265 195.441 11.5597 195.016 12.149C194.6 12.7297 194.392 13.501 194.392 14.463C194.392 15.4163 194.613 16.2007 195.055 16.816C195.497 17.4313 196.13 17.739 196.953 17.739C197.82 17.739 198.457 17.4357 198.864 16.829C199.28 16.2137 199.488 15.4337 199.488 14.489C199.488 13.5357 199.271 12.76 198.838 12.162ZM206.115 15.282H204.646V19H202.982V10.004H206.791C207.727 10.004 208.451 10.2337 208.962 10.693C209.482 11.1437 209.742 11.733 209.742 12.461C209.742 13.0157 209.608 13.4707 209.339 13.826C209.079 14.1813 208.75 14.4327 208.351 14.58C209.157 14.8313 209.56 15.5853 209.56 16.842V17.258C209.56 18.1507 209.603 18.7313 209.69 19H208.078C207.965 18.7227 207.909 18.0597 207.909 17.011V16.855C207.909 16.283 207.788 15.88 207.545 15.646C207.311 15.4033 206.834 15.282 206.115 15.282ZM204.646 11.369V13.917H206.388C206.96 13.917 207.376 13.813 207.636 13.605C207.896 13.3883 208.026 13.0633 208.026 12.63C208.026 11.7893 207.502 11.369 206.453 11.369H204.646Z" fill="#6C1D45"/>
+</svg><br>
+<strong class="black center" style="text-align: center!important;"> Choose a avatar as per your preference </strong>
+<br><br> <div class="imgmfs">
+{{ shop.metafields.global.triskel.value }} {{ shop.metafields.global.rose.value }} {{ shop.metafields.global.leaf.value }}{{ shop.metafields.global.flower.value }}  </div> </div>`
 
 
-const classimg = document.getElementsByClassName("acfimg");
+const classimg = document.getElementsByClassName("acfimg"); 
 
 document.querySelector('.acfimg').classList.add('imgclasscf');
 
@@ -423,6 +429,11 @@ acfUploadField.appendChild(chooseAvatarElement);
 
 
 <style>
+  .uploadavatarherediv,
+  .uploadherediv {
+    text-align: center;
+    overflow: hidden;
+  }
   .customer-avatar {
     width: 500px;
     height: 300px;
@@ -431,8 +442,9 @@ acfUploadField.appendChild(chooseAvatarElement);
   .imgclasscf {
     background: white;
     max-width: 400px;
+    overflow: hidden;
     border-radius: 20px;
-    padding: 100px 20px !important;
+    padding: 60px 20px !important;
     filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
   }
 
@@ -442,10 +454,53 @@ acfUploadField.appendChild(chooseAvatarElement);
     gap: 10px;
   }
 
+  .imgmfs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
   .acfimg {
     /* display: none; */
     position: absolute;
-    top: -150px;
+    top: -200px;
     left: 60%; 
   }
+  .imgclasscf > label {
+    display: none;
+  }
+
+  .imgclasscf * {
+    margin: auto !important;
+  }
+  .imgclasscf{
+    display: none;
+  }
 </style>
+
+
+<script>
+  function myFunction() {
+    var x = document.getElementsByClassName('imgclasscf');
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
+
+<script>
+  var button = document.getElementById('classimg');
+  
+  button.onclick = function() {
+      var div = document.getElementsByClassName('imgclasscf');
+      if (div.style.display !== 'none') {
+          div.style.display = 'none';
+      }
+      else {
+          div.style.display = 'block';
+      }
+  };
+    </script> 
