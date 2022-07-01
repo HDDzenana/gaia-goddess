@@ -9784,6 +9784,7 @@ button.collection__filters__toggle {
   .product-feature__block--reverse .product-feature__text {
     padding-right: var(--gutter);
     padding-left: 0;
+    margin-right: 100px !important;  
   }
 }
 .product-feature__images {
