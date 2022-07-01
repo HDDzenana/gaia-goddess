@@ -421,14 +421,39 @@ const acfUploadField = document.querySelector('.imgclasscf');
 acfUploadField.insertAdjacentElement('afterbegin', uploadHereElement)
 acfUploadField.appendChild(chooseAvatarElement);
 
+
+
+// Open upload modal on click
+// Wait for page to load
+
+const toggleModalHandler = () => {
+  // Get the toggle button
+  const modalBtn = document.querySelector('#classimg');
+
+  // Get the toggle element
+  const modalEl = document.querySelector('.imgclasscf');
+
+  // Toggle event
+  modalBtn.addEventListener('click', () => {
+    modalEl.classList.toggle('modalToggleOn');
+  })
+}
+ toggleModalHandler();
+
 },1000)
 
     
+
+
  </script>
 
 
 
 <style>
+
+  .modalToggleOn {
+    display: block !important;
+  }
   .uploadavatarherediv,
   .uploadherediv {
     text-align: center;
@@ -440,7 +465,8 @@ acfUploadField.appendChild(chooseAvatarElement);
     background-color: green;
   }
   .imgclasscf {
-    background: white;
+    display: none;
+    background: #fff;
     max-width: 400px;
     overflow: hidden;
     border-radius: 20px;
