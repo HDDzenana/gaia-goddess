@@ -5,12 +5,12 @@
       "settings": {
         "prevlink": "",
         "prevtext": "Discover",
-        "bg": "#6C1D45",
-        "card_bg": "#6C1D45",
+        "bg": "#6c1d45",
+        "card_bg": "#6c1d45",
         "text_position": "right",
         "text_alignment": "center",
-        "header_color": "#6C1D45",
-        "card_title_color": "#6C1D45",
+        "header_color": "#6c1d45",
+        "card_title_color": "#6c1d45",
         "card_social": true,
         "show_instagram_icon": true,
         "social_instagram_link": "",
@@ -70,7 +70,7 @@
     "165466236852a57a63": {
       "type": "section-liquid",
       "settings": {
-        "custom_liquid": "<br><div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n\n\n<style> .jTjVKK {\n  border-radius: 20px !important;}\n\n\n.custompodcast, .custompodcast * {\nbckground: #FEF1F5 !important;\n}\n<\/style>\n<br>\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n\n<br>\n<style> \n.custompodcast, .custompodcast * {\nbckground: #FEF1F5 !important;\n}\n<\/style>\n\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n<br>\n\n<style> \n.custompodcast *  {\nbackground: #FEF1F5;\n}\n.duNgJY * {\nbackground: white !important;\n}\n<\/style> <br>\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div><br>"
+        "custom_liquid": "<br><div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div><\/div> <\/div>\n\n\n<style> .jTjVKK {\n  border-radius: 20px !important;}\n\n\n.custompodcast, .custompodcast * {\nbckground: #FEF1F5 !important;\n}\n<\/style>\n<br>\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n\n<br>\n<style> \n.custompodcast, .custompodcast * {\nbckground: #FEF1F5 !important;\n}\n<\/style>\n\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div>\n<br>\n\n<style> \n.custompodcast *  {\nbackground: #FEF1F5;\n}\n.duNgJY * {\nbackground: white !important;\n}\n<\/style> <br>\n<div class=\"custompodcast\">\n \n<div class=\"elfsight-sapp-fe7bbe8b-032c-48f5-a627-10b3c7479334\"><\/div> <\/div><br>"
       }
     },
     "main": {
