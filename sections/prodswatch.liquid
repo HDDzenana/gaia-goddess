@@ -2,6 +2,10 @@
 <script src="{{ 'component-switch-blocks.js' | asset_url }}" defer="defer"></script>
 
 <style>
+  
+  .selected-{{ block.id }} {
+border-bottom: 2px solid {{ block.settings.switch_btn_color }} !important;
+    border-radius: 0px !important;}
 
   /* Arrows START */
 @media (max-width: 768px) {
