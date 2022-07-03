@@ -4,99 +4,101 @@
 <style>
 
   /* Arrows START */
-  @media (max-width: 768px) {
-    .switch-blocks-{{ section.id }}- * { 
+@media (max-width: 768px) {
+.switch-blocks-{{ section.id }}- * { 
 scrollbar-color: white !important;
 }
-      .switch-blocks .buttons-container .block-btn-{{ block.id }} {
-          
-      min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+.switch-blocks .buttons-container .block-btn-{{ block.id }} {
 
-    
-        .switch-blocks .buttons-container .block-btn-{{ block.id }} {     min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+min-width: 350px  !important;
+max-width: 350px !important;
+}
+
+
+.switch-blocks .buttons-container .block-btn-{{ block.id }} {     min-width: 350px  !important;
+max-width: 350px !important;
+}
 
 .prodswatch-{{section.id}}::-webkit-scrollbar-thumb {
-  min-width: 11px !important;
-  scrollbar-color: white !important;
+min-width: 11px !important;
+scrollbar-color: white !important;
 }
-    .icon-container {
-      position: absolute;
+.icon-container {
+position: absolute;
 /*       top: 18%; */
-      left: 18%;
-      width: 60%;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-    }
-    .switch-blocks-{{ section.id }}- .buttons-container { 
-      max-width: 100% !important;
-    }
-    {% for block in section.blocks %}
-    .switch-blocks .buttons-container .selected-{{ block.id }} {
-    
-      min-width: 350px  !important;
-      max-width: 350px !important;
-      text-decoration: underline;
-      text-decoration-color: #EB6FBD;
-      text-underline-position: under;
-      text-decoration-thickness: 2px;
-      width: 350px;
-    }
+left: 18%;
+width: 65%;
+margin: auto;
+display: flex;
+justify-content: space-between;
+}
+.switch-blocks-{{ section.id }}- .buttons-container { 
+max-width: 100% !important;
+}
+{% for block in section.blocks %}
+.switch-blocks .buttons-container .selected-{{ block.id }} {
 
-    .icon-container__rt {
+min-width: 350px  !important;
+max-width: 350px !important;
+text-decoration: underline;
+text-decoration-color: #EB6FBD;
+text-underline-position: under;
+text-decoration-thickness: 2px;
+width: 350px;
+}
 
-    transform: rotateZ(270deg);
-    }
+.icon-container__rt {
 
-    .icon-container__lft{
+transform: rotateZ(270deg);
+}
 
-    transform: rotateZ(90deg);
-    } 
-    .switch-blocks .buttons-container .selected-{{ block.id }}:first-of-type {
-      padding: 0 !important;    min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+.icon-container__lft{
+
+transform: rotateZ(90deg);
+} 
+.switch-blocks .buttons-container .selected-{{ block.id }}:first-of-type {
+padding: 0 !important;    min-width: 350px  !important;
+max-width: 350px !important;
+}
 
 /*       margin-left: -25px; */
-    }
-    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(5n) {
+}
+.switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(5n) {
 /*       padding-left: 14% !important; */    min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+max-width: 350px !important;
+}
 
-    }
-    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(2n) {
+}
+.switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(2n) {
 /*       margin-left: -10px !important; */    min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+max-width: 350px !important;
+}
 
-    }.switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(6n) {
+}.switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(6n) {
 /*       padding-left: 20% !important; */    min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+max-width: 350px !important;
+}
 
-    }
-    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(4n) {
+}
+.switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(4n) {
 /*       margin-left: 5px !important; */    min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+max-width: 350px !important;
+}
 
-    }
-    .switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(3n) {
-      /* margin-left: 0; */    min-width: 350px  !important;
-      max-width: 350px !important;
-      }
+}
+.switch-blocks .buttons-container .selected-{{ block.id }}:nth-of-type(3n) {
+/* margin-left: 0; */    min-width: 350px  !important;
+max-width: 350px !important;
+}
 
-    /* margin: 0; */
-    /* padding: 20px; */
+/* margin: 0; */
+/* padding: 20px; */
 
-  }
-    {%endfor %}
-  }
+}
+{%endfor %}
+}
+  
+/*  endmobile  */
 
   .switch-blocks {
     position: relative;
