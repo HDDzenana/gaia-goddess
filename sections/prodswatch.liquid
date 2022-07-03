@@ -437,7 +437,7 @@ padding: 20px 0 0 0 ;
   // Arrow scroll
   const arrowScroll = () => {
     // Position range - amount of units slider will move 
-    let posRange = 340;
+    let posRange = 350;
 
     // Select all block buttons
     const blockButtons = document.querySelectorAll('.switch-blocks-{{ section.id }}- .block-btn');
@@ -453,7 +453,7 @@ padding: 20px 0 0 0 ;
       blockButtons[1].click();
     }
 
-    if (currentPostion === (posRange * 2)) {
+    if (currentPostion === (posRange * 2.2)) {
       blockButtons[2].click();
     } 
 
