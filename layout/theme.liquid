@@ -207,7 +207,9 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 			{{ content_for_layout }}
 		</main>
  
+      {% unless template contains 'contact' %}
 		{%- section 'footer' -%}
+      {%endunless%}
  
 	</div>
 
