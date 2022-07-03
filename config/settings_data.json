@@ -18,7 +18,7 @@
     "product_grid_hover_image": false,
     "product_grid_slideshow": false,
     "product_grid_slideshow_arrows": "black",
-    "product_badge_style": "circle",
+    "product_badge_style": "rectangle",
     "enable_color_swatches": true,
     "show_payment_button": true,
     "quick_button": "view",
