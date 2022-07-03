@@ -318,11 +318,12 @@ padding: 20px 0 0 0 ;
     .icon-container {
       display: none;
     }
-            .switch-blocks .buttons-container .selected-{{ block.id }} {
-          /* color: {{ block.settings.switch_btn_color }}; */
-          border-bottom: 2px solid {{ block.settings.switch_btn_color }} !important;
-          border-radius: 0px !important;
-
+    
+    {%for block in section.blocks %}
+.switch-blocks .buttons-container .selected-{{ block.id }} {
+border-bottom: 2px solid {{ block.settings.switch_btn_color }} !important;
+border-radius: 0px !important;
+  {%endfor%}
 }
     
     .switch-blocks .buttons-container button {
