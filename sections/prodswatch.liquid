@@ -323,7 +323,15 @@ padding: 20px 0 0 0 ;
       display: none;
     }
     
-  
+     {% for block in section.blocks %}
+      {% unless block.settings.switch_btn_title == blank %}
+      <style>
+        .selected-{{ block.id }}  {
+        border-bottom: 3px solid {{ block.settings.switch_btn_color }} !important;
+        border-radius: 0px;
+        }
+    {%endunless%}
+    {%endfor%}
 .switch-blocks .buttons-container .selected-{{ block.id }} {
 border-bottom: 2px solid {{ block.settings.switch_btn_color }} !important;
 border-radius: 0px !important;
