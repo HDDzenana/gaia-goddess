@@ -122,7 +122,7 @@
                    </a></li>
                 {% endif %}
                 {% if section.settings.show_phone %}
-                    <li>{%- render 'contact-phone' -%}{{ settings.phone }}</li>
+                <li>{%- render 'contact-phone' -%}<span class="maroon">{{ settings.phone }}</span></li>
                 {% endif %}
               </ul>
   
