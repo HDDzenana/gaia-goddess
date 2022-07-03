@@ -448,8 +448,18 @@ const toggleModalHandler = () => {
 
     
 
+function timeout_trigger() {
+    window.alert('Hello!');   
+}
 
- </script>
+function timeout_init() {
+    setTimeout('timeout_trigger()', 2000);
+}
+
+</script>
+<input type="button" value="click me" onclick="timeout_init()" />
+
+ 
 
 
 
