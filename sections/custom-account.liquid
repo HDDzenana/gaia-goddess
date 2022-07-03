@@ -1,6 +1,4 @@
-<style>
-  
-</style>
+
 {% assign menu = section.settings.menu%}
 <style>
 
@@ -211,6 +209,7 @@ overflow: hidden;
 <div class="customaccount-{{section.id}}"> 
 <!-- MENU -->
 <div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
+  <div class="anv">
 <nav role="accountnav" class="accountnav">
   <h4 class="menu-title">  {{ menu.title }}  </h4>
   <ul>
@@ -261,6 +260,7 @@ overflow: hidden;
     {%- endfor -%}
   </ul>
 </nav> 
+  </div>
 <!-- endmenu -->
 </div> 
 <!-- endmenuwrapper --> 
