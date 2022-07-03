@@ -278,6 +278,12 @@ padding: 20px 0 0 0 ;
     .icon-container {
       display: none;
     }
+            .switch-blocks .buttons-container .selected-{{ block.id }} {
+          /* color: {{ block.settings.switch_btn_color }}; */
+          border-bottom: 2px solid {{ block.settings.switch_btn_color }};
+          border-radius: 0px !important;
+
+}
   }
 </style>
 
@@ -325,12 +331,7 @@ padding: 20px 0 0 0 ;
 
  
         }
-        .switch-blocks .buttons-container .selected-{{ block.id }} {
-          /* color: {{ block.settings.switch_btn_color }}; */
-          border-bottom: 2px solid {{ block.settings.switch_btn_color }};
-          border-radius: 0px !important;
 
-}
         }
         .switch-blocks .buttons-container .block-btn-{{ block.id }}:hover {
           color: {{ block.settings.switch_btn_color }};
