@@ -1,6 +1,6 @@
- 
-    {%  assign product = all_products[block.settings.product]
-      %}
+
+{%  assign product = all_products[block.settings.product]
+%}
 <div class="eventlist">
   <div class="title">
     <h1 class="maroonbold hdng"> {{section.settings.heading}}</h1>
@@ -45,8 +45,22 @@
    {% when 'product' %}
    {%  assign product = all_products[block.settings.product] %}
    <div class="eventcard"  data-metafield="{{   product.metafields.custom.location  }}"  data-all="{{ product.metafields.custom.type_of_event }}" >
-       <a href="{{product.url}}" > 
+    <div class="custombadges">
+      {% if block.settings.custombadge  %}
+      <!-- <span class="typecustombadge">
+        {{product.metafields.custom.custom_tag}}
+       </span>  -->
+       {% endif %}
+     </div> 
+    <a href="{{product.url}}" > 
     <div class="eventcardimg">  
+      <div class="custombadgess">
+        {% if block.settings.custombadge  %}
+        <span class="typecustombadges">
+          {{product.metafields.custom.custom_tag}}
+         </span> 
+         {% endif %}
+       </div> 
     {%if block.settings.image == blank %} 
     <img src="{{product.featured_image | img_url: 'medium'}}">
     {% else %}
@@ -61,6 +75,7 @@
          <a href="{{product.url}}" > 
       <p class="maroonbold prodtitle">
         {{product.title}}
+  
       </p>
       </a>
       <span class="pink ww"style="font-weight: 900;font-style: italic;">
@@ -105,7 +120,14 @@
           "type": "product",
           "id": "product",
           "label": "product"
-        },{
+        },
+       {
+        "type": "checkbox",
+        "id": "custombadge",
+        "label": "Show Badge",
+        "default": true        
+       },
+        {
           "type": "image_picker",
           "id": "image",
           "label": "Image"
@@ -142,6 +164,31 @@
 
 
 <style>
+ 
+  .custombadgess {
+    position: absolute;
+    top: 7%;
+    left: 5%;
+  }
+ 
+  .eventcard {
+    position: relative;
+  }
+
+  .eventcardimg {
+    position: relative;
+ 
+  }
+  .typecustombadges {
+    background-color: #6C1D45;
+    color: white;
+    font-weight: 400;
+    padding: 5px 20px;
+    border-radius: 40px;
+    font-size: 19px;
+    letter-spacing: 0.4px;
+  }
+
 @media only screen and (max-width: 768px) {
   .hdng {
     padding: 20px 0 !important;  
@@ -304,18 +351,29 @@ color: #6C1D45 !important;
   }
   
  
-   .eventcardimg {
+   .eventcardimg
+    {
   transition: all 1s ease; /* Safari and Chrome */
     -moz-transition: all 1s ease; /* Firefox */
     -ms-transition: all 1s ease; /* IE 9 */
     -o-transition: all 1s ease; /* Opera */
     transition: all 1s ease;}
- .eventcardimg:hover{   -webkit-transform:scale(1.25); /* Safari and Chrome */
+.custombadgess {
+  transition: all 1s ease;
+}
+
+ .eventcardimg:hover {   -webkit-transform:scale(1.25); /* Safari and Chrome */
     -moz-transform:scale(1.01); /* Firefox */
     -ms-transform:scale(1.01); /* IE 9 */
     -o-transform:scale(1.01); /* Opera */
      transform:scale(1.01);}
-
+ 
+     .eventcardimg:hover > .custombadgess {  -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.01); /* Firefox */
+    -ms-transform:scale(1.01); /* IE 9 */
+    -o-transform:scale(1.01); /* Opera */
+    top: 30px;
+     transform:scale(1.01);}
 
   #cat-filter, #cat-filterr {
     border-radius: 30px !important; 
