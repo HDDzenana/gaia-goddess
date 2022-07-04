@@ -15,6 +15,9 @@
      /* border: 1px solid #EB6FBD; */
      /* border-bottom-left-radius: 30px; */
     }
+    .responsive-order td{
+      border-right-color: transparent !important;
+    }
     .accountnav-wrapper {
       display: none !important;
     }
@@ -223,27 +226,31 @@ border-radius: 40px !important;
  }
 
  .table-wrap {
-
-  /* border: .04px solid #EB6FBD; */
   overflow: hidden !important;
-  
-    border-radius:46px !important;
+  border-radius:46px !important;
  }
 
  .oh-{{section.id}} th:first-of-type {
   border-top-left-radius: 20px;
   overflow: hidden;
+  border-top-color: transparent !important
   margin-right: -20px;
  }
-
+ .oh-{{section.id}} td:first-of-type {
+  border-top-color: transparent !important;
+ }
+ .oh-{{section.id}} td:last-of-type {
+  border-bottom-color: transparent !important;
+ }
  .oh-{{section.id}} th:last-of-type {
   border-top-right-radius: 20px;
   margin-right: -20px;
  }
 
  .oh-{{section.id}} td, th {
-  border-color: #FFD9E5 !important;
+  border-color: #FFD9E5;
   overflow: hidden;
+
  }
  .icon {
 overflow: hidden;
