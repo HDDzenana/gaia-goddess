@@ -2,45 +2,45 @@
 {% assign menu = section.settings.menu%}
 <style>
 
-  @media only screen and (max-width: 1000px) {
-    .accountnav {
-      max-width: 100vw !important;
-    }
-
-    .socialspan {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 5px 0;
+@media only screen and (max-width: 1000px) {
+.accountnav {
+  max-width: 100vw !important;
 }
-    .acfimg {
-    /* display: none; */
-    position: absolute;
-    top: -100px;
-    left: 2vw !important;
-    width: 96vw; 
-  }
-    .accountnav {
-      position:  fixed !important;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 0px !important;
-    margin-left: 8% !important;
-    }
 
-    .customaccount-{{section.id}} {
-      flex-direction: column-reverse;
-    }
-  }
+.socialspan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+.acfimg {
+  position: absolute;
+  top: -100px;
+  left: 2vw !important;
+  width: 96vw; 
+}
+.accountnav {
+  position:  fixed !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px !important;
+  margin-left: 8% !important;
+}
+
+.customaccount-{{section.id}} {
+  flex-direction: column-reverse;
+}
+}
+/* ENDMOBILE */
 
 .customaccount-{{section.id}} {
   display: flex;
   min-height: 100vh;
 }
 
-  .cf-app__checkboxes-direction--h .cf-app__checkbox {
-    min-width: 250px;
-  }
+.cf-app__checkboxes-direction--h .cf-app__checkbox {
+mi  n-width: 250px;
+}
 /* MENU STYLING GENERAL */
 .accountnav {
   background: white;
@@ -69,10 +69,8 @@ li.active
 
 
 .accountnav ul {
-  margin: 0;
-  /* padding-left: 15px !important; */
-  padding-bottom: 15px;
-  /* padding-inline-start: 0 !important; */
+  margin: 0; 
+  padding-bottom: 15px; 
 }
 
 .accountnav li {
@@ -116,7 +114,10 @@ li.active
   width: 100%;
 }
 
-.cf-app__file-preview.has-file,.cf-app__file-preview-wrapper {visibility: hidden !important; display: none;}
+.cf-app__file-preview.has-file,.cf-app__file-preview-wrapper {
+  visibility: hidden !important; 
+  display: none;
+}
 
 .topbanner  * {
   max-height: 250px;
@@ -184,20 +185,17 @@ input[type="radio"]:checked {
   outline: none;
   padding: 0;
   background: url({{ 'checked.svg' | asset_url }}) !important; 
-
   background-size: contain;
-    background-repeat: no-repeat !imm;
-    /* background-color: #6C1D45 !important; */
-    border: 1px solid rgb(227, 227, 227);
-    border-radius: 0px !important;
-    content: none;
-    border: 1px solid white !important;
-    width: 20px;
-    height: 20px; 
-    margin-bottom: -5px;
-
-  /* border: 1px solid white !important; */
+  background-repeat: no-repeat !important;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 0px !important;
+  content: none;
+  border: 1px solid white !important;
+  width: 20px;
+  height: 20px; 
+  margin-bottom: -5px;
 }
+
 input[type='checkbox'],
 input[type="radio"] {
   width: 20px !important;
@@ -216,7 +214,8 @@ input[type="radio"]:checked::before{
 overflow: hidden;
   margin-top: 10px;
   margin-bottom: -15px !important;
-  margin-right: 5px;}
+  margin-right: 5px;
+  }
 </style>
 
 <div class="customaccount-{{section.id}}"> 
