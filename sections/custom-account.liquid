@@ -4,9 +4,22 @@
 
   @media only screen and (max-width: 1000px) {
     .accountnav {
-      max-width: 500px!important;
+      max-width: 100vw !important;
     }
 
+    .socialspan {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+    .acfimg {
+    /* display: none; */
+    position: absolute;
+    top: -100px;
+    left: 2vw !important;
+    width: 96vw; 
+  }
     .accountnav {
       position:  fixed !important;
       display: flex;
@@ -291,8 +304,7 @@ overflow: hidden;
     display: flex;
     width: 100%;
     position: absolute;      
-    margin-left: 53%;
-    z-index: 99999999999999999 !important;" >  
+    margin-left: 53%;">  
     </button> 
   </div>
    <div class="editform animate__animated animate__fadeInUp" style="
