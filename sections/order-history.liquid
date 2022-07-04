@@ -386,7 +386,7 @@ margin: 50px 5px;">Order History </h1>
    <th>{{ 'customer.orders.total' | t  | link_to: order.customer_url }}</th>
    <td>{{- order.total_price | money | link_to: order.customer_url -}}</td>
             <th>{{ 'customer.orders.payment_status' | t  | link_to: order.customer_url }}</th>
-            <td> <div style="margin-top: 10px; display: flex; justify-content: center; flex-direction: row"><a href="https://api-pdf.vify.io/api/pdf-preview/invoice?shop_domain={{ shop.permanent_domain }}&order_id={{ order.id }}&locale=en" style="background-color: #6c1d45; 
+            <td> <div style="margin: 10px 0; display: flex; justify-content: center; flex-direction: row"><a href="https://api-pdf.vify.io/api/pdf-preview/invoice?shop_domain={{ shop.permanent_domain }}&order_id={{ order.id }}&locale=en" style="background-color: #6c1d45; 
               border-radius: 20px !important; border-color: #6c1d45; color: #fff; display:flex;padding:5px 15px;margin-bottom:0;font-size:14px;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;background-image:none;border:1px solid transparent;border-radius:4px; margin-right: 10px; margin-top: 4px; align-self: center" target="_blank"> Download PDF</a></div>
         </td>
         
