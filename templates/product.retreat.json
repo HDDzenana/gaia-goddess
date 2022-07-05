@@ -30,7 +30,7 @@
         "75839429-9cd7-45bf-bc60-748edd7cefe2": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "<p class=\"pink\"> Addons: <\/p>"
+            "custom_liquid": "<p class=\"pink\"> Add-ons: <\/p>"
           }
         },
         "form": {
