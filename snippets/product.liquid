@@ -194,7 +194,7 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
 
                 {%- when 'vendor' -%}
                   {%- unless product == blank -%}
-                    {%- assign vendor = product.vendor -%}
+                    {%- assign vendor = productproduct__title-and-price.vendor -%}
                   {%- else -%}
                     {%- assign vendor = 'homepage.onboarding.vendor' | t -%}
                   {%- endunless -%}
