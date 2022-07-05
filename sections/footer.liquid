@@ -293,7 +293,10 @@
 " >  		  info@gaiagoddesslifestyle.com
 									</span>		</div>
 									   </a></li>{% endif %}
-									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%} <span class="grayregular hoverpink"> {{ block.settings.footer_phone_text }}</span></li>{% endif %}
+									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%} <span class="grayregular hoverpink" style="
+										user-select: none;
+										-webkit-user-modify: read-only;overflow: hidden;
+								" > {{ block.settings.footer_phone_text }}</span></li>{% endif %}
 								</ul>
 
 							{%- if block.settings.footer_social_title != blank -%}
