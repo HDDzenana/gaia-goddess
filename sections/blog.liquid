@@ -296,67 +296,17 @@ width: 94%;">
         </p>
 
      
-        {%if article.tags contains 'general' and   article.tags contains 'customeronly'   %}
-       
-        {%if customer %}
-
-        <a href="{{article.url}}" class="leftlink"> Read Article</a>
-        {% else %} 
-        <div class="jointo" > 
-        <a href="/account/login" class="leftlink">Read Article   </a>
-        <p class="grayregular" style="
-        font-size: 12px;padding-bottom: 0;">
-        *Join the membership to read the article.</p>
-        </div>
-        {%endif%} 
-        {%endif%}
+        {%if article.tags contains 'general'  %}
+      <a href="{{article.url}}" class="leftlink"> Read Article</a>
+      {%endif%}
       {%if article.tags contains 'podcast'  %}
-      {%if article.tags contains 'customeronly'  %}
-      {%if customer %}
       <a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
-      {%else%} 
-      <div class="jointo" > 
-      <a href="/account/login" class="leftlink">Listen Podcast </a>
-      <p class="grayregular" style="
-      font-size: 12px;padding-bottom: 0;">
-      *Join the membership to listen the podcast</p>
-      </div>
-      {%endif%} {%endif%}
       {%endif%}
       {%if article.tags contains 'video'  %}
-      {%if article.tags contains 'customeronly'  %}
-      {%if customer %}
       <a href="{{article.url}}" class="leftlink"> Watch Video </a>
-      {%else%} 
-      <div class="jointo" > 
-      <a href="/account/login" class="leftlink"> Watch Video </a>
-      <p class="grayregular" style="
-      font-size: 12px;padding-bottom: 0;">
-      *Join the membership to watch the video</p>
-      </div>
-      {%endif%} {%endif%}
       {%endif%}
-   <!--  -->
+   
  
-   {%if article.tags contains 'podcast'  %}
-   {%if article.tags != 'customeronly'  %}
- 
-   <a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
-     {%endif%}
-   {%endif%}
-   {%if article.tags contains 'video'  %}
-   {%if article.tags != 'customeronly'  %}
- 
-   <a href="{{article.url}}" class="leftlink"> Watch Video </a>
-    
-   {%endif%}
-   {%endif%}
-   {%if article.tags contains 'general'  %}
-   {%if article.tags != 'customeronly'  %}
-  
-   <a href="{{article.url}}" class="leftlink"> Read Article</a>
- 
-   {%endif%} {%endif%}
  
  
     </div> 
@@ -583,16 +533,5 @@ li {
     -webkit-appearance: none !important; 
     appearance: none !important;
     padding-right: 2rem !important;
-  }
-  .leftlink {
-    min-width: fit-content;
-  }
-
-  .jointo {
-    display: flex; flex-direction: row;
-    padding: 0;
-    flex-direction: row;
-    margin: 0;
-    gap: 80%;
   }
 </style>
