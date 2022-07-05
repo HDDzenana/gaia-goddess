@@ -11884,8 +11884,8 @@ border-radius: 0px !important;}
 .contact__block {
   min-height: 100vh;
 }
-contact__info-background {
-  display: flex;
-  align-items: center;
+.contact__info-background {
+  display: flex !important;
+  align-items: center !important;
 }
 /* end contact from changes */
