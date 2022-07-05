@@ -1,35 +1,46 @@
-<style>
-  
-</style>
+
 {% assign menu = section.settings.menu%}
 <style>
 
-  @media only screen and (max-width: 1000px) {
-    .accountnav {
-      max-width: 500px!important;
-    }
+@media only screen and (max-width: 1000px) {
+.accountnav {
+  max-width: 100vw !important;
+}
 
-    .accountnav {
-      position:  relative !important;
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 0px !important;
-    margin-left: 8% !important;
-    }
+.socialspan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 5px 0;
+}
+.acfimg {
+  position: absolute;
+  top: -100px;
+  left: 2vw !important;
+  width: 96vw; 
+}
+.accountnav {
+  position:  fixed !important;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0px !important;
+  margin-left: 8% !important;
+}
 
-    .customaccount-{{section.id}} {
-      flex-direction: column-reverse;
-    }
-  }
+.customaccount-{{section.id}} {
+  flex-direction: column-reverse;
+}
+}
+/* ENDMOBILE */
 
 .customaccount-{{section.id}} {
   display: flex;
   min-height: 100vh;
 }
 
-  .cf-app__checkboxes-direction--h .cf-app__checkbox {
-    min-width: 250px;
-  }
+.cf-app__checkboxes-direction--h .cf-app__checkbox {
+mi  n-width: 250px;
+}
 /* MENU STYLING GENERAL */
 .accountnav {
   background: white;
@@ -58,10 +69,8 @@ li.active
 
 
 .accountnav ul {
-  margin: 0;
-  /* padding-left: 15px !important; */
-  padding-bottom: 15px;
-  /* padding-inline-start: 0 !important; */
+  margin: 0; 
+  padding-bottom: 15px; 
 }
 
 .accountnav li {
@@ -105,7 +114,10 @@ li.active
   width: 100%;
 }
 
-.cf-app__file-preview.has-file,.cf-app__file-preview-wrapper {visibility: hidden !important; display: none;}
+.cf-app__file-preview.has-file,.cf-app__file-preview-wrapper {
+  visibility: hidden !important; 
+  display: none;
+}
 
 .topbanner  * {
   max-height: 250px;
@@ -173,20 +185,17 @@ input[type="radio"]:checked {
   outline: none;
   padding: 0;
   background: url({{ 'checked.svg' | asset_url }}) !important; 
-
   background-size: contain;
-    background-repeat: no-repeat !imm;
-    /* background-color: #6C1D45 !important; */
-    border: 1px solid rgb(227, 227, 227);
-    border-radius: 0px !important;
-    content: none;
-    border: 1px solid white !important;
-    width: 20px;
-    height: 20px; 
-    margin-bottom: -5px;
-
-  /* border: 1px solid white !important; */
+  background-repeat: no-repeat !important;
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 0px !important;
+  content: none;
+  border: 1px solid white !important;
+  width: 20px;
+  height: 20px; 
+  margin-bottom: -5px;
 }
+
 input[type='checkbox'],
 input[type="radio"] {
   width: 20px !important;
@@ -205,12 +214,14 @@ input[type="radio"]:checked::before{
 overflow: hidden;
   margin-top: 10px;
   margin-bottom: -15px !important;
-  margin-right: 5px;}
+  margin-right: 5px;
+  }
 </style>
 
 <div class="customaccount-{{section.id}}"> 
 <!-- MENU -->
 <div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
+  <div class="anv">
 <nav role="accountnav" class="accountnav">
   <h4 class="menu-title">  {{ menu.title }}  </h4>
   <ul>
@@ -261,6 +272,7 @@ overflow: hidden;
     {%- endfor -%}
   </ul>
 </nav> 
+  </div>
 <!-- endmenu -->
 </div> 
 <!-- endmenuwrapper --> 
@@ -279,23 +291,26 @@ overflow: hidden;
   
 
     </div>
+
+  </div>
+  <div class="imagechangebutton">
+    
+    
     <button id="classimg" class="changeimg"   
     style=" background: url({{ 'changeimage.svg' | asset_url }}); 
     background-repeat:no-repeat;height:50px;
-    margin-top: -150px;
+    margin-top: -50px;
     display: flex;
     width: 100%;
-    margin-left: 53%;
-    z-index: 99999999999999999 !important;" >  
+    position: absolute;      
+    margin-left: 53%;">  
     </button> 
-  </div>  
+  </div>
    <div class="editform animate__animated animate__fadeInUp" style="
    min-height: max-content; padding: 100px 0 !important;
 ">
 
-<div id="miniform" class="miniform">
-  
-</div>
+
 
  <div class="form-vertical" style="padding:0 5px ;">
       <!-- <p class="registration-p">or use your email for registration:</p> -->
@@ -370,7 +385,7 @@ setTimeout(() => {
 <path d="M19 0C22.7578 0 26.4313 1.11433 29.5558 3.20208C32.6804 5.28982 35.1156 8.25722 36.5537 11.729C37.9918 15.2008 38.368 19.0211 37.6349 22.7067C36.9018 26.3924 35.0922 29.7778 32.435 32.435C29.7778 35.0922 26.3924 36.9018 22.7067 37.6349C19.0211 38.368 15.2008 37.9918 11.729 36.5537C8.25722 35.1156 5.28982 32.6804 3.20208 29.5558C1.11433 26.4313 0 22.7578 0 19C0 13.9609 2.00178 9.12816 5.56497 5.56497C9.12816 2.00178 13.9609 0 19 0V0Z" fill="#6C1D45"/>
 <path d="M23.4797 20.203L24.0147 16.719H20.6718V14.458C20.6482 14.1978 20.6835 13.9356 20.775 13.6909C20.8665 13.4462 21.0119 13.2251 21.2004 13.0442C21.3889 12.8633 21.6157 12.7271 21.864 12.6457C22.1123 12.5643 22.3757 12.5398 22.6347 12.574H24.1547V9.60902C23.2627 9.46505 22.3613 9.38651 21.4577 9.37402C18.7047 9.37402 16.9048 11.043 16.9048 14.064V16.719H13.8438V20.203H16.9048V28.626H20.6718V20.203H23.4797Z" fill="white"/>
 </svg> Facebook </div></a>`;
-document.querySelector('input[value="Instagram"]').parentElement.innerHTML = ` <a href="www.instragram.com/gaiagoddesslifestyle" class="maroonbold" target="_blank" rel="noopener noreferrer"> <div class="socialspan"> <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+document.querySelector('input[value="Instagram"]').parentElement.innerHTML = ` <a href="{{ settings.instagram_link }}" class="maroonbold" target="_blank" rel="noopener noreferrer"> <div class="socialspan"> <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19 38C29.4934 38 38 29.4934 38 19C38 8.50659 29.4934 0 19 0C8.50659 0 0 8.50659 0 19C0 29.4934 8.50659 38 19 38Z" fill="#6C1D45"/>
 <path d="M19.0019 14.3391C18.0801 14.3391 17.1789 14.6124 16.4124 15.1246C15.6459 15.6367 15.0485 16.3647 14.6957 17.2164C14.3429 18.0681 14.2506 19.0052 14.4305 19.9094C14.6103 20.8135 15.0543 21.644 15.7061 22.2959C16.358 22.9477 17.1885 23.3916 18.0926 23.5715C18.9968 23.7513 19.9339 23.659 20.7856 23.3063C21.6373 22.9535 22.3653 22.3561 22.8774 21.5896C23.3896 20.8231 23.6629 19.9219 23.6629 19.0001C23.664 18.3877 23.5441 17.7811 23.3103 17.2151C23.0764 16.6491 22.7331 16.1349 22.3001 15.7019C21.8671 15.2689 21.3528 14.9256 20.7869 14.6917C20.2209 14.4578 19.6143 14.338 19.0019 14.3391ZM19.0019 22.0301C18.4027 22.0301 17.8168 21.8523 17.3186 21.5194C16.8203 21.1865 16.4319 20.7132 16.2026 20.1596C15.9732 19.6059 15.9132 18.9967 16.0301 18.4089C16.1471 17.8212 16.4356 17.2813 16.8594 16.8575C17.2831 16.4338 17.823 16.1452 18.4108 16.0283C18.9986 15.9114 19.6078 15.9714 20.1615 16.2007C20.7151 16.43 21.1883 16.8184 21.5213 17.3167C21.8542 17.815 22.0319 18.4008 22.0319 19.0001C22.0306 19.8033 21.711 20.5732 21.143 21.1411C20.5751 21.7091 19.8051 22.0287 19.0019 22.0301ZM24.9399 14.1491C24.9399 14.364 24.8762 14.5742 24.7567 14.753C24.6373 14.9317 24.4675 15.071 24.2689 15.1533C24.0703 15.2356 23.8517 15.2571 23.6409 15.2152C23.43 15.1732 23.2363 15.0697 23.0843 14.9177C22.9323 14.7657 22.8288 14.572 22.7868 14.3611C22.7449 14.1503 22.7664 13.9317 22.8487 13.7331C22.9309 13.5345 23.0703 13.3647 23.249 13.2452C23.4278 13.1258 23.6379 13.0621 23.8529 13.0621C23.9957 13.0618 24.1371 13.0897 24.269 13.1442C24.4009 13.1986 24.5208 13.2786 24.6218 13.3795C24.7228 13.4804 24.8028 13.6002 24.8574 13.7321C24.912 13.864 24.9401 14.0053 24.9399 14.1481V14.1491ZM28.0269 15.2491C28.0559 13.8367 27.5283 12.4697 26.5579 11.4431C25.5289 10.4751 24.1624 9.94756 22.7499 9.97305C21.2499 9.88805 16.7499 9.88805 15.2499 9.97305C13.8375 9.94536 12.4703 10.4716 11.4409 11.4391C10.4721 12.4677 9.94503 13.8352 9.97293 15.2481C9.88793 16.7481 9.88793 21.2481 9.97293 22.7481C9.94288 24.1613 10.4702 25.5295 11.4409 26.5571C12.4709 27.5239 13.8375 28.0506 15.2499 28.0251C16.7499 28.1101 21.2499 28.1101 22.7499 28.0251C24.1631 28.0551 25.5314 27.5278 26.5589 26.5571C27.5264 25.5275 28.0532 24.1606 28.0269 22.7481C28.1119 21.2481 28.1119 16.7481 28.0269 15.2481V15.2491ZM26.0879 24.3551C25.9337 24.7461 25.7007 25.1013 25.4034 25.3985C25.1062 25.6958 24.751 25.9288 24.3599 26.0831C23.1599 26.5581 20.3239 26.4481 19.0019 26.4481C17.6799 26.4481 14.8359 26.5531 13.6439 26.0831C13.2528 25.9293 12.8974 25.6969 12.5998 25.4002C12.3022 25.1034 12.0688 24.7487 11.9139 24.3581C11.4389 23.1581 11.5489 20.3221 11.5489 19.0001C11.5489 17.6781 11.4449 14.8341 11.9139 13.6411C12.0683 13.2499 12.3015 12.8947 12.5989 12.5974C12.8963 12.3002 13.2517 12.0672 13.6429 11.9131C14.8429 11.4381 17.6789 11.5481 19.0009 11.5481C20.3229 11.5481 23.1669 11.4431 24.3589 11.9131C24.75 12.0673 25.1052 12.3003 25.4024 12.5976C25.6997 12.8948 25.9327 13.25 26.0869 13.6411C26.5619 14.8411 26.4519 17.6771 26.4519 18.9991C26.4519 20.3211 26.5629 23.1651 26.0879 24.3581V24.3551Z" fill="white"/>
 </svg>
@@ -404,11 +419,12 @@ uploadHereElement.innerHTML = `<div class="uploadherediv"><svg width="28" height
 let chooseAvatarElement = document.createElement('div');
 chooseAvatarElement.innerHTML = `<br>
 <div class="uploadavatarherediv">
-<svg width="397" height="29" viewBox="0 0 397 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.85498 14.6399H396.455" stroke="#FFD9E5"/>
-<path d="M202 29C209.732 29 216 22.5081 216 14.5C216 6.49187 209.732 0 202 0C194.268 0 188 6.49187 188 14.5C188 22.5081 194.268 29 202 29Z" fill="#FFD9E5"/>
-<path d="M197.005 9.874C198.296 9.874 199.323 10.2987 200.086 11.148C200.857 11.9887 201.243 13.0937 201.243 14.463C201.243 15.789 200.862 16.8983 200.099 17.791C199.336 18.6837 198.266 19.13 196.888 19.13C195.553 19.13 194.513 18.6967 193.768 17.83C193.023 16.9547 192.65 15.8453 192.65 14.502C192.65 13.1587 193.04 12.0537 193.82 11.187C194.6 10.3117 195.662 9.874 197.005 9.874ZM198.838 12.162C198.413 11.564 197.776 11.265 196.927 11.265C196.078 11.265 195.441 11.5597 195.016 12.149C194.6 12.7297 194.392 13.501 194.392 14.463C194.392 15.4163 194.613 16.2007 195.055 16.816C195.497 17.4313 196.13 17.739 196.953 17.739C197.82 17.739 198.457 17.4357 198.864 16.829C199.28 16.2137 199.488 15.4337 199.488 14.489C199.488 13.5357 199.271 12.76 198.838 12.162ZM206.115 15.282H204.646V19H202.982V10.004H206.791C207.727 10.004 208.451 10.2337 208.962 10.693C209.482 11.1437 209.742 11.733 209.742 12.461C209.742 13.0157 209.608 13.4707 209.339 13.826C209.079 14.1813 208.75 14.4327 208.351 14.58C209.157 14.8313 209.56 15.5853 209.56 16.842V17.258C209.56 18.1507 209.603 18.7313 209.69 19H208.078C207.965 18.7227 207.909 18.0597 207.909 17.011V16.855C207.909 16.283 207.788 15.88 207.545 15.646C207.311 15.4033 206.834 15.282 206.115 15.282ZM204.646 11.369V13.917H206.388C206.96 13.917 207.376 13.813 207.636 13.605C207.896 13.3883 208.026 13.0633 208.026 12.63C208.026 11.7893 207.502 11.369 206.453 11.369H204.646Z" fill="#6C1D45"/>
-</svg><br>
+<svg width="244" height="29" viewBox="0 0 244 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 14H244" stroke="#FFD9E5"/>
+<path d="M120 29C127.732 29 134 22.5081 134 14.5C134 6.49187 127.732 0 120 0C112.268 0 106 6.49187 106 14.5C106 22.5081 112.268 29 120 29Z" fill="#FFD9E5"/>
+<path d="M115.005 9.874C116.296 9.874 117.323 10.2987 118.086 11.148C118.857 11.9887 119.243 13.0937 119.243 14.463C119.243 15.789 118.862 16.8983 118.099 17.791C117.336 18.6837 116.266 19.13 114.888 19.13C113.553 19.13 112.513 18.6967 111.768 17.83C111.023 16.9547 110.65 15.8453 110.65 14.502C110.65 13.1587 111.04 12.0537 111.82 11.187C112.6 10.3117 113.662 9.874 115.005 9.874ZM116.838 12.162C116.413 11.564 115.776 11.265 114.927 11.265C114.078 11.265 113.441 11.5597 113.016 12.149C112.6 12.7297 112.392 13.501 112.392 14.463C112.392 15.4163 112.613 16.2007 113.055 16.816C113.497 17.4313 114.13 17.739 114.953 17.739C115.82 17.739 116.457 17.4357 116.864 16.829C117.28 16.2137 117.488 15.4337 117.488 14.489C117.488 13.5357 117.271 12.76 116.838 12.162ZM124.115 15.282H122.646V19H120.982V10.004H124.791C125.727 10.004 126.451 10.2337 126.962 10.693C127.482 11.1437 127.742 11.733 127.742 12.461C127.742 13.0157 127.608 13.4707 127.339 13.826C127.079 14.1813 126.75 14.4327 126.351 14.58C127.157 14.8313 127.56 15.5853 127.56 16.842V17.258C127.56 18.1507 127.603 18.7313 127.69 19H126.078C125.965 18.7227 125.909 18.0597 125.909 17.011V16.855C125.909 16.283 125.788 15.88 125.545 15.646C125.311 15.4033 124.834 15.282 124.115 15.282ZM122.646 11.369V13.917H124.388C124.96 13.917 125.376 13.813 125.636 13.605C125.896 13.3883 126.026 13.0633 126.026 12.63C126.026 11.7893 125.502 11.369 124.453 11.369H122.646Z" fill="#6C1D45"/>
+</svg>
+<br>
 <strong class="black center" style="text-align: center!important;"> Choose a avatar as per your preference </strong>
 <br><br> <div class="imgmfs">
 {{ shop.metafields.global.triskel.value }} {{ shop.metafields.global.rose.value }} {{ shop.metafields.global.leaf.value }}{{ shop.metafields.global.flower.value }}  </div> </div>`
@@ -422,13 +438,41 @@ const acfUploadField = document.querySelector('.imgclasscf');
 acfUploadField.insertAdjacentElement('afterbegin', uploadHereElement)
 acfUploadField.appendChild(chooseAvatarElement);
 
+
+
+// Open upload modal on click
+const toggleModalHandler = () => {
+  // Get the toggle button
+  const modalBtn = document.querySelector('#classimg');
+
+  // Get the toggle element
+  const modalEl = document.querySelector('.imgclasscf');
+
+  // Toggle event
+  modalBtn.addEventListener('click', () => {
+    modalEl.classList.toggle('modalToggleOn');
+  })
+}
+ toggleModalHandler();
+
 },1000)
 
     
- </script>  
+
+
+ </script>
+
 
 
 <style>
+   .imagechangebutton {
+     position: relative;
+     margin-top: -100px;
+   }
+  
+  .modalToggleOn {
+    display: block !important;
+  }
   .uploadavatarherediv,
   .uploadherediv {
     text-align: center;
@@ -440,7 +484,8 @@ acfUploadField.appendChild(chooseAvatarElement);
     background-color: green;
   }
   .imgclasscf {
-    background: white;
+    display: none;
+    background: #fff;
     max-width: 400px;
     overflow: hidden;
     border-radius: 20px;
@@ -459,8 +504,18 @@ acfUploadField.appendChild(chooseAvatarElement);
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 3px;
   }
+  
+  .imgmfs * {
+  	font-size: 14px;
+  }
+  
+  .imgmfs p  {
+    display: flex;
+    align-items: center;
+  }
+  
   .acfimg {
     /* display: none; */
     position: absolute;
@@ -475,32 +530,7 @@ acfUploadField.appendChild(chooseAvatarElement);
     margin: auto !important;
   }
   .imgclasscf{
-    display: none;
+    /*display: none;*/
   }
 </style>
-
-
-<script>
-  function myFunction() {
-    var x = document.getElementsByClassName('imgclasscf');
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
-  }
-  </script>
-
-<script>
-  var button = document.getElementById('classimg');
-  
-  button.onclick = function() {
-      var div = document.getElementsByClassName('imgclasscf');
-      if (div.style.display !== 'none') {
-          div.style.display = 'none';
-      }
-      else {
-          div.style.display = 'block';
-      }
-  };
-    </script> 
+ 

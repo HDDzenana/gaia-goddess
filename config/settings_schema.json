@@ -624,6 +624,12 @@
       },
       {
         "type": "text",
+        "id": "phone",
+        "label": "Phone",
+        "default": "000 000 000"
+      },
+      {
+        "type": "text",
         "id": "social_tumblr_link",
         "label": "Tumblr",
         "info": "https:\/\/shopify.tumblr.com"

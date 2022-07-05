@@ -33,6 +33,7 @@
     }
     .contact_us_list{
       margin: 0 0 20px;
+      list-style:none;
     }
     .contact__divider {
       border-top: {{ section.settings.border_width }}px solid {{ section.settings.border_color }};
@@ -121,7 +122,8 @@
                    </a></li>
                 {% endif %}
                 {% if section.settings.show_phone %}
-                    <li>{%- render 'contact-phone' -%}{{ section.settings.phone_text }}</li>
+                <li>{%- render 'contact-phone' -%}
+                  <span class="maroon" style="margin-left: 5px;">{{ settings.phone }}</span></li>
                 {% endif %}
               </ul>
   

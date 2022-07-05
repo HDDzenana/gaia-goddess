@@ -47,6 +47,7 @@
         "social-sharing"
       ],
       "settings": {
+        "seatsleft": true,
         "image_gallery": "none",
         "enable_video_looping": false,
         "bg_color": ""

@@ -38,7 +38,7 @@
       {%endif %}
     
      <h5 class="pink bold ct" style="margin-top: 20px;">  
-      {{collection.title}} 
+      <a href="{{collection.url}}">      {{collection.title}}  </a>
     </h5>  
      <div class="about">
       <div class="healersocials">   
@@ -428,6 +428,11 @@ const swiper = new Swiper(".swiper-{{ section.id }}", {
     height: 100%;
     padding
   }
+     
+   .desc, .upev {
+     text-align-last:left;
+   }
+     
   .title {
     padding: 5% !important;
   }
