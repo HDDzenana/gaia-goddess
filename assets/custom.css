@@ -313,3 +313,11 @@ Video blog styling
 #ymq-price-addons {
   display: none !important;
 }
+
+{% comment %}
+FORM SUCCESS
+{% endcomment %}
+.ml-form-successContent *,
+#mlb2-5641280.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent, #mlb2-5641280.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent {
+  font-family: 'Acumin_Pro' !important;
+}
