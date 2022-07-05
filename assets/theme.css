@@ -11889,3 +11889,13 @@ border-radius: 0px !important;}
   align-items: center !important;
 }
 /* end contact from changes */
+
+/* custom account changes */
+.cf-app__checkbox {
+  margin-top: 15px;
+}
+
+.cf-app__field > label {
+  font-weight: 500;
+  margin-top: 10px;
+}
