@@ -306,7 +306,7 @@ Video blog styling
  {% endcomment %}
  .player .vp-video-wrapper, 
 .player .vp-video-wrapper.transparent {
-  border-radius: 30px !important;
+  border-radius: 30px !important; 
 }
 .ymq_tool_span,
 .ymq_option_text_span,
