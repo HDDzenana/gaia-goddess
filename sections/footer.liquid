@@ -293,7 +293,10 @@
 " >  		  info@gaiagoddesslifestyle.com
 									</span>		</div>
 									   </a></li>{% endif %}
-									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%} <span class="grayregular hoverpink"> {{ block.settings.footer_phone_text }}</span></li>{% endif %}
+									{% if block.settings.footer_phone %}<li>{%- render 'footer-phone' -%} <span class="grayregular hoverpink" style="
+    user-select: none;
+    -webkit-user-modify: read-only;overflow: hidden;
+" > {{ block.settings.footer_phone_text }}</span></li>{% endif %}
 								</ul>
 
 							{%- if block.settings.footer_social_title != blank -%}
@@ -302,19 +305,19 @@
 	
 								<div class="mysocial-sharing-wrapper">
 									{%- if block.settings.footer_social_facebook != blank -%}
-										<a class="facebook" rel="noopener" href = "{{settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+										<a class="facebook" href = "{{settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}" target="_blank">
 											{%- render 'icon-footer-facebook' -%}
 										</a>
 									{%- endif -%}
 								
 									{%- if block.settings.footer_social_instagram != blank -%}
-										<a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+										<a class="instagram"   href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}" target="_blank">
 											{%- render 'icon-footer-instagram' -%}
 										</a>
 									{%- endif -%}
 							
 									{%- if block.settings.footer_social_twitter != blank -%}
-										<a class="twitter" rel="noopener" href = "{{ settings.social_twitter_link }}" title="{{ 'footer.socials.title' | t: social: 'Twitter', shop_name: shop.name }}">
+										<a class="twitter" href = "{{ settings.social_twitter_link }}" title="{{ 'footer.socials.title' | t: social: 'Twitter', shop_name: shop.name }}" target="_blank">
 											{%- render 'icon-footer-twitter' -%}
 										</a>
 									{%- endif -%}
@@ -344,7 +347,7 @@
 				<p>©2022 GAIA GODDESS, ALL RIGHT RESERVED.</p>
 			</div>
 			<div class="footer_bottom__credits">
-				<p><a href="#">CREDITS</a></p>
+				<p><a href="https://plus972.com" target="_blank">plus972.com</a></p>
 			</div>
 		</div>
 
