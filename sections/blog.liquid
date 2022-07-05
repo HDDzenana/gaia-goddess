@@ -296,9 +296,10 @@ width: 94%;">
         </p>
 
      
-        {%if article.tags contains 'general'  %}
-        {%if article.tags contains 'customeronly'  %}
+        {%if article.tags contains 'general' and   article.tags contains 'customeronly'   %}
+       
         {%if customer %}
+
         <a href="{{article.url}}" class="leftlink"> Read Article</a>
         {% else %} 
         <div class="jointo" > 
@@ -307,7 +308,7 @@ width: 94%;">
         font-size: 12px;padding-bottom: 0;">
         *Join the membership to read the article.</p>
         </div>
-        {%endif%} {%endif%}
+        {%endif%} 
         {%endif%}
       {%if article.tags contains 'podcast'  %}
       {%if article.tags contains 'customeronly'  %}
@@ -335,9 +336,28 @@ width: 94%;">
       </div>
       {%endif%} {%endif%}
       {%endif%}
-   
+   <!--  -->
  
+   {%if article.tags contains 'podcast'  %}
+   {%if article.tags != 'customeronly'  %}
+ 
+   <a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
+     {%endif%}
+   {%endif%}
+   {%if article.tags contains 'video'  %}
+   {%if article.tags != 'customeronly'  %}
+ 
+   <a href="{{article.url}}" class="leftlink"> Watch Video </a>
+    
+   {%endif%}
+   {%endif%}
+   {%if article.tags contains 'general'  %}
+   {%if article.tags != 'customeronly'  %}
   
+   <a href="{{article.url}}" class="leftlink"> Read Article</a>
+ 
+   {%endif%} {%endif%}
+ 
  
     </div> 
           </div></div>
