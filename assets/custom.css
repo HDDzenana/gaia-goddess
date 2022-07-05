@@ -325,6 +325,7 @@ FORM SUCCESS
 a.pink:hover {
   color: #6c1d45;
 }
-.breadcrumbs a.maroonbold:hover {
-color: #EB6FBD;
+.breadcrumbs a.maroonb,
+.hostedbymaroon a:hover {
+color: #EB6FBD !important;
 }
