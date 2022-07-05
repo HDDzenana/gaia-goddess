@@ -11889,3 +11889,29 @@ border-radius: 0px !important;}
   align-items: center !important;
 }
 /* end contact from changes */
+
+/* custom account changes */
+.cf-app__checkbox,
+.cf-app__radio {
+  margin-top: 15px;
+}
+
+.cf-app__field > label {
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.areas > .cf-app__checkbox { 
+width: 350px
+}
+@media only screen and (max-width: 900px) {
+  .areas > .cf-app__checkbox { 
+    width: 100% !important
+    }
+    .cf-app__checkbox { 
+      width: 100% !important
+      }
+}
+.socialspan {
+  margin-right: 50px;
+}
