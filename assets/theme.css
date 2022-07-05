@@ -11853,3 +11853,29 @@ border-radius: 0px !important;}
   border-radius: 0px !important;
   overflow: hidden;
 }
+
+
+/* policies changes */
+
+.shopify-policy__container {
+  padding: 50px 0;
+  max-width: 88ch  !important;
+  margin: auto;
+  text-align: justify;
+}
+
+.shopify-policy__container rte {
+  font-family: 'Acumin_Pro' I !important;
+}
+.shopify-policy__container strong,
+.shopify-policy__container u {
+  font-weight: 600;
+  color: #6C1D45;
+}
+
+.shopify-policy__container a,
+.shopify-policy__container u {
+  color: #6C1D45;
+}
+
+/* end policies changes */

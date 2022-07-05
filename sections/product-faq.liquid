@@ -125,13 +125,16 @@ Get the latest version: https://github.com/mirceapiturca/Sections/tree/master/FA
   .faq-panel[data-is-animating] {
     display: block!important;
   }
+  .faqprod {
+    padding: 55px 0;
+  }
 </style>
 
 
 {%- comment -%} ---------------- THE MARKUP ---------------- {%- endcomment -%}
 
-
-<h1 class="wrapper maroonbold fqpt" style="padding-top: 100px;">{{section.settings.heading}}</h1>
+<div class="faqprod"> 
+<h1 class="wrapper maroonbold fqpt">{{section.settings.heading}}</h1>
 <br> 
 <div class="wrapper faq-container"> 
 {%- for block in section.blocks -%} 
@@ -221,7 +224,7 @@ Get the latest version: https://github.com/mirceapiturca/Sections/tree/master/FA
 
 
 {%- comment -%} ---------------- THE SETTINGS ---------------- {%- endcomment -%}
-
+</div>
 {% schema %}
 {
   "name": "FAQ",
