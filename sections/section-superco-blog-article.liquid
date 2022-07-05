@@ -184,7 +184,8 @@
        <div class="breadcrumbs" style="display: flex; align-items: center; margin-bottom: 50px;"> {%render 'brhome'%} 
       <a href="{{section.settings.prevlink}}" style="
     margin-top: 10px;    font-weight: bolder;">
-      <strong> <span class="pink" style="color:#EB6FBD ;"> {{section.settings.prevtext}} ></span><span class="maroon"> {{article.title}}</span></strong></a></div>   <div class="td"> {%for tag in article.tags %}
+      <strong> <span class="pink" style="color:#EB6FBD ;"> {{section.settings.prevtext}} ></span><span class="maroon"> {{article.title}}</span></strong></a></div>  
+       <div class="td">  
     {%if article.tags contains 'general' %}
 <div class="icn" style="    width: 50px !important;
 ">  
@@ -197,7 +198,7 @@
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
 {%endif%} 
-    {%endfor%}<time class="pink" datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD !important;">{{ article.published_at | date: format: 'month_day_year' }}</time>
+  <time class="pink" datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD !important;">{{ article.published_at | date: format: 'month_day_year' }}</time>
     </div>
     <h1>
       {{article.title}}
