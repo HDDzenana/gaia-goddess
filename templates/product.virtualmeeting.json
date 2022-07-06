@@ -54,6 +54,7 @@
         "5233243e-f9c4-42a4-ad43-45e54e5183a9"
       ],
       "settings": {
+        "seatsleft": false,
         "image_gallery": "none",
         "enable_video_looping": true,
         "bg_color": "rgba(0,0,0,0)"
@@ -75,7 +76,7 @@
         "4309b5c2-bcaf-41e9-b00b-33f7363df652": {
           "type": "faq",
           "settings": {
-            "checkbox_expanded": true,
+            "checkbox_expanded": false,
             "title": "What are the benefits of meditation?",
             "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum.<\/p>"
           }
