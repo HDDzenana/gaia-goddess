@@ -11931,6 +11931,8 @@ width: 350px
     flex-direction: row;
   }
 
+
+  .icn {min-height: 50px !important;}
 /* mobile changes */
 @media only screen and (max-width: 900px){
   .site-header>.wrapper {
@@ -11938,8 +11940,6 @@ width: 350px
     padding-top:35px !important;
   }
   
-  
- 
 .offerings-feature__text h2,
 .product-feature__text h2 {
   line-height: 45px !important;
