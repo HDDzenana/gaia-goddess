@@ -2,8 +2,19 @@
 {% assign menu = section.settings.menu%}
 <style>
 
+/* .triskelchange {
+    width:100% !important;
 
-
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+  }
+  .imgmfs {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
 .customer-icon {
   display: none;
     position: absolute;
@@ -326,7 +337,10 @@ overflow: hidden;
  
      <!-- <img class="appimgacf" src="{{ 'rosebg.svg' | asset_img_url: 'master' }}" class="profilepicture"> -->
      <span class=" profilepicture" style="position:relative;">
-      <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
+      <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}"  class="profilepicture" style="
+      width: 100% !important;
+      height: 100% !important;
+      border: none !important;">
      
         <span class="customer-icon" id="customer-icon-rose">
         {% render 'customer-icon-rose' %} 
