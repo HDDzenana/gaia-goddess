@@ -2,6 +2,27 @@
 {% assign menu = section.settings.menu%}
 <style>
 
+
+
+.customer-icon {
+  display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+  }
+.customer-icon svg {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+.profilepicture {
+  height: 150px;
+  width: 150px;
+}
+
+
 @media only screen and (max-width: 1000px) {
 .accountnav {
   max-width: 100vw !important;
@@ -220,12 +241,17 @@ input[type="radio"]:checked::before{
   font-size: 21px;
 }
 
-.icon {
+.icon { 
 overflow: hidden;
   margin-top: 10px;
   margin-bottom: -15px !important;
   margin-right: 5px;
   }
+
+
+
+
+ 
 </style>
 
 <div class="customaccount-{{section.id}}"> 
@@ -297,9 +323,26 @@ overflow: hidden;
    
     <div class="profilepicturewrapper"> 
  
-     <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
-  
+     <!-- <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture"> -->
+     <!-- <img class="appimgacf" src="{{ 'rosebg.svg' | asset_img_url: 'master' }}" class="profilepicture"> -->
+     <span class=" profilepicture" style="position:relative;">
 
+        <span class="customer-icon" id="customer-icon-rose">
+        {% render 'customer-icon-rose' %} 
+        </span>
+        <span class="customer-icon" id="customer-icon-triskel">
+          {% render 'customer-icon-triskel' %} 
+          </span>
+        <span class="customer-icon" id="customer-icon-leaf">
+          {% render 'customer-icon-leaf' %} 
+          </span>
+        <span class="customer-icon" id="customer-icon-flower">
+          {% render 'customer-icon-flower' %} 
+          </span>
+
+     </span>
+
+ 
     </div>
 
   </div>
@@ -468,6 +511,46 @@ const toggleModalHandler = () => {
  const triskelchange =  document.querySelector ('.triskelchange'); 
  console.log (triskelchange)
  
+
+
+  const allCustomerClickIcons = document.querySelectorAll('.triskelchange');
+  allCustomerClickIcons.forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.customer-icon').forEach(icon => {
+        if (el.id === 'triskelchange') {
+          if (icon.id === 'customer-icon-triskel') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        } else if (el.id === 'rosechange') {
+          if (icon.id === 'customer-icon-rose') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        } else if (el.id === 'leafchange') {
+          if (icon.id === 'customer-icon-leaf') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        } else if (el.id === 'flowerchange') {
+          if (icon.id === 'customer-icon-flower') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        }
+      })
+    })
+
+  })
+
   
  
 
