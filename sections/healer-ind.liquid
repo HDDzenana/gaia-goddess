@@ -203,15 +203,15 @@
           </div>
           <div class="healer-heading__icons">
             {% if block.settings.show_instagram_icon %}
-              <a target="_blank"   class="social-circle facebook" href="{{ block.settings.social_instagram_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+              <a target="_blank"   class="social-circle facebook" href="{{ block.settings.link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
                 {%- render 'icon-footer-instagram' -%}
               </a>
             {% endif %}
-            <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_facebook_link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">
+            <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.link }}" title="{{ 'general.accessibility.facebook_share' | t }}" style="margin-left:5px ;">
               {%- render 'icon-footer-facebook' -%}
             </a>
             {% if block.settings.show_website_icon %}
-              <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.social_website_link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
+              <a target="_blank" rel="noopener" class="social-circle facebook" href="{{ block.settings.link }}" title="{{ 'general.accessibility.facebook_share' | t }}">
                 {%- render 'healer-ind-site' -%}
               </a>
             {% endif %}
