@@ -11895,7 +11895,7 @@ border-radius: 0px !important;}
 .cf-app__radio {
   margin-top: 15px;
   margin-right: 5px;
-  width: 90vw
+ 
 }
 
 .cf-app__field > label {
@@ -11959,6 +11959,13 @@ width: 350px
 #shopify-section-template--15693682704561__16504194475f30e158 br {
   display: none;
 }
+  .cf-app__checkbox,
+.cf-app__radio {
+  margin-top: 15px;
+  margin-right: 5px;
+  width: 90vw
+}
+  
 .scroll-downs {
   display: none !important;
 }
