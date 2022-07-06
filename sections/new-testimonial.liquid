@@ -294,15 +294,38 @@
  .swigpertestimonial {
     width: 75% !important;
   }
-
+  /* safari */
+  @media not all and (min-resolution:.001dpcm)  and (max-width: 768px) { 
+ 
+  .testimonial__item  .swipertestimonial,
+  .testimonial__inner  {
+    -webkit-margin-start: 10% !important;
+  }
+  .swiper .swiper-{{section.id}}  .swipertestimonial {
+    width: 95% !important;
+    height: 100%;
+  }
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal, 
+  .swiper-pagination-custom, .swiper-pagination-fraction{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+  }
+ 
+}
+/* endsafari */
  @media  only screen and (max-width: 768px) {
   .swiper .swiper-{{section.id}}  .swipertestimonial {
     width: 85% !important;
     height: 100%;
-  }  @media not all and (min-resolution:.001dpcm) { 
-  .testimonial__item  .swipertestimonial,
-  .testimonial__inner  {
-    -webkit-margin-start: 15% !important;
+  }  
+  .swiper-horizontal>.swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal, 
+  .swiper-pagination-custom, .swiper-pagination-fraction{
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
   }
  
 }

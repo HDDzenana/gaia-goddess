@@ -44,6 +44,7 @@ background-color: {{bg_color}};
   justify-content: center;
   margin: auto;
   padding: 50px 0; 
+  flex-wrap: wrap;
 }
 
 .card-image {
@@ -108,6 +109,26 @@ card{
       .btn--about-card{
           margin-top: 15px;
       }
+
+      .card-text {
+        min-width: 100%;
+        margin: auto
+      }
+      .card-{{section.id}}   {
+        display: flex;
+        flex-direction: column !important;
+      }
+.h1-{{section.id}} {
+  max-width: 90vw;
+  margin: auto;
+}
+,custompodcast {
+  max-width: 90vw;
+  margin: auto;
+}
+.icn {
+  margin-left: -50px;
+}
       .about__block{
           flex-direction: column-reverse;
           display: flex;
@@ -230,7 +251,7 @@ card{
 {%endif%} 
     {%endfor%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
     </div></div>
-    <h1 class="maroonbold">
+    <h1 class="maroonbold h1-{{section.id}}">
       {{article.title}}   
     </h1>      
 </div> <div class="articlecontent">

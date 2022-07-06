@@ -20,12 +20,12 @@
 </div>
 
 <div class="description_div grayregular" style="color: #575757;margin-top: 3%; text-align: center; font-weight: bolder;">
-<p style="margin-bottom: 0 !important; padding-bottom:0 !important;"> {{section.settings.description}}
+<p  class="minidesc" style="margin-bottom: 0 !important; padding-bottom:0 !important;"> {{section.settings.description}}
   
 </p>
   <br>
  
-          <a href="{{ section.settings.button_link }}" class="gbtn btn btn--product-feature" style="margin-top: 30px; background-color: {{section.settings.button_color}} !important; text-align-last: center !important; border: 1px solid {{section.settings.button_color}} !important;">{{ section.settings.button_text }}</a>
+          <a href="{{ section.settings.button_link }}" class="gbtn btn btn--product-feature" style="margin-top: 30px; background-color: {{section.settings.button_color}} !important; text-align-last: center !important; text-align: center; border: 1px solid {{section.settings.button_color}} !important;">{{ section.settings.button_text }}</a>
      
 </div>
 
@@ -36,10 +36,17 @@
     font-size: 34px !important;
    }
 
-   .mpcard-{{section.id}}  .description_div .grayregylar * { 
-    max-width: 90% !important;
+   .minidesc { 
+    max-width: 84% !important; 
     margin: auto;
   }
+  .mpcard-{{section.id}} br {
+    display: none;
+  }
+  .mpcard-{{section.id}} {
+    max-width: 90%;
+    margin: auto;
+   }
    .mbpimg,  .mbpimg .gaia-image  {
     width: 30px !important;
     height: 20px !important;

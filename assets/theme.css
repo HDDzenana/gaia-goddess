@@ -11945,9 +11945,15 @@ width: 350px
   font-size: 35px;
   line-height: 47px !important;
 }
-
+.gbtn,
+.gbtn * {
+  text-align: center !important;
+}
 #shopify-section-template--15693682704561__16504194475f30e158 br {
   display: none;
+}
+.scroll-downs {
+  display: none !important;
 }
 {% for block in section.blocks %}
 .testimonial__inner .crevs-{{block.id}}{
