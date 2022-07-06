@@ -109,9 +109,6 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
      .newestcards-{{section.id}} {
       padding-top: 10px;
      }
-        .articlecontents-{{section.id}} * {
-      max-width:200px;
-    }
      .blogsall {
       display: flex !important;
       flex-direction: column !important;
@@ -145,7 +142,9 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
           background: white;
     margin-top:-100px;
       min-height: 205px;}
-  
+      .articlecontents-{{section.id}} * {
+      max-width:200px;
+    }
    
   .leftlink,
     .time, .time * {    display: flex;
@@ -188,6 +187,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
     object-fit: contain;
     margin: 0;
     padding: 0;
+  }
   }
   </style>
 <div class="newestcards-{{section.id}} " style="background-color: {{section.settings.section_bg}};"> 
