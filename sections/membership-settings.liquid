@@ -13,7 +13,9 @@
       
     /* margin-left: 15% !important; */
     }
-
+    .miniform * {
+      min-width: 96% !important;
+    }
 
     .miniformwrapper {
     position: absolute;
@@ -24,7 +26,7 @@
     left: 5% !important;
     border-radius: 40px;
     padding: 50px 0;
-    width: 90%;
+    width: 96%;
     margin: auto !important;
 } 
     .accountnav-wrapper {
@@ -65,8 +67,8 @@
     z-index: 33333;
     background: white;
     filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
-    top: -57% !important;
-    left: 15% !important;
+    top: -57%;
+    left: 15%;
     border-radius: 40px;
     padding: 50px 0;
 }
@@ -87,7 +89,7 @@
     border-radius: 40px;
     overflow: hidden;
     position: fixed;
-    margin-left: 5%;
+    margin-left: 4%;
     margin-top: 120px;
     margin-bottom: 500px;
     filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
@@ -135,7 +137,8 @@ li.active
   padding-bottom: 15px;
 }
 .accountnav-wrapper {
-  width: 25%;
+  /* width: 25%; */
+  min-width: 400px; width: 500px; display: flex; 
   display: flex;
 }
 /* END MENU STYLING - GENERAL  */
