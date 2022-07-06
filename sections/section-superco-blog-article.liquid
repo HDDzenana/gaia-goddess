@@ -279,7 +279,7 @@ image: section.settings.image %}
                         {% endif %}
                     
                         {% if section.settings.card_social %}
-                          <a class="website" rel="noopener" href = "{{ settings.social_twitter_link }}" title="">
+                          <a class="website" rel="noopener" href = "{{article.metafields.custom.author_collection}}" title="">
                             {%- render 'healer-website' -%}
                           </a>
                         {% endif %}
