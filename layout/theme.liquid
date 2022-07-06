@@ -219,5 +219,6 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 	{%- section 'popup' -%}
 {% include 'expo' %}
  
-</body>
+{% include 'limitsify' %}
+	        </body>
 </html>
