@@ -11924,8 +11924,8 @@ width: 350px
   cursor: pointer;
 }
   
-  .socialgaia  > .cf-app__checkbox { 
-      width: 50% !important
+  .socialgaia   .cf-app__checkbox { 
+      max-width: 50% !important
       
     display: flex;
     flex-direction: row;
