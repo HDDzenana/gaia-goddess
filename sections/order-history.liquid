@@ -338,13 +338,13 @@ overflow: hidden;
  {%if customer %}
  
 {% for order in customer.orders %}
-{% if customer.orders.size < 1  %}
+ 
+{% paginate customer.orders by 20 %}{% if customer.orders.size == 0  %}
 <h1 class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
 margin: 50px 5px;" >At this moment, you have no orders. </h1>
 <p class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
 margin: 50px 5px;" > Click <a href="/pages/events">  here </a>  to browse events.</p>
        {% endif %}
-{% paginate customer.orders by 20 %}
 {% if customer.orders.size != 0 %}
 <h1 class="wrapper maroonbold animate__animated animate__fadeInUp" style="
 margin: 50px 5px;">Order History </h1> 
@@ -402,7 +402,10 @@ margin: 50px 5px;">Order History </h1>
     </table>
   </div>
 {% else %}
-  <p>{{ 'customer.orders.none' | t }}</p>
+<h1 class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
+margin: 50px 5px;" >At this moment, you have no orders. </h1>
+<p class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
+margin: 50px 5px;" > Click <a href="/pages/events">  here </a>  to browse events.</p>
 {% endif %}
 
 {% if paginate.pages > 1 %}
