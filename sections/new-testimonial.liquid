@@ -294,11 +294,18 @@
  .swigpertestimonial {
     width: 75% !important;
   }
+
  @media  only screen and (max-width: 768px) {
   .swiper .swiper-{{section.id}}  .swipertestimonial {
     width: 85% !important;
     height: 100%;
+  }  @media not all and (min-resolution:.001dpcm) { 
+  .testimonial__item  .swipertestimonial,
+  .testimonial__inner  {
+    -webkit-margin-start: 15% !important;
   }
+ 
+}
 .swiper-pagination {
     position: relative;
     min-height: 100px;

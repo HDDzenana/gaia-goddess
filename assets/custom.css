@@ -246,10 +246,7 @@ margin: 0 !important}
 }
 
 
-.site-header>.wrapper {
-padding-top: 25px !important;
-}
-
+ 
 .uppercase {
   text-transform: uppercase;
 }
@@ -264,6 +261,10 @@ padding-top: 25px !important;
     min-width: 500px !important;
     left: 90% !important
   }
+  .site-header>.wrapper {
+    padding-top: 25px !important;
+    }
+    
   .js-drawer-open-right .drawer--right > body {
     opacity: .4;
   }
