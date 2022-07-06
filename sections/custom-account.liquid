@@ -7,14 +7,15 @@
 .customer-icon {
   display: none;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 250px;
-    height: 250px;
+    top: -20px;
+    left: -10px;
+
+    width: 170px;
+    height: 170px;
   }
 .customer-icon svg {
-    width: 100% !important;
-    height: 100% !important;
+  width: 170px;
+    height: 188px;
   }
 
 .profilepicture {
@@ -323,10 +324,10 @@ overflow: hidden;
    
     <div class="profilepicturewrapper"> 
  
-     <!-- <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture"> -->
      <!-- <img class="appimgacf" src="{{ 'rosebg.svg' | asset_img_url: 'master' }}" class="profilepicture"> -->
      <span class=" profilepicture" style="position:relative;">
-
+      <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
+     
         <span class="customer-icon" id="customer-icon-rose">
         {% render 'customer-icon-rose' %} 
         </span>
