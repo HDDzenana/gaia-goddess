@@ -338,7 +338,7 @@ overflow: hidden;
  {%if customer %}
  
 {% for order in customer.orders %}
-{% if customer.orders.size == 0 %}
+{% if customer.orders.size < 1  %}
 <h1 class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
 margin: 50px 5px;" >At this moment, you have no orders. </h1>
 <p class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
