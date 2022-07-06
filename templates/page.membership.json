@@ -25,7 +25,7 @@
         "ssubheading_color": "#800000",
         "description": "<p class=\"grayregular\" style=\"text-align: left !important; \"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mus vulputate scelerisque mollis luctus risus nulla. Pharetra laoreet felis euismod et. Id bibendum. <\/p>",
         "button_text": "Learn More",
-        "button_link": "",
+        "button_link": "shopify:\/\/pages\/about",
         "button_color": "#6c1d45",
         "button_hover_color": "#fafafa",
         "video_url": "",
@@ -68,7 +68,7 @@
         "headercolor": "#6c1d45",
         "description": "Sign up today to become a member of Gaia Goddess and <br> get access to amazing content, join fantastic retreats and events.",
         "button_text": "Sign Up Now",
-        "button_link": "shopify:\/\/blogs\/news\/lorem-ipsum-dolor-sit-amet-2",
+        "button_link": "",
         "button_color": "#6c1d45",
         "button_hover_color": "#fafafa"
       }
