@@ -11861,7 +11861,7 @@ border-radius: 0px !important;}
   padding: 50px 0;
   max-width: 88ch  !important;
   margin: auto;
-  text-align: justify;
+  /* text-align: justify; */
 }
 
 .shopify-policy__container rte {
@@ -12004,9 +12004,9 @@ width: 350px
 }
 
 #mlb2-5641280.ml-form-embedContainer .ml-form-embedWrapper.embedForm{ 
-filter: drop-shadow(0px 10px 30px rgba(209, 89, 149, 0.161)) !important;
+/* filter: drop-shadow(0px 10px 30px rgba(209, 89, 149, 0.161)) !important; */
 box-shadow:  none !important;
-height: 200px ;
+/* height: 200px ; */
 display: flex !important;  
 flex-direction: column !important;
 justify-content: center !important;
