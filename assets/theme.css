@@ -12011,3 +12011,8 @@ display: flex !important;
 flex-direction: column !important;
 justify-content: center !important;
 }
+
+
+#cat-filter, #cat-filterr {
+  min-width: fit-content !important ;
+} 
