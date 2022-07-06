@@ -107,9 +107,29 @@
         .btn--about-card{
             margin-top: 15px;
         }
+        .card-{{section.id}} { 
+          flex-direction: column !important;
+        }
+        .uploadedby {
+          flex-direction: column !important;
+        }
+        .card-text {
+          width: 100% !important;
+          margin: auto !important;
+        }
+        .breadcrumbs * {
+          font-size:10px !important;
+          flex-direction: row;
+          overflow: hidden;
+        }
         .about__block{
             flex-direction: column-reverse;
             display: flex;
+          }
+          .grayregular {
+            max-width: 96vw !important;
+            margin: auto;
+            text-align: center;
           }
         .about-info {
             padding-left: var(--gutter-mobile);
