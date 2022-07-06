@@ -267,19 +267,19 @@ image: section.settings.image %}
 
                     <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact">
                         {% if section.settings.card_social %}
-                          <a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                          <a class="instagram" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}" target="_blank">
                             {%- render 'icon-footer-facebook' -%}
                           </a>
                         {% endif %}
                       
                         {% if section.settings.card_social %}
-                          <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                          <a class="instagram" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}" target="_blank">
                             {%- render 'icon-footer-instagram' -%}
                           </a>
                         {% endif %}
                     
                         {% if section.settings.card_social %}
-                          <a class="website" rel="noopener" href = "{{article.metafields.custom.author_collection}}" title="">
+                          <a class="website"  href = "{{article.metafields.custom.author_collection}}" title="" target="_blank">
                             {%- render 'healer-website' -%}
                           </a>
                         {% endif %}
