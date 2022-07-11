@@ -12088,4 +12088,22 @@ text-align: center !important;
 list-style: none !important;
 }
 
- 
+ @media only screen and (max-width: 900px) {
+.mw-stack--vertical {
+  justify-content: left !important;
+ }
+ .mw-option__value-title {
+  margin-left: 25px !important;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+}
+.mw-option__value-title {
+  margin-left: 25px !important;
+  margin-top: 5px;
+  display: flex;
+  flex-direction: row;
+  max-width: 200px;
+  flex-wrap: wrap;
+}
+}
