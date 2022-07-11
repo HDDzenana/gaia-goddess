@@ -288,7 +288,8 @@ image: section.settings.image %}
     
                       </div>
                 </div>
-            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background: #FFFFFF;
+            </div>   {%- if section.settings.show_share_buttons -%}  
+             <div class="about-card sharing-{{section.id}}" style="background: #FFFFFF;
 box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161);
 background: #FFFFFF !important;
 box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
@@ -296,7 +297,7 @@ box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:t
                <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact"> 
                
              {%- render 'social-sharing', article: article -%}
-             </div></div>    {%- endif -%}
+             </div></div>     {%- endif -%}
              </div>
         </div>
 
@@ -316,6 +317,16 @@ box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:t
   
   <div class="border"></div>
 
+  <!-- hide sharing if locked -->
+  {% if article.tags contains 'customeronly' %}
+<style>
+.sharing-{{section.id}} {
+  visibility: hidden !important;
+}
+ </style>
+{% endif %}
+
+<!-- endhide -->
   <script type="application/ld+json">
 
 
