@@ -73,15 +73,7 @@
 			If accounts are set as optional, the following will be shown as an option
 			during checkout, not on the default /login page.
 			{% endcomment %}
-			{% if shop.checkout.guest_login %}
-				{%- if settings.show_spacer_lines -%}
-					<hr>
-				{%- endif -%}
-				<h2>{{ 'customer.login.guest_title' | t }}</h2>
-				{% form 'guest_login', id: 'GuestLogin' %}
-					<button type="submit" class="btn">{{ 'customer.login.guest_continue' | t }}</button>
-				{% endform %}
-			{% endif %}
+	 
 		</div>
 	</div>
 </section>
