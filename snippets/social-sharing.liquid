@@ -33,8 +33,7 @@
   {%- endif -%}
 
   {%- if settings.share_pinterest != blank -%}
-<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=someone@example.com/subject%3DHi%2520There%26body%3Dbody%2520goes%2520here" target="_blank" {{ product.title | strip_html | escape }}&amp;url={{ permalinkURL }}> 
-      {%- render 'icon-share-email'-%}
+<a href="https://mail.google.com/mail/?extsrc=mailto&url=mailto%3A%3Fto%3Dsomeguy%40gmail.com%26bcc%3Dmyattorney%40gmail.com%2Cbuzzfeed%40gmail.com%26subject%3DHi%2520There%26body%3Dbody%2520goes%2520here">    {%- render 'icon-share-email'-%}
     </a> 
   {%- endif -%}
 
