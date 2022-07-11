@@ -12106,4 +12106,11 @@ list-style: none !important;
   max-width: 200px;
   flex-wrap: wrap;
 }
+.gbtn .btn .btn--product-feature, .product-feature__text .btn { 
+  max-width: 50%;
+  text-align: center;
+  text-align-last: center;
+  margin-top: 10px !important;
+  margin: auto;
+}
 }
