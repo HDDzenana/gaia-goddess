@@ -4,342 +4,339 @@
 
 <style>
 
-  .cards-{{section.id}} {
-    padding-top: {{section.settings.padding_top}}px;
-    padding-bottom: {{section.settings.padding_bottom}}px;
-  }
- .img-{{section.id}}, .img-{{section.id}} img {
-    min-width: 100% !important;
-    object-fit: cover;
-  }
-  .icn {
-    margin-left: -10px;
-  }
-
-  .articlecontents-{{section.id}} {
-box-shadow: -6px 7px 20px 0px #d9d2d5eb; 
-    min-width: 90%;
-    float: left;
-    padding: 40px;
-    padding-left: 40px;
-    margin-top: -20px;
-    /* border-radius: 5px; */
-}
- 
-  {% if section.settings.numberofcolumns == '360' %}
-    .cards-{{section.id}}  .multicolumncard__image {
-    width: 360px !important;
-    height: 360px;
-  }
-   .cards-{{section.id}} p 
-   {
-    width: 320px !important;
- 
-  }
-  {% endif %}
-
-    {% if section.settings.numberofcolumns == '260' %}
-  .cards-{{section.id}}    .multicolumncard__image {
-    width: 260px;
-    height: 260px;
-  }   .cards-{{section.id}} p 
-   {
-    /* width: 260px !important; */
- 
-  }
-
-  
-  {% endif %}
-    .cards-{{section.id}} p {
-      margin: 0;
-      min-width: 100%;
+    .cards-{{section.id}} {
+        padding-top: {{section.settings.padding_top}}px;
+        padding-bottom: {{section.settings.padding_bottom}}px;
     }
- 
-  .center {
-    text-align: center; 
-    color: {{section.settings.heading_color}};
-  }
-  .multicolumncard__image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .cards-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
- 
-  }
- 
-  .card-link {
-    text-decoration: none;
-   color:#EB6FBD !important;
-    text-align: center !important;
-    word-break: keep-all;
-    width: 100% !important;
-    text-align: left;
-  }
- 
-  .texttopcont {
-    text-align: left;
-    margin-left: 2%;
-  }
-    .card  * {
-      display: flex;
-      flex-direction: column;
-      width: 260px; 
-      margin: auto;
-      border-radius: 3px;
-      word-break: break-all;
-      margin-top: {{section.settings.spacing_cards}}px;
-   }
-   .additional-wrapper {
-     width: 100%;
-   }
-    .lefti {
-      text-align:left;
-      margin-top: 0;
-      width: 100%;
+    .img-{{section.id}}, .img-{{section.id}} img {
+        min-width: 100% !important;
+        object-fit: cover;
+    }
+    .icn {
+        margin-left: -10px;
     }
 
-    .icn 
-    {
-    margin-left: -10px !important;}
-  @media only screen and (max-width: 998px) {
-     .newestcards-{{section.id}} {
-      padding-top: 10px;
-     }
-        .articlecontents-{{section.id}} * {
-      max-width:200px;
-    }
-     .blogsall {
-      display: flex !important;
-      flex-direction: column !important;
-     }
-
-     .articlecontents-{{section.id}} {
-      text-align: left !important;
-     }
-     .card  {
-      height: 200px !important;
-     }
-     .healers-filter__dropdown {
-      display: none !important;
-     }
-      .card   * {
-      /* width: 160px !important; */
-      font-size: small;
-      text-align: left !important;
-    }
-    .multicolumncard__image {
-    width: 100%;
-    height: 160px !important;
-    object-fit: cover;
-  }
-    
-    .additional-wrapper {
-    margin-bottom: 40px !important;}
-  }
-     
     .articlecontents-{{section.id}} {
-          background: white;
-    margin-top:-100px;
-      min-height: 205px;}
-  
-   
-  .leftlink,
+        box-shadow: -6px 7px 20px 0px #d9d2d5eb;
+        min-width: 90%;
+        float: left;
+        padding: 40px;
+        padding-left: 40px;
+        margin-top: -20px;
+        /* border-radius: 5px; */
+    }
+
+		{% if section.settings.numberofcolumns == '360' %}
+    .cards-{{section.id}}  .multicolumncard__image {
+        width: 360px !important;
+        height: 360px;
+    }
+    .cards-{{section.id}} p
+    {
+        width: 320px !important;
+
+    }
+		{% endif %}
+
+		{% if section.settings.numberofcolumns == '260' %}
+    .cards-{{section.id}}    .multicolumncard__image {
+        width: 260px;
+        height: 260px;
+    }   .cards-{{section.id}} p
+        {
+            /* width: 260px !important; */
+
+        }
+
+
+		{% endif %}
+    .cards-{{section.id}} p {
+        margin: 0;
+        min-width: 100%;
+    }
+
+    .center {
+        text-align: center;
+        color: {{section.settings.heading_color}};
+    }
+    .multicolumncard__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .cards-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+    }
+
+    .card-link {
+        text-decoration: none;
+        color:#EB6FBD !important;
+        text-align: center !important;
+        word-break: keep-all;
+        width: 100% !important;
+        text-align: left;
+    }
+
+    .texttopcont {
+        text-align: left;
+        margin-left: 2%;
+    }
+    .card  * {
+        display: flex;
+        flex-direction: column;
+        width: 260px;
+        margin: auto;
+        border-radius: 3px;
+        word-break: break-all;
+        margin-top: {{section.settings.spacing_cards}}px;
+    }
+    .additional-wrapper {
+        width: 100%;
+    }
+    .lefti {
+        text-align:left;
+        margin-top: 0;
+        width: 100%;
+    }
+
+    .icn
+    {
+        margin-left: -10px !important;}
+    @media only screen and (max-width: 998px) {
+        .newestcards-{{section.id}} {
+            padding-top: 10px;
+        }
+        .articlecontents-{{section.id}} * {
+            max-width:200px;
+        }
+        .blogsall {
+            display: flex !important;
+            flex-direction: column !important;
+        }
+
+        .articlecontents-{{section.id}} {
+            text-align: left !important;
+        }
+        .card  {
+            height: 200px !important;
+        }
+        .healers-filter__dropdown {
+            display: none !important;
+        }
+        .card   * {
+            /* width: 160px !important; */
+            font-size: small;
+            text-align: left !important;
+        }
+        .multicolumncard__image {
+            width: 100%;
+            height: 160px !important;
+            object-fit: cover;
+        }
+
+        .additional-wrapper {
+            margin-bottom: 40px !important;}
+    }
+
+    .articlecontents-{{section.id}} {
+        background: white;
+        margin-top:-100px;
+        min-height: 205px;}
+
+
+    .leftlink,
     .time, .time * {    display: flex;
-    text-align: left;
-    text-align-last: left;
-    width: 100% !important;
-    align-items: center;
-    margin: 0;
-    padding:0;
-    flex-direction: row;
-  }
+        text-align: left;
+        text-align-last: left;
+        width: 100% !important;
+        align-items: center;
+        margin: 0;
+        padding:0;
+        flex-direction: row;
+    }
 
-  .leftlink, a.leftlink {
-    text-align: left;
-    color:#6c1d45;
-    margin-top: 20px;
-    font-weight: 600;
+    .leftlink, a.leftlink {
+        text-align: left;
+        color:#6c1d45;
+        margin-top: 20px;
+        font-weight: 600;
 
-  }
- .title * {
-   color: #EB6FBD;
- }
- .healers-filter__dropdown {
-    border: 1px solid #6C1D45;
-    border-radius: 60px;
-    padding: 10px 20px;
-    font-weight: bold;
-    color: #6C1D45;
-}
+    }
+    .title * {
+        color: #EB6FBD;
+    }
+    .healers-filter__dropdown {
+        border: 1px solid #6C1D45;
+        border-radius: 60px;
+        padding: 10px 20px;
+        font-weight: bold;
+        color: #6C1D45;
+    }
 
- .collapsible-content__header {
-    display: flex;
-    margin: auto !important;
-    justify-content: space-around;
-  }
+    .collapsible-content__header {
+        display: flex;
+        margin: auto !important;
+        justify-content: space-around;
+    }
 
-  .time img,   .time .gaia-image {
-    height: 50px;
-    width: 50px !important;
-    object-fit: contain;
-    margin: 0;
-    padding: 0;
-  }
-  </style>
-<div class="newestcards-{{section.id}} " style="background-color: {{section.settings.section_bg}};"> 
-<div class="cards-{{section.id}} page-width">
+    .time img,   .time .gaia-image {
+        height: 50px;
+        width: 50px !important;
+        object-fit: contain;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<div class="newestcards-{{section.id}} " style="background-color: {{section.settings.section_bg}};">
+  <div class="cards-{{section.id}} page-width">
     <div class="collapsible-content__header  " style="text-align: center; margin: auto !important;">
-          {%- if section.settings.caption != blank -%}
-            <p class="caption-with-letter-spacing" style="text-align: center; margin: auto !important; color: {{section.settings.heading_color}}"> {{ section.settings.caption | escape }}</p>
-          {% endif %}
+{%- if section.settings.caption != blank -%}
+      <p class="caption-with-letter-spacing" 
+          style="text-align: center; 
+          margin: auto !important; 
+          color: {{section.settings.heading_color}}"> 
+          {{ section.settings.caption | escape }}
+        </p>
+{% endif %}
+
+{% if section.settings.heading %}  
+    <div class="topcont" 
+          style="display:flex;flex-wrap: wrap;
+          max-width: 1400px;
+          width: 94%;
+          justify-content: space-between;
+          align-items: center;">
+      <div class="texttopcont" >
+        <h2  class=" ff-uf green u-case mb-10" style="padding: 0; margin: 0;" >
+            {{ section.settings.heading |escape }}
+        </h2>
+        <p class=" ff-uf green u-case mb-10 grayregular" style="max-width: 600px; text-align: left; padding:0">
+          {{section.settings.description}}
+        </p>
+    </div>
+    <div class="filters">
+      <div class="healers-filter-{{section.id}}">
+        <select class="healers-filter__dropdown" id="category" name="category">
+          <option disabled selected>Members Only</option>
+          <option value="yoga">Members Only</option>
+          <option value="meditation">Public</option>
+        </select>
       
-   
-  {% if section.settings.heading %}  <div class="topcont"  style="display:flex;flex-wrap: wrap;
-      max-width: 1400px;
-    width: 94%;
-  justify-content: space-between;
-    align-items: center;"> 
-    <div class="texttopcont" > 
- <h2 class=" ff-uf green u-case mb-10" style="padding: 0; margin: 0;" > 
-  {{ section.settings.heading |escape }} 
-</h2> 
-<p class=" ff-uf green u-case mb-10 grayregular" style="max-width: 600px; text-align: left; padding:0">  
-   {{section.settings.description}}  
-  </p>
-  </div> 
-<div class="filters"> 
-<div class="healers-filter-{{section.id}}">
-  <select class="healers-filter__dropdown" id="category" name="category">
-    <option disabled selected>Members Only</option>
-    <option value="yoga">Members Only</option>
-    <option value="meditation">Public</option>
-  </select>
+        <select class="healers-filter__dropdown" id="BlogTagFilter">
+          <option id="go_all" value="{{ shop.url }}{{ blog.url }}" selected>All Filters  </option>
+            {%- for tag in blog.all_tags -%}
+            {% if current_tags contains tag %}
+            <option value="{{ shop.url }}{{ blog.url }}/tagged/{{ tag | handle }}" selected>{{ tag }}</option>
+            {% else %}
+            <option value="{{ shop.url }}{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</option>
+            {% endif %}
+            {%- endfor -%}
+            </select>
+              <script>
+              $(function(){
+              $('#BlogTagFilter').on('change', function () {
+              var url = $(this).val(); // get selected value
+              if (url) { // require a URL
+                window.location = url; // redirect
+              }
+              return false;
+              });
+              });
+              </script>
+      </div>
+    </div>
+</div>
+</div>
+{% endif %}
 
 
+<div class="cards-wrapper">
 
-<select class="healers-filter__dropdown" id="BlogTagFilter">
-  <option id="go_all" value="{{ shop.url }}{{ blog.url }}" selected>All Filters  </option>
-  {%- for tag in blog.all_tags -%}
-  {% if current_tags contains tag %}
-  <option value="{{ shop.url }}{{ blog.url }}/tagged/{{ tag | handle }}" selected>{{ tag }}</option>
-  {% else %}
-  <option value="{{ shop.url }}{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</option>
-  {% endif %}
-  {%- endfor -%}
-  </select>
-  <script>
-  $(function(){
-  $('#BlogTagFilter').on('change', function () {
-  var url = $(this).val(); // get selected value
-  if (url) { // require a URL
-  window.location = url; // redirect
-  }
-  return false;
-  });
-  });
-  </script>
- 
-          </div>    
-          </div> 
-        </div>
-        </div>
-  {% endif %}
 
- 
-  <div class="cards-wrapper">
- 
-
-   {%- assign article = block.settings.article -%}
+{%- assign article = block.settings.article -%}
 
 <ul class="blogsall" style="
 max-width: 1400px;
 width: 94%;">
-  {%- for article in blog.articles -%}
-    <li style="
-    margin-bottom: 50px;
-">
-    <div class="additional-wrapper" style="
- 
-    background: {{section.settings.card_bg}};
-    padding: 15px;
-    margin: 0;
-">
-      <div class="card "> 
-        {% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;
-        height: 100%;
-        max-height: 280px;
-        min-height: 280px;
-        background-position: center;" "> 
-         </div> {%else %}
-         <div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}'); 
-    background-size: cover;height: 300px;" > 
-   
-            
-            
-            </div> 
-{% endif %}  <div class="articlecontents-{{section.id}}">  
-   <span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">   
-     
-    {%if article.tags contains 'general'  %}
+{%- for article in blog.articles -%}
+<li style="margin-bottom: 50px;">
+
+<div class="additional-wrapper" style="background: {{section.settings.card_bg}};padding: 15px;margin: 0;">
+<div class="card">
+{% if  article.image  != blank %} <div class="img-{{section.id}}" style="background:url('{{ article.image | img_url: 'master' }}');    background-size: cover;
+height: 100%;
+max-height: 280px;
+min-height: 280px;
+background-position: center;" ">
+</div> {%else %}
+<div class="img-{{section.id}}" style="background:url('{{ article.image.src | img_url: 'master' }}');
+background-size: cover;height: 300px;" >
+
+
+
+</div>
+{% endif %}  <div class="articlecontents-{{section.id}}">
+<span class="time" style="color: rgba(28, 28, 28, 0.5); font-size:12px;">   
+
+{%if article.tags contains 'general'  %}
 <div class="icn" style=" width: 50px !important;
 ">  
-    {%render 'generalblog'%}</div>
-  {%endif%}
-       {%if article.tags contains 'podcast' %} 
+{%render 'generalblog'%}</div>
+{%endif%}
+{%if article.tags contains 'podcast' %}
 <div class="icn" style="    width: 50px !important;
 "> {%render 'podcasticn'%} </div>
 {%endif%}    {%if article.tags contains 'video' %}
 <div class="icn" style="    width: 50px !important;
 "> {%render 'videoicn'%}</div>
-{%endif%} 
-                     
-  {{ article.published_at | time_tag: format: 'date' }} 
-  {%if article.tags contains 'customeronly'  %}
-  <div class="icn" style=" width: 50px !important;
-  ">  
-      {%render 'lockedarticle'%}</div>
-    {%endif%}
-</span> 
-            <h5 class="maroonbold" style="min-width:100%; color: #6C1D45; margin-bottom: 15px;">    {{article.title}}  </h5> 
-        
-       
-      
-        
-        <p style="width: 100% !important;">
-          {%- if article.excerpt.size > 0 -%}
-         <p class="exc">   {{ article.excerpt | strip_html | truncate:130}}</p> 
-          {%- else -%}
-          <p class="exc">  {{ article.content | strip_html | truncate:130 }} </p>
-          {%- endif -%}
-        </p>
+{%endif%}
 
-     
-        {%if article.tags contains 'general'  %}
-      <a href="{{article.url}}" class="leftlink"> Read Article</a>
-      {%endif%}
-      {%if article.tags contains 'podcast'  %}
-      <a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
-      {%endif%}
-      {%if article.tags contains 'video'  %}
-      <a href="{{article.url}}" class="leftlink"> Watch Video </a>
-      {%endif%}
-   
- 
- 
- 
-    </div> 
-          </div></div>
- 
-   </li>
-  {%endfor%}</ul>
-  </div>
+{{ article.published_at | time_tag: format: 'date' }}
+{%if article.tags contains 'customeronly'  %}
+<div class="icn" style=" width: 50px !important;
+">  
+{%render 'lockedarticle'%}</div>
+{%endif%}
+</span>
+<h5 class="maroonbold" style="min-width:100%; color: #6C1D45; margin-bottom: 15px;">    {{article.title}}  </h5>
+
+
+
+
+<p style="width: 100% !important;">
+{%- if article.excerpt.size > 0 -%}
+<p class="exc">   {{ article.excerpt | strip_html | truncate:130}}</p>
+{%- else -%}
+<p class="exc">  {{ article.content | strip_html | truncate:130 }} </p>
+{%- endif -%}
+</p>
+
+
+{%if article.tags contains 'general'  %}
+<a href="{{article.url}}" class="leftlink"> Read Article</a>
+{%endif%}
+{%if article.tags contains 'podcast'  %}
+<a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
+{%endif%}
+{%if article.tags contains 'video'  %}
+<a href="{{article.url}}" class="leftlink"> Watch Video </a>
+{%endif%}
+
+
+
+
 </div>
-</div>  
-          </div> 
+</div></div>
+
+</li>
+{%endfor%}</ul>
+</div>
+</div>
+</div>
+</div>
 {% schema %}
 
 {
@@ -516,51 +513,51 @@ width: 94%;">
 {% endschema %}
 
 <style>
-  .gaia-image {
-  display: block;
-  vertical-align: middle;
-  object-fit: cover;
-}
-.gaia-image img {
-  display: block;
-  vertical-align: middle;
-  object-fit: cover;
-}
- 
-.blogsall {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0 px;
-} 
-li {
-  list-style: none;
-}
+    .gaia-image {
+        display: block;
+        vertical-align: middle;
+        object-fit: cover;
+    }
+    .gaia-image img {
+        display: block;
+        vertical-align: middle;
+        object-fit: cover;
+    }
 
-#cat-filter {
-    border-radius: 30px !important; 
-    border-color: #6C1D45;
-    border: 2px solid #6C1D45;
-    width: 140px;
-    height: 50px;
-  }
-  select,
-  option {
-    color: #6C1D45 !important;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 22px;
-       background: url("https://cdn.shopify.com/s/files/1/0535/9357/1505/files/output-onlinepngtools_2.png?v=1656509123") no-repeat; background-position: calc(100% - 0.75rem) center !important;
-    -moz-appearance:none !important;
-    -webkit-appearance: none !important; 
-    appearance: none !important;
-    padding-right: 2rem !important;
-    text-transform: capitalize !important;
-  }
-  #BlogTagFilter * {
-    text-transform: capitalize !important;
-  }
-  .healers-filter__dropdown * {
-    text-transform: capitalize !important;
-  }
+    .blogsall {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 0 px;
+    }
+    li {
+        list-style: none;
+    }
+
+    #cat-filter {
+        border-radius: 30px !important;
+        border-color: #6C1D45;
+        border: 2px solid #6C1D45;
+        width: 140px;
+        height: 50px;
+    }
+    select,
+    option {
+        color: #6C1D45 !important;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        background: url("https://cdn.shopify.com/s/files/1/0535/9357/1505/files/output-onlinepngtools_2.png?v=1656509123") no-repeat; background-position: calc(100% - 0.75rem) center !important;
+        -moz-appearance:none !important;
+        -webkit-appearance: none !important;
+        appearance: none !important;
+        padding-right: 2rem !important;
+        text-transform: capitalize !important;
+    }
+    #BlogTagFilter * {
+        text-transform: capitalize !important;
+    }
+    .healers-filter__dropdown * {
+        text-transform: capitalize !important;
+    }
 </style>
