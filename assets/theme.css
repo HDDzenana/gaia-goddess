@@ -11771,7 +11771,7 @@ display: none !important;
 }
 
 /* ADDITIONAL OPTIONS - PRODUCT - APP STYLING  */
-.ymq-options-img-input:checked, .ymq-options-img-input:not(:checked) {
+/* .ymq-options-img-input:checked, .ymq-options-img-input:not(:checked) {
   position: initial;
   left: 50px;
   width: 20px;
@@ -11853,7 +11853,7 @@ border-radius: 0px !important;}
   border-radius: 0px !important;
   overflow: hidden;
 }
-
+ */
 
 /* policies changes */
 
