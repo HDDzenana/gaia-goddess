@@ -33,7 +33,7 @@
   {%- endif -%}
 
   {%- if settings.share_pinterest != blank -%}
-<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=someone@example.com" target="_blank"> 
+<a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=someone@example.com" target="_blank" {{ product.title | strip_html | escape }}&amp;url={{ permalinkURL }}> 
       {%- render 'icon-share-email'-%}
     </a> 
   {%- endif -%}
