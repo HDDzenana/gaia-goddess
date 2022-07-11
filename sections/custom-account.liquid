@@ -521,6 +521,13 @@ const toggleModalHandler = () => {
   modalBtn.addEventListener('click', () => {
     modalEl.classList.toggle('modalToggleOn');
   })
+
+
+  const closeBtn = document.querySelector('#closepopup');
+  closeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalEl.classList.remove('modalToggleOn');
+  })
 }
  toggleModalHandler();
  
@@ -644,7 +651,7 @@ const toggleModalHandler = () => {
   .imgclasscf * {
     margin: auto !important;
   }
-  
+
   #closepopup {
     width: 100%;
     display: flex;
