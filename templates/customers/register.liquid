@@ -2,14 +2,18 @@
 <section class="page-customer">
   <div class="wrapper">
     <div class="form-vertical-wrapper">
-      <h2 class="account__heading account__heading--small">{{ 'customer.register.title' | t }}</h2>
+      <!-- <h2 class="account__heading account__heading--small">{{ 'customer.register.title' | t }}</h2> -->
       <div class="social-icons"></div>
 
       <div class="form-vertical"> 
+        <h1 class="account__heading inline-list center "
+        style="text-align: center; 
+        width: 100% !important;
+        color: white;">Create Account</h1>
         {% form 'create_customer', id: 'CreateCustomer' %}
         
    
- 
+    
 <p class="registration-p">or use your email for registration:</p>
           {{ form.errors | default_errors }}
           <label class="hidden-label" for="FirstName">{{ 'customer.register.first_name' | t }}</label>
