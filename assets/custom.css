@@ -118,6 +118,11 @@ margin: 0 !important}
   .site-header>.wrapper{
     padding-left: 20px;
   }
+  /* part of the team */
+  #ProductFeature--template--15702384738481__16512183744a86c2dd,
+  #ProductFeature--template--15702384967857__16502926109923d142 {
+    padding: 10px 0 !important;
+  }
 }
 
 

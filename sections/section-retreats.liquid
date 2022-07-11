@@ -83,9 +83,9 @@
         .product-feature__image-bg{
             padding-top: 60%;
             background-position: 50% -100px;
-            background-attachment: fixed !important;
             background-position: center;
-        }
+         }
+        
         .product-feature__block{
           flex-direction: column-reverse;
           display: flex;
@@ -93,6 +93,16 @@
     }
     a.btn--product-feature:before {
         background: {{ section.settings.button_hover_color }} !important;
+    }
+
+    @media only screen and (min-width: 768px){
+        .product-feature__image-bg{
+            padding-top: 60%;
+            background-position: 50% -100px;
+            background-position: center;
+            background-repeat: no-repeat !important;
+  background-size: cover !important; background-attachment: fixed !important;
+         }
     }
     </style>
   
@@ -110,13 +120,11 @@
                 data-bgset="{% render 'bgset', image: image %}"
                 data-sizes="auto"
                 data-parent-fit="cover"
-                style="background-attachment: fixed;">
+             >
               </div>
               <noscript>
                 <div class="product-feature__image-bg" style="background-image: url({{ image | img_url: '1024x' }});   background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover; background-attachment: fixed;"></div>
+"></div>
               </noscript>
             {%- else -%}
               <div class="product-feature__image-bg placeholder-svg--overlayed">
