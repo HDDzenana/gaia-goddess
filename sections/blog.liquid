@@ -213,14 +213,16 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
   </div> 
 <div class="filters"> 
 <div class="healers-filter-{{section.id}}">
-  <!-- <select class="healers-filter__dropdown" id="category" name="category">
+  <select class="healers-filter__dropdown" id="category" name="category">
     <option disabled selected>Members Only</option>
     <option value="yoga">Members Only</option>
     <option value="meditation">Public</option>
-  </select> -->
+  </select>
 
-<select  class="healers-filter__dropdown" id="BlogTagFilter">
-  <option id="go_all" value="{{ shop.url }}{{ blog.url }}" selected>Members Only</option>
+
+
+<select class="healers-filter__dropdown" id="BlogTagFilter">
+  <option id="go_all" value="{{ shop.url }}{{ blog.url }}" selected>All Filters  </option>
   {%- for tag in blog.all_tags -%}
   {% if current_tags contains tag %}
   <option value="{{ shop.url }}{{ blog.url }}/tagged/{{ tag | handle }}" selected>{{ tag }}</option>
@@ -240,14 +242,7 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
   });
   });
   </script>
-
-
-  <select class="healers-filter__dropdown" id="category" name="category">
-              <option disabled selected>All Filters    </option>
-              <option value="yoga">Podcast</option>
-              <option value="meditation">Video</option>
-              <option value="reiki">Blog</option>
-            </select>
+ 
           </div>    
           </div> 
         </div>
@@ -560,5 +555,8 @@ li {
     -webkit-appearance: none !important; 
     appearance: none !important;
     padding-right: 2rem !important;
+  }
+  #BlogTagFilter * {
+    text-transform: capitalize !important;
   }
 </style>
