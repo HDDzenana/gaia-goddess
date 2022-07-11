@@ -30,11 +30,11 @@
 					<div class = "return light-gray">
 						{% if form.password_needed %}
 							<a href="#recover" id="RecoverPassword"  >
-                <span class="pink" style="font-size: 18px; font-weight: 100 !important; text-decoration: underline;">  {{ 'customer.login.forgot_password' | t }}  
+                <span class="pink" style="font-size: 18px; font-weight: 100 !important; text-decoration: none !important;">  {{ 'customer.login.forgot_password' | t }}  
                   </span><br>
                 </a>
 						{% endif %}
-						<a href="{{ routes.account_register_url }}"><span class="pink"style="font-size: 18px; font-weight: 100 !important; text-decoration: none;">   {{'layout.customer.create_account' | t }}
+						<a href="{{ routes.account_register_url }}"><span class="pink"style="font-size: 18px; font-weight: 100 !important; text-decoration: underline !important;">   {{'layout.customer.create_account' | t }}
             </span>
             </a>
 					</div>
