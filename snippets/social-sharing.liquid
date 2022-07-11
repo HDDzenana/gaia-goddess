@@ -31,9 +31,13 @@
       {%- render 'icon-footer-twitter'-%}
     </a>
   {%- endif -%}
- 
-   <a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=someone@example.com" target="_blank">Title</a>    
-<!--       {%- render 'icon-fshare-email'-%} -->
-     
+
+  {%- if settings.share_pinterest != blank -%}
+     <a target="_blank" rel="noopener" class="social-circle pinterest" href="{% if template contains 'password' %}     <a target="_blank" rel="noopener" class="social-circle pinterest" href="{% if template contains 'password' %}{{ permalinkURL }}&amp;media=http:{% if template == 'product' or template == 'index' %}{{ product | img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endif %}&amp;description={{ shareTitle }}" title="{{ 'general.accessibility.pinterest_share' | t }}">
+{{ permalinkURL }}&amp;media=http:{% if template == 'product' or template == 'index' %}{{ product | img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endif %}&amp;description={{ shareTitle }}" title="{{ 'general.accessibility.pinterest_share' | t }}">
+      <span class="visually-hidden">{{ 'general.accessibility.pinterest_share' | t }}</span>
+      {%- render 'icon-share-email'-%}
+    </a>
+  {%- endif -%}
 
 </div>
