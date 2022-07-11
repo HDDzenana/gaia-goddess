@@ -12062,3 +12062,26 @@ a.mw-visualy-hidden,
   color: black;
   position: initial !important;
 }
+
+.modal-content-custom {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  width: 500px;
+  top: 25vh;
+  margin-top: 40vh;
+  filter: drop-shadow(0px 10px 30px rgba(209, 89, 149, 0.161));
+  border: none;
+  border-radius: 40px;
+  list-style: none;
+}
+
+.purchase_limit_messages * {
+color: maroon;
+font-weight: 800;
+margin: auto;
+text-align: center;
+list-style: none;
+}
