@@ -12068,7 +12068,7 @@ a.mw-visualy-hidden,
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  /* width: 80%; */
   width: 500px;
   top: 25vh;
   margin-top: 40vh;
@@ -12079,9 +12079,10 @@ a.mw-visualy-hidden,
 }
 
 .purchase_limit_messages * {
-color: maroon;
+color: #6C1D45 !important;
+
 font-weight: 800;
 margin: auto;
-text-align: center;
-list-style: none;
+text-align: center !important;
+list-style: none !important;
 }
