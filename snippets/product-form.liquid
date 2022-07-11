@@ -117,7 +117,7 @@
     {%- else -%}
       <input name="id" data-productid="{{ product.id }}" type="hidden" value="{{ current_variant.id }}" data-product-select>
     {%- endif -%}
-
+	<div class="mws-options"></div>
     {%- if settings.show_quantity -%}
       {%- comment -%}
         Quantity Selector
