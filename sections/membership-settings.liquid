@@ -73,7 +73,15 @@
     padding: 50px 0;
 }
 
+@media only screen and (min-width:1000px) {
+  .customaccount-{{section.id}} {
+  display: flex;
+  min-height: 60vh !important;
 
+overflow-y: hidden; /* Hide vertical scrollbar */
+overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+}
 .customaccount-{{section.id}} {
   display: flex;
   min-height: 100vh;
