@@ -61,7 +61,7 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
                 {%- render 'breadcrumbs' -%}
 </div>
  
-<div class="product-single__wrapper" data-section-id="{{ unique }}" data-product >
+<div class="product-single__wrapper prod-{{section.id}}" data-section-id="{{ unique }}" data-product >
   
   {%- comment -%} Product media {%- endcomment -%}
   {%- unless product == blank -%}
@@ -214,7 +214,7 @@ background-image:url({{ 'mainbg.svg' | asset_url }}) !important;"> -->
                 {%- endif -%}
               </h1>
               {%if product.metafields.my_fields.hosted_by  %}
-    <p class="pink" style="margin-bottom: 0 !important;">  Hosted By:   <span class="maroonbold">       {{product.metafields.my_fields.hosted_by}}</span>    </p>
+    <p class="pink hostedby" style="margin-bottom: 0 !important;">  Hosted By:   <span class="maroonbold hostedby">       {{product.metafields.my_fields.hosted_by}}</span>    </p>
               {%endif%}
              
             </div> 
@@ -443,4 +443,8 @@ border: none !important;
     }
     
   }
+  .prod-{{section.id}}
+  a:hover  {
+  color: #EB6FBD !important;
+} 
 </style>
