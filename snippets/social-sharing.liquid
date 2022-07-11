@@ -34,7 +34,7 @@
 
   {%- if settings.share_pinterest != blank -%}
   
-  <a href="mailto:?subject={ product.title | strip_html | escape }}&amp;url={{ permalinkURL }}{% unless template == 'password' %}&amp;media={% if template == 'product' or template == 'index'%}{{ product.featured_media.preview_image.src | product_img_url: '1024x1024' }}{% endif %}{% if template == 'article' %}{{ article | img_url: '1024x1024' }}{% endif %}{% endunless %}" title="{{ 'general.accessibility.twitter_share' | t }}" target="_blank" rel="noopener">First Example
+  <a href="mailto:?subject=Check this out!" target="_blank" rel="noopener"> 
   {%- render 'icon-share-email'-%}
     </a> 
   {%- endif -%}
