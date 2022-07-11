@@ -474,7 +474,8 @@ document.querySelector('input[value="Instagram"]').parentElement.innerHTML = ` <
 // Create metafield avatar
 // First element
 let uploadHereElement = document.createElement('div');
-uploadHereElement.innerHTML = `<div class="uploadherediv"><svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+uploadHereElement.innerHTML = `
+<button id="closepopup">   {%render 'close-popup' %}</button> <div class="uploadherediv"><svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 29C21.732 29 28 22.5081 28 14.5C28 6.49187 21.732 0 14 0C6.26801 0 0 6.49187 0 14.5C0 22.5081 6.26801 29 14 29Z" fill="#FFD9E5"/>
 <path d="M20.4154 16.3708V19.2468C20.4161 19.4351 20.3796 19.6216 20.3082 19.7957C20.2367 19.9698 20.1316 20.1281 19.9988 20.2616C19.8661 20.3951 19.7084 20.5011 19.5347 20.5735C19.361 20.646 19.1747 20.6835 18.9864 20.6838H9.01143C8.63199 20.682 8.2688 20.5296 8.00161 20.2602C7.73443 19.9908 7.58511 19.6263 7.58643 19.2468V16.3708" stroke="#6C1D45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M17.5645 11.3389L14.0015 7.7439L10.4375 11.3389" stroke="#6C1D45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -643,8 +644,13 @@ const toggleModalHandler = () => {
   .imgclasscf * {
     margin: auto !important;
   }
-  .imgclasscf{
-    /*display: none;*/
-  }
+  
+  #closepopup {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 20px;
+    left: 37%;
+    }
 </style>
  
