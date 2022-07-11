@@ -12023,7 +12023,7 @@ justify-content: center !important;
 }
   
   
-  
+  #myModal,
   .modal-content-custom {
     display: none !important;
   }
