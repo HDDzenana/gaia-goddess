@@ -213,11 +213,33 @@ box-shadow: -6px 7px 20px 0px #d9d2d5eb;
   </div> 
 <div class="filters"> 
 <div class="healers-filter-{{section.id}}">
-  <select class="healers-filter__dropdown" id="category" name="category">
+  <!-- <select class="healers-filter__dropdown" id="category" name="category">
     <option disabled selected>Members Only</option>
     <option value="yoga">Members Only</option>
     <option value="meditation">Public</option>
+  </select> -->
+
+<select  class="healers-filter__dropdown" id="BlogTagFilter">
+  <option id="go_all" value="{{ shop.url }}{{ blog.url }}" selected>Members Only</option>
+  {%- for tag in blog.all_tags -%}
+  {% if current_tags contains tag %}
+  <option value="{{ shop.url }}{{ blog.url }}/tagged/{{ tag | handle }}" selected>{{ tag }}</option>
+  {% else %}
+  <option value="{{ shop.url }}{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</option>
+  {% endif %}
+  {%- endfor -%}
   </select>
+  <script>
+  $(function(){
+  $('#BlogTagFilter').on('change', function () {
+  var url = $(this).val(); // get selected value
+  if (url) { // require a URL
+  window.location = url; // redirect
+  }
+  return false;
+  });
+  });
+  </script>
 
 
   <select class="healers-filter__dropdown" id="category" name="category">
