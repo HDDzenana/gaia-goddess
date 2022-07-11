@@ -29,14 +29,7 @@
 					<div class="ajaxcart__product__info">
 						<p>
 							<a href="{{ val.url }}" class="ajaxcart__product__title">{{val.name}}</a>
-							{{@if (val.variation) }}
-								<span class="ajaxcart__product__meta">{{val.variation}}</span>
-							{{/if}}
-
-							{% endraw %}{% if settings.cart_vendor_enable %}{% raw %}
-								<span class="ajaxcart__product__meta">{{val.vendor}}</span>
-							{% endraw %}{% endif %}{% raw %}
-
+                            
 							<span class="ajaxcart__product__price">
 								{{@if (val.originalPrice) }}
 									<s>{{* val.originalPrice }}</s>
