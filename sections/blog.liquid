@@ -306,7 +306,7 @@ background-size: cover;height: 300px;" >
 
 {{ article.published_at | time_tag: format: 'date' }}
 {%if article.tags contains 'customeronly'  %}
-<div class="icn" style=" width: 50px !important;
+<div class="icn icnlocked" style=" width: 50px !important;
 ">  
 {%render 'lockedarticle'%}</div>
 {%endif%}
