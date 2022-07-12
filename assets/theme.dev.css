@@ -3980,7 +3980,7 @@ button.mfp-close {
 
 .site-header--loading {
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
 }
 
 .has-scrolled .site-header--fixed {
