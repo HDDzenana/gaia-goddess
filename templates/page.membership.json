@@ -68,7 +68,7 @@
         "headercolor": "#6c1d45",
         "description": "Sign up today to become a member of Gaia Goddess and <br> get access to amazing content, join fantastic retreats and events.",
         "button_text": "Sign Up Now",
-        "button_link": "shopify:\/\/blogs\/news\/lorem-ipsum-dolor-sit-amet-2",
+        "button_link": "https:\/\/gaiagoddesslifestyle.com\/account\/register",
         "button_color": "#6c1d45",
         "button_hover_color": "#fafafa"
       }
