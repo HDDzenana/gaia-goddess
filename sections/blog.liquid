@@ -1,9 +1,12 @@
 {{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
-
+ 
+ 
 {%- assign article = block.settings.article -%}
 
 <style>
-
+    .leftlink {
+      cursor: pointer;
+    }
     .cards-{{section.id}} {
         padding-top: {{section.settings.padding_top}}px;
         padding-bottom: {{section.settings.padding_bottom}}px;
@@ -109,6 +112,9 @@
         .newestcards-{{section.id}} {
             padding-top: 10px;
         }
+        #jtd {
+          left: 5% !important;
+        }
         .template-blog h2 {
           text-align: center;
         }
@@ -193,6 +199,7 @@
         padding: 0;
     }
 </style>
+ 
 <div class="newestcards-{{section.id}} " style="background-color: {{section.settings.section_bg}};">
   <div class="cards-{{section.id}} page-width">
     <div class="collapsible-content__header  " style="text-align: center; margin: auto !important;">
@@ -317,7 +324,35 @@ background-size: cover;height: 300px;" >
 {%- endif -%}
 </p>
 
+{% if article.tags contains 'customeronly' %}
 
+<!-- locked -->
+{% if customer %}
+{%if article.tags contains 'general'  %}
+<a href="{{article.url}}" class="leftlink"> Read Article</a>
+{%endif%}
+{%if article.tags contains 'podcast'  %}
+<a href="{{article.url}}" class="leftlink"> Listen Podcast  </a>
+{%endif%}
+{%if article.tags contains 'video'  %}
+<a href="{{article.url}}" class="leftlink"> Watch Video </a>
+{%endif%}
+
+{% else %}
+{%if article.tags contains 'general'  %}
+<div id="closebtng" class="leftlink maroonbold"> Read Article  </div>
+{%endif%}
+{%if article.tags contains 'podcast'  %}
+<a id="closebtnp" class="leftlink"> Listen Podcast </a>
+{%endif%}
+{%if article.tags contains 'video'  %}
+<a id="closebtnv" class="leftlink"> Watch Video </a>
+{%endif%}
+{%endif%}
+
+{% else %}
+<!-- not locked -->
+{% if customer %}
 {%if article.tags contains 'general'  %}
 <a href="{{article.url}}" class="leftlink"> Read Article</a>
 {%endif%}
@@ -328,18 +363,78 @@ background-size: cover;height: 300px;" >
 <a href="{{article.url}}" class="leftlink"> Watch Video </a>
 {%endif%}
 
-
-
+{% else %}
+{%if article.tags contains 'general'  %}
+<a href="{{article.url}}" class="leftlink"> Read Article</a>
+{%endif%}
+{%if article.tags contains 'podcast'  %}
+<a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
+{%endif%}
+{%if article.tags contains 'video'  %}
+<a href="{{article.url}}" class="leftlink"> Watch Video </a>
+{%endif%}
+{%endif%}
+{% endif %}
 
 </div>
 </div></div>
 
 </li>
+
 {%endfor%}</ul>
 </div>
 </div>
+</div> 
+ 
 </div>
-</div>
+<div id="jtd" class="smt" style="  display: none;position:absolute  !important; top: 10% !important; left: 35%; right:auto; height: 100vh"> 
+  {% render 'blog-bm-popup' %} </div>
+ 
+<script>
+  function myFunction() {
+    var x = document.getElementById("jtd");  
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  </script>
+  
+  <script>
+  var button = document.getElementById('closebtng');
+  
+  button.onclick = function() {
+    var div = document.getElementById('jtd');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+  };  var button = document.getElementById('closebtnv');
+  
+  button.onclick = function() {
+    var div = document.getElementById('jtd');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+  };  var button = document.getElementById('closebtnp');
+  
+  button.onclick = function() {
+    var div = document.getElementById('jtd');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+  };
+  </script>
+ 
 {% schema %}
 
 {
