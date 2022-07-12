@@ -3725,7 +3725,7 @@ button.mfp-close {
 }
 .site-header--loading {
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
 }
 .has-scrolled .site-header--fixed {
   height: 60px !important;
@@ -12118,4 +12118,15 @@ list-style: none !important;
   margin: 20px 5px;
 }
 
+}
+/* CHEVRON DOWN FOR CUSTOMER FIELDS APP */
+.cf-app__field select {
+color: #6C1D45;
+appearance: none;
+-webkit-appearance: none;
+-moz-appearance: none;
+background-image: url('data:image/svg+xml;utf8, <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.958984 1.323L7.32617 7.689L13.6919 1.323" stroke="%236C1D45" stroke-width="2"/></svg>');
+background-position: right 20px top 50%;
+background-repeat: no-repeat;
+background-size: 10px;
 }
