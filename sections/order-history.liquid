@@ -504,7 +504,14 @@ overflow: hidden;
  
  {%if customer %}
  
+{% if customer.orders.size <1  %}
+<h1 class="wrapper maroonbold animate__animated animate__fadeInUp center "  style="
+margin: 50px 5px;width: 100%; text-align: center;" >At this moment, you have no orders. </h1>
+<p class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
+margin: 50px 5px;width: 100%; text-align: center;" > Click <a href="/pages/events">  here </a>  to browse.</p>
+       {% endif %}
 {% for order in customer.orders %}
+
 {% if customer.orders.size <1  %}
 <h1 class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
 margin: 50px 5px;" >At this moment, you have no orders. </h1>
