@@ -24,7 +24,7 @@
   
         {%- when 'body' -%}
   
-        <p class="maroonbold"> Reason for Cancelling <span class="grayregular">(required) </span> </p>
+        <p class="maroonbold"> Phone <span class="grayregular">(required) </span> </p>
           <div class="form__item" {{ block.shopify_attributes }}>
             <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
             <textarea rows="10" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[body]" placeholder="{{ block.settings.title }}" {{ required }}></textarea>
@@ -159,7 +159,12 @@
             <input type="email" id="Form-{{ section.id }}-Email" class="input--full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" required>
           </div>
         {%- endunless -%}
-        <p class="maroonbold">Reason for Cancelling   <span class="grayregular">(required) </span> </p> 
+        <p class="maroonbold">Phone  <span class="grayregular">(required) </span> </p> 
+        <div class="form__item" {{ block.shopify_attributes }}>
+          <label for="Form-{{ section.id }}-{{ forloop.index0 }}" class="hidden-label">{{ block.settings.title }}</label>
+          <input type="tel" id="Form-{{ section.id }}-{{ forloop.index0 }}" class="input--full" name="contact[telephone]" value="" placeholder="{{ block.settings.title }}" {{ required }}/>
+        </div>
+        
         {%- unless types contains "body" -%}
           <div class="form__item">
             <label for="Form-{{ section.id }}-Message" class="hidden-label">{{ 'contact.form.message' | t }}</label>
