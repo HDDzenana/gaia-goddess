@@ -329,24 +329,24 @@ background-size: cover;height: 300px;" >
 <!-- locked -->
 {% if customer %}
 {%if article.tags contains 'general'  %}
-<a href="{{article.url}}" class="leftlink"> Read Article</a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Read Article</a>
 {%endif%}
 {%if article.tags contains 'podcast'  %}
-<a href="{{article.url}}" class="leftlink"> Listen Podcast  </a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Listen Podcast  </a>
 {%endif%}
 {%if article.tags contains 'video'  %}
-<a href="{{article.url}}" class="leftlink"> Watch Video </a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Watch Video </a>
 {%endif%}
 
 {% else %}
 {%if article.tags contains 'general'  %}
-<div id="closebtng" class="leftlink maroonbold"> Read Article  </div>
+<div id="closebtng" class="leftlink hoverpink maroonbold"> Read Article  </div>
 {%endif%}
 {%if article.tags contains 'podcast'  %}
-<a id="closebtnp" class="leftlink"> Listen Podcast </a>
+<a id="closebtnp" class="leftlink hoverpink"> Listen Podcast </a>
 {%endif%}
 {%if article.tags contains 'video'  %}
-<a id="closebtnv" class="leftlink"> Watch Video </a>
+<a id="closebtnv" class="leftlink hoverpink"> Watch Video </a>
 {%endif%}
 {%endif%}
 
@@ -354,24 +354,24 @@ background-size: cover;height: 300px;" >
 <!-- not locked -->
 {% if customer %}
 {%if article.tags contains 'general'  %}
-<a href="{{article.url}}" class="leftlink"> Read Article</a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Read Article</a>
 {%endif%}
 {%if article.tags contains 'podcast'  %}
-<a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Listen Podcast</a>
 {%endif%}
 {%if article.tags contains 'video'  %}
-<a href="{{article.url}}" class="leftlink"> Watch Video </a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Watch Video </a>
 {%endif%}
 
 {% else %}
 {%if article.tags contains 'general'  %}
-<a href="{{article.url}}" class="leftlink"> Read Article</a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Read Article</a>
 {%endif%}
 {%if article.tags contains 'podcast'  %}
-<a href="{{article.url}}" class="leftlink"> Listen Podcast</a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Listen Podcast</a>
 {%endif%}
 {%if article.tags contains 'video'  %}
-<a href="{{article.url}}" class="leftlink"> Watch Video </a>
+<a href="{{article.url}}" class="leftlink hoverpink"> Watch Video </a>
 {%endif%}
 {%endif%}
 {% endif %}

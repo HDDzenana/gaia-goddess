@@ -36,8 +36,91 @@
 
 
 @media only screen and (max-width: 1000px) {
+  .mobilemenu {
+  width: 100vw;
+  position: relative;
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
+  /* disable text selection by clicking */
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.mobilemenu a.dropdown-link{
+  display: block;
+  height: 50px;
+  width: 100vw;
+  text-align: center;
+  /* padding: 0 20px; */
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  background: #EB6FBD;
+}
+
+.mobilemenu a.dropdown-link:hover{
+	text-decoration: none;
+}
+.mobilemenu a.dropdown-link i{
+	/* float: right; */
+	position: relative;
+	top: 15px;
+}
+
+a.dropdown-link {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.mobile-dropdown {
+  display: none;
+  list-style-type: none;
+  background: #FFFFFF;
+  padding: 0;
+  min-width: 125px;
+  position: relative;
+  z-index: 100;
+  margin: 0;
+}
+
+.mobile-dropdown li{
+  padding: 0;
+  height: auto;
+  background-color: white;
+  display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #EB6FBD; 
+}
+
+.mobile-dropdown li a{
+  padding: 0;
+  color: #6C1D45;
+  display: block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.mobile-dropdown li a:hover{
+  text-decoration: none;
+  background: #6C1D45;
+}
+
 .accountnav {
   max-width: 100vw !important;
+}
+.desktoponly {
+  display: none !important;
 }
 .accountnav {
   position: absolute !important;
@@ -269,10 +352,10 @@ overflow: hidden;
 
 <div class="customaccount-{{section.id}}"> 
 <!-- MENU -->
-<div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
+<div class="desktoponly accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
   <div class="anv">
 <nav role="accountnav" class="accountnav">
-  <h4 class="menu-title">  {{ menu.title }}  </h4>
+  <h4 class="menu-title">  {{ menu.title }} </h4>
   <ul>
     {%- for link in menu.links -%}
     <li  {% if link.active %}  class="active" {% endif %}>
@@ -329,6 +412,62 @@ overflow: hidden;
 
 <div class="content-{{section.id}}">
   {%if customer%}
+  <div class="mobileonly"><div class="mobilemenu">
+    <a class="dropdown-link"> {{ menu.title }}  {%render 'mm-chevron'%} </a>
+    <ul class="mobile-dropdown">
+ 
+        {%- for link in menu.links -%}
+        <li  {% if link.active %}  class=" " {% endif %}>
+          <div class="icon">
+            {%if link.title contains 'Profile' %}
+            {%render 'profileicon' %}{%endif%}
+            {%if link.title contains 'Membership' %}
+            {%render 'ms' %}{%endif%}
+            {%if link.title contains 'Order' %}
+            {%render 'orderhistory' %}{%endif%} 
+            {%if link.title contains 'Logout' %}
+            {%render 'logout' %}{%endif%} 
+           </div>
+          <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
+       
+              {{ link.title }}
+          
+            </a>
+    
+            {%- if link.links != blank -%}
+              <ul>
+                {%- for child_link in link.links -%}
+                <li  {% if link.active %}  class="active" {% endif %}>
+                    <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
+                      {{ child_link.title }}
+                    </a>
+    
+                    {%- if child_link.links != blank -%}
+                      <ul>
+                        {%- for grandchild_link in child_link.links -%}
+                        <li  {% if link.active %}  class="active" {% endif %}>
+                            <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
+                              {{ grandchild_link.title }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+    
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+    
+          </li>
+        {%- endfor -%}
+      </ul>
+  </div> </div>
+ <script>  $(document).ready(function() {
+	$(".mobilemenu").on('click', function(){
+		$(".mobile-dropdown").slideToggle("fast");
+	});
+});</script>
   <div class="topbanner">
     {%render 'gaia-image',
     image: section.settings.banner_top 
@@ -575,7 +714,11 @@ const toggleModalHandler = () => {
 
   })
 
-  
+  $(document).ready(function() {
+	$(".mobilemenu").on('click', function(){
+		$(".mobile-dropdown").slideToggle("fast");
+	});
+});
  
 
 },1000)

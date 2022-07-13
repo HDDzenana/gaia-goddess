@@ -1504,6 +1504,9 @@ sub {
   .grid {
     grid-template-columns:1fr 1fr 1fr 1fr;
   }
+  .mobileonly {
+    display: none;
+  }
 }
 @media only screen and (max-width: 1023px) {
   .grid {
@@ -12081,15 +12084,15 @@ background: #FEF1F5 !important;
 @media only screen and (max-width: 900px) {
   .mw-stack--vertical {
     justify-content: left !important;
- }
-}
-.icnlocked  svg{
+ }.icnlocked  svg{
   max-height: 26px !important;
 }
 .icnlocked {
   margin-right: -360px !important;
   margin-left: 50px !important;
 }
+}
+ 
  .mw-option__value-title {
     margin-left: 25px !important;
     margin-top: 5px;
@@ -12131,3 +12134,13 @@ background: #FEF1F5 !important;
     background-repeat: no-repeat;
     background-size: 10px;
   }
+  select {
+    color: #6C1D45;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;utf8, <svg width="15" height="10" viewBox="0 0 15 10" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.958984 1.323L7.32617 7.689L13.6919 1.323" stroke="%236C1D45" stroke-width="2"/></svg>');
+    background-position: right 20px top 50%;
+    background-repeat: no-repeat;
+    background-size: 10px;
+  } 
