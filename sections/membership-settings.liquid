@@ -1,7 +1,95 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 {% assign menu = section.settings.menu%}
 <style>
-    @media only screen and (max-width: 1000px) {
+    @media only screen and (max-width: 1200px) {
+      .content-{{section.id}} {
+        margin-top: 0px !important;
+        min-width: 100%;
+        margin: auto !important;
+      }
+      .mobilemenu {
+  width: 100vw;
+  position: relative;
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
+  /* disable text selection by clicking */
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+.desktoponly {
+  display: none; 
+}
+
+.mobilemenu a.dropdown-link{
+  display: block;
+  height: 50px;
+  width: 100vw;
+  text-align: center;
+  /* padding: 0 20px; */
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  background: #EB6FBD;
+}
+
+.mobilemenu a.dropdown-link:hover{
+	text-decoration: none;
+}
+.mobilemenu a.dropdown-link i{
+	/* float: right; */
+	position: relative;
+	top: 15px;
+}
+
+a.dropdown-link {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.mobile-dropdown {
+  display: none;
+  list-style-type: none;
+  background: #FFFFFF;
+  padding: 0;
+  min-width: 125px;
+  position: relative;
+  z-index: 100;
+  margin: 0;
+}
+
+.mobile-dropdown li{
+  padding: 0;
+  height: auto;
+  background-color: white;
+  display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #EB6FBD; 
+}
+
+.mobile-dropdown li a{
+  padding: 0;
+  color: #6C1D45;
+  display: block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.mobile-dropdown li a:hover{
+  text-decoration: none;
+  background: #6C1D45;
+}
+
       .accountnav {
       max-width: 500px!important;
       position:  relative !important;
@@ -40,15 +128,12 @@
       width: 100% !important;
       padding: 50px 0;
     }
-    .customaccount-{{section.id}} {
-      flex-direction: column-reverse;
-    }
+ 
     .membership-info {
-      padding-top: 150px;
-      padding-bottom: 80px
+padding: 10% 5%;
     }
     .member-level img {
-      margin-top: -25%;
+      margin-top: -65px;
     }
     .membership-info * {
       min-width: 100% !important;
@@ -88,11 +173,11 @@
 overflow-y: hidden; /* Hide vertical scrollbar */
 overflow-x: hidden; /* Hide horizontal scrollbar */
 }
-}
+ 
 .customaccount-{{section.id}} {
   display: flex;
   min-height: 100vh;
-}
+}}
 
 /* MENU STYLING GENERAL */
 .accountnav {
@@ -230,7 +315,8 @@ overflow: hidden;
 
 <div class="customaccount-{{section.id}} "  > 
 <!-- MENU -->
-<div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
+
+<div class="desktoponly nav-wrapper" style="background: {{section.settings.menu_bg}}; width:  30%; max-width: 450px"> 
 <nav role="accountnav" class="accountnav">
   <h4 class="menu-title">  {{ menu.title }}  </h4>
   <ul>
@@ -284,6 +370,58 @@ overflow: hidden;
  
 
 <div class="content-{{section.id}}  animate__animated animate__fadeInUp" >
+  <div class="mobileonly"><div class="mobilemenu">
+    <a class="dropdown-link"> {{ page.title }}  {%render 'mm-chevron'%} </a>
+    <ul class="mobile-dropdown">
+  
+        {%- for link in menu.links -%}
+        <li  {% if link.active %}  class=" " {% endif %}>
+          <div class="icon">
+            {%if link.title contains 'Profile' %}
+            {%render 'profileicon' %}{%endif%}
+            {%if link.title contains 'Membership' %}
+            {%render 'ms' %}{%endif%}
+            {%if link.title contains 'Order' %}
+            {%render 'orderhistory' %}{%endif%} 
+            {%if link.title contains 'Logout' %}
+            {%render 'logout' %}{%endif%} 
+           </div>
+          <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
+       
+              {{ link.title }}
+          
+            </a>
+    
+            {%- if link.links != blank -%}
+              <ul>
+                {%- for child_link in link.links -%}
+                <li  {% if link.active %}  class="active" {% endif %}>
+                    <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
+                      {{ child_link.title }}
+                    </a>
+    
+                    {%- if child_link.links != blank -%}
+                      <ul>
+                        {%- for grandchild_link in child_link.links -%}
+                        <li  {% if link.active %}  class="active" {% endif %}>
+                            <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
+                              {{ grandchild_link.title }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+    
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+    
+          </li>
+        {%- endfor -%}
+      </ul>
+  </div> </div>
+ 
  {%- comment -%}
   /sections/contact-form.liquid
 {%- endcomment -%}
@@ -578,6 +716,7 @@ window.location.href = "/account/register";
 }
 {% endschema %}
 <script>
+ 
   function myFunction() {
     var x = document.getElementById("miniform");
     if (x.style.display === "none") {
@@ -586,6 +725,8 @@ window.location.href = "/account/register";
       x.style.display = "none";
     }
   }
+
+ 
   </script>
 
 <script>
@@ -600,5 +741,18 @@ button.onclick = function() {
         div.style.display = 'block';
     }
 };
+
+ 
   </script>
-  
+
+  <script>setTimeout(() => {
+    $(document).ready(function() {
+  $(".mobilemenu").on('click', function(){
+    $(".mobile-dropdown").slideToggle("fast");
+  });
+});
+
+},1000)
+
+    
+  </script>
