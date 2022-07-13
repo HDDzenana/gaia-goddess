@@ -44,6 +44,7 @@ background-color: {{bg_color}};
   justify-content: center;
   margin: auto;
   padding: 50px 0; 
+  flex-wrap: wrap;
 }
 
 .card-image {
@@ -105,9 +106,44 @@ card{
       margin: 30px 0 !important;
   }
   @media only screen and (max-width: 768px){
+    .card-{{section.id}}   {
+        display: flex;
+        -webkit-flex-direction: column !important;
+        flex-direction: column !important;
+      }
+      .brti .breadcrumbs{
+          width: 100%;
+          padding-top: 20px !important;
+      }
+    .aboutarticle-{{section.id}}  .icn {
+        min-height: 10px !important;
+        height: 10px !important;
+      }
       .btn--about-card{
           margin-top: 15px;
       }
+
+      #shopify-section-template--15702384541873__165466236852a57a63 {
+        max-width: 80vw !important;
+        margin: auto;
+      }
+
+      .card-text {
+        min-width: 100%;
+        margin: auto
+      }
+   
+.h1-{{section.id}} {
+  max-width: 90vw;
+  margin: auto;
+}
+,custompodcast {
+  max-width: 90vw;
+  margin: auto;
+}
+.icn {
+  margin-left: -50px;
+}
       .about__block{
           flex-direction: column-reverse;
           display: flex;
@@ -230,7 +266,7 @@ card{
 {%endif%} 
     {%endfor%}<time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
     </div></div>
-    <h1 class="maroonbold">
+    <h1 class="maroonbold h1-{{section.id}}">
       {{article.title}}   
     </h1>      
 </div> <div class="articlecontent">

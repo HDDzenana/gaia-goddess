@@ -46,6 +46,7 @@
           "type": "product",
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
+            "custombadge": false,
             "image": "shopify:\/\/shop_images\/image_21_5aca60f8-d086-4261-95c1-3e35baf4e8dd.png"
           }
         },
@@ -53,13 +54,15 @@
           "type": "product",
           "settings": {
             "product": "retreat",
-            "image": "shopify:\/\/shop_images\/image_20.png"
+            "custombadge": true,
+            "image": "shopify:\/\/shop_images\/image_2.png"
           }
         },
         "1656320347e62f76bf-2": {
           "type": "product",
           "settings": {
             "product": "retreat",
+            "custombadge": false,
             "image": "shopify:\/\/shop_images\/image_21_5aca60f8-d086-4261-95c1-3e35baf4e8dd.png"
           }
         },
@@ -67,6 +70,7 @@
           "type": "product",
           "settings": {
             "product": "7-days-exploring-sightseeing-in-cairo-egypt",
+            "custombadge": false,
             "image": "shopify:\/\/shop_images\/image_22_4ff21882-66a4-401c-8dbc-9bd2552fb5ef.png"
           }
         },
@@ -74,14 +78,16 @@
           "type": "product",
           "settings": {
             "product": "virtual-meeting",
-            "image": "shopify:\/\/shop_images\/image_22_4ff21882-66a4-401c-8dbc-9bd2552fb5ef.png"
+            "custombadge": false,
+            "image": "shopify:\/\/shop_images\/image_20.png"
           }
         },
         "1c2a7a8c-2f74-4b90-b75c-e4a12ba532bc": {
           "type": "product",
           "settings": {
             "product": "retreat",
-            "image": "shopify:\/\/shop_images\/image_20.png"
+            "custombadge": true,
+            "image": "shopify:\/\/shop_images\/image_3.png"
           }
         }
       },

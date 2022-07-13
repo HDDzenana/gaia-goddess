@@ -117,7 +117,7 @@
     {%- else -%}
       <input name="id" data-productid="{{ product.id }}" type="hidden" value="{{ current_variant.id }}" data-product-select>
     {%- endif -%}
-
+	<div class="mws-options"></div>
     {%- if settings.show_quantity -%}
       {%- comment -%}
         Quantity Selector
@@ -182,7 +182,7 @@
   </div>
 
   
-  <p class="line-item-property__field desktoponly" style="margin: 5% 0;">
+  <p class="line-item-property__field" style="margin: 5% 0;">
     <input type="hidden" name="properties[I agree to terms and conditions]" value="No">
     <input id="i-agree-to-terms-and-conditions" type="checkbox" name="properties[I agree to terms and conditions]" value="Yes"required> 
     <label for="i-agree-to-terms-and-conditions">I agree to <a class="maroon" href="/policies/terms-of-service" style="color:#6C1D45;">
@@ -251,7 +251,8 @@
 
 <style>
   .product__form, .buttons-grid  {
-    gap: 5px !important
+    gap: 5px !important;
+    margin-top: 10px;
   }
 </style>
     

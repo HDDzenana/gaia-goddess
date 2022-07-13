@@ -3980,7 +3980,7 @@ button.mfp-close {
 
 .site-header--loading {
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
 }
 
 .has-scrolled .site-header--fixed {
@@ -4699,7 +4699,7 @@ button.mfp-close {
 
 .mobile-nav__link--level-1 {
   font-size: calc(1.5rem * var(---font-adjust-nav));
-  padding: 10px 5px 10px 25px;
+  padding: 10px 5px 10px 5px;
 }
 
 .mobile-nav__link--level-2 {

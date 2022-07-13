@@ -105,7 +105,7 @@
     margin: auto;
   }
 
-  .healer-list-{{section.id}} * {
+  .healer-list-{{section.id}}  {
     text-align: left !important;
     
   }
@@ -125,7 +125,7 @@
   }
  
   .filter-title {
-    width: 140px; 
+    width: 160px; 
   }
 
   #cat-filter {
@@ -133,6 +133,7 @@
     border-color: #6C1D45;
     border: 2px solid #6C1D45;
     width: 140px;
+    min-width: fit-content;
     height: 60px;
   }
   select,
@@ -449,7 +450,7 @@ const swiper = new Swiper(".swiper-{{ section.id }}", {
     border-radius: 40px !important;
     border-color: #6C1D45;
     border: 1px solid #6C1D45;
-    width: 140px;
+    width: 160px;
     height: 40px;
     font-size: 14px;
     padding: 0 15px;

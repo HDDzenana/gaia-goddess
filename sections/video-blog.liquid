@@ -107,9 +107,29 @@
         .btn--about-card{
             margin-top: 15px;
         }
+        .card-{{section.id}} { 
+          flex-direction: column !important;
+        }
+        .uploadedby {
+          flex-direction: column !important;
+        }
+        .card-text {
+          width: 100% !important;
+          margin: auto !important;
+        }
+        .breadcrumbs * {
+          font-size:10px !important;
+          flex-direction: row;
+          overflow: hidden;
+        }
         .about__block{
             flex-direction: column-reverse;
             display: flex;
+          }
+          .grayregular {
+            max-width: 96vw !important;
+            margin: auto;
+            text-align: center;
           }
         .about-info {
             padding-left: var(--gutter-mobile);
@@ -218,16 +238,15 @@
         
      <div class="td">  
     {%if article.tags contains 'general' %}
-<div class="icn" style="    width: 50px !important;
+<div class="icn" style="    width: 50px !important;min-height: auto !important;max-height: fit-content ;">
+  <img src="{{ 'general.svg' | asset_url }}" alt="">
 ">  
     {%render 'generalblog'%}</div>
   {%endif%}
        {%if article.tags contains 'podcast' %}
-<div class="icn" style="    width: 50px !important;
-"> {%render 'podcasticn'%}</div>
+<div class="icn" style="   width: 50px !important;min-height: auto !important;max-height: fit-content ;"> {%render 'podcasticn'%}</div>
 {%endif%}    {%if article.tags contains 'video' %}
-<div class="icn" style="    width: 50px !important;
-"> {%render 'videoicn'%}</div>
+<div class="icn" style="     width: 50px !important;min-height: auto !important;max-height: fit-content ;"> {%render 'videoicn'%}</div>
 {%endif%} 
  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}" style="color: #EB6FBD; font-weight: 700;">{{ article.published_at | date: format: 'month_day_year' }}</time>
     </div></div>

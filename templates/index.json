@@ -15,13 +15,14 @@
         "subtitle": "balance of living!",
         "main_subheading": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
         "button_text": "Join Us",
-        "button_link": "",
+        "button_link": "shopify:\/\/pages\/memberships",
         "button_style": "primary"
       }
     },
     "1649147513ace08e02": {
       "type": "section-product-feature",
       "settings": {
+        "fullheight": false,
         "aos": true,
         "bg": "",
         "image_layout": "square",
@@ -42,7 +43,7 @@
         "ssubheading_color": "#800000",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <\/p><p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.<\/p>",
         "button_text": "Learn More",
-        "button_link": "",
+        "button_link": "shopify:\/\/pages\/about",
         "button_color": "#6c1d45",
         "button_hover_color": "#ffffff",
         "video_url": "",
@@ -121,6 +122,7 @@
       "type": "section-product-feature",
       "disabled": true,
       "settings": {
+        "fullheight": false,
         "aos": true,
         "bg": "#FEFAFB",
         "image_layout": "square",
@@ -183,6 +185,7 @@
         "ebd6e8c2-aed7-4a4d-8d0a-05cb92685db3"
       ],
       "settings": {
+        "fullheight": false,
         "aos": true,
         "bg": "",
         "image_layout": "square",
@@ -203,7 +206,7 @@
         "ssubheading_color": "#800000",
         "description": "<p>Becoming a member of Gaia Goddess will introduce you to a new world for a community of holistic healing. Key benefits of our memberships include:<br\/><br\/><br\/><\/p>",
         "button_text": "Join Us",
-        "button_link": "",
+        "button_link": "shopify:\/\/pages\/memberships",
         "button_color": "#6c1d45",
         "button_hover_color": "#ffffff",
         "video_url": "",

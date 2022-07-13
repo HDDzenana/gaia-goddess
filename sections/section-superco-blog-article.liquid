@@ -37,6 +37,9 @@
 {%- endif -%}
 
 <style>
+  .icn {
+    max-height: fit-content !important;
+  }
     .card_icons{
         justify-content: center !important;
     }
@@ -96,8 +99,23 @@
         margin: 30px 0 !important;
     }
     @media only screen and (max-width: 768px){
+      .breadcrumbs {
+        display: flex;
+        flex-direction: row !important;
+        overflow: hidden;
+      }
+      .breadcrumbs svg {
+        padding-top: 0 !important;
+      }
+      .breadcrumbs * {
+        font-size: 10px !important;
+        padding-top: 5px;
+      }
         .btn--about-card{
             margin-top: 15px;
+        }
+        .upperpart-{{section.id}} {
+          margin-bottom: 50px !important;
         }
         .about__block{
             flex-direction: column-reverse;
@@ -252,19 +270,19 @@ image: section.settings.image %}
 
                     <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact">
                         {% if section.settings.card_social %}
-                          <a class="instagram" rel="noopener" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}">
+                          <a class="instagram" href = "{{ settings.social_facebook_link }}" title="{{ 'footer.socials.title' | t: social: 'Facebook', shop_name: shop.name }}" target="_blank">
                             {%- render 'icon-footer-facebook' -%}
                           </a>
                         {% endif %}
                       
                         {% if section.settings.card_social %}
-                          <a class="instagram" rel="noopener" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}">
+                          <a class="instagram" href = "{{ settings.social_instagram_link }}" title="{{ 'footer.socials.title' | t: social: 'Instagram', shop_name: shop.name }}" target="_blank">
                             {%- render 'icon-footer-instagram' -%}
                           </a>
                         {% endif %}
                     
                         {% if section.settings.card_social %}
-                          <a class="website" rel="noopener" href = "{{ settings.social_twitter_link }}" title="">
+                          <a class="website"  href = "{{article.metafields.custom.author_collection}}" title="" target="_blank">
                             {%- render 'healer-website' -%}
                           </a>
                         {% endif %}
@@ -273,7 +291,8 @@ image: section.settings.image %}
     
                       </div>
                 </div>
-            </div>   {%- if section.settings.show_share_buttons -%}   <div class="about-card" style="background: #FFFFFF;
+            </div>   {%- if section.settings.show_share_buttons -%}  
+             <div class="about-card sharing-{{section.id}}" style="background: #FFFFFF;
 box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161);
 background: #FFFFFF !important;
 box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:transparent ; box-shadow: none;">  <div class="about-card__info" style="margin-top:50px ;">
@@ -281,7 +300,7 @@ box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:t
                <div class="card_icons social-sharing-wrapper social-sharing-wrapper-contact"> 
                
              {%- render 'social-sharing', article: article -%}
-             </div></div>    {%- endif -%}
+             </div></div>     {%- endif -%}
              </div>
         </div>
 
@@ -301,6 +320,16 @@ box-shadow: 0px 10px 30px rgba(108, 29, 69, 0.161) !important;background-color:t
   
   <div class="border"></div>
 
+  <!-- hide sharing if locked -->
+  {% if article.tags contains 'customeronly' %}
+<style>
+.sharing-{{section.id}} {
+  visibility: hidden !important;
+}
+ </style>
+{% endif %}
+
+<!-- endhide -->
   <script type="application/ld+json">
 
 

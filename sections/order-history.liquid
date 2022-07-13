@@ -7,6 +7,13 @@
   @media only screen and (max-width: 1000px) {
     .accountnav {
       max-width: 500px!important;
+      position:  relative !important;
+      display: flex;
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+      flex-direction: column;
+      
+    /* margin-left: 15% !important; */
     }
     .oh-{{section.id}} th:last-of-type { 
       border-top-right-radius: 0 !important;
@@ -19,7 +26,9 @@
       border-right-color: transparent !important;
     }
     .accountnav-wrapper {
-      display: none !important;
+  
+      width: 100% !important;
+      padding: 50px 0;
     }
     .wrapper .maroonbold {
       margin-top: 0px !important;
@@ -60,68 +69,73 @@
   min-height: 100vh;
 }
 
-/* MENU STYLING GENERAL */
 .accountnav {
-  background: white;
+
+background: white;
   list-style: none;
   width: 300px;
   margin: auto;
   border-radius: 40px;
   overflow: hidden;
   position: fixed;
-  margin-left: 5%;
+  margin-left: 4%;
   margin-top: 120px;
   margin-bottom: 500px;
   filter: drop-shadow(0px 10px 30px rgba(108, 29, 69, 0.161));
+
 }
 
 li.active 
- {
-  background-color: #FFD9E5;
-  font-weight: 700;
-  border-top: none !important;
-  border: none !important;
-  margin-bottom: -1px;
+{
+background-color: #FFD9E5;
+font-weight: 700;
+border-top: none !important;
+border: none !important;
+margin-bottom: -1px;
 }
- 
+
+
 .accountnav ul {
-  margin: 0;
-  /* padding-left: 15px !important; */
-  padding-bottom: 15px;
-  /* padding-inline-start: 0 !important; */
+margin: 0;
+/* padding-left: 15px !important; */
+padding-bottom: 15px;
+/* padding-inline-start: 0 !important; */
 }
 
 .accountnav li {
-  border-top: 1px solid #FEF1F5;
-  list-style: none;
-  padding-left: 40px !important;
-  padding: 15px 0;
+border-top: 1px solid #FEF1F5;
+list-style: none;
+padding-left: 40px !important;
+padding: 15px 0;
 }
 .accountnav li  a {
-  color: #6C1D45 !important;
-  font-size: 18px;
+color: #6C1D45 !important;
+font-size: 18px;
 }
 
 .accountnav li:last-child {
-  padding-bottom: 0px !important;
+padding-bottom: 0px !important;
 }
 
 .menu-title {
-  text-align: center;
-  background-color: #EB6FBD; 
-  color: white;
-  margin: 0;
-  padding-top: 20px;
-  padding-bottom: 15px;
+text-align: center;
+background-color: #EB6FBD; 
+color: white;
+margin: 0;
+padding-top: 20px;
+padding-bottom: 15px;
 }
 .accountnav-wrapper {
-  width: 25%;
-  display: flex;
+/* width: 25%; */
+min-width: 400px; width: 500px; display: flex; 
+display: flex;
 }
 /* END MENU STYLING - GENERAL  */
 .content-{{section.id}} {
   background:{{section.settings.bg}};
-  width: 75%;
+
+  width: 100%;
+    overflow: hidden;
 }
 
 .topbanner  * {
@@ -331,11 +345,12 @@ overflow: hidden;
   {%endif%}
   </div>
 <!-- order -->
-
+ 
+ 
  {%if customer %}
  
 {% for order in customer.orders %}
-{% if customer.orders.size == 0 %}
+{% if customer.orders.size <1  %}
 <h1 class="wrapper maroonbold animate__animated animate__fadeInUp center " style="
 margin: 50px 5px;" >At this moment, you have no orders. </h1>
 <p class="wrapper maroonbold animate__animated animate__fadeInUp center " style="

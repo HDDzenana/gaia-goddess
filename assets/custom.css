@@ -14,8 +14,7 @@ p,
 h3,
 h4,
 h5,
-span,
-a,
+
 li,
 input,
 textarea {
@@ -53,7 +52,7 @@ h2 span {
 h2,
 h2 span {
    
- font-family: 'Playfair' !important;
+  
   font-weight: 700 !important;
   line-height: 52px;
 }
@@ -118,6 +117,11 @@ margin: 0 !important}
   }
   .site-header>.wrapper{
     padding-left: 20px;
+  }
+  /* part of the team */
+  #ProductFeature--template--15702384738481__16512183744a86c2dd,
+  #ProductFeature--template--15702384967857__16502926109923d142 {
+    padding: 10px 0 !important;
   }
 }
 
@@ -246,10 +250,7 @@ margin: 0 !important}
 }
 
 
-.site-header>.wrapper {
-padding-top: 25px !important;
-}
-
+ 
 .uppercase {
   text-transform: uppercase;
 }
@@ -264,6 +265,10 @@ padding-top: 25px !important;
     min-width: 500px !important;
     left: 90% !important
   }
+  .site-header>.wrapper {
+    padding-top: 25px !important;
+    }
+    
   .js-drawer-open-right .drawer--right > body {
     opacity: .4;
   }

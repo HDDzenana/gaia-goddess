@@ -2,11 +2,137 @@
 {% assign menu = section.settings.menu%}
 <style>
 
+/* .triskelchange {
+    width:100% !important;
+
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+  }
+  .imgmfs {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+} */
+.customer-icon {
+  display: none;
+    position: absolute;
+    top: -20px;
+    left: -10px;
+
+    width: 170px;
+    height: 170px;
+  }
+.customer-icon svg {
+  width: 170px;
+    height: 188px;
+  }
+
+.profilepicture {
+  height: 150px;
+  width: 150px;
+}
+
+
 @media only screen and (max-width: 1000px) {
+  .mobilemenu {
+  width: 100vw;
+  position: relative;
+  padding: 0;
+  height: 50px;
+  line-height: 50px;
+  /* disable text selection by clicking */
+  -webkit-user-select: none;  
+  -moz-user-select: none;    
+  -ms-user-select: none;      
+  user-select: none;
+}
+
+.mobilemenu a.dropdown-link{
+  display: block;
+  height: 50px;
+  width: 100vw;
+  text-align: center;
+  /* padding: 0 20px; */
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 18px;
+  cursor: pointer;
+  background: #EB6FBD;
+}
+
+.mobilemenu a.dropdown-link:hover{
+	text-decoration: none;
+}
+.mobilemenu a.dropdown-link i{
+	/* float: right; */
+	position: relative;
+	top: 15px;
+}
+
+a.dropdown-link {
+  display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.mobile-dropdown {
+  display: none;
+  list-style-type: none;
+  background: #FFFFFF;
+  padding: 0;
+  min-width: 125px;
+  position: relative;
+  z-index: 100;
+  margin: 0;
+}
+
+.mobile-dropdown li{
+  padding: 0;
+  height: auto;
+  background-color: white;
+  display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #EB6FBD; 
+}
+
+.mobile-dropdown li a{
+  padding: 0;
+  color: #6C1D45;
+  display: block;
+  padding: 0 20px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.mobile-dropdown li a:hover{
+  text-decoration: none;
+  background: #6C1D45;
+}
+
 .accountnav {
   max-width: 100vw !important;
 }
+.desktoponly {
+  display: none !important;
+}
+.accountnav {
+  position: absolute !important;
+  width: 86vw !important;
+  margin: auto !important;
+}
 
+.accountnav-wrapper {
+  height: 400px;
+  width: 100vw !important;
+  padding-top: 55px;
+}
 .socialspan {
   display: flex;
   align-items: center;
@@ -20,7 +146,7 @@
   width: 96vw; 
 }
 .accountnav {
-  position:  fixed !important;
+  position:  fixed;
   display: flex;
   flex-direction: column;
   margin-bottom: 0px !important;
@@ -105,6 +231,7 @@ li.active
   padding-bottom: 15px;
 }
 .accountnav-wrapper {
+  min-width: 400px;
   width: 500px;
   display: flex;
 }
@@ -210,20 +337,25 @@ input[type="radio"]:checked::before{
   font-size: 21px;
 }
 
-.icon {
+.icon { 
 overflow: hidden;
   margin-top: 10px;
   margin-bottom: -15px !important;
   margin-right: 5px;
   }
+
+
+
+
+ 
 </style>
 
 <div class="customaccount-{{section.id}}"> 
 <!-- MENU -->
-<div class="accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
+<div class="desktoponly accountnav-wrapper" style="background: {{section.settings.menu_bg}}"> 
   <div class="anv">
 <nav role="accountnav" class="accountnav">
-  <h4 class="menu-title">  {{ menu.title }}  </h4>
+  <h4 class="menu-title">  {{ menu.title }} </h4>
   <ul>
     {%- for link in menu.links -%}
     <li  {% if link.active %}  class="active" {% endif %}>
@@ -280,6 +412,62 @@ overflow: hidden;
 
 <div class="content-{{section.id}}">
   {%if customer%}
+  <div class="mobileonly"><div class="mobilemenu">
+    <a class="dropdown-link"> {{ menu.title }}  {%render 'mm-chevron'%} </a>
+    <ul class="mobile-dropdown">
+ 
+        {%- for link in menu.links -%}
+        <li  {% if link.active %}  class=" " {% endif %}>
+          <div class="icon">
+            {%if link.title contains 'Profile' %}
+            {%render 'profileicon' %}{%endif%}
+            {%if link.title contains 'Membership' %}
+            {%render 'ms' %}{%endif%}
+            {%if link.title contains 'Order' %}
+            {%render 'orderhistory' %}{%endif%} 
+            {%if link.title contains 'Logout' %}
+            {%render 'logout' %}{%endif%} 
+           </div>
+          <a href="{{ link.url }}" {% if link.active %}aria-current="page" class="active"{% endif %}>
+       
+              {{ link.title }}
+          
+            </a>
+    
+            {%- if link.links != blank -%}
+              <ul>
+                {%- for child_link in link.links -%}
+                <li  {% if link.active %}  class="active" {% endif %}>
+                    <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page" class="active"  style="background-color: #FFD9E5 !important;"{% endif %}>
+                      {{ child_link.title }}
+                    </a>
+    
+                    {%- if child_link.links != blank -%}
+                      <ul>
+                        {%- for grandchild_link in child_link.links -%}
+                        <li  {% if link.active %}  class="active" {% endif %}>
+                            <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page" class="active" style="background-color: #FFD9E5 !important;" {% endif %}>
+                              {{ grandchild_link.title }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+    
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+    
+          </li>
+        {%- endfor -%}
+      </ul>
+  </div> </div>
+ <script>  $(document).ready(function() {
+	$(".mobilemenu").on('click', function(){
+		$(".mobile-dropdown").slideToggle("fast");
+	});
+});</script>
   <div class="topbanner">
     {%render 'gaia-image',
     image: section.settings.banner_top 
@@ -287,9 +475,29 @@ overflow: hidden;
    
     <div class="profilepicturewrapper"> 
  
-     <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}" width="170" height="170" class="profilepicture">
-  
+     <!-- <img class="appimgacf" src="{{ 'rosebg.svg' | asset_img_url: 'master' }}" class="profilepicture"> -->
+     <span class=" profilepicture" style="position:relative;">
+      <img class="appimgacf" src="{{customer.metafields.cf_app.profile_image}}"  class="profilepicture" style="
+      width: 100% !important;
+      height: 100% !important;
+      border: none !important;">
+     
+        <span class="customer-icon" id="customer-icon-rose">
+        {% render 'customer-icon-rose' %} 
+        </span>
+        <span class="customer-icon" id="customer-icon-triskel">
+          {% render 'customer-icon-triskel' %} 
+          </span>
+        <span class="customer-icon" id="customer-icon-leaf">
+          {% render 'customer-icon-leaf' %} 
+          </span>
+        <span class="customer-icon" id="customer-icon-flower">
+          {% render 'customer-icon-flower' %} 
+          </span>
 
+     </span>
+
+ 
     </div>
 
   </div>
@@ -381,22 +589,22 @@ window.location.href = "/account/register";
 
  <script>
 setTimeout(() => {
-  document.querySelector('input[value="Facebook"]').parentElement.innerHTML = ` <a href="www.facebook.com/gaiagoddesslifestyle" class="maroonbold" target="_blank" rel="noopener noreferrer">  <div class="socialspan"> <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+  document.querySelector('input[value="Facebook"]').parentElement.innerHTML = ` <a href="{{settings.social_facebook_link}}" class="maroonbold" target="_blank" rel="noopener noreferrer">  <div class="socialspan"> <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19 0C22.7578 0 26.4313 1.11433 29.5558 3.20208C32.6804 5.28982 35.1156 8.25722 36.5537 11.729C37.9918 15.2008 38.368 19.0211 37.6349 22.7067C36.9018 26.3924 35.0922 29.7778 32.435 32.435C29.7778 35.0922 26.3924 36.9018 22.7067 37.6349C19.0211 38.368 15.2008 37.9918 11.729 36.5537C8.25722 35.1156 5.28982 32.6804 3.20208 29.5558C1.11433 26.4313 0 22.7578 0 19C0 13.9609 2.00178 9.12816 5.56497 5.56497C9.12816 2.00178 13.9609 0 19 0V0Z" fill="#6C1D45"/>
 <path d="M23.4797 20.203L24.0147 16.719H20.6718V14.458C20.6482 14.1978 20.6835 13.9356 20.775 13.6909C20.8665 13.4462 21.0119 13.2251 21.2004 13.0442C21.3889 12.8633 21.6157 12.7271 21.864 12.6457C22.1123 12.5643 22.3757 12.5398 22.6347 12.574H24.1547V9.60902C23.2627 9.46505 22.3613 9.38651 21.4577 9.37402C18.7047 9.37402 16.9048 11.043 16.9048 14.064V16.719H13.8438V20.203H16.9048V28.626H20.6718V20.203H23.4797Z" fill="white"/>
 </svg> Facebook </div></a>`;
-document.querySelector('input[value="Instagram"]').parentElement.innerHTML = ` <a href="{{ settings.instagram_link }}" class="maroonbold" target="_blank" rel="noopener noreferrer"> <div class="socialspan"> <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+document.querySelector('input[value="Instagram"]').parentElement.innerHTML = ` <a href="{{ settings.social_instagram_link }}" class="maroonbold" target="_blank" rel="noopener noreferrer"> <div class="socialspan"> <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19 38C29.4934 38 38 29.4934 38 19C38 8.50659 29.4934 0 19 0C8.50659 0 0 8.50659 0 19C0 29.4934 8.50659 38 19 38Z" fill="#6C1D45"/>
 <path d="M19.0019 14.3391C18.0801 14.3391 17.1789 14.6124 16.4124 15.1246C15.6459 15.6367 15.0485 16.3647 14.6957 17.2164C14.3429 18.0681 14.2506 19.0052 14.4305 19.9094C14.6103 20.8135 15.0543 21.644 15.7061 22.2959C16.358 22.9477 17.1885 23.3916 18.0926 23.5715C18.9968 23.7513 19.9339 23.659 20.7856 23.3063C21.6373 22.9535 22.3653 22.3561 22.8774 21.5896C23.3896 20.8231 23.6629 19.9219 23.6629 19.0001C23.664 18.3877 23.5441 17.7811 23.3103 17.2151C23.0764 16.6491 22.7331 16.1349 22.3001 15.7019C21.8671 15.2689 21.3528 14.9256 20.7869 14.6917C20.2209 14.4578 19.6143 14.338 19.0019 14.3391ZM19.0019 22.0301C18.4027 22.0301 17.8168 21.8523 17.3186 21.5194C16.8203 21.1865 16.4319 20.7132 16.2026 20.1596C15.9732 19.6059 15.9132 18.9967 16.0301 18.4089C16.1471 17.8212 16.4356 17.2813 16.8594 16.8575C17.2831 16.4338 17.823 16.1452 18.4108 16.0283C18.9986 15.9114 19.6078 15.9714 20.1615 16.2007C20.7151 16.43 21.1883 16.8184 21.5213 17.3167C21.8542 17.815 22.0319 18.4008 22.0319 19.0001C22.0306 19.8033 21.711 20.5732 21.143 21.1411C20.5751 21.7091 19.8051 22.0287 19.0019 22.0301ZM24.9399 14.1491C24.9399 14.364 24.8762 14.5742 24.7567 14.753C24.6373 14.9317 24.4675 15.071 24.2689 15.1533C24.0703 15.2356 23.8517 15.2571 23.6409 15.2152C23.43 15.1732 23.2363 15.0697 23.0843 14.9177C22.9323 14.7657 22.8288 14.572 22.7868 14.3611C22.7449 14.1503 22.7664 13.9317 22.8487 13.7331C22.9309 13.5345 23.0703 13.3647 23.249 13.2452C23.4278 13.1258 23.6379 13.0621 23.8529 13.0621C23.9957 13.0618 24.1371 13.0897 24.269 13.1442C24.4009 13.1986 24.5208 13.2786 24.6218 13.3795C24.7228 13.4804 24.8028 13.6002 24.8574 13.7321C24.912 13.864 24.9401 14.0053 24.9399 14.1481V14.1491ZM28.0269 15.2491C28.0559 13.8367 27.5283 12.4697 26.5579 11.4431C25.5289 10.4751 24.1624 9.94756 22.7499 9.97305C21.2499 9.88805 16.7499 9.88805 15.2499 9.97305C13.8375 9.94536 12.4703 10.4716 11.4409 11.4391C10.4721 12.4677 9.94503 13.8352 9.97293 15.2481C9.88793 16.7481 9.88793 21.2481 9.97293 22.7481C9.94288 24.1613 10.4702 25.5295 11.4409 26.5571C12.4709 27.5239 13.8375 28.0506 15.2499 28.0251C16.7499 28.1101 21.2499 28.1101 22.7499 28.0251C24.1631 28.0551 25.5314 27.5278 26.5589 26.5571C27.5264 25.5275 28.0532 24.1606 28.0269 22.7481C28.1119 21.2481 28.1119 16.7481 28.0269 15.2481V15.2491ZM26.0879 24.3551C25.9337 24.7461 25.7007 25.1013 25.4034 25.3985C25.1062 25.6958 24.751 25.9288 24.3599 26.0831C23.1599 26.5581 20.3239 26.4481 19.0019 26.4481C17.6799 26.4481 14.8359 26.5531 13.6439 26.0831C13.2528 25.9293 12.8974 25.6969 12.5998 25.4002C12.3022 25.1034 12.0688 24.7487 11.9139 24.3581C11.4389 23.1581 11.5489 20.3221 11.5489 19.0001C11.5489 17.6781 11.4449 14.8341 11.9139 13.6411C12.0683 13.2499 12.3015 12.8947 12.5989 12.5974C12.8963 12.3002 13.2517 12.0672 13.6429 11.9131C14.8429 11.4381 17.6789 11.5481 19.0009 11.5481C20.3229 11.5481 23.1669 11.4431 24.3589 11.9131C24.75 12.0673 25.1052 12.3003 25.4024 12.5976C25.6997 12.8948 25.9327 13.25 26.0869 13.6411C26.5619 14.8411 26.4519 17.6771 26.4519 18.9991C26.4519 20.3211 26.5629 23.1651 26.0879 24.3581V24.3551Z" fill="white"/>
 </svg>
  Instagram </div> </a>`;
- document.querySelector('input[value="Twitter"]').parentElement.innerHTML = ` <a href="www.twitter.com/gaiagoddesslifestyle" class="maroonbold" target="_blank" rel="noopener noreferrer"> <div class="socialspan"><svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+ document.querySelector('input[value="Twitter"]').parentElement.innerHTML = ` <a href="{{settings.social_twitter_link}}" class="maroonbold" target="_blank" rel="noopener noreferrer"> <div class="socialspan"><svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19 38C29.4934 38 38 29.4934 38 19C38 8.50659 29.4934 0 19 0C8.50659 0 0 8.50659 0 19C0 29.4934 8.50659 38 19 38Z" fill="#6C1D45"/>
 <path d="M28.8029 15.486C28.8169 15.686 28.8169 15.88 28.8169 16.077C28.8286 17.7773 28.5024 19.463 27.8571 21.0362C27.2118 22.6094 26.2603 24.0386 25.058 25.241C23.8556 26.4433 22.4263 27.3948 20.8532 28.0401C19.28 28.6854 17.5943 29.0117 15.8939 29C13.4211 29.0063 10.999 28.2983 8.91895 26.961C9.2842 27.0011 9.6515 27.0198 10.0189 27.017C12.0633 27.0217 14.0497 26.338 15.6579 25.076C14.7101 25.0588 13.7913 24.7459 13.0299 24.1812C12.2685 23.6165 11.7025 22.828 11.4109 21.926C11.6948 21.9708 11.9816 21.9942 12.2689 21.996C12.6739 21.9951 13.0771 21.943 13.4689 21.841C12.4391 21.6345 11.5126 21.0776 10.8472 20.265C10.1817 19.4524 9.81834 18.4343 9.81895 17.384V17.328C10.4483 17.6794 11.1517 17.8771 11.8719 17.905C10.9076 17.2619 10.2252 16.275 9.96385 15.1458C9.70255 14.0166 9.88214 12.8302 10.4659 11.829C11.6069 13.2333 13.0303 14.3821 14.6438 15.2009C16.2573 16.0197 18.0249 16.4902 19.8319 16.582C19.7589 16.24 19.7211 15.8916 19.7189 15.542C19.72 14.631 19.9947 13.7414 20.5073 12.9884C21.02 12.2353 21.747 11.6537 22.5941 11.3187C23.4413 10.9838 24.3695 10.911 25.2585 11.1099C26.1475 11.3087 26.9562 11.77 27.5799 12.434C28.5974 12.2371 29.5729 11.8649 30.4629 11.334C30.1228 12.3829 29.4117 13.2718 28.4629 13.834C29.365 13.7323 30.2467 13.4964 31.0789 13.134C30.4571 14.0392 29.6869 14.833 28.8009 15.482L28.8029 15.486Z" fill="white"/>
 </svg>
 
  Twitter </div> </a>`;
- document.querySelector('input[value="Youtube"]').parentElement.innerHTML = ` <a href="www.youtube.com/gaiagoddesslifestyle" class="maroonbold" target="_blank" rel="noopener noreferrer"> 
+ document.querySelector('input[value="Youtube"]').parentElement.innerHTML = ` <a href="{{settings.social_youtube_link}}" class="maroonbold" target="_blank" rel="noopener noreferrer"> 
  <div class="socialspan"> <svg width="28" height="28" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M19 38C29.4934 38 38 29.4934 38 19C38 8.50659 29.4934 0 19 0C8.50659 0 0 8.50659 0 19C0 29.4934 8.50659 38 19 38Z" fill="#6C1D45"/>
 <path d="M28.1241 14.402C28.0176 13.9963 27.8063 13.6257 27.5114 13.3273C27.2166 13.029 26.8485 12.8133 26.4441 12.702C23.9743 12.4051 21.4876 12.2715 19.0001 12.302C16.5127 12.2715 14.026 12.4051 11.5561 12.702C11.151 12.8127 10.7821 13.0281 10.4865 13.3265C10.1909 13.6249 9.97902 13.9958 9.87212 14.402C9.59684 15.925 9.46293 17.4703 9.47212 19.018C9.46293 20.5657 9.59684 22.1109 9.87212 23.634C9.98067 24.036 10.1938 24.4022 10.4897 24.6952C10.7857 24.9881 11.154 25.1975 11.5571 25.302C14.027 25.5988 16.5137 25.7324 19.0011 25.702C21.4886 25.7324 23.9753 25.5988 26.4451 25.302C26.8478 25.1961 27.2152 24.9856 27.5101 24.6918C27.805 24.3979 28.0169 24.0312 28.1241 23.629C28.3994 22.1059 28.5333 20.5607 28.5241 19.013C28.533 17.4669 28.3991 15.9234 28.1241 14.402ZM17.0521 21.847V16.181L22.0321 19.014L17.0521 21.847Z" fill="white"/>
@@ -406,7 +614,8 @@ document.querySelector('input[value="Instagram"]').parentElement.innerHTML = ` <
 // Create metafield avatar
 // First element
 let uploadHereElement = document.createElement('div');
-uploadHereElement.innerHTML = `<div class="uploadherediv"><svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+uploadHereElement.innerHTML = `
+<button id="closepopup">   {%render 'close-popup' %}</button> <div class="uploadherediv"><svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14 29C21.732 29 28 22.5081 28 14.5C28 6.49187 21.732 0 14 0C6.26801 0 0 6.49187 0 14.5C0 22.5081 6.26801 29 14 29Z" fill="#FFD9E5"/>
 <path d="M20.4154 16.3708V19.2468C20.4161 19.4351 20.3796 19.6216 20.3082 19.7957C20.2367 19.9698 20.1316 20.1281 19.9988 20.2616C19.8661 20.3951 19.7084 20.5011 19.5347 20.5735C19.361 20.646 19.1747 20.6835 18.9864 20.6838H9.01143C8.63199 20.682 8.2688 20.5296 8.00161 20.2602C7.73443 19.9908 7.58511 19.6263 7.58643 19.2468V16.3708" stroke="#6C1D45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M17.5645 11.3389L14.0015 7.7439L10.4375 11.3389" stroke="#6C1D45" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -425,7 +634,7 @@ chooseAvatarElement.innerHTML = `<br>
 <path d="M115.005 9.874C116.296 9.874 117.323 10.2987 118.086 11.148C118.857 11.9887 119.243 13.0937 119.243 14.463C119.243 15.789 118.862 16.8983 118.099 17.791C117.336 18.6837 116.266 19.13 114.888 19.13C113.553 19.13 112.513 18.6967 111.768 17.83C111.023 16.9547 110.65 15.8453 110.65 14.502C110.65 13.1587 111.04 12.0537 111.82 11.187C112.6 10.3117 113.662 9.874 115.005 9.874ZM116.838 12.162C116.413 11.564 115.776 11.265 114.927 11.265C114.078 11.265 113.441 11.5597 113.016 12.149C112.6 12.7297 112.392 13.501 112.392 14.463C112.392 15.4163 112.613 16.2007 113.055 16.816C113.497 17.4313 114.13 17.739 114.953 17.739C115.82 17.739 116.457 17.4357 116.864 16.829C117.28 16.2137 117.488 15.4337 117.488 14.489C117.488 13.5357 117.271 12.76 116.838 12.162ZM124.115 15.282H122.646V19H120.982V10.004H124.791C125.727 10.004 126.451 10.2337 126.962 10.693C127.482 11.1437 127.742 11.733 127.742 12.461C127.742 13.0157 127.608 13.4707 127.339 13.826C127.079 14.1813 126.75 14.4327 126.351 14.58C127.157 14.8313 127.56 15.5853 127.56 16.842V17.258C127.56 18.1507 127.603 18.7313 127.69 19H126.078C125.965 18.7227 125.909 18.0597 125.909 17.011V16.855C125.909 16.283 125.788 15.88 125.545 15.646C125.311 15.4033 124.834 15.282 124.115 15.282ZM122.646 11.369V13.917H124.388C124.96 13.917 125.376 13.813 125.636 13.605C125.896 13.3883 126.026 13.0633 126.026 12.63C126.026 11.7893 125.502 11.369 124.453 11.369H122.646Z" fill="#6C1D45"/>
 </svg>
 <br>
-<strong class="black center" style="text-align: center!important;"> Choose a avatar as per your preference </strong>
+<strong class="black center" style="text-align: center!important;"> Choose an avatar as per your preference </strong>
 <br><br> <div class="imgmfs">
 {{ shop.metafields.global.triskel.value }} {{ shop.metafields.global.rose.value }} {{ shop.metafields.global.leaf.value }}{{ shop.metafields.global.flower.value }}  </div> </div>`
 
@@ -452,13 +661,70 @@ const toggleModalHandler = () => {
   modalBtn.addEventListener('click', () => {
     modalEl.classList.toggle('modalToggleOn');
   })
+
+
+  const closeBtn = document.querySelector('#closepopup');
+  closeBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    modalEl.classList.remove('modalToggleOn');
+  })
 }
  toggleModalHandler();
+ 
+//  const triskelchange =  document.querySelector ('.triskelchange'); 
+//  console.log (triskelchange)
+ 
+
+
+  const allCustomerClickIcons = document.querySelectorAll('.triskelchange');
+  allCustomerClickIcons.forEach(el => {
+    el.addEventListener('click', () => {
+      document.querySelectorAll('.customer-icon').forEach(icon => {
+        if (el.id === 'triskelchange') {
+          if (icon.id === 'customer-icon-triskel') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        } else if (el.id === 'rosechange') {
+          if (icon.id === 'customer-icon-rose') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        } else if (el.id === 'leafchange') {
+          if (icon.id === 'customer-icon-leaf') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        } else if (el.id === 'flowerchange') {
+          if (icon.id === 'customer-icon-flower') {
+            icon.style.display = 'block'
+          } else {
+            icon.style.display = 'none'
+
+          }
+        }
+      })
+    })
+
+  })
+
+  $(document).ready(function() {
+	$(".mobilemenu").on('click', function(){
+		$(".mobile-dropdown").slideToggle("fast");
+	});
+});
+ 
 
 },1000)
 
     
-
+ 
 
  </script>
 
@@ -529,8 +795,13 @@ const toggleModalHandler = () => {
   .imgclasscf * {
     margin: auto !important;
   }
-  .imgclasscf{
-    /*display: none;*/
-  }
+
+  #closepopup {
+    width: 100%;
+    display: flex;
+    position: absolute;
+    top: 20px;
+    left: 37%;
+    }
 </style>
  

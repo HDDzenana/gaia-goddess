@@ -17,7 +17,7 @@
 </div> 
 
     <div class="filter-title">
-      <select name="cat-filter" id="cat-filter" style="border-radius: 30px !important; border-color: #6C1D45; border: 2px solid #6C1D45; width: 160px; height: 60px; ">
+      <select name="cat-filter" id="cat-filter" style="border-radius: 30px !important; border-color: #6C1D45; border: 2px solid #6C1D45; width: 160px; min-width: fit-content; height: 60px; ">
         <option class="maroonbold" value="none-selected">All Locations</option>
         <option value="usa">USA</option>
         <option value="egypt">Egypt</option>
@@ -195,7 +195,17 @@
     font-size: 30px !important;
     text-align: center !important;
   }
+  .eventcardimg {
+    min-height: 300px;
+    height: 350px !important;
+    overflow: hidden;
+    object-fit: fill;
+  }
 
+  .eventcardimg .gaia-image img {
+    object-fit: fill;
+    height:100%;
+  }
   .btnreg {
   margin: 30px auto !important;
   }
@@ -210,30 +220,31 @@
     text-align: center !important;
     font-style: italic;
   }
-  .filters {
+  .filters { 
     display: flex;
-    gap: 0px !important;
+    gap: 4px !important;
     margin: auto;
+    /* margin-left: 0px; */
 }
 .filter-title {
-  width: 110px !important;
+  width: 120px !important;
 }
 #cat-filter  {
     border-radius: 40px !important;
     border-color: #6C1D45;
     border: 1px solid #6C1D45;
-    width:  110px !important;
+    width:  120px !important;
     height: 38px !important;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0 15px;
 }
 #cat-filterr {
     border-radius: 40px !important;
     border-color: #6C1D45;
     border: 1px solid #6C1D45;
-    width: 110px  !important;
+    width: 120px  !important;
     height: 38px !important;
-    font-size: 14px;
+    font-size: 12px;
     padding: 0 15px;
 }
  
@@ -252,7 +263,7 @@
     text-align: center;
   }
   .eventcardimg {
-    max-height: 200px !important;
+    max-height: 250px !important;
     min-height: 200px !important;
     object-fit: contain;
   }
@@ -321,6 +332,7 @@
 /*     max-width: 75%; */
     padding: 0;
     }
+
   }
   .prodtitle {
 font-size: 22px;
