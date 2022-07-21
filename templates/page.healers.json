@@ -88,6 +88,12 @@
           "settings": {
             "collection": "luna-pixie"
           }
+        },
+        "f3bc1dc5-b417-4eb4-834b-d045ca33c494": {
+          "type": "collection",
+          "settings": {
+            "collection": "darlene-shaw"
+          }
         }
       },
       "block_order": [
@@ -98,7 +104,8 @@
         "16562467977a3dddb2-3",
         "91856dfd-fc64-4ae6-9838-966f4d7e4432",
         "8bdc2567-1971-46c6-83b4-5b7d601e9caa",
-        "1a2e4088-8f7d-426a-b60d-6fcec9a9700e"
+        "1a2e4088-8f7d-426a-b60d-6fcec9a9700e",
+        "f3bc1dc5-b417-4eb4-834b-d045ca33c494"
       ],
       "settings": {
         "title": "Our Healers",
