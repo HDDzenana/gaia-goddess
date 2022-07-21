@@ -154,14 +154,14 @@
         "settings": {
         }
       },
-      "14710812113501315912": {
-        "type": "shopify:\/\/apps\/limit-quantity-purchase\/blocks\/app-embed\/143c1e59-4c01-4de6-ad3e-90b86ada592d",
+      "14656832010101544780": {
+        "type": "shopify:\/\/apps\/advanced-product-options\/blocks\/app-embed-block\/a1199153-7462-4b5b-8a80-f0eefba85e99",
         "disabled": false,
         "settings": {
         }
       },
-      "14656832010101544780": {
-        "type": "shopify:\/\/apps\/advanced-product-options\/blocks\/app-embed-block\/a1199153-7462-4b5b-8a80-f0eefba85e99",
+      "14710812113501315912": {
+        "type": "shopify:\/\/apps\/limit-quantity-purchase\/blocks\/app-embed\/143c1e59-4c01-4de6-ad3e-90b86ada592d",
         "disabled": false,
         "settings": {
         }
