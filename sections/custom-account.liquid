@@ -1,7 +1,29 @@
 
 {% assign menu = section.settings.menu%}
 <style>
+  span.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
 
+span.tooltip span.tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+span.tooltip:hover span.tooltiptext {
+  visibility: visible;
+}
 /* .triskelchange {
     width:100% !important;
 
@@ -839,29 +861,7 @@ const toggleModalHandler = () => {
 
 }
 
-  .tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
-}
 
-span.tooltip span.tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-
-  /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-span.tooltip:hover span.tooltiptext {
-  visibility: visible;
-}
 </style>
 
  
