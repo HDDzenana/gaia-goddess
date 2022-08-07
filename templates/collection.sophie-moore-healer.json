@@ -1,0 +1,113 @@
+{
+  "sections": {
+    "subcollections": {
+      "type": "subcollections",
+      "disabled": true,
+      "settings": {
+        "layout": "grid",
+        "image_source": "collection",
+        "image_aspect_ratio": 0.6,
+        "image_overlay_opacity": 0,
+        "image_overlay_color": "#000000",
+        "bg_color": "",
+        "text_color": "text-light"
+      }
+    },
+    "1654688591fbdfa2ac": {
+      "type": "section-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<div class=\"center\"> <\/div>"
+      }
+    },
+    "16545995910e1f9f10": {
+      "type": "healer-ind",
+      "blocks": {
+        "8d27600b-411b-4726-8405-25c566509e49": {
+          "type": "collection",
+          "settings": {
+            "collection": "sophie-moore",
+            "title": "Sophie Moore",
+            "healer_subtitle": "Yoga Instructor",
+            "textbtn": "Diosa",
+            "show_instagram_icon": true,
+            "social_instagram_link": "#Facebook",
+            "show_facebook_icon": true,
+            "social_facebook_link": "",
+            "show_website_icon": true,
+            "social_website_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "8d27600b-411b-4726-8405-25c566509e49"
+      ],
+      "settings": {
+        "bg": "#fef1f5",
+        "heading": "",
+        "bg-image": "shopify:\/\/shop_images\/spencer-davis-ONVA6s03hg8-unsplash_f79a1907-f592-4811-84ae-fa3bfdaad69d.png",
+        "heading_color": "#6c1d45",
+        "heading_alignment": "left",
+        "show_filter": false,
+        "products_layout": "grid",
+        "bg_color": "",
+        "healer_title_color": "#6c1d45",
+        "healer_subtitle_color": "#eb6fbd",
+        "enable_slider": true
+      }
+    },
+    "16512183549435ee0d": {
+      "type": "section-superco-about-healers",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "left",
+        "image_1": "shopify:\/\/shop_images\/5eef9a3fd97fc34b298a81f1_5ed92c919177097e77bf911f_image-biography-01-yogi-template.png",
+        "header_color": "#6c1d45",
+        "heading": "About Sophie Moore",
+        "subheading": "The pain itself is love, the main storage system. Performance The kids are not running, but the disease is at least not pregnant. Aliquet lectus eget varius nec dictum . Pure and not ok my eu eu, id. Eleifend vengeful malesuada id et malesuada augue vel, porta rhoncus. Hunger is the place to start, so that I can drink my heart. He needs to feel good about the ugly and not the earth. And the chocolate in the valley.",
+        "description": "<style>.description-highlight{color: #EB6FBD; font-size: 25px; font-weight: 700;}@media only screen and (max-width: 768px){ .description-highlight { font-size: 20px; padding-left: 40px; padding-right: 40px; }}<\/style><p class=\"description-highlight\">The pain itself is love, the main storage system.<\/p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi at gravida non. Aliquet lectus eget varius nec dictum.<\/p>\n<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Trisquite nullablandit tincidunt. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. <br>\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Trisquite nullablandit tincidunt. <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi at gravida non. Aliquet lectus eget varius nec dictum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi at gravida non. Aliquet lectus eget varius nec dictum.<\/p>",
+        "card_title": "Events\/Classes by Sophie",
+        "card_title_color": "#6c1d45",
+        "card_text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Euismod pellentesque cursus non sed morbi.",
+        "card_bullet": "- Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit. - Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "button_text": "Register Now",
+        "button_link": "",
+        "button_color": "#6c1d45",
+        "button_hover_color": "#fafafa",
+        "bg_color": ""
+      }
+    },
+    "main": {
+      "type": "collection",
+      "disabled": true,
+      "settings": {
+        "show_breadcrumbs": false,
+        "enable_sorting": false,
+        "enable_filters": false,
+        "filter_mode": "default",
+        "bg_color": ""
+      }
+    },
+    "16512183744a86c2dd": {
+      "type": "section-jointeam-mailerlite",
+      "settings": {
+        "text_position": "right",
+        "text_alignment": "center",
+        "image_layout": "square",
+        "image_1": "shopify:\/\/shop_images\/apply_healer.png",
+        "heading": "Want to be part of the team?",
+        "description": "<p>Newsletter subscribers will recieve specially selected content, hear about the news and receive a dose of inspiration every month.<\/p>",
+        "heading_color": "#6c1d45",
+        "bg_color": "#fefafb"
+      }
+    }
+  },
+  "order": [
+    "subcollections",
+    "1654688591fbdfa2ac",
+    "16545995910e1f9f10",
+    "16512183549435ee0d",
+    "main",
+    "16512183744a86c2dd"
+  ]
+}
