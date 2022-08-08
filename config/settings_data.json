@@ -22,7 +22,7 @@
     "enable_color_swatches": true,
     "show_payment_button": true,
     "quick_button": "view",
-    "cart_type": "drawer",
+    "cart_type": "page",
     "enable_cart_animation": false,
     "enable_cart_notes": false,
     "enable_accept_terms": false,
@@ -144,8 +144,6 @@
         "type": "shopify:\/\/apps\/hiko-social-login\/blocks\/hiko-auth\/3832d7e1-5bcd-4b72-91da-236b57feef8f",
         "disabled": false,
         "settings": {
-          "hikoimages": true,
-          "hikofonts": true
         }
       },
       "7779870835509955477": {
