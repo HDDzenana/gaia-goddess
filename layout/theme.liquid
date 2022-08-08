@@ -1,4 +1,4 @@
-<!doctype html>
+ <!doctype html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
 <head>{% include 'ymq-option-initializer' %}
 {% include 'best-option-initializer' %}
@@ -197,7 +197,22 @@
     gtag('config', 'G-NF3YLMHNRR');
   </script>
   <!-- End Global site tag (gtag.js) - Google Analytics --> 
- 
+
+
+<script>
+document.getElementById("MOLoginModal").style.display ="none";
+function clickBtn1(){
+  const btn = document.getElementById("MOLoginModal");
+  if(btn.style.display=="block"){
+    btn.style.display ="none";
+  }else{
+    btn.style.display ="block";
+  }
+}
+
+</script>
+
+
 </head>
 
 {%- capture body_class -%}
