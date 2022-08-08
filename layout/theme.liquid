@@ -305,8 +305,7 @@ template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}
 -%}
 
 <body id="{{ page_title | handle }}" class="{{ body_class | strip_newlines | strip }}" data-animations="{{ settings.animations_enabled }}">
-  {%- render 'loading' -%}
-
+  
   <a class="in-page-link skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
   {%- section 'announcement-bar' -%}
