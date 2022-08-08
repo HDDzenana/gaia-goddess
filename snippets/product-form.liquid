@@ -1,3 +1,53 @@
+
+{%- liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign unique = unique | default: ''
+  assign variants_style = settings.variants_style
+
+  comment
+    Override buy button setting if there are selling plan groups and cart terms
+  endcomment
+  if show_payment_button and product.selling_plan_groups.size < 1 and settings.enable_accept_terms == false
+    assign show_payment_button = true
+  else
+    assign show_payment_button = false
+  endif
+
+  assign product_form_id = "AddToCartForm--" | append: unique
+
+  comment
+    Size chart
+  endcomment
+  assign show_size_chart = false
+  assign tags_string = product.tags | join: ','
+  assign size_separator = '_size_'
+  assign specific_pages = ''
+
+  if tags_string contains size_separator
+    for tag in product.tags
+      if tag contains size_separator
+        assign page_handle = tag | split: size_separator | last | split: ',' | first
+        assign specific_pages = specific_pages | append: page_handle | append: ','
+      endif
+    endfor
+  endif
+
+  if block.settings.info_page != blank
+    assign info_page = pages[block.settings.info_page]
+    assign info_page_title_override = block.settings.info_page_title_override
+    assign size_translation = 'general.size_chart.size' | t
+    assign size_translation = size_translation | lstrip | rstrip | downcase
+    assign show_size_link_outside = false
+
+    for option in product.options
+      assign option_san = option | lstrip | rstrip | downcase
+
+      if option_san contains size_translation and show_labels
+        assign show_size_link_outside = true
+      endif
+    endfor
+  endif
+-%}
 <!-- /snippets/product-form.liquid -->
 
 {%- liquid
