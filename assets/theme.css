@@ -12146,5 +12146,9 @@ background: #FEF1F5 !important;
   } 
 
 #MOLoginModal {
-  display: block;
+  display: block !important;
+}
+
+#submitButton {
+  background: #6C1D45 !important;
 }
