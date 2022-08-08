@@ -12148,7 +12148,8 @@ background: #FEF1F5 !important;
 #MOLoginModal {
   display: block !important;
 }
-
+#MOheading,
 #submitButton {
+  border-bottom: 1px solid #6C1D45 !important;
   background: #6C1D45 !important;
 }
