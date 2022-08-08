@@ -22,7 +22,7 @@
     "enable_color_swatches": true,
     "show_payment_button": true,
     "quick_button": "view",
-    "cart_type": "page",
+    "cart_type": "drawer",
     "enable_cart_animation": false,
     "enable_cart_notes": false,
     "enable_accept_terms": false,
