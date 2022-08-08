@@ -227,6 +227,7 @@
       {%- endif -%}
       </h1>
 
+  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
     <button type="submit" name="add" value="Add to cart" id="AddToCart--{{ unique }}" class="btn btn--submit"{% if sold_out %} disabled{% endif %} data-add-to-cart>
       <span id="AddToCartText" data-add-to-cart-text>
         {%- if sold_out -%}
@@ -247,16 +248,7 @@
     {%- endif -%} -->
   </div>
 {%- endform -%}
-<form method="post" action="/cart/add">
-
-  <input type="hidden" name="id" value="{{ product.variants.first.id }}" />
-
-  <input min="1" type="number" id="quantity" name="quantity" value="1"/>
-
-  <input type="submit" value="Add to cart" class="btn" />
-
-</form>
-
+ 
 <style>
   .product__form, .buttons-grid  {
     gap: 5px !important;
