@@ -226,20 +226,28 @@
         /h1>
       {%- endif -%}
       </h1>
+<div class="product__submit__item">
+        <button
+          type="submit"
+          name="add"
+          id="AddToCart--{{ unique }}"
+          class="btn btn--submit product__submit__add"
+          data-add-to-cart
+          data-focus-element
+          {% unless current_variant.available %}disabled="disabled"{% endunless %}>
+          <span data-add-to-cart-text>
+            {%- if current_variant.available and product.tags contains '_preorder' -%}
+              {{ 'products.product.preorder' | t }}
+            {%- elsif current_variant.available -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- endif -%}
+          </span>
 
-    <button type="submit" name="add" id="AddToCart--{{ unique }}" class="btn btn--submit"{% if sold_out %} disabled{% endif %} data-add-to-cart>
-      <span id="AddToCartText" data-add-to-cart-text>
-        {%- if sold_out -%}
-          {{- 'products.product.sold_out' | t -}}
-        {%- elsif preorder -%}
-          {{- 'products.product.preorder' | t -}}
-        {%- else -%}
-          {{- 'products.product.add_to_cart' | t -}}
-        {%- endif -%}
-      </span>
-      {%- render 'icon-loading' -%}
-    </button>
-
+          <div class="loader loader--line"><div class="loader-indeterminate"></div></div>
+        </button>
+      </div>
     <!-- {%- if show_payment_button -%}
       <div data-payment-button="{{ section.settings.show_payment_button }}" data-quickview-payment-button="{{ settings.show_payment_button }}">
         {{- form | payment_button -}}
