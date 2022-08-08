@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html class="no-js no-touch" lang="{{ request.locale.iso_code }}">
 <head>{% include 'ymq-option-initializer' %}
 {% include 'best-option-initializer' %}
@@ -22,7 +22,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF3YLMHNRR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
+    gtag('config', 'G-NF3YLMHNRR');
+  </script>
+  <!-- End Global site tag (gtag.js) - Google Analytics -->
   {%- if settings.favicon != blank -%}
     <link rel="shortcut icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png" />
   {%- endif -%}
@@ -187,32 +196,8 @@
 </script>
 <!-- End MailerLite Universal -->
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NF3YLMHNRR"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-NF3YLMHNRR');
-  </script>
-  <!-- End Global site tag (gtag.js) - Google Analytics --> 
-
-
-<script>
-document.getElementById("MOLoginModal").style.display ="none";
-function clickBtn1(){
-  const btn = document.getElementById("MOLoginModal");
-  if(btn.style.display=="block"){
-    btn.style.display ="none";
-  }else{
-    btn.style.display ="block";
-  }
-}
-
-</script>
-
-
+ 
+ 
 </head>
 
 {%- capture body_class -%}
