@@ -118,7 +118,7 @@
       "settings": {
         "title": "Three Pillars of Our Brand",
         "heading_color": "#6c1d45",
-        "subtitle": "<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam orci, vel amet pulvinar posuere tristique. Tortor, nullam.",
+        "subtitle": "",
         "testimonial_layout": "imgfirst",
         "border_radius": 4,
         "show_quotes": false,
