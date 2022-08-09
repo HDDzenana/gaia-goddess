@@ -28,7 +28,7 @@
         "padding_top": 100,
         "padding_bottom": 100,
         "bg": "#fef1f5",
-        "heading": "Embody The Wisdom of Gaia With Our Sacred Sisterhood!",
+        "heading": "Embody The Wisdom of Gaia with Our Sacred Sisterhood.",
         "heading_color": "#6c1d45",
         "text_content": "We at Gaia Goddess have created a sacred space where women can join hearts and hands as they heal, inspire and uplift themselves and each other.  Each offering and retreat experience is carefully curated to provide magical and transformative experiences imbued with the wisdom of nature."
       }
@@ -55,7 +55,7 @@
         "heading": "Our Mission",
         "subheading": "",
         "ssubheading_color": "#800000",
-        "description": "As an eco-Feminist brand, we, at Gaia Goddess are committed to empowering the divine feminine in connection with the wisdom and nurturance of nature. Through our online courses, retreat experiences and in person events, we create a communal space for women to flourish as they discover their intuitive voices and embody the healer within.",
+        "description": "As an eco-Feminist brand, Gaia Goddess is committed to empowering the divine feminine in connection with the wisdom and nurturance of nature. Through our online courses, retreat experiences and in person events, we create a communal space for women to flourish as they discover  the healer within.",
         "button_text": "Join Us",
         "button_link": "shopify:\/\/pages\/memberships",
         "button_color": "#6c1d45",
@@ -144,7 +144,7 @@
           "type": "value",
           "settings": {
             "value_title": "Lasting Impact",
-            "value_text": "<p>Our programs and offerings are created to provide lasting and transformative experiences that continue to support and guide our community on the journey towards wellness.<\/p>",
+            "value_text": "<p>Our programs and offerings are created to provide lasting and transformative experiences that continue to guide our community toward wellness.<\/p>",
             "icon": "shopify:\/\/shop_images\/lasting_impact_image.png",
             "value_title_color": "#eb6fbd",
             "value_text_color": ""
@@ -269,7 +269,7 @@
         "text_position": "left",
         "text_alignment": "left",
         "image_background": "shopify:\/\/shop_images\/flower-of-life-v3-01-01.png",
-        "heading": "Subscribe to our newsletters today for a <span style=\"color: #EB6FBD;\">FREE<\/span> Self-Love meditation.",
+        "heading": "Subscribe to our newsletter today for a <span style=\"color: #EB6FBD;\">FREE<\/span> Self-Love meditation.",
         "description": "<p>Subscribe to stay connected to our community, receive updates and enjoy educational and inspiring content.<\/p>",
         "heading_color": "#6c1d45",
         "bg_color": "#fefafb"
