@@ -138,6 +138,7 @@ margin: 0 !important}
 }
 .page-customer .wrapper .form-vertical-wrapper{
   text-align: center;
+  text-align: -webkit-center;
 }
 .account__heading--small{
   font-size: 50px;
