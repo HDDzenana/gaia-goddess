@@ -12157,3 +12157,11 @@ background: #FEF1F5 !important;
     text-align: center;
     text-align: -webkit-center !important;
 }
+
+#phone-number-country-code {
+    width: calc(35%);
+    padding: 0 0rem 0 1rem;
+    background: transparent !important;
+    color: white !important;
+    border-right: 0 !important;
+}
