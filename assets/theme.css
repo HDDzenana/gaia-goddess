@@ -12157,7 +12157,16 @@ background: #FEF1F5 !important;
     text-align: center;
     text-align: -webkit-center !important;
 }
-
+#phone-number {
+    width: calc(65%);
+    border-left: transparent;
+    margin-right: -5px;
+    border-radius: 0;
+    background: transparent;
+    color: white !important;
+    border-top-right-radius: 60px !important;
+    border-bottom-right-radius: 60px !important;
+}
 #phone-number-country-code {
     width: calc(35%);
     padding: 0 0rem 0 1rem;
