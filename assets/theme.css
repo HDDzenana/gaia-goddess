@@ -12151,9 +12151,9 @@ background: #FEF1F5 !important;
 }
 
 
-.tel-div {
-  
-    display: flex;
-    flex-direction: column;
-}
+.otp {
+    margin: 1rem auto;
+    width: fit-content;
+    text-align: center;
+    text-align: -webkit-center !important;
 }
