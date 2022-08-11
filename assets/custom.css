@@ -169,6 +169,7 @@ margin: 0 !important}
 }
 #CreateCustomer .btn, #CustomerLogin .btn {
   margin: 30px auto 0 auto;
+  min-width: 160px;
 }
 
 /****/
