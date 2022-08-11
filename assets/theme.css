@@ -12168,6 +12168,14 @@ background: #FEF1F5 !important;
     border-bottom-right-radius: 60px !important;
 }
 #phone-number-country-code {
+  
+    color: white !important;
+    border-right: 0 !important;
+    /* border-right: 1px solid white; */
+    border-top-left-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px !important;
     width: calc(35%);
     padding: 0 0rem 0 1rem;
     background: transparent !important;
