@@ -12149,3 +12149,11 @@ background: #FEF1F5 !important;
   display: none !important;
 }
 }
+
+
+.tel-div {
+  
+    display: flex;
+    flex-direction: column;
+}
+}
