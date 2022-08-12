@@ -12167,6 +12167,7 @@ background: #FEF1F5 !important;
     border-top-right-radius: 60px !important;
     border-bottom-right-radius: 60px !important;
 }
+input#code.eosh-input,
 #phone-number-country-code {
   
     color: white !important;
