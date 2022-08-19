@@ -4,6 +4,7 @@
       "type": "section-product-feature",
       "settings": {
         "fullheight": true,
+        "bgimg": "shopify:\/\/shop_images\/pexels-elina-fairytale-3822692.jpg",
         "aos": true,
         "bg": "linear-gradient(90deg, rgba(254, 250, 251, 1) 60%, rgba(254, 241, 245, 1) 60%)",
         "image_layout": "square",
@@ -12,7 +13,7 @@
         "text_alignment": "left",
         "mobile_button_position": "center",
         "showpointmobile": false,
-        "image_1": "shopify:\/\/shop_images\/5eefa498299cb91c33e8ab25_7-yoga-poses-to-keep-your-body-fit-thumbnail-image-p-800.png",
+        "image_1": "shopify:\/\/shop_images\/AlainM_GaiaFirstShoot_0021.jpg",
         "image_link_1": "",
         "image_link_2": "",
         "hide_image_2": false,
