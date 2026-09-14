@@ -63,9 +63,7 @@
 <div class="wrapper wrapper-{{section.id}}">
   
   <div class="img">
-    {%render 'gaia-image'%,
-    image: section.settings.image
-    %}
+    {% render 'gaia-image', image: section.settings.image %}
     
   </div>
   
@@ -168,4 +166,16 @@
       }
     ]
   }
-  {% endschema %}
+  {% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: |-
+    {%render 'gaia-image'%,
+        image: section.settings.image
+        %}
+  to: "{% render 'gaia-image', image: section.settings.image %}"
+  position: 1378..1434
+{%- endcomment -%}
